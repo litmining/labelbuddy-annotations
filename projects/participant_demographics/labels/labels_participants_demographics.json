@@ -1,0 +1,37 @@
+[
+    {
+        "background_color": "#aec7e8",
+        "color": "#aec7e8",
+        "text": "ParticipantsInfo"
+    },
+    {
+        "background_color": "#ffbb78",
+        "color": "#ffbb78",
+        "text": "ParticipantsGroupInfo"
+    },
+    {
+        "background_color": "#98df8a",
+        "color": "#98df8a",
+        "text": "ParticipantsSubGroup"
+    },
+    {
+        "background_color": "#ff9896",
+        "color": "#ff9896",
+        "text": "AgeMoments"
+    },
+    {
+        "background_color": "#c5b0d5",
+        "color": "#c5b0d5",
+        "text": "AgeRange"
+    },
+    {
+        "background_color": "#ebd0b1",
+        "color": "#ebd0b1",
+        "text": "_Mention"
+    },
+    {
+        "background_color": "#d3d7cf",
+        "color": "#d3d7cf",
+        "text": "_Discarded"
+    }
+]
