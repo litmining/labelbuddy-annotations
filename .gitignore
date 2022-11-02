@@ -1,0 +1,4 @@
+# labelbuddy database files
+*.lb
+*.labelbuddy
+venv/*

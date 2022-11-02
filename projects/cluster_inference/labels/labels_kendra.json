@@ -1,0 +1,47 @@
+[
+  {
+    "name": "smoothing_snippet",
+    "color": "#aec7e8",
+    "shortcut_key": "s"
+  },
+  {
+    "name": "cluster_thresh_used",
+    "color": "#ffbb78",
+    "shortcut_key": "c"
+  },
+  {
+    "name": "cluster_thresh_in_voxels",
+    "color": "#98df8a",
+    "shortcut_key": "v"
+  },
+  {
+    "name": "cluster_thresh_in_mm",
+    "color": "#ff9896",
+    "shortcut_key": "m"
+  },
+  {
+    "name": "nonparametric_cluster_thresh",
+    "color": "#c5b0d5",
+    "shortcut_key": "n"
+  },
+  {
+    "name": "info_removed_in_name_extract",
+    "color": "#c49c94",
+    "shortcut_key": "i"
+  },
+  {
+    "name": "is_annotated",
+    "color": "#f7b6d2",
+    "shortcut_key": "a"
+  },
+  {
+    "name": "annotation_in_progress",
+    "color": "#b8b8b8",
+    "shortcut_key": "p"
+  },
+  {
+    "name": "discard_this_paper",
+    "color": "#dbdb8d",
+    "shortcut_key": "d"
+  }
+]
