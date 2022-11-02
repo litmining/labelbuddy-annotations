@@ -1,0 +1,2 @@
+pandas
+-e git+https://github.com/neurodatascience/NiMf
