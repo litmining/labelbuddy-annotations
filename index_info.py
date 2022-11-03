@@ -4,9 +4,8 @@ import pandas as pd
 
 from nimf.data import constants
 
-projects_folder_path = Path(__file__).resolve().parent / "projects"
-projects_list = projects_folder_path.iterdir()
-pmids_and_pmcids = pd.read_csv(constants.PATH_TO_OPEN_FMRI_PMIDS_AND_PMCIDS)
+
+PMIDS_AND_PMCIDS = pd.read_csv(constants.PATH_TO_OPEN_FMRI_PMIDS_AND_PMCIDS)
 
 
 def get_documents(project_path):
@@ -17,7 +16,7 @@ def get_documents(project_path):
         if not "pmcid" in df.iloc[0]["metadata"].keys():
             for i, row in df.iterrows():
                 pmid = row["metadata"]["pmid"]
-                pmcid = int(pmids_and_pmcids[pmids_and_pmcids["pmid"] == pmid]["pmcid"])
+                pmcid = int(PMIDS_AND_PMCIDS[PMIDS_AND_PMCIDS["pmid"] == pmid]["pmcid"])
                 df.at[i, "metadata"]["pmcid"] = pmcid
 
         for i, row in df.iterrows():
@@ -34,6 +33,7 @@ def get_annotations(project_path):
     ann_count = 0
     counter = -1
     for ann_path in anns_folder.glob("*.json*"):
+        ### Jérôme's NiMF annotations are in an old format #######################
         if not ann_path.name == "labelled_texts_jerome.jsonl":
             if str(ann_path)[-1] == "l":
                 df = pd.read_json(ann_path, lines=True)
@@ -44,7 +44,7 @@ def get_annotations(project_path):
                 for i, row in df.iterrows():
                     pmid = row["metadata"]["pmid"]
                     pmcid = int(
-                        pmids_and_pmcids[pmids_and_pmcids["pmid"] == pmid]["pmcid"]
+                        PMIDS_AND_PMCIDS[PMIDS_AND_PMCIDS["pmid"] == pmid]["pmcid"]
                     )
                     df.at[i, "metadata"]["pmcid"] = pmcid
 
@@ -72,6 +72,10 @@ def get_project_data(project_path):
     assert df["metadata_x"].equals(df["metadata_y"])
     return df, ann_count
 
+
+# script starts here#################################
+projects_folder_path = Path(__file__).resolve().parent / "projects"
+projects_list = projects_folder_path.iterdir()
 
 total_ann_count = 0
 for i_project, project_path in enumerate(projects_list):
@@ -138,3 +142,6 @@ df_useful_cols = [
     "labelbuddy_display_title",
 ]
 df = df[df_useful_cols]
+
+
+d = 1
