@@ -74,7 +74,7 @@ def get_project_data(project_path):
 
 
 # script starts here#################################
-projects_folder_path = Path(__file__).resolve().parent / "projects"
+projects_folder_path = Path(__file__).resolve().parents[1] / "projects"
 projects_list = projects_folder_path.iterdir()
 
 total_ann_count = 0
@@ -142,6 +142,5 @@ df_useful_cols = [
     "labelbuddy_display_title",
 ]
 df = df[df_useful_cols]
-
-
+df.to_csv(Path(__file__).resolve().parent / "all_annotations.csv", index=False)
 d = 1
