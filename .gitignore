@@ -4,3 +4,5 @@
 *.sqlite
 *.sqlite3
 venv/*
+*/.ipynb_checkpoints/*
+*.~lock.*
