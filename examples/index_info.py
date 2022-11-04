@@ -2,10 +2,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from nimf.data import constants
-
-
-PMIDS_AND_PMCIDS = pd.read_csv(constants.PATH_TO_OPEN_FMRI_PMIDS_AND_PMCIDS)
+id_file = Path(__file__).resolve().parents[1] / "utils" / "pmids_and_pmcids_for_nimf_papers.txt"
+PMIDS_AND_PMCIDS = pd.read_csv(id_file)
 
 
 def get_documents(project_path):
@@ -141,4 +139,3 @@ df_useful_cols = [
 ]
 df = df[df_useful_cols]
 df.to_csv(Path(__file__).resolve().parent / "all_annotations.csv", index=False)
-d = 1
