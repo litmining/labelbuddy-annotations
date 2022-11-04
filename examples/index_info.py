@@ -33,28 +33,27 @@ def get_annotations(project_path):
     ann_count = 0
     counter = -1
     for ann_path in anns_folder.glob("*.json*"):
-        ### Jérôme's NiMF annotations are in an old format #######################
-        if not ann_path.name == "labelled_texts_jerome.jsonl":
-            if str(ann_path)[-1] == "l":
-                df = pd.read_json(ann_path, lines=True)
-            else:
-                df = pd.read_json(ann_path)
+        if str(ann_path)[-1] == "l":
+            df = pd.read_json(ann_path, lines=True)
+        else:
+            df = pd.read_json(ann_path)
 
-            if not "pmcid" in df.iloc[0]["metadata"].keys():
-                for i, row in df.iterrows():
-                    pmid = row["metadata"]["pmid"]
-                    pmcid = int(
-                        PMIDS_AND_PMCIDS[PMIDS_AND_PMCIDS["pmid"] == pmid]["pmcid"]
-                    )
-                    df.at[i, "metadata"]["pmcid"] = pmcid
-
+        if not "pmcid" in df.iloc[0]["metadata"].keys():
             for i, row in df.iterrows():
-                counter = counter + 1
-                df.at[counter, "pmcid"] = row["metadata"]["pmcid"]
-                ann_count = ann_count + len(row["annotations"])
-            df["annotation_file"] = ann_path.name
+                pmid = row["metadata"]["pmid"]
+                pmcid = int(
+                    PMIDS_AND_PMCIDS[PMIDS_AND_PMCIDS["pmid"] == pmid]["pmcid"]
+                )
+                df.at[i, "metadata"]["pmcid"] = pmcid
+        df["annotation_file"] = ann_path.name
+        
+    for i, row in df.iterrows():
+        counter = counter + 1
+        df.at[counter, "pmcid"] = row["metadata"]["pmcid"]
+        ann_count = ann_count + len(row["annotations"])
+        
     df["annotation_project"] = project_path.name
-
+    df.dropna(axis="index", subset=["annotations"], inplace=True)
     return df, ann_count
 
 
@@ -62,7 +61,6 @@ def get_project_data(project_path):
     anns, ann_count = get_annotations(project_path)
     docs = get_documents(project_path)
     df = pd.merge(anns, docs, how="inner", on="pmcid")
-    df.dropna(axis="index", subset=["annotations"], inplace=True)
 
     # add the metadata in columns of their own instead of a nested dict
     metadata = pd.json_normalize(df["metadata_y"])
