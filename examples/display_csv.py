@@ -24,6 +24,8 @@ select_columns = [
 
 df = full_df[select_columns]
 
+# the following code is based on https://dash.plotly.com/datatable/interactivity
+
 app = Dash(__name__)
 
 app.layout = html.Div(
