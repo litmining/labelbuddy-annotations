@@ -1,0 +1,73 @@
+[
+    {
+        "color": "#aec7e8",
+        "name": "FieldStrength",
+        "shortcut_key": "f"
+    },
+    {
+        "color": "#ffbb78",
+        "name": "Diagnosis",
+        "shortcut_key": "d"
+    },
+    {
+        "color": "#98df8a",
+        "name": "N_Total",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#ff9896",
+        "name": "N_Total_Male"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "N_Total_Female"
+    },
+    {
+        "color": "#dbdb8d",
+        "name": "N_Patients"
+    },
+    {
+        "color": "#9edae5",
+        "name": "N_Controls"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "N_Controls_Male"
+    },
+    {
+        "color": "#ffbb78",
+        "name": "N_Controls_Female"
+    },
+    {
+        "color": "#98df8a",
+        "name": "N_Patients_Male"
+    },
+    {
+        "color": "#ff9896",
+        "name": "N_Patients_Female"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "Age_Mean"
+    },
+    {
+        "color": "#c49c94",
+        "name": "Age_Min"
+    },
+    {
+        "color": "#f7b6d2",
+        "name": "Age_Max"
+    },
+    {
+        "color": "#dbdb8d",
+        "name": "Scanner"
+    },
+    {
+        "color": "#9edae5",
+        "name": "AnalysisTool"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "MRI_Modality"
+    }
+]

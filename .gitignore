@@ -1,4 +1,6 @@
 # labelbuddy database files
 *.lb
 *.labelbuddy
+*.sqlite
+*.sqlite3
 venv/*
