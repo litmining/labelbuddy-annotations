@@ -1,4 +1,4 @@
 pandas
 plotly
 dash
--e git+https://github.com/neurodatascience/NiMf
+pillow
