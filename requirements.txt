@@ -1,7 +1,5 @@
 pandas
-notebook==6.0.3
 plotly
 dash
 pillow
-jupyter_server_proxy
-jupyter-dash
+gunicorn
