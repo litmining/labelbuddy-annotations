@@ -3,3 +3,4 @@ plotly
 dash
 pillow
 jupyter-dash
+jupyterlab-dash
