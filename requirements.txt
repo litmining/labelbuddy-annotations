@@ -2,5 +2,5 @@ pandas
 plotly
 dash
 pillow
+jupyter_server_proxy
 jupyter-dash
-jupyterlab-dash
