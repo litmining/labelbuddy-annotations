@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 
 # load the data. Each row is an annotation. There may be several annotations per paper
-data_path = Path(__file__).resolve().parent / "examples" / "all_annotations.csv"
+data_path = Path(__file__).resolve().parent / "all_annotations.csv"
 full_df = pd.read_csv(data_path, index_col=False)
 full_df.pmcid = full_df.pmcid.astype(int)
 full_df["index"] = list(full_df.index)
