@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import os
 import pathlib
 import sqlite3
 import tempfile
@@ -166,10 +167,20 @@ def make_database(
         database_path = _repo_root() / "database.sqlite3"
     if database_path.is_file() and not overwrite:
         return database_path
-    tmp_db_path = database_path.with_name(f"{database_path.name}.tmp")
-    _initialize_database(tmp_db_path)
-    _fill_database(tmp_db_path)
-    tmp_db_path.rename(database_path)
+    fd, tmp_db_path = tempfile.mkstemp(
+        prefix=database_path.name, dir=database_path.parent
+    )
+    try:
+        os.close(fd)
+        tmp_db_path = pathlib.Path(tmp_db_path)
+        _initialize_database(tmp_db_path)
+        _fill_database(tmp_db_path)
+        tmp_db_path.rename(database_path)
+    finally:
+        try:
+            os.unlink(tmp_db_path)
+        except Exception:
+            pass
     return database_path
 
 
