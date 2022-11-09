@@ -1,6 +1,7 @@
 # Neuroimaging literature annotations
 
-this describes annotations made with labelbuddy
+This repository contains annotations made with [labelbuddy](https://jeromedockes.github.io/labelbuddy).
+The documents were collected with [pubget](https://neuroquery.github.io/pubget/).
 
 ```{tableofcontents}
 ```
