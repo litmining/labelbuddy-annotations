@@ -1,0 +1,28 @@
+title: Neuroimaging literature annotations
+author: https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
+
+execute:
+  execute_notebooks: force
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/neurodatascience/labelbuddy-annotations
+  path_to_book: analysis/book
+  branch: main
+
+html:
+  use_issues_button: false
+  use_repository_button: false
+
+sphinx:
+  config:
+    nb_custom_formats:
+        .py:
+            - jupytext.reads
+            - fmt: py

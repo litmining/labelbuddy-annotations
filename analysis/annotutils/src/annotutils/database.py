@@ -175,3 +175,11 @@ def make_database(
             pass
     print(f"Database created in {database_path}")
     return database_path
+
+
+def get_database_connection(
+    database_path: Optional[pathlib.Path] = None,
+) -> sqlite3.Connection:
+    connection = sqlite3.connect(make_database(database_path, overwrite=False))
+    connection.row_factory = sqlite3.Row
+    return connection

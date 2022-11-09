@@ -1,5 +1,6 @@
 import os
 import pathlib
+import subprocess
 
 from annotutils import _utils
 
@@ -15,6 +16,19 @@ def repo_root() -> pathlib.Path:
     for candidate in (repo_env, pwd, package_parent):
         if candidate is not None and _is_repo_root(pathlib.Path(candidate)):
             return pathlib.Path(candidate)
+    try:
+        git_output = (
+            subprocess.run(
+                ["git", "rev-parse", "--show-toplevel"], capture_output=True
+            )
+            .stdout.strip()
+            .decode("utf-8")
+        )
+        candidate = pathlib.Path(git_output)
+        if _is_repo_root(candidate):
+            return candidate
+    except Exception:
+        pass
     raise FileNotFoundError(
         "Could not find labelbuddy-annotations repository."
     )
