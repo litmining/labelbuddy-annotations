@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 import hashlib
 import json
 import os
@@ -8,27 +6,23 @@ import sqlite3
 import tempfile
 from typing import Optional
 
-
-def _scripts_dir() -> pathlib.Path:
-    return pathlib.Path(__file__).resolve().parent
-
-
-def _repo_root() -> pathlib.Path:
-    return _scripts_dir().parent
+from utils import repo
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:
     connection = sqlite3.connect(db_path)
     with connection:
         connection.executescript(
-            (_scripts_dir() / "initialize_db.sql").read_text("utf-8")
+            (repo.utils_package_root() / "initialize_db.sql").read_text(
+                "utf-8"
+            )
         )
 
 
 def _fill_database(db_path: pathlib.Path):
     connection = sqlite3.connect(db_path)
     connection.execute("pragma foreign_keys = on")
-    projects_root_dir = _repo_root() / "projects"
+    projects_root_dir = repo.repo_root() / "projects"
     for project_dir in projects_root_dir.glob("*"):
         if not project_dir.is_dir():
             continue
@@ -164,7 +158,7 @@ def make_database(
 ) -> pathlib.Path:
     """Create a database containing all data in this repository."""
     if database_path is None:
-        database_path = _repo_root() / "database.sqlite3"
+        database_path = repo.data_dir() / "database.sqlite3"
     if database_path.is_file() and not overwrite:
         return database_path
     fd, tmp_db_path = tempfile.mkstemp(
@@ -182,7 +176,3 @@ def make_database(
         except Exception:
             pass
     return database_path
-
-
-if __name__ == "__main__":
-    make_database()

@@ -8,7 +8,7 @@ all: annotations
 annotations: $(annotation_files)
 
 database:
-	python3 ./scripts/database.py
+	python3 ./scripts/make_database.py
 
 $(annotation_files): %.jsonl: %.labelbuddy
 	labelbuddy $< --export-docs $@ --no-text --labelled-only
