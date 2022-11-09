@@ -6,16 +6,14 @@ import sqlite3
 import tempfile
 from typing import Optional
 
-from utils import repo
+from annotutils import repo, _utils
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:
     connection = sqlite3.connect(db_path)
     with connection:
         connection.executescript(
-            (repo.utils_package_root() / "initialize_db.sql").read_text(
-                "utf-8"
-            )
+            (_utils.package_data() / "initialize_db.sql").read_text("utf-8")
         )
 
 
@@ -175,4 +173,11 @@ def make_database(
             os.unlink(tmp_db_path)
         except Exception:
             pass
+    print(f"Database created in {database_path}")
     return database_path
+
+
+def get_database_connection(
+    database_path: Optional[pathlib.Path] = None,
+) -> sqlite3.Connection:
+    return sqlite3.connect(make_database(database_path, overwrite=False))

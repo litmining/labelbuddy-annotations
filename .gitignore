@@ -2,6 +2,7 @@
 *.~lock.*
 */figures/
 .DS_Store
+analysis/book/_build
 
 
 # labelbuddy database files
