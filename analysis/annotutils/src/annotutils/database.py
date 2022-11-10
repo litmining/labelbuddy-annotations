@@ -1,3 +1,4 @@
+import contextlib
 import hashlib
 import json
 import os
@@ -10,23 +11,25 @@ from annotutils import repo, _utils
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:
-    connection = sqlite3.connect(db_path)
-    with connection:
-        connection.executescript(
-            (_utils.package_data() / "initialize_db.sql").read_text("utf-8")
-        )
+    with contextlib.closing(sqlite3.connect(db_path)) as connection:
+        with connection:
+            connection.executescript(
+                (_utils.package_data() / "initialize_db.sql").read_text(
+                    "utf-8"
+                )
+            )
 
 
 def _fill_database(db_path: pathlib.Path):
-    connection = sqlite3.connect(db_path)
-    connection.execute("pragma foreign_keys = on")
-    projects_root_dir = repo.repo_root() / "projects"
-    for project_dir in projects_root_dir.glob("*"):
-        if not project_dir.is_dir():
-            continue
-        _insert_project_documents(connection, project_dir)
-        _insert_project_labels(connection, project_dir)
-        _insert_project_annotations(connection, project_dir)
+    with contextlib.closing(sqlite3.connect(db_path)) as connection:
+        connection.execute("pragma foreign_keys = on")
+        projects_root_dir = repo.repo_root() / "projects"
+        for project_dir in projects_root_dir.glob("*"):
+            if not project_dir.is_dir():
+                continue
+            _insert_project_documents(connection, project_dir)
+            _insert_project_labels(connection, project_dir)
+            _insert_project_annotations(connection, project_dir)
 
 
 def _insert_project_documents(
@@ -58,8 +61,11 @@ def _insert_documents(
                     except (KeyError, ValueError):
                         doc_row[key] = None
                 connection.execute(
-                    "insert or ignore into document(utf8_text_md5_checksum, "
-                    "text, pmcid, pmid) values (:md5, :text, :pmcid, :pmid)",
+                    """
+                    insert or ignore into document
+                        (utf8_text_md5_checksum, text, pmcid, pmid)
+                    values (:md5, :text, :pmcid, :pmid)
+                    """,
                     doc_row,
                 )
 
@@ -143,10 +149,14 @@ def _insert_annotations(
                 )
     with connection:
         connection.executemany(
-            "insert or ignore into annotation (doc_id, label_id, annotator_id, "
-            "start_char, end_char, extra_data, project) "
-            "values (:doc_id, :label_id, "
-            ":annotator_id, :start_char, :end_char, :extra_data, :project)",
+            """
+            insert or ignore into annotation
+                (doc_id, label_id, annotator_id, start_char,
+                end_char, extra_data, project)
+            values
+                (:doc_id, :label_id, :annotator_id,
+                :start_char, :end_char, :extra_data, :project)
+            """,
             all_annotations,
         )
 

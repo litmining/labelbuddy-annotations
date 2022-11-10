@@ -41,7 +41,7 @@ from annotutils import database
 
 connection = database.get_database_connection()
 n_annotations = connection.execute(
-    "select count(*) as n_annotations from annotation"
+    "SELECT COUNT(*) AS n_annotations FROM annotation"
 ).fetchone()["n_annotations"]
 
 print(f"There are {n_annotations} annotations in the database.")
@@ -59,10 +59,13 @@ print(f"There are {n_annotations} annotations in the database.")
 import pandas as pd
 
 label_counts = pd.read_sql(
-    "select project, label.name as label_name, count(*) as n_annotations "
-    "from annotation inner join label on annotation.label_id = label.id "
-    "group by project, label_name having n_annotations > 0 "
-    "order by n_annotations desc",
+    """
+    SELECT project, label.name AS label_name, COUNT(*) AS n_annotations
+      FROM annotation
+      INNER JOIN label ON annotation.label_id = label.id
+      GROUP BY project, label_name
+      ORDER BY n_annotations DESC
+    """,
     connection,
 )
 label_counts.head()
