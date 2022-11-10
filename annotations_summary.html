@@ -356,17 +356,7 @@ obtain a connection from Python scripts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">annotutils</span> <span class="kn">import</span> <span class="n">database</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">n_annotations</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;select count(*) as n_annotations from annotation&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="s2">&quot;n_annotations&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">n_annotations</span><span class="si">}</span><span class="s2"> annotations in the database.&quot;</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: tuple indices must be integers or slices, not str
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 1808 annotations in the database.
 </pre></div>
 </div>
 </div>
@@ -393,6 +383,64 @@ each project, and store the results in a DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>project</th>
+      <th>label_name</th>
+      <th>n_annotations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cluster_inference</td>
+      <td>cluster_thresh_used</td>
+      <td>459</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cluster_inference</td>
+      <td>smoothing_snippet</td>
+      <td>266</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cluster_inference</td>
+      <td>cluster_thresh_in_voxels</td>
+      <td>171</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>cluster_inference</td>
+      <td>n_participants_in_subgroup</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>cluster_inference</td>
+      <td>nonparametric_cluster_thresh</td>
+      <td>143</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Next, for each project we display the number of times each label was used in
 a bar plot.</p>
@@ -415,6 +463,11 @@ a bar plot.</p>
     <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/annotations_summary_10_0.png" src="_images/annotations_summary_10_0.png" />
+<img alt="_images/annotations_summary_10_1.png" src="_images/annotations_summary_10_1.png" />
+<img alt="_images/annotations_summary_10_2.png" src="_images/annotations_summary_10_2.png" />
 </div>
 </div>
 </section>
