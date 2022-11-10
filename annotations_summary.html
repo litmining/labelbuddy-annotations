@@ -348,7 +348,7 @@ obtain a connection from Python scripts.</p>
 
 <span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
 <span class="n">n_annotations</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-    <span class="s2">&quot;select count(*) as n_annotations from annotation&quot;</span>
+    <span class="s2">&quot;SELECT COUNT(*) AS n_annotations FROM annotation&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="s2">&quot;n_annotations&quot;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">n_annotations</span><span class="si">}</span><span class="s2"> annotations in the database.&quot;</span><span class="p">)</span>
@@ -373,10 +373,13 @@ each project, and store the results in a DataFrame.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">label_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
-    <span class="s2">&quot;select project, label.name as label_name, count(*) as n_annotations &quot;</span>
-    <span class="s2">&quot;from annotation inner join label on annotation.label_id = label.id &quot;</span>
-    <span class="s2">&quot;group by project, label_name having n_annotations &gt; 0 &quot;</span>
-    <span class="s2">&quot;order by n_annotations desc&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    SELECT project, label.name AS label_name, COUNT(*) AS n_annotations</span>
+<span class="sd">      FROM annotation</span>
+<span class="sd">      INNER JOIN label ON annotation.label_id = label.id</span>
+<span class="sd">      GROUP BY project, label_name</span>
+<span class="sd">      ORDER BY n_annotations DESC</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
     <span class="n">connection</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">label_counts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
