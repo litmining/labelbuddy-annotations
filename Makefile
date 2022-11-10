@@ -14,4 +14,4 @@ $(annotation_files): %.jsonl: %.labelbuddy
 	labelbuddy $< --export-docs $@ --no-text --labelled-only
 
 book:
-	jupyter-book build analysis/book
+	jupyter-book build -W analysis/book
