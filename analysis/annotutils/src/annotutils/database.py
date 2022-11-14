@@ -5,7 +5,7 @@ import os
 import pathlib
 import sqlite3
 import tempfile
-from typing import Optional
+from typing import Optional, Mapping, Dict, Any
 
 from annotutils import repo, _utils
 
@@ -43,6 +43,18 @@ def _insert_project_documents(
         _insert_documents(connection, docs_file)
 
 
+def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, Any]:
+    field_types = {"publication_year": int, "journal": str, "title": str}
+    metadata = dict.fromkeys(field_types)
+    field_pos = doc_info["metadata"].get("field_positions")
+    if field_pos is None:
+        return metadata
+    for field in metadata:
+        start, end = field_pos[field]
+        metadata[field] = field_types[field](doc_info["text"][start:end])
+    return metadata
+
+
 def _insert_documents(
     connection: sqlite3.Connection, docs_file: pathlib.Path
 ) -> None:
@@ -60,11 +72,14 @@ def _insert_documents(
                         doc_row[key] = int(doc_info["metadata"][key])
                     except (KeyError, ValueError):
                         doc_row[key] = None
+                doc_row.update(_extract_metadata_from_text(doc_info))
                 connection.execute(
                     """
                     insert or ignore into document
-                        (utf8_text_md5_checksum, text, pmcid, pmid)
-                    values (:md5, :text, :pmcid, :pmid)
+                        (utf8_text_md5_checksum, text, pmcid, pmid,
+                        publication_year, journal, title)
+                    values (:md5, :text, :pmcid, :pmid,
+                           :publication_year, :journal, :title)
                     """,
                     doc_row,
                 )

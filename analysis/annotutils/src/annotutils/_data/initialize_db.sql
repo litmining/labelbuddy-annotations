@@ -3,7 +3,10 @@ create table document(
   utf8_text_md5_checksum blob unique not null,
   text text not null,
   pmcid integer,
-  pmid integer
+  pmid integer,
+  publication_year integer,
+  journal text,
+  title text
 );
 
 create table label(
