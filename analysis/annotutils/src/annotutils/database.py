@@ -1,40 +1,35 @@
-#! /usr/bin/env python3
-
+import contextlib
 import hashlib
 import json
 import os
 import pathlib
 import sqlite3
 import tempfile
-from typing import Optional
+from typing import Optional, Mapping, Dict, Any
 
-
-def _scripts_dir() -> pathlib.Path:
-    return pathlib.Path(__file__).resolve().parent
-
-
-def _repo_root() -> pathlib.Path:
-    return _scripts_dir().parent
+from annotutils import repo, _utils
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:
-    connection = sqlite3.connect(db_path)
-    with connection:
-        connection.executescript(
-            (_scripts_dir() / "initialize_db.sql").read_text("utf-8")
-        )
+    with contextlib.closing(sqlite3.connect(db_path)) as connection:
+        with connection:
+            connection.executescript(
+                (_utils.package_data() / "initialize_db.sql").read_text(
+                    "utf-8"
+                )
+            )
 
 
 def _fill_database(db_path: pathlib.Path):
-    connection = sqlite3.connect(db_path)
-    connection.execute("pragma foreign_keys = on")
-    projects_root_dir = _repo_root() / "projects"
-    for project_dir in projects_root_dir.glob("*"):
-        if not project_dir.is_dir():
-            continue
-        _insert_project_documents(connection, project_dir)
-        _insert_project_labels(connection, project_dir)
-        _insert_project_annotations(connection, project_dir)
+    with contextlib.closing(sqlite3.connect(db_path)) as connection:
+        connection.execute("pragma foreign_keys = on")
+        projects_root_dir = repo.repo_root() / "projects"
+        for project_dir in projects_root_dir.glob("*"):
+            if not project_dir.is_dir():
+                continue
+            _insert_project_documents(connection, project_dir)
+            _insert_project_labels(connection, project_dir)
+            _insert_project_annotations(connection, project_dir)
 
 
 def _insert_project_documents(
@@ -46,6 +41,18 @@ def _insert_project_documents(
     print(f"Inserting documents from {docs_dir}")
     for docs_file in docs_dir.glob("*.jsonl"):
         _insert_documents(connection, docs_file)
+
+
+def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, Any]:
+    field_types = {"publication_year": int, "journal": str, "title": str}
+    metadata = dict.fromkeys(field_types)
+    field_pos = doc_info["metadata"].get("field_positions")
+    if field_pos is None:
+        return metadata
+    for field in metadata:
+        start, end = field_pos[field]
+        metadata[field] = field_types[field](doc_info["text"][start:end])
+    return metadata
 
 
 def _insert_documents(
@@ -65,9 +72,15 @@ def _insert_documents(
                         doc_row[key] = int(doc_info["metadata"][key])
                     except (KeyError, ValueError):
                         doc_row[key] = None
+                doc_row.update(_extract_metadata_from_text(doc_info))
                 connection.execute(
-                    "insert or ignore into document(utf8_text_md5_checksum, "
-                    "text, pmcid, pmid) values (:md5, :text, :pmcid, :pmid)",
+                    """
+                    insert or ignore into document
+                        (utf8_text_md5_checksum, text, pmcid, pmid,
+                        publication_year, journal, title)
+                    values (:md5, :text, :pmcid, :pmid,
+                           :publication_year, :journal, :title)
+                    """,
                     doc_row,
                 )
 
@@ -151,10 +164,14 @@ def _insert_annotations(
                 )
     with connection:
         connection.executemany(
-            "insert or ignore into annotation (doc_id, label_id, annotator_id, "
-            "start_char, end_char, extra_data, project) "
-            "values (:doc_id, :label_id, "
-            ":annotator_id, :start_char, :end_char, :extra_data, :project)",
+            """
+            insert or ignore into annotation
+                (doc_id, label_id, annotator_id, start_char,
+                end_char, extra_data, project)
+            values
+                (:doc_id, :label_id, :annotator_id,
+                :start_char, :end_char, :extra_data, :project)
+            """,
             all_annotations,
         )
 
@@ -164,7 +181,7 @@ def make_database(
 ) -> pathlib.Path:
     """Create a database containing all data in this repository."""
     if database_path is None:
-        database_path = _repo_root() / "database.sqlite3"
+        database_path = repo.data_dir() / "database.sqlite3"
     if database_path.is_file() and not overwrite:
         return database_path
     fd, tmp_db_path = tempfile.mkstemp(
@@ -181,8 +198,13 @@ def make_database(
             os.unlink(tmp_db_path)
         except Exception:
             pass
+    print(f"Database created in {database_path}")
     return database_path
 
 
-if __name__ == "__main__":
-    make_database()
+def get_database_connection(
+    database_path: Optional[pathlib.Path] = None,
+) -> sqlite3.Connection:
+    connection = sqlite3.connect(make_database(database_path, overwrite=False))
+    connection.row_factory = sqlite3.Row
+    return connection
