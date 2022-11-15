@@ -42,7 +42,14 @@ create view detailed_annotation as
     annotator.name as annotator_name,
     start_char, end_char, extra_data, project,
     substr(
-      document.text, start_char + 1, end_char - start_char) as selected_text
+      document.text, start_char + 1, end_char - start_char) as selected_text,
+    max(0, start_char - 40) as context_start_char,
+    min(length(document.text), end_char + 40) as context_end_char,
+    substr(
+      document.text,
+      max(0, start_char - 40) + 1,
+      min(length(document.text), end_char + 40) - max(0, start_char - 40)
+    ) as context
     from annotation
          inner join label on annotation.label_id = label.id
          inner join document on annotation.doc_id = document.id
