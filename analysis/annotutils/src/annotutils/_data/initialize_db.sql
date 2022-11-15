@@ -41,7 +41,7 @@ create view detailed_annotation as
     label.name as label_name,
     annotator.name as annotator_name,
     start_char, end_char, extra_data, project,
-    substring(
+    substr(
       document.text, start_char + 1, end_char - start_char) as selected_text
     from annotation
          inner join label on annotation.label_id = label.id
