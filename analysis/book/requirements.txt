@@ -1,0 +1,6 @@
+jupyter-book
+jupytext
+matplotlib
+pandas
+seaborn
+../annotutils/
