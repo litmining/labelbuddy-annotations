@@ -34,7 +34,7 @@
 # `analysis/annotutils/`, to create the annotations database if necessary and
 # obtain a connection from Python scripts.
 #
-# Install it with `pip install -e analysis/annotatutils`
+# Install it with `pip install -e analysis/annotutils`
 
 # +
 from annotutils import database
