@@ -20,6 +20,7 @@ create table annotator(
 );
 
 create table annotation(
+  id integer primary key,
   doc_id not null references document(id) on delete cascade,
   label_id not null references label(id) on delete cascade,
   annotator_id not null references annotator(id) on delete cascade,
@@ -33,3 +34,18 @@ create table db_info(
   key text unique not null,
   value
 );
+
+create view detailed_annotation as
+  select
+    pmcid, pmid, publication_year, journal, title,
+    label.name as label_name,
+    annotator.name as annotator_name,
+    start_char, end_char, extra_data, project,
+    substring(
+      document.text, start_char + 1, end_char - start_char) as selected_text
+    from annotation
+         inner join label on annotation.label_id = label.id
+         inner join document on annotation.doc_id = document.id
+         inner join annotator on annotation.annotator_id = annotator.id
+   order by document.id, start_char, end_char,
+            label_name, annotator_name, annotation.id;
