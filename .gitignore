@@ -3,6 +3,7 @@
 */figures/
 .DS_Store
 analysis/book/_build
+analysis/data/*
 
 
 # labelbuddy database files
