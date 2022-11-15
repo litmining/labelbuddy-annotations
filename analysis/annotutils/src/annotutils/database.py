@@ -44,20 +44,24 @@ def _insert_project_documents(
 
 
 def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, Any]:
-    field_types = {"publication_year": int, "journal": str, "title": str}
-    metadata = dict.fromkeys(field_types)
-    field_pos = doc_info["metadata"].get("field_positions")
-    if field_pos is None:
-        return metadata
-    for field in metadata:
-        start, end = field_pos[field]
-        metadata[field] = field_types[field](doc_info["text"][start:end])
+    metadata = {}
+    for field, (start, end) in (
+        doc_info["metadata"].get("field_positions", {}).items()
+    ):
+        metadata[field] = doc_info["text"][start:end]
     return metadata
 
 
 def _insert_documents(
     connection: sqlite3.Connection, docs_file: pathlib.Path
 ) -> None:
+    all_field_types = {
+        "pmid": int,
+        "pmcid": int,
+        "journal": str,
+        "publication_year": int,
+        "title": str,
+    }
     with connection:
         with open(docs_file, "r", encoding="utf-8") as docs_fh:
             for doc_line in docs_fh:
@@ -67,12 +71,16 @@ def _insert_documents(
                     doc_info["text"].encode("utf-8")
                 ).digest()
                 doc_row["text"] = doc_info["text"]
-                for key in ("pmid", "pmcid"):
+                text_metadata = _extract_metadata_from_text(doc_info)
+                for field, field_type in all_field_types.items():
                     try:
-                        doc_row[key] = int(doc_info["metadata"][key])
-                    except (KeyError, ValueError):
-                        doc_row[key] = None
-                doc_row.update(_extract_metadata_from_text(doc_info))
+                        doc_row[field] = field_type(
+                            doc_info["metadata"].get(
+                                field, text_metadata.get(field, None)
+                            )
+                        )
+                    except (KeyError, ValueError, TypeError):
+                        doc_row[field] = None
                 connection.execute(
                     """
                     insert or ignore into document
