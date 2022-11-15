@@ -43,7 +43,7 @@ def _insert_project_documents(
         _insert_documents(connection, docs_file)
 
 
-def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, Any]:
+def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, str]:
     metadata = {}
     for field, (start, end) in (
         doc_info["metadata"].get("field_positions", {}).items()
@@ -55,7 +55,7 @@ def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, Any]:
 def _insert_documents(
     connection: sqlite3.Connection, docs_file: pathlib.Path
 ) -> None:
-    all_field_types = {
+    metadata_field_types = {
         "pmid": int,
         "pmcid": int,
         "journal": str,
@@ -72,7 +72,7 @@ def _insert_documents(
                 ).digest()
                 doc_row["text"] = doc_info["text"]
                 text_metadata = _extract_metadata_from_text(doc_info)
-                for field, field_type in all_field_types.items():
+                for field, field_type in metadata_field_types.items():
                     try:
                         doc_row[field] = field_type(
                             doc_info["metadata"].get(
