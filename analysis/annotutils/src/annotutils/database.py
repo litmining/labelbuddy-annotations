@@ -111,8 +111,8 @@ def _insert_labels(
     with connection:
         for label_info in labels:
             connection.execute(
-                "insert or ignore into label (name) values (?)",
-                (label_info["name"],),
+                "insert or ignore into label (name, color) values (?, ?)",
+                (label_info["name"], label_info.get("color")),
             )
 
 

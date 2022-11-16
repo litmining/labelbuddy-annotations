@@ -11,7 +11,8 @@ create table document(
 
 create table label(
   id integer primary key,
-  name text unique not null
+  name text unique not null,
+  color text
 );
 
 create table annotator(
@@ -39,10 +40,12 @@ create view detailed_annotation as
   select
     pmcid, pmid, publication_year, journal, title,
     label.name as label_name,
+    label.color as label_color,
     annotator.name as annotator_name,
     start_char, end_char, extra_data, project,
     substr(
       document.text, start_char + 1, end_char - start_char) as selected_text,
+    end_char - start_char as selected_text_length,
     max(0, start_char - 40) as context_start_char,
     min(length(document.text), end_char + 40) as context_end_char,
     substr(
