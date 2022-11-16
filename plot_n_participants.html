@@ -177,7 +177,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/plot_n_participants.py"
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/plot_n_participants.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -233,7 +233,24 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/plot_n_participants.py"
+        <a href="_sources/plot_n_participants.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/plot_n_participants.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -244,7 +261,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.py</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -364,7 +381,7 @@ title="Print to PDF"
   <p>The first part is just defining a function for converting text to numbers,
 for example “twenty-one” → 21. You can skip over it as it is not very
 relevant to the rest of this notebook.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 
@@ -492,8 +509,8 @@ relevant to the rest of this notebook.</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SELECT * FROM  detailed_annotation</span>
-<span class="sd">        WHERE label_name in (&quot;N included&quot;, &quot;n_participants&quot;, &quot;n_participants_total&quot;, &quot;N_Total&quot;);</span>
-
+<span class="sd">    WHERE label_name IN</span>
+<span class="sd">      (&quot;N included&quot;, &quot;n_participants&quot;, &quot;n_participants_total&quot;, &quot;N_Total&quot;);</span>
 <span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
     <span class="n">connection</span><span class="p">,</span>
 <span class="p">)</span>
