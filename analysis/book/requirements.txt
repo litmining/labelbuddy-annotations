@@ -1,3 +1,4 @@
+lark
 jupyter-book
 jupytext
 matplotlib
