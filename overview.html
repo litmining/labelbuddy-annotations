@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Neuroimaging literature annotations &#8212; Neuroimaging literature annotations</title>
+    <title>Biomedical literature annotations &#8212; Neuroimaging literature annotations</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview of annotations in the repository" href="annotations_summary.html" />
+    <link rel="next" title="Plot the number of participants" href="plot_n_participants.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,16 +103,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Neuroimaging literature annotations
+                    Biomedical literature annotations
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="annotations_summary.html">
-   Overview of annotations in the repository
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="plot_n_participants.html">
    Plot the number of participants
@@ -169,6 +164,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/overview.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -203,6 +227,23 @@ title="Source repository"
   </button>
   <div class="menu-dropdown__content">
     <ul>
+      <li>
+        <a href="_sources/overview.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
       <li>
         <a href="_sources/overview.md"
    class="headerbtn"
@@ -241,23 +282,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projects">
+   Projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documents">
+   Documents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels">
+   Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotations">
+   Annotations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-labelled-documents-by-project">
+   Number of labelled documents by project
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Neuroimaging literature annotations</h1>
+                <h1>Biomedical literature annotations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projects">
+   Projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documents">
+   Documents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels">
+   Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotations">
+   Annotations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-labelled-documents-by-project">
+   Number of labelled documents by project
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -265,16 +383,288 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="neuroimaging-literature-annotations">
-<h1>Neuroimaging literature annotations<a class="headerlink" href="#neuroimaging-literature-annotations" title="Permalink to this headline">#</a></h1>
-<p>This repository contains annotations made with <a class="reference external" href="https://jeromedockes.github.io/labelbuddy">labelbuddy</a>.
-The documents were collected with <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="biomedical-literature-annotations">
+<h1>Biomedical literature annotations<a class="headerlink" href="#biomedical-literature-annotations" title="Permalink to this headline">#</a></h1>
+<p>This <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/">repository</a> stores manual annotations (a.k.a tagging, labelling) of biomedical scientific publications.
+Examples of information that has been annotated in some documents are the number of study participants, their mean age, or the imaging modality.
+Such annotations have diverse uses such as studying the evolution of a scientific field’s methods, evaluating automatic information extraction systems, or informing meta-analyses.</p>
+<p>The documents found here are journal articles from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/">PubMedCentral</a>, collected using <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a>.
+The annotations are made with <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, and data is stored in <strong>labelbuddy</strong>’s (JSON) format.</p>
+<p>This page provides a brief overview of the repository’s content, and the rest of the documentation illustrates how to use and contribute to the repository:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="annotations_summary.html">Overview of annotations in the repository</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_n_participants.html">Plot the number of participants</a></li>
 </ul>
 </div>
+<section id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">#</a></h2>
+<p>The repository’s contents are organized into <strong>projects</strong>, found in the <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects"><code class="docutils literal notranslate"><span class="pre">projects/</span></code></a> directory.
+Here are the currently existing projects:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>projects
+├── autism_mri
+│   ├── annotations
+│   ├── documents
+│   └── labels
+├── cluster_inference
+│   ├── annotations
+│   ├── documents
+│   └── labels
+└── participant_demographics
+    ├── annotations
+    ├── documents
+    └── labels
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, each project contains 3 directories: <code class="docutils literal notranslate"><span class="pre">labels/</span></code>, <code class="docutils literal notranslate"><span class="pre">documents/</span></code> and <code class="docutils literal notranslate"><span class="pre">annotations/</span></code>, corresponding to the 3 types of objects stored in this repository.</p>
+</section>
+<section id="documents">
+<h2>Documents<a class="headerlink" href="#documents" title="Permalink to this headline">#</a></h2>
+<p>Documents represent scientific journal articles; they contain the article’s text and some metadata.
+They are generated by invoking <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a> with the <code class="docutils literal notranslate"><span class="pre">--labelbuddy</span></code> option.
+They are stored in <strong>labelbuddy</strong>’s <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#docs-jsonl-format">JSONLines format</a>.</p>
+<p>Here is an example document (the text is abbreviated for clarity):</p>
+<div class="cell tag_remove-input tag_output_scroll docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;text&quot;: &quot;Göttlich, Martin and Beyer, Frederike and Krämer, Ulrike M.\nFront Syst [ … ]&quot;,
+  &quot;metadata&quot;: {
+    &quot;pmcid&quot;: 4565057,
+    &quot;text_md5&quot;: &quot;aeacc3bc705b025b4f7aecea35058ca0&quot;,
+    &quot;field_positions&quot;: {
+      &quot;authors&quot;: [
+        0,
+        59
+      ],
+      &quot;journal&quot;: [
+        60,
+        79
+      ],
+      &quot;publication_year&quot;: [
+        81,
+        85
+      ],
+      &quot;title&quot;: [
+        96,
+        153
+      ],
+      &quot;keywords&quot;: [
+        167,
+        276
+      ],
+      &quot;abstract&quot;: [
+        289,
+        1183
+      ],
+      &quot;body&quot;: [
+        1192,
+        33477
+      ]
+    },
+    &quot;part&quot;: 1,
+    &quot;chapter&quot;: 1,
+    &quot;page&quot;: 1,
+    &quot;pmid&quot;: 26441558,
+    &quot;doi&quot;: &quot;10.3389/fnsys.2015.00126&quot;
+  },
+  &quot;display_title&quot;: &quot;pmcid: &lt;a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4565057&gt;4565057&lt;/a&gt; — Part 1 Chapter 1 Page 1&quot;,
+  &quot;list_title&quot;: &quot;1.1.1  BASCO: a toolbox for task-related functional connectivity&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are currently <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3254</span></code></span> documents in the repository, <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">311</span></code></span> of which are annotated (more details below).</p>
+</section>
+<section id="labels">
+<h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">#</a></h2>
+<p>Labels are simple tags that can be attached to a portion of a document’s text.
+They can optionally have a <code class="docutils literal notranslate"><span class="pre">color</span></code> and a <code class="docutils literal notranslate"><span class="pre">shortcut_key</span></code>, used in <strong>labelbuddy</strong> when we are annotating a document.
+They are stored in <strong>labelbuddy</strong>’s <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format">JSON format</a>.
+Here is an example:</p>
+<div class="cell tag_remove-input tag_output_scroll docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+  {
+    &quot;name&quot;: &quot;N participants&quot;,
+    &quot;shortcut_key&quot;: &quot;n&quot;,
+    &quot;color&quot;: &quot;#aec7e8&quot;
+  },
+  {
+    &quot;name&quot;: &quot;N included&quot;,
+    &quot;shortcut_key&quot;: &quot;i&quot;,
+    &quot;color&quot;: &quot;#ffbb78&quot;
+  }
+]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">#</a></h2>
+<p>Finally, an annotation is the association of a label to a portion of a document’s text.
+It thus consists of a label name and the character positions where it starts and ends.</p>
+<p>Here are a few example annotations:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        discard_this_document
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …<span style="font-weight: bold; background-color: LightGray;"
+           >A</span>lfahel, Leenor and Argueti-Ostrovsky, Sh…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ffbb78;">
+        Diagnosis
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …al neuropsychiatric disorders including <span style="font-weight: bold; background-color: #ffbb78;"
+           >schizophrenia</span> (Sz) and autism spectrum disorders (ASD…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ffbb78;">
+        Diagnosis
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …orders including schizophrenia (Sz) and <span style="font-weight: bold; background-color: #ffbb78;"
+           >autism spectrum disorders</span> (ASD). Here, we investigated potential …
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #dbdb8d;">
+        N_Patients
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …ibutions to FER deficits in Sz (  n   = <span style="font-weight: bold; background-color: #dbdb8d;"
+           >28</span>, 8/20 female/male; age 21–54 years) and…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ff9896;">
+        N_Patients_Female
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …ions to FER deficits in Sz (  n   = 28, <span style="font-weight: bold; background-color: #ff9896;"
+           >8</span>/20 female/male; age 21–54 years) and ad…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #98df8a;">
+        N_Patients_Male
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …ns to FER deficits in Sz (  n   = 28, 8/<span style="font-weight: bold; background-color: #98df8a;"
+           >20</span> female/male; age 21–54 years) and adult…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #dbdb8d;">
+        N_Patients
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …age 21–54 years) and adult ASD (  n   = <span style="font-weight: bold; background-color: #dbdb8d;"
+           >20,</span> 4/16 female/male; age 19–43 years) part…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ff9896;">
+        N_Patients_Female
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …21–54 years) and adult ASD (  n   = 20, <span style="font-weight: bold; background-color: #ff9896;"
+           >4</span>/16 female/male; age 19–43 years) partic…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #98df8a;">
+        N_Patients_Male
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …–54 years) and adult ASD (  n   = 20, 4/<span style="font-weight: bold; background-color: #98df8a;"
+           >16</span> female/male; age 19–43 years) participa…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #c49c94;">
+        Age_Min
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        … ASD (  n   = 20, 4/16 female/male; age <span style="font-weight: bold; background-color: #c49c94;"
+           >19</span>–43 years) participants compared to neur…
+        </p>
+        </div>
+        </div></div></div>
+</div>
+<p>In total there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">1808</span></code></span> annotations in the repository.</p>
+</section>
+<section id="number-of-labelled-documents-by-project">
+<h2>Number of labelled documents by project<a class="headerlink" href="#number-of-labelled-documents-by-project" title="Permalink to this headline">#</a></h2>
+<p>Now, we display the number of documents annotated with each label in the different projects:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/overview_12_0.png" src="_images/overview_12_0.png" />
+<img alt="_images/overview_12_1.png" src="_images/overview_12_1.png" />
+<img alt="_images/overview_12_2.png" src="_images/overview_12_2.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -304,10 +694,10 @@ The documents were collected with <a class="reference external" href="https://ne
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="annotations_summary.html" title="next page">
+    <a class='right-next' id="next-link" href="plot_n_participants.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview of annotations in the repository</p>
+        <p class="prev-next-title">Plot the number of participants</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

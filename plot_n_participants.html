@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Overview of annotations in the repository" href="annotations_summary.html" />
+    <link rel="prev" title="Biomedical literature annotations" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,16 +103,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="overview.html">
-                    Neuroimaging literature annotations
+                    Biomedical literature annotations
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="annotations_summary.html">
-   Overview of annotations in the repository
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Plot the number of participants
@@ -552,9 +547,12 @@ relevant to the rest of this notebook.</p>
       <th>project</th>
       <th>selected_text</th>
       <th>selected_text_length</th>
+      <th>context</th>
       <th>context_start_char</th>
       <th>context_end_char</th>
-      <th>context</th>
+      <th>doc_id</th>
+      <th>label_id</th>
+      <th>annotator_id</th>
     </tr>
   </thead>
   <tbody>
@@ -574,9 +572,12 @@ relevant to the rest of this notebook.</p>
       <td>cluster_inference</td>
       <td>eleven</td>
       <td>6</td>
+      <td>thoughts permeate the human mind. Here, eleven...</td>
       <td>226</td>
       <td>312</td>
-      <td>thoughts permeate the human mind. Here, eleven...</td>
+      <td>1</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
@@ -594,9 +595,12 @@ relevant to the rest of this notebook.</p>
       <td>cluster_inference</td>
       <td>11</td>
       <td>2</td>
+      <td>xperiments were conducted. We recruited 11 hea...</td>
       <td>4661</td>
       <td>4743</td>
-      <td>xperiments were conducted. We recruited 11 hea...</td>
+      <td>1</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
@@ -614,9 +618,12 @@ relevant to the rest of this notebook.</p>
       <td>cluster_inference</td>
       <td>14</td>
       <td>2</td>
+      <td>t of itch.      Methods     Subjects    14 hea...</td>
       <td>19541</td>
       <td>19623</td>
-      <td>t of itch.      Methods     Subjects    14 hea...</td>
+      <td>5</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>3</th>
@@ -634,9 +641,12 @@ relevant to the rest of this notebook.</p>
       <td>cluster_inference</td>
       <td>Twenty one</td>
       <td>10</td>
+      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
       <td>6482</td>
       <td>6572</td>
-      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
+      <td>6</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
@@ -654,9 +664,12 @@ relevant to the rest of this notebook.</p>
       <td>cluster_inference</td>
       <td>Twenty-four</td>
       <td>11</td>
+      <td>pecific to active and passive stepping. Twenty...</td>
       <td>769</td>
       <td>860</td>
-      <td>pecific to active and passive stepping. Twenty...</td>
+      <td>8</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -716,13 +729,16 @@ relevant to the rest of this notebook.</p>
       <th>annotator_name</th>
       <th>start_char</th>
       <th>end_char</th>
-      <th>extra_data</th>
+      <th>...</th>
       <th>project</th>
       <th>selected_text</th>
       <th>selected_text_length</th>
+      <th>context</th>
       <th>context_start_char</th>
       <th>context_end_char</th>
-      <th>context</th>
+      <th>doc_id</th>
+      <th>label_id</th>
+      <th>annotator_id</th>
       <th>n_ptp_int</th>
     </tr>
   </thead>
@@ -739,13 +755,16 @@ relevant to the rest of this notebook.</p>
       <td>Kendra_Oudyk</td>
       <td>266</td>
       <td>272</td>
-      <td>None</td>
+      <td>...</td>
       <td>cluster_inference</td>
       <td>eleven</td>
       <td>6</td>
+      <td>thoughts permeate the human mind. Here, eleven...</td>
       <td>226</td>
       <td>312</td>
-      <td>thoughts permeate the human mind. Here, eleven...</td>
+      <td>1</td>
+      <td>14</td>
+      <td>2</td>
       <td>11</td>
     </tr>
     <tr>
@@ -760,13 +779,16 @@ relevant to the rest of this notebook.</p>
       <td>Kendra_Oudyk</td>
       <td>4701</td>
       <td>4703</td>
-      <td>None</td>
+      <td>...</td>
       <td>cluster_inference</td>
       <td>11</td>
       <td>2</td>
+      <td>xperiments were conducted. We recruited 11 hea...</td>
       <td>4661</td>
       <td>4743</td>
-      <td>xperiments were conducted. We recruited 11 hea...</td>
+      <td>1</td>
+      <td>14</td>
+      <td>2</td>
       <td>11</td>
     </tr>
     <tr>
@@ -781,13 +803,16 @@ relevant to the rest of this notebook.</p>
       <td>Kendra_Oudyk</td>
       <td>19581</td>
       <td>19583</td>
-      <td>None</td>
+      <td>...</td>
       <td>cluster_inference</td>
       <td>14</td>
       <td>2</td>
+      <td>t of itch.      Methods     Subjects    14 hea...</td>
       <td>19541</td>
       <td>19623</td>
-      <td>t of itch.      Methods     Subjects    14 hea...</td>
+      <td>5</td>
+      <td>14</td>
+      <td>2</td>
       <td>14</td>
     </tr>
     <tr>
@@ -802,13 +827,16 @@ relevant to the rest of this notebook.</p>
       <td>Kendra_Oudyk</td>
       <td>6522</td>
       <td>6532</td>
-      <td>None</td>
+      <td>...</td>
       <td>cluster_inference</td>
       <td>Twenty one</td>
       <td>10</td>
+      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
       <td>6482</td>
       <td>6572</td>
-      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
+      <td>6</td>
+      <td>14</td>
+      <td>2</td>
       <td>21</td>
     </tr>
     <tr>
@@ -823,17 +851,21 @@ relevant to the rest of this notebook.</p>
       <td>Kendra_Oudyk</td>
       <td>809</td>
       <td>820</td>
-      <td>None</td>
+      <td>...</td>
       <td>cluster_inference</td>
       <td>Twenty-four</td>
       <td>11</td>
+      <td>pecific to active and passive stepping. Twenty...</td>
       <td>769</td>
       <td>860</td>
-      <td>pecific to active and passive stepping. Twenty...</td>
+      <td>8</td>
+      <td>14</td>
+      <td>2</td>
       <td>24</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -916,11 +948,11 @@ relevant to the rest of this notebook.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="annotations_summary.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Overview of annotations in the repository</p>
+            <p class="prev-next-title">Biomedical literature annotations</p>
         </div>
     </a>
 </div>
