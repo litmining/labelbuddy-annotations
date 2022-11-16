@@ -47,6 +47,18 @@ n_annotations = connection.execute(
 print(f"There are {n_annotations} annotations in the database.")
 # -
 
+# Here are a few example annotations:
+
+# +
+from annotutils import displays
+
+displays.AnnotationsDisplay(
+    connection.execute(
+        "SELECT * FROM detailed_annotation WHERE project = 'autism_mri' LIMIT 7"
+    ).fetchall()
+)
+# -
+
 # ## Count label occurrences in each project
 
 # This illustrates collecting the results of a query in a pandas DataFrame for
