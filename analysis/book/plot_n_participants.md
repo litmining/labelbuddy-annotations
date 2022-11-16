@@ -1,22 +1,22 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.14.1
-#   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
-# ---
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.1
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-# The first part is just defining a function for converting text to numbers,
-# for example "twenty-one" → 21. You can skip over it as it is not very
-# relevant to the rest of this notebook.
+The first part is just defining a function for converting text to numbers,
+for example "twenty-one" → 21. You can skip over it as it is not very
+relevant to the rest of this notebook.
 
-# +
+```{code-cell}
+:tags: [hide-input]
 import re
 
 import lark
@@ -113,14 +113,16 @@ class TextToNumber:
 
 
 text_to_number = TextToNumber()
-# -
+```
 
-# # Plot the number of participants
+# Plot the number of participants
 
-# ## Load the data
-# By using pandas to run sql code to query the sqlite database
++++
 
-# +
+## Load the data
+By using pandas to run sql code to query the sqlite database
+
+```{code-cell}
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -140,19 +142,19 @@ select_labels = [
 df = pd.read_sql(
     """
     SELECT * FROM  detailed_annotation
-        WHERE label_name in ("N included", "n_participants", "n_participants_total", "N_Total");
-
+    WHERE label_name IN
+      ("N included", "n_participants", "n_participants_total", "N_Total");
     """,
     connection,
 )
 
 df.head()
-# -
+```
 
-# ## Convert the annotated text to integers
-# this is not the best way, I think.
+## Convert the annotated text to integers
+this is not the best way, I think.
 
-# +
+```{code-cell}
 
 
 for i, row in df.iterrows():
@@ -164,21 +166,29 @@ for i, row in df.iterrows():
 
 df.dropna(subset=["n_ptp_int"], inplace=True)
 df["n_ptp_int"] = df["n_ptp_int"].astype(int)
-# -
+```
 
+```{code-cell}
 df.head()
+```
 
-# ## Frequency of differt sample sizes
+## Frequency of differt sample sizes
 
+```{code-cell}
 fig, ax = plt.subplots(figsize=(10, 5))
 df["n_ptp_int"].hist(bins=100)
 ax.set_ylabel("Number of papers")
 ax.set_xlabel("Number of participants")
+```
 
-# ## Sample sizes over time
+## Sample sizes over time
 
+```{code-cell}
 fig, ax = plt.subplots()
 df.plot.scatter(x="publication_year", y="n_ptp_int", ax=ax, alpha=0.3)
+```
 
+```{code-cell}
 fig, ax = plt.subplots()
 sns.lineplot(data=df, x="publication_year", y="n_ptp_int", ax=ax)
+```
