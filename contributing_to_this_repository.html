@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Plot the number of participants" href="plot_n_participants.html" />
+    <link rel="next" title="Plot the number of participants" href="plot_n_participants.html" />
+    <link rel="prev" title="Biomedical literature annotations" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,14 +109,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="plot_n_participants.html">
-   Plot the number of participants
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Contributing to this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_n_participants.html">
+   Plot the number of participants
   </a>
  </li>
 </ul>
@@ -491,8 +492,8 @@ We recommend using the same name as in your git configuration, ie the output of:
 <p>We first need to install <strong>labelbuddy</strong>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9d12a349-93b9-4b34-be93-479ee4a0727b" name="54f0edaf-620a-4359-9d9f-17c17cb5618c" type="radio">
-</input><label class="sd-tab-label" for="9d12a349-93b9-4b34-be93-479ee4a0727b">
+<input checked="checked" id="ea329ccf-eee7-4339-8c19-5bd1abd2c3ad" name="76cea54d-1391-48cc-bf40-68b7f80fb79d" type="radio">
+</input><label class="sd-tab-label" for="ea329ccf-eee7-4339-8c19-5bd1abd2c3ad">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 scripts/start_project.py projects/autism_mri
@@ -507,8 +508,8 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<input id="d67df930-4eb6-4ec2-a865-2e4e2e5953a1" name="54f0edaf-620a-4359-9d9f-17c17cb5618c" type="radio">
-</input><label class="sd-tab-label" for="d67df930-4eb6-4ec2-a865-2e4e2e5953a1">
+<input id="01c4ee22-e1c3-4150-91d9-d64e0c7a0a6d" name="76cea54d-1391-48cc-bf40-68b7f80fb79d" type="radio">
+</input><label class="sd-tab-label" for="01c4ee22-e1c3-4150-91d9-d64e0c7a0a6d">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -534,8 +535,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9c072b61-c0de-4231-9bf9-5ab34dd50524" name="aaff7e97-35d9-4854-b57f-df7f5fe1e6ee" type="radio">
-</input><label class="sd-tab-label" for="9c072b61-c0de-4231-9bf9-5ab34dd50524">
+<input checked="checked" id="a9d860a0-a737-40e0-b2a4-3d5989522fb3" name="87cb282e-2c37-407e-b34d-2bc509a3f072" type="radio">
+</input><label class="sd-tab-label" for="a9d860a0-a737-40e0-b2a4-3d5989522fb3">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -550,8 +551,8 @@ make annotations
 </pre></div>
 </div>
 </div>
-<input id="e42d0d9a-4fbb-4565-9d94-e7146bd43d88" name="aaff7e97-35d9-4854-b57f-df7f5fe1e6ee" type="radio">
-</input><label class="sd-tab-label" for="e42d0d9a-4fbb-4565-9d94-e7146bd43d88">
+<input id="c153bf9c-6c34-40e4-8687-eeea6d89a228" name="87cb282e-2c37-407e-b34d-2bc509a3f072" type="radio">
+</input><label class="sd-tab-label" for="c153bf9c-6c34-40e4-8687-eeea6d89a228">
 Using the graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -647,16 +648,16 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Dataset</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7f80c8fe-68e2-49c2-bbe0-cf00cbe34be7" name="be743e90-167a-4adb-a4d0-52c2cff82f73" type="radio">
-</input><label class="sd-tab-label" for="7f80c8fe-68e2-49c2-bbe0-cf00cbe34be7">
+<input checked="checked" id="eb4b2684-dbc5-459c-9a0e-a327d9782fdc" name="130166a7-7d38-4d9a-a9cb-e551909af3c6" type="radio">
+</input><label class="sd-tab-label" for="eb4b2684-dbc5-459c-9a0e-a327d9782fdc">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
   --export-labels labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="3d4250c5-cc2e-4fbc-9fc3-d4dbf4d0dcf8" name="be743e90-167a-4adb-a4d0-52c2cff82f73" type="radio">
-</input><label class="sd-tab-label" for="3d4250c5-cc2e-4fbc-9fc3-d4dbf4d0dcf8">
+<input id="20e88d8f-a4d2-435d-b769-5a354b64f77b" name="130166a7-7d38-4d9a-a9cb-e551909af3c6" type="radio">
+</input><label class="sd-tab-label" for="20e88d8f-a4d2-435d-b769-5a354b64f77b">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>
@@ -710,12 +711,19 @@ You can then see it by pointing your browser to <code class="docutils literal no
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="plot_n_participants.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Plot the number of participants</p>
+            <p class="prev-next-title">Biomedical literature annotations</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="plot_n_participants.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plot the number of participants</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
