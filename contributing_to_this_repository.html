@@ -305,6 +305,43 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#adding-a-new-project">
    Adding a new project
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-documents">
+     Adding documents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
+       Reusing documents from another project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
+       Downloading new documents with
+       <strong>
+        pubget
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-the-labels">
+     Adding the labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upload-the-new-project">
+     Upload the new project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
+   Adding pages to this documentation
+  </a>
  </li>
 </ul>
 
@@ -367,6 +404,43 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#adding-a-new-project">
    Adding a new project
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-documents">
+     Adding documents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
+       Reusing documents from another project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
+       Downloading new documents with
+       <strong>
+        pubget
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-the-labels">
+     Adding the labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upload-the-new-project">
+     Upload the new project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
+   Adding pages to this documentation
+  </a>
  </li>
 </ul>
 
@@ -383,7 +457,7 @@ title="Print to PDF"
 <p>Here we describe how to contribute new annotations to a project in this repository, then how to add a new project.
 If you run into any difficulties don’t hesitate to ask for help by <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/issues">opening an issue</a>.</p>
 <section id="clone-the-repository">
-<h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">#</a></h2>
 <p>The first step is to obtain a local clone of the repository.
 <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/fork">Fork</a> the repository and clone your fork:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/yourgithubusername/labelbuddy-annotations.git
@@ -396,7 +470,7 @@ If you run into any difficulties don’t hesitate to ask for help by <a class="r
 </div>
 </section>
 <section id="adding-annotations-to-an-existing-project">
-<h2>Adding annotations to an existing project<a class="headerlink" href="#adding-annotations-to-an-existing-project" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Adding annotations to an existing project<a class="headerlink" href="#adding-annotations-to-an-existing-project" title="Permalink to this headline">#</a></h2>
 <p>Here we want to contribute to an existing annotation project, using the <code class="docutils literal notranslate"><span class="pre">autism_mri</span></code> project as an example.
 The repository contains the documents we will annotate and the labels we will use.
 Locally, we will</p>
@@ -413,12 +487,12 @@ We recommend using the same name as in your git configuration, ie the output of:
 </div>
 <p>This way the name of the annotations file you create and your name in the git log will match.</p>
 <section id="create-the-labelbuddy-file">
-<h3>Create the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file<a class="headerlink" href="#create-the-labelbuddy-file" title="Permalink to this headline">#</a></h3>
+<span id="id3"></span><h3>Create the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file<a class="headerlink" href="#create-the-labelbuddy-file" title="Permalink to this headline">#</a></h3>
 <p>We first need to install <strong>labelbuddy</strong>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="957d551b-35dc-4b5a-ba23-da0527baf0ea" name="fe21e169-c53f-449c-9da8-d6dba6127be4" type="radio">
-</input><label class="sd-tab-label" for="957d551b-35dc-4b5a-ba23-da0527baf0ea">
+<input checked="checked" id="9d12a349-93b9-4b34-be93-479ee4a0727b" name="54f0edaf-620a-4359-9d9f-17c17cb5618c" type="radio">
+</input><label class="sd-tab-label" for="9d12a349-93b9-4b34-be93-479ee4a0727b">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 scripts/start_project.py projects/autism_mri
@@ -433,8 +507,8 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<input id="d67776c4-d831-42ad-a7e6-e2eeb3d7de30" name="fe21e169-c53f-449c-9da8-d6dba6127be4" type="radio">
-</input><label class="sd-tab-label" for="d67776c4-d831-42ad-a7e6-e2eeb3d7de30">
+<input id="d67df930-4eb6-4ec2-a865-2e4e2e5953a1" name="54f0edaf-620a-4359-9d9f-17c17cb5618c" type="radio">
+</input><label class="sd-tab-label" for="d67df930-4eb6-4ec2-a865-2e4e2e5953a1">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -460,8 +534,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="0a2ccd56-190d-468f-a972-0d1d69466d9e" name="f6f2bc23-501c-4338-bdcf-cf74e69ca938" type="radio">
-</input><label class="sd-tab-label" for="0a2ccd56-190d-468f-a972-0d1d69466d9e">
+<input checked="checked" id="9c072b61-c0de-4231-9bf9-5ab34dd50524" name="aaff7e97-35d9-4854-b57f-df7f5fe1e6ee" type="radio">
+</input><label class="sd-tab-label" for="9c072b61-c0de-4231-9bf9-5ab34dd50524">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -476,8 +550,8 @@ make annotations
 </pre></div>
 </div>
 </div>
-<input id="f6e1b3eb-49c7-48e4-b832-aee589ca6749" name="f6f2bc23-501c-4338-bdcf-cf74e69ca938" type="radio">
-</input><label class="sd-tab-label" for="f6e1b3eb-49c7-48e4-b832-aee589ca6749">
+<input id="e42d0d9a-4fbb-4565-9d94-e7146bd43d88" name="aaff7e97-35d9-4854-b57f-df7f5fe1e6ee" type="radio">
+</input><label class="sd-tab-label" for="e42d0d9a-4fbb-4565-9d94-e7146bd43d88">
 Using the graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -503,6 +577,109 @@ git commit -m <span class="s2">&quot;Add annotations from Firstname&quot;</span>
 </section>
 <section id="adding-a-new-project">
 <h2>Adding a new project<a class="headerlink" href="#adding-a-new-project" title="Permalink to this headline">#</a></h2>
+<p>Rather than contributing to an existing project you can also start a new one.
+If you haven’t yet, <a class="reference internal" href="#clone-the-repository"><span class="std std-ref">Clone the repository</span></a>, then create a new directory for your project in <code class="docutils literal notranslate"><span class="pre">projects/</span></code>.</p>
+<p>Suppose we want to start a project in which we will annotate imaging modalities.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> projects/
+mkdir imaging_modalities
+<span class="nb">cd</span> imaging_modalities
+mkdir documents labels annotations
+</pre></div>
+</div>
+<p>Please also add a <code class="docutils literal notranslate"><span class="pre">README</span></code> file describing your project.</p>
+<section id="adding-documents">
+<h3>Adding documents<a class="headerlink" href="#adding-documents" title="Permalink to this headline">#</a></h3>
+<section id="reusing-documents-from-another-project">
+<h4>Reusing documents from another project<a class="headerlink" href="#reusing-documents-from-another-project" title="Permalink to this headline">#</a></h4>
+<p>Whenever it makes sense, different projects should annotate the same documents.
+Indeed, this makes it possible to combine the annotations from different projects and obtain rich annotations for the shared documents.
+For example, if our <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code> project uses the same documents as the <code class="docutils literal notranslate"><span class="pre">participant_demographics</span></code> project, by combining them we obtain documents richly annotated with these two types of information.</p>
+<p>To reuse the documents from another project, simply add a symbolic link:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> documents
+ln -s ../../participant_demographics/documents/documents_00001.jsonl
+<span class="nb">cd</span> ..
+</pre></div>
+</div>
+</section>
+<section id="downloading-new-documents-with-pubget">
+<h4>Downloading new documents with <strong>pubget</strong><a class="headerlink" href="#downloading-new-documents-with-pubget" title="Permalink to this headline">#</a></h4>
+<p>If none of the existing document sets suit your project, you can create a new one using <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a>.
+<strong>pubget</strong> lets you download articles from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/">PubMedCentral</a> and store them in the format used by this repository.
+The articles to download can be selected from a list of PMCIDs, or from a search query for PMC.
+To construct a query, you can use the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/advanced">PMC advanced search</a>.
+Then use it for the <strong>pubget</strong> command, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pubget run                                                                 <span class="se">\</span>
+  ./pubget_data                                                            <span class="se">\</span>
+  -q <span class="s2">&quot;EEG[Abstract] AND MRI[Abstract] AND (2018[PubDate] : 2020[PubDate])&quot;</span> <span class="se">\</span>
+  --labelbuddy 
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">--labelbuddy</span></code> option that tells <strong>pubget</strong> to prepare the documents in <strong>labelbuddy</strong>’s JSONL format.
+See the <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a> documentation for details.</p>
+<p>Note here we storing the data in the current directory for simplicity, and <code class="docutils literal notranslate"><span class="pre">pubget_data</span></code> is listed in this repository’s <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> so it will not be tracked by <strong>Git</strong>.
+However we could store the data anywhere we want; outside of the repository is even better, otherwise we have to make sure we don’t add it to the repository by mistake.</p>
+<p>Once the download has finished, we recommend uploading the whole output to <a class="reference external" href="https://osf.io/d2qbh/">OSF</a> and adding the link to the annotation project’s <code class="docutils literal notranslate"><span class="pre">README</span></code>.
+For example, with the command above <strong>pubget</strong> creates a directory named <code class="docutils literal notranslate"><span class="pre">pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3</span></code>.
+We can compress it with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -r pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3.zip pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3
+</pre></div>
+</div>
+<p>Then upload the resulting <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file to OSF.</p>
+<p>Finally, we can get the documents.
+The directory created by <strong>pubget</strong> contains a subdirectory called <code class="docutils literal notranslate"><span class="pre">subset_allArticles_labelbuddyData</span></code>, containing <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> files.
+Those are the files we will be adding to the annotations repository, importing into <strong>labelbuddy</strong>, and annotating.
+By default <strong>pubget</strong> splits its output into files containing 500 articles each; we can copy only the first one to begin with.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbuddyData/documents_00001.jsonl documents/
+</pre></div>
+</div>
+</section>
+</section>
+<section id="adding-the-labels">
+<h3>Adding the labels<a class="headerlink" href="#adding-the-labels" title="Permalink to this headline">#</a></h3>
+<p>Next we need to create the labels.
+Here also, when it makes sense consider reusing some labels from other projects, possibly using GitHub issues to communicate with other contributors about harmonizing labels.
+Indeed, if all projects agree that for example the number of study participant is denoted <code class="docutils literal notranslate"><span class="pre">n_participants</span></code>, that makes it easier to aggregate and reuse annotations than if one project calls it <code class="docutils literal notranslate"><span class="pre">n_participants</span></code> and another uses <code class="docutils literal notranslate"><span class="pre">Participants</span> <span class="pre">count</span></code>.
+If we want to reuse exactly the same labels as another project we can create a symbolic link.
+To create a new labels file we can either manually edit a JSON file, or create the labels within <strong>labelbuddy</strong>.
+The latter is probably more convenient, especially if we decide on the labels as we start reading and annotating the first few documents.</p>
+<p>To create the labels in <strong>labelbuddy</strong>, create a <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> as explained <a class="reference internal" href="#create-the-labelbuddy-file"><span class="std std-ref">above</span></a>.
+Thus you will end up with a file like <code class="docutils literal notranslate"><span class="pre">annotations/Firstname_Lastname.labelbuddy</span></code> containing the documents.
+Open it, and add some labels in the <strong>Dataset</strong> tab.
+Then export the labels.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="7f80c8fe-68e2-49c2-bbe0-cf00cbe34be7" name="be743e90-167a-4adb-a4d0-52c2cff82f73" type="radio">
+</input><label class="sd-tab-label" for="7f80c8fe-68e2-49c2-bbe0-cf00cbe34be7">
+Using the command-line</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
+  --export-labels labels/imaging_modality_labels.json
+</pre></div>
+</div>
+</div>
+<input id="3d4250c5-cc2e-4fbc-9fc3-d4dbf4d0dcf8" name="be743e90-167a-4adb-a4d0-52c2cff82f73" type="radio">
+</input><label class="sd-tab-label" for="3d4250c5-cc2e-4fbc-9fc3-d4dbf4d0dcf8">
+Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
+<p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
+</div>
+</div>
+</section>
+<section id="upload-the-new-project">
+<h3>Upload the new project<a class="headerlink" href="#upload-the-new-project" title="Permalink to this headline">#</a></h3>
+<p>Once all of this is done you can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> your changes, open a Pull Request, and the new project will become visible in the upstream repository.
+You can start creating annotations as explained <a class="reference internal" href="#adding-annotations-to-an-existing-project"><span class="std std-ref">above</span></a>.</p>
+</section>
+</section>
+<section id="adding-pages-to-this-documentation">
+<h2>Adding pages to this documentation<a class="headerlink" href="#adding-pages-to-this-documentation" title="Permalink to this headline">#</a></h2>
+<p>Another way to contribute is to add pages to this documentation, to share analyses, describe a project in depth etc.</p>
+<p>The contents are in <code class="docutils literal notranslate"><span class="pre">analysis/book</span></code> below the root of the repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> analysis/book
+pip install -r requirements.txt
+</pre></div>
+</div>
+<p>The html version is built with <a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html">jupyter-book</a>, see its documentation for details.</p>
+<p>To add a new page you will need to create a <code class="docutils literal notranslate"><span class="pre">.py</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> file in the books directory, and add it to the list of chapters in <code class="docutils literal notranslate"><span class="pre">analysis/book/_toc.yml</span></code>.
+To build the book locally, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">book</span></code> from the root of the repository, or <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">-W</span> <span class="pre">analysis/book</span></code>.
+You can then see it by pointing your browser to <code class="docutils literal notranslate"><span class="pre">analysis/book/_build/html/index.html</span></code>.</p>
 </section>
 </section>
 
