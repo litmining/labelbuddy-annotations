@@ -24,6 +24,7 @@ jobs:
     - name: build the database
       run: |
         make database
+        make csv
 
     - name: Build the book
       run: |

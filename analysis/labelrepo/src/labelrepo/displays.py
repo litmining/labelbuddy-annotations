@@ -3,14 +3,20 @@ import collections.abc
 import sqlite3
 from typing import Any, Mapping, Sequence, Union
 
+import pandas as pd
+
 
 class AnnotationsDisplay:
     def __init__(
         self,
-        annotations: Union[Mapping[str, Any], Sequence[Mapping[str, Any]]],
+        annotations: Union[
+            Mapping[str, Any], Sequence[Mapping[str, Any]], pd.DataFrame
+        ],
     ) -> None:
         if isinstance(annotations, (collections.abc.Mapping, sqlite3.Row)):
             self.annotations = [annotations]
+        elif hasattr(annotations, "to_dict"):
+            self.annotations = annotations.to_dict(orient="records")
         else:
             self.annotations = annotations
 
@@ -22,7 +28,9 @@ class AnnotationsDisplay:
         suffix = annotation["context"][
             annotation["end_char"] - annotation["context_start_char"] :
         ]
-        color = annotation["label_color"] or "LightGray"
+        color = annotation["label_color"]
+        if not color or pd.isnull(color):
+            color = "LightGray"
         return f"""
         <div>
         <h5 style="margin-bottom: 0px;">
