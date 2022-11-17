@@ -1,5 +1,5 @@
 format: jb-book
 root: overview
 chapters:
-  - file: plot_n_participants
   - file: contributing_to_this_repository
+  - file: plot_n_participants
