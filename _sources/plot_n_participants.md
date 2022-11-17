@@ -127,7 +127,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from annotutils import database
+from labelrepo import database
 
 
 connection = database.get_database_connection()
