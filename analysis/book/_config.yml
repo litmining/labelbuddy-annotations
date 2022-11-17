@@ -4,11 +4,13 @@ author: "https://github.com/neurodatascience/labelbuddy-annotations/graphs/contr
 parse:
   myst_substitutions:
     labelbuddy_home: "[labelbuddy](https://jeromedockes.github.io/labelbuddy/)"
+    labelbuddy_doc: "[labelbuddy documentation](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/)"
     lb: "**labelbuddy**"
     pmc_home: "[PubMedCentral](https://www.ncbi.nlm.nih.gov/pmc/)"
     pubget_home: "[pubget](https://neuroquery.github.io/pubget/)"
     repo_blob_url: "https://github.com/neurodatascience/labelbuddy-annotations/blob/main/"
     repo_tree_url: "https://github.com/neurodatascience/labelbuddy-annotations/tree/main/"
+    repo_issues_url: "https://github.com/neurodatascience/labelbuddy-annotations/issues"
     repo_url: "https://github.com/neurodatascience/labelbuddy-annotations/"
 
 execute:
