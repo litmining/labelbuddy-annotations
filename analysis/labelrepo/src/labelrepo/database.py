@@ -7,7 +7,7 @@ import sqlite3
 import tempfile
 from typing import Optional, Mapping, Dict, Any
 
-from annotutils import repo, _utils
+from labelrepo import repo, _utils
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:

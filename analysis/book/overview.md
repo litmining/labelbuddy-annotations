@@ -32,7 +32,7 @@ Here are the currently existing projects:
 ```{code-cell}
 :tags: [remove-input]
 import subprocess
-from annotutils import repo
+from labelrepo import repo
 
 with repo.chdir(repo.repo_root()):
   subprocess.run(["tree", "-d", "--noreport", "projects"])
@@ -69,7 +69,7 @@ print(json.dumps(doc, indent=2, ensure_ascii=False))
 :tags: [remove-cell]
 import myst_nb
 
-from annotutils import database
+from labelrepo import database
 
 connection = database.get_database_connection()
 
@@ -114,7 +114,7 @@ Here are a few example annotations:
 
 ```{code-cell}
 :tags: [remove-input]
-from annotutils import displays
+from labelrepo import displays
 
 displays.AnnotationsDisplay(
     connection.execute(

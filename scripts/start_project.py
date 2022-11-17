@@ -8,7 +8,7 @@ import subprocess
 import sys
 from typing import Optional
 
-from annotutils import repo
+from labelrepo import repo
 
 
 def _is_project_dir(dir_path: pathlib.Path) -> bool:
