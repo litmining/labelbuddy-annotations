@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using this repository &#8212; Neuroimaging literature annotations</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing to this repository" href="contributing_to_this_repository.html" />
+    <link rel="prev" title="Biomedical literature annotations" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Neuroimaging literature annotations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="overview.html">
+                    Biomedical literature annotations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Using this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing_to_this_repository.html">
+   Contributing to this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_n_participants.html">
+   Plot the number of participants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/using_this_repository.py"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/neurodatascience/labelbuddy-annotations"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/using_this_repository.py"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.py</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-database">
+   Building the database
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-csv-rather-than-a-database">
+   Using a CSV rather than a database
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-json-and-jsonlines-files-directly">
+   Using the JSON and JSONLines files directly
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Using this repository</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-database">
+   Building the database
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-csv-rather-than-a-database">
+   Using a CSV rather than a database
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-json-and-jsonlines-files-directly">
+   Using the JSON and JSONLines files directly
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="using-this-repository">
+<h1>Using this repository<a class="headerlink" href="#using-this-repository" title="Permalink to this headline">#</a></h1>
+<p>The documents, labels and annotations are stored in JSON or JSONLines files in the <code class="docutils literal notranslate"><span class="pre">projects/</span></code> directory.</p>
+<section id="building-the-database">
+<h2>Building the database<a class="headerlink" href="#building-the-database" title="Permalink to this headline">#</a></h2>
+<p>We can easily create a SQLite database containing all the information these files contain:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make database
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 ./scripts/make_database.py
+</pre></div>
+</div>
+<p>We can then use this database to query the contents of the repository, either with the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> interactive command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3 analysis/data/database.sqlite3
+</pre></div>
+</div>
+<p>or using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> bidings that are available in many languages, including Python’s standard library module <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>.</p>
+<p>A small Python package containing a few utilities for working with this repository is also provided in <code class="docutils literal notranslate"><span class="pre">analysis/labelrepo</span></code>. You can install it with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e analysis/labelrepo
+</pre></div>
+</div>
+<p>The main tables are <code class="docutils literal notranslate"><span class="pre">annotation</span></code>, <code class="docutils literal notranslate"><span class="pre">document</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code>.
+<code class="docutils literal notranslate"><span class="pre">detailed_annotation</span></code> is a view gathering detailed information about each annotation, such as the <code class="docutils literal notranslate"><span class="pre">selected_text</span></code>, a snippet of surrounding text (<code class="docutils literal notranslate"><span class="pre">context</span></code>), the <code class="docutils literal notranslate"><span class="pre">label_name</span></code> and <code class="docutils literal notranslate"><span class="pre">annotator_name</span></code>, etc.
+For example, to display a few annotations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">database</span><span class="p">,</span> <span class="n">displays</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
+
+<span class="n">annotations</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM detailed_annotation limit 10&quot;</span><span class="p">)</span>
+<span class="n">displays</span><span class="o">.</span><span class="n">AnnotationsDisplay</span><span class="p">(</span><span class="n">annotations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants_total
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …thoughts permeate the human mind. Here, <span style="font-weight: bold; background-color: LightGray;"
+           >eleven</span> participants were asked to count down n…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants_total
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …xperiments were conducted. We recruited <span style="font-weight: bold; background-color: LightGray;"
+           >11</span> healthy right-handed and native speaker…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        smoothing_snippet
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …sis. Scans used in the GLM analysis were<span style="font-weight: bold; background-color: #aec7e8;"
+           > spatially smoothed using a Gaussian kernel of 8-mm full width at half maximum (FWHM)</span>. For the data used in the machine learn…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        smoothing_snippet
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …is. Scans used in the GLM analysis were <span style="font-weight: bold; background-color: #aec7e8;"
+           >spatially smoothed using a Gaussian kernel of 8-mm full width at half maximum (FWHM)</span>. For the data used in the machine learn…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ffbb78;">
+        cluster_thresh_used
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …eshold of   p   <.005 uncorrected and a <span style="font-weight: bold; background-color: #ffbb78;"
+           >cluster extent threshold</span> of   p<   .05 corrected for the whole b…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ffbb78;">
+        cluster_thresh_used
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …eshold of   p   <.005 uncorrected and a <span style="font-weight: bold; background-color: #ffbb78;"
+           >cluster extent threshold</span> of   p<   .05 corrected for the whole b…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #ffbb78;">
+        cluster_thresh_used
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        … .05 corrected for the whole brain. The <span style="font-weight: bold; background-color: #ffbb78;"
+           >cluster extent thresholds</span> were determined for each group-level an…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #c5b0d5;">
+        nonparametric_cluster_thresh
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …group-level analysis using the function <span style="font-weight: bold; background-color: #c5b0d5;"
+           >CorrClusTh.m</span> (v.1.12) written in Matlab by Thomas Ni…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #c5b0d5;">
+        nonparametric_cluster_thresh
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …group-level analysis using the function <span style="font-weight: bold; background-color: #c5b0d5;"
+           >CorrClusTh.m (v.1.12)</span> written in Matlab by Thomas Nichols, an…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #98df8a;">
+        cluster_thresh_in_voxels
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …homas Nichols, and were in the range of <span style="font-weight: bold; background-color: #98df8a;"
+           >78 to 98</span> voxels.      Machine Learning Based Sca…
+        </p>
+        </div>
+        </div></div></div>
+</div>
+<p>As another example, selecting all snippets of text that have been annotated with “Diagnosis”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">snippets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    SELECT selected_text, COUNT(*) as occurrences</span>
+<span class="sd">    FROM detailed_annotation</span>
+<span class="sd">    WHERE label_name = &quot;Diagnosis&quot;</span>
+<span class="sd">    GROUP BY selected_text</span>
+<span class="sd">    ORDER BY occurrences DESC</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">connection</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">snippets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>selected_text</th>
+      <th>occurrences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>schizophrenia</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>autism spectrum disorders</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="using-a-csv-rather-than-a-database">
+<h2>Using a CSV rather than a database<a class="headerlink" href="#using-a-csv-rather-than-a-database" title="Permalink to this headline">#</a></h2>
+<p>If you prefer working with CSVs and Pandas than SQL, you can also run (at the root of the repository)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make csv
+</pre></div>
+</div>
+<p>That will create a file <code class="docutils literal notranslate"><span class="pre">analysis/data/detailed_annotation.csv</span></code> containing that same table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">repo</span>
+
+<span class="n">csv_file</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">data_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;detailed_annotation.csv&quot;</span>
+<span class="n">annotations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">displays</span><span class="o">.</span><span class="n">AnnotationsDisplay</span><span class="p">(</span><span class="n">annotations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pmcid&#39; &#39;pmid&#39; &#39;publication_year&#39; &#39;journal&#39; &#39;title&#39; &#39;label_name&#39;
+ &#39;label_color&#39; &#39;annotator_name&#39; &#39;start_char&#39; &#39;end_char&#39; &#39;extra_data&#39;
+ &#39;project&#39; &#39;selected_text&#39; &#39;selected_text_length&#39; &#39;context&#39;
+ &#39;context_start_char&#39; &#39;context_end_char&#39; &#39;doc_id&#39; &#39;label_id&#39;
+ &#39;annotator_id&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants_total
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …thoughts permeate the human mind. Here, <span style="font-weight: bold; background-color: LightGray;"
+           >eleven</span> participants were asked to count down n…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants_total
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …xperiments were conducted. We recruited <span style="font-weight: bold; background-color: LightGray;"
+           >11</span> healthy right-handed and native speaker…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        smoothing_snippet
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …sis. Scans used in the GLM analysis were<span style="font-weight: bold; background-color: #aec7e8;"
+           > spatially smoothed using a Gaussian kernel of 8-mm full width at half maximum (FWHM)</span>. For the data used in the machine learn…
+        </p>
+        </div>
+        </div></div></div>
+</div>
+</section>
+<section id="using-the-json-and-jsonlines-files-directly">
+<h2>Using the JSON and JSONLines files directly<a class="headerlink" href="#using-the-json-and-jsonlines-files-directly" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> (JSONLines) files contain one JSON dictionary per line.
+They can be parsed like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">annotations_file</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">repo_root</span><span class="p">()</span>
+    <span class="o">/</span> <span class="s2">&quot;projects&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;participant_demographics&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;annotations&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;Jerome_Dockes.jsonl&quot;</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">annotations_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row_json</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">row_json</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="c1"># We don&#39;t want to print dozens of lines here</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annotations&#39;: [{&#39;end_char&#39;: 9450, &#39;extra_data&#39;: &#39;29&#39;, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 9439}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3390/brainsci10090603&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [334, 1735], &#39;authors&#39;: [0, 69], &#39;body&#39;: [1744, 27005], &#39;journal&#39;: [70, 79], &#39;keywords&#39;: [206, 321], &#39;publication_year&#39;: [81, 85], &#39;title&#39;: [96, 192]}, &#39;page&#39;: 2, &#39;part&#39;: 1, &#39;pmcid&#39;: 7563756, &#39;pmid&#39;: 32887487, &#39;text_md5&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}
+{&#39;annotations&#39;: [{&#39;end_char&#39;: 7967, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 7965}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.1016/j.nicl.2016.07.006&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [448, 2844], &#39;authors&#39;: [0, 159], &#39;body&#39;: [2853, 39646], &#39;journal&#39;: [160, 175], &#39;keywords&#39;: [322, 435], &#39;publication_year&#39;: [177, 181], &#39;title&#39;: [192, 308]}, &#39;page&#39;: 3, &#39;part&#39;: 1, &#39;pmcid&#39;: 5030332, &#39;pmid&#39;: 27672554, &#39;text_md5&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}
+{&#39;annotations&#39;: [{&#39;end_char&#39;: 1251, &#39;extra_data&#39;: &#39;79&#39;, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 1238}, {&#39;end_char&#39;: 1486, &#39;extra_data&#39;: &#39;61&#39;, &#39;label_name&#39;: &#39;N included&#39;, &#39;start_char&#39;: 1477}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3390/jcm8070947&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [638, 2250], &#39;authors&#39;: [0, 366], &#39;body&#39;: [2259, 37662], &#39;journal&#39;: [367, 377], &#39;keywords&#39;: [556, 625], &#39;publication_year&#39;: [379, 383], &#39;title&#39;: [394, 542]}, &#39;page&#39;: 4, &#39;part&#39;: 1, &#39;pmcid&#39;: 6678781, &#39;pmid&#39;: 31261903, &#39;text_md5&#39;: &#39;bfd271e0496c07e5675e92cb777729c0&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;bfd271e0496c07e5675e92cb777729c0&#39;}
+{&#39;annotations&#39;: [{&#39;end_char&#39;: 7132, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 7130}, {&#39;end_char&#39;: 11097, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 11095}, {&#39;end_char&#39;: 15596, &#39;extra_data&#39;: &#39;17&#39;, &#39;label_name&#39;: &#39;N participants&#39;, &#39;start_char&#39;: 15587}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.1038/s41598-018-23586-x&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [282, 1655], &#39;authors&#39;: [0, 173], &#39;body&#39;: [1664, 41615], &#39;journal&#39;: [174, 181], &#39;keywords&#39;: [269, 269], &#39;publication_year&#39;: [183, 187], &#39;title&#39;: [198, 255]}, &#39;page&#39;: 5, &#39;part&#39;: 1, &#39;pmcid&#39;: 5902547, &#39;pmid&#39;: 29662068, &#39;text_md5&#39;: &#39;96a7aa53f278904ccb7e002c0727a847&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;96a7aa53f278904ccb7e002c0727a847&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Loading labels from a JSON file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels_file</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">repo_root</span><span class="p">()</span>
+    <span class="o">/</span> <span class="s2">&quot;projects&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;autism_mri&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;labels&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;Article_Terms.json&quot;</span>
+<span class="p">)</span>
+<span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">labels_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;color&#39;: &#39;#aec7e8&#39;, &#39;name&#39;: &#39;FieldStrength&#39;, &#39;shortcut_key&#39;: &#39;f&#39;},
+ {&#39;color&#39;: &#39;#ffbb78&#39;, &#39;name&#39;: &#39;Diagnosis&#39;, &#39;shortcut_key&#39;: &#39;d&#39;},
+ {&#39;color&#39;: &#39;#98df8a&#39;, &#39;name&#39;: &#39;N_Total&#39;, &#39;shortcut_key&#39;: &#39;n&#39;},
+ {&#39;color&#39;: &#39;#ff9896&#39;, &#39;name&#39;: &#39;N_Total_Male&#39;},
+ {&#39;color&#39;: &#39;#c5b0d5&#39;, &#39;name&#39;: &#39;N_Total_Female&#39;},
+ {&#39;color&#39;: &#39;#dbdb8d&#39;, &#39;name&#39;: &#39;N_Patients&#39;},
+ {&#39;color&#39;: &#39;#9edae5&#39;, &#39;name&#39;: &#39;N_Controls&#39;},
+ {&#39;color&#39;: &#39;#aec7e8&#39;, &#39;name&#39;: &#39;N_Controls_Male&#39;},
+ {&#39;color&#39;: &#39;#ffbb78&#39;, &#39;name&#39;: &#39;N_Controls_Female&#39;},
+ {&#39;color&#39;: &#39;#98df8a&#39;, &#39;name&#39;: &#39;N_Patients_Male&#39;},
+ {&#39;color&#39;: &#39;#ff9896&#39;, &#39;name&#39;: &#39;N_Patients_Female&#39;},
+ {&#39;color&#39;: &#39;#c5b0d5&#39;, &#39;name&#39;: &#39;Age_Mean&#39;},
+ {&#39;color&#39;: &#39;#c49c94&#39;, &#39;name&#39;: &#39;Age_Min&#39;},
+ {&#39;color&#39;: &#39;#f7b6d2&#39;, &#39;name&#39;: &#39;Age_Max&#39;},
+ {&#39;color&#39;: &#39;#dbdb8d&#39;, &#39;name&#39;: &#39;Scanner&#39;},
+ {&#39;color&#39;: &#39;#9edae5&#39;, &#39;name&#39;: &#39;AnalysisTool&#39;},
+ {&#39;color&#39;: &#39;#aec7e8&#39;, &#39;name&#39;: &#39;MRI_Modality&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Biomedical literature annotations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="contributing_to_this_repository.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing to this repository</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
