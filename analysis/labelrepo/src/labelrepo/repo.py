@@ -3,7 +3,7 @@ import os
 import pathlib
 import subprocess
 
-from annotutils import _utils
+from labelrepo import _utils
 
 
 def is_repo_root(dir_path: pathlib.Path) -> bool:

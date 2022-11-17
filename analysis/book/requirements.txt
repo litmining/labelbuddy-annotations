@@ -4,4 +4,4 @@ jupytext
 matplotlib
 pandas
 seaborn
-../annotutils/
+../labelrepo/
