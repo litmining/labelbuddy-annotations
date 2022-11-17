@@ -8,6 +8,8 @@ parse:
     lb: "**labelbuddy**"
     pmc_home: "[PubMedCentral](https://www.ncbi.nlm.nih.gov/pmc/)"
     pubget_home: "[pubget](https://neuroquery.github.io/pubget/)"
+    git: "**Git**"
+    pg: "**pubget**"
     repo_blob_url: "https://github.com/neurodatascience/labelbuddy-annotations/blob/main/"
     repo_tree_url: "https://github.com/neurodatascience/labelbuddy-annotations/tree/main/"
     repo_issues_url: "https://github.com/neurodatascience/labelbuddy-annotations/issues"
