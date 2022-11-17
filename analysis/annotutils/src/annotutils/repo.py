@@ -6,7 +6,7 @@ import subprocess
 from annotutils import _utils
 
 
-def _is_repo_root(dir_path: pathlib.Path) -> bool:
+def is_repo_root(dir_path: pathlib.Path) -> bool:
     return (dir_path / ".labelbuddy-annotations-repository").is_file()
 
 
@@ -15,7 +15,7 @@ def repo_root() -> pathlib.Path:
     pwd = pathlib.Path(".")
     package_parent = _utils.package_root().parents[3]
     for candidate in (repo_env, pwd, package_parent):
-        if candidate is not None and _is_repo_root(pathlib.Path(candidate)):
+        if candidate is not None and is_repo_root(pathlib.Path(candidate)):
             return pathlib.Path(candidate)
     try:
         git_output = (
@@ -26,7 +26,7 @@ def repo_root() -> pathlib.Path:
             .decode("utf-8")
         )
         candidate = pathlib.Path(git_output)
-        if _is_repo_root(candidate):
+        if is_repo_root(candidate):
             return candidate
     except Exception:
         pass
