@@ -275,7 +275,13 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-the-labelbuddy-file">
-     Create the labelbuddy file
+     Create the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .labelbuddy
+      </span>
+     </code>
+     file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -331,7 +337,13 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-the-labelbuddy-file">
-     Create the labelbuddy file
+     Create the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .labelbuddy
+      </span>
+     </code>
+     file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -368,11 +380,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-this-repository">
 <h1>Contributing to this repository<a class="headerlink" href="#contributing-to-this-repository" title="Permalink to this headline">#</a></h1>
+<p>Here we describe how to contribute new annotations to a project in this repository, then how to add a new project.
+If you run into any difficulties don’t hesitate to ask for help by <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/issues">opening an issue</a>.</p>
 <section id="clone-the-repository">
 <h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/neurodatascience/labelbuddy-annotations.git
+<p>The first step is to obtain a local clone of the repository.
+<a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/fork">Fork</a> the repository and clone your fork:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/yourgithubusername/labelbuddy-annotations.git
 <span class="c1"># or using ssh (recommended):</span>
-<span class="c1"># git clone git@github.com:neurodatascience/labelbuddy-annotations.git</span>
+<span class="c1"># git clone git@github.com:yourgithubusername/labelbuddy-annotations.git</span>
 
 <span class="nb">cd</span> labelbuddy-annotations
 <span class="nb">export</span> <span class="nv">REPO_ROOT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
@@ -381,17 +397,35 @@ title="Print to PDF"
 </section>
 <section id="adding-annotations-to-an-existing-project">
 <h2>Adding annotations to an existing project<a class="headerlink" href="#adding-annotations-to-an-existing-project" title="Permalink to this headline">#</a></h2>
+<p>Here we want to contribute to an existing annotation project, using the <code class="docutils literal notranslate"><span class="pre">autism_mri</span></code> project as an example.
+The repository contains the documents we will annotate and the labels we will use.
+Locally, we will</p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file (a binary file which is ignored by <strong>Git</strong> and not added to the repository).</p></li>
+<li><p>Import the documents and labels in the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p></li>
+<li><p>Use <strong>labelbuddy</strong> to create some annotations.</p></li>
+<li><p>Export our annotations to a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file that will be added to the repository.</p></li>
+</ul>
+<p>In the following we suppose your name is “Firstname Lastname”; you should replace that with your actual name.
+We recommend using the same name as in your git configuration, ie the output of:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config User.Name
+</pre></div>
+</div>
+<p>This way the name of the annotations file you create and your name in the git log will match.</p>
 <section id="create-the-labelbuddy-file">
-<h3>Create the labelbuddy file<a class="headerlink" href="#create-the-labelbuddy-file" title="Permalink to this headline">#</a></h3>
+<h3>Create the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file<a class="headerlink" href="#create-the-labelbuddy-file" title="Permalink to this headline">#</a></h3>
+<p>We first need to install <strong>labelbuddy</strong>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
+Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="77503a6c-6516-4fa3-8a89-21186e3c6eb0" name="dd9d1c2d-46d2-4295-b34e-69b3a9788d6e" type="radio">
-</input><label class="sd-tab-label" for="77503a6c-6516-4fa3-8a89-21186e3c6eb0">
-Command-line</label><div class="sd-tab-content docutils">
+<input checked="checked" id="957d551b-35dc-4b5a-ba23-da0527baf0ea" name="fe21e169-c53f-449c-9da8-d6dba6127be4" type="radio">
+</input><label class="sd-tab-label" for="957d551b-35dc-4b5a-ba23-da0527baf0ea">
+Using the command-line</label><div class="sd-tab-content docutils">
+<p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 scripts/start_project.py projects/autism_mri
 <span class="nb">cd</span> projects/autism_mri
 </pre></div>
 </div>
-<p>or</p>
+<p><strong>Or</strong> we can do the same thing manually, using the <strong>labelbuddy</strong> command-line interface:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> projects/autism_mri
 labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
   --import-labels labels/Article_Terms.json          <span class="se">\</span>
@@ -399,13 +433,13 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<input id="12d5c51f-93b5-4d9a-b4b4-e9a72183a18d" name="dd9d1c2d-46d2-4295-b34e-69b3a9788d6e" type="radio">
-</input><label class="sd-tab-label" for="12d5c51f-93b5-4d9a-b4b4-e9a72183a18d">
-GUI</label><div class="sd-tab-content docutils">
-<p>Open labelbuddy, click <strong>File &gt; Open database</strong>.
-In the file dialog, navigate to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code> in the repository, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
+<input id="d67776c4-d831-42ad-a7e6-e2eeb3d7de30" name="fe21e169-c53f-449c-9da8-d6dba6127be4" type="radio">
+</input><label class="sd-tab-label" for="d67776c4-d831-42ad-a7e6-e2eeb3d7de30">
+Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
+<p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
+In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
 <p>Next, import the labels and documents.
-Go to the <strong>Import / Export tab</strong>.
+Go to the <strong>Import / Export</strong> tab.
 Click <strong>Import labels</strong>, select the <code class="docutils literal notranslate"><span class="pre">Article_Terms.json</span></code> file which is in <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/labels/</span></code>.
 Click <strong>Import docs &amp; annotations</strong>, select the <code class="docutils literal notranslate"><span class="pre">docs_00001.jsonl</span></code> file which is in <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/documents/</span></code>.</p>
 <p>You can now start creating annotations.</p>
@@ -414,21 +448,27 @@ Click <strong>Import docs &amp; annotations</strong>, select the <code class="do
 </section>
 <section id="create-some-annotations">
 <h3>Create some annotations<a class="headerlink" href="#create-some-annotations" title="Permalink to this headline">#</a></h3>
+<p>If you haven’t opened <strong>labelbuddy</strong> yet you can invoke it with this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy annotations/Firstname_Lastname.labelbuddy
 </pre></div>
 </div>
+<p>In the graphical interface, select the <strong>Annotate</strong> tab and start creating annotations.
+See the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/">labelbuddy documentation</a> for more information about <strong>labelbuddy</strong>.</p>
 </section>
 <section id="export-the-annotations">
 <h3>Export the annotations<a class="headerlink" href="#export-the-annotations" title="Permalink to this headline">#</a></h3>
+<p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
+The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="54d60e03-f2e6-4983-8ca6-25b3360d8ee2" name="d734862c-d8df-4af9-911e-afec2d7e553c" type="radio">
-</input><label class="sd-tab-label" for="54d60e03-f2e6-4983-8ca6-25b3360d8ee2">
-Command-line</label><div class="sd-tab-content docutils">
+<input checked="checked" id="0a2ccd56-190d-468f-a972-0d1d69466d9e" name="f6f2bc23-501c-4338-bdcf-cf74e69ca938" type="radio">
+</input><label class="sd-tab-label" for="0a2ccd56-190d-468f-a972-0d1d69466d9e">
+Using the command-line</label><div class="sd-tab-content docutils">
+<p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
 make annotations
 </pre></div>
 </div>
-<p>or</p>
+<p><strong>Or</strong> we can do the same thing manually:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
   --export-docs annotations/Firstname_Lastname.jsonl <span class="se">\</span>
   --no-text                                          <span class="se">\</span>
@@ -436,9 +476,9 @@ make annotations
 </pre></div>
 </div>
 </div>
-<input id="054ecca3-a27b-46fa-b547-d6520ec1628b" name="d734862c-d8df-4af9-911e-afec2d7e553c" type="radio">
-</input><label class="sd-tab-label" for="054ecca3-a27b-46fa-b547-d6520ec1628b">
-GUI</label><div class="sd-tab-content docutils">
+<input id="f6e1b3eb-49c7-48e4-b832-aee589ca6749" name="f6f2bc23-501c-4338-bdcf-cf74e69ca938" type="radio">
+</input><label class="sd-tab-label" for="f6e1b3eb-49c7-48e4-b832-aee589ca6749">
+Using the graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">X</span><span class="p">]</span> <span class="n">Export</span> <span class="n">only</span> <span class="n">annotated</span> <span class="n">documents</span>
@@ -447,15 +487,14 @@ Make sure that the checkboxes are in these states:</p>
 </pre></div>
 </div>
 <p>(You only need to check this once, <strong>labelbuddy</strong> will remember your choices next time.)
-Click <strong>Export docs &amp; annotations</strong>, and select in <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code> a file name <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.jsonl</span></code>.</p>
+Click <strong>Export docs &amp; annotations</strong>, and select in <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code> a file named <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.jsonl</span></code>.</p>
 </div>
 </div>
 </section>
 <section id="push-the-new-annotations">
 <h3>Push the new annotations<a class="headerlink" href="#push-the-new-annotations" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
-</pre></div>
-</div>
+<p>The last step is to get our work included in the upstream repository.
+We commit and push the changes, then open a Pull Request.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add projects/autism_mri/annotations/Firstname_Lastname.jsonl
 git commit -m <span class="s2">&quot;Add annotations from Firstname&quot;</span>
 </pre></div>
