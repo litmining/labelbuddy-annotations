@@ -116,13 +116,12 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy \
 
 Go to the **Import / Export** tab.
 Make sure that the checkboxes are in these states:
-```
-[X] Export only annotated documents
-[ ] Include document text
-[X] Include annotations
-```
+- 🗹 Export only annotated documents
+- ☐ Include document text
+- 🗹 Include annotations
 
 (You only need to check this once, {{ lb }} will remember your choices next time.)
+
 Click **Export docs & annotations**, and select in `projects/autism_mri/annotations/` a file named `Firstname_Lastname.jsonl`.
 ````
 `````
