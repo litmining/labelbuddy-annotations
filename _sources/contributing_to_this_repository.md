@@ -112,7 +112,7 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy \
 ```
 ````
 
-````{tab-item} Using the graphical interface 
+````{tab-item} Using {{ lb }}'s graphical interface 
 
 Go to the **Import / Export** tab.
 Make sure that the checkboxes are in these states:
