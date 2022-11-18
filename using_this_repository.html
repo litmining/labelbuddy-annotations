@@ -120,8 +120,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plot_n_participants.html">
-   Plot the number of participants
+  <a class="reference internal" href="number_of_participants.html">
+   Number of participants (sample size)
   </a>
  </li>
 </ul>
@@ -539,12 +539,12 @@ For example, to display a few annotations:</p>
         </div>
         </div></div></div>
 </div>
-<p>As another example, selecting all snippets of text that have been annotated with “Diagnosis”:</p>
+<p>As another example (this time collecting results in a Pandas DataFrame), selecting all snippets of text that have been annotated with “Diagnosis”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">snippets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SELECT selected_text, COUNT(*) as occurrences</span>
 <span class="sd">    FROM detailed_annotation</span>
@@ -554,8 +554,6 @@ For example, to display a few annotations:</p>
 <span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
     <span class="n">connection</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="n">snippets</span>
 </pre></div>
 </div>
 </div>
@@ -607,26 +605,15 @@ For example, to display a few annotations:</p>
 <p>That will create a file <code class="docutils literal notranslate"><span class="pre">analysis/data/detailed_annotation.csv</span></code> containing that same table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">repo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">repo</span>
 
 <span class="n">csv_file</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">data_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;detailed_annotation.csv&quot;</span>
 <span class="n">annotations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-
 <span class="n">displays</span><span class="o">.</span><span class="n">AnnotationsDisplay</span><span class="p">(</span><span class="n">annotations</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pmcid&#39; &#39;pmid&#39; &#39;publication_year&#39; &#39;journal&#39; &#39;title&#39; &#39;label_name&#39;
- &#39;label_color&#39; &#39;annotator_name&#39; &#39;start_char&#39; &#39;end_char&#39; &#39;extra_data&#39;
- &#39;project&#39; &#39;selected_text&#39; &#39;selected_text_length&#39; &#39;context&#39;
- &#39;context_start_char&#39; &#39;context_end_char&#39; &#39;doc_id&#39; &#39;label_id&#39;
- &#39;annotator_id&#39;]
-</pre></div>
-</div>
 <div class="output text_html"><div>
         <div>
         <h5 style="margin-bottom: 0px;">
@@ -669,6 +656,103 @@ For example, to display a few annotations:</p>
         </p>
         </div>
         </div></div></div>
+</div>
+<p>Here is all the information in that table for the first annotation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">annotations</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;level_0&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_d1532">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_d1532_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_d1532_row0_col2" class="data row0 col2" >4019522</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_d1532_row1_col2" class="data row1 col2" >24824899</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_d1532_row2_col2" class="data row2 col2" >2014</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_d1532_row3_col2" class="data row3 col2" >PloS one</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_d1532_row4_col2" class="data row4 col2" >Classification of self-driven mental tasks from whole-brain activity patterns.</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_d1532_row5_col2" class="data row5 col2" >n_participants_total</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row6_col1" class="data row6 col1" >annotator_name</td>
+      <td id="T_d1532_row6_col2" class="data row6 col2" >Kendra_Oudyk</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row7_col1" class="data row7 col1" >start_char</td>
+      <td id="T_d1532_row7_col2" class="data row7 col2" >266</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row8_col1" class="data row8 col1" >end_char</td>
+      <td id="T_d1532_row8_col2" class="data row8 col2" >272</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row9_col1" class="data row9 col1" >project</td>
+      <td id="T_d1532_row9_col2" class="data row9 col2" >cluster_inference</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row10_col1" class="data row10 col1" >selected_text</td>
+      <td id="T_d1532_row10_col2" class="data row10 col2" >eleven</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row11_col1" class="data row11 col1" >selected_text_length</td>
+      <td id="T_d1532_row11_col2" class="data row11 col2" >6</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row12_col1" class="data row12 col1" >context</td>
+      <td id="T_d1532_row12_col2" class="data row12 col2" >thoughts permeate the human mind. Here, eleven participants were asked to count down n</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row13_col1" class="data row13 col1" >context_start_char</td>
+      <td id="T_d1532_row13_col2" class="data row13 col2" >226</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row14_col1" class="data row14 col1" >context_end_char</td>
+      <td id="T_d1532_row14_col2" class="data row14 col2" >312</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row15_col1" class="data row15 col1" >doc_id</td>
+      <td id="T_d1532_row15_col2" class="data row15 col2" >1</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row16_col1" class="data row16 col1" >label_id</td>
+      <td id="T_d1532_row16_col2" class="data row16 col2" >14</td>
+    </tr>
+    <tr>
+      <td id="T_d1532_row17_col1" class="data row17 col1" >annotator_id</td>
+      <td id="T_d1532_row17_col2" class="data row17 col2" >2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="using-the-json-and-jsonlines-files-directly">

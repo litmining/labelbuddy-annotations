@@ -4,7 +4,7 @@ Here we describe how to contribute new annotations to a project in this reposito
 If you run into any difficulties don't hesitate to ask for help by {{ "[opening an issue]({})".format(repo_issues_url) }}.
 
 (clone_the_repository)=
-## Clone the repository
+## Cloning the repository
 
 The first step is to obtain a local clone of the repository.
 [Fork](https://github.com/neurodatascience/labelbuddy-annotations/fork) the repository and clone your fork:
@@ -39,7 +39,7 @@ git config User.Name
 This way the name of the annotations file you create and your name in the git log will match.
 
 (create_the_labelbuddy_file)=
-### Create the `.labelbuddy` file
+### Creating the `.labelbuddy` file
 
 We first need to install {{ lb }}, see the [installation instructions](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/).
 Next we create our `.labelbuddy` file.
@@ -77,7 +77,7 @@ You can now start creating annotations.
 ````
 `````
 
-### Create some annotations
+### Creating some annotations
 
 If you haven't opened {{ lb }} yet you can invoke it with this command:
 
@@ -88,7 +88,7 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy
 In the graphical interface, select the **Annotate** tab and start creating annotations.
 See the {{ labelbuddy_doc }} for more information about {{ lb }}.
 
-### Export the annotations
+### Exporting the annotations
 
 Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the `.labelbuddy` binary file into a `.jsonl` file.
@@ -128,7 +128,7 @@ Click **Export docs & annotations**, and select in `projects/autism_mri/annotati
 `````
 
 
-### Push the new annotations
+### Publishing the new annotations
 
 The last step is to get our work included in the upstream repository.
 We commit and push the changes, then open a Pull Request.
@@ -239,7 +239,7 @@ In the **Import / Export** tab, click **Export labels**, and select a file in th
 ````
 `````
 
-### Upload the new project
+### Publishing the new project
 
 Once all of this is done you can `git add` and `git push` your changes, open a Pull Request, and the new project will become visible in the upstream repository.
 You can start creating annotations as explained {ref}`above<adding_annotations_to_an_existing_project>`.

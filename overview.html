@@ -119,8 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plot_n_participants.html">
-   Plot the number of participants
+  <a class="reference internal" href="number_of_participants.html">
+   Number of participants (sample size)
   </a>
  </li>
 </ul>
@@ -405,44 +405,70 @@ The annotations are made with <a class="reference external" href="https://jerome
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="using_this_repository.html">Using this repository</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing_to_this_repository.html">Contributing to this repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plot_n_participants.html">Plot the number of participants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="number_of_participants.html">Number of participants (sample size)</a></li>
 </ul>
 </div>
 <section id="projects">
 <h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">#</a></h2>
-<p>The repository’s contents are organized into <strong>projects</strong>, found in the <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects"><code class="docutils literal notranslate"><span class="pre">projects/</span></code></a> directory.
+<p>The repository’s contents are organized into <em>projects</em>, found in the <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects"><code class="docutils literal notranslate"><span class="pre">projects/</span></code></a> directory.
 Here are the currently existing projects:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>projects
-├── autism_mri
-│   ├── annotations
-│   ├── documents
-│   └── labels
-├── cluster_inference
-│   ├── annotations
-│   ├── documents
-│   └── labels
-└── participant_demographics
-    ├── annotations
-    ├── documents
-    └── labels
-</pre></div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_41ef6">
+  <thead>
+    <tr>
+      <th id="T_41ef6_level0_col0" class="col_heading level0 col0" >project</th>
+      <th id="T_41ef6_level0_col1" class="col_heading level0 col1" >documents</th>
+      <th id="T_41ef6_level0_col2" class="col_heading level0 col2" >labels</th>
+      <th id="T_41ef6_level0_col3" class="col_heading level0 col3" >annotators</th>
+      <th id="T_41ef6_level0_col4" class="col_heading level0 col4" >annotations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_41ef6_row0_col0" class="data row0 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference">cluster_inference</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_41ef6_row0_col1" class="data row0 col1" >193</td>
+      <td id="T_41ef6_row0_col2" class="data row0 col2" >20</td>
+      <td id="T_41ef6_row0_col3" class="data row0 col3" >2</td>
+      <td id="T_41ef6_row0_col4" class="data row0 col4" >1610</td>
+    </tr>
+    <tr>
+      <td id="T_41ef6_row1_col0" class="data row1 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics">participant_demographics</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_41ef6_row1_col1" class="data row1 col1" >114</td>
+      <td id="T_41ef6_row1_col2" class="data row1 col2" >2</td>
+      <td id="T_41ef6_row1_col3" class="data row1 col3" >1</td>
+      <td id="T_41ef6_row1_col4" class="data row1 col4" >161</td>
+    </tr>
+    <tr>
+      <td id="T_41ef6_row2_col0" class="data row2 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri">autism_mri</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_41ef6_row2_col1" class="data row2 col1" >4</td>
+      <td id="T_41ef6_row2_col2" class="data row2 col2" >15</td>
+      <td id="T_41ef6_row2_col3" class="data row2 col3" >2</td>
+      <td id="T_41ef6_row2_col4" class="data row2 col4" >37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
-</div>
-</div>
-<p>As we can see, each project contains 3 directories: <code class="docutils literal notranslate"><span class="pre">labels/</span></code>, <code class="docutils literal notranslate"><span class="pre">documents/</span></code> and <code class="docutils literal notranslate"><span class="pre">annotations/</span></code>, corresponding to the 3 types of objects stored in this repository.</p>
+<p>Each project contains 3 directories: <code class="docutils literal notranslate"><span class="pre">labels/</span></code>, <code class="docutils literal notranslate"><span class="pre">documents/</span></code> and <code class="docutils literal notranslate"><span class="pre">annotations/</span></code>, corresponding to the 3 types of objects stored in this repository.</p>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Permalink to this headline">#</a></h2>
 <p>Documents represent scientific journal articles; they contain the article’s text and some metadata.
 They are generated by invoking <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a> with the <code class="docutils literal notranslate"><span class="pre">--labelbuddy</span></code> option.
 They are stored in <strong>labelbuddy</strong>’s <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#docs-jsonl-format">JSONLines format</a>.</p>
+<p>Each document is represented by a JSON dictionary; the keys of interest are:</p>
+<ul class="simple">
+<li><p><strong>text:</strong> the article’s content as plain text as extracted by <strong>pubget</strong>.</p></li>
+<li><p><strong>metadata:</strong> basic metadata, including the PubMed ID (<strong>pmid</strong>), PubMedCentral ID (<strong>pmcid</strong>), and <strong>doi</strong> when available.</p></li>
+</ul>
 <p>Here is an example document (the text is abbreviated for clarity):</p>
-<div class="cell tag_remove-input tag_output_scroll docutils container">
+<div class="cell tag_remove-input tag_hide-output docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-  &quot;text&quot;: &quot;Göttlich, Martin and Beyer, Frederike and Krämer, Ulrike M.\nFront Syst [ … ]&quot;,
+  &quot;text&quot;: &quot;Göttlich, Martin and Beyer, Frederike and Krämer, Ulrike M.\nFront Syst Neurosci, [ … ]&quot;,
   &quot;metadata&quot;: {
     &quot;pmcid&quot;: 4565057,
     &quot;text_md5&quot;: &quot;aeacc3bc705b025b4f7aecea35058ca0&quot;,
@@ -495,9 +521,9 @@ They are stored in <strong>labelbuddy</strong>’s <a class="reference external"
 <h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">#</a></h2>
 <p>Labels are simple tags that can be attached to a portion of a document’s text.
 They can optionally have a <code class="docutils literal notranslate"><span class="pre">color</span></code> and a <code class="docutils literal notranslate"><span class="pre">shortcut_key</span></code>, used in <strong>labelbuddy</strong> when we are annotating a document.
-They are stored in <strong>labelbuddy</strong>’s <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format">JSON format</a>.
-Here is an example:</p>
-<div class="cell tag_remove-input tag_output_scroll docutils container">
+They are stored in <strong>labelbuddy</strong>’s <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format">JSON format</a>.</p>
+<p>Here is an example from the <code class="docutils literal notranslate"><span class="pre">participants_demographics</span></code> project:</p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
   {
@@ -515,6 +541,7 @@ Here is an example:</p>
 </div>
 </div>
 </div>
+<p>There are currently <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">48</span></code></span> labels in the repository.</p>
 </section>
 <section id="annotations">
 <h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">#</a></h2>
@@ -664,6 +691,118 @@ It thus consists of a label name and the character positions where it starts and
         </div>
         </div></div></div>
 </div>
+<p>Annotations are stored in <strong>labelbuddy</strong>’s JSONL format, here is an example for one document:</p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annotations&#39;: [{&#39;end_byte&#39;: 895,
+   &#39;end_char&#39;: 893,
+   &#39;label_name&#39;: &#39;Diagnosis&#39;,
+   &#39;start_byte&#39;: 882,
+   &#39;start_char&#39;: 880},
+  {&#39;end_byte&#39;: 930,
+   &#39;end_char&#39;: 928,
+   &#39;label_name&#39;: &#39;Diagnosis&#39;,
+   &#39;start_byte&#39;: 905,
+   &#39;start_char&#39;: 903},
+  {&#39;end_byte&#39;: 1032,
+   &#39;end_char&#39;: 1030,
+   &#39;label_name&#39;: &#39;N_Patients&#39;,
+   &#39;start_byte&#39;: 1030,
+   &#39;start_char&#39;: 1028},
+  {&#39;end_byte&#39;: 1035,
+   &#39;end_char&#39;: 1033,
+   &#39;label_name&#39;: &#39;N_Patients_Female&#39;,
+   &#39;start_byte&#39;: 1034,
+   &#39;start_char&#39;: 1032},
+  {&#39;end_byte&#39;: 1038,
+   &#39;end_char&#39;: 1036,
+   &#39;label_name&#39;: &#39;N_Patients_Male&#39;,
+   &#39;start_byte&#39;: 1036,
+   &#39;start_char&#39;: 1034},
+  {&#39;end_byte&#39;: 1097,
+   &#39;end_char&#39;: 1093,
+   &#39;label_name&#39;: &#39;N_Patients&#39;,
+   &#39;start_byte&#39;: 1094,
+   &#39;start_char&#39;: 1090},
+  {&#39;end_byte&#39;: 1099,
+   &#39;end_char&#39;: 1095,
+   &#39;label_name&#39;: &#39;N_Patients_Female&#39;,
+   &#39;start_byte&#39;: 1098,
+   &#39;start_char&#39;: 1094},
+  {&#39;end_byte&#39;: 1102,
+   &#39;end_char&#39;: 1098,
+   &#39;label_name&#39;: &#39;N_Patients_Male&#39;,
+   &#39;start_byte&#39;: 1100,
+   &#39;start_char&#39;: 1096},
+  {&#39;end_byte&#39;: 1184,
+   &#39;end_char&#39;: 1178,
+   &#39;label_name&#39;: &#39;N_Controls&#39;,
+   &#39;start_byte&#39;: 1182,
+   &#39;start_char&#39;: 1176},
+  {&#39;end_byte&#39;: 1187,
+   &#39;end_char&#39;: 1181,
+   &#39;label_name&#39;: &#39;N_Controls_Female&#39;,
+   &#39;start_byte&#39;: 1186,
+   &#39;start_char&#39;: 1180},
+  {&#39;end_byte&#39;: 1190,
+   &#39;end_char&#39;: 1184,
+   &#39;label_name&#39;: &#39;N_Controls_Male&#39;,
+   &#39;start_byte&#39;: 1188,
+   &#39;start_char&#39;: 1182},
+  {&#39;end_byte&#39;: 1122,
+   &#39;end_char&#39;: 1118,
+   &#39;label_name&#39;: &#39;Age_Min&#39;,
+   &#39;start_byte&#39;: 1120,
+   &#39;start_char&#39;: 1116},
+  {&#39;end_byte&#39;: 1215,
+   &#39;end_char&#39;: 1207,
+   &#39;label_name&#39;: &#39;Age_Max&#39;,
+   &#39;start_byte&#39;: 1213,
+   &#39;start_char&#39;: 1205},
+  {&#39;end_byte&#39;: 12845,
+   &#39;end_char&#39;: 12811,
+   &#39;label_name&#39;: &#39;FieldStrength&#39;,
+   &#39;start_byte&#39;: 12844,
+   &#39;start_char&#39;: 12810},
+  {&#39;end_byte&#39;: 12855,
+   &#39;end_char&#39;: 12821,
+   &#39;label_name&#39;: &#39;Scanner&#39;,
+   &#39;start_byte&#39;: 12836,
+   &#39;start_char&#39;: 12802},
+  {&#39;end_byte&#39;: 13399,
+   &#39;end_char&#39;: 13364,
+   &#39;label_name&#39;: &#39;AnalysisTool&#39;,
+   &#39;start_byte&#39;: 13389,
+   &#39;start_char&#39;: 13354},
+  {&#39;end_byte&#39;: 13710,
+   &#39;end_char&#39;: 13675,
+   &#39;label_name&#39;: &#39;AnalysisTool&#39;,
+   &#39;start_byte&#39;: 13706,
+   &#39;start_char&#39;: 13671},
+  {&#39;end_byte&#39;: 17945,
+   &#39;end_char&#39;: 17905,
+   &#39;label_name&#39;: &#39;AnalysisTool&#39;,
+   &#39;start_byte&#39;: 17941,
+   &#39;start_char&#39;: 17901}],
+ &#39;metadata&#39;: {&#39;chapter&#39;: 1,
+  &#39;doi&#39;: &#39;10.3389/fnbeh.2021.787383&#39;,
+  &#39;field_positions&#39;: {&#39;abstract&#39;: [460, 2266],
+   &#39;authors&#39;: [0, 225],
+   &#39;body&#39;: [2275, 45399],
+   &#39;journal&#39;: [226, 246],
+   &#39;keywords&#39;: [379, 447],
+   &#39;publication_year&#39;: [248, 252],
+   &#39;title&#39;: [263, 365]},
+  &#39;page&#39;: 3,
+  &#39;part&#39;: 1,
+  &#39;pmcid&#39;: 8883821,
+  &#39;pmid&#39;: 35237135,
+  &#39;text_md5&#39;: &#39;ff77a940471469970a2557933b01eb11&#39;},
+ &#39;utf8_text_md5_checksum&#39;: &#39;ff77a940471469970a2557933b01eb11&#39;}
+</pre></div>
+</div>
+</div>
+</div>
 <p>In total there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">1808</span></code></span> annotations in the repository.</p>
 </section>
 <section id="number-of-labelled-documents-by-project">
@@ -671,9 +810,9 @@ It thus consists of a label name and the character positions where it starts and
 <p>Now, we display the number of documents annotated with each label in the different projects:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/overview_12_0.png" src="_images/overview_12_0.png" />
-<img alt="_images/overview_12_1.png" src="_images/overview_12_1.png" />
-<img alt="_images/overview_12_2.png" src="_images/overview_12_2.png" />
+<img alt="_images/overview_15_0.png" src="_images/overview_15_0.png" />
+<img alt="_images/overview_15_1.png" src="_images/overview_15_1.png" />
+<img alt="_images/overview_15_2.png" src="_images/overview_15_2.png" />
 </div>
 </div>
 </section>

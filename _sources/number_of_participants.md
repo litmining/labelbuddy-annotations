@@ -11,8 +11,45 @@ kernelspec:
   name: python3
 ---
 
-The first part is just defining a function for converting text to numbers,
-for example "twenty-one" → 21. You can skip over it as it is not very
+# Number of participants (sample size)
+
+One of the first things we started annotating is the number of participants for each study.
+More annotations are needed, and we need to harmonize the way this is done across projects (in particular the label names), but these annotations can already give an approximation of the number of participants in typical MRI studies, and be used to validate systems that aim to extract that information automatically.
+
+## Loading the data
+
+
+```{code-cell}
+import pandas as pd
+
+from labelrepo import database
+
+connection = database.get_database_connection()
+
+annotations = pd.read_sql(
+    """
+    SELECT selected_text, extra_data, publication_year
+    FROM  detailed_annotation
+    WHERE label_name IN
+      ("N included", "n_participants", "n_participants_total", "N_Total")
+    """,
+    connection,
+)
+
+annotations.head()
+```
+
+## Converting the annotated text to integers
+
+In some cases, the text providing the number of participants has been highlighted but still needs to be converted to an actual number, as "Twenty-four" above.
+In some other cases, the annotator indicated the numerical value in the `extra_data` column:
+
+```{code-cell}
+annotations[annotations["extra_data"].notnull()].head()
+```
+
+The following is just defining a function for converting text to numbers,
+for example "Twenty-four" → 24. You can skip over it as it is not very
 relevant to the rest of this notebook.
 
 ```{code-cell}
@@ -115,80 +152,36 @@ class TextToNumber:
 text_to_number = TextToNumber()
 ```
 
-# Plot the number of participants
-
-+++
-
-## Load the data
-By using pandas to run sql code to query the sqlite database
 
 ```{code-cell}
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-from labelrepo import database
-
-
-connection = database.get_database_connection()
-
-select_labels = [
-    "N included",
-    "n_participants",
-    "n_participants_total",
-    "N_Total",
-]
-
-df = pd.read_sql(
-    """
-    SELECT * FROM  detailed_annotation
-    WHERE label_name IN
-      ("N included", "n_participants", "n_participants_total", "N_Total");
-    """,
-    connection,
-)
-
-df.head()
-```
-
-## Convert the annotated text to integers
-this is not the best way, I think.
-
-```{code-cell}
-
-
-for i, row in df.iterrows():
+def get_n_participants(row):
     try:
-        n_int = int(row["extra_data"])
+        return int(row["extra_data"])
     except (TypeError, ValueError):
-        n_int = text_to_number(row["selected_text"])
-    df.loc[i, "n_ptp_int"] = n_int
+        return text_to_number(row["selected_text"])
 
-df.dropna(subset=["n_ptp_int"], inplace=True)
-df["n_ptp_int"] = df["n_ptp_int"].astype(int)
+annotations["n_participants"] = annotations.apply(get_n_participants, axis=1)
+annotations.dropna(subset=["n_participants"], inplace=True)
+annotations["n_participants"] = annotations["n_participants"].astype(int)
+
+annotations.head()
 ```
 
-```{code-cell}
-df.head()
-```
-
-## Frequency of differt sample sizes
+## Distribution of sample sizes
 
 ```{code-cell}
+from matplotlib import pyplot as plt
+
 fig, ax = plt.subplots(figsize=(10, 5))
-df["n_ptp_int"].hist(bins=100)
-ax.set_ylabel("Number of papers")
-ax.set_xlabel("Number of participants")
+annotations["n_participants"].hist(bins=100, ax=ax)
+_ = ax.set_ylabel("Number of papers")
+_ = ax.set_xlabel("Number of participants")
 ```
 
 ## Sample sizes over time
 
 ```{code-cell}
 fig, ax = plt.subplots()
-df.plot.scatter(x="publication_year", y="n_ptp_int", ax=ax, alpha=0.3)
-```
-
-```{code-cell}
-fig, ax = plt.subplots()
-sns.lineplot(data=df, x="publication_year", y="n_ptp_int", ax=ax)
+annotations.plot.scatter(x="publication_year", y="n_participants", ax=ax, alpha=0.3)
+ax.set_yscale("log")
 ```

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Plot the number of participants &#8212; Biomedical literature annotations</title>
+    <title>Number of participants (sample size) &#8212; Biomedical literature annotations</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -120,7 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Plot the number of participants
+   Number of participants (sample size)
   </a>
  </li>
 </ul>
@@ -182,7 +182,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/plot_n_participants.md"
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/number_of_participants.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -238,7 +238,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/plot_n_participants.ipynb"
+        <a href="_sources/number_of_participants.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -255,7 +255,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="_sources/plot_n_participants.md"
+        <a href="_sources/number_of_participants.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -315,18 +315,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convert-the-annotated-text-to-integers">
-   Convert the annotated text to integers
+  <a class="reference internal nav-link" href="#converting-the-annotated-text-to-integers">
+   Converting the annotated text to integers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-of-differt-sample-sizes">
-   Frequency of differt sample sizes
+  <a class="reference internal nav-link" href="#distribution-of-sample-sizes">
+   Distribution of sample sizes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -343,7 +343,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Plot the number of participants</h1>
+                <h1>Number of participants (sample size)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -354,18 +354,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convert-the-annotated-text-to-integers">
-   Convert the annotated text to integers
+  <a class="reference internal nav-link" href="#converting-the-annotated-text-to-integers">
+   Converting the annotated text to integers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-of-differt-sample-sizes">
-   Frequency of differt sample sizes
+  <a class="reference internal nav-link" href="#distribution-of-sample-sizes">
+   Distribution of sample sizes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -383,8 +383,165 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>The first part is just defining a function for converting text to numbers,
-for example “twenty-one” → 21. You can skip over it as it is not very
+  <section class="tex2jax_ignore mathjax_ignore" id="number-of-participants-sample-size">
+<h1>Number of participants (sample size)<a class="headerlink" href="#number-of-participants-sample-size" title="Permalink to this headline">#</a></h1>
+<p>One of the first things we started annotating is the number of participants for each study.
+More annotations are needed, and we need to harmonize the way this is done across projects (in particular the label names), but these annotations can already give an approximation of the number of participants in typical MRI studies, and be used to validate systems that aim to extract that information automatically.</p>
+<section id="loading-the-data">
+<h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">database</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
+
+<span class="n">annotations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    SELECT selected_text, extra_data, publication_year</span>
+<span class="sd">    FROM  detailed_annotation</span>
+<span class="sd">    WHERE label_name IN</span>
+<span class="sd">      (&quot;N included&quot;, &quot;n_participants&quot;, &quot;n_participants_total&quot;, &quot;N_Total&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">connection</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">annotations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>selected_text</th>
+      <th>extra_data</th>
+      <th>publication_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>eleven</td>
+      <td>None</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11</td>
+      <td>None</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>None</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Twenty one</td>
+      <td>None</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twenty-four</td>
+      <td>None</td>
+      <td>2014</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="converting-the-annotated-text-to-integers">
+<h2>Converting the annotated text to integers<a class="headerlink" href="#converting-the-annotated-text-to-integers" title="Permalink to this headline">#</a></h2>
+<p>In some cases, the text providing the number of participants has been highlighted but still needs to be converted to an actual number, as “Twenty-four” above.
+In some other cases, the annotator indicated the numerical value in the <code class="docutils literal notranslate"><span class="pre">extra_data</span></code> column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span><span class="p">[</span><span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;extra_data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>selected_text</th>
+      <th>extra_data</th>
+      <th>publication_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>194</th>
+      <td>Sixty-one</td>
+      <td>61</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Forty-four patients with drug-naive, first-epi...</td>
+      <td>130</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>After a detailed evaluation of inclusion and e...</td>
+      <td>87</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>Consequently we analysed data for 220 adolesce...</td>
+      <td>248</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Two of them were removed</td>
+      <td>16</td>
+      <td>2018</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The following is just defining a function for converting text to numbers,
+for example “Twenty-four” → 24. You can skip over it as it is not very
 relevant to the rest of this notebook.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -488,225 +645,19 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-number-of-participants">
-<h1>Plot the number of participants<a class="headerlink" href="#plot-the-number-of-participants" title="Permalink to this headline">#</a></h1>
-<section id="load-the-data">
-<h2>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">#</a></h2>
-<p>By using pandas to run sql code to query the sqlite database</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">database</span>
-
-
-<span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
-
-<span class="n">select_labels</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;N included&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;n_participants&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;n_participants_total&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;N_Total&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    SELECT * FROM  detailed_annotation</span>
-<span class="sd">    WHERE label_name IN</span>
-<span class="sd">      (&quot;N included&quot;, &quot;n_participants&quot;, &quot;n_participants_total&quot;, &quot;N_Total&quot;);</span>
-<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
-    <span class="n">connection</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pmcid</th>
-      <th>pmid</th>
-      <th>publication_year</th>
-      <th>journal</th>
-      <th>title</th>
-      <th>label_name</th>
-      <th>label_color</th>
-      <th>annotator_name</th>
-      <th>start_char</th>
-      <th>end_char</th>
-      <th>extra_data</th>
-      <th>project</th>
-      <th>selected_text</th>
-      <th>selected_text_length</th>
-      <th>context</th>
-      <th>context_start_char</th>
-      <th>context_end_char</th>
-      <th>doc_id</th>
-      <th>label_id</th>
-      <th>annotator_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>4019522</td>
-      <td>24824899</td>
-      <td>2014</td>
-      <td>PloS one</td>
-      <td>Classification of self-driven mental tasks fro...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>266</td>
-      <td>272</td>
-      <td>None</td>
-      <td>cluster_inference</td>
-      <td>eleven</td>
-      <td>6</td>
-      <td>thoughts permeate the human mind. Here, eleven...</td>
-      <td>226</td>
-      <td>312</td>
-      <td>1</td>
-      <td>14</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4019522</td>
-      <td>24824899</td>
-      <td>2014</td>
-      <td>PloS one</td>
-      <td>Classification of self-driven mental tasks fro...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>4701</td>
-      <td>4703</td>
-      <td>None</td>
-      <td>cluster_inference</td>
-      <td>11</td>
-      <td>2</td>
-      <td>xperiments were conducted. We recruited 11 hea...</td>
-      <td>4661</td>
-      <td>4743</td>
-      <td>1</td>
-      <td>14</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3855767</td>
-      <td>24324781</td>
-      <td>2013</td>
-      <td>PloS one</td>
-      <td>Brain's reward circuits mediate itch relief. a...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>19581</td>
-      <td>19583</td>
-      <td>None</td>
-      <td>cluster_inference</td>
-      <td>14</td>
-      <td>2</td>
-      <td>t of itch.      Methods     Subjects    14 hea...</td>
-      <td>19541</td>
-      <td>19623</td>
-      <td>5</td>
-      <td>14</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3106359</td>
-      <td>21643504</td>
-      <td>2011</td>
-      <td>The open neuroimaging journal</td>
-      <td>Brain activation during autobiographical memor...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>6522</td>
-      <td>6532</td>
-      <td>None</td>
-      <td>cluster_inference</td>
-      <td>Twenty one</td>
-      <td>10</td>
-      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
-      <td>6482</td>
-      <td>6572</td>
-      <td>6</td>
-      <td>14</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4211402</td>
-      <td>25389396</td>
-      <td>2014</td>
-      <td>Frontiers in human neuroscience</td>
-      <td>Brain activation associated with active and pa...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>809</td>
-      <td>820</td>
-      <td>None</td>
-      <td>cluster_inference</td>
-      <td>Twenty-four</td>
-      <td>11</td>
-      <td>pecific to active and passive stepping. Twenty...</td>
-      <td>769</td>
-      <td>860</td>
-      <td>8</td>
-      <td>14</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="convert-the-annotated-text-to-integers">
-<h2>Convert the annotated text to integers<a class="headerlink" href="#convert-the-annotated-text-to-integers" title="Permalink to this headline">#</a></h2>
-<p>this is not the best way, I think.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_n_participants</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">n_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;extra_data&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;extra_data&quot;</span><span class="p">])</span>
     <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">n_int</span> <span class="o">=</span> <span class="n">text_to_number</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;selected_text&quot;</span><span class="p">])</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;n_ptp_int&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_int</span>
+        <span class="k">return</span> <span class="n">text_to_number</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;selected_text&quot;</span><span class="p">])</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;n_participants&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">annotations</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_n_participants</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">annotations</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;n_participants&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;n_participants&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;n_participants&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">annotations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -729,172 +680,68 @@ relevant to the rest of this notebook.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>pmcid</th>
-      <th>pmid</th>
-      <th>publication_year</th>
-      <th>journal</th>
-      <th>title</th>
-      <th>label_name</th>
-      <th>label_color</th>
-      <th>annotator_name</th>
-      <th>start_char</th>
-      <th>end_char</th>
-      <th>...</th>
-      <th>project</th>
       <th>selected_text</th>
-      <th>selected_text_length</th>
-      <th>context</th>
-      <th>context_start_char</th>
-      <th>context_end_char</th>
-      <th>doc_id</th>
-      <th>label_id</th>
-      <th>annotator_id</th>
-      <th>n_ptp_int</th>
+      <th>extra_data</th>
+      <th>publication_year</th>
+      <th>n_participants</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>4019522</td>
-      <td>24824899</td>
-      <td>2014</td>
-      <td>PloS one</td>
-      <td>Classification of self-driven mental tasks fro...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>266</td>
-      <td>272</td>
-      <td>...</td>
-      <td>cluster_inference</td>
       <td>eleven</td>
-      <td>6</td>
-      <td>thoughts permeate the human mind. Here, eleven...</td>
-      <td>226</td>
-      <td>312</td>
-      <td>1</td>
-      <td>14</td>
-      <td>2</td>
+      <td>None</td>
+      <td>2014</td>
       <td>11</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4019522</td>
-      <td>24824899</td>
-      <td>2014</td>
-      <td>PloS one</td>
-      <td>Classification of self-driven mental tasks fro...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>4701</td>
-      <td>4703</td>
-      <td>...</td>
-      <td>cluster_inference</td>
       <td>11</td>
-      <td>2</td>
-      <td>xperiments were conducted. We recruited 11 hea...</td>
-      <td>4661</td>
-      <td>4743</td>
-      <td>1</td>
-      <td>14</td>
-      <td>2</td>
+      <td>None</td>
+      <td>2014</td>
       <td>11</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3855767</td>
-      <td>24324781</td>
-      <td>2013</td>
-      <td>PloS one</td>
-      <td>Brain's reward circuits mediate itch relief. a...</td>
-      <td>n_participants_total</td>
+      <td>14</td>
       <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>19581</td>
-      <td>19583</td>
-      <td>...</td>
-      <td>cluster_inference</td>
-      <td>14</td>
-      <td>2</td>
-      <td>t of itch.      Methods     Subjects    14 hea...</td>
-      <td>19541</td>
-      <td>19623</td>
-      <td>5</td>
-      <td>14</td>
-      <td>2</td>
+      <td>2013</td>
       <td>14</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3106359</td>
-      <td>21643504</td>
-      <td>2011</td>
-      <td>The open neuroimaging journal</td>
-      <td>Brain activation during autobiographical memor...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>6522</td>
-      <td>6532</td>
-      <td>...</td>
-      <td>cluster_inference</td>
       <td>Twenty one</td>
-      <td>10</td>
-      <td>ue to ABM.      METHODS     Subjects    Twenty...</td>
-      <td>6482</td>
-      <td>6572</td>
-      <td>6</td>
-      <td>14</td>
-      <td>2</td>
+      <td>None</td>
+      <td>2011</td>
       <td>21</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4211402</td>
-      <td>25389396</td>
-      <td>2014</td>
-      <td>Frontiers in human neuroscience</td>
-      <td>Brain activation associated with active and pa...</td>
-      <td>n_participants_total</td>
-      <td>None</td>
-      <td>Kendra_Oudyk</td>
-      <td>809</td>
-      <td>820</td>
-      <td>...</td>
-      <td>cluster_inference</td>
       <td>Twenty-four</td>
-      <td>11</td>
-      <td>pecific to active and passive stepping. Twenty...</td>
-      <td>769</td>
-      <td>860</td>
-      <td>8</td>
-      <td>14</td>
-      <td>2</td>
+      <td>None</td>
+      <td>2014</td>
       <td>24</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 </section>
-<section id="frequency-of-differt-sample-sizes">
-<h2>Frequency of differt sample sizes<a class="headerlink" href="#frequency-of-differt-sample-sizes" title="Permalink to this headline">#</a></h2>
+<section id="distribution-of-sample-sizes">
+<h2>Distribution of sample sizes<a class="headerlink" href="#distribution-of-sample-sizes" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of papers&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of participants&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;n_participants&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of papers&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of participants&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Number of participants&#39;)
-</pre></div>
-</div>
-<img alt="_images/plot_n_participants_9_1.png" src="_images/plot_n_participants_9_1.png" />
+<img alt="_images/number_of_participants_8_0.png" src="_images/number_of_participants_8_0.png" />
 </div>
 </div>
 </section>
@@ -903,29 +750,13 @@ relevant to the rest of this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;publication_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">annotations</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;publication_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;n_participants&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;publication_year&#39;, ylabel=&#39;n_ptp_int&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/plot_n_participants_11_1.png" src="_images/plot_n_participants_11_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;publication_year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;n_ptp_int&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;publication_year&#39;, ylabel=&#39;n_ptp_int&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/plot_n_participants_12_1.png" src="_images/plot_n_participants_12_1.png" />
+<img alt="_images/number_of_participants_10_0.png" src="_images/number_of_participants_10_0.png" />
 </div>
 </div>
 </section>
