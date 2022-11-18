@@ -36,7 +36,9 @@ html:
 
 sphinx:
   config:
+    language: en
     nb_custom_formats:
       .py:
         - jupytext.reads
         - fmt: py
+    html_extra_path: ["assets"]

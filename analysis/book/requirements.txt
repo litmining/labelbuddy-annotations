@@ -4,4 +4,6 @@ jupytext
 matplotlib
 pandas
 seaborn
+plotly
+kaleido
 ../labelrepo/

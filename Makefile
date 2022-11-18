@@ -19,4 +19,5 @@ $(annotation_files): %.jsonl: %.labelbuddy
 	labelbuddy $< --export-docs $@ --no-text --labelled-only
 
 book:
+	python3 scripts/make_repo_stats_figure.py
 	jupyter-book build -W analysis/book

@@ -5,6 +5,7 @@ pubget_data
 */figures/
 .DS_Store
 analysis/book/_build
+analysis/book/assets/generated/*
 analysis/data/*
 
 
