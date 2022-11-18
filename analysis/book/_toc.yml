@@ -3,4 +3,4 @@ root: overview
 chapters:
   - file: using_this_repository
   - file: contributing_to_this_repository
-  - file: plot_n_participants
+  - file: number_of_participants

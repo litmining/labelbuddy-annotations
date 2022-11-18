@@ -58,12 +58,12 @@ annotations = connection.execute("SELECT * FROM detailed_annotation limit 10")
 displays.AnnotationsDisplay(annotations)
 # -
 
-# As another example, selecting all snippets of text that have been annotated with "Diagnosis":
+# As another example (this time collecting results in a Pandas DataFrame), selecting all snippets of text that have been annotated with "Diagnosis":
 
 # +
 import pandas as pd
 
-snippets = pd.read_sql(
+pd.read_sql(
     """
     SELECT selected_text, COUNT(*) as occurrences
     FROM detailed_annotation
@@ -73,8 +73,6 @@ snippets = pd.read_sql(
     """,
     connection,
 )
-
-snippets
 # -
 
 
@@ -87,15 +85,24 @@ snippets
 # That will create a file `analysis/data/detailed_annotation.csv` containing that same table:
 
 # +
-import pandas as pd
-
 from labelrepo import repo
 
 csv_file = repo.data_dir() / "detailed_annotation.csv"
 annotations = pd.read_csv(csv_file, nrows=3)
-print(annotations.columns.values)
-
 displays.AnnotationsDisplay(annotations)
+# -
+
+# Here is all the information in that table for the first annotation:
+
+# +
+(
+    annotations.iloc[:1]
+    .stack()
+    .reset_index()
+    .style.hide("level_0", axis=1)
+    .hide(axis="index")
+    .hide(axis="columns")
+)
 # -
 
 # ## Using the JSON and JSONLines files directly
