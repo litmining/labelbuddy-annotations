@@ -102,7 +102,7 @@ annotated_document_count = connection.execute(
 ).fetchone()[0]
 myst_nb.glue("annotated_document_count", annotated_document_count)
 ```
-There are currently {glue:}`document_count` documents in the repository, {glue:}`annotated_document_count` of which are annotated (more details below).
+There are currently {glue:text}`document_count` documents in the repository, {glue:text}`annotated_document_count` of which are annotated (more details below).
 
 ## Labels
 
@@ -134,7 +134,7 @@ label_count = connection.execute(
 myst_nb.glue("label_count", label_count)
 ```
 
-There are currently {glue:}`label_count` labels in the repository.
+There are currently {glue:text}`label_count` labels in the repository.
 ## Annotations
 
 Finally, an annotation is the association of a label to a portion of a document's text.
@@ -177,7 +177,7 @@ with open(annotations_file, encoding="utf-8") as stream:
 
 annotations
 ```
-In total there are {glue:}`annotation_count` annotations in the repository.
+In total there are {glue:text}`annotation_count` annotations in the repository.
 
 ## Number of labelled documents by project
 
