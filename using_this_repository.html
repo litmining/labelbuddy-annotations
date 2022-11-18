@@ -359,15 +359,19 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="using-this-repository">
 <h1>Using this repository<a class="headerlink" href="#using-this-repository" title="Permalink to this headline">#</a></h1>
+<p>Start by cloning the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/neurodatascience/labelbuddy-annotations.git
+<span class="nb">cd</span> labelbuddy-annotations
+</pre></div>
+</div>
 <p>The documents, labels and annotations are stored in JSON or JSONLines files in the <code class="docutils literal notranslate"><span class="pre">projects/</span></code> directory.</p>
 <section id="building-the-database">
 <h2>Building the database<a class="headerlink" href="#building-the-database" title="Permalink to this headline">#</a></h2>
 <p>We can easily create a SQLite database containing all the information these files contain:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make database
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 ./scripts/make_database.py
+
+<span class="c1"># or equivalently:</span>
+python3 ./scripts/make_database.py
 </pre></div>
 </div>
 <p>We can then use this database to query the contents of the repository, either with the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> interactive command:</p>
