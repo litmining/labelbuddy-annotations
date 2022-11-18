@@ -14,6 +14,14 @@
 
 # # Using this repository
 
+# + [markdown]
+# Start by cloning the repository:
+# ```bash
+# git clone https://github.com/neurodatascience/labelbuddy-annotations.git
+# cd labelbuddy-annotations
+# ```
+# -
+#
 # The documents, labels and annotations are stored in JSON or JSONLines files in the `projects/` directory.
 
 # ## Building the database
@@ -21,9 +29,8 @@
 # We can easily create a SQLite database containing all the information these files contain:
 # ```bash
 # make database
-# ```
-# or
-# ```bash
+#
+# # or equivalently:
 # python3 ./scripts/make_database.py
 # ```
 # We can then use this database to query the contents of the repository, either with the `sqlite3` interactive command:
@@ -117,7 +124,6 @@ with open(annotations_file, encoding="UTF-8") as stream:
 
 # Loading labels from a JSON file:
 
-# +
 labels_file = (
     repo.repo_root()
     / "projects"
@@ -126,4 +132,3 @@ labels_file = (
     / "Article_Terms.json"
 )
 json.loads(labels_file.read_text("UTF-8"))
-# -
