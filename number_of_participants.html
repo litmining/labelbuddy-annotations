@@ -773,9 +773,57 @@ relevant to the rest of this notebook.</p>
 <img alt="_images/number_of_participants_10_0.png" src="_images/number_of_participants_10_0.png" />
 </div>
 </div>
+<p>One of the papers seems to have a very large sample size; but if we display the annotations we realize it’s actually aggregating data from multiple studies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">displays</span>
+
+<span class="n">first_paper_anno</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    select *</span>
+<span class="sd">    from detailed_annotation</span>
+<span class="sd">    where label_name = &#39;n_participants&#39; and pmcid = ?</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">annotations</span><span class="p">[</span><span class="s2">&quot;pmcid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">])],</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">displays</span><span class="o">.</span><span class="n">AnnotationsDisplay</span><span class="p">(</span><span class="n">first_paper_anno</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        … restricted to right-handed healthy subjects and the context of normal mapping according to the studies’ BrainMap records.    Regarding the left IFJ we identified 180 experiments/contrasts comprising <span style="font-weight: bold; background-color: LightGray;"
+           >2,274</span> subjects in 139 articles (from 730 single experiments in 2,434 participants in these studies in total). Consequently 2,764 of 8,301 locations reported in these papers were included in further analyse…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: LightGray;">
+        n_participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        … normal mapping according to the studies’ BrainMap records.    Regarding the left IFJ we identified 180 experiments/contrasts comprising 2,274 subjects in 139 articles (from 730 single experiments in <span style="font-weight: bold; background-color: LightGray;"
+           >2,434</span> participants in these studies in total). Consequently 2,764 of 8,301 locations reported in these papers were included in further analyses. For the right IFJ 131 experiments in 1,767 subjects reported…
+        </p>
+        </div>
+        </div></div></div>
+</div>
 </section>
 <section id="sample-sizes-over-time">
 <h2>Sample sizes over time<a class="headerlink" href="#sample-sizes-over-time" title="Permalink to this headline">#</a></h2>
+<p>We now display individual article’s sample size and publication year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -785,7 +833,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/number_of_participants_12_0.png" src="_images/number_of_participants_12_0.png" />
+<img alt="_images/number_of_participants_14_0.png" src="_images/number_of_participants_14_0.png" />
 </div>
 </div>
 </section>

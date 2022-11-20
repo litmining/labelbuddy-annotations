@@ -188,7 +188,25 @@ _ = ax.set_ylabel("Number of papers")
 _ = ax.set_xlabel("Number of participants")
 ```
 
+One of the papers seems to have a very large sample size; but if we display the annotations we realize it's actually aggregating data from multiple studies:
+
+```{code-cell}
+from labelrepo import displays
+
+first_paper_anno = connection.execute(
+    """
+    select *
+    from detailed_annotation
+    where label_name = 'n_participants' and pmcid = ?
+    """,
+    [int(annotations["pmcid"].iat[0])],
+).fetchall()
+displays.AnnotationsDisplay(first_paper_anno)
+```
+
 ## Sample sizes over time
+
+We now display individual article's sample size and publication year:
 
 ```{code-cell}
 fig, ax = plt.subplots()
