@@ -28,7 +28,7 @@ connection = database.get_database_connection()
 
 annotations = pd.read_sql(
     """
-    SELECT selected_text, extra_data, publication_year
+    SELECT selected_text, extra_data, publication_year, pmcid
     FROM  detailed_annotation
     WHERE label_name IN
       ("N included", "n_participants", "n_participants_total", "N_Total")
@@ -169,6 +169,16 @@ annotations.head()
 
 ## Distribution of sample sizes
 
+In case there are several annotations for the number of participants in the same article, we keep the largest one.
+
+```{code-cell}
+annotations = annotations.sort_values(
+    by="n_participants", ascending=False
+).drop_duplicates(subset="pmcid")
+```
+
+Now we plot in a histogram the distribution of sample sizes:
+
 ```{code-cell}
 from matplotlib import pyplot as plt
 
@@ -178,7 +188,25 @@ _ = ax.set_ylabel("Number of papers")
 _ = ax.set_xlabel("Number of participants")
 ```
 
+One of the papers seems to have a very large sample size; but if we display the annotations we realize it's actually aggregating data from multiple studies:
+
+```{code-cell}
+from labelrepo import displays
+
+first_paper_anno = connection.execute(
+    """
+    select *
+    from detailed_annotation
+    where label_name = 'n_participants' and pmcid = ?
+    """,
+    [int(annotations["pmcid"].iat[0])],
+).fetchall()
+displays.AnnotationsDisplay(first_paper_anno)
+```
+
 ## Sample sizes over time
+
+We now display individual article's sample size and publication year:
 
 ```{code-cell}
 fig, ax = plt.subplots()
