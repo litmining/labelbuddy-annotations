@@ -39,8 +39,9 @@ create table db_info(
 create view detailed_annotation as
   with annot as
   (select *,
-          max(0, start_char - 40) as context_start_char,
-          min(length(document.text), end_char + 40) as context_end_char
+          max(0, start_char - 200) as context_start_char,
+          min(length(document.text), end_char + 200) as context_end_char,
+          annotation.id as annotation_id
      from annotation inner join document on annotation.doc_id = document.id)
   select
     pmcid, pmid, publication_year, journal, title,
@@ -57,6 +58,7 @@ create view detailed_annotation as
       context_end_char - context_start_char
     ) as context,
     context_start_char, context_end_char,
+    annotation_id,
     doc_id, label_id, annotator_id
     from annot
          inner join label on annot.label_id = label.id
