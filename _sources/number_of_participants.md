@@ -28,7 +28,7 @@ connection = database.get_database_connection()
 
 annotations = pd.read_sql(
     """
-    SELECT selected_text, extra_data, publication_year
+    SELECT selected_text, extra_data, publication_year, pmcid
     FROM  detailed_annotation
     WHERE label_name IN
       ("N included", "n_participants", "n_participants_total", "N_Total")
@@ -168,6 +168,16 @@ annotations.head()
 ```
 
 ## Distribution of sample sizes
+
+In case there are several annotations for the number of participants in the same article, we keep the largest one.
+
+```{code-cell}
+annotations = annotations.sort_values(
+    by="n_participants", ascending=False
+).drop_duplicates(subset="pmcid")
+```
+
+Now we plot in a histogram the distribution of sample sizes:
 
 ```{code-cell}
 from matplotlib import pyplot as plt

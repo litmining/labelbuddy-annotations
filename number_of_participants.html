@@ -399,7 +399,7 @@ More annotations are needed, and we need to harmonize the way this is done acros
 
 <span class="n">annotations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    SELECT selected_text, extra_data, publication_year</span>
+<span class="sd">    SELECT selected_text, extra_data, publication_year, pmcid</span>
 <span class="sd">    FROM  detailed_annotation</span>
 <span class="sd">    WHERE label_name IN</span>
 <span class="sd">      (&quot;N included&quot;, &quot;n_participants&quot;, &quot;n_participants_total&quot;, &quot;N_Total&quot;)</span>
@@ -433,6 +433,7 @@ More annotations are needed, and we need to harmonize the way this is done acros
       <th>selected_text</th>
       <th>extra_data</th>
       <th>publication_year</th>
+      <th>pmcid</th>
     </tr>
   </thead>
   <tbody>
@@ -441,30 +442,35 @@ More annotations are needed, and we need to harmonize the way this is done acros
       <td>eleven</td>
       <td>None</td>
       <td>2014</td>
+      <td>4019522</td>
     </tr>
     <tr>
       <th>1</th>
       <td>11</td>
       <td>None</td>
       <td>2014</td>
+      <td>4019522</td>
     </tr>
     <tr>
       <th>2</th>
       <td>14</td>
       <td>None</td>
       <td>2013</td>
+      <td>3855767</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Twenty one</td>
       <td>None</td>
       <td>2011</td>
+      <td>3106359</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Twenty-four</td>
       <td>None</td>
       <td>2014</td>
+      <td>4211402</td>
     </tr>
   </tbody>
 </table>
@@ -503,6 +509,7 @@ In some other cases, the annotator indicated the numerical value in the <code cl
       <th>selected_text</th>
       <th>extra_data</th>
       <th>publication_year</th>
+      <th>pmcid</th>
     </tr>
   </thead>
   <tbody>
@@ -511,30 +518,35 @@ In some other cases, the annotator indicated the numerical value in the <code cl
       <td>Sixty-one</td>
       <td>61</td>
       <td>2019</td>
+      <td>6678781</td>
     </tr>
     <tr>
       <th>197</th>
       <td>Forty-four patients with drug-naive, first-epi...</td>
       <td>130</td>
       <td>2018</td>
+      <td>6197719</td>
     </tr>
     <tr>
       <th>201</th>
       <td>After a detailed evaluation of inclusion and e...</td>
       <td>87</td>
       <td>2017</td>
+      <td>5665859</td>
     </tr>
     <tr>
       <th>204</th>
       <td>Consequently we analysed data for 220 adolesce...</td>
       <td>248</td>
       <td>2014</td>
+      <td>3991323</td>
     </tr>
     <tr>
       <th>206</th>
       <td>Two of them were removed</td>
       <td>16</td>
       <td>2018</td>
+      <td>6344389</td>
     </tr>
   </tbody>
 </table>
@@ -683,6 +695,7 @@ relevant to the rest of this notebook.</p>
       <th>selected_text</th>
       <th>extra_data</th>
       <th>publication_year</th>
+      <th>pmcid</th>
       <th>n_participants</th>
     </tr>
   </thead>
@@ -692,6 +705,7 @@ relevant to the rest of this notebook.</p>
       <td>eleven</td>
       <td>None</td>
       <td>2014</td>
+      <td>4019522</td>
       <td>11</td>
     </tr>
     <tr>
@@ -699,6 +713,7 @@ relevant to the rest of this notebook.</p>
       <td>11</td>
       <td>None</td>
       <td>2014</td>
+      <td>4019522</td>
       <td>11</td>
     </tr>
     <tr>
@@ -706,6 +721,7 @@ relevant to the rest of this notebook.</p>
       <td>14</td>
       <td>None</td>
       <td>2013</td>
+      <td>3855767</td>
       <td>14</td>
     </tr>
     <tr>
@@ -713,6 +729,7 @@ relevant to the rest of this notebook.</p>
       <td>Twenty one</td>
       <td>None</td>
       <td>2011</td>
+      <td>3106359</td>
       <td>21</td>
     </tr>
     <tr>
@@ -720,6 +737,7 @@ relevant to the rest of this notebook.</p>
       <td>Twenty-four</td>
       <td>None</td>
       <td>2014</td>
+      <td>4211402</td>
       <td>24</td>
     </tr>
   </tbody>
@@ -729,6 +747,17 @@ relevant to the rest of this notebook.</p>
 </section>
 <section id="distribution-of-sample-sizes">
 <h2>Distribution of sample sizes<a class="headerlink" href="#distribution-of-sample-sizes" title="Permalink to this headline">#</a></h2>
+<p>In case there are several annotations for the number of participants in the same article, we keep the largest one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">annotations</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="n">by</span><span class="o">=</span><span class="s2">&quot;n_participants&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;pmcid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we plot in a histogram the distribution of sample sizes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -741,7 +770,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/number_of_participants_8_0.png" src="_images/number_of_participants_8_0.png" />
+<img alt="_images/number_of_participants_10_0.png" src="_images/number_of_participants_10_0.png" />
 </div>
 </div>
 </section>
@@ -756,7 +785,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/number_of_participants_10_0.png" src="_images/number_of_participants_10_0.png" />
+<img alt="_images/number_of_participants_12_0.png" src="_images/number_of_participants_12_0.png" />
 </div>
 </div>
 </section>
