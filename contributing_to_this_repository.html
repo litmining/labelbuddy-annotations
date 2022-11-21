@@ -497,8 +497,8 @@ We recommend using the same name as in your git configuration, ie the output of:
 <p>We first need to install <strong>labelbuddy</strong>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="41e30cf1-8d89-40a8-afbb-8a52f6dbbc14" name="67ebd0a6-8361-4611-abe4-846e12c6ba66" type="radio">
-</input><label class="sd-tab-label" for="41e30cf1-8d89-40a8-afbb-8a52f6dbbc14">
+<input checked="checked" id="cdd05dc8-c560-429e-8eb1-16634e6c73f4" name="5095e791-765f-4f8d-98fe-ef7aca587f37" type="radio">
+</input><label class="sd-tab-label" for="cdd05dc8-c560-429e-8eb1-16634e6c73f4">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 scripts/start_project.py projects/autism_mri
@@ -513,8 +513,8 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<input id="14f3f1c9-0213-43bf-b8c8-325981e01701" name="67ebd0a6-8361-4611-abe4-846e12c6ba66" type="radio">
-</input><label class="sd-tab-label" for="14f3f1c9-0213-43bf-b8c8-325981e01701">
+<input id="370a396d-fad7-4946-9081-7f9fa1f10f4f" name="5095e791-765f-4f8d-98fe-ef7aca587f37" type="radio">
+</input><label class="sd-tab-label" for="370a396d-fad7-4946-9081-7f9fa1f10f4f">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -540,8 +540,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="93a1d8b4-6fec-48f5-b635-c0336fc7f731" name="224f549f-c09f-4441-86ad-bf1e347b2150" type="radio">
-</input><label class="sd-tab-label" for="93a1d8b4-6fec-48f5-b635-c0336fc7f731">
+<input checked="checked" id="0d585bc1-38ae-4248-a0f6-93bec5a3f410" name="e9d4bacf-d45e-45ca-9986-fb512b445a25" type="radio">
+</input><label class="sd-tab-label" for="0d585bc1-38ae-4248-a0f6-93bec5a3f410">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -556,8 +556,8 @@ make annotations
 </pre></div>
 </div>
 </div>
-<input id="1ba867dc-d59c-458d-9463-ea7c918633db" name="224f549f-c09f-4441-86ad-bf1e347b2150" type="radio">
-</input><label class="sd-tab-label" for="1ba867dc-d59c-458d-9463-ea7c918633db">
+<input id="a09dc0aa-b275-4beb-b0a2-f09a093444d3" name="e9d4bacf-d45e-45ca-9986-fb512b445a25" type="radio">
+</input><label class="sd-tab-label" for="a09dc0aa-b275-4beb-b0a2-f09a093444d3">
 Using <strong>labelbuddy</strong>’s graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -634,7 +634,7 @@ We can compress it with</p>
 <p>Finally, we can get the documents.
 The directory created by <strong>pubget</strong> contains a subdirectory called <code class="docutils literal notranslate"><span class="pre">subset_allArticles_labelbuddyData</span></code>, containing <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> files.
 Those are the files we will be adding to the annotations repository, importing into <strong>labelbuddy</strong>, and annotating.
-By default <strong>pubget</strong> splits its output into files containing 500 articles each; we can copy only the first one to begin with.</p>
+By default <strong>pubget</strong> splits its output into files containing 500 articles each; to begin with copying only the first one is enough.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbuddyData/documents_00001.jsonl documents/
 </pre></div>
 </div>
@@ -653,16 +653,16 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Dataset</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8ec5fea8-4352-4e2e-a2ee-ce2d77a41896" name="f0f3c327-5531-471e-bcc0-08b748214a99" type="radio">
-</input><label class="sd-tab-label" for="8ec5fea8-4352-4e2e-a2ee-ce2d77a41896">
+<input checked="checked" id="4e772cd2-d81f-42b2-884b-06fef318730b" name="993da94a-c19d-4760-9286-abfb8f0ffedd" type="radio">
+</input><label class="sd-tab-label" for="4e772cd2-d81f-42b2-884b-06fef318730b">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy annotations/Firstname_Lastname.labelbuddy <span class="se">\</span>
   --export-labels labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="19db9dbd-4bd8-4cee-b6f0-6917ea30dce4" name="f0f3c327-5531-471e-bcc0-08b748214a99" type="radio">
-</input><label class="sd-tab-label" for="19db9dbd-4bd8-4cee-b6f0-6917ea30dce4">
+<input id="84b3418f-4d30-4d74-b90c-807c94474ee3" name="993da94a-c19d-4760-9286-abfb8f0ffedd" type="radio">
+</input><label class="sd-tab-label" for="84b3418f-4d30-4d74-b90c-807c94474ee3">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>
@@ -684,7 +684,8 @@ pip install -r requirements.txt
 </div>
 <p>The html version is built with <a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html">jupyter-book</a>, see its documentation for details.</p>
 <p>To add a new page you will need to create a <code class="docutils literal notranslate"><span class="pre">.py</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> file in the books directory, and add it to the list of chapters in <code class="docutils literal notranslate"><span class="pre">analysis/book/_toc.yml</span></code>.
-To build the book locally, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">book</span></code> from the root of the repository, or <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">-W</span> <span class="pre">analysis/book</span></code>.
+To build the book locally, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">book-full</span></code> from the root of the repository.
+(Once the database and CSV file have already been built, you can just use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">book</span></code> which is faster.)
 You can then see it by pointing your browser to <code class="docutils literal notranslate"><span class="pre">analysis/book/_build/html/index.html</span></code>.</p>
 </section>
 </section>

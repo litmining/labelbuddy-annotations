@@ -203,7 +203,7 @@ Then upload the resulting `.zip` file to OSF.
 Finally, we can get the documents.
 The directory created by {{ pg }} contains a subdirectory called `subset_allArticles_labelbuddyData`, containing `.jsonl` files.
 Those are the files we will be adding to the annotations repository, importing into {{ lb }}, and annotating.
-By default {{ pg }} splits its output into files containing 500 articles each; we can copy only the first one to begin with.
+By default {{ pg }} splits its output into files containing 500 articles each; to begin with copying only the first one is enough.
 
 ```bash
 cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbuddyData/documents_00001.jsonl documents/
@@ -257,5 +257,6 @@ pip install -r requirements.txt
 The html version is built with [jupyter-book](https://jupyterbook.org/en/stable/start/overview.html), see its documentation for details.
 
 To add a new page you will need to create a `.py` or `.md` file in the books directory, and add it to the list of chapters in `analysis/book/_toc.yml`.
-To build the book locally, run `make book` from the root of the repository, or `jupyter-book build -W analysis/book`.
+To build the book locally, run `make book-full` from the root of the repository.
+(Once the database and CSV file have already been built, you can just use `make book` which is faster.)
 You can then see it by pointing your browser to `analysis/book/_build/html/index.html`.

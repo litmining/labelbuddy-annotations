@@ -552,9 +552,8 @@ In some other cases, the annotator indicated the numerical value in the <code cl
 </table>
 </div></div></div>
 </div>
-<p>The following is just defining a function for converting text to numbers,
-for example “Twenty-four” → 24. You can skip over it as it is not very
-relevant to the rest of this notebook.</p>
+<p>The following is just defining a function, <code class="docutils literal notranslate"><span class="pre">text_to_number</span></code>, for converting text to numbers, for example “Twenty-four” → 24.
+You can skip over it as it is not very relevant to the rest of this notebook.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -657,6 +656,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 </div>
+<p>Now that we have the <code class="docutils literal notranslate"><span class="pre">text_to_number</span></code> function we use it to get the value for the number of participants wherever possible:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_n_participants</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -770,7 +770,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/number_of_participants_10_0.png" src="_images/number_of_participants_10_0.png" />
+<img alt="_images/number_of_participants_11_0.png" src="_images/number_of_participants_11_0.png" />
 </div>
 </div>
 <p>One of the papers seems to have a very large sample size; but if we display the annotations we realize it’s actually aggregating data from multiple studies:</p>
@@ -833,7 +833,7 @@ relevant to the rest of this notebook.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/number_of_participants_14_0.png" src="_images/number_of_participants_14_0.png" />
+<img alt="_images/number_of_participants_15_0.png" src="_images/number_of_participants_15_0.png" />
 </div>
 </div>
 </section>
