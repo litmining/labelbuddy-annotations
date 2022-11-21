@@ -48,9 +48,8 @@ In some other cases, the annotator indicated the numerical value in the `extra_d
 annotations[annotations["extra_data"].notnull()].head()
 ```
 
-The following is just defining a function for converting text to numbers,
-for example "Twenty-four" → 24. You can skip over it as it is not very
-relevant to the rest of this notebook.
+The following is just defining a function, `text_to_number`, for converting text to numbers, for example "Twenty-four" → 24. 
+You can skip over it as it is not very relevant to the rest of this notebook.
 
 ```{code-cell}
 :tags: [hide-input]
@@ -152,6 +151,7 @@ class TextToNumber:
 text_to_number = TextToNumber()
 ```
 
+Now that we have the `text_to_number` function we use it to get the value for the number of participants wherever possible:
 
 ```{code-cell}
 def get_n_participants(row):
