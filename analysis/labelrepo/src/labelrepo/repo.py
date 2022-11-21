@@ -36,7 +36,9 @@ def repo_root() -> pathlib.Path:
 
 
 def data_dir() -> pathlib.Path:
-    return repo_root() / "analysis" / "data"
+    data_dir = repo_root() / "analysis" / "data"
+    data_dir.mkdir(exist_ok=True, parents=True)
+    return data_dir
 
 
 # contextlib.chdir only available in python3.11
