@@ -17,7 +17,7 @@ Examples of information that has been annotated in some documents are the number
 Such annotations have diverse uses such as studying the evolution of a scientific field's methods, evaluating automatic information extraction systems, or informing meta-analyses.
 
 The documents found here are journal articles from {{ pmc_home }}, collected using {{ pubget_home }}.
-The annotations are made with {{ labelbuddy_home }}, and data is stored in {{ lb }}'s (JSON) format.
+The annotations are made with {{ labelbuddy_home }}, and data is stored in {{ lb }}'s format (JSON).
 
 This page provides a brief overview of the repository's content, and the rest of the documentation illustrates how to use and contribute to the repository:
 
@@ -39,11 +39,18 @@ connection = database.get_database_connection()
 
 df = pd.read_sql(
     """
-select project, count(distinct doc_id) as documents,
+    select * from 
+    (select project, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
     count(distinct annotator_id) as annotators,
     count(*) as annotations from
-    annotation group by project order by documents desc;
+    annotation group by project order by documents desc)
+    union all 
+    select 'Total' as project, count(distinct doc_id) as documents,
+    count(distinct label_id) as labels,
+    count(distinct annotator_id) as annotators,
+    count(*) as annotations 
+    from annotation;
 """,
     connection,
 )
@@ -51,7 +58,7 @@ link = (
     r'<a href="https://github.com/neurodatascience/labelbuddy-annotations/'
     r'tree/main/projects/\1">\1</a>'
 )
-df["project"] = df["project"].str.replace(r"(.*)", link, regex=True)
+df.iloc[:-1, 0] = df.iloc[:-1, 0].str.replace(r"(.*)", link, regex=True)
 df.style.hide(axis="index")
 ```
 
@@ -67,7 +74,8 @@ Each document is represented by a JSON dictionary; the keys of interest are:
 - **text:** the article's content as plain text as extracted by {{ pg }}.
 - **metadata:** basic metadata, including the PubMed ID (**pmid**), PubMedCentral ID (**pmcid**), and **doi** when available.
 
-Here is an example document (the text is abbreviated for clarity):
+Below is an example document. 
+(Here the text is abbreviated and the JSON is displayed in a readable way, but in the actual JSONLines file the whole information for each document is on a single line.)
 
 ```{code-cell}
 :tags: [remove-input, hide-output]
@@ -110,7 +118,7 @@ Labels are simple tags that can be attached to a portion of a document's text.
 They can optionally have a `color` and a `shortcut_key`, used in {{ lb }} when we are annotating a document.
 They are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format).
 
-Here is an example from the `participants_demographics` project:
+For example, here are the labels used in the `participants_demographics` project:
 
 ```{code-cell}
 :tags: [remove-input, hide-output]
@@ -135,6 +143,7 @@ myst_nb.glue("label_count", label_count)
 ```
 
 There are currently {glue:text}`label_count` labels in the repository.
+
 ## Annotations
 
 Finally, an annotation is the association of a label to a portion of a document's text.
@@ -161,7 +170,8 @@ annotation_count = connection.execute(
 myst_nb.glue("annotation_count", annotation_count)
 ```
 
-Annotations are stored in {{ lb }}'s JSONL format, here is an example for one document:
+Annotations are stored in {{ lb }}'s JSONL format, below is an example for one document.
+(Here also, the annotations are layed out in a readable way but in the JSONL files the whole information for one document is on a single line.)
 
 ```{code-cell}
 :tags: [remove-input, hide-output]
@@ -177,6 +187,7 @@ with open(annotations_file, encoding="utf-8") as stream:
 
 annotations
 ```
+
 In total there are {glue:text}`annotation_count` annotations in the repository.
 
 ## Number of labelled documents by project

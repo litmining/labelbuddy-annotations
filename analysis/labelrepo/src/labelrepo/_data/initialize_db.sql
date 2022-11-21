@@ -51,15 +51,12 @@ create view detailed_annotation as
     start_char, end_char, extra_data, project,
     substr(
       text, start_char + 1, end_char - start_char) as selected_text,
-    end_char - start_char as selected_text_length,
     substr(
       text,
       context_start_char + 1,
       context_end_char - context_start_char
     ) as context,
-    context_start_char, context_end_char,
-    annotation_id,
-    doc_id, label_id, annotator_id
+    context_start_char, context_end_char
     from annot
          inner join label on annot.label_id = label.id
          inner join annotator on annot.annotator_id = annotator.id
