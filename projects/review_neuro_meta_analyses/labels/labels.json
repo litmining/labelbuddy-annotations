@@ -1,0 +1,47 @@
+[
+    {
+        "color": "#8ae234",
+        "name": "fmri meta-analysis",
+        "shortcut_key": "y"
+    },
+    {
+        "color": "#d79eff",
+        "name": "search method",
+        "shortcut_key": "v"
+    },
+    {
+        "color": "#ce5c00",
+        "name": "n studies found",
+        "shortcut_key": "f"
+    },
+    {
+        "color": "#fcaf3e",
+        "name": "n studies included",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#ff9896",
+        "name": "meta-analysis method",
+        "shortcut_key": "m"
+    },
+    {
+        "color": "#f8c9ff",
+        "name": "software",
+        "shortcut_key": "s"
+    },
+    {
+        "color": "#bf6868",
+        "name": "atlas",
+        "shortcut_key": "a"
+    },
+    {
+        "color": "#40bf60",
+        "name": "n participants",
+        "shortcut_key": "p"
+    },
+    {
+        "color": "#888a85",
+        "name": "problem",
+        "shortcut_key": "x"
+    }
+]
