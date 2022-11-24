@@ -1,21 +1,21 @@
+import contextlib
 from pathlib import Path
 
 from dash import Dash, dash_table, dcc, html
 from dash.dependencies import Input, Output
 import pandas as pd
 
+from labelrepo import database
+
+with contextlib.closing(database.get_database_connection()) as connection:
+    full_df = pd.read_sql("select * from detailed_annotation", connection)
 # load the data. Each row is an annotation. There may be several annotations per paper
-data_path = Path(__file__).resolve().parent / "all_annotations.csv"
-full_df = pd.read_csv(data_path, index_col=False)
-full_df.pmcid = full_df.pmcid.astype(int)
-full_df["index"] = list(full_df.index)
 
 select_columns = [
-    "index",
     "pmcid",
-    "annotation_project",
-    "annotation_label_name",
-    "annotated_text",
+    "project",
+    "label_name",
+    "selected_text",
 ]
 
 df = full_df[select_columns]
@@ -89,7 +89,7 @@ def update_graphs(rows, derived_virtual_selected_rows):
             figure={
                 "data": [
                     {
-                        "x": dff["annotation_label_name"],
+                        "x": dff["label_name"],
                         "y": dff[column],
                         "type": "bar",
                         "marker": {"color": colors},
@@ -111,7 +111,7 @@ def update_graphs(rows, derived_virtual_selected_rows):
         # check if column exists - user may have deleted it
         # If `column.deletable=False`, then you don't
         # need to do this check.
-        for column in ["annotation_label_name"]
+        for column in ["label_name"]
         if column in dff
     ]
 

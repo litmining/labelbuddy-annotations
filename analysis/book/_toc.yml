@@ -1,5 +1,6 @@
 format: jb-book
 root: overview
 chapters:
-  - file: annotations_summary
-  - file: plot_n_participants
+  - file: using_this_repository
+  - file: contributing_to_this_repository
+  - file: number_of_participants
