@@ -11,7 +11,8 @@ create table document(
 
 create table label(
   id integer primary key,
-  name text unique not null
+  name text unique not null,
+  color text
 );
 
 create table annotator(
@@ -36,23 +37,28 @@ create table db_info(
 );
 
 create view detailed_annotation as
+  with annot as
+  (select *,
+          max(0, start_char - 200) as context_start_char,
+          min(length(document.text), end_char + 200) as context_end_char,
+          annotation.id as annotation_id
+     from annotation inner join document on annotation.doc_id = document.id)
   select
     pmcid, pmid, publication_year, journal, title,
     label.name as label_name,
+    label.color as label_color,
     annotator.name as annotator_name,
     start_char, end_char, extra_data, project,
     substr(
-      document.text, start_char + 1, end_char - start_char) as selected_text,
-    max(0, start_char - 40) as context_start_char,
-    min(length(document.text), end_char + 40) as context_end_char,
+      text, start_char + 1, end_char - start_char) as selected_text,
     substr(
-      document.text,
-      max(0, start_char - 40) + 1,
-      min(length(document.text), end_char + 40) - max(0, start_char - 40)
-    ) as context
-    from annotation
-         inner join label on annotation.label_id = label.id
-         inner join document on annotation.doc_id = document.id
-         inner join annotator on annotation.annotator_id = annotator.id
-   order by document.id, start_char, end_char,
-            label_name, annotator_name, annotation.id;
+      text,
+      context_start_char + 1,
+      context_end_char - context_start_char
+    ) as context,
+    context_start_char, context_end_char
+    from annot
+         inner join label on annot.label_id = label.id
+         inner join annotator on annot.annotator_id = annotator.id
+   order by doc_id, start_char, end_char,
+            label_id, annotator_id, annot.id;

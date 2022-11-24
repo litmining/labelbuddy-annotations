@@ -1,5 +1,3 @@
 pandas
 plotly
 dash
-pillow
-gunicorn

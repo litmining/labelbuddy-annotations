@@ -7,7 +7,7 @@ import sqlite3
 import tempfile
 from typing import Optional, Mapping, Dict, Any
 
-from annotutils import repo, _utils
+from labelrepo import repo, _utils
 
 
 def _initialize_database(db_path: pathlib.Path) -> None:
@@ -111,8 +111,8 @@ def _insert_labels(
     with connection:
         for label_info in labels:
             connection.execute(
-                "insert or ignore into label (name) values (?)",
-                (label_info["name"],),
+                "insert or ignore into label (name, color) values (?, ?)",
+                (label_info["name"], label_info.get("color")),
             )
 
 
