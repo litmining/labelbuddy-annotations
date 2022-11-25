@@ -29,7 +29,7 @@ df.iloc[-1] = list(map("<b>{}</b>".format, df.iloc[-1]))
 fig = go.Figure(
     data=[
         go.Table(
-            columnwidth=[0.9, 0.5, 0.5, 0.5, 0.5],
+            columnwidth=[1.0, 0.5, 0.5, 0.5, 0.5],
             header=dict(
                 values=[f"<b>{c.capitalize()}</b>" for c in df.columns],
                 align="left",
@@ -49,7 +49,7 @@ fig = go.Figure(
     ]
 )
 
-fig.update_layout(width=700, height=35 * (df.shape[0] - 1) + 50 * 2)
+fig.update_layout(width=800, height=35 * (df.shape[0] - 1) + 50 * 2)
 fig.update_layout(margin=dict(l=10, r=10, b=10, t=10))
 
 fig_dir = repo.repo_root() / "analysis" / "book" / "assets" / "generated"
