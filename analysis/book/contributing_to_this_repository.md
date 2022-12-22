@@ -168,6 +168,15 @@ cd documents
 ln -s ../../participant_demographics/documents/documents_00001.jsonl
 cd ..
 ```
+And if it exists also link the `doc_sources.json` file, which tells how the full dataset from which documents were obtained can be downloaded:
+
+```bash
+cd documents
+ln -s ../../participant_demographics/documents/doc_sources.json
+cd ..
+```
+
+(See a more detailed explanation {ref}`here<add-doc-sources-json>`.)
 
 #### Downloading new documents with {{ pg }}
 
@@ -187,7 +196,7 @@ pubget run                                                                 \
 Note the `--labelbuddy` option that tells {{ pg }} to prepare the documents in {{ lb }}'s JSONL format.
 See the {{ pubget_home }} documentation for details.
 
-Note here we storing the data in the current directory for simplicity, and `pubget_data` is listed in this repository's `.gitignore` so it will not be tracked by {{ git }}.
+Note here we are storing the data in the current directory for simplicity, and `pubget_data` is listed in this repository's `.gitignore` so it will not be tracked by {{ git }}.
 However we could store the data anywhere we want; outside of the repository is even better, otherwise we have to make sure we don't add it to the repository by mistake.
 
 Once the download has finished, we recommend uploading the whole output to [OSF](https://osf.io/d2qbh/) and adding the link to the annotation project's `README`.
@@ -199,6 +208,7 @@ zip -r pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3.zip pubget_data/query_
 ```
 
 Then upload the resulting `.zip` file to OSF.
+To tell the repository where to find the full archive, add a `documents/doc_sources.json` file as explained {ref}`below<add-doc-sources-json>`.
 
 Finally, we can get the documents.
 The directory created by {{ pg }} contains a subdirectory called `subset_allArticles_labelbuddyData`, containing `.jsonl` files.
@@ -208,6 +218,32 @@ By default {{ pg }} splits its output into files containing 500 articles each; t
 ```bash
 cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbuddyData/documents_00001.jsonl documents/
 ```
+
+(add-doc-sources-json)=
+#### Adding the source dataset location information
+
+This repository provides an easy way to {ref}`download the full dataset<obtaining-the-full-datasets>`.
+For this to work, we must tell it where to find it by adding a JSON file in our project's `documents/` directory.
+The file must be in `projects/my_project/documents/doc_sources.json`.
+It contains a list of JSON objects, each having 2 keys:
+- `url`: the URL from which to download the archive we created, typically an OSF download URL.
+- `name`: the name of the directory contained in the archive, ie the name of the directory created by {{ pg }} -- in our case, `"query_9e14fc5ada411b2f16031d3d1b3c8dd3"`. 
+Note this is not the name of the archive itself but of the single directory that the archive contains.
+In particular, the `name` does not have an extension (such as `.zip` or `.tar.gz`).
+
+Therefore in our case the file would look like:
+```
+[
+    {
+    "url": "https://osf.io/download/[ ... ]",
+    "name": "query_9e14fc5ada411b2f16031d3d1b3c8dd3"
+    }
+]
+```
+
+See the corresponding files in existing projects for more examples.
+
+If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the `url` and `name` from that project's `doc_sources.json`.
 
 ### Adding the labels
 
