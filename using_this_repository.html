@@ -370,27 +370,27 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="using-this-repository">
 <h1>Using this repository<a class="headerlink" href="#using-this-repository" title="Permalink to this headline">#</a></h1>
 <p>Start by cloning the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/neurodatascience/labelbuddy-annotations.git
-<span class="nb">cd</span> labelbuddy-annotations
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/neurodatascience/labelbuddy-annotations.git
+<span class="nb">cd</span><span class="w"> </span>labelbuddy-annotations
 </pre></div>
 </div>
 <p>The documents, labels and annotations are stored in JSON or JSONLines files in the <code class="docutils literal notranslate"><span class="pre">projects/</span></code> directory.</p>
 <section id="building-the-database">
 <h2>Building the database<a class="headerlink" href="#building-the-database" title="Permalink to this headline">#</a></h2>
 <p>We can easily create a SQLite database containing all the information these files contain:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make database
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>database
 
 <span class="c1"># or equivalently:</span>
-python3 ./scripts/make_database.py
+python3<span class="w"> </span>./scripts/make_database.py
 </pre></div>
 </div>
 <p>We can then use this database to query the contents of the repository, either with the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> interactive command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3 analysis/data/database.sqlite3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3<span class="w"> </span>analysis/data/database.sqlite3
 </pre></div>
 </div>
 <p>or using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> bidings that are available in many languages, including Python’s standard library module <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>.</p>
 <p>A small Python package containing a few utilities for working with this repository is also provided in <code class="docutils literal notranslate"><span class="pre">analysis/labelrepo</span></code>. You can install it with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e analysis/labelrepo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>analysis/labelrepo
 </pre></div>
 </div>
 <p>The main tables are <code class="docutils literal notranslate"><span class="pre">annotation</span></code>, <code class="docutils literal notranslate"><span class="pre">document</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code>.
@@ -412,13 +412,52 @@ For example, to display a few annotations:</p>
         <div>
         <h5 style="margin-bottom: 0px;">
         <span
-        style="background-color: LightGray;">
-        discard_this_document
+        style="background-color: #aec7e8;">
+        N participants
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …<span style="font-weight: bold; background-color: LightGray;"
-           >A</span>lfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels…
+        …arget voxel. We present these simulations in the   entitled “Simulations on the effect of a global network signal on Ordinary and Partial Similarity”. 
+
+
+### 2.2. Subjects and Experimental Design 
+
+<span style="font-weight: bold; background-color: #aec7e8;"
+           >Twenty-nine</span> healthy volunteers participated in our experiment on trigeminal nociception which has been repeatedly shown to prompt robust results (see Schulte et al. [ , , ]). The current data was partly already …
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …and emotion regulation regions ( ), where we hypothesize this to be a modulating mechanism underlying reduced arousal after neurofeedback. 
+
+## Method 
+
+### Participants 
+
+The sample consisted of <span style="font-weight: bold; background-color: #aec7e8;"
+           >21</span> participants who met DSM-IV criteria ( ) for a primary diagnosis of PTSD (see   for demographic and psychometric information), where all patients experienced childhood sexual and/or physical abuse. A…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …al and neurobiological characteristics of convicted and non-convicted pedophilic CSOs as presented in the Neural Mechanisms Underlying Pedophilia and sexual offending against children (NeMUP)*-study. <span style="font-weight: bold; background-color: #aec7e8;"
+           >Seventy-nine </span>male pedophilic CSOs were examined, 48 of them convicted. All participants received a thorough clinical examination including the structured clinical interview (SCID), intelligence, empathy, impulsivi…
         </p>
         </div>
 
@@ -427,12 +466,88 @@ For example, to display a few annotations:</p>
         <h5 style="margin-bottom: 0px;">
         <span
         style="background-color: #ffbb78;">
-        Diagnosis
+        N included
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …d subcortical components of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including <span style="font-weight: bold; background-color: #ffbb78;"
-           >schizophrenia</span> (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20,…
+        …examined, 48 of them convicted. All participants received a thorough clinical examination including the structured clinical interview (SCID), intelligence, empathy, impulsivity, and criminal history. <span style="font-weight: bold; background-color: #ffbb78;"
+           >Sixty-one</span> participants (38 convicted) underwent an inhibition performance task (Go/No-go paradigm) combined with functional magnetic resonance imaging (fMRI). Convicted and non-convicted pedophilic CSOs reveal…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …e been previously linked to harsh (versus lenient) judgments, including anger  and sadness . 
+
+### Experiment 1: Sitting in hard chairs makes people hard on thieves and murderers 
+
+In Experiment 1, <span style="font-weight: bold; background-color: #aec7e8;"
+           >41</span> students (mean age = 19 years, 25 females) were randomly assigned to complete a paper and pencil questionnaire at a desk in the laboratory while seated in either a hard wooden chair or a soft cushion…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …easure of emotional valence, and 3) investigate an additional potential mediator of the relationship between chair hardness and punishment harshness: change in political attitudes. 
+
+In Experiment 2, <span style="font-weight: bold; background-color: #aec7e8;"
+           >44</span> students and community members (mean age = 22 years, 33 females, 2 unspecified) were randomly assigned to sit in the hard or soft chair as in Experiment 1 while completing a paper-and-pencil question…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …hether hard priming would cause the participants to be “hard” on crime and if this effect would be based on activity in the sensorimotor cortices. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+<span style="font-weight: bold; background-color: #aec7e8;"
+           >Seventeen</span> people (12 females) with a mean age of 24 years (standard deviation +−3.58, range 18–31) took part in the study. All participants were right-handed native German volunteers with no neurological or ps…
+        </p>
+        </div>
+
+
+        <div>
+        <h5 style="margin-bottom: 0px;">
+        <span
+        style="background-color: #aec7e8;">
+        N participants
+        </span>
+        </h5>
+        <p style="padding-left: 40px;">
+        …ts. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+The study was conducted at the Instituto de Neurobiología of the Universidad Nacional Autónoma de México (UNAM Juriquilla, Queretaro, Mexico). <span style="font-weight: bold; background-color: #aec7e8;"
+           >A fibromyalgia group (FM, n = 20, age range = 22–70, mean = 46.4, SD = 12.4) and an age-matched control group (HC, n = 20, age range = 21–70, mean = 42.1, SD = 12.5) participated in this study</span>. Given the difficulties of obtaining male participants with a complete diagnose of FM, and the fact that it affects predominantly women, our entire sample included only women. The inclusion and exclu…
         </p>
         </div>
 
@@ -441,12 +556,12 @@ For example, to display a few annotations:</p>
         <h5 style="margin-bottom: 0px;">
         <span
         style="background-color: #ffbb78;">
-        Diagnosis
+        N included
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …s of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including schizophrenia (Sz) and <span style="font-weight: bold; background-color: #ffbb78;"
-           >autism spectrum disorders</span> (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years)…
+        …tigate brain activation in response to visual sexual stimuli in patients with right middle cerebral artery (MCA) territory infarction using functional magnetic resonance imaging (fMRI). Using fMRI in <span style="font-weight: bold; background-color: #ffbb78;"
+           >20</span> participants (11 right MCA infarction patients and 9 age-matched healthy controls), we assessed brain activation elicited by visual sexual stimuli (erotic images) and visual nonsexual stimuli (landsc…
         </p>
         </div>
 
@@ -454,97 +569,57 @@ For example, to display a few annotations:</p>
         <div>
         <h5 style="margin-bottom: 0px;">
         <span
-        style="background-color: #dbdb8d;">
-        N_Patients
+        style="background-color: #aec7e8;">
+        N participants
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …tic of several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = <span style="font-weight: bold; background-color: #dbdb8d;"
-           >28</span>, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using …
-        </p>
-        </div>
+        …ause of stroke, and some patients with infarction of the dominant hemisphere (usually left) suffer from aphasia which could lead to difficulty in an fMRI study. 
 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #ff9896;">
-        N_Patients_Female
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        …of several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, <span style="font-weight: bold; background-color: #ff9896;"
-           >8</span>/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using tas…
-        </p>
-        </div>
+## Methods 
 
+### Participants 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #98df8a;">
-        N_Patients_Male
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        … several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/<span style="font-weight: bold; background-color: #98df8a;"
-           >20</span> female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-b…
-        </p>
-        </div>
+<span style="font-weight: bold; background-color: #aec7e8;"
+           >Thirteen male participants who had a history of right MCA territory infarction were recruited. The inclusion criteria were: 
 
+first-episode cerebral infarction, 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #dbdb8d;">
-        N_Patients
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        …nia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = <span style="font-weight: bold; background-color: #dbdb8d;"
-           >20,</span> 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Com…
-        </p>
-        </div>
+elapsed time since onset of cerebral infarction ≥6 months, 
 
+sufficient cognitive and communication function to understand the study protocol, and 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #ff9896;">
-        N_Patients_Female
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        …(Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, <span style="font-weight: bold; background-color: #ff9896;"
-           >4</span>/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compa…
-        </p>
-        </div>
+heterosexual male. 
 
+The exclusion criteria were: 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #98df8a;">
-        N_Patients_Male
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        …z) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/<span style="font-weight: bold; background-color: #98df8a;"
-           >16</span> female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared…
-        </p>
-        </div>
+pre-existing sexual dysfunction before cerebral infarction, 
 
+recurrent cerebral infarction, 
 
-        <div>
-        <h5 style="margin-bottom: 0px;">
-        <span
-        style="background-color: #c49c94;">
-        Age_Min
-        </span>
-        </h5>
-        <p style="padding-left: 40px;">
-        …um disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age <span style="font-weight: bold; background-color: #c49c94;"
-           >19</span>–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical con…
+cerebral infarction in multiple arterial territories, 
+
+cognitive dysfunction (Mini-Mental Status Examination Score <23), 
+
+hemispatial neglect, 
+
+psychiatric problems such as mood disorders or substance abuse, 
+
+use of medications that may affect sexual response including antidepressants, or 
+
+other coexisting neurological disorders that can influence sexual functions. 
+
+Eleven healthy heterosexual male participants were recruited as age-matched controls. This study was approved by the Institutional Review Board of our hospital. All participants provided written informed consents before participation. 
+
+</span>
+### Visual stimulation and image acquisition 
+
+Two sets of photographs were used for visual stimulation: 
+
+erotic images, showing naked, sexually interacting couples of both sexes, and 
+
+nonsex…
         </p>
         </div>
         </div></div></div>
@@ -555,7 +630,7 @@ For example, to display a few annotations:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SELECT selected_text, COUNT(*) as occurrences</span>
 <span class="sd">    FROM detailed_annotation</span>
 <span class="sd">    WHERE label_name = &quot;Diagnosis&quot;</span>
@@ -609,7 +684,7 @@ For example, to display a few annotations:</p>
 <section id="using-a-csv-rather-than-a-database">
 <h2>Using a CSV rather than a database<a class="headerlink" href="#using-a-csv-rather-than-a-database" title="Permalink to this headline">#</a></h2>
 <p>If you prefer working with CSVs and Pandas than SQL, you can also run (at the root of the repository)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>csv
 </pre></div>
 </div>
 <p>That will create a file <code class="docutils literal notranslate"><span class="pre">analysis/data/detailed_annotation.csv</span></code> containing that same table:</p>
@@ -628,13 +703,18 @@ For example, to display a few annotations:</p>
         <div>
         <h5 style="margin-bottom: 0px;">
         <span
-        style="background-color: LightGray;">
-        discard_this_document
+        style="background-color: #aec7e8;">
+        N participants
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …<span style="font-weight: bold; background-color: LightGray;"
-           >A</span>lfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels…
+        …arget voxel. We present these simulations in the   entitled “Simulations on the effect of a global network signal on Ordinary and Partial Similarity”. 
+
+
+### 2.2. Subjects and Experimental Design 
+
+<span style="font-weight: bold; background-color: #aec7e8;"
+           >Twenty-nine</span> healthy volunteers participated in our experiment on trigeminal nociception which has been repeatedly shown to prompt robust results (see Schulte et al. [ , , ]). The current data was partly already …
         </p>
         </div>
 
@@ -642,13 +722,19 @@ For example, to display a few annotations:</p>
         <div>
         <h5 style="margin-bottom: 0px;">
         <span
-        style="background-color: #ffbb78;">
-        Diagnosis
+        style="background-color: #aec7e8;">
+        N participants
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …d subcortical components of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including <span style="font-weight: bold; background-color: #ffbb78;"
-           >schizophrenia</span> (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20,…
+        …and emotion regulation regions ( ), where we hypothesize this to be a modulating mechanism underlying reduced arousal after neurofeedback. 
+
+## Method 
+
+### Participants 
+
+The sample consisted of <span style="font-weight: bold; background-color: #aec7e8;"
+           >21</span> participants who met DSM-IV criteria ( ) for a primary diagnosis of PTSD (see   for demographic and psychometric information), where all patients experienced childhood sexual and/or physical abuse. A…
         </p>
         </div>
 
@@ -656,13 +742,13 @@ For example, to display a few annotations:</p>
         <div>
         <h5 style="margin-bottom: 0px;">
         <span
-        style="background-color: #ffbb78;">
-        Diagnosis
+        style="background-color: #aec7e8;">
+        N participants
         </span>
         </h5>
         <p style="padding-left: 40px;">
-        …s of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including schizophrenia (Sz) and <span style="font-weight: bold; background-color: #ffbb78;"
-           >autism spectrum disorders</span> (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years)…
+        …al and neurobiological characteristics of convicted and non-convicted pedophilic CSOs as presented in the Neural Mechanisms Underlying Pedophilia and sexual offending against children (NeMUP)*-study. <span style="font-weight: bold; background-color: #aec7e8;"
+           >Seventy-nine </span>male pedophilic CSOs were examined, 48 of them convicted. All participants received a thorough clinical examination including the structured clinical interview (SCID), intelligence, empathy, impulsivi…
         </p>
         </div>
         </div></div></div>
@@ -684,69 +770,78 @@ For example, to display a few annotations:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_02ec9">
+<table id="T_c6cf4">
   <thead>
   </thead>
   <tbody>
     <tr>
-      <td id="T_02ec9_row0_col1" class="data row0 col1" >pmcid</td>
-      <td id="T_02ec9_row0_col2" class="data row0 col2" >9409193</td>
+      <td id="T_c6cf4_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_c6cf4_row0_col2" class="data row0 col2" >7563756</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row1_col1" class="data row1 col1" >pmid</td>
-      <td id="T_02ec9_row1_col2" class="data row1 col2" >36012668</td>
+      <td id="T_c6cf4_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_c6cf4_row1_col2" class="data row1 col2" >32887487</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row2_col1" class="data row2 col1" >publication_year</td>
-      <td id="T_02ec9_row2_col2" class="data row2 col2" >2022</td>
+      <td id="T_c6cf4_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_c6cf4_row2_col2" class="data row2 col2" >2020</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row3_col1" class="data row3 col1" >journal</td>
-      <td id="T_02ec9_row3_col2" class="data row3 col2" >Int J Mol Sci</td>
+      <td id="T_c6cf4_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_c6cf4_row3_col2" class="data row3 col2" >Brain Sci</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row4_col1" class="data row4 col1" >title</td>
-      <td id="T_02ec9_row4_col2" class="data row4 col2" >4-Phenylbutyric Acid (4-PBA) Derivatives Prevent SOD1 Amyloid Aggregation In Vitro with No Effect on Disease Progression in SOD1-ALS Mice</td>
+      <td id="T_c6cf4_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_c6cf4_row4_col2" class="data row4 col2" >Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row5_col1" class="data row5 col1" >label_name</td>
-      <td id="T_02ec9_row5_col2" class="data row5 col2" >discard_this_document</td>
+      <td id="T_c6cf4_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_c6cf4_row5_col2" class="data row5 col2" >N participants</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row6_col1" class="data row6 col1" >annotator_name</td>
-      <td id="T_02ec9_row6_col2" class="data row6 col2" >Jerome_Dockes</td>
+      <td id="T_c6cf4_row6_col1" class="data row6 col1" >label_color</td>
+      <td id="T_c6cf4_row6_col2" class="data row6 col2" >#aec7e8</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row7_col1" class="data row7 col1" >start_char</td>
-      <td id="T_02ec9_row7_col2" class="data row7 col2" >0</td>
+      <td id="T_c6cf4_row7_col1" class="data row7 col1" >annotator_name</td>
+      <td id="T_c6cf4_row7_col2" class="data row7 col2" >Jerome_Dockes</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row8_col1" class="data row8 col1" >end_char</td>
-      <td id="T_02ec9_row8_col2" class="data row8 col2" >1</td>
+      <td id="T_c6cf4_row8_col1" class="data row8 col1" >start_char</td>
+      <td id="T_c6cf4_row8_col2" class="data row8 col2" >9439</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row9_col1" class="data row9 col1" >extra_data</td>
-      <td id="T_02ec9_row9_col2" class="data row9 col2" >not about autism</td>
+      <td id="T_c6cf4_row9_col1" class="data row9 col1" >end_char</td>
+      <td id="T_c6cf4_row9_col2" class="data row9 col2" >9450</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row10_col1" class="data row10 col1" >project</td>
-      <td id="T_02ec9_row10_col2" class="data row10 col2" >autism_mri</td>
+      <td id="T_c6cf4_row10_col1" class="data row10 col1" >extra_data</td>
+      <td id="T_c6cf4_row10_col2" class="data row10 col2" >29.000000</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row11_col1" class="data row11 col1" >selected_text</td>
-      <td id="T_02ec9_row11_col2" class="data row11 col2" >A</td>
+      <td id="T_c6cf4_row11_col1" class="data row11 col1" >project</td>
+      <td id="T_c6cf4_row11_col2" class="data row11 col2" >participant_demographics</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row12_col1" class="data row12 col1" >context</td>
-      <td id="T_02ec9_row12_col2" class="data row12 col2" >Alfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels</td>
+      <td id="T_c6cf4_row12_col1" class="data row12 col1" >selected_text</td>
+      <td id="T_c6cf4_row12_col2" class="data row12 col2" >Twenty-nine</td>
     </tr>
     <tr>
-      <td id="T_02ec9_row13_col1" class="data row13 col1" >context_start_char</td>
-      <td id="T_02ec9_row13_col2" class="data row13 col2" >0</td>
+      <td id="T_c6cf4_row13_col1" class="data row13 col1" >context</td>
+      <td id="T_c6cf4_row13_col2" class="data row13 col2" >arget voxel. We present these simulations in the   entitled “Simulations on the effect of a global network signal on Ordinary and Partial Similarity”. 
+
+
+### 2.2. Subjects and Experimental Design 
+
+Twenty-nine healthy volunteers participated in our experiment on trigeminal nociception which has been repeatedly shown to prompt robust results (see Schulte et al. [ , , ]). The current data was partly already </td>
     </tr>
     <tr>
-      <td id="T_02ec9_row14_col1" class="data row14 col1" >context_end_char</td>
-      <td id="T_02ec9_row14_col2" class="data row14 col2" >201</td>
+      <td id="T_c6cf4_row14_col1" class="data row14 col1" >context_start_char</td>
+      <td id="T_c6cf4_row14_col2" class="data row14 col2" >9239</td>
+    </tr>
+    <tr>
+      <td id="T_c6cf4_row15_col1" class="data row15 col1" >context_end_char</td>
+      <td id="T_c6cf4_row15_col2" class="data row15 col2" >9650</td>
     </tr>
   </tbody>
 </table>
@@ -830,7 +925,7 @@ They can be parsed like this:</p>
 These are typically part of a larger dataset, usually created with <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a>.
 It is possible to obtain the full dataset from which the annotated documents were drawn.
 From the command-line this can be done with the <code class="docutils literal notranslate"><span class="pre">download_doc_sources.py</span></code> script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 ./scripts/download_doc_sources.py <span class="o">[</span> PROJECT NAME <span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>./scripts/download_doc_sources.py<span class="w"> </span><span class="o">[</span><span class="w"> </span>PROJECT<span class="w"> </span>NAME<span class="w"> </span><span class="o">]</span>
 </pre></div>
 </div>
 <p>In Python, it can be done with the <code class="docutils literal notranslate"><span class="pre">labelrepo.datasets</span></code> module:</p>

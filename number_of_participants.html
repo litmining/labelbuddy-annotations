@@ -398,7 +398,7 @@ More annotations are needed, and we need to harmonize the way this is done acros
 <span class="n">connection</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_database_connection</span><span class="p">()</span>
 
 <span class="n">annotations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SELECT selected_text, extra_data, publication_year, pmcid</span>
 <span class="sd">    FROM  detailed_annotation</span>
 <span class="sd">    WHERE label_name IN</span>
@@ -439,38 +439,38 @@ More annotations are needed, and we need to harmonize the way this is done acros
   <tbody>
     <tr>
       <th>0</th>
-      <td>Eighty‐three</td>
-      <td>None</td>
-      <td>2021</td>
-      <td>8785614</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>Sixty-one</td>
       <td>61</td>
       <td>2019</td>
       <td>6678781</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>20</td>
       <td>None</td>
       <td>2021</td>
       <td>8154462</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>15</td>
       <td>None</td>
       <td>2017</td>
       <td>5324609</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>Forty-four patients with drug-naive, first-epi...</td>
       <td>130</td>
       <td>2018</td>
       <td>6197719</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>30</td>
+      <td>None</td>
+      <td>2009</td>
+      <td>2748718</td>
     </tr>
   </tbody>
 </table>
@@ -514,35 +514,35 @@ In some other cases, the annotator indicated the numerical value in the <code cl
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
+      <th>0</th>
       <td>Sixty-one</td>
       <td>61</td>
       <td>2019</td>
       <td>6678781</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>Forty-four patients with drug-naive, first-epi...</td>
       <td>130</td>
       <td>2018</td>
       <td>6197719</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>7</th>
       <td>After a detailed evaluation of inclusion and e...</td>
       <td>87</td>
       <td>2017</td>
       <td>5665859</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>10</th>
       <td>Consequently we analysed data for 220 adolesce...</td>
       <td>248</td>
       <td>2014</td>
       <td>3991323</td>
     </tr>
     <tr>
-      <th>13</th>
+      <th>12</th>
       <td>Two of them were removed</td>
       <td>16</td>
       <td>2018</td>
@@ -702,14 +702,6 @@ You can skip over it as it is not very relevant to the rest of this notebook.</p
   <tbody>
     <tr>
       <th>0</th>
-      <td>Eighty‐three</td>
-      <td>None</td>
-      <td>2021</td>
-      <td>8785614</td>
-      <td>83</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>Sixty-one</td>
       <td>61</td>
       <td>2019</td>
@@ -717,7 +709,7 @@ You can skip over it as it is not very relevant to the rest of this notebook.</p
       <td>61</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>20</td>
       <td>None</td>
       <td>2021</td>
@@ -725,7 +717,7 @@ You can skip over it as it is not very relevant to the rest of this notebook.</p
       <td>20</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>15</td>
       <td>None</td>
       <td>2017</td>
@@ -733,12 +725,20 @@ You can skip over it as it is not very relevant to the rest of this notebook.</p
       <td>15</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>Forty-four patients with drug-naive, first-epi...</td>
       <td>130</td>
       <td>2018</td>
       <td>6197719</td>
       <td>130</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>30</td>
+      <td>None</td>
+      <td>2009</td>
+      <td>2748718</td>
+      <td>30</td>
     </tr>
   </tbody>
 </table>
@@ -779,7 +779,7 @@ You can skip over it as it is not very relevant to the rest of this notebook.</p
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">displays</span>
 
 <span class="n">first_paper_anno</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    select *</span>
 <span class="sd">    from detailed_annotation</span>
 <span class="sd">    where label_name = &#39;n_participants&#39; and pmcid = ?</span>
