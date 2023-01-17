@@ -39,14 +39,3 @@ def data_dir() -> pathlib.Path:
     data_dir = repo_root() / "analysis" / "data"
     data_dir.mkdir(exist_ok=True, parents=True)
     return data_dir
-
-
-# contextlib.chdir only available in python3.11
-@contextlib.contextmanager
-def chdir(target_directory: pathlib.Path):
-    previous_directory = pathlib.Path.cwd()
-    os.chdir(target_directory)
-    try:
-        yield
-    finally:
-        os.chdir(previous_directory)
