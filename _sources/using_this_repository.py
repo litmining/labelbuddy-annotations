@@ -26,7 +26,7 @@
 
 # ## Building the database
 #
-# We can easily create a SQLite database containing all the information these files contain:
+# We can easily create a SQLite database containing all the information in the repository:
 # ```bash
 # make database
 #
@@ -37,7 +37,7 @@
 # ```bash
 # sqlite3 analysis/data/database.sqlite3
 # ```
-# or using `sqlite3` bidings that are available in many languages, including Python's standard library module `sqlite3`.
+# or using `sqlite3` bindings that are available in many languages, including Python's standard library module `sqlite3`.
 #
 # A small Python package containing a few utilities for working with this repository is also provided in `analysis/labelrepo`. You can install it with
 # ```bash
@@ -107,11 +107,13 @@ displays.AnnotationsDisplay(annotations)
 
 # ## Using the JSON and JSONLines files directly
 
-# `.jsonl` (JSONLines) files contain one JSON dictionary per line.
-# They can be parsed like this:
+# `.jsonl` (JSONLines) files contain one JSON dictionary per line. They can
+# easily be parsed with the `json` standard library module. Moreover the
+# `labelrepo` package contains a convenience function for parsing JSON or
+# JSONLines files:
 
 # +
-import json
+from labelrepo import read_json
 
 annotations_file = (
     repo.repo_root()
@@ -120,13 +122,9 @@ annotations_file = (
     / "annotations"
     / "Jerome_Dockes.jsonl"
 )
-with open(annotations_file, encoding="UTF-8") as stream:
-    for i, row_json in enumerate(stream):
-        row = json.loads(row_json)
-        print(row)
-        # We don't want to print dozens of lines here
-        if i == 3:
-            break
+
+for row in read_json(annotations_file)[:3]:
+    print(row)
 # -
 
 # Loading labels from a JSON file:
@@ -138,7 +136,7 @@ labels_file = (
     / "labels"
     / "Article_Terms.json"
 )
-json.loads(labels_file.read_text("UTF-8"))
+read_json(labels_file)
 
 #(obtaining-the-full-datasets)=
 # ## Obtaining the full datasets
