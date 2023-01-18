@@ -24,7 +24,7 @@ export REPO_ROOT="$(pwd)"
 Here we want to contribute to an existing annotation project, using the `autism_mri` project as an example.
 The repository contains the documents we will annotate and the labels we will use.
 Locally, we will
-- Create a `.labelbuddy` file (a binary file which is ignored by **Git** and not added to the repository).
+- Create a `.labelbuddy` file (a binary file, used by {{ labelbuddy_home }}, which is ignored by **Git**).
 - Import the documents and labels in the `.labelbuddy` file.
 - Use {{ lb }} to create some annotations.
 - Export our annotations to a `.jsonl` file that will be added to the repository.
@@ -41,7 +41,7 @@ This way the name of the annotations file you create and your name in the git lo
 (create_the_labelbuddy_file)=
 ### Creating the `.labelbuddy` file
 
-We first need to install {{ lb }}, see the [installation instructions](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/).
+We first need to install {{ labelbuddy_home }}, see the [installation instructions](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/).
 Next we create our `.labelbuddy` file.
 
 `````{tab-set}
@@ -116,9 +116,9 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy \
 
 Go to the **Import / Export** tab.
 Make sure that the checkboxes are in these states:
-- 🗹 Export only annotated documents
+- ☑ Export only annotated documents
 - ☐ Include document text
-- 🗹 Include annotations
+- ☑ Include annotations
 
 (You only need to check this once, {{ lb }} will remember your choices next time.)
 
@@ -256,7 +256,7 @@ The latter is probably more convenient, especially if we decide on the labels as
 
 To create the labels in {{ lb }}, create a `.labelbuddy` as explained {ref}`above<create_the_labelbuddy_file>`.
 Thus you will end up with a file like `annotations/Firstname_Lastname.labelbuddy` containing the documents.
-Open it, and add some labels in the **Dataset** tab.
+Open it, and add some labels in the **Labels & Documents** tab.
 Then export the labels.
 
 `````{tab-set}
