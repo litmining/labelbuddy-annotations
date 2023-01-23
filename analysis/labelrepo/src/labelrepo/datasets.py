@@ -5,6 +5,7 @@ import os
 import pathlib
 import re
 import shutil
+import sqlite3
 import tempfile
 import time
 from typing import List
@@ -16,6 +17,27 @@ from labelrepo import repo
 _BUFFER_SIZE = 1024 * 1024
 
 
+def _init_db(connection: sqlite3.Connection):
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS
+        downloads (
+            url NOT NULL UNIQUE ON CONFLICT REPLACE,
+            local_path NOT NULL UNIQUE ON CONFLICT REPLACE
+        )
+        """
+    )
+
+
+def _downloads_db_connection(
+    downloads_dir: pathlib.Path,
+) -> sqlite3.Connection:
+    db_path = downloads_dir / ".downloads.sqlite3"
+    with sqlite3.connect(db_path) as connection:
+        _init_db(connection)
+    return sqlite3.connect(db_path)
+
+
 def _convert_osf_url_to_download(url: str) -> str:
     if "download" in url:
         return url
@@ -24,6 +46,15 @@ def _convert_osf_url_to_download(url: str) -> str:
         return url
     osf_id = match.group(1)
     return f"https://osf.io/download/{osf_id}/"
+
+
+def _format_time(seconds: int) -> str:
+    hours, rest = divmod(seconds, 3600)
+    minutes, rest = divmod(rest, 60)
+    hinfo = f"{hours}h " if hours else ""
+    minfo = f"{minutes:>02}m " if minutes else ""
+    sinfo = f"{rest:>02}s"
+    return "".join((hinfo, minfo, sinfo))
 
 
 def _download_url(url: str, target_file: pathlib.Path) -> None:
@@ -45,7 +76,7 @@ def _download_url(url: str, target_file: pathlib.Path) -> None:
                 speed = downloaded / (elapsed + 1e-9)
                 remaining = total_size - downloaded
                 eta = int(remaining / (speed + 1e-9))
-                eta_msg = f"eta {eta}s"
+                eta_msg = f"eta {_format_time(eta)}"
                 print(
                     f"\r{proportion: <4.0%} {dl_msg: <10} {eta_msg: >10}",
                     end="",
@@ -56,61 +87,69 @@ def _download_url(url: str, target_file: pathlib.Path) -> None:
 
 
 def _extract_archive(
-    archive_file: pathlib.Path, target_dir: pathlib.Path, name: str
-) -> None:
+    archive_file: pathlib.Path, downloads_dir: pathlib.Path
+) -> pathlib.Path:
     with tempfile.TemporaryDirectory(
-        dir=target_dir, ignore_cleanup_errors=True
+        dir=downloads_dir, ignore_cleanup_errors=True
     ) as tmp_dir:
         print("Extracting archive contents...")
         shutil.unpack_archive(archive_file, tmp_dir)
         contents = list(pathlib.Path(tmp_dir).glob("*"))
         assert len(contents) == 1
         extracted = contents[0]
-        assert extracted.name == name
-        extracted.rename(target_dir / extracted.name)
+        result_path = downloads_dir / extracted.name
+        if result_path.exists():
+            shutil.rmtree(result_path)
+        extracted.rename(result_path)
+    return result_path
 
 
-def _download_archive(url: str, target_dir: pathlib.Path, name: str) -> None:
+def _download_archive(url: str, downloads_dir: pathlib.Path) -> pathlib.Path:
     print(f"Downloading {url}")
-    fd, tmp_file_name = tempfile.mkstemp(suffix=".tar.gz", dir=target_dir)
+    fd, tmp_file_name = tempfile.mkstemp(suffix=".tar.gz", dir=downloads_dir)
     os.close(fd)
     tmp_file = pathlib.Path(tmp_file_name)
     try:
         _download_url(url, tmp_file)
-        _extract_archive(tmp_file, target_dir, name)
+        extracted_path = _extract_archive(tmp_file, downloads_dir)
     finally:
         try:
             tmp_file.unlink()
         except Exception:
             pass
+    with _downloads_db_connection(downloads_dir) as connection:
+        connection.execute(
+            "INSERT INTO downloads (url, local_path) VALUES (?, ?)",
+            (url, str(extracted_path.relative_to(downloads_dir))),
+        )
+    return extracted_path
 
 
-def _get_archive(
-    url: str, target_dir: str | pathlib.Path, target_name: str
-) -> pathlib.Path:
-    target_dir = pathlib.Path(target_dir)
-    target = target_dir / target_name
-    if target.exists():
-        return target
+def _get_archive(url: str, downloads_dir: str | pathlib.Path) -> pathlib.Path:
+    downloads_dir = pathlib.Path(downloads_dir)
+    with _downloads_db_connection(downloads_dir) as connection:
+        result = connection.execute(
+            "SELECT local_path FROM downloads WHERE url=?", (url,)
+        ).fetchone()
+        if result is not None:
+            return downloads_dir / result[0]
     url = _convert_osf_url_to_download(url)
-    _download_archive(url, target_dir, target_name)
-    assert target.exists()
-    return target
+    return _download_archive(url, downloads_dir)
 
 
-def get_documents_source_dir(url: str, name: str) -> pathlib.Path:
-    sources_dir = repo.data_dir() / "document_sources"
-    sources_dir.mkdir(exist_ok=True)
-    return _get_archive(url, sources_dir, name)
+def get_dataset(url: str) -> pathlib.Path:
+    downloads_dir = repo.data_dir() / "datasets"
+    downloads_dir.mkdir(exist_ok=True)
+    return _get_archive(url, downloads_dir)
 
 
-def get_project_document_sources(project_name: str) -> List[pathlib.Path]:
+def get_project_datasets(project_name: str) -> List[pathlib.Path]:
     project_dir = repo.repo_root() / "projects" / project_name
-    sources_json = project_dir / "documents" / "doc_sources.json"
+    sources_json = project_dir / "documents" / "datasets.json"
     if not sources_json.is_file():
         return []
     sources_info = json.loads(sources_json.read_text("UTF-8"))
     result = []
     for source in sources_info:
-        result.append(get_documents_source_dir(source["url"], source["name"]))
+        result.append(get_dataset(source["url"]))
     return result

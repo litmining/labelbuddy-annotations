@@ -143,6 +143,7 @@ Rather than contributing to an existing project you can also start a new one.
 If you haven't yet, {ref}`Clone the repository <clone_the_repository>`, then create a new directory for your project in `projects/`.
 
 Suppose we want to start a project in which we will annotate imaging modalities.
+We choose to name the project `imaging_modalities`.
 
 ```bash
 cd projects/
@@ -168,11 +169,11 @@ cd documents
 ln -s ../../participant_demographics/documents/documents_00001.jsonl
 cd ..
 ```
-And if it exists also link the `doc_sources.json` file, which tells how the full dataset from which documents were obtained can be downloaded:
+And if it exists also link the `datasets.json` file, which tells how the full dataset from which documents were obtained can be downloaded:
 
 ```bash
 cd documents
-ln -s ../../participant_demographics/documents/doc_sources.json
+ln -s ../../participant_demographics/documents/datasets.json
 cd ..
 ```
 
@@ -199,16 +200,18 @@ See the {{ pubget_home }} documentation for details.
 Note here we are storing the data in the current directory for simplicity, and `pubget_data` is listed in this repository's `.gitignore` so it will not be tracked by {{ git }}.
 However we could store the data anywhere we want; outside of the repository is even better, otherwise we have to make sure we don't add it to the repository by mistake.
 
-Once the download has finished, we recommend uploading the whole output to [OSF](https://osf.io/d2qbh/) and adding the link to the annotation project's `README`.
+Once the download has finished, we recommend uploading the whole output as a `.tar.gz` file to [OSF](https://osf.io/d2qbh/) and adding the link to the annotation project's `README`.
 For example, with the command above {{ pg }} creates a directory named `pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3`.
 We can compress it with
 
 ```bash
-zip -r pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3.zip pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3
+tar czf imaging_modalities.tar.gz -C pubget_data/ query_9e14fc5ada411b2f16031d3d1b3c8dd3/
 ```
 
-Then upload the resulting `.zip` file to OSF.
-To tell the repository where to find the full archive, add a `documents/doc_sources.json` file as explained {ref}`below<add-doc-sources-json>`.
+Then upload the resulting `imaging_modalities.tar.gz` file to OSF.
+Remember, `imaging_modalities` is the name of our example project.
+We could name the file anything we want as long as it is a `.tar.gz` file.
+To tell the repository where to find the full archive, add a `documents/datasets.json` file as explained {ref}`below<add-doc-sources-json>`.
 
 Finally, we can get the documents.
 The directory created by {{ pg }} contains a subdirectory called `subset_allArticles_labelbuddyData`, containing `.jsonl` files.
@@ -224,26 +227,24 @@ cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbu
 
 This repository provides an easy way to {ref}`download the full dataset<obtaining-the-full-datasets>`.
 For this to work, we must tell it where to find it by adding a JSON file in our project's `documents/` directory.
-The file must be in `projects/my_project/documents/doc_sources.json`.
-It contains a list of JSON objects, each having 2 keys:
+The file must be in `projects/my_project/documents/datasets.json`.
+It contains a list of JSON objects, each having 1 mandatory key (at the moment):
 - `url`: the URL from which to download the archive we created, typically an OSF download URL.
-- `name`: the name of the directory contained in the archive, ie the name of the directory created by {{ pg }} -- in our case, `"query_9e14fc5ada411b2f16031d3d1b3c8dd3"`. 
-Note this is not the name of the archive itself but of the single directory that the archive contains.
-In particular, the `name` does not have an extension (such as `.zip` or `.tar.gz`).
 
+The `url` must point to a GZipped TAR (`.tar.gz`) archive.
+The archive must contain one single directory, which is the {{ pg }} directory -- the directory named `query_[ ... ]` or `pmcidList_[ ... ]`.
 Therefore in our case the file would look like:
 ```
 [
     {
-    "url": "https://osf.io/download/[ ... ]",
-    "name": "query_9e14fc5ada411b2f16031d3d1b3c8dd3"
+      "url": "https://osf.io/download/[ ... ]",
     }
 ]
 ```
 
 See the corresponding files in existing projects for more examples.
 
-If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the `url` and `name` from that project's `doc_sources.json`.
+If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the `url` from that project's `datasets.json`.
 
 ### Adding the labels
 
