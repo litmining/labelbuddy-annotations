@@ -144,17 +144,17 @@ read_json(labels_file)
 # This repository only contains the batches of documents currently being annotated.
 # These are typically part of a larger dataset, usually created with {{ pubget_home }}.
 # It is possible to obtain the full dataset from which the annotated documents were drawn.
-# From the command-line this can be done with the `download_doc_sources.py` script:
+# From the command-line this can be done with the `download_datasets.py` script:
 #
 # ```bash
-# python3 ./scripts/download_doc_sources.py [ PROJECT NAME ]
+# python3 ./scripts/download_datasets.py [ PROJECT NAME ]
 # ```
 #
 # In Python, it can be done with the `labelrepo.datasets` module:
 #
 # ```python
 # from labelrepo import datasets
-# doc_source_directories = datasets.get_project_document_sources(project_name)
+# project_datasets = datasets.get_project_datasets(project_name)
 # ```
 #
-# The datasets are stored in `analysis/data/document_sources/`.
+# The datasets are stored in `analysis/data/datasets/`.

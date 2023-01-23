@@ -507,8 +507,8 @@ We recommend using the same name as in your git configuration, ie the output of:
 <p>We first need to install <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4c2b1f2c-cbcb-4db0-ae68-9a6ed232ca0e" name="5309796c-9ec5-4fc8-b751-f400056b1c80" type="radio">
-</input><label class="sd-tab-label" for="4c2b1f2c-cbcb-4db0-ae68-9a6ed232ca0e">
+<input checked="checked" id="6192a76c-ff99-4520-a853-e6145c270144" name="ce8d1a26-d03b-469a-a5b6-92674632eac8" type="radio">
+</input><label class="sd-tab-label" for="6192a76c-ff99-4520-a853-e6145c270144">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/start_project.py<span class="w"> </span>projects/autism_mri
@@ -523,8 +523,8 @@ labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span
 </pre></div>
 </div>
 </div>
-<input id="513a2147-01e6-40ad-98ab-04261602366c" name="5309796c-9ec5-4fc8-b751-f400056b1c80" type="radio">
-</input><label class="sd-tab-label" for="513a2147-01e6-40ad-98ab-04261602366c">
+<input id="8d6edb89-29eb-4792-aafa-46ab9ea35c8b" name="ce8d1a26-d03b-469a-a5b6-92674632eac8" type="radio">
+</input><label class="sd-tab-label" for="8d6edb89-29eb-4792-aafa-46ab9ea35c8b">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -550,8 +550,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2488df2a-582d-4896-9fd4-ed7ae77abed7" name="7c3388a7-9257-4425-8dec-a21b218a5f6d" type="radio">
-</input><label class="sd-tab-label" for="2488df2a-582d-4896-9fd4-ed7ae77abed7">
+<input checked="checked" id="6e07e2cd-125d-4f77-8989-d8ee40140045" name="1d5c9555-9960-46e4-bb8a-cd54bacd3d59" type="radio">
+</input><label class="sd-tab-label" for="6e07e2cd-125d-4f77-8989-d8ee40140045">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -566,8 +566,8 @@ make<span class="w"> </span>annotations
 </pre></div>
 </div>
 </div>
-<input id="95d9d37d-2d5f-43ee-a6ca-96d35ea27356" name="7c3388a7-9257-4425-8dec-a21b218a5f6d" type="radio">
-</input><label class="sd-tab-label" for="95d9d37d-2d5f-43ee-a6ca-96d35ea27356">
+<input id="9ed9ffb9-858e-40e5-bcbb-1c39d170bc45" name="1d5c9555-9960-46e4-bb8a-cd54bacd3d59" type="radio">
+</input><label class="sd-tab-label" for="9ed9ffb9-858e-40e5-bcbb-1c39d170bc45">
 Using <strong>labelbuddy</strong>’s graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -595,7 +595,8 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <h2>Adding a new project<a class="headerlink" href="#adding-a-new-project" title="Permalink to this headline">#</a></h2>
 <p>Rather than contributing to an existing project you can also start a new one.
 If you haven’t yet, <a class="reference internal" href="#clone-the-repository"><span class="std std-ref">Clone the repository</span></a>, then create a new directory for your project in <code class="docutils literal notranslate"><span class="pre">projects/</span></code>.</p>
-<p>Suppose we want to start a project in which we will annotate imaging modalities.</p>
+<p>Suppose we want to start a project in which we will annotate imaging modalities.
+We choose to name the project <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>projects/
 mkdir<span class="w"> </span>imaging_modalities
 <span class="nb">cd</span><span class="w"> </span>imaging_modalities
@@ -616,9 +617,9 @@ ln<span class="w"> </span>-s<span class="w"> </span>../../participant_demographi
 <span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
-<p>And if it exists also link the <code class="docutils literal notranslate"><span class="pre">doc_sources.json</span></code> file, which tells how the full dataset from which documents were obtained can be downloaded:</p>
+<p>And if it exists also link the <code class="docutils literal notranslate"><span class="pre">datasets.json</span></code> file, which tells how the full dataset from which documents were obtained can be downloaded:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>documents
-ln<span class="w"> </span>-s<span class="w"> </span>../../participant_demographics/documents/doc_sources.json
+ln<span class="w"> </span>-s<span class="w"> </span>../../participant_demographics/documents/datasets.json
 <span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
@@ -641,14 +642,16 @@ Then use it for the <strong>pubget</strong> command, for example:</p>
 See the <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a> documentation for details.</p>
 <p>Note here we are storing the data in the current directory for simplicity, and <code class="docutils literal notranslate"><span class="pre">pubget_data</span></code> is listed in this repository’s <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> so it will not be tracked by <strong>Git</strong>.
 However we could store the data anywhere we want; outside of the repository is even better, otherwise we have to make sure we don’t add it to the repository by mistake.</p>
-<p>Once the download has finished, we recommend uploading the whole output to <a class="reference external" href="https://osf.io/d2qbh/">OSF</a> and adding the link to the annotation project’s <code class="docutils literal notranslate"><span class="pre">README</span></code>.
+<p>Once the download has finished, we recommend uploading the whole output as a <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> file to <a class="reference external" href="https://osf.io/d2qbh/">OSF</a> and adding the link to the annotation project’s <code class="docutils literal notranslate"><span class="pre">README</span></code>.
 For example, with the command above <strong>pubget</strong> creates a directory named <code class="docutils literal notranslate"><span class="pre">pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3</span></code>.
 We can compress it with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>-r<span class="w"> </span>pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3.zip<span class="w"> </span>pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>czf<span class="w"> </span>imaging_modalities.tar.gz<span class="w"> </span>-C<span class="w"> </span>pubget_data/<span class="w"> </span>query_9e14fc5ada411b2f16031d3d1b3c8dd3/
 </pre></div>
 </div>
-<p>Then upload the resulting <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file to OSF.
-To tell the repository where to find the full archive, add a <code class="docutils literal notranslate"><span class="pre">documents/doc_sources.json</span></code> file as explained <a class="reference internal" href="#add-doc-sources-json"><span class="std std-ref">below</span></a>.</p>
+<p>Then upload the resulting <code class="docutils literal notranslate"><span class="pre">imaging_modalities.tar.gz</span></code> file to OSF.
+Remember, <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code> is the name of our example project.
+We could name the file anything we want as long as it is a <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> file.
+To tell the repository where to find the full archive, add a <code class="docutils literal notranslate"><span class="pre">documents/datasets.json</span></code> file as explained <a class="reference internal" href="#add-doc-sources-json"><span class="std std-ref">below</span></a>.</p>
 <p>Finally, we can get the documents.
 The directory created by <strong>pubget</strong> contains a subdirectory called <code class="docutils literal notranslate"><span class="pre">subset_allArticles_labelbuddyData</span></code>, containing <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> files.
 Those are the files we will be adding to the annotations repository, importing into <strong>labelbuddy</strong>, and annotating.
@@ -661,25 +664,23 @@ By default <strong>pubget</strong> splits its output into files containing 500 a
 <span id="add-doc-sources-json"></span><h4>Adding the source dataset location information<a class="headerlink" href="#adding-the-source-dataset-location-information" title="Permalink to this headline">#</a></h4>
 <p>This repository provides an easy way to <a class="reference internal" href="using_this_repository.html#obtaining-the-full-datasets"><span class="std std-ref">download the full dataset</span></a>.
 For this to work, we must tell it where to find it by adding a JSON file in our project’s <code class="docutils literal notranslate"><span class="pre">documents/</span></code> directory.
-The file must be in <code class="docutils literal notranslate"><span class="pre">projects/my_project/documents/doc_sources.json</span></code>.
-It contains a list of JSON objects, each having 2 keys:</p>
+The file must be in <code class="docutils literal notranslate"><span class="pre">projects/my_project/documents/datasets.json</span></code>.
+It contains a list of JSON objects, each having 1 mandatory key (at the moment):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: the URL from which to download the archive we created, typically an OSF download URL.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name of the directory contained in the archive, ie the name of the directory created by <strong>pubget</strong> – in our case, <code class="docutils literal notranslate"><span class="pre">&quot;query_9e14fc5ada411b2f16031d3d1b3c8dd3&quot;</span></code>.
-Note this is not the name of the archive itself but of the single directory that the archive contains.
-In particular, the <code class="docutils literal notranslate"><span class="pre">name</span></code> does not have an extension (such as <code class="docutils literal notranslate"><span class="pre">.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>).</p></li>
 </ul>
-<p>Therefore in our case the file would look like:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">url</span></code> must point to a GZipped TAR (<code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>) archive.
+The archive must contain one single directory, which is the <strong>pubget</strong> directory – the directory named <code class="docutils literal notranslate"><span class="pre">query_[</span> <span class="pre">...</span> <span class="pre">]</span></code> or <code class="docutils literal notranslate"><span class="pre">pmcidList_[</span> <span class="pre">...</span> <span class="pre">]</span></code>.
+Therefore in our case the file would look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
     <span class="p">{</span>
-    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://osf.io/download/[ ... ]&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;query_9e14fc5ada411b2f16031d3d1b3c8dd3&quot;</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://osf.io/download/[ ... ]&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
 <p>See the corresponding files in existing projects for more examples.</p>
-<p>If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the <code class="docutils literal notranslate"><span class="pre">url</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> from that project’s <code class="docutils literal notranslate"><span class="pre">doc_sources.json</span></code>.</p>
+<p>If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the <code class="docutils literal notranslate"><span class="pre">url</span></code> from that project’s <code class="docutils literal notranslate"><span class="pre">datasets.json</span></code>.</p>
 </section>
 </section>
 <section id="adding-the-labels">
@@ -695,16 +696,16 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Labels &amp; Documents</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="428a9296-da24-4c47-92de-824e8f33ad99" name="1d228e2b-5b7b-4845-a92c-c892e41ae061" type="radio">
-</input><label class="sd-tab-label" for="428a9296-da24-4c47-92de-824e8f33ad99">
+<input checked="checked" id="ad5fc937-c627-40fc-83e6-ceadfc1d9583" name="6ddc2330-f803-4628-aa63-a53c9da48e6b" type="radio">
+</input><label class="sd-tab-label" for="ad5fc937-c627-40fc-83e6-ceadfc1d9583">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--export-labels<span class="w"> </span>labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="612c6644-8f1a-4f1d-94be-6850dd21a3ce" name="1d228e2b-5b7b-4845-a92c-c892e41ae061" type="radio">
-</input><label class="sd-tab-label" for="612c6644-8f1a-4f1d-94be-6850dd21a3ce">
+<input id="57fcf729-7bc4-413b-86d6-0cf5b1794e55" name="6ddc2330-f803-4628-aa63-a53c9da48e6b" type="radio">
+</input><label class="sd-tab-label" for="57fcf729-7bc4-413b-86d6-0cf5b1794e55">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>
