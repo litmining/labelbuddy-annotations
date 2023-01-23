@@ -39,9 +39,7 @@ def _downloads_db_connection(
 
 
 def _convert_osf_url_to_download(url: str) -> str:
-    if "download" in url:
-        return url
-    match = re.match(r"^https://osf.io/([0-9a-zA-Z]+)/?$", url)
+    match = re.match(r"^https://osf.io/(?:download/)?([0-9a-zA-Z]+)/?$", url)
     if match is None:
         return url
     osf_id = match.group(1)
