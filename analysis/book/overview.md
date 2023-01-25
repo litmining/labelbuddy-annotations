@@ -116,20 +116,27 @@ There are currently {glue:text}`document_count` documents in the repository, {gl
 
 Labels are simple tags that can be attached to a portion of a document's text.
 They can optionally have a `color` and a `shortcut_key`, used in {{ lb }} when we are annotating a document.
-They are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format).
 
-For example, here are the labels used in the `participants_demographics` project:
+For example, here are the labels used in the `cluster_inference` project:
 
 ```{code-cell}
-:tags: [remove-input, hide-output]
+:tags: [remove-input]
+from labelrepo import displays, read_json
 
 labels_file = (
     repo.repo_root()
     / "projects"
-    / "participant_demographics"
+    / "cluster_inference"
     / "labels"
-    / "labels_n_participants.json"
+    / "labels_kendra.json"
 )
+displays.LabelsDisplay(read_json(labels_file))
+```
+The labels are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format); below is an example.
+
+
+```{code-cell}
+:tags: [remove-input, hide-output]
 print(labels_file.read_text("utf-8"))
 ```
 

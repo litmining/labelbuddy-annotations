@@ -10,21 +10,19 @@ import pandas as pd
 
 from labelrepo import _utils
 
-_SIMPLE_ANNOTATION_TEMPLATE = """
-<div>
+_SIMPLE_ANNOTATION_TEMPLATE = """<div>
     <h5 style="margin-bottom: 0px;">
-        <span style="background-color: ${label_color};">${label_name}</span>
+        <span style="background-color: ${color};">${label_name}</span>
     </h5>
     <p style="padding-left: 40px;">
     ${prefix}<span
-        style="font-weight: bold; background-color: ${label_color};"
+        style="font-weight: bold; background-color: ${color};"
         >${selected_text}</span>${suffix}
     </p>
 </div>
 """
 
-_STYLED_ANNOTATION_TEMPLATE = """
-<div class="annotation"
+_STYLED_ANNOTATION_TEMPLATE = """<div class="annotation"
     style='--label-name:"${label_name}"; --label-color:${color}'>
     <div class="annotation-header">${label_name}</div>
     <div class="context">
@@ -39,16 +37,81 @@ _STYLED_ANNOTATION_TEMPLATE = """
 </div>
 """
 
+_SIMPLE_LABEL_TEMPLATE = (
+    """<div style="background-color: ${color}; """
+    """padding: 0.5rem; margin: 0.5rem">${name}</div>"""
+)
 
-def _get_annotation_template() -> str:
-    if ("LABELREPO_CSS_AVAILABLE" in os.environ) or (
-        "JUPYTER_BOOK" in os.environ
+_STYLED_LABEL_TEMPLATE = (
+    """<div class="label-display" """
+    """style='--label-color:${color};'>${name}</div>"""
+)
+
+_TEMPLATES = {
+    "simple": {
+        "annotation": _SIMPLE_ANNOTATION_TEMPLATE,
+        "label": _SIMPLE_LABEL_TEMPLATE,
+    },
+    "styled": {
+        "annotation": _STYLED_ANNOTATION_TEMPLATE,
+        "label": _STYLED_LABEL_TEMPLATE,
+    },
+}
+
+
+def _get_template(kind: str, force_styled: bool = False) -> str:
+    if (
+        force_styled
+        or ("LABELREPO_CSS_AVAILABLE" in os.environ)
+        or ("JUPYTER_BOOK" in os.environ)
     ):
-        return _STYLED_ANNOTATION_TEMPLATE
-    return _SIMPLE_ANNOTATION_TEMPLATE
+        return _TEMPLATES["styled"][kind]
+    return _TEMPLATES["simple"][kind]
 
 
-class AnnotationsDisplay:
+def _get_color(color: Any) -> str:
+    if not color or pd.isnull(color):
+        return "#e0e0e0"
+    return str(color)
+
+
+def _get_css(basename: str) -> str:
+    return (_utils.package_data() / "css" / f"{basename}.css").read_text(
+        "UTF-8"
+    )
+
+
+def _escape_values(data: Mapping[str, Any]) -> Mapping[str, str]:
+    return {k: html.escape(str(v)) for k, v in data.items() if pd.notnull(v)}
+
+
+class Display:
+    def _repr_html_(self) -> str:
+        return self.get_div()
+
+    def get_html(self) -> str:
+        return f"""<html>
+        <head>
+        <title>labelrepo data</title>
+        <style>
+        {self._get_css()}
+        </style>
+        </head>
+        <body>
+        {self.get_div(True)}
+        </body>
+        </html>
+        """
+
+    def _get_css(self) -> str:
+        return ""
+
+    def get_div(self, force_styled: bool = False) -> str:
+        del force_styled
+        return ""
+
+
+class AnnotationsDisplay(Display):
     def __init__(
         self,
         annotations: Union[
@@ -63,7 +126,9 @@ class AnnotationsDisplay:
             self.annotations = annotations
 
     @staticmethod
-    def _repr_annotation(annotation: Mapping[str, Any]) -> str:
+    def _repr_annotation(
+        annotation: Mapping[str, Any], force_styled: bool
+    ) -> str:
         prefix = annotation["context"][
             : annotation["start_char"] - annotation["context_start_char"]
         ]
@@ -74,27 +139,55 @@ class AnnotationsDisplay:
         ]
         if annotation["context_end_char"] != annotation["doc_length"]:
             suffix = suffix + "…"
-        color = annotation["label_color"]
-        if not color or pd.isnull(color):
-            color = "#e0e0e0"
+        color = _get_color(annotation["label_color"])
         extra_data = annotation["extra_data"]
         if pd.isnull(extra_data):
             extra_data = ""
         info = {
+            **dict(annotation),
             "prefix": prefix,
             "suffix": suffix,
             "color": color,
             "extra_data": extra_data,
-            **{
-                k: str(v) for k, v in dict(annotation).items() if pd.notnull(v)
-            },
         }
-        return string.Template(_get_annotation_template()).safe_substitute(
-            {key: html.escape(value) for key, value in info.items()}
-        )
+        return string.Template(
+            _get_template("annotation", force_styled)
+        ).safe_substitute(_escape_values(info))
 
-    def _repr_html_(self) -> str:
+    def get_div(self, force_styled: bool = False) -> str:
         annotations = "\n".join(
-            self._repr_annotation(anno) for anno in self.annotations
+            self._repr_annotation(anno, force_styled)
+            for anno in self.annotations
         )
         return f"""<div class='annotation-set'>{annotations}</div>"""
+
+    def _get_css(self) -> str:
+        return _get_css("annotation-set")
+
+
+class LabelsDisplay(Display):
+    def __init__(
+        self,
+        labels: Union[
+            Mapping[str, Any], Sequence[Mapping[str, Any]], pd.DataFrame
+        ],
+    ) -> None:
+        if isinstance(labels, (collections.abc.Mapping, sqlite3.Row)):
+            self.labels = [labels]
+        elif hasattr(labels, "to_dict"):
+            self.labels = labels.to_dict(orient="records")
+        else:
+            self.labels = labels
+
+    def get_div(self, force_styled: bool = False) -> str:
+        label_snippets = []
+        template = string.Template(_get_template("label", force_styled))
+        for label in self.labels:
+            color = _get_color(label["color"])
+            info = _escape_values({**dict(label), "color": color})
+            label_snippets.append(template.safe_substitute(info))
+        content = "\n".join(label_snippets)
+        return f"""<div class="label-set"><div class="label-set-wrap">{content}</div></div>"""
+
+    def _get_css(self) -> str:
+        return _get_css("label-set")
