@@ -1,5 +1,5 @@
 :root {
-    --annotation-data-font: monospace;
+    --annotation-data-font: var(--pst-font-family-monospace, monospace);
 }
 
 .annotation-set {
@@ -13,7 +13,7 @@
     align-items: stretch;
     align-content: stretch;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0px;
 }
 
 .annotation {
@@ -22,7 +22,7 @@
     border-radius: 0.25rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
     overflow: hidden;
-    font-family: sans-serif;
+    font-family: var(--pst-font-family-base, sans-serif);
     max-width: 70ch;
 }
 
@@ -64,9 +64,17 @@
     border-block-start: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.annotation .annotation-footer > * + * {
+    margin-inline-start: 0.25rem;
+}
+
 .annotation .extra-data::before {
     content: "Extra data: ";
     font-weight: bold;
+}
+
+.annotation .extra-data:empty {
+    display: none;
 }
 
 .annotation .annotator-name::before {

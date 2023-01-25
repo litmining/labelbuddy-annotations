@@ -54,7 +54,7 @@ from labelrepo import database, displays
 
 connection = database.get_database_connection()
 
-annotations = connection.execute("SELECT * FROM detailed_annotation limit 10")
+annotations = connection.execute("SELECT * FROM detailed_annotation limit 5")
 displays.AnnotationsDisplay(annotations)
 # -
 
