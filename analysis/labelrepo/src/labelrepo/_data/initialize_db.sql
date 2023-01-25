@@ -56,7 +56,8 @@ create view detailed_annotation as
       context_start_char + 1,
       context_end_char - context_start_char
     ) as context,
-    context_start_char, context_end_char
+    context_start_char, context_end_char,
+    length(text) as doc_length
     from annot
          inner join label on annot.label_id = label.id
          inner join annotator on annot.annotator_id = annotator.id
