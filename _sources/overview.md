@@ -157,7 +157,7 @@ from labelrepo import displays
 
 displays.AnnotationsDisplay(
     connection.execute(
-        "select * from detailed_annotation order by project limit 5;"
+        "select * from detailed_annotation where label_name not like '%discard%' order by project limit 5;"
     ).fetchall()
 )
 ```
@@ -233,8 +233,9 @@ projects = label_counts.groupby("project")
 for project_name, data in projects:
     fig, ax = plt.subplots(figsize=(4, data.shape[0] / 3))
     sns.barplot(
-        data=data, x="n_docs", y="label_name", ax=ax, color="blue"
+        data=data, x="n_docs", y="label_name", ax=ax, color="#0071BC", alpha=.8
     )
+    ax.yaxis.set_tick_params(left=False)
     ax.set_title(
         f'“{project_name}” project ({project_counts[project_name]} annotated documents)'
     )
