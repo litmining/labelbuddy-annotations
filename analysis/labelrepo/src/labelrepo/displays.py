@@ -16,9 +16,9 @@ _SIMPLE_ANNOTATION_TEMPLATE = """
         <span style="background-color: ${label_color};">${label_name}</span>
     </h5>
     <p style="padding-left: 40px;">
-    …${prefix}<span
+    ${prefix}<span
         style="font-weight: bold; background-color: ${label_color};"
-        >${selected_text}</span>${suffix}…
+        >${selected_text}</span>${suffix}
     </p>
 </div>
 """
@@ -28,8 +28,8 @@ _STYLED_ANNOTATION_TEMPLATE = """
     style='--label-name:"${label_name}"; --label-color:${color}'>
     <div class="annotation-header">${label_name}</div>
     <div class="context">
-        …${prefix}<span class="annotated-text"
-            >${selected_text}</span>${suffix}…
+        ${prefix}<span class="annotated-text"
+            >${selected_text}</span>${suffix}
     </div>
     <div class="annotation-footer">
         <div class="extra-data">${extra_data}</div>
@@ -67,9 +67,13 @@ class AnnotationsDisplay:
         prefix = annotation["context"][
             : annotation["start_char"] - annotation["context_start_char"]
         ]
+        if annotation["context_start_char"] != 0:
+            prefix = "…" + prefix
         suffix = annotation["context"][
             annotation["end_char"] - annotation["context_start_char"] :
         ]
+        if annotation["context_end_char"] != annotation["doc_length"]:
+            suffix = suffix + "…"
         color = annotation["label_color"]
         if not color or pd.isnull(color):
             color = "#e0e0e0"
