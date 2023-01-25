@@ -27,7 +27,7 @@
 }
 
 .annotation .annotation-header {
-    font-family: var(--annotation-data-font, sans-serif);
+    font-family: var(--annotation-data-font);
     font-weight: bold;
     background: var(--label-color, LightGray);
     padding: 0.5rem;
@@ -58,7 +58,7 @@
     justify-content: space-between;
     align-content: space-between;
     row-gap: 0.5rem;
-    font-family: var(--annotation-data-font, sans-serif);
+    font-family: var(--annotation-data-font);
     padding: 0.5rem;
     background: #e0e0e0;
     border-block-start: 1px solid rgba(0, 0, 0, 0.2);
