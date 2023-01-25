@@ -20,9 +20,9 @@ $(annotation_files): %.jsonl: %.labelbuddy
 
 book:
 	python3 scripts/make_repo_stats_figure.py
-	jupyter-book build -W analysis/book
+	LABELREPO_CSS_AVAILABLE=1 jupyter-book build -W analysis/book
 
 book-full: database csv
 	rm -rf analysis/book/_build
 	python3 scripts/make_repo_stats_figure.py
-	jupyter-book build -W analysis/book
+	LABELREPO_CSS_AVAILABLE=1 jupyter-book build -W analysis/book
