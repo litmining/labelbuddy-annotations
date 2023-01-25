@@ -157,7 +157,7 @@ from labelrepo import displays
 
 displays.AnnotationsDisplay(
     connection.execute(
-        "select * from detailed_annotation order by project limit 10;"
+        "select * from detailed_annotation order by project limit 5;"
     ).fetchall()
 )
 ```
