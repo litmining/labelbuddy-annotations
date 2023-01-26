@@ -59,6 +59,7 @@
     align-content: space-between;
     row-gap: 0.5rem;
     font-family: var(--annotation-data-font);
+    font-size: 0.8rem;
     padding: 0.5rem;
     background: #e0e0e0;
     border-block-start: 1px solid rgba(0, 0, 0, 0.2);
@@ -77,12 +78,7 @@
     display: none;
 }
 
-.annotation .annotator-name::before {
-    content: "Annotator: ";
-    font-weight: bold;
-}
-
-.annotation .project-name::before {
-    content: "Project: ";
-    font-weight: bold;
+.annotation a {
+    color: inherit;
+    text-decoration: underline;
 }
