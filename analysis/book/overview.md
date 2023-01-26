@@ -164,7 +164,9 @@ from labelrepo import displays
 
 displays.AnnotationsDisplay(
     connection.execute(
-        "select * from detailed_annotation where label_name not like '%discard%' order by project limit 5;"
+        "select * from detailed_annotation where "
+        "label_name not glob '_*' and "
+        "label_name not glob '*discard*' order by project limit 5;"
     ).fetchall()
 )
 ```
@@ -235,7 +237,7 @@ project_counts = pd.read_sql(
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-projects = label_counts.groupby("project")
+projects = label_counts.groupby("project", sort=False)
 
 for project_name, data in projects:
     fig, ax = plt.subplots(figsize=(4, data.shape[0] / 3))
