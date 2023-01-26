@@ -5,6 +5,7 @@ import os
 import sqlite3
 import string
 from typing import Any, Mapping, Sequence, Union
+import urllib
 
 import pandas as pd
 
@@ -31,7 +32,10 @@ _STYLED_ANNOTATION_TEMPLATE = """<div class="annotation"
     </div>
     <div class="annotation-footer">
         <div class="extra-data">${extra_data}</div>
-        <div class="project-name">${project}</div>
+        <div class="pcmid"><a target="_blank"
+          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC${pmcid}/"
+          >PMC${pmcid}</a></div>
+        <div class="project-name">${project_name_or_link}</div>
         <div class="annotator-name">${annotator_name}</div>
     </div>
 </div>
@@ -67,6 +71,18 @@ def _get_template(kind: str, force_styled: bool = False) -> str:
     ):
         return _TEMPLATES["styled"][kind]
     return _TEMPLATES["simple"][kind]
+
+
+def _get_project_name_or_link(project_name):
+    repo_url = os.environ.get("LABELREPO_REPOSITORY_URL")
+    if repo_url is None:
+        return html.escape(project_name)
+    return (
+        """<a target="_blank" """
+        f"""href="{urllib.parse.urljoin(repo_url, "tree/main/projects/")}"""
+        f"""{urllib.parse.quote(project_name)}/">"""
+        f"""{html.escape(project_name)}</a>"""
+    )
 
 
 def _get_color(color: Any) -> str:
@@ -143,16 +159,21 @@ class AnnotationsDisplay(Display):
         extra_data = annotation["extra_data"]
         if pd.isnull(extra_data):
             extra_data = ""
-        info = {
-            **dict(annotation),
-            "prefix": prefix,
-            "suffix": suffix,
-            "color": color,
-            "extra_data": extra_data,
-        }
+        info = _escape_values(
+            {
+                **dict(annotation),
+                "prefix": prefix,
+                "suffix": suffix,
+                "color": color,
+                "extra_data": extra_data,
+            }
+        )
+        info["project_name_or_link"] = _get_project_name_or_link(
+            info["project"]
+        )
         return string.Template(
             _get_template("annotation", force_styled)
-        ).safe_substitute(_escape_values(info))
+        ).safe_substitute(info)
 
     def get_div(self, force_styled: bool = False) -> str:
         annotations = "\n".join(
@@ -187,7 +208,9 @@ class LabelsDisplay(Display):
             info = _escape_values({**dict(label), "color": color})
             label_snippets.append(template.safe_substitute(info))
         content = "\n".join(label_snippets)
-        return f"""<div class="label-set"><div class="label-set-wrap">{content}</div></div>"""
+        return f"""<div class="label-set">
+            <div class="label-set-wrap">{content}</div>
+            </div>"""
 
     def _get_css(self) -> str:
         return _get_css("label-set")
