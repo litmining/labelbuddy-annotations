@@ -78,7 +78,7 @@
     display: none;
 }
 
-.annotation a {
+.annotation a, .annotation a:visited {
     color: inherit;
     text-decoration: underline;
 }
