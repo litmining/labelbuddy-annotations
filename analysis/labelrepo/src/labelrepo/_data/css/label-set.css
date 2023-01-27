@@ -1,0 +1,21 @@
+.label-set, label-set-wrap, .label-display {
+    margin: 0px;
+}
+
+.label-set-wrap {
+    display: inline-block;
+}
+
+.label-set-wrap > * + * {
+    margin-block-start: 0.5rem;
+}
+
+.label-display {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--label-color);
+    font-family: var(--pst-font-family-monospace, monospace);
+    font-weight: bold;
+    line-height: 1.1;
+}
