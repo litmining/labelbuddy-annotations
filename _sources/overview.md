@@ -40,15 +40,15 @@ connection = database.get_database_connection()
 df = pd.read_sql(
     """
     select * from 
-    (select project, count(distinct doc_id) as documents,
+    (select project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
-    count(distinct annotator_id) as annotators,
+    count(distinct annotator_name) as annotators,
     count(*) as annotations from
-    annotation group by project order by documents desc)
+    annotation group by project_name order by documents desc)
     union all 
-    select 'Total' as project, count(distinct doc_id) as documents,
+    select 'Total' as project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
-    count(distinct annotator_id) as annotators,
+    count(distinct annotator_name) as annotators,
     count(*) as annotations 
     from annotation;
 """,
@@ -166,7 +166,7 @@ displays.AnnotationsDisplay(
     connection.execute(
         "select * from detailed_annotation where "
         "label_name not glob '_*' and "
-        "label_name not glob '*discard*' order by project limit 5;"
+        "label_name not glob '*discard*' order by project_name limit 5;"
     ).fetchall()
 )
 ```
@@ -209,13 +209,13 @@ Now, we display the number of documents annotated with each label in the differe
 label_counts = pd.read_sql(
     """
       with annot as
-      (select distinct label_id, doc_id, project from annotation)
-    SELECT project, label.name AS label_name, label.color as color, COUNT(*) AS n_docs
+      (select distinct label_id, doc_id, project_name from annotation)
+    SELECT project_name, label.name AS label_name, label.color as color, COUNT(*) AS n_docs
     from
       annot
       INNER JOIN label ON annot.label_id = label.id
       INNER JOIN document ON annot.doc_id = document.id
-      GROUP BY project, label_name
+      GROUP BY project_name, label_name
       ORDER BY n_docs DESC
     """,
     connection,
@@ -223,12 +223,12 @@ label_counts = pd.read_sql(
 
 project_counts = pd.read_sql(
     """
-    select project, count(*) as n_docs
-      from (select distinct project, doc_id from annotation)
-      group by project
+    select project_name, count(*) as n_docs
+      from (select distinct project_name, doc_id from annotation)
+      group by project_name
     """,
     connection,
-).set_index("project")["n_docs"]
+).set_index("project_name")["n_docs"]
 ```
 
 
@@ -237,7 +237,7 @@ project_counts = pd.read_sql(
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-projects = label_counts.groupby("project", sort=False)
+projects = label_counts.groupby("project_name", sort=False)
 
 for project_name, data in projects:
     fig, ax = plt.subplots(figsize=(4, data.shape[0] / 3))
