@@ -5,7 +5,7 @@ import json
 import os
 import sqlite3
 import string
-from typing import Any, Mapping, Sequence, Union
+from typing import Any, Dict, Mapping, Sequence, Union
 import urllib
 
 from labelrepo import _utils
@@ -96,7 +96,7 @@ def _get_css(basename: str) -> str:
     )
 
 
-def _escape_values(data: Mapping[str, Any]) -> Mapping[str, str]:
+def _escape_values(data: Mapping[str, Any]) -> Dict[str, str]:
     return {k: html.escape(str(v)) for k, v in data.items() if v is not None}
 
 
@@ -168,7 +168,7 @@ class AnnotationsDisplay(Display):
             }
         )
         info["project_name_or_link"] = _get_project_name_or_link(
-            info["project"]
+            info["project_name"]
         )
         return string.Template(
             _get_template("annotation", force_styled)

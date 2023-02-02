@@ -27,9 +27,19 @@ def _fill_database(db_path: pathlib.Path):
         for project_dir in projects_root_dir.glob("*"):
             if not project_dir.is_dir():
                 continue
+            _insert_project(connection, project_dir)
             _insert_project_documents(connection, project_dir)
             _insert_project_labels(connection, project_dir)
             _insert_project_annotations(connection, project_dir)
+
+
+def _insert_project(
+    connection: sqlite3.Connection, project_dir: pathlib.Path
+) -> None:
+    with connection:
+        connection.execute(
+            "insert into project (name) values (?)", (project_dir.name,)
+        )
 
 
 def _insert_project_documents(
@@ -101,11 +111,13 @@ def _insert_project_labels(
         return
     print(f"Inserting labels from {labels_dir}")
     for labels_file in _utils.glob_json(labels_dir):
-        _insert_labels(connection, labels_file)
+        _insert_labels(connection, labels_file, project_dir.name)
 
 
 def _insert_labels(
-    connection: sqlite3.Connection, labels_file: pathlib.Path
+    connection: sqlite3.Connection,
+    labels_file: pathlib.Path,
+    project_name: str,
 ) -> None:
     labels = _utils.read_json(labels_file)
     with connection:
@@ -113,6 +125,14 @@ def _insert_labels(
             connection.execute(
                 "insert or ignore into label (name, color) values (?, ?)",
                 (label_info["name"], label_info.get("color")),
+            )
+            label_id = connection.execute(
+                "select id from label where name = ?", (label_info["name"],)
+            ).fetchone()[0]
+            connection.execute(
+                "insert into project_label (project_name, label_id) "
+                "values (?, ?)",
+                (project_name, label_id),
             )
 
 
@@ -137,9 +157,6 @@ def _insert_annotations(
             "insert or ignore into annotator (name) values (?)",
             (annotator_name,),
         )
-    annotator_id = connection.execute(
-        "select id from annotator where name = ?", (annotator_name,)
-    ).fetchone()[0]
     all_docs = _utils.read_json(annotations_file)
     all_annotations = []
     for doc_info in all_docs:
@@ -160,7 +177,7 @@ def _insert_annotations(
             ).fetchone()[0]
             all_annotations.append(
                 {
-                    "annotator_id": annotator_id,
+                    "annotator_name": annotator_name,
                     "label_id": label_id,
                     "start_char": anno_info["start_char"],
                     "end_char": anno_info["end_char"],
@@ -173,10 +190,10 @@ def _insert_annotations(
         connection.executemany(
             """
             insert or ignore into annotation
-                (doc_id, label_id, annotator_id, start_char,
-                end_char, extra_data, project)
+                (doc_id, label_id, annotator_name, start_char,
+                end_char, extra_data, project_name)
             values
-                (:doc_id, :label_id, :annotator_id,
+                (:doc_id, :label_id, :annotator_name,
                 :start_char, :end_char, :extra_data, :project)
             """,
             all_annotations,
