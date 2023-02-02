@@ -1,13 +1,12 @@
 import collections
 import collections.abc
 import html
+import json
 import os
 import sqlite3
 import string
 from typing import Any, Mapping, Sequence, Union
 import urllib
-
-import pandas as pd
 
 from labelrepo import _utils
 
@@ -86,7 +85,7 @@ def _get_project_name_or_link(project_name):
 
 
 def _get_color(color: Any) -> str:
-    if not color or pd.isnull(color):
+    if not color:
         return "#e0e0e0"
     return str(color)
 
@@ -98,7 +97,7 @@ def _get_css(basename: str) -> str:
 
 
 def _escape_values(data: Mapping[str, Any]) -> Mapping[str, str]:
-    return {k: html.escape(str(v)) for k, v in data.items() if pd.notnull(v)}
+    return {k: html.escape(str(v)) for k, v in data.items() if v is not None}
 
 
 class Display:
@@ -130,14 +129,14 @@ class Display:
 class AnnotationsDisplay(Display):
     def __init__(
         self,
-        annotations: Union[
-            Mapping[str, Any], Sequence[Mapping[str, Any]], pd.DataFrame
-        ],
+        annotations: Union[Mapping[str, Any], Sequence[Mapping[str, Any]]],
     ) -> None:
         if isinstance(annotations, (collections.abc.Mapping, sqlite3.Row)):
             self.annotations = [annotations]
-        elif hasattr(annotations, "to_dict"):
-            self.annotations = annotations.to_dict(orient="records")
+        elif hasattr(annotations, "to_json"):
+            self.annotations = json.loads(
+                annotations.to_json(orient="records")
+            )
         else:
             self.annotations = annotations
 
@@ -157,7 +156,7 @@ class AnnotationsDisplay(Display):
             suffix = suffix + "…"
         color = _get_color(annotation["label_color"])
         extra_data = annotation["extra_data"]
-        if pd.isnull(extra_data):
+        if extra_data is None:
             extra_data = ""
         info = _escape_values(
             {
@@ -189,14 +188,12 @@ class AnnotationsDisplay(Display):
 class LabelsDisplay(Display):
     def __init__(
         self,
-        labels: Union[
-            Mapping[str, Any], Sequence[Mapping[str, Any]], pd.DataFrame
-        ],
+        labels: Union[Mapping[str, Any], Sequence[Mapping[str, Any]]],
     ) -> None:
         if isinstance(labels, (collections.abc.Mapping, sqlite3.Row)):
             self.labels = [labels]
-        elif hasattr(labels, "to_dict"):
-            self.labels = labels.to_dict(orient="records")
+        elif hasattr(labels, "to_json"):
+            self.labels = json.loads(labels.to_json(orient="records"))
         else:
             self.labels = labels
 
