@@ -10,15 +10,15 @@ connection = database.get_database_connection()
 df = pd.read_sql(
     """
 select * from
-    (select project, count(distinct doc_id) as documents,
+    (select project_name, count(distinct doc_id) as documents,
             count(distinct label_id) as labels,
-            count(distinct annotator_id) as annotators,
+            count(distinct annotator_name) as annotators,
             count(*) as annotations
-       from annotation group by project order by documents desc)
+       from annotation group by project_name order by documents desc)
 union all
-select "Total" as project, count(distinct doc_id) as documents,
+select "Total" as project_name, count(distinct doc_id) as documents,
        count(distinct label_id) as labels,
-       count(distinct annotator_id) as annotators,
+       count(distinct annotator_name) as annotators,
        count(*) as annotations
   from annotation;
 """,
