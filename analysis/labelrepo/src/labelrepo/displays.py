@@ -172,7 +172,7 @@ class AnnotationsDisplay(Display):
         )
         return string.Template(
             _get_template("annotation", force_styled)
-        ).safe_substitute(info)
+        ).substitute(info)
 
     def get_div(self, force_styled: bool = False) -> str:
         annotations = "\n".join(
@@ -203,7 +203,7 @@ class LabelsDisplay(Display):
         for label in self.labels:
             color = _get_color(label["color"])
             info = _escape_values({**dict(label), "color": color})
-            label_snippets.append(template.safe_substitute(info))
+            label_snippets.append(template.substitute(info))
         content = "\n".join(label_snippets)
         return f"""<div class="label-set">
             <div class="label-set-wrap">{content}</div>
