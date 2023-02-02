@@ -130,7 +130,11 @@ labels_file = (
     / "labels"
     / "labels_kendra.json"
 )
-displays.LabelsDisplay(read_json(labels_file))
+labels = connection.execute(
+"select * from label inner join project_label "
+"on project_label.label_id = label.id "
+"where project_label.project_name = 'cluster_inference'")
+displays.LabelsDisplay(labels)
 ```
 The labels are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format); below is an example.
 

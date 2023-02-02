@@ -24,7 +24,7 @@ def _fill_database(db_path: pathlib.Path):
     with contextlib.closing(sqlite3.connect(db_path)) as connection:
         connection.execute("pragma foreign_keys = on")
         projects_root_dir = repo.repo_root() / "projects"
-        for project_dir in projects_root_dir.glob("*"):
+        for project_dir in sorted(projects_root_dir.glob("*")):
             if not project_dir.is_dir():
                 continue
             _insert_project(connection, project_dir)
@@ -49,7 +49,7 @@ def _insert_project_documents(
     if not docs_dir.is_dir():
         return
     print(f"Inserting documents from {docs_dir}")
-    for docs_file in docs_dir.glob("*.jsonl"):
+    for docs_file in sorted(docs_dir.glob("*.jsonl")):
         _insert_documents(connection, docs_file)
 
 
