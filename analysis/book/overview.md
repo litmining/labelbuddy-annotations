@@ -27,6 +27,7 @@ This page provides a brief overview of the repository's content, and the rest of
 ## Projects
 
 The repository's contents are organized into *projects*, found in the {{ "[`projects/`]({}projects)".format(repo_tree_url) }} directory.
+More details about each project are provided at the end of this book.
 Here are the currently existing projects:
 
 ```{code-cell}
@@ -54,11 +55,7 @@ df = pd.read_sql(
 """,
     connection,
 )
-link = (
-    r'<a href="https://github.com/neurodatascience/labelbuddy-annotations/'
-    r'tree/main/projects/\1">\1</a>'
-)
-df.iloc[:-1, 0] = df.iloc[:-1, 0].str.replace(r"(.*)", link, regex=True)
+df.iloc[:-1, 0] = [f'<a href="./projects/{proj.replace(".", "__")}.html">{proj}</a>' for proj in df.iloc[:-1, 0]]
 df.style.hide(axis="index")
 ```
 

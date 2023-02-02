@@ -13,7 +13,7 @@ kernelspec:
 
 # {{ project_name }}
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/{{ project_name }}/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/{{ project_name }}/).
 
 {{ readme_content | safe }}
 
