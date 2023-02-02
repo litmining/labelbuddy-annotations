@@ -1,0 +1,1197 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>autism_mri &#8212; Biomedical literature annotations</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/label-set.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/annotation-set.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/global.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cluster_inference" href="cluster_inference.html" />
+    <link rel="prev" title="Number of participants (sample size)" href="../number_of_participants.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../overview.html">
+                    Biomedical literature annotations
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_this_repository.html">
+   Using this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing_to_this_repository.html">
+   Contributing to this repository
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../number_of_participants.html">
+   Number of participants (sample size)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   autism_mri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cluster_inference.html">
+   cluster_inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_functional_connectivity.html">
+   dynamic_functional_connectivity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="neuro_meta_analyses__phase_1.html">
+   neuro_meta_analyses.phase_1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="neuro_meta_analyses__phase_2.html">
+   neuro_meta_analyses.phase_2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="participant_demographics.html">
+   participant_demographics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/projects/autism_mri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/neurodatascience/labelbuddy-annotations"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/projects/autism_mri.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/projects/autism_mri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-6b2c09de69c29c29626f794757ea4c68">
+   query_6b2c09de69c29c29626f794757ea4c68
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pubget">
+   PubGet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labelbuddy">
+   LabelBuddy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>autism_mri</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-6b2c09de69c29c29626f794757ea4c68">
+   query_6b2c09de69c29c29626f794757ea4c68
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pubget">
+   PubGet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labelbuddy">
+   LabelBuddy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="autism-mri">
+<h1>autism_mri<a class="headerlink" href="#autism-mri" title="Permalink to this headline">#</a></h1>
+<p>See also this project’s <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri/">folder on GitHub</a>.</p>
+<section id="query-6b2c09de69c29c29626f794757ea4c68">
+<h2>query_6b2c09de69c29c29626f794757ea4c68<a class="headerlink" href="#query-6b2c09de69c29c29626f794757ea4c68" title="Permalink to this headline">#</a></h2>
+<p>Repo to do LabelBuddy annotations of a corpus of Autism MRI literature</p>
+</section>
+<section id="pubget">
+<h2>PubGet<a class="headerlink" href="#pubget" title="Permalink to this headline">#</a></h2>
+<p>This process was initialized with a <em>pubget</em> call:</p>
+<p><code class="docutils literal notranslate"><span class="pre">​</span></code>​<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">pubget</span> <span class="pre">run</span> <span class="pre">-q</span> <span class="pre">&quot;Brain</span> <span class="pre">Volume</span> <span class="pre">MRI</span> <span class="pre">2022</span> <span class="pre">Autism&quot;</span> <span class="pre">pubget/test</span> <span class="pre">--labelbuddy</span> <span class="pre">--n_jobs</span> <span class="pre">4</span> </code>​<code class="docutils literal notranslate"><span class="pre">​</span></code></p>
+<p>The whole <code class="docutils literal notranslate"><span class="pre">pubget</span></code> output has been uploaded to OSF: <a class="reference external" href="https://osf.io/meya4">https://osf.io/meya4</a></p>
+</section>
+<section id="labelbuddy">
+<h2>LabelBuddy<a class="headerlink" href="#labelbuddy" title="Permalink to this headline">#</a></h2>
+<p>We are currently annotating the following file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">projects/autism_mri/documents/documents_00001.jsonl</span></code></p>
+<p>Which in the <code class="docutils literal notranslate"><span class="pre">pubget</span></code> output corresponds to:</p>
+<p><code class="docutils literal notranslate"><span class="pre">query_6b2c09de69c29c29626f794757ea4c68/subset_allArticles_labelbuddyData/documents_00001.jsonl</span></code></p>
+<p>And writing the annotation files found in:
+<code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code></p>
+</section>
+<section id="labels-in-this-project">
+<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div class="detailed-label-set">
+
+    <details style="--label-color: #aec7e8;">
+        <summary class="label-display">FieldStrength (3 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …d. Parents gave written informed consent and eligible participants gave assent to take part in the study. 
+
+
+### Image acquisition 
+
+Imaging was performed at the Alberta Children's Hospital using a <mark class="annotated-text">3</mark> Tesla MRI scanner (GE MR750w, GE Healthcare, Waukesha, WI) with a 32‐channel head coil. All participants completed the standard research neuroplasticity protocol used at this site, which included a T…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …n Inventory (BDI), Tridimensional Personality Questionnaire, and Spielberger's State-Trait Anxiety Inventory (STAI) to further characterize subjects. 
+
+
+### MRI Data 
+
+All scans were performed on a <mark class="annotated-text">3.0</mark>-Tesla MR system (Discovery MR750, General Electric, Milwaukee, WI, USA). Tight but comfortable foam padding was used to minimize head motion, and earplugs were used to reduce scanner noise. Resting-s…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8828908/"
+                                       >PMC8828908</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …oice) by clicking a computer mouse as quickly as possible without sacrificing accuracy. Each image was displayed until a choice was made. 
+
+
+### Functional Imaging 
+
+Imaging took place on a Siemens <mark class="annotated-text">3</mark>T TiM Trio scanner. Two-hundred-twenty T2*-weighted echo-planar images (EPIs) (  TR   = 2,000 ms;   TE   = 30 ms;   FA   = 90°; FOV = 240 mm; slice thickness = 2.8 mm) were acquired on each of 36 cont…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #dbdb8d;">
+        <summary class="label-display">N_Patients (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …s (ADHD‐5 rating scale) and executive functioning (Behavior Rating Inventory of Executive Function (BRIEF)) were explored. Eighty‐three children were recruited (arterial ischemic stroke [AIS]   n   = <mark class="annotated-text">26</mark>; periventricular venous infarction [PVI]   n   = 26; controls   n   = 31). WM metrics were altered for stroke groups compared to controls. Along‐tract analyses showed differences in WM metrics in are…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …ehavior Rating Inventory of Executive Function (BRIEF)) were explored. Eighty‐three children were recruited (arterial ischemic stroke [AIS]   n   = 26; periventricular venous infarction [PVI]   n   = <mark class="annotated-text">26</mark>; controls   n   = 31). WM metrics were altered for stroke groups compared to controls. Along‐tract analyses showed differences in WM metrics in areas approximating the lesion as well as more remote d…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …tic of several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = <mark class="annotated-text">28</mark>, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …nia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = <mark class="annotated-text">20,</mark> 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Com…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #9edae5;">
+        <summary class="label-display">N_Controls (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …ory of Executive Function (BRIEF)) were explored. Eighty‐three children were recruited (arterial ischemic stroke [AIS]   n   = 26; periventricular venous infarction [PVI]   n   = 26; controls   n   = <mark class="annotated-text">31</mark>). WM metrics were altered for stroke groups compared to controls. Along‐tract analyses showed differences in WM metrics in areas approximating the lesion as well as more remote differences at midline…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …ensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = <mark class="annotated-text">30</mark>, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) partici…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #c49c94;">
+        <summary class="label-display">Age_Min (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …irth (> 36 weeks) with no evidence of additional bilateral or diffuse injury as confirmed by a pediatric neurologist and (2) MRI scan with anatomical and diffusion sequences taken between the ages of <mark class="annotated-text">6</mark>–19 years. We excluded participants with extreme head motion during the MRI scan (causing “venetian blind” artifacts that disrupted processing) or neurological conditions not attributable to the strok…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …um disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age <mark class="annotated-text">19</mark>–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical con…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #f7b6d2;">
+        <summary class="label-display">Age_Max (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …th (> 36 weeks) with no evidence of additional bilateral or diffuse injury as confirmed by a pediatric neurologist and (2) MRI scan with anatomical and diffusion sequences taken between the ages of 6–<mark class="annotated-text">19</mark> years. We excluded participants with extreme head motion during the MRI scan (causing “venetian blind” artifacts that disrupted processing) or neurological conditions not attributable to the stroke. …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …eficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–<mark class="annotated-text">54</mark> years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) participants had significantly lower…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #dbdb8d;">
+        <summary class="label-display">Scanner (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …en informed consent and eligible participants gave assent to take part in the study. 
+
+
+### Image acquisition 
+
+Imaging was performed at the Alberta Children's Hospital using a 3 Tesla MRI scanner (<mark class="annotated-text">GE MR750w</mark>, GE Healthcare, Waukesha, WI) with a 32‐channel head coil. All participants completed the standard research neuroplasticity protocol used at this site, which included a T1‐weighted (T W) anatomical a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …orced choice) by clicking a computer mouse as quickly as possible without sacrificing accuracy. Each image was displayed until a choice was made. 
+
+
+### Functional Imaging 
+
+Imaging took place on a <mark class="annotated-text">Siemens 3T TiM Trio</mark> scanner. Two-hundred-twenty T2*-weighted echo-planar images (EPIs) (  TR   = 2,000 ms;   TE   = 30 ms;   FA   = 90°; FOV = 240 mm; slice thickness = 2.8 mm) were acquired on each of 36 contiguous sli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #9edae5;">
+        <summary class="label-display">AnalysisTool (2 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …= 69 ms; acquisition time = 6:45). 
+
+
+### Image processing 
+
+Anatomical T W scans underwent segmentation into cerebrospinal fluid (CSF), gray, and white matter using Statistical Parametric Mapping (<mark class="annotated-text">SPM12</mark>; Wellcome Centre for Human Neuroimaging, UCL London). An estimate of total intracranial volume was calculated by summing volumes of CSF, gray, and white matter. Segmentations were also used to genera…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …econstructed streamlines to only white matter, termed anatomically constrained tractography (Smith et al.,  ). Anatomical scans and masks were linearly transformed into diffusion space using FSL's “  <mark class="annotated-text">FLIRT</mark>”   followed by nonlinear transformation using   “FNIRT”   (Andersson et al.,  ; Jenkinson et al.,  ). 
+
+The FSL FDT toolbox was used to correct eddy current and small head motion for the dMRI scan (J…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …natomically constrained tractography (Smith et al.,  ). Anatomical scans and masks were linearly transformed into diffusion space using FSL's “  FLIRT”   followed by nonlinear transformation using   “<mark class="annotated-text">FNIRT</mark>”   (Andersson et al.,  ; Jenkinson et al.,  ). 
+
+The FSL FDT toolbox was used to correct eddy current and small head motion for the dMRI scan (Jenkinson et al.,  ). Color maps showing directionality …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …cal scans and masks were linearly transformed into diffusion space using FSL's “  FLIRT”   followed by nonlinear transformation using   “FNIRT”   (Andersson et al.,  ; Jenkinson et al.,  ). 
+
+The FSL <mark class="annotated-text">FDT</mark> toolbox was used to correct eddy current and small head motion for the dMRI scan (Jenkinson et al.,  ). Color maps showing directionality of diffusion was calculated using MRtrix3's “  dwi2tensor”   …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …n et al.,  ). 
+
+The FSL FDT toolbox was used to correct eddy current and small head motion for the dMRI scan (Jenkinson et al.,  ). Color maps showing directionality of diffusion was calculated using <mark class="annotated-text">MRtrix3</mark>'s “  dwi2tensor”   command followed by   “tensor2metric”   (Tournier et al.,  ). Quality assurance was performed before and after color maps were generated, assessed by two researchers slice‐by‐slice…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …ng through them. This streamline threshold was chosen given previous findings of reliable white matter metrics using this degree of sampling (Reid et al.,  ). Resulting tracts were binarized using   “<mark class="annotated-text">tckmap</mark>”   and then overlaid onto the tensor image where mean values of FA, MD, AD, and RD for the entire tract were extracted using   “tensor2metric”   and   “mrstats”   (Tournier et al.,  ). 
+
+
+### Intrara…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …pling (Reid et al.,  ). Resulting tracts were binarized using   “tckmap”   and then overlaid onto the tensor image where mean values of FA, MD, AD, and RD for the entire tract were extracted using   “<mark class="annotated-text">tensor2metric</mark>”   and   “mrstats”   (Tournier et al.,  ). 
+
+
+### Intrarater reliability 
+
+To assess the reliability of ROI placements and reconstruction of tracts, extraction of mean white matter metrics for the …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …Resulting tracts were binarized using   “tckmap”   and then overlaid onto the tensor image where mean values of FA, MD, AD, and RD for the entire tract were extracted using   “tensor2metric”   and   “<mark class="annotated-text">mrstats</mark>”   (Tournier et al.,  ). 
+
+
+### Intrarater reliability 
+
+To assess the reliability of ROI placements and reconstruction of tracts, extraction of mean white matter metrics for the anterior forceps w…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    … MPRAGE sequence (  TR   = 2500 ms;   TE   = 3.5 ms; FOV = 256 mm, slice thickness = 1.0 mm, 192 slices). 
+
+Individual cortical surfaces were rendered from the high-resolution anatomical images using <mark class="annotated-text">Freesurfer</mark> and registered to the std 0.141 fsaverage mesh ( ) with SUMA.  The pulvinar and amygdala were derived individually using a Bayesian atlas-based automated segmentation methods ( ;  ;  ) incorporated i…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …vidually using a Bayesian atlas-based automated segmentation methods ( ;  ;  ) incorporated in Freesurfer. Functional data were preprocessed and analyzed using the Analysis of Functional NeuroImages (<mark class="annotated-text">AFNI</mark>) software ( ;  ). Preprocessing consisted of concatenating data from two runs, removal of signal deviation >2.5 SDs from the mean (AFNI’s 3dDespike), temporal alignment, identification of motion outl…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">Diagnosis (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …d subcortical components of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including <mark class="annotated-text">schizophrenia</mark> (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …s of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including schizophrenia (Sz) and <mark class="annotated-text">autism spectrum disorders</mark> (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years)…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #98df8a;">
+        <summary class="label-display">N_Total (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …structure. Associations between WM metrics and parent ratings of ADHD symptoms (ADHD‐5 rating scale) and executive functioning (Behavior Rating Inventory of Executive Function (BRIEF)) were explored. <mark class="annotated-text">Eighty‐three</mark> children were recruited (arterial ischemic stroke [AIS]   n   = 26; periventricular venous infarction [PVI]   n   = 26; controls   n   = 31). WM metrics were altered for stroke groups compared to con…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #aec7e8;">
+        <summary class="label-display">N_Controls_Male (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    … contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/<mark class="annotated-text">22</mark> female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) participants …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">N_Controls_Female (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …ry contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, <mark class="annotated-text">8</mark>/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) participan…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #98df8a;">
+        <summary class="label-display">N_Patients_Male (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    … several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/<mark class="annotated-text">20</mark> female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-b…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …z) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/<mark class="annotated-text">16</mark> female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #ff9896;">
+        <summary class="label-display">N_Patients_Female (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …of several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, <mark class="annotated-text">8</mark>/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using tas…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+            <div class="annotation">
+                <div class="context">
+                    …(Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, <mark class="annotated-text">4</mark>/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #aec7e8;">
+        <summary class="label-display">MRI_Modality (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    …nd concomitant cognitive impairments are common but poorly understood. Rates of Attention Deficit/Hyperactivity Disorder (ADHD) are increased 5–10× and executive dysfunction can be disabling. We used <mark class="annotated-text">diffusion</mark> imaging to investigate whether stroke‐related differences in frontal white matter (WM) relate to cognitive impairments. Anterior forceps were isolated using tractography and sampled along the tract. …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/"
+                                       >PMC8785614</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details >
+        <summary class="label-display">discard_this_document (1 docs)</summary>
+
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">A</mark>lfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">not about autism</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9409193/"
+                                       >PMC9409193</a></div>
+                    <div class="annotator-name">Jerome_Dockes</div>
+                </div>
+            </div>
+
+        </div>
+
+    </details>
+
+    <details style="--label-color: #ff9896;">
+        <summary class="label-display">N_Total_Male (0 docs)</summary>
+
+        <p>(No annotations with this label in the current project)</p>
+
+    </details>
+
+    <details style="--label-color: #c5b0d5;">
+        <summary class="label-display">N_Total_Female (0 docs)</summary>
+
+        <p>(No annotations with this label in the current project)</p>
+
+    </details>
+
+    <details style="--label-color: #c5b0d5;">
+        <summary class="label-display">Age_Mean (0 docs)</summary>
+
+        <p>(No annotations with this label in the current project)</p>
+
+    </details>
+
+</div>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../number_of_participants.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Number of participants (sample size)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="cluster_inference.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">cluster_inference</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

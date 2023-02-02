@@ -117,7 +117,7 @@ There are currently {glue:text}`document_count` documents in the repository, {gl
 Labels are simple tags that can be attached to a portion of a document's text.
 They can optionally have a `color` and a `shortcut_key`, used in {{ lb }} when we are annotating a document.
 
-For example, here are the labels used in the `cluster_inference` project:
+For example, here are the labels listed in the `cluster_inference` project:
 
 ```{code-cell}
 :tags: [remove-input]
@@ -130,7 +130,11 @@ labels_file = (
     / "labels"
     / "labels_kendra.json"
 )
-displays.LabelsDisplay(read_json(labels_file))
+labels = connection.execute(
+"select * from label inner join project_label "
+"on project_label.label_id = label.id "
+"where project_label.project_name = 'cluster_inference'")
+displays.LabelsDisplay(labels)
 ```
 The labels are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format); below is an example.
 

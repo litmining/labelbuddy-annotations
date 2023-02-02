@@ -3,10 +3,7 @@
 }
 
 .annotation-set {
-    margin: 0px;
-}
-
-.annotation-set {
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

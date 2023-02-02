@@ -111,7 +111,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="using_this_repository.html">
    Using this repository
@@ -122,9 +127,53 @@ const thebe_selector_output = ".output, .cell_output"
    Contributing to this repository
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="number_of_participants.html">
    Number of participants (sample size)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/autism_mri.html">
+   autism_mri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/cluster_inference.html">
+   cluster_inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/dynamic_functional_connectivity.html">
+   dynamic_functional_connectivity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">
+   neuro_meta_analyses.phase_1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">
+   neuro_meta_analyses.phase_2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/participant_demographics.html">
+   participant_demographics
   </a>
  </li>
 </ul>
@@ -510,8 +559,8 @@ We recommend using the same name as in your git configuration, ie the output of:
 <p>We first need to install <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="373181d1-8be3-4c4c-9440-df54f6e1c1db" name="6f6c1848-3020-4d77-ae8a-02ef430c5acf" type="radio">
-</input><label class="sd-tab-label" for="373181d1-8be3-4c4c-9440-df54f6e1c1db">
+<input checked="checked" id="a30911eb-f789-441b-93ad-ad12a0c121d2" name="5e119a41-2c51-4cc1-a868-431fe1a7c1ac" type="radio">
+</input><label class="sd-tab-label" for="a30911eb-f789-441b-93ad-ad12a0c121d2">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/start_project.py<span class="w"> </span>projects/autism_mri
@@ -526,8 +575,8 @@ labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span
 </pre></div>
 </div>
 </div>
-<input id="dc97eaf5-7ffa-4374-9d5f-95cea0afd085" name="6f6c1848-3020-4d77-ae8a-02ef430c5acf" type="radio">
-</input><label class="sd-tab-label" for="dc97eaf5-7ffa-4374-9d5f-95cea0afd085">
+<input id="462550c6-6b24-4b42-a83a-1bf434bc2342" name="5e119a41-2c51-4cc1-a868-431fe1a7c1ac" type="radio">
+</input><label class="sd-tab-label" for="462550c6-6b24-4b42-a83a-1bf434bc2342">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -553,8 +602,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b62adb7c-3f95-414b-a929-a1991d63ec9e" name="1b6a3c29-9b72-4b1d-8de6-fdf2ff524df6" type="radio">
-</input><label class="sd-tab-label" for="b62adb7c-3f95-414b-a929-a1991d63ec9e">
+<input checked="checked" id="384f98f0-d85e-4643-bcbe-ab2f4352f48e" name="c3a766e4-b139-492d-ac6a-a8df008db9f9" type="radio">
+</input><label class="sd-tab-label" for="384f98f0-d85e-4643-bcbe-ab2f4352f48e">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -569,8 +618,8 @@ make<span class="w"> </span>annotations
 </pre></div>
 </div>
 </div>
-<input id="a3bbd6d5-d5db-4240-95a1-3024f2db2e02" name="1b6a3c29-9b72-4b1d-8de6-fdf2ff524df6" type="radio">
-</input><label class="sd-tab-label" for="a3bbd6d5-d5db-4240-95a1-3024f2db2e02">
+<input id="01944db9-76c5-4910-b235-f6aff45b5fba" name="c3a766e4-b139-492d-ac6a-a8df008db9f9" type="radio">
+</input><label class="sd-tab-label" for="01944db9-76c5-4910-b235-f6aff45b5fba">
 Using <strong>labelbuddy</strong>’s graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -699,16 +748,16 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Labels &amp; Documents</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4157fb32-8834-4392-806a-45b8ed0196c7" name="5335fe22-0661-44f1-b2ac-34cb12309987" type="radio">
-</input><label class="sd-tab-label" for="4157fb32-8834-4392-806a-45b8ed0196c7">
+<input checked="checked" id="8a26548d-bbdb-4e16-a36d-03c07c78f1c0" name="3dff01b2-9a24-454b-a8ab-f4c30f91aef0" type="radio">
+</input><label class="sd-tab-label" for="8a26548d-bbdb-4e16-a36d-03c07c78f1c0">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--export-labels<span class="w"> </span>labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="08143971-40ef-4cd9-9269-b6d7e5c0c202" name="5335fe22-0661-44f1-b2ac-34cb12309987" type="radio">
-</input><label class="sd-tab-label" for="08143971-40ef-4cd9-9269-b6d7e5c0c202">
+<input id="010705e3-d1a2-4836-9f0c-49515fcef065" name="3dff01b2-9a24-454b-a8ab-f4c30f91aef0" type="radio">
+</input><label class="sd-tab-label" for="010705e3-d1a2-4836-9f0c-49515fcef065">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>

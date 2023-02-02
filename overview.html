@@ -110,7 +110,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="using_this_repository.html">
    Using this repository
@@ -121,9 +126,53 @@ const thebe_selector_output = ".output, .cell_output"
    Contributing to this repository
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="number_of_participants.html">
    Number of participants (sample size)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/autism_mri.html">
+   autism_mri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/cluster_inference.html">
+   cluster_inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/dynamic_functional_connectivity.html">
+   dynamic_functional_connectivity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">
+   neuro_meta_analyses.phase_1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">
+   neuro_meta_analyses.phase_2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/participant_demographics.html">
+   participant_demographics
   </a>
  </li>
 </ul>
@@ -405,10 +454,27 @@ Such annotations have diverse uses such as studying the evolution of a scientifi
 The annotations are made with <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, and data is stored in <strong>labelbuddy</strong>’s format (JSON).</p>
 <p>This page provides a brief overview of the repository’s content, and the rest of the documentation illustrates how to use and contribute to the repository:</p>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="using_this_repository.html">Using this repository</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing_to_this_repository.html">Contributing to this repository</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="number_of_participants.html">Number of participants (sample size)</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects/autism_mri.html">autism_mri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/cluster_inference.html">cluster_inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">neuro_meta_analyses.phase_1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">neuro_meta_analyses.phase_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/participant_demographics.html">participant_demographics</a></li>
 </ul>
 </div>
 <section id="projects">
@@ -419,65 +485,65 @@ Here are the currently existing projects:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_7cfea">
+<table id="T_53bcf">
   <thead>
     <tr>
-      <th id="T_7cfea_level0_col0" class="col_heading level0 col0" >project_name</th>
-      <th id="T_7cfea_level0_col1" class="col_heading level0 col1" >documents</th>
-      <th id="T_7cfea_level0_col2" class="col_heading level0 col2" >labels</th>
-      <th id="T_7cfea_level0_col3" class="col_heading level0 col3" >annotators</th>
-      <th id="T_7cfea_level0_col4" class="col_heading level0 col4" >annotations</th>
+      <th id="T_53bcf_level0_col0" class="col_heading level0 col0" >project_name</th>
+      <th id="T_53bcf_level0_col1" class="col_heading level0 col1" >documents</th>
+      <th id="T_53bcf_level0_col2" class="col_heading level0 col2" >labels</th>
+      <th id="T_53bcf_level0_col3" class="col_heading level0 col3" >annotators</th>
+      <th id="T_53bcf_level0_col4" class="col_heading level0 col4" >annotations</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_7cfea_row0_col0" class="data row0 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1">neuro_meta_analyses.phase_1</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row0_col1" class="data row0 col1" >257</td>
-      <td id="T_7cfea_row0_col2" class="data row0 col2" >18</td>
-      <td id="T_7cfea_row0_col3" class="data row0 col3" >1</td>
-      <td id="T_7cfea_row0_col4" class="data row0 col4" >301</td>
+      <td id="T_53bcf_row0_col0" class="data row0 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1">neuro_meta_analyses.phase_1</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row0_col1" class="data row0 col1" >257</td>
+      <td id="T_53bcf_row0_col2" class="data row0 col2" >18</td>
+      <td id="T_53bcf_row0_col3" class="data row0 col3" >1</td>
+      <td id="T_53bcf_row0_col4" class="data row0 col4" >301</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row1_col0" class="data row1 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference">cluster_inference</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row1_col1" class="data row1 col1" >193</td>
-      <td id="T_7cfea_row1_col2" class="data row1 col2" >20</td>
-      <td id="T_7cfea_row1_col3" class="data row1 col3" >2</td>
-      <td id="T_7cfea_row1_col4" class="data row1 col4" >1610</td>
+      <td id="T_53bcf_row1_col0" class="data row1 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference">cluster_inference</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row1_col1" class="data row1 col1" >193</td>
+      <td id="T_53bcf_row1_col2" class="data row1 col2" >20</td>
+      <td id="T_53bcf_row1_col3" class="data row1 col3" >2</td>
+      <td id="T_53bcf_row1_col4" class="data row1 col4" >1610</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row2_col0" class="data row2 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics">participant_demographics</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row2_col1" class="data row2 col1" >114</td>
-      <td id="T_7cfea_row2_col2" class="data row2 col2" >2</td>
-      <td id="T_7cfea_row2_col3" class="data row2 col3" >1</td>
-      <td id="T_7cfea_row2_col4" class="data row2 col4" >161</td>
+      <td id="T_53bcf_row2_col0" class="data row2 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics">participant_demographics</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row2_col1" class="data row2 col1" >114</td>
+      <td id="T_53bcf_row2_col2" class="data row2 col2" >2</td>
+      <td id="T_53bcf_row2_col3" class="data row2 col3" >1</td>
+      <td id="T_53bcf_row2_col4" class="data row2 col4" >161</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row3_col0" class="data row3 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_2">neuro_meta_analyses.phase_2</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row3_col1" class="data row3 col1" >95</td>
-      <td id="T_7cfea_row3_col2" class="data row3 col2" >5</td>
-      <td id="T_7cfea_row3_col3" class="data row3 col3" >1</td>
-      <td id="T_7cfea_row3_col4" class="data row3 col4" >202</td>
+      <td id="T_53bcf_row3_col0" class="data row3 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_2">neuro_meta_analyses.phase_2</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row3_col1" class="data row3 col1" >95</td>
+      <td id="T_53bcf_row3_col2" class="data row3 col2" >5</td>
+      <td id="T_53bcf_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_53bcf_row3_col4" class="data row3 col4" >202</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row4_col0" class="data row4 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri">autism_mri</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row4_col1" class="data row4 col1" >4</td>
-      <td id="T_7cfea_row4_col2" class="data row4 col2" >15</td>
-      <td id="T_7cfea_row4_col3" class="data row4 col3" >2</td>
-      <td id="T_7cfea_row4_col4" class="data row4 col4" >37</td>
+      <td id="T_53bcf_row4_col0" class="data row4 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri">autism_mri</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row4_col1" class="data row4 col1" >4</td>
+      <td id="T_53bcf_row4_col2" class="data row4 col2" >15</td>
+      <td id="T_53bcf_row4_col3" class="data row4 col3" >2</td>
+      <td id="T_53bcf_row4_col4" class="data row4 col4" >37</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row5_col0" class="data row5 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity">dynamic_functional_connectivity</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
-      <td id="T_7cfea_row5_col1" class="data row5 col1" >1</td>
-      <td id="T_7cfea_row5_col2" class="data row5 col2" >1</td>
-      <td id="T_7cfea_row5_col3" class="data row5 col3" >1</td>
-      <td id="T_7cfea_row5_col4" class="data row5 col4" >1</td>
+      <td id="T_53bcf_row5_col0" class="data row5 col0" ><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity">dynamic_functional_connectivity</a><a href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/"></a></td>
+      <td id="T_53bcf_row5_col1" class="data row5 col1" >1</td>
+      <td id="T_53bcf_row5_col2" class="data row5 col2" >1</td>
+      <td id="T_53bcf_row5_col3" class="data row5 col3" >1</td>
+      <td id="T_53bcf_row5_col4" class="data row5 col4" >1</td>
     </tr>
     <tr>
-      <td id="T_7cfea_row6_col0" class="data row6 col0" >Total</td>
-      <td id="T_7cfea_row6_col1" class="data row6 col1" >569</td>
-      <td id="T_7cfea_row6_col2" class="data row6 col2" >60</td>
-      <td id="T_7cfea_row6_col3" class="data row6 col3" >3</td>
-      <td id="T_7cfea_row6_col4" class="data row6 col4" >2312</td>
+      <td id="T_53bcf_row6_col0" class="data row6 col0" >Total</td>
+      <td id="T_53bcf_row6_col1" class="data row6 col1" >569</td>
+      <td id="T_53bcf_row6_col2" class="data row6 col2" >60</td>
+      <td id="T_53bcf_row6_col3" class="data row6 col3" >3</td>
+      <td id="T_53bcf_row6_col4" class="data row6 col4" >2312</td>
     </tr>
   </tbody>
 </table>
@@ -553,7 +619,7 @@ They are stored in <strong>labelbuddy</strong>’s <a class="reference external"
 <h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">#</a></h2>
 <p>Labels are simple tags that can be attached to a portion of a document’s text.
 They can optionally have a <code class="docutils literal notranslate"><span class="pre">color</span></code> and a <code class="docutils literal notranslate"><span class="pre">shortcut_key</span></code>, used in <strong>labelbuddy</strong> when we are annotating a document.</p>
-<p>For example, here are the labels used in the <code class="docutils literal notranslate"><span class="pre">cluster_inference</span></code> project:</p>
+<p>For example, here are the labels listed in the <code class="docutils literal notranslate"><span class="pre">cluster_inference</span></code> project:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div class="label-set">
@@ -622,7 +688,7 @@ They can optionally have a <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 </div>
-<p>There are currently <span class="pasted-text">79</span> labels in the repository.</p>
+<p>There are currently <span class="pasted-text">72</span> labels in the repository.</p>
 </section>
 <section id="annotations">
 <h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">#</a></h2>

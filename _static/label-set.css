@@ -14,8 +14,24 @@
     padding-block: 0.5rem;
     padding-inline: 1rem;
     border-radius: 0.25rem;
-    background-color: var(--label-color);
+    background-color: var(--label-color, LightGray);
     font-family: var(--pst-font-family-monospace, monospace);
     font-weight: bold;
     line-height: 1.1;
+}
+
+.detailed-label-set details + details {
+    margin-block-start: 0.5rem;
+}
+
+.detailed-label-set details[open] + details {
+    margin-block-start: 1rem;
+}
+
+.detailed-label-set > details[open] > summary {
+    margin-block-end: 1rem;
+}
+
+.detailed-label-set .annotation-set {
+    justify-content: flex-start;
 }
