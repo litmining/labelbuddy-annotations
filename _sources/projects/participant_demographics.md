@@ -13,7 +13,7 @@ kernelspec:
 
 # participant_demographics
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics/).
 
 Annotating information about participants (for now just the sample size) in articles that match the query `fMRI[Abstract]`.
 

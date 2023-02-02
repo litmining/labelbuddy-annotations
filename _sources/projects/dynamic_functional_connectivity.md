@@ -13,7 +13,7 @@ kernelspec:
 
 # dynamic_functional_connectivity
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity/).
 
 ## Dynamic Functional Connectivity methods
 

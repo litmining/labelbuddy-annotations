@@ -13,7 +13,7 @@ kernelspec:
 
 # neuro_meta_analyses.phase_1
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1/).
 
 
 

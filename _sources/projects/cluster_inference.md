@@ -13,7 +13,7 @@ kernelspec:
 
 # cluster_inference
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference/).
 
 
 

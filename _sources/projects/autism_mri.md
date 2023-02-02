@@ -13,7 +13,7 @@ kernelspec:
 
 # autism_mri
 
-See also this project's [folder on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri/).
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri/).
 
 ## query_6b2c09de69c29c29626f794757ea4c68
  
