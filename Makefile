@@ -22,7 +22,9 @@ book:
 	python3 scripts/make_repo_stats_figure.py
 	python3 analysis/book_helpers/add_project_pages.py
 	LABELREPO_CSS_AVAILABLE=1 \
-	LABELREPO_REPOSITORY_URL="https://github.com/neurodatascience/labelbuddy-annotations/" \
+	LABELREPO_PROJECTS_BASE_URL="./projects/" \
+	LABELREPO_PROJECTS_HTML_EXTENSION=1 \
+	LABELREPO_PROJECTS_URL_ESCAPE_DOT=1 \
 	jupyter-book build -W analysis/book
 
 book-full: database csv
@@ -31,5 +33,7 @@ book-full: database csv
 	python3 analysis/book_helpers/add_project_pages.py
 	python3 scripts/make_repo_stats_figure.py
 	LABELREPO_CSS_AVAILABLE=1 \
-	LABELREPO_REPOSITORY_URL="https://github.com/neurodatascience/labelbuddy-annotations/" \
+	LABELREPO_PROJECTS_BASE_URL="./projects/" \
+	LABELREPO_PROJECTS_URL_ESCAPE_DOT=1 \
+	LABELREPO_PROJECTS_HTML_EXTENSION=1 \
 	jupyter-book build -W analysis/book

@@ -73,15 +73,21 @@ def _get_template(kind: str, force_styled: bool = False) -> str:
 
 
 def _get_project_name_or_link(project_name):
-    repo_url = os.environ.get("LABELREPO_REPOSITORY_URL")
-    if repo_url is None:
+    projects_base_url = os.environ.get("LABELREPO_PROJECTS_BASE_URL")
+    if projects_base_url is None:
         return html.escape(project_name)
-    return (
-        """<a target="_blank" """
-        f"""href="{urllib.parse.urljoin(repo_url, "tree/main/projects/")}"""
-        f"""{urllib.parse.quote(project_name)}/">"""
-        f"""{html.escape(project_name)}</a>"""
+    if "LABELREPO_PROJECTS_URL_ESCAPE_DOT" in os.environ:
+        project_path = project_name.replace(".", "__")
+    else:
+        project_path = project_name
+    if "LABELREPO_PROJECTS_HTML_EXTENSION" in os.environ:
+        project_path += ".html"
+    else:
+        project_path += "/"
+    href = urllib.parse.urljoin(
+        projects_base_url, urllib.parse.quote(project_path)
     )
+    return f"""<a href="{href}">{html.escape(project_name)}</a>"""
 
 
 def _get_color(color: Any) -> str:
