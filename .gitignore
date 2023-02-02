@@ -9,6 +9,7 @@ pubget_data
 analysis/book/_build
 analysis/book/assets/generated/*
 analysis/data/*
+analysis/book/projects/
 
 
 # labelbuddy database files

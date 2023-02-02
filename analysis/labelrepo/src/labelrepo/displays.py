@@ -126,6 +126,15 @@ class Display:
         return ""
 
 
+class HTMLDisplay(Display):
+    def __init__(self, html: str) -> None:
+        self._html = html
+
+    def get_div(self, force_styled: bool = False) -> str:
+        del force_styled
+        return self._html
+
+
 class AnnotationsDisplay(Display):
     def __init__(
         self,
