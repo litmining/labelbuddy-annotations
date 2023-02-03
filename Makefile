@@ -1,5 +1,7 @@
 labelbuddy_databases := $(shell find . -type f -name '*.labelbuddy')
 annotation_files := $(patsubst %.labelbuddy, %.jsonl, $(labelbuddy_databases))
+repo_stats_fig := analysis/book/assets/generated/repo_stats.svg
+projects_tag_file := analysis/book/projects/DONT_EDIT_THIS_DIRECTORY_IT_IS_AUTOMATICALLY_GENERATED
 
 .PHONY: all annotations database csv book book-full
 
@@ -18,7 +20,15 @@ analysis/data/detailed_annotation.csv: analysis/data/database.sqlite3
 $(annotation_files): %.jsonl: %.labelbuddy
 	labelbuddy $< --export-docs $@ --no-text --labelled-only
 
-book:
+$(repo_stats_fig):
+	python3 scripts/make_repo_stats_figure.py
+
+$(projects_tag_file):
+	python3 analysis/book_helpers/add_project_pages.py
+
+book: $(repo_stats_fig) $(projects_tag_file)
+	# the prerequisites make sure the files exist so jupyter-book doesn't crash,
+	# but they don't enforce that they are up to date -- for that use book-full
 	./scripts/make_book.sh
 
 book-full: database csv
