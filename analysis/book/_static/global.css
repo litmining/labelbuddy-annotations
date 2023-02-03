@@ -5,3 +5,7 @@
 .menu-dropdown-launch-buttons {
     display: none !important;
 }
+
+span.pre {
+    color: #007020;
+}
