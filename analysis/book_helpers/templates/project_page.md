@@ -20,6 +20,10 @@ You can see the full contents of this project [on GitHub](https://github.com/neu
 
 ## Labels in this project
 
+{% if not labels %}
+(No labels have been added to this project yet)
+{% endif%}
+
 ```{code-cell}
 :tags: [remove-input]
 
