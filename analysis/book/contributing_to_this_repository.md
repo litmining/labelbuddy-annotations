@@ -79,7 +79,7 @@ You can now start creating annotations.
 
 ### Creating some annotations
 
-If you haven't opened {{ lb }} yet you can invoke it with this command:
+If you haven't opened {{ lb }} yet you can find it in your applications menu, or invoke it with this command:
 
 ```bash
 labelbuddy annotations/Firstname_Lastname.labelbuddy
@@ -152,7 +152,7 @@ cd imaging_modalities
 mkdir documents labels annotations
 ```
 
-Please also add a `README` file describing your project.
+Please also add a `README.md` file describing your project.
 
 ### Adding documents
 
@@ -293,7 +293,10 @@ pip install -r requirements.txt
 
 The html version is built with [jupyter-book](https://jupyterbook.org/en/stable/start/overview.html), see its documentation for details.
 
-To add a new page you will need to create a `.py` or `.md` file in the books directory, and add it to the list of chapters in `analysis/book/_toc.yml`.
+To add a new page you will need to create a `.py` or `.md` file in the book's directory, and add it to the list of chapters in `analysis/book/_toc.yml`.
 To build the book locally, run `make book-full` from the root of the repository.
 (Once the database and CSV file have already been built, you can just use `make book` which is faster.)
 You can then see it by pointing your browser to `analysis/book/_build/html/index.html`.
+
+**Note:** the pages in the **Projects** section (in the `analysis/book/projects`) are generated automatically -- don't edit them directly!
+Instead, edit the project's `README.md`, which gets included in the project page, or one of the templates in `analysis/book_helpers/templates/`.

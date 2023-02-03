@@ -26,23 +26,25 @@
 
 # ## Building the database
 #
-# We can easily create a SQLite database containing all the information in the repository:
+# We can easily create a [SQLite](https://www.sqlite.org/) database containing all the information in the repository (but if you don't like SQL you can [use a CSV file instead](#using-a-csv-rather-than-a-database)):
 # ```bash
 # make database
-#
-# # or equivalently:
+# ```
+# Or equivalently, _e.g._ if `make` is not available:
+# ```bash
 # python3 ./scripts/make_database.py
 # ```
 # We can then use this database to query the contents of the repository, either with the `sqlite3` interactive command:
 # ```bash
 # sqlite3 analysis/data/database.sqlite3
 # ```
-# or using `sqlite3` bindings that are available in many languages, including Python's standard library module `sqlite3`.
+# or using **SQLite** bindings that are available in many languages, including Python's standard library module [sqlite3](https://docs.python.org/3/library/sqlite3.html).
 #
 # A small Python package containing a few utilities for working with this repository is also provided in `analysis/labelrepo`. You can install it with
 # ```bash
 # pip install -e analysis/labelrepo
 # ```
+# (note the `-e`, or `--editable`, option).
 
 
 # The main tables are `annotation`, `document` and `label`.
@@ -78,11 +80,11 @@ pd.read_sql(
 
 # ## Using a CSV rather than a database
 
-# If you prefer working with CSVs and Pandas than SQL, you can also run (at the root of the repository)
+# If you prefer working with CSVs than SQL, you can also run (at the root of the repository)
 # ```bash
 # make csv
 # ```
-# That will create a file `analysis/data/detailed_annotation.csv` containing that same table:
+# That will create a file `analysis/data/detailed_annotation.csv` containing the detailed annotations table:
 
 # +
 from labelrepo import repo
@@ -108,7 +110,7 @@ displays.AnnotationsDisplay(annotations)
 # ## Using the JSON and JSONLines files directly
 
 # `.jsonl` (JSONLines) files contain one JSON dictionary per line. They can
-# easily be parsed with the `json` standard library module. Moreover the
+# easily be parsed for example with the [json](https://docs.python.org/3/library/json.html) Python standard library module. Moreover the
 # `labelrepo` package contains a convenience function for parsing JSON or
 # JSONLines files:
 
