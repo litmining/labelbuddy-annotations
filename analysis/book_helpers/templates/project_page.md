@@ -10,6 +10,7 @@ kernelspec:
   language: python
   name: python3
 ---
+{{ warning_automatically_generated_page | safe }}
 
 # {{ project_name }}
 

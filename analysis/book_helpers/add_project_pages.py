@@ -99,12 +99,33 @@ all_projects = [
 output_dir = repo.repo_root() / "analysis" / "book" / "projects"
 output_dir.mkdir(exist_ok=True)
 
+WARNING_AUTO_GEN = """
+% !!!
+%
+% Don't edit this page directly!
+% It has been automatically generated.
+% Instead, edit the project's README.md file which gets inserted here,
+% or the templates in /analysis/book_helpers/templates/
+%
+% !!!
+"""
+
+DIR_WARNING_AUTO_GEN = """Don't edit the pages in this directory directly!
+They have been automatically generated.
+Instead, edit the projects' README.md file which gets inserted here,
+or the templates in /analysis/book_helpers/templates/
+"""
+
 for project_name in all_projects:
     project_dir = repo.repo_root() / "projects" / project_name
     project_info = {"project_name": project_name}
     project_info["readme_content"] = get_readme(project_dir)
     project_info["labels"] = get_labels(project_name)
+    project_info["warning_automatically_generated_page"] = WARNING_AUTO_GEN
     rendered = template.render(**escape_quotes(project_info))
     (output_dir / f"{project_name.replace('.', '__')}.md").write_text(
         rendered, encoding="UTF-8"
     )
+    (
+        output_dir / "DONT_EDIT_THIS_DIRECTORY_IT_IS_AUTOMATICALLY_GENERATED"
+    ).write_text(DIR_WARNING_AUTO_GEN, encoding="UTF-8")
