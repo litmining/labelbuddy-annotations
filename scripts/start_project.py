@@ -40,6 +40,12 @@ def _start_project(
         args.extend(["--import-labels", str(labels_file)])
     for docs_file in sorted((project_dir / "documents").glob("*.jsonl")):
         args.extend(["--import-docs", str(docs_file)])
+    # if this annotator has already exported annotations but the db was removed
+    # for some reason, we import the annotations in the new db.
+    for extension in ".json", ".jsonl":
+        exported_annotations = db_path.with_suffix(extension)
+        if exported_annotations.is_file():
+            args.extend(["--import-docs", str(exported_annotations)])
     subprocess.run(args)
     return db_path
 
