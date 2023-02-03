@@ -19,21 +19,11 @@ $(annotation_files): %.jsonl: %.labelbuddy
 	labelbuddy $< --export-docs $@ --no-text --labelled-only
 
 book:
-	python3 scripts/make_repo_stats_figure.py
-	python3 analysis/book_helpers/add_project_pages.py
-	LABELREPO_CSS_AVAILABLE=1 \
-	LABELREPO_PROJECTS_BASE_URL="./projects/" \
-	LABELREPO_PROJECTS_HTML_EXTENSION=1 \
-	LABELREPO_PROJECTS_URL_ESCAPE_DOT=1 \
-	jupyter-book build -W analysis/book
+	./scripts/make_book.sh
 
 book-full: database csv
 	rm -rf analysis/book/_build/
 	rm -rf analysis/book/projects/
-	python3 analysis/book_helpers/add_project_pages.py
 	python3 scripts/make_repo_stats_figure.py
-	LABELREPO_CSS_AVAILABLE=1 \
-	LABELREPO_PROJECTS_BASE_URL="./projects/" \
-	LABELREPO_PROJECTS_URL_ESCAPE_DOT=1 \
-	LABELREPO_PROJECTS_HTML_EXTENSION=1 \
-	jupyter-book build -W analysis/book
+	python3 analysis/book_helpers/add_project_pages.py
+	./scripts/make_book.sh
