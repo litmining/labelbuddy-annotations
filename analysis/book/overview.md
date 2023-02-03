@@ -40,17 +40,20 @@ connection = database.get_database_connection()
 
 df = pd.read_sql(
     """
-    select * from 
-    (select project_name, count(distinct doc_id) as documents,
+    select * from (select project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
     count(distinct annotator_name) as annotators,
     count(*) as annotations from
     annotation group by project_name order by documents desc)
-    union all 
+    union all
+    select name, 0 as documents, 0 as labels, 0 as annotators,
+    0 as annotations from project
+    where name not in (select distinct project_name from annotation)
+    union all
     select 'Total' as project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
     count(distinct annotator_name) as annotators,
-    count(*) as annotations 
+    count(*) as annotations
     from annotation;
 """,
     connection,
@@ -71,7 +74,7 @@ Each document is represented by a JSON dictionary; the keys of interest are:
 - **text:** the article's content as plain text as extracted by {{ pg }}.
 - **metadata:** basic metadata, including the PubMed ID (**pmid**), PubMedCentral ID (**pmcid**), and **doi** when available.
 
-Below is an example document. 
+Below is an example document.
 (Here the text is abbreviated and the JSON is displayed in a readable way, but in the actual JSONLines file the whole information for each document is on a single line.)
 
 ```{code-cell}
