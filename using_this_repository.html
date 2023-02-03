@@ -429,22 +429,24 @@ title="Print to PDF"
 <p>The documents, labels and annotations are stored in JSON or JSONLines files in the <code class="docutils literal notranslate"><span class="pre">projects/</span></code> directory.</p>
 <section id="building-the-database">
 <h2>Building the database<a class="headerlink" href="#building-the-database" title="Permalink to this headline">#</a></h2>
-<p>We can easily create a SQLite database containing all the information in the repository:</p>
+<p>We can easily create a <a class="reference external" href="https://www.sqlite.org/">SQLite</a> database containing all the information in the repository (but if you don’t like SQL you can <a class="reference external" href="#using-a-csv-rather-than-a-database">use a CSV file instead</a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>database
-
-<span class="c1"># or equivalently:</span>
-python3<span class="w"> </span>./scripts/make_database.py
+</pre></div>
+</div>
+<p>Or equivalently, <em>e.g.</em> if <code class="docutils literal notranslate"><span class="pre">make</span></code> is not available:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>./scripts/make_database.py
 </pre></div>
 </div>
 <p>We can then use this database to query the contents of the repository, either with the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> interactive command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3<span class="w"> </span>analysis/data/database.sqlite3
 </pre></div>
 </div>
-<p>or using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> bindings that are available in many languages, including Python’s standard library module <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>.</p>
+<p>or using <strong>SQLite</strong> bindings that are available in many languages, including Python’s standard library module <a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">sqlite3</a>.</p>
 <p>A small Python package containing a few utilities for working with this repository is also provided in <code class="docutils literal notranslate"><span class="pre">analysis/labelrepo</span></code>. You can install it with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>analysis/labelrepo
 </pre></div>
 </div>
+<p>(note the <code class="docutils literal notranslate"><span class="pre">-e</span></code>, or <code class="docutils literal notranslate"><span class="pre">--editable</span></code>, option).</p>
 <p>The main tables are <code class="docutils literal notranslate"><span class="pre">annotation</span></code>, <code class="docutils literal notranslate"><span class="pre">document</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code>.
 <code class="docutils literal notranslate"><span class="pre">detailed_annotation</span></code> is a view gathering detailed information about each annotation, such as the <code class="docutils literal notranslate"><span class="pre">selected_text</span></code>, a snippet of surrounding text (<code class="docutils literal notranslate"><span class="pre">context</span></code>), the <code class="docutils literal notranslate"><span class="pre">label_name</span></code> and <code class="docutils literal notranslate"><span class="pre">annotator_name</span></code>, etc.
 For example, to display a few annotations:</p>
@@ -605,11 +607,11 @@ For example, to display a few annotations:</p>
 </section>
 <section id="using-a-csv-rather-than-a-database">
 <h2>Using a CSV rather than a database<a class="headerlink" href="#using-a-csv-rather-than-a-database" title="Permalink to this headline">#</a></h2>
-<p>If you prefer working with CSVs and Pandas than SQL, you can also run (at the root of the repository)</p>
+<p>If you prefer working with CSVs than SQL, you can also run (at the root of the repository)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>csv
 </pre></div>
 </div>
-<p>That will create a file <code class="docutils literal notranslate"><span class="pre">analysis/data/detailed_annotation.csv</span></code> containing that same table:</p>
+<p>That will create a file <code class="docutils literal notranslate"><span class="pre">analysis/data/detailed_annotation.csv</span></code> containing the detailed annotations table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo</span> <span class="kn">import</span> <span class="n">repo</span>
@@ -690,73 +692,73 @@ For example, to display a few annotations:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_db425">
+<table id="T_6792c">
   <thead>
   </thead>
   <tbody>
     <tr>
-      <td id="T_db425_row0_col1" class="data row0 col1" >pmcid</td>
-      <td id="T_db425_row0_col2" class="data row0 col2" >9409193</td>
+      <td id="T_6792c_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_6792c_row0_col2" class="data row0 col2" >9409193</td>
     </tr>
     <tr>
-      <td id="T_db425_row1_col1" class="data row1 col1" >pmid</td>
-      <td id="T_db425_row1_col2" class="data row1 col2" >36012668</td>
+      <td id="T_6792c_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_6792c_row1_col2" class="data row1 col2" >36012668</td>
     </tr>
     <tr>
-      <td id="T_db425_row2_col1" class="data row2 col1" >publication_year</td>
-      <td id="T_db425_row2_col2" class="data row2 col2" >2022</td>
+      <td id="T_6792c_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_6792c_row2_col2" class="data row2 col2" >2022</td>
     </tr>
     <tr>
-      <td id="T_db425_row3_col1" class="data row3 col1" >journal</td>
-      <td id="T_db425_row3_col2" class="data row3 col2" >Int J Mol Sci</td>
+      <td id="T_6792c_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_6792c_row3_col2" class="data row3 col2" >Int J Mol Sci</td>
     </tr>
     <tr>
-      <td id="T_db425_row4_col1" class="data row4 col1" >title</td>
-      <td id="T_db425_row4_col2" class="data row4 col2" >4-Phenylbutyric Acid (4-PBA) Derivatives Prevent SOD1 Amyloid Aggregation In Vitro with No Effect on Disease Progression in SOD1-ALS Mice</td>
+      <td id="T_6792c_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_6792c_row4_col2" class="data row4 col2" >4-Phenylbutyric Acid (4-PBA) Derivatives Prevent SOD1 Amyloid Aggregation In Vitro with No Effect on Disease Progression in SOD1-ALS Mice</td>
     </tr>
     <tr>
-      <td id="T_db425_row5_col1" class="data row5 col1" >label_name</td>
-      <td id="T_db425_row5_col2" class="data row5 col2" >discard_this_document</td>
+      <td id="T_6792c_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_6792c_row5_col2" class="data row5 col2" >discard_this_document</td>
     </tr>
     <tr>
-      <td id="T_db425_row6_col1" class="data row6 col1" >annotator_name</td>
-      <td id="T_db425_row6_col2" class="data row6 col2" >Jerome_Dockes</td>
+      <td id="T_6792c_row6_col1" class="data row6 col1" >annotator_name</td>
+      <td id="T_6792c_row6_col2" class="data row6 col2" >Jerome_Dockes</td>
     </tr>
     <tr>
-      <td id="T_db425_row7_col1" class="data row7 col1" >start_char</td>
-      <td id="T_db425_row7_col2" class="data row7 col2" >0</td>
+      <td id="T_6792c_row7_col1" class="data row7 col1" >start_char</td>
+      <td id="T_6792c_row7_col2" class="data row7 col2" >0</td>
     </tr>
     <tr>
-      <td id="T_db425_row8_col1" class="data row8 col1" >end_char</td>
-      <td id="T_db425_row8_col2" class="data row8 col2" >1</td>
+      <td id="T_6792c_row8_col1" class="data row8 col1" >end_char</td>
+      <td id="T_6792c_row8_col2" class="data row8 col2" >1</td>
     </tr>
     <tr>
-      <td id="T_db425_row9_col1" class="data row9 col1" >extra_data</td>
-      <td id="T_db425_row9_col2" class="data row9 col2" >not about autism</td>
+      <td id="T_6792c_row9_col1" class="data row9 col1" >extra_data</td>
+      <td id="T_6792c_row9_col2" class="data row9 col2" >not about autism</td>
     </tr>
     <tr>
-      <td id="T_db425_row10_col1" class="data row10 col1" >project_name</td>
-      <td id="T_db425_row10_col2" class="data row10 col2" >autism_mri</td>
+      <td id="T_6792c_row10_col1" class="data row10 col1" >project_name</td>
+      <td id="T_6792c_row10_col2" class="data row10 col2" >autism_mri</td>
     </tr>
     <tr>
-      <td id="T_db425_row11_col1" class="data row11 col1" >selected_text</td>
-      <td id="T_db425_row11_col2" class="data row11 col2" >A</td>
+      <td id="T_6792c_row11_col1" class="data row11 col1" >selected_text</td>
+      <td id="T_6792c_row11_col2" class="data row11 col2" >A</td>
     </tr>
     <tr>
-      <td id="T_db425_row12_col1" class="data row12 col1" >context</td>
-      <td id="T_db425_row12_col2" class="data row12 col2" >Alfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels</td>
+      <td id="T_6792c_row12_col1" class="data row12 col1" >context</td>
+      <td id="T_6792c_row12_col2" class="data row12 col2" >Alfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels</td>
     </tr>
     <tr>
-      <td id="T_db425_row13_col1" class="data row13 col1" >context_start_char</td>
-      <td id="T_db425_row13_col2" class="data row13 col2" >0</td>
+      <td id="T_6792c_row13_col1" class="data row13 col1" >context_start_char</td>
+      <td id="T_6792c_row13_col2" class="data row13 col2" >0</td>
     </tr>
     <tr>
-      <td id="T_db425_row14_col1" class="data row14 col1" >context_end_char</td>
-      <td id="T_db425_row14_col2" class="data row14 col2" >201</td>
+      <td id="T_6792c_row14_col1" class="data row14 col1" >context_end_char</td>
+      <td id="T_6792c_row14_col2" class="data row14 col2" >201</td>
     </tr>
     <tr>
-      <td id="T_db425_row15_col1" class="data row15 col1" >doc_length</td>
-      <td id="T_db425_row15_col2" class="data row15 col2" >38925</td>
+      <td id="T_6792c_row15_col1" class="data row15 col1" >doc_length</td>
+      <td id="T_6792c_row15_col2" class="data row15 col2" >38925</td>
     </tr>
   </tbody>
 </table>
@@ -766,7 +768,7 @@ For example, to display a few annotations:</p>
 <section id="using-the-json-and-jsonlines-files-directly">
 <h2>Using the JSON and JSONLines files directly<a class="headerlink" href="#using-the-json-and-jsonlines-files-directly" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> (JSONLines) files contain one JSON dictionary per line. They can
-easily be parsed with the <code class="docutils literal notranslate"><span class="pre">json</span></code> standard library module. Moreover the
+easily be parsed for example with the <a class="reference external" href="https://docs.python.org/3/library/json.html">json</a> Python standard library module. Moreover the
 <code class="docutils literal notranslate"><span class="pre">labelrepo</span></code> package contains a convenience function for parsing JSON or
 JSONLines files:</p>
 <div class="cell docutils container">

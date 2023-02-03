@@ -11,6 +11,16 @@ kernelspec:
   name: python3
 ---
 
+% !!!
+%
+% Don't edit this page directly!
+% It has been automatically generated.
+% Instead, edit the project's README.md file which gets inserted here,
+% or the templates in /analysis/book_helpers/templates/
+%
+% !!!
+
+
 # neuro_meta_analyses.phase_1
 
 You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1/).
