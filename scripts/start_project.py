@@ -11,30 +11,13 @@ from typing import Optional
 from labelrepo import repo, glob_json, read_json
 
 
-def _is_project_dir(dir_path: pathlib.Path) -> bool:
-    for subdir in ("documents", "labels", "annotations"):
-        if not (dir_path / subdir).is_dir():
-            return False
-    return True
-
-
-def _find_project(search_start: pathlib.Path) -> Optional[pathlib.Path]:
-    if _is_project_dir(search_start):
-        return search_start
-    for dir_path in search_start.parents:
-        if repo.is_repo_root(dir_path):
-            break
-        if _is_project_dir(dir_path):
-            return dir_path
-    return None
-
-
 def _start_project(
     project_dir: pathlib.Path, annotator_name: str
 ) -> pathlib.Path:
     db_path = project_dir / "annotations" / f"{annotator_name}.labelbuddy"
     if db_path.is_file():
         return db_path
+    db_path.parent.mkdir(exist_ok=True)
     args = ["labelbuddy", str(db_path)]
     for labels_file in glob_json(project_dir / "labels"):
         args.extend(["--import-labels", str(labels_file)])
@@ -74,11 +57,16 @@ def _get_annotator_name(suggested_name: Optional[str]):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("project_path", type=str, nargs="?", default=".")
+    parser.add_argument("project_name", type=str)
     parser.add_argument("--annotator", type=str, default=None)
     args = parser.parse_args()
-    project_path = _find_project(pathlib.Path(args.project_path))
-    if project_path is None:
+
+    # in case someone passes the path to the project instead of just the name
+    # (convenient with tab completion)
+    project_name = pathlib.Path(args.project_name).name
+    project_path = repo.repo_root() / "projects" / project_name
+    if not project_path.is_dir():
+        print(f"Project {project_path} not found.")
         sys.exit(1)
     db_path = _start_project(
         project_path,
