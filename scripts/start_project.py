@@ -8,7 +8,7 @@ import subprocess
 import sys
 from typing import Optional
 
-from labelrepo import repo
+from labelrepo import repo, glob_json, read_json
 
 
 def _is_project_dir(dir_path: pathlib.Path) -> bool:
@@ -36,7 +36,7 @@ def _start_project(
     if db_path.is_file():
         return db_path
     args = ["labelbuddy", str(db_path)]
-    for labels_file in sorted((project_dir / "labels").glob("*.json")):
+    for labels_file in glob_json(project_dir / "labels"):
         args.extend(["--import-labels", str(labels_file)])
     for docs_file in sorted((project_dir / "documents").glob("*.jsonl")):
         args.extend(["--import-docs", str(docs_file)])
@@ -78,4 +78,6 @@ if __name__ == "__main__":
         project_path,
         _get_annotator_name(args.annotator),
     )
-    print(db_path)
+    print(
+        f"\nYour .labelbuddy file for '{project_path.name}' is:\n\n{db_path}"
+    )
