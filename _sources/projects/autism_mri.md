@@ -124,6 +124,66 @@ Imaging took place on a Siemens <mark class="annotated-text">3</mark>T TiM Trio 
         
     </details>
     
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">Diagnosis (2 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …Keywords
+
+accident & emergency medicine
+neurological injury
+neuroradiology
+paediatric neurology
+developmental neurology & neurodisability
+magnetic resonance imaging
+
+
+# Abstract
+ 
+## Introduction 
+  
+<mark class="annotated-text">Mild traumatic brain injury (mTBI)</mark> is highly prevalent, especially in children under 6 years. However, little research focuses on the consequences of mTBI early in development. The objective of the Kids’ Outcomes And Long-term Abiliti…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7574946/"
+                                       >PMC7574946</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d subcortical components of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including <mark class="annotated-text">schizophrenia</mark> (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …s of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including schizophrenia (Sz) and <mark class="annotated-text">autism spectrum disorders</mark> (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years)…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
+                                       >PMC8883821</a></div>
+                    <div class="annotator-name">David_Kennedy</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #dbdb8d;">
         <summary class="label-display">N_Patients (2 docs)</summary>
         
@@ -473,40 +533,6 @@ Individual cortical surfaces were rendered from the high-resolution anatomical i
             <div class="annotation">
                 <div class="context">
                     …vidually using a Bayesian atlas-based automated segmentation methods ( ;  ;  ) incorporated in Freesurfer. Functional data were preprocessed and analyzed using the Analysis of Functional NeuroImages (<mark class="annotated-text">AFNI</mark>) software ( ;  ). Preprocessing consisted of concatenating data from two runs, removal of signal deviation >2.5 SDs from the mean (AFNI’s 3dDespike), temporal alignment, identification of motion outl…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
-                                       >PMC8883821</a></div>
-                    <div class="annotator-name">David_Kennedy</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #ffbb78;">
-        <summary class="label-display">Diagnosis (1 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    …d subcortical components of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including <mark class="annotated-text">schizophrenia</mark> (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/"
-                                       >PMC8883821</a></div>
-                    <div class="annotator-name">David_Kennedy</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s of the early visual pathways. Social cognitive deficits, including face emotion recognition (FER) deficits, are characteristic of several neuropsychiatric disorders including schizophrenia (Sz) and <mark class="annotated-text">autism spectrum disorders</mark> (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years)…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
