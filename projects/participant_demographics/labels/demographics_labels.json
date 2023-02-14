@@ -1,58 +1,66 @@
 [
     {
-        "color": "#98df8a",
+        "color": "#4aff13",
         "name": "healthy",
-        "shortcut_key": "s"
+        "shortcut_key": "h"
     },
     {
-        "color": "#aec7e8",
+        "color": "#ff5100",
         "name": "patients",
         "shortcut_key": "p"
     },
     {
-        "color": "#c5b0d5",
+        "color": "#00ffff",
         "name": "female",
-        "shortcut_key": "x"
+        "shortcut_key": "f"
     },
     {
-        "color": "#c49c94",
+        "color": "#fff700",
         "name": "male",
-        "shortcut_key": "y"
+        "shortcut_key": "m"
     },
     {
-        "color": "#aec7e8",
+        "color": "#d1cbff",
         "name": "count",
         "shortcut_key": "c"
     },
     {
-        "color": "#ffbb78",
+        "color": "#d1cbff",
         "name": "age min",
+        "shortcut_key": "j"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age max",
+        "shortcut_key": "k"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age mean",
         "shortcut_key": "l"
     },
     {
-        "color": "#98df8a",
-        "name": "age max",
-        "shortcut_key": "h"
+        "color": "#d1cbff",
+        "name": "age median"
     },
     {
-        "color": "#ff9896",
-        "name": "age mean",
-        "shortcut_key": "m"
-    },
-    {
-        "color": "#aec7e8",
-        "name": "N participants"
-    },
-    {
-        "color": "#ffbb78",
-        "name": "N included"
-    },
-    {
-        "color": "#ff9896",
+        "color": "#ffb300",
         "name": "group 1"
     },
     {
-        "color": "#c5b0d5",
+        "color": "#ff75f4",
         "name": "group 2"
+    },
+    {
+        "color": "#acacac",
+        "name": "N participants"
+    },
+    {
+        "color": "#dddddd",
+        "name": "N included"
+    },
+    {
+        "color": "#c4c4c4",
+        "name": "_to discuss"
     }
 ]
