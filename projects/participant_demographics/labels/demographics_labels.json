@@ -41,15 +41,23 @@
     },
     {
         "color": "#d1cbff",
-        "name": "age median"
+        "name": "age median",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#fbc5ff",
+        "name": "diagnosis",
+        "shortcut_key": "d"
     },
     {
         "color": "#ffb300",
-        "name": "group 1"
+        "name": "group a",
+        "shortcut_key": "a"
     },
     {
         "color": "#ff75f4",
-        "name": "group 2"
+        "name": "group b",
+        "shortcut_key": "b"
     },
     {
         "color": "#acacac",
@@ -62,5 +70,9 @@
     {
         "color": "#c4c4c4",
         "name": "_to discuss"
+    },
+    {
+        "color": "#c4c4c4",
+        "name": "discard"
     }
 ]
