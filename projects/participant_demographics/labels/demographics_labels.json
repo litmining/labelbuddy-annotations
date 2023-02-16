@@ -20,24 +20,24 @@
         "shortcut_key": "m"
     },
     {
-        "color": "#d1cbff",
+        "color": "#ffe19c",
         "name": "count",
         "shortcut_key": "c"
     },
     {
         "color": "#d1cbff",
-        "name": "age min",
+        "name": "age minimum",
         "shortcut_key": "j"
     },
     {
         "color": "#d1cbff",
-        "name": "age max",
+        "name": "age maximum",
         "shortcut_key": "k"
     },
     {
         "color": "#d1cbff",
         "name": "age mean",
-        "shortcut_key": "l"
+        "shortcut_key": "u"
     },
     {
         "color": "#d1cbff",
@@ -50,29 +50,21 @@
         "shortcut_key": "d"
     },
     {
-        "color": "#ffb300",
-        "name": "group a",
-        "shortcut_key": "a"
-    },
-    {
-        "color": "#ff75f4",
-        "name": "group b",
-        "shortcut_key": "b"
-    },
-    {
-        "color": "#acacac",
+        "color": "#ffaa7f",
         "name": "N participants"
     },
     {
-        "color": "#dddddd",
+        "color": "#ffaa7f",
         "name": "N included"
     },
     {
         "color": "#c4c4c4",
-        "name": "_to discuss"
+        "name": "_to discuss",
+        "shortcut_key": "q"
     },
     {
         "color": "#c4c4c4",
-        "name": "discard"
+        "name": "discard",
+        "shortcut_key": "x"
     }
 ]
