@@ -1,26 +1,26 @@
 [
     {
-        "color": "#4aff13",
+        "color": "#00ffff",
         "name": "healthy",
         "shortcut_key": "h"
     },
     {
-        "color": "#ff5100",
+        "color": "#fff700",
         "name": "patients",
         "shortcut_key": "p"
     },
     {
-        "color": "#00ffff",
+        "color": "#6bf700",
         "name": "female",
         "shortcut_key": "f"
     },
     {
-        "color": "#fff700",
+        "color": "#ff65de",
         "name": "male",
         "shortcut_key": "m"
     },
     {
-        "color": "#ffe19c",
+        "color": "#e6c68f",
         "name": "count",
         "shortcut_key": "c"
     },
@@ -50,11 +50,11 @@
         "shortcut_key": "d"
     },
     {
-        "color": "#ffaa7f",
+        "color": "#c4c4c4",
         "name": "N participants"
     },
     {
-        "color": "#ffaa7f",
+        "color": "#c4c4c4",
         "name": "N included"
     },
     {

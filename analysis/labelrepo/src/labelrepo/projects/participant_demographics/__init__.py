@@ -7,7 +7,7 @@ from typing import Dict, List, Optional, Tuple
 import jinja2
 import pandas as pd
 
-from labelrepo import database, repo
+from labelrepo import database, repo, displays
 
 _SEX_NAMES = ("female", "male")
 _GROUP_NAMES = ("healthy", "patients")
@@ -474,7 +474,9 @@ def _get_doc_positions_in_db(db_path: pathlib.Path) -> Dict:
 
 
 def _select_participants_annotations(
-    annotator_name: Optional[str] = None, project_name: Optional[str] = None
+    annotator_name: Optional[str] = None,
+    project_name: Optional[str] = None,
+    pmcid: Optional[int] = None,
 ) -> pd.DataFrame:
     demo_labels = ", ".join(map("'{}'".format, _DEMOGRAPHICS_LABELS))
     annotator_query = (
@@ -483,12 +485,15 @@ def _select_participants_annotations(
     project_query = (
         "" if project_name is None else "and project_name = :project"
     )
+    pmcid_query = "" if pmcid is None else "and pmcid = :pmcid"
     query = f"""
 select pmcid, title, doc_md5, label_name, extra_data, selected_text,
-    start_char, end_char, project_name, annotator_name
+    start_char, end_char, project_name, annotator_name, label_color, context,
+    context_start_char, context_end_char, doc_length
 from detailed_annotation where label_name in ({demo_labels})
 {annotator_query}
 {project_query}
+{pmcid_query}
     """
     with contextlib.closing(database.get_database_connection()) as connection:
         with connection:
@@ -497,7 +502,11 @@ from detailed_annotation where label_name in ({demo_labels})
                     dict,
                     connection.execute(
                         query,
-                        {"annotator": annotator_name, "project": project_name},
+                        {
+                            "annotator": annotator_name,
+                            "project": project_name,
+                            "pmcid": pmcid,
+                        },
                     ).fetchall(),
                 )
             )
@@ -584,3 +593,25 @@ def labelbuddy_file_report_command(args: Optional[List[str]] = None) -> None:
     )
     pathlib.Path(out_file).write_text(html)
     print(f"Report saved in {out_file}")
+
+
+def get_annotation_stacks_display(annotations):
+    stacks = []
+    for _, anno in annotations.groupby(
+        ["doc_md5", "project_name", "annotator_name", "start_char", "end_char"]
+    ):
+        first_anno = anno.iloc[0].to_dict()
+        prefix, selected_text, suffix = displays.split_annotation_context(
+            first_anno
+        )
+        anno_stack = {
+            "prefix": prefix,
+            "selected_text": selected_text,
+            "suffix": suffix,
+            "annotations": anno.to_dict(orient="records"),
+        }
+        stacks.append(anno_stack)
+    jinja_env = _get_jinja_env()
+    template = jinja_env.get_template("annotation_stack.html")
+    html = template.render({"standalone": True, "annotation_stacks": stacks})
+    return html

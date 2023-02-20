@@ -9,7 +9,7 @@
     </head>
     <body>
         <main class="participants-report">
-            <div class="flow wrapper">
+            <div class="labelrepo-flow labelrepo-wrapper">
             <header class="report-header">
                 {% block header %}
                 <h1>Participant demographics</h1>
@@ -17,13 +17,13 @@
             </header>
 {% else %}
             <div class="participants-report">
-                <div class="flow wrapper">
+                <div class="labelrepo-flow labelrepo-wrapper">
 {% endif %}
             {% for doc in documents %}
-            <article id="PMC{{ doc["pmcid"] }}" class="doc-participants"
+            <article id="PMC{{ doc["pmcid"] }}" class="doc-participants labelrepo-card"
                      {{ "data-has-patients" if doc["has_patients"] }}
                      {{ "data-extraction-failure" if doc["extraction_failed"] }} >
-                <header class="flow">
+                <header class="labelrepo-flow">
                     <h2><a target="_blank"
                            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{{ doc["pmcid"] }}"
                         >PMC{{ doc["pmcid"] }}</a></h2>
@@ -40,7 +40,7 @@
                         {{ doc["title"] }}
                     </p>
                 </header>
-                <div class="flow doc-participants-content">
+                <div class="labelrepo-flow doc-participants-content">
                     {% if doc.get("extraction_failed") %}
                     <p>
                         <pre>
