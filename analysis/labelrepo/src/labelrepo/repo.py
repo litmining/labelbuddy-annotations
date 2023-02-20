@@ -1,6 +1,8 @@
 import os
 import pathlib
 import subprocess
+import socket
+from typing import Optional
 
 from labelrepo import _utils
 
@@ -38,3 +40,25 @@ def data_dir() -> pathlib.Path:
     data_dir = repo_root() / "analysis" / "data"
     data_dir.mkdir(exist_ok=True, parents=True)
     return data_dir
+
+
+def annotator_name(suggested_name: Optional[str] = None) -> str:
+    if suggested_name:
+        return suggested_name
+    name = os.environ.get("LABELBUDDY_ANNOTATOR_NAME", "")
+    if name:
+        return name
+    try:
+        name = (
+            subprocess.run(["git", "config", "User.Name"], capture_output=True)
+            .stdout.decode("utf-8")
+            .strip()
+            .replace(" ", "_")
+        )
+        if name:
+            return name
+    except Exception:
+        pass
+    user_name = pathlib.Path.home().name
+    host_name = socket.gethostname()
+    return f"{user_name}_{host_name}"

@@ -88,7 +88,7 @@ docs_file = (
     / "projects"
     / "participant_demographics"
     / "documents"
-    / "documents_00001.jsonl"
+    / "01_documents_00001.jsonl"
 )
 with open(docs_file, encoding="utf-8") as stream:
     doc = json.loads(next(stream))

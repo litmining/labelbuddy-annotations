@@ -88,8 +88,6 @@ jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(helpers_dir / "templates", encoding="UTF-8")
 )
 
-template = jinja_env.get_template("project_page.md")
-
 connection = database.get_database_connection()
 all_projects = [
     p["name"]
@@ -122,6 +120,10 @@ for project_name in all_projects:
     project_info["readme_content"] = get_readme(project_dir)
     project_info["labels"] = get_labels(project_name)
     project_info["warning_automatically_generated_page"] = WARNING_AUTO_GEN
+    try:
+        template = jinja_env.get_template(f"{project_name}.md")
+    except jinja2.TemplateNotFound:
+        template = jinja_env.get_template("project_page.md")
     rendered = template.render(**escape_quotes(project_info))
     (output_dir / f"{project_name.replace('.', '__')}.md").write_text(
         rendered, encoding="UTF-8"

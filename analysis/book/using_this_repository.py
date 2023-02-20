@@ -42,7 +42,7 @@
 #
 # A small Python package containing a few utilities for working with this repository is also provided in `analysis/labelrepo`. You can install it with
 # ```bash
-# pip install -e analysis/labelrepo
+# pip install -e "analysis/labelrepo[all]"
 # ```
 # (note the `-e`, or `--editable`, option).
 

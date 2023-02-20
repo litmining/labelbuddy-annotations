@@ -67,7 +67,8 @@ create view detailed_annotation as
       context_end_char - context_start_char
     ) as context,
     context_start_char, context_end_char,
-    length(text) as doc_length
+    length(text) as doc_length,
+    lower(hex(utf8_text_md5_checksum)) as doc_md5
     from annot
          inner join label on annot.label_id = label.id
    order by doc_id, start_char, end_char,

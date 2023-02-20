@@ -18,6 +18,8 @@ You can see the full contents of this project [on GitHub](https://github.com/neu
 
 {{ readme_content | safe }}
 
+{% block main_content %}
+
 ## Labels in this project
 
 {% if not labels %}
@@ -62,3 +64,4 @@ text = """
 """
 displays.HTMLDisplay(text)
 ```
+{% endblock %}
