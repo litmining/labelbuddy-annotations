@@ -550,7 +550,7 @@ def get_report_for_repo(
         ]
     all_docs = sorted(all_docs, key=lambda d: d["pmcid"])
     jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("report.html")
+    template = jinja_env.get_template("repository_report.html")
     return template.render(
         {
             "documents": all_docs,
