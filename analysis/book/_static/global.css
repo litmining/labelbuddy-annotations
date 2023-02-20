@@ -6,6 +6,6 @@
     display: none !important;
 }
 
-span.pre {
+span.pre, code {
     color: #007020;
 }

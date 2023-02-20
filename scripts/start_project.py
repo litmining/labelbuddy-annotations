@@ -1,14 +1,11 @@
 #! /usr/bin/env python3
 
 import argparse
-import os
 import pathlib
-import socket
 import subprocess
 import sys
-from typing import Optional
 
-from labelrepo import repo, glob_json, read_json
+from labelrepo import repo, glob_json
 
 
 def _start_project(
@@ -33,28 +30,6 @@ def _start_project(
     return db_path
 
 
-def _get_annotator_name(suggested_name: Optional[str]):
-    if suggested_name:
-        return suggested_name
-    name = os.environ.get("LABELBUDDY_ANNOTATOR_NAME", "")
-    if name:
-        return name
-    try:
-        name = (
-            subprocess.run(["git", "config", "User.Name"], capture_output=True)
-            .stdout.decode("utf-8")
-            .strip()
-            .replace(" ", "_")
-        )
-        if name:
-            return name
-    except Exception:
-        pass
-    user_name = pathlib.Path.home().name
-    host_name = socket.gethostname()
-    return f"{user_name}_{host_name}"
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name", type=str)
@@ -70,7 +45,7 @@ if __name__ == "__main__":
         sys.exit(1)
     db_path = _start_project(
         project_path,
-        _get_annotator_name(args.annotator),
+        repo.annotator_name(args.annotator),
     )
     print(
         f"\nYour .labelbuddy file for '{project_path.name}' is:\n\n{db_path}"
