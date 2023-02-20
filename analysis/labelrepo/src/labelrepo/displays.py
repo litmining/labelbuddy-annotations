@@ -5,7 +5,7 @@ import json
 import os
 import sqlite3
 import string
-from typing import Any, Dict, Mapping, Sequence, Union
+from typing import Any, Dict, Mapping, Sequence, Tuple, Union
 import urllib
 
 from labelrepo import _utils
@@ -159,16 +159,7 @@ class AnnotationsDisplay(Display):
     def _repr_annotation(
         annotation: Mapping[str, Any], force_styled: bool
     ) -> str:
-        prefix = annotation["context"][
-            : annotation["start_char"] - annotation["context_start_char"]
-        ]
-        if annotation["context_start_char"] != 0:
-            prefix = "…" + prefix
-        suffix = annotation["context"][
-            annotation["end_char"] - annotation["context_start_char"] :
-        ]
-        if annotation["context_end_char"] != annotation["doc_length"]:
-            suffix = suffix + "…"
+        prefix, _, suffix = split_annotation_context(annotation)
         color = _get_color(annotation["label_color"])
         extra_data = annotation["extra_data"]
         if extra_data is None:
@@ -198,6 +189,22 @@ class AnnotationsDisplay(Display):
 
     def _get_css(self) -> str:
         return _get_css("annotation-set")
+
+
+def split_annotation_context(
+    annotation: Mapping[str, Any]
+) -> Tuple[str, str, str]:
+    prefix = annotation["context"][
+        : annotation["start_char"] - annotation["context_start_char"]
+    ]
+    if annotation["context_start_char"] != 0:
+        prefix = "…" + prefix
+    suffix = annotation["context"][
+        annotation["end_char"] - annotation["context_start_char"] :
+    ]
+    if annotation["context_end_char"] != annotation["doc_length"]:
+        suffix = suffix + "…"
+    return prefix, annotation["selected_text"], suffix
 
 
 class LabelsDisplay(Display):
