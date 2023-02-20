@@ -11,7 +11,7 @@ from labelrepo import displays
 from labelrepo.projects import participant_demographics
 
 def show_pmcid(pmcid):
-  annotations = participant_demographics._select_participants_annotations("Jerome_Dockes", "participant_demographics", pmcid)
+  annotations = participant_demographics.select_participants_annotations("Jerome_Dockes", "participant_demographics", pmcid)
   html = participant_demographics.get_annotation_stacks_display(annotations)
   return displays.HTMLDisplay(html)
 ```
