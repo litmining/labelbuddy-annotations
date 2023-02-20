@@ -373,6 +373,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-annotate">
+   How to annotate
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#patients-and-healthy-controls">
+     Patients and healthy controls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subgroups">
+     Subgroups
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#participant-demographics-summaries">
    Participant demographics summaries
   </a>
@@ -397,6 +414,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-annotate">
+   How to annotate
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#patients-and-healthy-controls">
+     Patients and healthy controls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subgroups">
+     Subgroups
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#participant-demographics-summaries">
    Participant demographics summaries
   </a>
@@ -416,6 +450,910 @@ title="Print to PDF"
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics/">on GitHub</a>.</p>
 <p>Annotating information about participants (for now just the sample size) in articles that match the query <code class="docutils literal notranslate"><span class="pre">fMRI[Abstract]</span></code>.</p>
 <p>The full pubget output can be found here: <a class="reference external" href="https://osf.io/kfmdp/">https://osf.io/kfmdp/</a></p>
+<section id="how-to-annotate">
+<h2>How to annotate<a class="headerlink" href="#how-to-annotate" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section id="patients-and-healthy-controls">
+<h3>Patients and healthy controls<a class="headerlink" href="#patients-and-healthy-controls" title="Permalink to this headline">#</a></h3>
+<p>To annotate information about a participant group, we start by identifying the group: we select “healthy” or “patients”, and if it applies, “male” or “female”.
+Then, we select the label corresponding to the type of information we are annotating; for example “count”.
+Finally, if necessary we specify any additional information in the “extra data” input field.
+For example, if the count is provided as text (eg “twenty”), we must enter the numerical value (eg “20”).</p>
+<p>Below is an example where only the count is provided, for the patients and for the healthy controls.
+Note that “diagnosis” implicitly refers to patients, so we can omit the group label here (but would not be an error to add it).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annotations</title>
+        <style>
+         .participants-report h1 {
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+}
+.participants-report :is(h2, h3, p) {
+    margin: 0;
+}
+.participants-report :is(h2, h3) {
+    font-size: large;
+}
+.participants-report code {
+    color: inherit;
+}
+.participants-report :is(a, a:visited) {
+    color: inherit;
+    text-decoration: underline;
+}
+.participants-report  .report-header {
+    text-align: center;
+    font-size: large;
+}
+.participants-report .labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-card {
+    margin: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.doc-participants > header {
+    padding: 0.5rem;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+}
+.doc-participants-content {
+    padding: 0.5rem;
+}
+.labelrepo-wrapper {
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.doc-participants > header {
+    background-color: #E8E8E8;
+}
+.doc-participants[data-extraction-failure] > header {
+    background-color: #FF7C76;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) {
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
+    margin-bottom: 0.25rem;
+}
+.doc-participants .healthy-subgroup {
+    background-color: #B3FFFF;
+}
+.doc-participants .patients-subgroup {
+    background-color: #FFFC9C;
+}
+.annotation-stack {
+    padding: 0.5rem;
+}
+.annotation-stack highlight {
+    background-color: #5A5A5A;
+    color: white;
+    display: inline-block;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
+    padding: 0.25rem;
+    font-weight: bold;
+}
+.annotation-stack > * {
+    padding: 0.25rem;
+}
+.label-and-extra-data {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: var(--label-color);
+}
+.label-and-extra-data > .label-name {
+}
+.label-and-extra-data > .extra-data {
+    font-style: italic;
+}
+.label-and-extra-data > * {
+    display: inline-block;
+    padding: 0.25rem;
+}
+.label-cluster {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+}
+.label-cluster .label-and-extra-data {
+    display: inline-block;
+}
+        </style>
+    </head>
+    <body>
+
+<div class="labelrepo-flow labelrepo-wrapper">
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fbc5ff;" >
+            <div class="label-name">
+            diagnosis
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …reflect spontaneous cerebral neural activity. Previous fMRI studies were focused on the examination of motor-related areas and little is known about the functional changes in the extra-motor areas in 
+        <highlight>amyotrophic lateral sclerosis</highlight>
+         (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and twenty age- and sex-matched healthy volunteer…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+            <div class="extra-data">
+                20
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …nal changes in the extra-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. 
+        <highlight>Twenty</highlight>
+         ALS patients and twenty age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+            <div class="extra-data">
+                20
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and 
+        <highlight>twenty</highlight>
+         age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared with the controls, the A…
+    </div>
+</div>
+
+</div>
+
+    </body>
+</html>
+</div></div>
+</div>
+</section>
+<section id="subgroups">
+<h3>Subgroups<a class="headerlink" href="#subgroups" title="Permalink to this headline">#</a></h3>
+<p>When there are several subgroups among the patients or the healthy controls, we use the “extra data” input field to distinguish them.
+For example, in the following article there are 2 subgroups of patients: schizophrenia and Autism Spectrum Disorder.
+To annotate information about the schizophrenia group, we first select “patients”, then, we use the “extra data” of that annotation to enter the subgroup.
+We can choose any name we want to identify that subgroup (in this case we chose “schizophrenia”).
+Later, when we need to refer to that subgroup again, the subgroup name will appear in the completion suggestions for the “extra data” field.</p>
+<p>So for annotating information about a specific subgroup, the steps are:</p>
+<ul class="simple">
+<li><p>select the group (“patients” or “healthy”)</p></li>
+<li><p>enter the subgroup identifier in the “extra data” field</p></li>
+<li><p>if it applies select “females” or “males”</p></li>
+<li><p>select the label that indicates the type of information (“count”, “age minimum”, etc.)</p></li>
+<li><p>if necessary add any complementary information in the “extra data” field</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annotations</title>
+        <style>
+         .participants-report h1 {
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+}
+.participants-report :is(h2, h3, p) {
+    margin: 0;
+}
+.participants-report :is(h2, h3) {
+    font-size: large;
+}
+.participants-report code {
+    color: inherit;
+}
+.participants-report :is(a, a:visited) {
+    color: inherit;
+    text-decoration: underline;
+}
+.participants-report  .report-header {
+    text-align: center;
+    font-size: large;
+}
+.participants-report .labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-card {
+    margin: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.doc-participants > header {
+    padding: 0.5rem;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+}
+.doc-participants-content {
+    padding: 0.5rem;
+}
+.labelrepo-wrapper {
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.doc-participants > header {
+    background-color: #E8E8E8;
+}
+.doc-participants[data-extraction-failure] > header {
+    background-color: #FF7C76;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) {
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
+    margin-bottom: 0.25rem;
+}
+.doc-participants .healthy-subgroup {
+    background-color: #B3FFFF;
+}
+.doc-participants .patients-subgroup {
+    background-color: #FFFC9C;
+}
+.annotation-stack {
+    padding: 0.5rem;
+}
+.annotation-stack highlight {
+    background-color: #5A5A5A;
+    color: white;
+    display: inline-block;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
+    padding: 0.25rem;
+    font-weight: bold;
+}
+.annotation-stack > * {
+    padding: 0.25rem;
+}
+.label-and-extra-data {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: var(--label-color);
+}
+.label-and-extra-data > .label-name {
+}
+.label-and-extra-data > .extra-data {
+    font-style: italic;
+}
+.label-and-extra-data > * {
+    display: inline-block;
+    padding: 0.25rem;
+}
+.label-cluster {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+}
+.label-cluster .label-and-extra-data {
+    display: inline-block;
+}
+        </style>
+    </head>
+    <body>
+
+<div class="labelrepo-flow labelrepo-wrapper">
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #6bf700;" >
+            <div class="label-name">
+            female
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …of several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 
+        <highlight>8</highlight>
+        /20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using tas…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #ff65de;" >
+            <div class="label-name">
+            male
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        … several neuropsychiatric disorders including schizophrenia (Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/
+        <highlight>20</highlight>
+         female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-b…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #6bf700;" >
+            <div class="label-name">
+            female
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …(Sz) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 
+        <highlight>4</highlight>
+        /16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compa…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #ff65de;" >
+            <div class="label-name">
+            male
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …z) and autism spectrum disorders (ASD). Here, we investigated potential visual sensory contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/
+        <highlight>16</highlight>
+         female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #6bf700;" >
+            <div class="label-name">
+            female
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …ry contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 
+        <highlight>8</highlight>
+        /22 female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) participan…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #ff65de;" >
+            <div class="label-name">
+            male
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        … contributions to FER deficits in Sz (  n   = 28, 8/20 female/male; age 21–54 years) and adult ASD (  n   = 20, 4/16 female/male; age 19–43 years) participants compared to neurotypical (  n   = 30, 8/
+        <highlight>22</highlight>
+         female/male; age 19–54 years) controls using task-based fMRI during an implicit static/dynamic FER task. Compared to neurotypical controls, both Sz (  d   = 1.97) and ASD (  d   = 1.13) participants …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …ophysiological mechanisms underlying social cognitive impairments in neuropsychiatric populations. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+Seventy-eight participants took part, including 
+        <highlight>28</highlight>
+         participants (age range 21–54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), c…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age minimum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …nderlying social cognitive impairments in neuropsychiatric populations. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+Seventy-eight participants took part, including 28 participants (age range 
+        <highlight>21</highlight>
+        –54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diag…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age maximum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …rlying social cognitive impairments in neuropsychiatric populations. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+Seventy-eight participants took part, including 28 participants (age range 21–
+        <highlight>54</highlight>
+         years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnos…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                schizophrenia
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #fbc5ff;" >
+            <div class="label-name">
+            diagnosis
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …mpairments in neuropsychiatric populations. 
+
+
+## Materials and Methods 
+
+### Participants 
+
+Seventy-eight participants took part, including 28 participants (age range 21–54 years) diagnosed with 
+        <highlight>schizophrenia</highlight>
+         (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edi…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …
+### Participants 
+
+Seventy-eight participants took part, including 28 participants (age range 21–54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 
+        <highlight>20</highlight>
+         adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 19–54 years) ( ). …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #fbc5ff;" >
+            <div class="label-name">
+            diagnosis
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …ts 
+
+Seventy-eight participants took part, including 28 participants (age range 21–54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with 
+        <highlight>autism spectrum disorder</highlight>
+         (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 19–54 years) ( ). All Sz participants were on a stable …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age minimum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …t, including 28 participants (age range 21–54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 
+        <highlight>19</highlight>
+        –43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 19–54 years) ( ). All Sz participants were on a stable dose of antipsychoti…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+            <div class="extra-data">
+                autism spectrum disorder
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age maximum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …including 28 participants (age range 21–54 years) diagnosed with schizophrenia (Sz) using the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–
+        <highlight>43</highlight>
+         years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 19–54 years) ( ). All Sz participants were on a stable dose of antipsychotic m…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …g the Structured Clinical Interview for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 
+        <highlight>30</highlight>
+         neurotypical controls (age range 19–54 years) ( ). All Sz participants were on a stable dose of antipsychotic medication. All participants had at least 20/22 corrected visual acuity on a Logarithmic …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age minimum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …for DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 
+        <highlight>19</highlight>
+        –54 years) ( ). All Sz participants were on a stable dose of antipsychotic medication. All participants had at least 20/22 corrected visual acuity on a Logarithmic Visual Acuity Chart. On average, Sz …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #d1cbff;" >
+            <div class="label-name">
+            age maximum
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        … DSM-IV ( ), 20 adults with autism spectrum disorder (ASD) (age range 19–43 years), confirmed by the Autism Diagnostic Observation Schedule, Second Edition, and 30 neurotypical controls (age range 19–
+        <highlight>54</highlight>
+         years) ( ). All Sz participants were on a stable dose of antipsychotic medication. All participants had at least 20/22 corrected visual acuity on a Logarithmic Visual Acuity Chart. On average, Sz par…
+    </div>
+</div>
+
+</div>
+
+    </body>
+</html>
+</div></div>
+</div>
+</section>
+</section>
 <section id="participant-demographics-summaries">
 <h2>Participant demographics summaries<a class="headerlink" href="#participant-demographics-summaries" title="Permalink to this headline">#</a></h2>
 <p>Here we show the information about participants that has been extracted from all the annotated documents.</p>
@@ -423,13 +1361,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div class="participants-report">
-    <div class="flow wrapper">
+    <div class="labelrepo-flow labelrepo-wrapper">
 
 
-<article id="PMC2648877" class="doc-participants"
+<article id="PMC2648877" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2648877"
             >PMC2648877</a></h2>
@@ -443,7 +1381,7 @@ title="Print to PDF"
             Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>33</strong> participants.
@@ -489,10 +1427,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC2748718" class="doc-participants"
+<article id="PMC2748718" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2748718"
             >PMC2748718</a></h2>
@@ -506,7 +1444,7 @@ title="Print to PDF"
             The Neural Correlates of Religious and Nonreligious Belief
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>30</strong> participants.
@@ -530,10 +1468,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC3447931" class="doc-participants"
+<article id="PMC3447931" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447931"
             >PMC3447931</a></h2>
@@ -547,7 +1485,7 @@ title="Print to PDF"
             Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>40</strong> participants.
@@ -589,10 +1527,53 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC3984441" class="doc-participants"
+<article id="PMC3869649" class="doc-participants labelrepo-card"
+
+          >
+    <header class="labelrepo-flow">
+        <h2><a target="_blank"
+               href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3869649"
+            >PMC3869649</a></h2>
+        <p>
+
+            Labelled by <code>Jerome_Dockes</code>
+            in <code>participant_demographics</code>
+
+        </p>
+        <p>
+            fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
+        </p>
+    </header>
+    <div class="labelrepo-flow doc-participants-content">
+
+        <p>
+            <strong>19</strong> participants.
+        </p>
+
+        <div class="healthy-subgroup">
+            <h3 >healthy participants</h3>
+
+            <p>
+                <strong>19</strong>
+                participants, <strong>9</strong> females, <strong>10</strong> males.
+                Age range: <strong>19.0</strong> – <strong>31.0</strong> years.
+
+                Age mean: <strong>22.8</strong> years.
+
+
+
+
+            </p>
+        </div>
+
+
+    </div>
+</article>
+
+<article id="PMC3984441" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3984441"
             >PMC3984441</a></h2>
@@ -606,7 +1587,7 @@ title="Print to PDF"
             fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>33</strong> participants.
@@ -648,10 +1629,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC4330553" class="doc-participants"
+<article id="PMC4330553" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4330553"
             >PMC4330553</a></h2>
@@ -665,7 +1646,7 @@ title="Print to PDF"
             Brain correlates of subjective freedom of choice
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>23</strong> participants.
@@ -691,10 +1672,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC4589842" class="doc-participants"
+<article id="PMC4589842" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589842"
             >PMC4589842</a></h2>
@@ -708,7 +1689,7 @@ title="Print to PDF"
             A preliminary evaluation of the correlation between regional energy phosphates and resting state functional connectivity in depression
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>22</strong> participants.
@@ -754,10 +1735,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC5030332" class="doc-participants"
+<article id="PMC5030332" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5030332"
             >PMC5030332</a></h2>
@@ -771,7 +1752,7 @@ title="Print to PDF"
             Alpha oscillation neurofeedback modulates amygdala complex connectivity and arousal in posttraumatic stress disorder
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>21</strong> participants.
@@ -799,10 +1780,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC5324609" class="doc-participants"
+<article id="PMC5324609" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5324609"
             >PMC5324609</a></h2>
@@ -816,7 +1797,7 @@ title="Print to PDF"
             The role of the hippocampus in generalizing configural relationships
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>15</strong> participants.
@@ -842,10 +1823,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC5460048" class="doc-participants"
+<article id="PMC5460048" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5460048"
             >PMC5460048</a></h2>
@@ -859,7 +1840,7 @@ title="Print to PDF"
             A balance of activity in brain control and reward systems predicts self-regulatory outcomes
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>75</strong> participants.
@@ -889,10 +1870,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC5665859" class="doc-participants"
+<article id="PMC5665859" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5665859"
             >PMC5665859</a></h2>
@@ -906,7 +1887,7 @@ title="Print to PDF"
             A Study of the Brain Functional Network of Post-Stroke Depression in Three Different Lesion Locations
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>87</strong> participants.
@@ -948,10 +1929,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6197719" class="doc-participants"
+<article id="PMC6197719" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6197719"
             >PMC6197719</a></h2>
@@ -965,7 +1946,7 @@ title="Print to PDF"
             Disrupted asymmetry of inter- and intra-hemispheric functional connectivity in patients with drug-naive, first-episode schizophrenia and their unaffected siblings
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>130</strong> participants.
@@ -1021,10 +2002,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6290711" class="doc-participants"
+<article id="PMC6290711" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6290711"
             >PMC6290711</a></h2>
@@ -1038,7 +2019,7 @@ title="Print to PDF"
             Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>52</strong> participants.
@@ -1084,10 +2065,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6382839" class="doc-participants"
+<article id="PMC6382839" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6382839"
             >PMC6382839</a></h2>
@@ -1101,7 +2082,7 @@ title="Print to PDF"
             Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>34</strong> participants.
@@ -1143,10 +2124,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6667657" class="doc-participants"
+<article id="PMC6667657" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6667657"
             >PMC6667657</a></h2>
@@ -1160,7 +2141,7 @@ title="Print to PDF"
             Functional Brain Changes During Mindfulness-Based Cognitive Therapy Associated With Tinnitus Severity
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>12</strong> participants.
@@ -1184,10 +2165,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6678781" class="doc-participants"
+<article id="PMC6678781" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6678781"
             >PMC6678781</a></h2>
@@ -1201,7 +2182,7 @@ title="Print to PDF"
             Two Sides of One Coin: A Comparison of Clinical and Neurobiological Characteristics of Convicted and Non-Convicted Pedophilic Child Sexual Offenders
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>61</strong> participants.
@@ -1229,10 +2210,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC6820536" class="doc-participants"
+<article id="PMC6820536" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6820536"
             >PMC6820536</a></h2>
@@ -1246,7 +2227,7 @@ title="Print to PDF"
             Functional connectivity of music-induced analgesia in fibromyalgia
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>40</strong> participants.
@@ -1292,10 +2273,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC7005761" class="doc-participants"
+<article id="PMC7005761" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005761"
             >PMC7005761</a></h2>
@@ -1309,7 +2290,7 @@ title="Print to PDF"
             Effects of the DRD4 genotype on neural networks associated with executive functions in children and adolescents
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>26</strong> participants.
@@ -1335,10 +2316,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC7395771" class="doc-participants"
+<article id="PMC7395771" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7395771"
             >PMC7395771</a></h2>
@@ -1352,7 +2333,7 @@ title="Print to PDF"
             Familiarity with children improves the ability to recognize children’s mental states: an fMRI study using the Reading the Mind in the Eyes Task and the Nencki Children Eyes Test
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>38</strong> participants.
@@ -1390,10 +2371,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC7563756" class="doc-participants"
+<article id="PMC7563756" class="doc-participants labelrepo-card"
 
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7563756"
             >PMC7563756</a></h2>
@@ -1407,7 +2388,7 @@ title="Print to PDF"
             Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>29</strong> participants.
@@ -1431,10 +2412,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC8154462" class="doc-participants"
+<article id="PMC8154462" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8154462"
             >PMC8154462</a></h2>
@@ -1448,7 +2429,7 @@ title="Print to PDF"
             Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>20</strong> participants.
@@ -1494,10 +2475,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC8544331" class="doc-participants"
+<article id="PMC8544331" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8544331"
             >PMC8544331</a></h2>
@@ -1511,7 +2492,7 @@ title="Print to PDF"
             Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>36</strong> participants.
@@ -1553,10 +2534,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC8785614" class="doc-participants"
+<article id="PMC8785614" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614"
             >PMC8785614</a></h2>
@@ -1570,7 +2551,7 @@ title="Print to PDF"
             Frontal interhemispheric structural connectivity, attention, and executive function in children with perinatal stroke
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>83</strong> participants.
@@ -1630,10 +2611,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC8883821" class="doc-participants"
+<article id="PMC8883821" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821"
             >PMC8883821</a></h2>
@@ -1647,7 +2628,7 @@ title="Print to PDF"
             Disease-Specific Contribution of Pulvinar Dysfunction to Impaired Emotion Recognition in Schizophrenia
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>78</strong> participants.
@@ -1658,7 +2639,7 @@ title="Print to PDF"
 
             <p>
                 <strong>30</strong>
-                participants.
+                participants, <strong>8</strong> females, <strong>22</strong> males.
                 Age range: <strong>19.0</strong> – <strong>54.0</strong> years.
 
 
@@ -1676,7 +2657,7 @@ title="Print to PDF"
 
             <p>
                 <strong>20</strong>
-                patients.
+                patients, <strong>4</strong> females, <strong>16</strong> males.
                 Age range: <strong>19.0</strong> – <strong>43.0</strong> years.
 
 
@@ -1694,7 +2675,7 @@ title="Print to PDF"
 
             <p>
                 <strong>28</strong>
-                patients.
+                patients, <strong>8</strong> females, <strong>20</strong> males.
                 Age range: <strong>21.0</strong> – <strong>54.0</strong> years.
 
 
@@ -1707,10 +2688,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC9230060" class="doc-participants"
+<article id="PMC9230060" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9230060"
             >PMC9230060</a></h2>
@@ -1724,7 +2705,7 @@ title="Print to PDF"
             Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>40</strong> participants.
@@ -1766,10 +2747,10 @@ title="Print to PDF"
     </div>
 </article>
 
-<article id="PMC9407088" class="doc-participants"
+<article id="PMC9407088" class="doc-participants labelrepo-card"
          data-has-patients
           >
-    <header class="flow">
+    <header class="labelrepo-flow">
         <h2><a target="_blank"
                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9407088"
             >PMC9407088</a></h2>
@@ -1783,7 +2764,7 @@ title="Print to PDF"
             Custom 3D fMRI Registration Template Construction Method Based on Time-Series Fusion
         </p>
     </header>
-    <div class="flow doc-participants-content">
+    <div class="labelrepo-flow doc-participants-content">
 
         <p>
             <strong>2226</strong> participants.
