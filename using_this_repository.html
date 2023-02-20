@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
+    <link rel="stylesheet" type="text/css" href="_static/global.css" />
     <link rel="stylesheet" type="text/css" href="_static/label-set.css" />
     <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
-    <link rel="stylesheet" type="text/css" href="_static/global.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -448,7 +449,7 @@ title="Print to PDF"
 </div>
 <p>or using <strong>SQLite</strong> bindings that are available in many languages, including Python’s standard library module <a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">sqlite3</a>.</p>
 <p>A small Python package containing a few utilities for working with this repository is also provided in <code class="docutils literal notranslate"><span class="pre">analysis/labelrepo</span></code>. You can install it with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>analysis/labelrepo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;analysis/labelrepo[all]&quot;</span>
 </pre></div>
 </div>
 <p>(note the <code class="docutils literal notranslate"><span class="pre">-e</span></code>, or <code class="docutils literal notranslate"><span class="pre">--editable</span></code>, option).</p>
@@ -488,8 +489,8 @@ For example, to display a few annotations:</p>
     style='--label-name:"discard"; --label-color:#c4c4c4'>
     <div class="annotation-header">discard</div>
     <div class="context">
-        <span class="annotated-text"
-            >Alfahel</span>, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israelson, Ad…
+        …cessfully inhibited amyloid aggregation of recombinant mutant SOD1 in a dose-dependent manner, they failed to suppress the accumulation of misfolded SOD1. Moreover, C4 or C5 daily injections to SOD1  <span class="annotated-text"
+            >mice</span> following onset had no effect on either the accumulation of misfolded SOD1 or the neuroinflammatory response in the spinal cord and, consequently, failed to extend the survival of SOD1  mice or to im…
     </div>
     <div class="annotation-footer">
         <div class="extra-data">not human</div>
@@ -505,19 +506,32 @@ For example, to display a few annotations:</p>
     style='--label-name:"discard"; --label-color:#c4c4c4'>
     <div class="annotation-header">discard</div>
     <div class="context">
-        <span class="annotated-text"
-            >Fu</span>, Xiaoya and Zhang, Fengyu and Huang, Manli and Zhang, Lulu and Guo, Wenbin
+        Fu, Xiaoya and Zhang, Fengyu and Huang, Manli and Zhang, Lulu and Guo, Wenbin
 Front Psychiatry, 2022
 
 # Title
 
-Editorial: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
+<span class="annotated-text"
+            >Editorial</span>: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
 
 # Keywords
-…
+
+structural MRI
+functional MRI
+somatic symptoms
+depression
+anxiety
+
+
+# Abstract
+
+
+# Body
+
+Neuroimaging techniques, su…
     </div>
     <div class="annotation-footer">
-        <div class="extra-data">editorial</div>
+        <div class="extra-data"></div>
         <div class="pcmid"><a target="_blank"
           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9023788/"
           >PMC9023788</a></div>
@@ -662,8 +676,8 @@ Editorial: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
     style='--label-name:"discard"; --label-color:#c4c4c4'>
     <div class="annotation-header">discard</div>
     <div class="context">
-        <span class="annotated-text"
-            >Alfahel</span>, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israelson, Ad…
+        …cessfully inhibited amyloid aggregation of recombinant mutant SOD1 in a dose-dependent manner, they failed to suppress the accumulation of misfolded SOD1. Moreover, C4 or C5 daily injections to SOD1  <span class="annotated-text"
+            >mice</span> following onset had no effect on either the accumulation of misfolded SOD1 or the neuroinflammatory response in the spinal cord and, consequently, failed to extend the survival of SOD1  mice or to im…
     </div>
     <div class="annotation-footer">
         <div class="extra-data">not human</div>
@@ -679,19 +693,32 @@ Editorial: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
     style='--label-name:"discard"; --label-color:#c4c4c4'>
     <div class="annotation-header">discard</div>
     <div class="context">
-        <span class="annotated-text"
-            >Fu</span>, Xiaoya and Zhang, Fengyu and Huang, Manli and Zhang, Lulu and Guo, Wenbin
+        Fu, Xiaoya and Zhang, Fengyu and Huang, Manli and Zhang, Lulu and Guo, Wenbin
 Front Psychiatry, 2022
 
 # Title
 
-Editorial: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
+<span class="annotated-text"
+            >Editorial</span>: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
 
 # Keywords
-…
+
+structural MRI
+functional MRI
+somatic symptoms
+depression
+anxiety
+
+
+# Abstract
+
+
+# Body
+
+Neuroimaging techniques, su…
     </div>
     <div class="annotation-footer">
-        <div class="extra-data">editorial</div>
+        <div class="extra-data"></div>
         <div class="pcmid"><a target="_blank"
           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9023788/"
           >PMC9023788</a></div>
@@ -718,73 +745,77 @@ Editorial: Brain and Somatization Symptoms in Psychiatric Disorders, Volume II
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_76cc3">
+<table id="T_b6756">
   <thead>
   </thead>
   <tbody>
     <tr>
-      <td id="T_76cc3_row0_col1" class="data row0 col1" >pmcid</td>
-      <td id="T_76cc3_row0_col2" class="data row0 col2" >9409193</td>
+      <td id="T_b6756_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_b6756_row0_col2" class="data row0 col2" >9409193</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row1_col1" class="data row1 col1" >pmid</td>
-      <td id="T_76cc3_row1_col2" class="data row1 col2" >36012668</td>
+      <td id="T_b6756_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_b6756_row1_col2" class="data row1 col2" >36012668</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row2_col1" class="data row2 col1" >publication_year</td>
-      <td id="T_76cc3_row2_col2" class="data row2 col2" >2022</td>
+      <td id="T_b6756_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_b6756_row2_col2" class="data row2 col2" >2022</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row3_col1" class="data row3 col1" >journal</td>
-      <td id="T_76cc3_row3_col2" class="data row3 col2" >Int J Mol Sci</td>
+      <td id="T_b6756_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_b6756_row3_col2" class="data row3 col2" >Int J Mol Sci</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row4_col1" class="data row4 col1" >title</td>
-      <td id="T_76cc3_row4_col2" class="data row4 col2" >4-Phenylbutyric Acid (4-PBA) Derivatives Prevent SOD1 Amyloid Aggregation In Vitro with No Effect on Disease Progression in SOD1-ALS Mice</td>
+      <td id="T_b6756_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_b6756_row4_col2" class="data row4 col2" >4-Phenylbutyric Acid (4-PBA) Derivatives Prevent SOD1 Amyloid Aggregation In Vitro with No Effect on Disease Progression in SOD1-ALS Mice</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row5_col1" class="data row5 col1" >label_name</td>
-      <td id="T_76cc3_row5_col2" class="data row5 col2" >discard_this_document</td>
+      <td id="T_b6756_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_b6756_row5_col2" class="data row5 col2" >discard_this_document</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row6_col1" class="data row6 col1" >annotator_name</td>
-      <td id="T_76cc3_row6_col2" class="data row6 col2" >Jerome_Dockes</td>
+      <td id="T_b6756_row6_col1" class="data row6 col1" >annotator_name</td>
+      <td id="T_b6756_row6_col2" class="data row6 col2" >Jerome_Dockes</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row7_col1" class="data row7 col1" >start_char</td>
-      <td id="T_76cc3_row7_col2" class="data row7 col2" >0</td>
+      <td id="T_b6756_row7_col1" class="data row7 col1" >start_char</td>
+      <td id="T_b6756_row7_col2" class="data row7 col2" >0</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row8_col1" class="data row8 col1" >end_char</td>
-      <td id="T_76cc3_row8_col2" class="data row8 col2" >1</td>
+      <td id="T_b6756_row8_col1" class="data row8 col1" >end_char</td>
+      <td id="T_b6756_row8_col2" class="data row8 col2" >1</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row9_col1" class="data row9 col1" >extra_data</td>
-      <td id="T_76cc3_row9_col2" class="data row9 col2" >not about autism</td>
+      <td id="T_b6756_row9_col1" class="data row9 col1" >extra_data</td>
+      <td id="T_b6756_row9_col2" class="data row9 col2" >not about autism</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row10_col1" class="data row10 col1" >project_name</td>
-      <td id="T_76cc3_row10_col2" class="data row10 col2" >autism_mri</td>
+      <td id="T_b6756_row10_col1" class="data row10 col1" >project_name</td>
+      <td id="T_b6756_row10_col2" class="data row10 col2" >autism_mri</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row11_col1" class="data row11 col1" >selected_text</td>
-      <td id="T_76cc3_row11_col2" class="data row11 col2" >A</td>
+      <td id="T_b6756_row11_col1" class="data row11 col1" >selected_text</td>
+      <td id="T_b6756_row11_col2" class="data row11 col2" >A</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row12_col1" class="data row12 col1" >context</td>
-      <td id="T_76cc3_row12_col2" class="data row12 col2" >Alfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels</td>
+      <td id="T_b6756_row12_col1" class="data row12 col1" >context</td>
+      <td id="T_b6756_row12_col2" class="data row12 col2" >Alfahel, Leenor and Argueti-Ostrovsky, Shirel and Barel, Shir and Ali Saleh, Mahmood and Kahn, Joy and Azoulay-Ginsburg, Salome and Rothstein, Ayelet and Ebbinghaus, Simon and Gruzman, Arie and Israels</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row13_col1" class="data row13 col1" >context_start_char</td>
-      <td id="T_76cc3_row13_col2" class="data row13 col2" >0</td>
+      <td id="T_b6756_row13_col1" class="data row13 col1" >context_start_char</td>
+      <td id="T_b6756_row13_col2" class="data row13 col2" >0</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row14_col1" class="data row14 col1" >context_end_char</td>
-      <td id="T_76cc3_row14_col2" class="data row14 col2" >201</td>
+      <td id="T_b6756_row14_col1" class="data row14 col1" >context_end_char</td>
+      <td id="T_b6756_row14_col2" class="data row14 col2" >201</td>
     </tr>
     <tr>
-      <td id="T_76cc3_row15_col1" class="data row15 col1" >doc_length</td>
-      <td id="T_76cc3_row15_col2" class="data row15 col2" >38925</td>
+      <td id="T_b6756_row15_col1" class="data row15 col1" >doc_length</td>
+      <td id="T_b6756_row15_col2" class="data row15 col2" >38925</td>
+    </tr>
+    <tr>
+      <td id="T_b6756_row16_col1" class="data row16 col1" >doc_md5</td>
+      <td id="T_b6756_row16_col2" class="data row16 col2" >a1891fb1165448d429f632cf5e12a020</td>
     </tr>
   </tbody>
 </table>
@@ -815,9 +846,9 @@ JSONLines files:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annotations&#39;: [{&#39;end_byte&#39;: 9458, &#39;end_char&#39;: 9450, &#39;extra_data&#39;: &#39;29&#39;, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 9447, &#39;start_char&#39;: 9439}, {&#39;end_byte&#39;: 9458, &#39;end_char&#39;: 9450, &#39;label_name&#39;: &#39;healthy&#39;, &#39;start_byte&#39;: 9447, &#39;start_char&#39;: 9439}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3390/brainsci10090603&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [334, 1735], &#39;authors&#39;: [0, 69], &#39;body&#39;: [1744, 27005], &#39;journal&#39;: [70, 79], &#39;keywords&#39;: [206, 321], &#39;publication_year&#39;: [81, 85], &#39;title&#39;: [96, 192]}, &#39;page&#39;: 2, &#39;part&#39;: 1, &#39;pmcid&#39;: 7563756, &#39;pmid&#39;: 32887487, &#39;text_md5&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}
-{&#39;annotations&#39;: [{&#39;end_byte&#39;: 7985, &#39;end_char&#39;: 7967, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 7983, &#39;start_char&#39;: 7965}, {&#39;end_byte&#39;: 7985, &#39;end_char&#39;: 7967, &#39;label_name&#39;: &#39;patients&#39;, &#39;start_byte&#39;: 7983, &#39;start_char&#39;: 7965}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.1016/j.nicl.2016.07.006&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [448, 2844], &#39;authors&#39;: [0, 159], &#39;body&#39;: [2853, 39646], &#39;journal&#39;: [160, 175], &#39;keywords&#39;: [322, 435], &#39;publication_year&#39;: [177, 181], &#39;title&#39;: [192, 308]}, &#39;page&#39;: 3, &#39;part&#39;: 1, &#39;pmcid&#39;: 5030332, &#39;pmid&#39;: 27672554, &#39;text_md5&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}
-{&#39;annotations&#39;: [{&#39;end_byte&#39;: 1490, &#39;end_char&#39;: 1486, &#39;extra_data&#39;: &#39;61&#39;, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 1481, &#39;start_char&#39;: 1477}, {&#39;end_byte&#39;: 1490, &#39;end_char&#39;: 1486, &#39;label_name&#39;: &#39;patients&#39;, &#39;start_byte&#39;: 1481, &#39;start_char&#39;: 1477}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3390/jcm8070947&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [638, 2250], &#39;authors&#39;: [0, 366], &#39;body&#39;: [2259, 37662], &#39;journal&#39;: [367, 377], &#39;keywords&#39;: [556, 625], &#39;publication_year&#39;: [379, 383], &#39;title&#39;: [394, 542]}, &#39;page&#39;: 4, &#39;part&#39;: 1, &#39;pmcid&#39;: 6678781, &#39;pmid&#39;: 31261903, &#39;text_md5&#39;: &#39;bfd271e0496c07e5675e92cb777729c0&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;bfd271e0496c07e5675e92cb777729c0&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annotations&#39;: [{&#39;end_byte&#39;: 9, &#39;end_char&#39;: 8, &#39;label_name&#39;: &#39;discard&#39;, &#39;start_byte&#39;: 0, &#39;start_char&#39;: 0}, {&#39;end_byte&#39;: 131, &#39;end_char&#39;: 129, &#39;label_name&#39;: &#39;patients&#39;, &#39;start_byte&#39;: 124, &#39;start_char&#39;: 122}, {&#39;end_byte&#39;: 131, &#39;end_char&#39;: 129, &#39;extra_data&#39;: &#39;10&#39;, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 124, &#39;start_char&#39;: 122}, {&#39;end_byte&#39;: 423, &#39;end_char&#39;: 421, &#39;label_name&#39;: &#39;patients&#39;, &#39;start_byte&#39;: 410, &#39;start_char&#39;: 408}, {&#39;end_byte&#39;: 423, &#39;end_char&#39;: 421, &#39;extra_data&#39;: &#39;13&#39;, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 410, &#39;start_char&#39;: 408}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3389/fnsys.2015.00126&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [289, 1183], &#39;authors&#39;: [0, 59], &#39;body&#39;: [1192, 33477], &#39;journal&#39;: [60, 79], &#39;keywords&#39;: [167, 276], &#39;publication_year&#39;: [81, 85], &#39;title&#39;: [96, 153]}, &#39;page&#39;: 1, &#39;part&#39;: 1, &#39;pmcid&#39;: 4565057, &#39;pmid&#39;: 26441558, &#39;text_md5&#39;: &#39;aeacc3bc705b025b4f7aecea35058ca0&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;aeacc3bc705b025b4f7aecea35058ca0&#39;}
+{&#39;annotations&#39;: [{&#39;end_byte&#39;: 9458, &#39;end_char&#39;: 9450, &#39;label_name&#39;: &#39;healthy&#39;, &#39;start_byte&#39;: 9447, &#39;start_char&#39;: 9439}, {&#39;end_byte&#39;: 9458, &#39;end_char&#39;: 9450, &#39;extra_data&#39;: &#39;29&#39;, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 9447, &#39;start_char&#39;: 9439}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.3390/brainsci10090603&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [334, 1735], &#39;authors&#39;: [0, 69], &#39;body&#39;: [1744, 27005], &#39;journal&#39;: [70, 79], &#39;keywords&#39;: [206, 321], &#39;publication_year&#39;: [81, 85], &#39;title&#39;: [96, 192]}, &#39;page&#39;: 2, &#39;part&#39;: 1, &#39;pmcid&#39;: 7563756, &#39;pmid&#39;: 32887487, &#39;text_md5&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;57be0e414d83cf88df7d14070e3ea9dd&#39;}
+{&#39;annotations&#39;: [{&#39;end_byte&#39;: 7985, &#39;end_char&#39;: 7967, &#39;label_name&#39;: &#39;count&#39;, &#39;start_byte&#39;: 7983, &#39;start_char&#39;: 7965}, {&#39;end_byte&#39;: 309, &#39;end_char&#39;: 308, &#39;label_name&#39;: &#39;diagnosis&#39;, &#39;start_byte&#39;: 280, &#39;start_char&#39;: 279}], &#39;metadata&#39;: {&#39;chapter&#39;: 1, &#39;doi&#39;: &#39;10.1016/j.nicl.2016.07.006&#39;, &#39;field_positions&#39;: {&#39;abstract&#39;: [448, 2844], &#39;authors&#39;: [0, 159], &#39;body&#39;: [2853, 39646], &#39;journal&#39;: [160, 175], &#39;keywords&#39;: [322, 435], &#39;publication_year&#39;: [177, 181], &#39;title&#39;: [192, 308]}, &#39;page&#39;: 3, &#39;part&#39;: 1, &#39;pmcid&#39;: 5030332, &#39;pmid&#39;: 27672554, &#39;text_md5&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}, &#39;utf8_text_md5_checksum&#39;: &#39;9eef6f93a376b2d0833d2fe6dc4fb6a3&#39;}
 </pre></div>
 </div>
 </div>
