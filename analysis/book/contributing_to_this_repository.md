@@ -24,7 +24,7 @@ export REPO_ROOT="$(pwd)"
 Here we want to contribute to an existing annotation project, using the `autism_mri` project as an example.
 The repository contains the documents we will annotate and the labels we will use.
 Locally, we will
-- Create a `.labelbuddy` file (a binary file which is ignored by **Git** and not added to the repository).
+- Create a `.labelbuddy` file (a binary file, used by {{ labelbuddy_home }}, which is ignored by **Git**).
 - Import the documents and labels in the `.labelbuddy` file.
 - Use {{ lb }} to create some annotations.
 - Export our annotations to a `.jsonl` file that will be added to the repository.
@@ -41,7 +41,7 @@ This way the name of the annotations file you create and your name in the git lo
 (create_the_labelbuddy_file)=
 ### Creating the `.labelbuddy` file
 
-We first need to install {{ lb }}, see the [installation instructions](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/).
+We first need to install {{ labelbuddy_home }}, see the [installation instructions](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/).
 Next we create our `.labelbuddy` file.
 
 `````{tab-set}
@@ -79,7 +79,7 @@ You can now start creating annotations.
 
 ### Creating some annotations
 
-If you haven't opened {{ lb }} yet you can invoke it with this command:
+If you haven't opened {{ lb }} yet you can find it in your applications menu, or invoke it with this command:
 
 ```bash
 labelbuddy annotations/Firstname_Lastname.labelbuddy
@@ -116,9 +116,9 @@ labelbuddy annotations/Firstname_Lastname.labelbuddy \
 
 Go to the **Import / Export** tab.
 Make sure that the checkboxes are in these states:
-- 🗹 Export only annotated documents
+- ☑ Export only annotated documents
 - ☐ Include document text
-- 🗹 Include annotations
+- ☑ Include annotations
 
 (You only need to check this once, {{ lb }} will remember your choices next time.)
 
@@ -143,6 +143,7 @@ Rather than contributing to an existing project you can also start a new one.
 If you haven't yet, {ref}`Clone the repository <clone_the_repository>`, then create a new directory for your project in `projects/`.
 
 Suppose we want to start a project in which we will annotate imaging modalities.
+We choose to name the project `imaging_modalities`.
 
 ```bash
 cd projects/
@@ -151,7 +152,7 @@ cd imaging_modalities
 mkdir documents labels annotations
 ```
 
-Please also add a `README` file describing your project.
+Please also add a `README.md` file describing your project.
 
 ### Adding documents
 
@@ -168,6 +169,15 @@ cd documents
 ln -s ../../participant_demographics/documents/documents_00001.jsonl
 cd ..
 ```
+And if it exists also link the `datasets.json` file, which tells how the full dataset from which documents were obtained can be downloaded:
+
+```bash
+cd documents
+ln -s ../../participant_demographics/documents/datasets.json
+cd ..
+```
+
+(See a more detailed explanation {ref}`here<add-doc-sources-json>`.)
 
 #### Downloading new documents with {{ pg }}
 
@@ -187,18 +197,21 @@ pubget run                                                                 \
 Note the `--labelbuddy` option that tells {{ pg }} to prepare the documents in {{ lb }}'s JSONL format.
 See the {{ pubget_home }} documentation for details.
 
-Note here we storing the data in the current directory for simplicity, and `pubget_data` is listed in this repository's `.gitignore` so it will not be tracked by {{ git }}.
+Note here we are storing the data in the current directory for simplicity, and `pubget_data` is listed in this repository's `.gitignore` so it will not be tracked by {{ git }}.
 However we could store the data anywhere we want; outside of the repository is even better, otherwise we have to make sure we don't add it to the repository by mistake.
 
-Once the download has finished, we recommend uploading the whole output to [OSF](https://osf.io/d2qbh/) and adding the link to the annotation project's `README`.
+Once the download has finished, we recommend uploading the whole output as a `.tar.gz` file to [OSF](https://osf.io/d2qbh/) and adding the link to the annotation project's `README`.
 For example, with the command above {{ pg }} creates a directory named `pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3`.
 We can compress it with
 
 ```bash
-zip -r pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3.zip pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3
+tar czf imaging_modalities.tar.gz -C pubget_data/ query_9e14fc5ada411b2f16031d3d1b3c8dd3/
 ```
 
-Then upload the resulting `.zip` file to OSF.
+Then upload the resulting `imaging_modalities.tar.gz` file to OSF.
+Remember, `imaging_modalities` is the name of our example project.
+We could name the file anything we want as long as it is a `.tar.gz` file.
+To tell the repository where to find the full archive, add a `documents/datasets.json` file as explained {ref}`below<add-doc-sources-json>`.
 
 Finally, we can get the documents.
 The directory created by {{ pg }} contains a subdirectory called `subset_allArticles_labelbuddyData`, containing `.jsonl` files.
@@ -208,6 +221,30 @@ By default {{ pg }} splits its output into files containing 500 articles each; t
 ```bash
 cp pubget_data/query_9e14fc5ada411b2f16031d3d1b3c8dd3/subset_allArticles_labelbuddyData/documents_00001.jsonl documents/
 ```
+
+(add-doc-sources-json)=
+#### Adding the source dataset location information
+
+This repository provides an easy way to {ref}`download the full dataset<obtaining-the-full-datasets>`.
+For this to work, we must tell it where to find it by adding a JSON file in our project's `documents/` directory.
+The file must be in `projects/my_project/documents/datasets.json`.
+It contains a list of JSON objects, each having 1 mandatory key (at the moment):
+- `url`: the URL from which to download the archive we created, typically an OSF download URL.
+
+The `url` must point to a GZipped TAR (`.tar.gz`) archive.
+The archive must contain one single directory, which is the {{ pg }} directory -- the directory named `query_[ ... ]` or `pmcidList_[ ... ]`.
+Therefore in our case the file would look like:
+```
+[
+    {
+      "url": "https://osf.io/download/[ ... ]",
+    }
+]
+```
+
+See the corresponding files in existing projects for more examples.
+
+If we have not downloaded new documents but added a symlink to documents already in another project, we can copy the `url` from that project's `datasets.json`.
 
 ### Adding the labels
 
@@ -220,7 +257,7 @@ The latter is probably more convenient, especially if we decide on the labels as
 
 To create the labels in {{ lb }}, create a `.labelbuddy` as explained {ref}`above<create_the_labelbuddy_file>`.
 Thus you will end up with a file like `annotations/Firstname_Lastname.labelbuddy` containing the documents.
-Open it, and add some labels in the **Dataset** tab.
+Open it, and add some labels in the **Labels & Documents** tab.
 Then export the labels.
 
 `````{tab-set}
@@ -256,7 +293,10 @@ pip install -r requirements.txt
 
 The html version is built with [jupyter-book](https://jupyterbook.org/en/stable/start/overview.html), see its documentation for details.
 
-To add a new page you will need to create a `.py` or `.md` file in the books directory, and add it to the list of chapters in `analysis/book/_toc.yml`.
+To add a new page you will need to create a `.py` or `.md` file in the book's directory, and add it to the list of chapters in `analysis/book/_toc.yml`.
 To build the book locally, run `make book-full` from the root of the repository.
 (Once the database and CSV file have already been built, you can just use `make book` which is faster.)
 You can then see it by pointing your browser to `analysis/book/_build/html/index.html`.
+
+**Note:** the pages in the **Projects** section (in the `analysis/book/projects`) are generated automatically -- don't edit them directly!
+Instead, edit the project's `README.md`, which gets included in the project page, or one of the templates in `analysis/book_helpers/templates/`.

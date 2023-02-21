@@ -21,14 +21,13 @@ jobs:
         cd analysis/book/
         pip install -r requirements.txt
 
-    - name: build the database
+    - name: Install labelrepo
       run: |
-        make database
-        make csv
+        pip install -e "analysis/labelrepo[all]"
 
     - name: Build the book
       run: |
-        make book
+        make book-full
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1

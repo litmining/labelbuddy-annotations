@@ -1,0 +1,11 @@
+.cell_output * + img {
+    margin-block-start: 2em;
+}
+
+.menu-dropdown-launch-buttons {
+    display: none !important;
+}
+
+span.pre, code {
+    color: #007020;
+}

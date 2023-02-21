@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="184.67096mm"
+   height="65.084389mm"
+   viewBox="0 0 184.67097 65.084389"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="annotate_participants.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.28"
+     inkscape:cx="332.42188"
+     inkscape:cy="139.84375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1035"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false"
+     inkscape:snap-global="false"
+     lock-margins="true"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-bottom="2">
+    <inkscape:grid
+       type="xygrid"
+       id="grid844"
+       visible="false"
+       originx="-1.7993519"
+       originy="-24.154104" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="132.65282"
+       y="-45.934582"
+       width="202.80438"
+       height="28.763987"
+       id="rect37350" />
+    <rect
+       x="148.16833"
+       y="-138.57307"
+       width="547.64264"
+       height="80.2817"
+       id="rect34360" />
+    <rect
+       x="141.14122"
+       y="-150.36581"
+       width="169.45148"
+       height="28.030132"
+       id="rect31056" />
+    <rect
+       x="-15.645301"
+       y="-10.377765"
+       width="147.82544"
+       height="26.886581"
+       id="rect29158" />
+    <rect
+       x="2.6049256"
+       y="-56.872856"
+       width="181.34389"
+       height="34.70739"
+       id="rect26666" />
+    <rect
+       x="1.3893604"
+       y="-99.054993"
+       width="185.91241"
+       height="30.563831"
+       id="rect24350" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path4744" />
+    </marker>
+    <rect
+       x="21.687471"
+       y="7.0884228"
+       width="266.48816"
+       height="96.994659"
+       id="rect17223" />
+    <marker
+       id="ExperimentalArrow"
+       refX="5"
+       refY="3"
+       orient="auto-start-reverse"
+       inkscape:stockid="ExperimentalArrow"
+       inkscape:isstock="true">
+      <path
+         style="fill:context-stroke"
+         d="M 10,3 0,6 V 0 Z"
+         id="path4976" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path4750" />
+    </marker>
+    <rect
+       x="21.687471"
+       y="7.0884228"
+       width="266.48816"
+       height="96.994659"
+       id="rect17223-7" />
+    <rect
+       x="21.687471"
+       y="7.0884228"
+       width="266.48816"
+       height="96.994659"
+       id="rect17223-9" />
+    <rect
+       x="148.16833"
+       y="-138.57307"
+       width="547.64264"
+       height="80.2817"
+       id="rect34360-3" />
+    <rect
+       x="148.16833"
+       y="-138.57307"
+       width="547.64264"
+       height="80.2817"
+       id="rect34360-5" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.7993513,-24.154103)">
+    <g
+       id="g48702">
+      <g
+         id="g48594">
+        <polygon
+           fill="#ffffff"
+           stroke="transparent"
+           points="-4,4 -4,-256 453.5,-256 453.5,4 "
+           id="polygon3351"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="287,-144 357,-144 357,-180 287,-180 "
+           id="polygon3355"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="153.5757"
+           y="49.107738"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3357"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">healthy</text>
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="181.5,-216 306.5,-216 306.5,-252 181.5,-252 "
+           id="polygon3362"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="135.25038"
+           y="32.192059"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3364"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">all participants</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 149.04606,43.939058 c -2.26482,-2.03223 -5.03946,-4.522594 -7.50633,-6.735728"
+           id="path3369"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="263.06,-215.9 272.84,-211.82 268.16,-206.61 "
+           id="polygon3371"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="161.5,-144 236.5,-144 236.5,-180 161.5,-180 "
+           id="polygon3376"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="124.67809"
+           y="49.107738"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3378"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">patients</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 127.29062,43.939058 c 1.23108,-1.912411 2.7206,-4.231268 4.07856,-6.343379"
+           id="path3383"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="233,-215.9 230.54,-205.59 224.65,-209.38 "
+           id="polygon3385"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="312,-72 366,-72 366,-108 312,-108 "
+           id="polygon3390"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 156.58293,60.854735 c -0.44638,-1.832531 -0.98205,-4.038618 -1.47542,-6.077896"
+           id="path3395"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="326.15,-143.9 331.92,-135 325.11,-133.35 "
+           id="polygon3397"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="78,-72 132,-72 132,-108 78,-108 "
+           id="polygon3402"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="102.59373"
+           y="66.023415"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3404"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Sz</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 108.05374,60.854735 c 2.80753,-2.090965 6.26819,-4.670606 9.30597,-6.930728"
+           id="path3409"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="176.03,-143.9 170.1,-135.12 165.92,-140.73 "
+           id="polygon3411"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="172,-72 226,-72 226,-108 172,-108 "
+           id="polygon3416"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="124.67809"
+           y="66.023415"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3418"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">ASD</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 124.67809,60.854735 c 0,-1.813736 0,-3.99163 0,-6.012113"
+           id="path3423"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="199,-143.9 202.5,-133.9 195.5,-133.9 "
+           id="polygon3425"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="156,0 210,0 210,-36 156,-36 "
+           id="polygon3430"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="120.91904"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3432"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">male</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 121.84941,77.770412 c 0.41349,-1.813736 0.91157,-3.991629 1.37205,-6.012113"
+           id="path3437"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="195.09,-71.9 196.27,-61.37 189.45,-62.93 "
+           id="polygon3439"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="228.5,0 293.5,0 293.5,-36 228.5,-36 "
+           id="polygon3444"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="139.24437"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3446"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">female</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 135.64273,77.770412 c -1.7456,-1.973495 -3.87415,-4.376931 -5.79127,-6.540728"
+           id="path3451"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="214.15,-71.9 223.4,-66.73 218.16,-62.09 "
+           id="polygon3453"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="0,0 54,0 54,-36 0,-36 "
+           id="polygon3458"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="84.268417"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3460"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">male</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 88.798056,77.770412 c 2.264822,-2.03223 5.039462,-4.522594 7.506332,-6.735728"
+           id="path3465"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="85.94,-71.9 80.84,-62.61 76.16,-67.82 "
+           id="polygon3467"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="72.5,0 137.5,0 137.5,-36 72.5,-36 "
+           id="polygon3472"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="102.59373"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3474"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">female</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 102.59373,77.770412 c 0,-1.813736 0,-3.991629 0,-6.012113"
+           id="path3479"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="105,-71.9 108.5,-61.9 101.5,-61.9 "
+           id="polygon3481"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="312,0 366,0 366,-36 312,-36 "
+           id="polygon3486"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="157.56969"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3488"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">male</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 157.56968,77.770412 c 0,-1.813736 0,-3.991629 0,-6.012113"
+           id="path3493"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="339,-71.9 342.5,-61.9 335.5,-61.9 "
+           id="polygon3495"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <polygon
+           fill="none"
+           stroke="#000000"
+           points="384.5,0 449.5,0 449.5,-36 384.5,-36 "
+           id="polygon3500"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+        <text
+           text-anchor="middle"
+           x="175.895"
+           y="82.939095"
+           font-family="Times, serif"
+           font-size="3.28916px"
+           id="text3502"
+           style="stroke-width:0.23494;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:3.52777778px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">female</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 171.36536,77.770412 c -2.26483,-2.03223 -5.03947,-4.522594 -7.50634,-6.735728"
+           id="path3507"
+           style="stroke-width:0.23494" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="358.06,-71.9 367.84,-67.82 363.16,-62.61 "
+           id="polygon3509"
+           transform="matrix(0.23493996,0,0,0.23493996,77.925035,86.298733)" />
+      </g>
+      <g
+         id="g48624">
+        <g
+           id="g46938"
+           transform="translate(15.099826,43.885567)">
+          <rect
+             style="fill:#e6c68f;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200-7-3-9"
+             width="4.7629347"
+             height="4.511096"
+             x="7.646481"
+             y="26.714348" />
+          <rect
+             style="fill:#e6c68f;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200-3-8"
+             width="57.231384"
+             height="5.1887836"
+             x="-11.300474"
+             y="20.56671" />
+          <rect
+             style="fill:#ff65de;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200-7-3"
+             width="4.7629347"
+             height="4.511096"
+             x="7.7881036"
+             y="13.121696" />
+          <rect
+             style="fill:#ff65de;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200-3"
+             width="57.231384"
+             height="5.1887836"
+             x="-11.300474"
+             y="7.1828017" />
+          <rect
+             style="fill:#fff700;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200-7"
+             width="4.7629347"
+             height="4.511096"
+             x="7.8266048"
+             y="-0.60908258" />
+          <rect
+             style="fill:#fff700;fill-opacity:1;stroke:#754f07;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+             id="rect38200"
+             width="57.231384"
+             height="5.1887836"
+             x="-11.300474"
+             y="-6.2897115" />
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-49.04862,36.679416)"
+             id="text34358"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect34360)"><tspan
+               x="148.16797"
+               y="-126.77542"
+               id="tspan48803">n = 28, 8/20 female/male; age</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-10.213265,20.288078)"
+             id="text24348"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect24350)"><tspan
+               x="1.3886719"
+               y="-87.257842"
+               id="tspan48805">patients</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-15.021143,6.2336393)"
+             id="text37348"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect37350)"><tspan
+               x="132.65234"
+               y="-34.138702"
+               id="tspan48807">schizophrenia</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-10.535209,22.868159)"
+             id="text26664"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect26666)"><tspan
+               x="2.6054688"
+               y="-45.076202"
+               id="tspan48809">male</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-49.04862,50.078129)"
+             id="text34358-4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect34360-3)"><tspan
+               x="148.16797"
+               y="-126.77542"
+               id="tspan48811">n = 28, 8/20 female/male; age</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-5.5808173,23.983299)"
+             id="text29156"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect29158)"><tspan
+               x="-15.644531"
+               y="1.4198921"
+               id="tspan48813">count</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-49.04862,63.59699)"
+             id="text34358-8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect34360-5)"><tspan
+               x="148.16797"
+               y="-126.77542"
+               id="tspan48815">n = 28, 8/20 female/male; age</tspan></text>
+        </g>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.395, 1.395;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+           d="m 22.882065,39.08352 c 15.875,-10.583334 81.195125,-3.724261 91.778455,4.213239"
+           id="path2983"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.395, 1.395;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+           d="m 61.290739,40.237923 c 12.486424,-0.128552 28.712637,8.813512 34.296089,19.016021"
+           id="path2985"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.395, 1.395;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+           d="m 57.476636,53.676997 c 8.283827,0.598584 13.820858,5.187986 19.794233,22.561403"
+           id="path2987"
+           sodipodi:nodetypes="cc" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,64.004897,26.9643)"
+           id="text17221"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect17223)"><tspan
+             x="21.6875"
+             y="18.884736"
+             id="tspan48817">1: group</tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,75.260519,39.319137)"
+           id="text17221-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect17223-7)"><tspan
+             x="21.6875"
+             y="18.884736"
+             id="tspan48819">2: subgroup</tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,67.636385,58.496261)"
+           id="text17221-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect17223-9)"><tspan
+             x="21.6875"
+             y="18.884736"
+             id="tspan48821">3: sex</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

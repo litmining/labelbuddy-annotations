@@ -1,6 +1,13 @@
 format: jb-book
 root: overview
-chapters:
-  - file: using_this_repository
-  - file: contributing_to_this_repository
-  - file: number_of_participants
+parts:
+  - caption: Introduction
+    chapters:
+      - file: using_this_repository
+      - file: contributing_to_this_repository
+  - caption: Analyses
+    chapters:
+      - file: number_of_participants
+  - caption: Projects
+    chapters:
+      - glob: projects/*

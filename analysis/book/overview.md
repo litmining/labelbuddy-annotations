@@ -27,6 +27,7 @@ This page provides a brief overview of the repository's content, and the rest of
 ## Projects
 
 The repository's contents are organized into *projects*, found in the {{ "[`projects/`]({}projects)".format(repo_tree_url) }} directory.
+More details about each project are provided at the end of this book.
 Here are the currently existing projects:
 
 ```{code-cell}
@@ -39,26 +40,25 @@ connection = database.get_database_connection()
 
 df = pd.read_sql(
     """
-    select * from 
-    (select project, count(distinct doc_id) as documents,
+    select * from (select project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
-    count(distinct annotator_id) as annotators,
+    count(distinct annotator_name) as annotators,
     count(*) as annotations from
-    annotation group by project order by documents desc)
-    union all 
-    select 'Total' as project, count(distinct doc_id) as documents,
+    annotation group by project_name order by documents desc)
+    union all
+    select name, 0 as documents, 0 as labels, 0 as annotators,
+    0 as annotations from project
+    where name not in (select distinct project_name from annotation)
+    union all
+    select 'Total' as project_name, count(distinct doc_id) as documents,
     count(distinct label_id) as labels,
-    count(distinct annotator_id) as annotators,
-    count(*) as annotations 
+    count(distinct annotator_name) as annotators,
+    count(*) as annotations
     from annotation;
 """,
     connection,
 )
-link = (
-    r'<a href="https://github.com/neurodatascience/labelbuddy-annotations/'
-    r'tree/main/projects/\1">\1</a>'
-)
-df.iloc[:-1, 0] = df.iloc[:-1, 0].str.replace(r"(.*)", link, regex=True)
+df.iloc[:-1, 0] = [f'<a href="./projects/{proj.replace(".", "__")}.html">{proj}</a>' for proj in df.iloc[:-1, 0]]
 df.style.hide(axis="index")
 ```
 
@@ -74,7 +74,7 @@ Each document is represented by a JSON dictionary; the keys of interest are:
 - **text:** the article's content as plain text as extracted by {{ pg }}.
 - **metadata:** basic metadata, including the PubMed ID (**pmid**), PubMedCentral ID (**pmcid**), and **doi** when available.
 
-Below is an example document. 
+Below is an example document.
 (Here the text is abbreviated and the JSON is displayed in a readable way, but in the actual JSONLines file the whole information for each document is on a single line.)
 
 ```{code-cell}
@@ -88,7 +88,7 @@ docs_file = (
     / "projects"
     / "participant_demographics"
     / "documents"
-    / "documents_00001.jsonl"
+    / "01_documents_00001.jsonl"
 )
 with open(docs_file, encoding="utf-8") as stream:
     doc = json.loads(next(stream))
@@ -116,20 +116,31 @@ There are currently {glue:text}`document_count` documents in the repository, {gl
 
 Labels are simple tags that can be attached to a portion of a document's text.
 They can optionally have a `color` and a `shortcut_key`, used in {{ lb }} when we are annotating a document.
-They are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format).
 
-For example, here are the labels used in the `participants_demographics` project:
+For example, here are the labels listed in the `cluster_inference` project:
 
 ```{code-cell}
-:tags: [remove-input, hide-output]
+:tags: [remove-input]
+from labelrepo import displays, read_json
 
 labels_file = (
     repo.repo_root()
     / "projects"
-    / "participant_demographics"
+    / "cluster_inference"
     / "labels"
-    / "labels_n_participants.json"
+    / "labels_kendra.json"
 )
+labels = connection.execute(
+"select * from label inner join project_label "
+"on project_label.label_id = label.id "
+"where project_label.project_name = 'cluster_inference'")
+displays.LabelsDisplay(labels)
+```
+The labels are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format); below is an example.
+
+
+```{code-cell}
+:tags: [remove-input, hide-output]
 print(labels_file.read_text("utf-8"))
 ```
 
@@ -157,7 +168,9 @@ from labelrepo import displays
 
 displays.AnnotationsDisplay(
     connection.execute(
-        "select * from detailed_annotation order by project limit 10;"
+        "select * from detailed_annotation where "
+        "label_name not glob '_*' and "
+        "label_name not glob '*discard*' order by project_name limit 5;"
     ).fetchall()
 )
 ```
@@ -200,13 +213,13 @@ Now, we display the number of documents annotated with each label in the differe
 label_counts = pd.read_sql(
     """
       with annot as
-      (select distinct label_id, doc_id, project from annotation)
-    SELECT project, label.name AS label_name, label.color as color, COUNT(*) AS n_docs
+      (select distinct label_id, doc_id, project_name from annotation)
+    SELECT project_name, label.name AS label_name, label.color as color, COUNT(*) AS n_docs
     from
       annot
       INNER JOIN label ON annot.label_id = label.id
       INNER JOIN document ON annot.doc_id = document.id
-      GROUP BY project, label_name
+      GROUP BY project_name, label_name
       ORDER BY n_docs DESC
     """,
     connection,
@@ -214,12 +227,12 @@ label_counts = pd.read_sql(
 
 project_counts = pd.read_sql(
     """
-    select project, count(*) as n_docs
-      from (select distinct project, doc_id from annotation)
-      group by project
+    select project_name, count(*) as n_docs
+      from (select distinct project_name, doc_id from annotation)
+      group by project_name
     """,
     connection,
-).set_index("project")["n_docs"]
+).set_index("project_name")["n_docs"]
 ```
 
 
@@ -228,13 +241,14 @@ project_counts = pd.read_sql(
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-projects = label_counts.groupby("project")
+projects = label_counts.groupby("project_name", sort=False)
 
 for project_name, data in projects:
     fig, ax = plt.subplots(figsize=(4, data.shape[0] / 3))
     sns.barplot(
-        data=data, x="n_docs", y="label_name", ax=ax, color="blue"
+        data=data, x="n_docs", y="label_name", ax=ax, color="#0071BC", alpha=.8
     )
+    ax.yaxis.set_tick_params(left=False)
     ax.set_title(
         f'“{project_name}” project ({project_counts[project_name]} annotated documents)'
     )

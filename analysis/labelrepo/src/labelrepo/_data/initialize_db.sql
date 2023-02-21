@@ -1,3 +1,7 @@
+create table project (
+  name text not null primary key
+);
+
 create table document(
   id integer primary key,
   utf8_text_md5_checksum blob unique not null,
@@ -15,20 +19,26 @@ create table label(
   color text
 );
 
+create table project_label(
+  project_name text not null references project(name) on delete cascade,
+  label_id integer not null references label(id) on delete cascade,
+  constraint unique_project_name_label_id unique (project_name, label_id)
+  on conflict ignore
+);
+
 create table annotator(
-  id integer primary key,
-  name text unique not null
+  name text not null primary key
 );
 
 create table annotation(
   id integer primary key,
   doc_id not null references document(id) on delete cascade,
   label_id not null references label(id) on delete cascade,
-  annotator_id not null references annotator(id) on delete cascade,
+  annotator_name not null references annotator(name) on delete cascade,
   start_char integer not null,
   end_char integer not null,
   extra_data text,
-  project text not null
+  project_name text not null references project(name) on delete cascade
 );
 
 create table db_info(
@@ -47,8 +57,8 @@ create view detailed_annotation as
     pmcid, pmid, publication_year, journal, title,
     label.name as label_name,
     label.color as label_color,
-    annotator.name as annotator_name,
-    start_char, end_char, extra_data, project,
+    annotator_name,
+    start_char, end_char, extra_data, project_name,
     substr(
       text, start_char + 1, end_char - start_char) as selected_text,
     substr(
@@ -56,9 +66,10 @@ create view detailed_annotation as
       context_start_char + 1,
       context_end_char - context_start_char
     ) as context,
-    context_start_char, context_end_char
+    context_start_char, context_end_char,
+    length(text) as doc_length,
+    lower(hex(utf8_text_md5_checksum)) as doc_md5
     from annot
          inner join label on annot.label_id = label.id
-         inner join annotator on annot.annotator_id = annotator.id
    order by doc_id, start_char, end_char,
-            label_id, annotator_id, annot.id;
+            label_id, annotator_name, annot.id;
