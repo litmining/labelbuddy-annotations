@@ -24,12 +24,22 @@ def _fill_database(db_path: pathlib.Path):
     with contextlib.closing(sqlite3.connect(db_path)) as connection:
         connection.execute("pragma foreign_keys = on")
         projects_root_dir = repo.repo_root() / "projects"
-        for project_dir in projects_root_dir.glob("*"):
+        for project_dir in sorted(projects_root_dir.glob("*")):
             if not project_dir.is_dir():
                 continue
+            _insert_project(connection, project_dir)
             _insert_project_documents(connection, project_dir)
             _insert_project_labels(connection, project_dir)
             _insert_project_annotations(connection, project_dir)
+
+
+def _insert_project(
+    connection: sqlite3.Connection, project_dir: pathlib.Path
+) -> None:
+    with connection:
+        connection.execute(
+            "insert into project (name) values (?)", (project_dir.name,)
+        )
 
 
 def _insert_project_documents(
@@ -39,7 +49,7 @@ def _insert_project_documents(
     if not docs_dir.is_dir():
         return
     print(f"Inserting documents from {docs_dir}")
-    for docs_file in docs_dir.glob("*.jsonl"):
+    for docs_file in sorted(docs_dir.glob("*.jsonl")):
         _insert_documents(connection, docs_file)
 
 
@@ -100,19 +110,29 @@ def _insert_project_labels(
     if not labels_dir.is_dir():
         return
     print(f"Inserting labels from {labels_dir}")
-    for labels_file in labels_dir.glob("*.json"):
-        _insert_labels(connection, labels_file)
+    for labels_file in _utils.glob_json(labels_dir):
+        _insert_labels(connection, labels_file, project_dir.name)
 
 
 def _insert_labels(
-    connection: sqlite3.Connection, labels_file: pathlib.Path
+    connection: sqlite3.Connection,
+    labels_file: pathlib.Path,
+    project_name: str,
 ) -> None:
-    labels = json.loads(labels_file.read_text("utf-8"))
+    labels = _utils.read_json(labels_file)
     with connection:
         for label_info in labels:
             connection.execute(
                 "insert or ignore into label (name, color) values (?, ?)",
                 (label_info["name"], label_info.get("color")),
+            )
+            label_id = connection.execute(
+                "select id from label where name = ?", (label_info["name"],)
+            ).fetchone()[0]
+            connection.execute(
+                "insert into project_label (project_name, label_id) "
+                "values (?, ?)",
+                (project_name, label_id),
             )
 
 
@@ -123,7 +143,7 @@ def _insert_project_annotations(
     if not annotations_dir.is_dir():
         return
     print(f"Inserting annotations from {annotations_dir}")
-    for annotations_file in annotations_dir.glob("*.jsonl"):
+    for annotations_file in _utils.glob_json(annotations_dir):
         _insert_annotations(connection, annotations_file)
 
 
@@ -137,47 +157,43 @@ def _insert_annotations(
             "insert or ignore into annotator (name) values (?)",
             (annotator_name,),
         )
-    annotator_id = connection.execute(
-        "select id from annotator where name = ?", (annotator_name,)
-    ).fetchone()[0]
-    with open(annotations_file, encoding="utf-8") as annotations_fh:
-        all_annotations = []
-        for doc_line in annotations_fh:
-            doc_info = json.loads(doc_line)
-            md5 = bytes.fromhex(doc_info["utf8_text_md5_checksum"])
-            doc_id = connection.execute(
-                "select id from document where utf8_text_md5_checksum = ?",
-                (md5,),
-            ).fetchone()[0]
-            for anno_info in doc_info["annotations"]:
-                label_name = anno_info["label_name"]
-                with connection:
-                    connection.execute(
-                        "insert or ignore into label (name) values (?)",
-                        (label_name,),
-                    )
-                label_id = connection.execute(
-                    "select id from label where name = ?", (label_name,)
-                ).fetchone()[0]
-                all_annotations.append(
-                    {
-                        "annotator_id": annotator_id,
-                        "label_id": label_id,
-                        "start_char": anno_info["start_char"],
-                        "end_char": anno_info["end_char"],
-                        "extra_data": anno_info.get("extra_data", None),
-                        "doc_id": doc_id,
-                        "project": project,
-                    }
+    all_docs = _utils.read_json(annotations_file)
+    all_annotations = []
+    for doc_info in all_docs:
+        md5 = bytes.fromhex(doc_info["utf8_text_md5_checksum"])
+        doc_id = connection.execute(
+            "select id from document where utf8_text_md5_checksum = ?",
+            (md5,),
+        ).fetchone()[0]
+        for anno_info in doc_info["annotations"]:
+            label_name = anno_info["label_name"]
+            with connection:
+                connection.execute(
+                    "insert or ignore into label (name) values (?)",
+                    (label_name,),
                 )
+            label_id = connection.execute(
+                "select id from label where name = ?", (label_name,)
+            ).fetchone()[0]
+            all_annotations.append(
+                {
+                    "annotator_name": annotator_name,
+                    "label_id": label_id,
+                    "start_char": anno_info["start_char"],
+                    "end_char": anno_info["end_char"],
+                    "extra_data": anno_info.get("extra_data", None),
+                    "doc_id": doc_id,
+                    "project": project,
+                }
+            )
     with connection:
         connection.executemany(
             """
             insert or ignore into annotation
-                (doc_id, label_id, annotator_id, start_char,
-                end_char, extra_data, project)
+                (doc_id, label_id, annotator_name, start_char,
+                end_char, extra_data, project_name)
             values
-                (:doc_id, :label_id, :annotator_id,
+                (:doc_id, :label_id, :annotator_name,
                 :start_char, :end_char, :extra_data, :project)
             """,
             all_annotations,
@@ -213,6 +229,7 @@ def make_database(
 def get_database_connection(
     database_path: Optional[pathlib.Path] = None,
 ) -> sqlite3.Connection:
-    connection = sqlite3.connect(make_database(database_path, overwrite=False))
+    db_path = make_database(database_path, overwrite=False).resolve()
+    connection = sqlite3.connect(f"file:{db_path}?ro")
     connection.row_factory = sqlite3.Row
     return connection

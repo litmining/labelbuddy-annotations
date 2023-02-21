@@ -1,0 +1,28 @@
+digraph G {
+  rankdir = BT;
+  node[shape=box];
+
+ healthy ->  "all participants";
+ patients ->  "all participants";
+
+ healthy_anonym[label=""]
+ healthy_anonym -> healthy;
+ Sz -> patients;
+ ASD -> patients;
+
+ ASD_male[label="male"];
+ ASD_female[label="female"];
+ ASD_male -> ASD;
+ ASD_female -> ASD;
+
+ Sz_male[label="male"];
+ Sz_female[label="female"];
+ Sz_male -> Sz;
+ Sz_female -> Sz;
+
+ healthy_male[label="male"];
+ healthy_female[label="female"];
+ healthy_male -> healthy_anonym;
+ healthy_female -> healthy_anonym;
+
+}

@@ -1,3 +1,6 @@
+projects/sandbox
+projects/**/*_report_*.html
+
 pubget_data
 
 # misc
@@ -7,6 +10,7 @@ pubget_data
 analysis/book/_build
 analysis/book/assets/generated/*
 analysis/data/*
+analysis/book/projects/
 
 
 # labelbuddy database files

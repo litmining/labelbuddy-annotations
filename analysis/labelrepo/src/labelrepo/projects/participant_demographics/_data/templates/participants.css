@@ -1,0 +1,104 @@
+.participants-report h1 {
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+}
+.participants-report :is(h2, h3, p) {
+    margin: 0;
+}
+.participants-report :is(h2, h3) {
+    font-size: large;
+}
+.participants-report code {
+    color: inherit;
+}
+.participants-report :is(a, a:visited) {
+    color: inherit;
+    text-decoration: underline;
+}
+.participants-report  .report-header {
+    text-align: center;
+    font-size: large;
+}
+.participants-report .labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-card {
+    margin: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.doc-participants > header {
+    padding: 0.5rem;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+}
+.doc-participants-content {
+    padding: 0.5rem;
+}
+.labelrepo-wrapper {
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.doc-participants > header {
+    background-color: #E8E8E8;
+}
+.doc-participants[data-extraction-failure] > header {
+    background-color: #FF7C76;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) {
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
+    margin-bottom: 0.25rem;
+}
+.doc-participants .healthy-subgroup {
+    background-color: #B3FFFF;
+}
+.doc-participants .patients-subgroup {
+    background-color: #FFFC9C;
+}
+
+.annotation-stack {
+    padding: 0.5rem;
+}
+.annotation-stack highlight {
+    background-color: #5A5A5A;
+    color: white;
+    display: inline-block;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
+    padding: 0.25rem;
+    font-weight: bold;
+}
+.annotation-stack > * {
+    padding: 0.25rem;
+}
+.label-and-extra-data {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: var(--label-color);
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
+}
+.label-and-extra-data > .extra-data {
+    font-style: italic;
+}
+.label-and-extra-data > * {
+    display: inline-block;
+    padding: 0.25rem;
+}
+.label-cluster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}

@@ -1,0 +1,95 @@
+{% if standalone %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Participant demographics</title>
+        <style>
+         {% include "participants.css" %}
+        </style>
+    </head>
+    <body>
+        <main class="participants-report">
+            <div class="labelrepo-flow labelrepo-wrapper">
+            <header class="report-header">
+                {% block header %}
+                <h1>Participant demographics</h1>
+                {% endblock %}
+            </header>
+{% else %}
+            <div class="participants-report">
+                <div class="labelrepo-flow labelrepo-wrapper">
+{% endif %}
+            {% for doc in documents %}
+            <article id="PMC{{ doc["pmcid"] }}" class="doc-participants labelrepo-card"
+                     {{ "data-has-patients" if doc["has_patients"] }}
+                     {{ "data-extraction-failure" if doc["extraction_failed"] }} >
+                <header class="labelrepo-flow">
+                    <h2><a target="_blank"
+                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{{ doc["pmcid"] }}"
+                        >PMC{{ doc["pmcid"] }}</a></h2>
+                    <p>
+                        {% if "position_in_labelbuddy_file" in doc and not no_doc_positions %}
+                        Doc #{{ doc["position_in_labelbuddy_file"] + 1 }} in
+                        <code>{{ doc["labelbuddy_file"] }}</code>
+                        {% else %}
+                        Labelled by <code>{{ doc["annotator_name"] }}</code>
+                        in <code>{{ doc["project_name"] }}</code>
+                        {% endif %}
+                    </p>
+                    <p>
+                        {{ doc["title"] }}
+                    </p>
+                </header>
+                <div class="labelrepo-flow doc-participants-content">
+                    {% if doc.get("extraction_failed") %}
+                    <p>
+                        <pre>
+                        {{- doc.get("error_message", "Annotation error") -}}
+                        </pre>
+                    </p>
+                    {% else %}
+                    <p>
+                        <strong>{{ doc["participants"]["count"] }}</strong> participants.
+                    </p>
+                    {% for subgroup_name, subgroup in doc["participants"]["subgroups"].items() | sort %}
+                    <div class="{{ "patients" if subgroup["category"] == "patients"
+                         else "healthy"}}-subgroup">
+                        <h3 >{{ {"healthy": "healthy participants"}.get(
+                            subgroup_name, subgroup_name) }}</h3>
+                        {% if 'diagnosis' in subgroup %}
+                        <p>
+                            Diagnosis: <strong>"{{ subgroup['diagnosis'] }}"</strong>.
+                        </p>
+                        {% endif %}
+                        <p>
+                            <strong>{{ subgroup["count"] }}</strong>
+                            {{ "participants" if subgroup["category"] == "healthy" else "patients" }}
+                            {%- for sex in ("females", "males") -%}
+                            {%- if sex in subgroup and "count" in subgroup[sex] -%}
+                            , <strong>{{ subgroup[sex]["count"] }}</strong> {{sex}}
+                            {%- endif -%}
+                            {%- endfor -%}.
+                            {% if 'age minimum' and 'age maximum' in subgroup -%}
+                            Age range: <strong>{{ subgroup['age minimum'] }}</strong> – <strong>{{ subgroup['age maximum'] }}</strong> years.
+                            {%- endif -%}
+                            {% for metric in ['age mean', 'age median'] %}
+                            {% if metric in subgroup %}
+                            {{ metric | capitalize }}: <strong>{{ '{:.1f}'.format(subgroup[metric]) }}</strong> years.
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+{% if standalone %}
+                </div>
+        </main>
+    </body>
+</html>
+{% else %}
+            </div>
+            </div>
+{% endif %}

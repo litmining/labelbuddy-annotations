@@ -1,0 +1,40 @@
+{% if standalone %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annotations</title>
+        <style>
+         {% include "participants.css" %}
+        </style>
+    </head>
+    <body>
+{% endif %}
+<div class="labelrepo-flow labelrepo-wrapper">
+    {% for anno_stack in annotation_stacks %}
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+        {% for anno in anno_stack["annotations"] %}
+        <div class="label-and-extra-data" style="--label-color: {{ anno['label_color'] }};" >
+            <div class="label-name">
+            {{ anno["label_name"] }}
+            </div>
+            {% if anno["extra_data"] %}
+            <div class="extra-data">
+                {{ anno["extra_data"] }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        {{ anno_stack["prefix"] }}
+        <highlight>{{ anno_stack["selected_text"] }}</highlight>
+        {{ anno_stack["suffix"] }}
+    </div>
+</div>
+{% endfor %}
+</div>
+{% if standalone %}
+    </body>
+</html>
+{% endif %}
