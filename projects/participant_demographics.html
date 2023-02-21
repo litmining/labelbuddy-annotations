@@ -378,13 +378,13 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#patients-and-healthy-controls">
-     Patients and healthy controls
+    <a class="reference internal nav-link" href="#annotation-example-with-subgroups">
+     Annotation example with subgroups
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subgroups">
-     Subgroups
+    <a class="reference internal nav-link" href="#a-simpler-example">
+     A simpler example
     </a>
    </li>
   </ul>
@@ -419,13 +419,13 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#patients-and-healthy-controls">
-     Patients and healthy controls
+    <a class="reference internal nav-link" href="#annotation-example-with-subgroups">
+     Annotation example with subgroups
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subgroups">
-     Subgroups
+    <a class="reference internal nav-link" href="#a-simpler-example">
+     A simpler example
     </a>
    </li>
   </ul>
@@ -454,232 +454,53 @@ title="Print to PDF"
 <h2>How to annotate<a class="headerlink" href="#how-to-annotate" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>The participant group structure.</p>
-<p><img alt="" src="../_images/annotate_participants.png" /></p>
-<section id="patients-and-healthy-controls">
-<h3>Patients and healthy controls<a class="headerlink" href="#patients-and-healthy-controls" title="Permalink to this headline">#</a></h3>
-<p>To annotate information about a participant group, we start by identifying the group: we select “healthy” or “patients”, and if it applies, “male” or “female”.
-Then, we select the label corresponding to the type of information we are annotating; for example “count”.
-Finally, if necessary we specify any additional information in the “extra data” input field.
-For example, if the count is provided as text (eg “twenty”), we must enter the numerical value (eg “20”).</p>
-<p>Below is an example where only the count is provided, for the patients and for the healthy controls.
-Note that “diagnosis” implicitly refers to patients, so we can omit the group label here (but would not be an error to add it).</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Annotations</title>
-        <style>
-         .participants-report h1 {
-    margin-block-start: 2rem;
-    margin-block-end: 2rem;
-}
-.participants-report :is(h2, h3, p) {
-    margin: 0;
-}
-.participants-report :is(h2, h3) {
-    font-size: large;
-}
-.participants-report code {
-    color: inherit;
-}
-.participants-report :is(a, a:visited) {
-    color: inherit;
-    text-decoration: underline;
-}
-.participants-report  .report-header {
-    text-align: center;
-    font-size: large;
-}
-.participants-report .labelrepo-flow > * + * {
-    margin-block-start: 0.5rem;
-}
-.labelrepo-flow > * + * {
-    margin-block-start: 0.5rem;
-}
-.labelrepo-card {
-    margin: 1rem;
-    border-radius: .25rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
-    overflow: hidden;
-}
-.doc-participants > header {
-    padding: 0.5rem;
-    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
-}
-.doc-participants-content {
-    padding: 0.5rem;
-}
-.labelrepo-wrapper {
-    max-width: 80ch;
-    margin-left: auto;
-    margin-right: auto;
-}
-.doc-participants > header {
-    background-color: #E8E8E8;
-}
-.doc-participants[data-extraction-failure] > header {
-    background-color: #FF7C76;
-}
-.doc-participants :is(.healthy-subgroup, .patients-subgroup) {
-    padding: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-bottom: 0.25rem;
-    border-radius: 0.25rem;
-    overflow: hidden;
-}
-.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
-    margin-bottom: 0.25rem;
-}
-.doc-participants .healthy-subgroup {
-    background-color: #B3FFFF;
-}
-.doc-participants .patients-subgroup {
-    background-color: #FFFC9C;
-}
-
-.annotation-stack {
-    padding: 0.5rem;
-}
-.annotation-stack highlight {
-    background-color: #5A5A5A;
-    color: white;
-    display: inline-block;
-    margin-inline-start: 0.25rem;
-    margin-inline-end: 0.25rem;
-    padding: 0.25rem;
-    font-weight: bold;
-}
-.annotation-stack > * {
-    padding: 0.25rem;
-}
-.label-and-extra-data {
-    border-radius: 0.25rem;
-    overflow: hidden;
-    background-color: var(--label-color);
-    padding-inline-start: 0.25rem;
-    padding-inline-end: 0.25rem;
-}
-.label-and-extra-data > .extra-data {
-    font-style: italic;
-}
-.label-and-extra-data > * {
-    display: inline-block;
-    padding: 0.25rem;
-}
-.label-cluster {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-}
-        </style>
-    </head>
-    <body>
-
-<div class="labelrepo-flow labelrepo-wrapper">
-
-    <div class="annotation-stack  labelrepo-card">
-    <div class="label-cluster">
-
-        <div class="label-and-extra-data" style="--label-color: #fbc5ff;" >
-            <div class="label-name">
-            diagnosis
-            </div>
-
-        </div>
-
-    </div>
-    <div>
-        …reflect spontaneous cerebral neural activity. Previous fMRI studies were focused on the examination of motor-related areas and little is known about the functional changes in the extra-motor areas in 
-        <highlight>amyotrophic lateral sclerosis</highlight>
-         (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and twenty age- and sex-matched healthy volunteer…
-    </div>
-</div>
-
-    <div class="annotation-stack  labelrepo-card">
-    <div class="label-cluster">
-
-        <div class="label-and-extra-data" style="--label-color: #fff700;" >
-            <div class="label-name">
-            patients
-            </div>
-
-        </div>
-
-        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
-            <div class="label-name">
-            count
-            </div>
-
-            <div class="extra-data">
-                20
-            </div>
-
-        </div>
-
-    </div>
-    <div>
-        …nal changes in the extra-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. 
-        <highlight>Twenty</highlight>
-         ALS patients and twenty age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared …
-    </div>
-</div>
-
-    <div class="annotation-stack  labelrepo-card">
-    <div class="label-cluster">
-
-        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
-            <div class="label-name">
-            healthy
-            </div>
-
-        </div>
-
-        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
-            <div class="label-name">
-            count
-            </div>
-
-            <div class="extra-data">
-                20
-            </div>
-
-        </div>
-
-    </div>
-    <div>
-        …-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and 
-        <highlight>twenty</highlight>
-         age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared with the controls, the A…
-    </div>
-</div>
-
-</div>
-
-    </body>
-</html>
-</div></div>
-</div>
-</section>
-<section id="subgroups">
-<h3>Subgroups<a class="headerlink" href="#subgroups" title="Permalink to this headline">#</a></h3>
-<p>When there are several subgroups among the patients or the healthy controls, we use the “extra data” input field to distinguish them.
-For example, in the following article there are 2 subgroups of patients: schizophrenia and Autism Spectrum Disorder.
-To annotate information about the schizophrenia group, we first select “patients”, then, we use the “extra data” of that annotation to enter the subgroup.
-We can choose any name we want to identify that subgroup (in this case we chose “schizophrenia”).
-Later, when we need to refer to that subgroup again, the subgroup name will appear in the completion suggestions for the “extra data” field.</p>
-<p>So for annotating information about a specific subgroup, the steps are:</p>
+<p>Annotating demographic information about the participants is more complex than other projects in this repository, because studies typically involve several groups of participants, with diverse structures, and there is some variation in how the relevant information is reported.
+To annotate a piece of information about a group of participants, we stack several annotations on top of each other.
+We add annotations that identify the group of participants (eg patients vs controls), then an annotation that contains the information of interest (eg count, min age, etc.).
+To be easily linked these annotations should be at the exact same positions, which is easy to acheive in <strong>labelbuddy</strong> by clicking several labels in sequence (or by first selecting an existing annotation and then clicking a new label to add it on top).</p>
+<p>We consider that most articles roughly conform to the participant group structure depicted in the tree shown in <a class="reference internal" href="#participants-tree-fig"><span class="std std-numref">Fig. 1</span></a>.
+The root contains all the participants, which are then divided in patients and healthy controls, each of which may contain several subgroups, and finally each subgroup can contain females and males.
+Note that for many articles, some of the nodes will be empty – eg studies involving only healthy controls, only one sex, etc.</p>
+<figure class="align-default" id="participants-tree-fig">
+<img alt="../_images/annotate_participants.png" src="../_images/annotate_participants.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The participant group structure and corresponding annotations.</span><a class="headerlink" href="#participants-tree-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="annotation-example-with-subgroups">
+<h3>Annotation example with subgroups<a class="headerlink" href="#annotation-example-with-subgroups" title="Permalink to this headline">#</a></h3>
+<p>In <a class="reference internal" href="#participants-tree-fig"><span class="std std-numref">Fig. 1</span></a> we see the general way of annotating information about participants.
+We start by describing the most complex case but for most annotations the situation will be simpler.</p>
+<p>Here we annotate the count (20) of a very specific subgroup, constituted of:</p>
 <ul class="simple">
-<li><p>select the group (“patients” or “healthy”)</p></li>
-<li><p>enter the subgroup identifier in the “extra data” field</p></li>
-<li><p>if it applies select “females” or “males”</p></li>
-<li><p>select the label that indicates the type of information (“count”, “age minimum”, etc.)</p></li>
-<li><p>if necessary add any complementary information in the “extra data” field</p></li>
+<li><p>Patients</p></li>
+<li><p>Within patients, the schizophrenia subgroup (this article also has an autism spectrum disorder subgroup of patients)</p></li>
+<li><p>Within the schizophrenia subgroup, the males.</p></li>
 </ul>
+<p>To annotate this information, we select the information we want to annotate and then apply labels, starting from the top of the participants tree (the actual order doesn’t matter, this is just a suggestion).
+We first click the “patients” label.</p>
+<p>Then, as there are several patients subgroups in this article, we need to differentiate the schizophrenia subgroup.
+We don’t want to add new <em>labels</em> for subgroups, as we would end up with a very long list of labels, most of which are used in few papers (eg “schizophrenia”, “siblings”, “experts”, etc.)
+Instead, we rely on the <strong>extra data</strong> input field in <strong>labelbuddy</strong>.
+While the “patients” annotation is still selected, we write int its <strong>extra data</strong> field (on the bottom left of <strong>labelbuddy</strong>).
+We enter in there whatever name we want to give to the schizophrenia subgroup, which will act as a local identifier within the current paper.
+This name is arbitrary and only serves to link the different annotations about that subgroup, here we unoriginally chose “schizophrenia”.
+Referring it to it again for other annotations will be easy because <strong>labelbuddy</strong> will propose it in a completion list whenever we are entering <strong>extra data</strong> for the “patients” label.</p>
+<p>Next, we click on the “males” label to create a new annotation, indicating that within the “patients” / “schizophrenia” subgroup, we are looking at the males.
+Finally, we click on the “count” label to create a new annotation, indicating the type of information contained in our selected text.
+If needed, we can use the <strong>extra data</strong> here again – for example if the count was indicated as “twenty” (in English), we would enter in the <strong>extra data</strong> “20” (the value in numbers), to make it easier to use the annotation later.</p>
+<p>So to summarize, the steps are:</p>
+<ul class="simple">
+<li><p>Select the group (“patients” or “healthy”)</p></li>
+<li><p>Enter the subgroup identifier in the “extra data” field (with the help of the completion list if we have seen that subgroup before)</p></li>
+<li><p>Select the sex (“females” or “males”)</p></li>
+<li><p>Select the label that indicates the type of information (“count”, “age mean”, etc.)</p></li>
+<li><p>If necessary add any complementary information in the “extra data” field (eg “20” when the selected text is “twenty”).</p></li>
+</ul>
+<p>When we annotate information about nodes that are higher in the participant group tree, we simply omit the labels that do not apply.
+For example, if we are annotating the total count of participants (healthy and patients), we simply apply the label “count”, without indicating a group, subgroup or sex.
+As we see below, when we select the diagnosis, we only indicate the group and subgroup, as the diagnosis applies to both males and females.</p>
+<p>Here are all the annotations for article discussed above, <strong>PMC8883821</strong>:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -1353,10 +1174,222 @@ Seventy-eight participants took part, including 28 participants (age range 21–
 </div></div>
 </div>
 </section>
+<section id="a-simpler-example">
+<h3>A simpler example<a class="headerlink" href="#a-simpler-example" title="Permalink to this headline">#</a></h3>
+<p>When the participant structure of an article is simpler, we can omit any of the labels as long as it does not introduce an ambiguity.
+For example, if there is only one group of patients, we do not need to indicate a subgroup.</p>
+<p>Below is an example for the article <strong>PMC3447931</strong> where only the count is provided, for the patients and for the healthy controls.
+Note that “diagnosis” implicitly refers to patients, so we can omit the group label here (but would not be an error to add it).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annotations</title>
+        <style>
+         .participants-report h1 {
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+}
+.participants-report :is(h2, h3, p) {
+    margin: 0;
+}
+.participants-report :is(h2, h3) {
+    font-size: large;
+}
+.participants-report code {
+    color: inherit;
+}
+.participants-report :is(a, a:visited) {
+    color: inherit;
+    text-decoration: underline;
+}
+.participants-report  .report-header {
+    text-align: center;
+    font-size: large;
+}
+.participants-report .labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-flow > * + * {
+    margin-block-start: 0.5rem;
+}
+.labelrepo-card {
+    margin: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.doc-participants > header {
+    padding: 0.5rem;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+}
+.doc-participants-content {
+    padding: 0.5rem;
+}
+.labelrepo-wrapper {
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.doc-participants > header {
+    background-color: #E8E8E8;
+}
+.doc-participants[data-extraction-failure] > header {
+    background-color: #FF7C76;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) {
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
+    margin-bottom: 0.25rem;
+}
+.doc-participants .healthy-subgroup {
+    background-color: #B3FFFF;
+}
+.doc-participants .patients-subgroup {
+    background-color: #FFFC9C;
+}
+
+.annotation-stack {
+    padding: 0.5rem;
+}
+.annotation-stack highlight {
+    background-color: #5A5A5A;
+    color: white;
+    display: inline-block;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
+    padding: 0.25rem;
+    font-weight: bold;
+}
+.annotation-stack > * {
+    padding: 0.25rem;
+}
+.label-and-extra-data {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: var(--label-color);
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
+}
+.label-and-extra-data > .extra-data {
+    font-style: italic;
+}
+.label-and-extra-data > * {
+    display: inline-block;
+    padding: 0.25rem;
+}
+.label-cluster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+        </style>
+    </head>
+    <body>
+
+<div class="labelrepo-flow labelrepo-wrapper">
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fbc5ff;" >
+            <div class="label-name">
+            diagnosis
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …reflect spontaneous cerebral neural activity. Previous fMRI studies were focused on the examination of motor-related areas and little is known about the functional changes in the extra-motor areas in 
+        <highlight>amyotrophic lateral sclerosis</highlight>
+         (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and twenty age- and sex-matched healthy volunteer…
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #fff700;" >
+            <div class="label-name">
+            patients
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+            <div class="extra-data">
+                20
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …nal changes in the extra-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. 
+        <highlight>Twenty</highlight>
+         ALS patients and twenty age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared …
+    </div>
+</div>
+
+    <div class="annotation-stack  labelrepo-card">
+    <div class="label-cluster">
+
+        <div class="label-and-extra-data" style="--label-color: #00ffff;" >
+            <div class="label-name">
+            healthy
+            </div>
+
+        </div>
+
+        <div class="label-and-extra-data" style="--label-color: #e6c68f;" >
+            <div class="label-name">
+            count
+            </div>
+
+            <div class="extra-data">
+                20
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        …-motor areas in amyotrophic lateral sclerosis (ALS) patients. The aim of this study is to investigate functional cerebral abnormalities in ALS patients on a whole brain scale. Twenty ALS patients and 
+        <highlight>twenty</highlight>
+         age- and sex-matched healthy volunteers were enrolled. Voxel-based analysis was used to characterize the alteration of amplitude of low frequency fluctuation (ALFF). Compared with the controls, the A…
+    </div>
+</div>
+
+</div>
+
+    </body>
+</html>
+</div></div>
+</div>
+</section>
 </section>
 <section id="participant-demographics-summaries">
 <h2>Participant demographics summaries<a class="headerlink" href="#participant-demographics-summaries" title="Permalink to this headline">#</a></h2>
-<p>Here we show the information about participants that has been extracted from all the annotated documents.</p>
+<p>The repository contains utilities to extract summaries about the participant groups from an article’s annotations.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/participants_report.py</span></code> creates a report for all the articles in a <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file, similar to the list shown below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/watch_participants.py</span></code> serves a live summary of the participant groups in the document we are currently annotating in <strong>labelbuddy</strong>.</p></li>
+</ul>
+<p>Below we show the information about participants that has been extracted from all the annotated documents (all projects and annotators).</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
