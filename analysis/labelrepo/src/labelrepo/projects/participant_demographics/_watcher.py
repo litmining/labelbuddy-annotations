@@ -45,7 +45,6 @@ class _Watcher:
         self.template = jinja_env.get_template("report.html")
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
-        self._update_content()
 
     def __enter__(self) -> _Watcher:
         return self
@@ -99,7 +98,8 @@ class _Watcher:
         select id, lower(hex(content_md5)) as md5, metadata,
         coalesce(list_title, substring(content, 1, 150)) as title
         from document
-        where id = (select last_visited_doc from app_state)
+        where id = coalesce( (select last_visited_doc from app_state),
+            (select id from document limit 1) )
         """
         ).fetchone()
         metadata = json.loads(doc_info["metadata"])
