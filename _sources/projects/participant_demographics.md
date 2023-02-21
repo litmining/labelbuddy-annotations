@@ -48,7 +48,7 @@ def show_pmcid(pmcid):
 
 The participant group structure.
 
-![](../assets/annotate_participants.svg)
+![](../assets/annotate_participants.png)
 
 ### Patients and healthy controls
 
