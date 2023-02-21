@@ -229,6 +229,7 @@ def make_database(
 def get_database_connection(
     database_path: Optional[pathlib.Path] = None,
 ) -> sqlite3.Connection:
-    connection = sqlite3.connect(make_database(database_path, overwrite=False))
+    db_path = make_database(database_path, overwrite=False).resolve()
+    connection = sqlite3.connect(f"file:{db_path}?ro")
     connection.row_factory = sqlite3.Row
     return connection
