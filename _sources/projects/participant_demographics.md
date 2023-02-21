@@ -46,6 +46,10 @@ def show_pmcid(pmcid):
   return displays.HTMLDisplay(html)
 ```
 
+The participant group structure.
+
+![](../assets/annotate_participants.svg)
+
 ### Patients and healthy controls
 
 To annotate information about a participant group, we start by identifying the group: we select "healthy" or "patients", and if it applies, "male" or "female".
