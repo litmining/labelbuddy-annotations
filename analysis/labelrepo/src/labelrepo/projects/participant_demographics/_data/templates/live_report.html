@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Participant demographics</title>
+    <style>
+        {% include "participants.css" %}
+    </style>
+    <script>
+     window.addEventListener("DOMContentLoaded", () => {
+         const websocket = new WebSocket("ws://localhost:{{ port }}/");
+         websocket.onmessage = ({data}) => {
+             document.getElementById("live-report-content")
+                     .innerHTML = data;
+         };
+     });
+    </script>
+</head>
+
+<body>
+    <main id=live-report-content >
+    </main>
+</body>
+
+</html>
