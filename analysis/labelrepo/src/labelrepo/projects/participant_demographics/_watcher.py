@@ -1,9 +1,13 @@
+from __future__ import annotations
+
 import asyncio
 import json
+import os
 import pathlib
 import sqlite3
 import time
-from typing import Union
+import tempfile
+from typing import Optional, Set, Union
 
 import pandas as pd
 import websockets
@@ -17,14 +21,16 @@ class _Watcher:
     def __init__(
         self, labelbuddy_file: Union[pathlib.Path, str], port: int
     ) -> None:
-        self.socket_connections = set()
+        self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
-        self.target_file = self.labelbuddy_file.with_name(
-            f"{self.labelbuddy_file.stem}_participants_demographics_"
-            "live_report.html"
-        ).resolve()
-        self.last_wake_up_time = None
-        self.last_update_time = None
+        stem = f"{self.labelbuddy_file.stem}_participants_live_report_"
+        fd, target_file = tempfile.mkstemp(
+            dir=self.labelbuddy_file.parent, prefix=stem, suffix=".html"
+        )
+        os.close(fd)
+        self.target_file = pathlib.Path(target_file).resolve()
+        self.last_wake_up_time: Optional[float] = None
+        self.last_update_time: Optional[float] = None
         self.period = 0.5
         self.connection = sqlite3.connect(
             f"file:{self.labelbuddy_file}?mode=ro"
@@ -41,12 +47,27 @@ class _Watcher:
         self.content = ""
         self._update_content()
 
+    def __enter__(self) -> _Watcher:
+        return self
+
+    def __exit__(self, exc_type, exc_val, tb):
+        del exc_type, exc_val, tb
+        if self.target_file.is_file():
+            try:
+                self.target_file.unlink()
+            except Exception:
+                pass
+        try:
+            self.connection.close()
+        except Exception:
+            pass
+
     async def start(self) -> None:
         self.target_file.write_text(self.page)
         print(
-            "To see the live participant demographics report, "
+            "\nTo see the live participant demographics report, "
             "visit this file in your web browser:\n\n"
-            f"{self.target_file}"
+            f"{self.target_file}\n"
         )
         while True:
             previous_wake_up_time = self.last_wake_up_time
@@ -143,7 +164,6 @@ class _Watcher:
 async def watch_participants(
     labelbuddy_file: Union[pathlib.Path, str], port: int = 8765
 ) -> None:
-    watcher = _Watcher(labelbuddy_file, port)
-
-    async with websockets.serve(watcher.register, "localhost", port):
-        await watcher.start()
+    with _Watcher(labelbuddy_file, port) as watcher:
+        async with websockets.serve(watcher.register, "localhost", port):
+            await watcher.start()

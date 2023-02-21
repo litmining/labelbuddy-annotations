@@ -591,7 +591,7 @@ def labelbuddy_file_report_command(args: Optional[List[str]] = None) -> None:
         project_name, annotator_name, standalone=True
     )
     out_file = labelbuddy_file.with_name(
-        f"{annotator_name}_participants_demographics_report.html"
+        f"{annotator_name}_participants_report.html"
     )
     pathlib.Path(out_file).write_text(html)
     print(f"Report saved in {out_file}")
