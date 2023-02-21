@@ -74,7 +74,7 @@
                             {%- endif -%}
                             {% for metric in ['age mean', 'age median'] %}
                             {% if metric in subgroup %}
-                            {{ metric | capitalize }}: <strong>{{ subgroup[metric] }}</strong> years.
+                            {{ metric | capitalize }}: <strong>{{ '{:.1f}'.format(subgroup[metric]) }}</strong> years.
                             {% endif %}
                             {% endfor %}
                         </p>

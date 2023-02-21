@@ -325,7 +325,7 @@ def _infer_info_up(root: Dict) -> None:
         ):
             root["age mean"] = sum(
                 child["count"] * child["age mean"] for child in children
-            ) / len(children)
+            ) / children_sum
     if (
         all("age minimum" in child for child in children)
         and "age minimum" not in root
@@ -408,6 +408,8 @@ def _get_labelbuddy_file(
 
 
 def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
+    if not all_annotations.shape[0]:
+        return []
     all_docs = []
     positions = {}
     for project_name, annotator_name in (
