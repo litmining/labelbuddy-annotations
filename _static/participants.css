@@ -66,6 +66,7 @@
 .doc-participants .patients-subgroup {
     background-color: #FFFC9C;
 }
+
 .annotation-stack {
     padding: 0.5rem;
 }
@@ -85,8 +86,8 @@
     border-radius: 0.25rem;
     overflow: hidden;
     background-color: var(--label-color);
-}
-.label-and-extra-data > .label-name {
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
 }
 .label-and-extra-data > .extra-data {
     font-style: italic;
@@ -98,8 +99,6 @@
 .label-cluster {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.25rem;
-}
-.label-cluster .label-and-extra-data {
-    display: inline-block;
 }

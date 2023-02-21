@@ -538,6 +538,7 @@ Note that “diagnosis” implicitly refers to patients, so we can omit the grou
 .doc-participants .patients-subgroup {
     background-color: #FFFC9C;
 }
+
 .annotation-stack {
     padding: 0.5rem;
 }
@@ -557,8 +558,8 @@ Note that “diagnosis” implicitly refers to patients, so we can omit the grou
     border-radius: 0.25rem;
     overflow: hidden;
     background-color: var(--label-color);
-}
-.label-and-extra-data > .label-name {
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
 }
 .label-and-extra-data > .extra-data {
     font-style: italic;
@@ -570,10 +571,8 @@ Note that “diagnosis” implicitly refers to patients, so we can omit the grou
 .label-cluster {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.25rem;
-}
-.label-cluster .label-and-extra-data {
-    display: inline-block;
 }
         </style>
     </head>
@@ -755,6 +754,7 @@ Later, when we need to refer to that subgroup again, the subgroup name will appe
 .doc-participants .patients-subgroup {
     background-color: #FFFC9C;
 }
+
 .annotation-stack {
     padding: 0.5rem;
 }
@@ -774,8 +774,8 @@ Later, when we need to refer to that subgroup again, the subgroup name will appe
     border-radius: 0.25rem;
     overflow: hidden;
     background-color: var(--label-color);
-}
-.label-and-extra-data > .label-name {
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
 }
 .label-and-extra-data > .extra-data {
     font-style: italic;
@@ -787,10 +787,8 @@ Later, when we need to refer to that subgroup again, the subgroup name will appe
 .label-cluster {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.25rem;
-}
-.label-cluster .label-and-extra-data {
-    display: inline-block;
 }
         </style>
     </head>
