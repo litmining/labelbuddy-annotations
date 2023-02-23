@@ -2,11 +2,10 @@ from __future__ import annotations
 
 import asyncio
 import json
-import os
 import pathlib
 import sqlite3
 import time
-import tempfile
+import sys
 from typing import Optional, Set, Union
 
 import pandas as pd
@@ -23,12 +22,9 @@ class _Watcher:
     ) -> None:
         self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
-        stem = f"{self.labelbuddy_file.stem}_participants_live_report_"
-        fd, target_file = tempfile.mkstemp(
-            dir=self.labelbuddy_file.parent, prefix=stem, suffix=".html"
-        )
-        os.close(fd)
-        self.target_file = pathlib.Path(target_file).resolve()
+        self.target_file = self.labelbuddy_file.with_name(
+            f"{self.labelbuddy_file.stem}_participants_live_report_{port}.html"
+        ).resolve()
         self.last_wake_up_time: Optional[float] = None
         self.last_update_time: Optional[float] = None
         self.period = 0.5
@@ -164,6 +160,12 @@ class _Watcher:
 async def watch_participants(
     labelbuddy_file: Union[pathlib.Path, str], port: int = 8765
 ) -> None:
-    with _Watcher(labelbuddy_file, port) as watcher:
+    watcher = _Watcher(labelbuddy_file, port)
+    try:
         async with websockets.serve(watcher.register, "localhost", port):
-            await watcher.start()
+            with watcher:
+                await watcher.start()
+    except OSError:
+        print(f"\nThe address 'localhost:{port}/' is already in use.\n"
+              "Please specify a different port.")
+        sys.exit(1)
