@@ -66,6 +66,10 @@
 .doc-participants .patients-subgroup {
     background-color: #FFFC9C;
 }
+.doc-participants .participants-subgroup .group-label-extra-data {
+    font-style: italic;
+    font-weight: normal;
+}
 
 .annotation-stack {
     padding: 0.5rem;
