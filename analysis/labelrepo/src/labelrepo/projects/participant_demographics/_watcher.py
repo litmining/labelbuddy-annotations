@@ -89,7 +89,7 @@ class _Watcher:
                 await asyncio.sleep(to_wait)
 
     def _update_content(self) -> None:
-        doc_info = self.connection.execute(
+        doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
         coalesce(list_title, substring(content, 1, 150)) as title
@@ -98,7 +98,7 @@ class _Watcher:
             (select id from document limit 1) )
         """
         ).fetchone()
-        metadata = json.loads(doc_info["metadata"])
+        metadata = json.loads(doc_result["metadata"])
 
         demo_labels = ", ".join(
             map("'{}'".format, _participant_demographics._DEMOGRAPHICS_LABELS)
@@ -115,30 +115,22 @@ class _Watcher:
         where doc_id = :doc
         and label_name in ({demo_labels})
         """,
-            {"doc": doc_info["id"]},
+            {"doc": doc_result["id"]},
         )
-
-        anno_df = pd.DataFrame(
-            {
-                "pmcid": metadata["pmcid"],
-                "title": doc_info["title"],
-                "doc_md5": doc_info["md5"],
-                "project_name": self.project_name,
-                "annotator_name": self.annotator_name,
-            }
-            | dict(anno)
-            for anno in annotations
-        )
+        doc_info = {
+            "pmcid": metadata["pmcid"],
+            "title": doc_result["title"],
+            "doc_md5": doc_result["md5"],
+            "project_name": self.project_name,
+            "annotator_name": self.annotator_name,
+        }
+        anno_df = pd.DataFrame(doc_info | dict(anno) for anno in annotations)
         if not anno_df.shape[0]:
-            self.content = f"""<div>
-            <h2>PMC{metadata['pmcid']}</h2>
-            <p>
-            No participant group annotations for this document (yet!)
-            </p>
-            </div>
-            """
-            return
-        summaries = _participant_demographics._get_document_summaries(anno_df)
+            summaries = [doc_info | {"participants": None}]
+        else:
+            summaries = _participant_demographics._get_document_summaries(
+                anno_df
+            )
         self.content = self.template.render(
             {
                 "documents": summaries,
@@ -166,6 +158,8 @@ async def watch_participants(
             with watcher:
                 await watcher.start()
     except OSError:
-        print(f"\nThe address 'localhost:{port}/' is already in use.\n"
-              "Please specify a different port.")
+        print(
+            f"\nThe address 'localhost:{port}/' is already in use.\n"
+            "Please specify a different port."
+        )
         sys.exit(1)
