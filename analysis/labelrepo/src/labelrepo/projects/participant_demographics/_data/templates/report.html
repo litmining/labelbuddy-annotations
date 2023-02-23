@@ -58,10 +58,13 @@
                     </p>
                     {% endif %}
                     {% for subgroup_name, subgroup in doc["participants"]["subgroups"].items() | sort %}
-                    <div class="{{ "patients" if subgroup["category"] == "patients"
-                         else "healthy"}}-subgroup">
-                        <h3 >{{ {"healthy": "healthy participants"}.get(
-                            subgroup_name, subgroup_name) }}</h3>
+                    <div class="participants-subgroup {{ subgroup["group_name"] }}-subgroup">
+                        <h3>{{ subgroup["group_name"] | capitalize }}
+                            {{ "participants" if subgroup["group_name"] == "healthy" }}
+                            {% if subgroup_name != subgroup["group_name"] %} &nbsp;
+                            <span class="group-label-extra-data">{{ subgroup["subgroup_name"] }}</span>
+                            {% endif %}
+                        </h3>
                         {% if 'diagnosis' in subgroup %}
                         <p>
                             Diagnosis: <strong>"{{ subgroup['diagnosis'] }}"</strong>
@@ -70,11 +73,11 @@
                         <p>
                             {% if subgroup["count"] %}
                             <strong>{{ subgroup["count"] }}</strong>
-                            {{ "participants" if subgroup["category"] == "healthy" else "patients" }}
+                            {{ "participants" if subgroup["group_name"] == "healthy" else "patients" }}
                             {%- endif %}
-                            {%- for sex in ("females", "males") -%}
+                            {%- for sex in ("female", "male") -%}
                             {%- if sex in subgroup and "count" in subgroup[sex] -%}
-                            , <strong>{{ subgroup[sex]["count"] }}</strong> {{sex}}
+                            , <strong>{{ subgroup[sex]["count"] }}</strong> {{sex}}s
                             {%- endif -%}
                             {%- endfor -%}
                             {% if 'age minimum' and 'age maximum' in subgroup -%}

@@ -323,9 +323,10 @@ def _infer_info_up(root: Dict) -> None:
             all("age mean" in child for child in children)
             and "age mean" not in root
         ):
-            root["age mean"] = sum(
-                child["count"] * child["age mean"] for child in children
-            ) / children_sum
+            root["age mean"] = (
+                sum(child["count"] * child["age mean"] for child in children)
+                / children_sum
+            )
     if (
         all("age minimum" in child for child in children)
         and "age minimum" not in root
@@ -376,14 +377,17 @@ def _summarize(root: Dict) -> Dict:
             if len(group["children"]) == 1:
                 subgroup_summary_name = group_name
             else:
-                subgroup_summary_name = f"{group_name}: {subgroup_name}"
-            subgroup_summary = {"category": group_name}
+                subgroup_summary_name = f"{group_name} {subgroup_name}"
+            subgroup_summary = {
+                "group_name": group_name,
+                "subgroup_name": subgroup_name,
+            }
             for label_name in _DEMOGRAPHICS_LABELS:
                 if label_name in subgroup:
                     subgroup_summary[label_name] = subgroup[label_name]
             for sex in _SEX_NAMES:
                 if subgroup["children"].get(sex):
-                    subgroup_summary[f"{sex}s"] = subgroup["children"][sex]
+                    subgroup_summary[sex] = subgroup["children"][sex]
             summary["subgroups"][subgroup_summary_name] = subgroup_summary
     return summary
 
@@ -449,7 +453,7 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
         try:
             doc["participants"] = _get_participants_info(anno)
             if any(
-                (sg["category"] == "patients")
+                (sg["group_name"] == "patients")
                 for sg in doc["participants"]["subgroups"].values()
             ):
                 doc["has_patients"] = True
