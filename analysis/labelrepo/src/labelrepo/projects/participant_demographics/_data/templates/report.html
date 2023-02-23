@@ -52,9 +52,11 @@
                         No participant information annotated in this document (yet!).
                     </p>
                     {% else %}
+                    {% if doc["participants"]["count"] %}
                     <p>
-                        <strong>{{ doc["participants"]["count"] }}</strong> participants.
+                        <strong>{{ doc["participants"]["count"] }}</strong> participants
                     </p>
+                    {% endif %}
                     {% for subgroup_name, subgroup in doc["participants"]["subgroups"].items() | sort %}
                     <div class="{{ "patients" if subgroup["category"] == "patients"
                          else "healthy"}}-subgroup">
@@ -62,23 +64,25 @@
                             subgroup_name, subgroup_name) }}</h3>
                         {% if 'diagnosis' in subgroup %}
                         <p>
-                            Diagnosis: <strong>"{{ subgroup['diagnosis'] }}"</strong>.
+                            Diagnosis: <strong>"{{ subgroup['diagnosis'] }}"</strong>
                         </p>
                         {% endif %}
                         <p>
+                            {% if subgroup["count"] %}
                             <strong>{{ subgroup["count"] }}</strong>
                             {{ "participants" if subgroup["category"] == "healthy" else "patients" }}
+                            {%- endif %}
                             {%- for sex in ("females", "males") -%}
                             {%- if sex in subgroup and "count" in subgroup[sex] -%}
                             , <strong>{{ subgroup[sex]["count"] }}</strong> {{sex}}
                             {%- endif -%}
-                            {%- endfor -%}.
+                            {%- endfor -%}
                             {% if 'age minimum' and 'age maximum' in subgroup -%}
-                            Age range: <strong>{{ subgroup['age minimum'] }}</strong> – <strong>{{ subgroup['age maximum'] }}</strong> years.
+                            <br/>Age range: <strong>{{ subgroup['age minimum'] }}</strong> – <strong>{{ subgroup['age maximum'] }}</strong> years
                             {%- endif -%}
                             {% for metric in ['age mean', 'age median'] %}
                             {% if metric in subgroup %}
-                            {{ metric | capitalize }}: <strong>{{ '{:.1f}'.format(subgroup[metric]) }}</strong> years.
+                            <br/>{{ metric | capitalize }}: <strong>{{ '{:.1f}'.format(subgroup[metric]) }}</strong> years
                             {% endif %}
                             {% endfor %}
                         </p>
