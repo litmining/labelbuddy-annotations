@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Participant demographics &#8212; Biomedical literature annotations</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
+    <link rel="stylesheet" type="text/css" href="_static/global.css" />
+    <link rel="stylesheet" type="text/css" href="_static/label-set.css" />
+    <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="autism_mri" href="projects/autism_mri.html" />
+    <link rel="prev" title="Contributing to this repository" href="contributing_to_this_repository.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="overview.html">
+                    Biomedical literature annotations
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_this_repository.html">
+   Using this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing_to_this_repository.html">
+   Contributing to this repository
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Participant demographics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/autism_mri.html">
+   autism_mri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/cluster_inference.html">
+   cluster_inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/dynamic_functional_connectivity.html">
+   dynamic_functional_connectivity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">
+   neuro_meta_analyses.phase_1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">
+   neuro_meta_analyses.phase_2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/neurobridge_fmri.html">
+   neurobridge_fmri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="projects/participant_demographics.html">
+   participant_demographics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/participant_demographics.py"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/neurodatascience/labelbuddy-annotations"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/participant_demographics.py"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.py</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Participant demographics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="participant-demographics">
+<h1>Participant demographics<a class="headerlink" href="#participant-demographics" title="Permalink to this headline">#</a></h1>
+<p>We started annotating information about each study’s participants: their number, sex, age, and possible diagnosis.
+More annotations are needed, but these annotations can already give an approximation of the number of participants in typical fMRI studies, and be used to validate systems that aim to extract that information automatically.
+You can read more about the participant annotations in the corresponding <a class="reference internal" href="projects/participant_demographics.html"><span class="doc std std-doc">project page</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">labelrepo</span></code> package provides helpers to work with these annotations.
+Here we illustrate loading the annotations to make a couple of simple plots.
+The <code class="docutils literal notranslate"><span class="pre">get_participant_demographics</span></code> function returns a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> in which each row corresponds to a group of participants in a study, according to one annotator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo.projects.participant_demographics</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_participant_demographics</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">subgroups</span> <span class="o">=</span> <span class="n">get_participant_demographics</span><span class="p">()</span>
+<span class="n">subgroups</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>project_name      participant_demographics
+annotator_name               Jerome_Dockes
+pmcid                              4029023
+group_name                         healthy
+subgroup_name                            _
+count                                   10
+age mean                             27.72
+age minimum                            NaN
+age maximum                            NaN
+age median                            None
+diagnosis                             None
+female count                           3.0
+male count                             7.0
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this dataframe, each row contains the information collected by one annotator about a subgroup of participants in a study.
+You can read more about the nature of the annotations in the <a class="reference internal" href="projects/participant_demographics.html"><span class="doc std std-doc">project page</span></a>.
+The participants are divided into groups (“patients” or “healthy”), then each group is divided into an arbitrary number of <em>subgroups</em> (usually there is only one, but there can be several, eg “adolescents” and “adults” within the “healthy” group), and finally each subgroup is divided into “females” and “males”.
+The summary dataframe provides information at the level of the subgroup: its name, the group it belongs to, the number of males and females in the subgroup.</p>
+<p>If several annotators have annotated a paper, the information each of them has annotated about each participant subgroup is stored in a separate row.
+We don’t want to end up counting participant groups several times so here we simply keep the output of the first annotator for each study.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pmcid&quot;</span><span class="p">,</span> <span class="s2">&quot;project_name&quot;</span><span class="p">,</span> <span class="s2">&quot;annotator_name&quot;</span><span class="p">]</span>
+
+<span class="n">kept_annotators</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+    <span class="n">subgroups</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">subset</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;pmcid&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="n">r</span> <span class="ow">in</span> <span class="n">kept_annotators</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">subset</span><span class="p">]</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">labelrepo</span></code> package also provides a way to load information about documents, labels and annotations in the repository in general.
+Here we use it to read some complementary information about each paper.
+We also add the PMC url to turn scatter plot points into links later.
+Finally, we turn the publication year into a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> to facilitate using it in plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">labelrepo.database</span> <span class="kn">import</span> <span class="n">get_database_connection</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">docs_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span>
+    <span class="s2">&quot;select pmcid, publication_year from document&quot;</span><span class="p">,</span> <span class="n">get_database_connection</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">docs_info</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;pmcid&quot;</span><span class="p">)</span>
+<span class="n">subgroups</span><span class="p">[</span><span class="s2">&quot;pmc_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">f</span><span class="s2">&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC</span><span class="si">{</span><span class="n">pmcid</span><span class="si">}</span><span class="s2">/&quot;</span>
+    <span class="k">for</span> <span class="n">pmcid</span> <span class="ow">in</span> <span class="n">subgroups</span><span class="p">[</span><span class="s2">&quot;pmcid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="p">]</span>
+<span class="n">subgroups</span><span class="p">[</span><span class="s2">&quot;publication_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">subgroups</span><span class="p">[</span><span class="s2">&quot;publication_year&quot;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by looking at the total number of participants in each study.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span>
+
+<span class="n">total_counts</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">subgroups</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;pmcid&quot;</span><span class="p">,</span> <span class="s2">&quot;pmc_url&quot;</span><span class="p">,</span> <span class="s2">&quot;publication_date&quot;</span><span class="p">])[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">altair</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">total_counts</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;publication_date:T&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">)),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pmcid&quot;</span><span class="p">],</span>
+    <span class="n">href</span><span class="o">=</span><span class="s2">&quot;pmc_url:N&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-d25600ca61cb42b98fadba48906d4f80"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-d25600ca61cb42b98fadba48906d4f80") {
+      outputDiv = document.getElementById("altair-viz-d25600ca61cb42b98fadba48906d4f80");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-957fd2b0849622d4abec4c9ffc918eb4"}, "mark": {"type": "point", "size": 60}, "encoding": {"href": {"field": "pmc_url", "type": "nominal"}, "tooltip": [{"field": "pmcid", "type": "quantitative"}], "x": {"field": "publication_date", "type": "temporal"}, "y": {"field": "count", "scale": {"type": "log"}, "type": "quantitative"}}, "selection": {"selector001": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-957fd2b0849622d4abec4c9ffc918eb4": [{"pmcid": 2648877, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2648877/", "publication_date": "2008-01-01T00:00:00", "count": 33}, {"pmcid": 2748718, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2748718/", "publication_date": "2009-01-01T00:00:00", "count": 30}, {"pmcid": 3183226, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3183226/", "publication_date": "2011-01-01T00:00:00", "count": 16}, {"pmcid": 3447931, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3447931/", "publication_date": "2012-01-01T00:00:00", "count": 40}, {"pmcid": 3492343, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3492343/", "publication_date": "2012-01-01T00:00:00", "count": 58}, {"pmcid": 3780305, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780305/", "publication_date": "2013-01-01T00:00:00", "count": 17}, {"pmcid": 3869649, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3869649/", "publication_date": "2013-01-01T00:00:00", "count": 19}, {"pmcid": 3984441, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3984441/", "publication_date": "2014-01-01T00:00:00", "count": 66}, {"pmcid": 3991323, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991323/", "publication_date": "2014-01-01T00:00:00", "count": 248}, {"pmcid": 4017227, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017227/", "publication_date": "2014-01-01T00:00:00", "count": 42}, {"pmcid": 4029023, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4029023/", "publication_date": "2014-01-01T00:00:00", "count": 10}, {"pmcid": 4115625, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4115625/", "publication_date": "2014-01-01T00:00:00", "count": 272}, {"pmcid": 4174863, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4174863/", "publication_date": "2014-01-01T00:00:00", "count": 203}, {"pmcid": 4274095, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4274095/", "publication_date": "2014-01-01T00:00:00", "count": 20}, {"pmcid": 4318429, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4318429/", "publication_date": "2015-01-01T00:00:00", "count": 18}, {"pmcid": 4330553, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4330553/", "publication_date": "2013-01-01T00:00:00", "count": 23}, {"pmcid": 4589842, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589842/", "publication_date": "2015-01-01T00:00:00", "count": 22}, {"pmcid": 5030332, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5030332/", "publication_date": "2016-01-01T00:00:00", "count": 21}, {"pmcid": 5324609, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5324609/", "publication_date": "2017-01-01T00:00:00", "count": 15}, {"pmcid": 5460048, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5460048/", "publication_date": "2017-01-01T00:00:00", "count": 75}, {"pmcid": 5548834, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5548834/", "publication_date": "2017-01-01T00:00:00", "count": 47}, {"pmcid": 5665859, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5665859/", "publication_date": "2017-01-01T00:00:00", "count": 87}, {"pmcid": 6197719, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6197719/", "publication_date": "2018-01-01T00:00:00", "count": 130}, {"pmcid": 6290711, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6290711/", "publication_date": "2017-01-01T00:00:00", "count": 52}, {"pmcid": 6344389, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6344389/", "publication_date": "2018-01-01T00:00:00", "count": 16}, {"pmcid": 6347794, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347794/", "publication_date": "2019-01-01T00:00:00", "count": 38}, {"pmcid": 6382839, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6382839/", "publication_date": "2019-01-01T00:00:00", "count": 34}, {"pmcid": 6667657, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6667657/", "publication_date": "2019-01-01T00:00:00", "count": 12}, {"pmcid": 6678781, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6678781/", "publication_date": "2019-01-01T00:00:00", "count": 61}, {"pmcid": 6820536, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6820536/", "publication_date": "2019-01-01T00:00:00", "count": 40}, {"pmcid": 7002496, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7002496/", "publication_date": "2020-01-01T00:00:00", "count": 20}, {"pmcid": 7005761, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005761/", "publication_date": "2012-01-01T00:00:00", "count": 26}, {"pmcid": 7395771, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7395771/", "publication_date": "2020-01-01T00:00:00", "count": 38}, {"pmcid": 7563756, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7563756/", "publication_date": "2020-01-01T00:00:00", "count": 29}, {"pmcid": 8154462, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8154462/", "publication_date": "2021-01-01T00:00:00", "count": 20}, {"pmcid": 8379626, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8379626/", "publication_date": "2021-01-01T00:00:00", "count": 67}, {"pmcid": 8544331, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8544331/", "publication_date": "2021-01-01T00:00:00", "count": 36}, {"pmcid": 8785614, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8785614/", "publication_date": "2021-01-01T00:00:00", "count": 83}, {"pmcid": 8883821, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8883821/", "publication_date": "2021-01-01T00:00:00", "count": 78}, {"pmcid": 9230060, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9230060/", "publication_date": "2022-01-01T00:00:00", "count": 40}, {"pmcid": 9407088, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9407088/", "publication_date": "2022-01-01T00:00:00", "count": 2226}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>As we do not have too many annotated papers yet, we can look at them individually and inspect the age means and ranges.</p>
+<p>We start by selecting groups for which the mean age is known.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;age mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The rest is not especially interesting, it is just configuring the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;subgroup_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;pmcid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cumcount</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">altair</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">altair</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;pmcid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;group_name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;subgroup_name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;female count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;male count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;diagnosis&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">point</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">altair</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;age mean&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;subgroup_idx&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;group_name&quot;</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">href</span><span class="o">=</span><span class="s2">&quot;pmc_url:N&quot;</span><span class="p">,</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="n">tooltip</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">rule</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">altair</span><span class="o">.</span><span class="n">Chart</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">mark_rule</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">altair</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;age minimum&quot;</span><span class="p">),</span>
+        <span class="n">altair</span><span class="o">.</span><span class="n">X2</span><span class="p">(</span><span class="s2">&quot;age maximum&quot;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;subgroup_idx&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;group_name&quot;</span><span class="p">,</span>
+        <span class="n">href</span><span class="o">=</span><span class="s2">&quot;pmc_url:N&quot;</span><span class="p">,</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="n">tooltip</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">altair</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">facet</span><span class="p">(</span>
+    <span class="n">row</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
+        <span class="s2">&quot;pmcid:N&quot;</span><span class="p">,</span>
+        <span class="n">header</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span><span class="n">labelAngle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelAlign</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">),</span>
+        <span class="n">sort</span><span class="o">=</span><span class="n">altair</span><span class="o">.</span><span class="n">Sort</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s2">&quot;age mean&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+    <span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">configure_facet</span><span class="p">(</span><span class="n">spacing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">configure_view</span><span class="p">(</span><span class="n">stroke</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-ace28541f9474540871b44e9318d119c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ace28541f9474540871b44e9318d119c") {
+      outputDiv = document.getElementById("altair-viz-ace28541f9474540871b44e9318d119c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}, "facet": {"spacing": 0}}, "data": {"name": "data-29e91e70c2d77dbabbfd61fbc012b7f7"}, "facet": {"row": {"field": "pmcid", "header": {"labelAlign": "left", "labelAngle": 0}, "sort": {"field": "age mean", "op": "mean"}, "type": "nominal"}}, "spec": {"layer": [{"mark": "point", "encoding": {"color": {"field": "group_name", "type": "nominal"}, "href": {"field": "pmc_url", "type": "nominal"}, "size": {"field": "count", "type": "quantitative"}, "tooltip": [{"field": "pmcid", "type": "quantitative"}, {"field": "group_name", "type": "nominal"}, {"field": "subgroup_name", "type": "nominal"}, {"field": "female count", "type": "quantitative"}, {"field": "male count", "type": "quantitative"}, {"field": "diagnosis", "type": "nominal"}], "x": {"field": "age mean", "type": "quantitative"}, "y": {"axis": {"grid": false, "labels": false, "ticks": false}, "field": "subgroup_idx", "scale": {"domain": [-1, 2]}, "title": null, "type": "quantitative"}}, "height": 35}, {"mark": "rule", "encoding": {"color": {"field": "group_name", "type": "nominal"}, "href": {"field": "pmc_url", "type": "nominal"}, "tooltip": [{"field": "pmcid", "type": "quantitative"}, {"field": "group_name", "type": "nominal"}, {"field": "subgroup_name", "type": "nominal"}, {"field": "female count", "type": "quantitative"}, {"field": "male count", "type": "quantitative"}, {"field": "diagnosis", "type": "nominal"}], "x": {"field": "age minimum", "type": "quantitative"}, "x2": {"field": "age maximum"}, "y": {"axis": {"grid": false, "labels": false, "ticks": false}, "field": "subgroup_idx", "scale": {"domain": [-1, 2]}, "title": null, "type": "quantitative"}}}]}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-29e91e70c2d77dbabbfd61fbc012b7f7": [{"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4029023, "group_name": "healthy", "subgroup_name": "_", "count": 10, "age mean": 27.72, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 3.0, "male count": 7.0, "publication_year": 2014.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4029023/", "publication_date": "2014-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 6290711, "group_name": "patients", "subgroup_name": "_", "count": 26, "age mean": 26.8, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": "Psychogenic erectile dysfunction", "female count": null, "male count": 26.0, "publication_year": 2017.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6290711/", "publication_date": "2017-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 6290711, "group_name": "healthy", "subgroup_name": "_", "count": 26, "age mean": 28.5, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": null, "male count": 26.0, "publication_year": 2017.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6290711/", "publication_date": "2017-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 5324609, "group_name": "healthy", "subgroup_name": "_", "count": 15, "age mean": 23.8, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 8.0, "male count": 7.0, "publication_year": 2017.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5324609/", "publication_date": "2017-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4115625, "group_name": "healthy", "subgroup_name": "_", "count": 272, "age mean": 24.454779411764704, "age minimum": 18.0, "age maximum": 68.0, "age median": null, "diagnosis": null, "female count": 149.0, "male count": 123.0, "publication_year": 2014.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4115625/", "publication_date": "2014-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 5460048, "group_name": "patients", "subgroup_name": "_", "count": 75, "age mean": 19.38, "age minimum": 18.0, "age maximum": 23.0, "age median": null, "diagnosis": "chronic dieters", "female count": 75.0, "male count": null, "publication_year": 2017.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5460048/", "publication_date": "2017-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 6344389, "group_name": "healthy", "subgroup_name": "_", "count": 16, "age mean": 22.5, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 8.0, "male count": 8.0, "publication_year": 2018.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6344389/", "publication_date": "2018-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 7005761, "group_name": "healthy", "subgroup_name": "_", "count": 26, "age mean": 11.4, "age minimum": 8.0, "age maximum": 16.0, "age median": null, "diagnosis": null, "female count": 9.0, "male count": 17.0, "publication_year": 2012.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005761/", "publication_date": "2012-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4330553, "group_name": "healthy", "subgroup_name": "_", "count": 23, "age mean": 22.0, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 5.0, "male count": 18.0, "publication_year": 2013.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4330553/", "publication_date": "2013-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 2648877, "group_name": "patients", "subgroup_name": "_", "count": 15, "age mean": 38.0, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": "Autism Spectrum Disorder", "female count": 3.0, "male count": 12.0, "publication_year": 2008.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2648877/", "publication_date": "2008-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 2648877, "group_name": "healthy", "subgroup_name": "_", "count": 18, "age mean": 32.0, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 5.0, "male count": 13.0, "publication_year": 2008.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2648877/", "publication_date": "2008-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 8379626, "group_name": "healthy", "subgroup_name": "_", "count": 67, "age mean": 15.6, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 31.0, "male count": 36.0, "publication_year": 2021.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8379626/", "publication_date": "2021-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 5548834, "group_name": "healthy", "subgroup_name": "_", "count": 47, "age mean": 19.62, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 47.0, "male count": null, "publication_year": 2017.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5548834/", "publication_date": "2017-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 3869649, "group_name": "healthy", "subgroup_name": "_", "count": 19, "age mean": 22.8, "age minimum": 19.0, "age maximum": 31.0, "age median": null, "diagnosis": null, "female count": 9.0, "male count": 10.0, "publication_year": 2013.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3869649/", "publication_date": "2013-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 6820536, "group_name": "patients", "subgroup_name": "_", "count": 20, "age mean": 46.4, "age minimum": 22.0, "age maximum": 70.0, "age median": null, "diagnosis": "fibromyalgia", "female count": 20.0, "male count": null, "publication_year": 2019.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6820536/", "publication_date": "2019-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 6820536, "group_name": "healthy", "subgroup_name": "_", "count": 20, "age mean": 42.1, "age minimum": 21.0, "age maximum": 70.0, "age median": null, "diagnosis": null, "female count": 20.0, "male count": null, "publication_year": 2019.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6820536/", "publication_date": "2019-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4274095, "group_name": "healthy", "subgroup_name": "_", "count": 20, "age mean": 5.8, "age minimum": 5.2, "age maximum": 6.8, "age median": null, "diagnosis": null, "female count": null, "male count": null, "publication_year": 2014.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4274095/", "publication_date": "2014-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 3492343, "group_name": "healthy", "subgroup_name": "_", "count": 58, "age mean": 24.02, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 32.0, "male count": 26.0, "publication_year": 2012.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3492343/", "publication_date": "2012-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 3780305, "group_name": "healthy", "subgroup_name": "_", "count": 17, "age mean": 7.4, "age minimum": 6.9, "age maximum": 7.8, "age median": null, "diagnosis": null, "female count": 9.0, "male count": 8.0, "publication_year": 2013.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780305/", "publication_date": "2013-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 8154462, "group_name": "patients", "subgroup_name": "_", "count": 11, "age mean": 56.21, "age minimum": 45.0, "age maximum": 68.0, "age median": null, "diagnosis": "stroke", "female count": null, "male count": 11.0, "publication_year": 2021.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8154462/", "publication_date": "2021-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 8154462, "group_name": "healthy", "subgroup_name": "_", "count": 9, "age mean": 53.7, "age minimum": 40.0, "age maximum": 67.0, "age median": null, "diagnosis": null, "female count": null, "male count": 9.0, "publication_year": 2021.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8154462/", "publication_date": "2021-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 3991323, "group_name": "healthy", "subgroup_name": "adolescents", "count": 220, "age mean": 14.61, "age minimum": 14.0, "age maximum": 15.0, "age median": null, "diagnosis": null, "female count": 105.0, "male count": 115.0, "publication_year": 2014.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991323/", "publication_date": "2014-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 3991323, "group_name": "healthy", "subgroup_name": "adults", "count": 28, "age mean": 25.24, "age minimum": 20.0, "age maximum": 39.0, "age median": null, "diagnosis": null, "female count": 11.0, "male count": 17.0, "publication_year": 2014.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991323/", "publication_date": "2014-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4589842, "group_name": "patients", "subgroup_name": "_", "count": 11, "age mean": 61.0, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": "Depression", "female count": 6.0, "male count": 5.0, "publication_year": 2015.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589842/", "publication_date": "2015-01-01T00:00:00", "subgroup_idx": 0}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 4589842, "group_name": "healthy", "subgroup_name": "_", "count": 11, "age mean": 56.0, "age minimum": null, "age maximum": null, "age median": null, "diagnosis": null, "female count": 6.0, "male count": 5.0, "publication_year": 2015.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589842/", "publication_date": "2015-01-01T00:00:00", "subgroup_idx": 1}, {"project_name": "participant_demographics", "annotator_name": "Jerome_Dockes", "pmcid": 7002496, "group_name": "healthy", "subgroup_name": "_", "count": 20, "age mean": 22.3, "age minimum": 19.0, "age maximum": 28.0, "age median": null, "diagnosis": null, "female count": 10.0, "male count": 10.0, "publication_year": 2020.0, "pmc_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7002496/", "publication_date": "2020-01-01T00:00:00", "subgroup_idx": 0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>In the plot above,</p>
+<ul class="simple">
+<li><p>The position of each circle represents the mean of the corresponding subgroup</p></li>
+<li><p>The bar represents the age range (when it is known)</p></li>
+<li><p>The size of the circle represents the number of participants in the subgroup.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="contributing_to_this_repository.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Contributing to this repository</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="projects/autism_mri.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">autism_mri</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

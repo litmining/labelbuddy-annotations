@@ -25,7 +25,7 @@ kernelspec:
 
 You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/participant_demographics/).
 
-Annotating information about participants (for now just the sample size) in articles that match the query `fMRI[Abstract]`.
+Annotating information about participants: count, sex, age, and diagnosis.
 
 The full pubget output can be found here: https://osf.io/kfmdp/
 
