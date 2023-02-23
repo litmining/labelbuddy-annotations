@@ -432,7 +432,7 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
     ), anno in all_annotations.groupby(
         ["project_name", "annotator_name", "doc_md5"]
     ):
-        pmcid = anno["pmcid"].iloc[0]
+        pmcid = anno["pmcid"].iloc[0].tolist()
         doc = {
             "project_name": project_name,
             "annotator_name": annotator_name,
@@ -445,8 +445,8 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
                     "position_in_labelbuddy_file": positions[
                         (project_name, annotator_name)
                     ][doc_md5]["position"],
-                    "labelbuddy_file": _get_labelbuddy_file(
-                        project_name, annotator_name
+                    "labelbuddy_file": str(
+                        _get_labelbuddy_file(project_name, annotator_name)
                     ),
                 }
             )
@@ -532,6 +532,34 @@ def _get_jinja_env() -> jinja2.Environment:
             encoding="UTF-8",
         )
     )
+
+
+def get_participant_demographics():
+    all_anno = select_participants_annotations()
+    all_docs = _get_document_summaries(all_anno)
+    all_rows = []
+    for doc in all_docs:
+        doc_info = {
+            k: doc[k] for k in ("project_name", "annotator_name", "pmcid")
+        }
+        for subgroup in doc["participants"]["subgroups"].values():
+            row = doc_info | {
+                k: subgroup.get(k)
+                for k in (
+                    "group_name",
+                    "subgroup_name",
+                    "count",
+                    "age mean",
+                    "age minimum",
+                    "age maximum",
+                    "age median",
+                    "diagnosis",
+                )
+            }
+            row["female count"] = subgroup.get("female", {}).get("count")
+            row["male count"] = subgroup.get("male", {}).get("count")
+            all_rows.append(row)
+    return pd.DataFrame(all_rows)
 
 
 def get_report_for_labelbuddy_file(

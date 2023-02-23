@@ -7,7 +7,7 @@ parts:
       - file: contributing_to_this_repository
   - caption: Analyses
     chapters:
-      - file: number_of_participants
+      - file: participant_demographics
   - caption: Projects
     chapters:
       - glob: projects/*

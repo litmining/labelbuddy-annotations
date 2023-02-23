@@ -1,8 +1,7 @@
-lark
-
 # https://issueantenna.com/repo/ipython/ipython/issues/13845
 ipython!=8.7.0
 
+altair
 jupyter-book
 jupytext
 matplotlib
