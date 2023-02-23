@@ -47,6 +47,10 @@
                         {{- doc.get("error_message", "Annotation error") -}}
                         </pre>
                     </p>
+                    {% elif not doc["participants"] %}
+                    <p>
+                        No participant information annotated in this document (yet!).
+                    </p>
                     {% else %}
                     <p>
                         <strong>{{ doc["participants"]["count"] }}</strong> participants.

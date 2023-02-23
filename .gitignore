@@ -1,5 +1,5 @@
 projects/sandbox
-projects/**/*_report_*.html
+projects/**/*_report*.html
 
 pubget_data
 
