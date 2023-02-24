@@ -67,7 +67,7 @@ The participant group structure and corresponding annotations.
 In {numref}`participants-tree-fig` we see the general way of annotating information about participants.
 We start by describing the most complex case but for most annotations the situation will be simpler.
 
-This video illustrates the annotation process described below.
+This video (without sound) illustrates the annotation process that is described below.
 
 
 ```{code-cell}
