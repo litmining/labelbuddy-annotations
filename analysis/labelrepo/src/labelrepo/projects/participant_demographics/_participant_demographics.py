@@ -11,18 +11,15 @@ from labelrepo import database, repo, displays
 
 _SEX_NAMES = ("female", "male")
 _GROUP_NAMES = ("healthy", "patients")
-_DEMOGRAPHICS_LABELS = (
-    _SEX_NAMES
-    + _GROUP_NAMES
-    + (
-        "count",
-        "age mean",
-        "age minimum",
-        "age maximum",
-        "age median",
-        "diagnosis",
-    )
+_PAYLOAD_NAMES = (
+    "count",
+    "age mean",
+    "age minimum",
+    "age maximum",
+    "age median",
+    "diagnosis",
 )
+_DEMOGRAPHICS_LABELS = _SEX_NAMES + _GROUP_NAMES + _PAYLOAD_NAMES
 
 
 class AnnotationError(Exception):
@@ -148,18 +145,24 @@ def _token_from_annotations(
 
 
 def _build_group_tree(tokens: pd.DataFrame) -> Dict:
-    root: Dict = {"children": {}, "name": "all participants"}
-    if (
-        "patients" in tokens["group_name"].values
-        or "diagnosis" in tokens["label_name"].values
-    ):
-        root["children"]["patients"] = {"name": "patients"}
-        if "healthy" in tokens["group_name"].values:
-            root["children"]["healthy"] = {"name": "healthy"}
+    root: Dict = {"children": {}}
+    # if any group is mentioned explicitly, both groups are present if we have
+    # a total count, otherwise only mentioned groups are present
+    if tokens["group_name"].notnull().any():
+        if (
+            tokens["group_name"].isnull() & (tokens["label_name"] == "count")
+        ).any():
+            used_groups = _GROUP_NAMES
         else:
-            tokens["group_name"] = "patients"
+            used_groups = tokens["group_name"].dropna().unique()
+        root["children"] = {g_name: {} for g_name in used_groups}
+    # if no group is mentioned explicitly, we assume all patients if there is a
+    # diagnosis and all healthy otherwise.
+    elif "diagnosis" in tokens["label_name"].values:
+        root["children"] = {"patients": {}}
+        tokens["group_name"] = "patients"
     else:
-        root["children"]["healthy"] = {"name": "healthy"}
+        root["children"] = {"healthy": {}}
         tokens["group_name"] = "healthy"
     for group_name, group in root["children"].items():
         group_idx = tokens[tokens["group_name"] == group_name].index
@@ -171,10 +174,9 @@ def _build_group_tree(tokens: pd.DataFrame) -> Dict:
             subgroup_names = {"_"}
         group["children"] = {
             sg_name: {
-                "name": sg_name,
                 "children": {
-                    "female": {"name": "female"},
-                    "male": {"name": "male"},
+                    "female": {},
+                    "male": {},
                 },
             }
             for sg_name in subgroup_names
@@ -214,8 +216,8 @@ def _add_info(tokens: pd.DataFrame, root: Dict) -> None:
         .sort_index()
     )
     _add_subtree_info(root, (None, None, None), 0, tokens)
-    _infer_info_up(root)
-    _infer_info_down(root)
+    _infer_info_up("all participants", root)
+    _infer_info_down("all participants", root)
 
 
 def _format_conversion_error(
@@ -293,7 +295,7 @@ def _set_single_sex(root: Dict, sex: str) -> None:
 
 
 def _check_count_conflict(
-    root: Dict, children: Dict, children_sum: int
+    root_name: str, root: Dict, children_sum: int
 ) -> None:
     if "count" not in root:
         return
@@ -301,23 +303,23 @@ def _check_count_conflict(
         return
     msg = (
         "The group count is not the sum of subgroup counts:\n\n"
-        f"  '{root['name']}': {root['count']}\n\n  subgroups:\n\n"
+        f"  '{root_name}': {root['count']}\n\n  subgroups:\n\n"
     ) + "\n".join(
-        f"    '{root['name']}', '{n}': {c.get('count', '??')}"
-        for (n, c) in children.items()
+        f"    '{root_name}', '{n}': {c.get('count', '??')}"
+        for (n, c) in root["children"].items()
     )
     raise AnnotationError(msg)
 
 
-def _infer_info_up(root: Dict) -> None:
+def _infer_info_up(root_name: str, root: Dict) -> None:
     if "children" not in root:
         return
+    for child in root["children"].items():
+        _infer_info_up(*child)
     children = root["children"].values()
-    for child in children:
-        _infer_info_up(child)
     if all("count" in child for child in children):
         children_sum = sum(child["count"] for child in children)
-        _check_count_conflict(root, root["children"], children_sum)
+        _check_count_conflict(root_name, root, children_sum)
         root["count"] = children_sum
         if (
             all("age mean" in child for child in children)
@@ -339,7 +341,7 @@ def _infer_info_up(root: Dict) -> None:
         root["age maximum"] = max(child["age maximum"] for child in children)
 
 
-def _infer_info_down(root: Dict) -> None:
+def _infer_info_down(root_name: str, root: Dict) -> None:
     if "children" not in root:
         return
     missing_count = [
@@ -350,7 +352,7 @@ def _infer_info_down(root: Dict) -> None:
             child.get("count", 0) for child in root["children"].values()
         )
         if rest > root["count"]:
-            _check_count_conflict(root, root["children"], rest)
+            _check_count_conflict(root_name, root, rest)
         missing_count[0]["count"] = root["count"] - rest
     for child_name, child in root["children"].items():
         for label_name in ("age minimum", "age maximum"):
@@ -362,8 +364,20 @@ def _infer_info_down(root: Dict) -> None:
             and child_name != "healthy"
         ):
             child["diagnosis"] = root["diagnosis"]
+    for child in root["children"].items():
+        _infer_info_down(*child)
+
+
+def _prune_empty_groups(root: Dict) -> None:
+    if "children" not in root:
+        return
+    root["children"] = {
+        c_name: c
+        for c_name, c in root["children"].items()
+        if c.get("count", -1) != 0
+    }
     for child in root["children"].values():
-        _infer_info_down(child)
+        _prune_empty_groups(child)
 
 
 def _summarize(root: Dict) -> Dict:
@@ -396,6 +410,7 @@ def _get_participants_info(annotations: pd.DataFrame) -> Dict:
     tokens = _get_tokens(annotations)
     root = _build_group_tree(tokens)
     _add_info(tokens, root)
+    _prune_empty_groups(root)
     summary = _summarize(root)
     return summary
 
@@ -458,6 +473,7 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
             ):
                 doc["has_patients"] = True
         except Exception as error:
+            doc["participants"] = None
             doc["extraction_failed"] = True
             doc["error_message"] = str(error)
         all_docs.append(doc)
@@ -545,16 +561,7 @@ def get_participant_demographics():
         for subgroup in doc["participants"]["subgroups"].values():
             row = doc_info | {
                 k: subgroup.get(k)
-                for k in (
-                    "group_name",
-                    "subgroup_name",
-                    "count",
-                    "age mean",
-                    "age minimum",
-                    "age maximum",
-                    "age median",
-                    "diagnosis",
-                )
+                for k in ("group_name", "subgroup_name") + _PAYLOAD_NAMES
             }
             row["female count"] = subgroup.get("female", {}).get("count")
             row["male count"] = subgroup.get("male", {}).get("count")
