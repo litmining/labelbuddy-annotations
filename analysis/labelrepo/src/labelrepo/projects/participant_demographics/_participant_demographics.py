@@ -150,7 +150,9 @@ def _build_group_tree(tokens: pd.DataFrame) -> Dict:
     # a total count, otherwise only mentioned groups are present
     if tokens["group_name"].notnull().any():
         if (
-            tokens["group_name"].isnull() & (tokens["label_name"] == "count")
+            tokens["group_name"].isnull()
+            & tokens["sex"].isnull()
+            & (tokens["label_name"] == "count")
         ).any():
             used_groups = _GROUP_NAMES
         else:
@@ -636,7 +638,9 @@ def labelbuddy_file_report_command(args: Optional[List[str]] = None) -> None:
     print(f"Report saved in {out_file}")
 
 
-def get_annotation_stacks_display(annotations):
+def get_annotation_stacks_display(
+    annotations: pd.DataFrame, standalone=False
+) -> str:
     stacks = []
     for _, anno in annotations.groupby(
         ["doc_md5", "project_name", "annotator_name", "start_char", "end_char"]
@@ -654,5 +658,7 @@ def get_annotation_stacks_display(annotations):
         stacks.append(anno_stack)
     jinja_env = _get_jinja_env()
     template = jinja_env.get_template("annotation_stack.html")
-    html = template.render({"standalone": True, "annotation_stacks": stacks})
+    html = template.render(
+        {"standalone": standalone, "annotation_stacks": stacks}
+    )
     return html
