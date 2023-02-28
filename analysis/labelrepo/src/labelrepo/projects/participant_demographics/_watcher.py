@@ -27,10 +27,6 @@ class _Watcher:
         ).resolve()
         self.last_wake_up_time: Optional[float] = None
         self.delay = 0.25
-        self.connection = sqlite3.connect(
-            f"file:{self.labelbuddy_file}?mode=ro"
-        )
-        self.connection.row_factory = sqlite3.Row
         self.project_name = self.labelbuddy_file.parents[1].name
         self.annotator_name = self.labelbuddy_file.stem
         jinja_env = _participant_demographics._get_jinja_env()
@@ -40,8 +36,14 @@ class _Watcher:
         self.template = jinja_env.get_template("report.html")
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
+        self.connection = None
 
     def __enter__(self) -> _Watcher:
+        self.labelbuddy_file.stat()
+        self.connection = sqlite3.connect(
+            f"file:{self.labelbuddy_file}?mode=ro"
+        )
+        self.connection.row_factory = sqlite3.Row
         return self
 
     def __exit__(self, exc_type, exc_val, tb):
@@ -57,6 +59,9 @@ class _Watcher:
             pass
 
     async def start(self) -> None:
+        assert (
+            self.connection is not None
+        ), f"Use {self.__class__.__name__} as a context manager."
         self.target_file.write_text(self.page)
         print(
             "\nTo see the live participant demographics report, "
@@ -158,9 +163,6 @@ async def watch_participants(
         async with websockets.serve(watcher.register, "localhost", port):
             with watcher:
                 await watcher.start()
-    except OSError:
-        print(
-            f"\nThe address 'localhost:{port}/' is already in use.\n"
-            "Please specify a different port."
-        )
+    except OSError as error:
+        print(f"\nServing the live report failed due to:\n\n    {error}\n")
         sys.exit(1)

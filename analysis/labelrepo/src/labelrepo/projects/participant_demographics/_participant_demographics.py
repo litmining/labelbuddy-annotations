@@ -689,8 +689,12 @@ def get_report(
         annotator_name=annotator_name, project_name=project_name, pmcid=pmcid
     )
     all_docs = _get_document_summaries(all_anno)
-    if project_name is not None and annotator_name is not None:
-        key = lambda d: d["position_in_labelbuddy_file"]
+    if (
+        project_name is not None
+        and annotator_name is not None
+        and pmcid is None
+    ):
+        key = lambda d: (d.get("position_in_labelbuddy_file", -1), d["pmcid"])
     else:
         key = lambda d: d["pmcid"]
     all_docs = sorted(all_docs, key=key)
