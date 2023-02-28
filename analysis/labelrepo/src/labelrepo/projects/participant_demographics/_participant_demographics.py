@@ -177,9 +177,21 @@ def _check_sex_on_non_leaf_nodes(tokens: pd.DataFrame) -> None:
         tokens["group_name"].isnull() & tokens["sex"].notnull()
     ]
     if bad_tokens.shape[0]:
+        drop_group_msg = ""
+        groups = tokens["group_name"].dropna().unique()
+        if len(groups) == 1:
+            drop_group_msg = (
+                "\nIf there is only one group of participants,\n"
+                f"you can solve this by removing the '{groups[0]}' label.\n"
+                "Otherwise please add group labels "
+                "to the 'female' and 'male' counts.\n"
+            )
         raise AnnotationError(
-            "Female and male counts should be attached to subgroups.\n"
-            "'patients' or 'healthy' label is missing:",
+            "When explicit group labels are used,\n"
+            "'female' and 'male' counts should be "
+            "attached to specific groups.\n"
+            f"{drop_group_msg}"
+            "\n'patients' or 'healthy' label is missing:",
             bad_tokens.to_dict(orient="records"),
         )
 

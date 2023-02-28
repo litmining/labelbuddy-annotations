@@ -26,8 +26,7 @@ class _Watcher:
             f"{self.labelbuddy_file.stem}_participants_live_report_{port}.html"
         ).resolve()
         self.last_wake_up_time: Optional[float] = None
-        self.last_update_time: Optional[float] = None
-        self.period = 0.5
+        self.delay = 0.25
         self.connection = sqlite3.connect(
             f"file:{self.labelbuddy_file}?mode=ro"
         )
@@ -73,18 +72,13 @@ class _Watcher:
                 try:
                     self._update_content()
                 except Exception:
-                    raise
                     self.content = """<div>
                     There was an error while generating the report
                     </div>"""
-                self.last_update_time = time.time()
                 websockets.broadcast(self.socket_connections, self.content)
-            to_wait = self.period - (time.time() - self.last_wake_up_time)
-            if to_wait > 0:
-                await asyncio.sleep(to_wait)
+            await asyncio.sleep(self.delay)
 
     def _update_content(self) -> None:
-        start = time.time()
         doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
