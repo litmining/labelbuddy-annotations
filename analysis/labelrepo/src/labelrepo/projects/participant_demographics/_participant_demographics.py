@@ -679,74 +679,57 @@ def _get_template_data(
     return {"label_colors": label_colors}
 
 
-def get_report_for_labelbuddy_file(
-    project_name: str, annotator_name: str, standalone: bool = False
+def get_report(
+    annotator_name: Optional[str] = None,
+    project_name: Optional[str] = None,
+    pmcid: Optional[int] = None,
+    standalone: bool = False,
 ) -> str:
     all_anno = select_participants_annotations(
-        project_name=project_name, annotator_name=annotator_name
+        annotator_name=annotator_name, project_name=project_name, pmcid=pmcid
     )
     all_docs = _get_document_summaries(all_anno)
-    all_docs = sorted(all_docs, key=lambda d: d["position_in_labelbuddy_file"])
-    jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("labelbuddy_file_report.html")
-    return template.render(
-        {
-            "documents": all_docs,
-            "project_name": project_name,
-            "annotator_name": annotator_name,
-            "standalone": standalone,
-        }
-        | _get_template_data(
-            _get_labelbuddy_file(project_name, annotator_name)
-        )
-    )
-
-
-def get_report_for_repo(
-    standalone: bool = False, remove_failed_docs: bool = False
-) -> str:
-    all_anno = select_participants_annotations()
-    all_docs = _get_document_summaries(all_anno)
-    if remove_failed_docs:
-        all_docs = [
-            doc for doc in all_docs if not doc.get("extraction_failed")
-        ]
-    all_docs = sorted(all_docs, key=lambda d: d["pmcid"])
-    jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("repository_report.html")
-    return template.render(
-        {
-            "documents": all_docs,
-            "standalone": standalone,
-            "no_doc_positions": True,
-        }
-        | _get_template_data()
-    )
-
-
-def labelbuddy_file_report_command(args: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("labelbuddy_file", type=str, nargs="?", default=None)
-    parsed_args = parser.parse_args(args)
-    if parsed_args.labelbuddy_file is None:
-        labelbuddy_file = (
-            repo.repo_root()
-            / "projects"
-            / "participant_demographics"
-            / "annotations"
-            / f"{repo.annotator_name()}.labelbuddy"
-        )
+    if project_name is not None and annotator_name is not None:
+        key = lambda d: d["position_in_labelbuddy_file"]
     else:
-        labelbuddy_file = pathlib.Path(parsed_args.labelbuddy_file)
-    project_name = labelbuddy_file.parents[1].name
-    annotator_name = labelbuddy_file.stem
-    html = get_report_for_labelbuddy_file(
-        project_name, annotator_name, standalone=True
+        key = lambda d: d["pmcid"]
+    all_docs = sorted(all_docs, key=key)
+    jinja_env = _get_jinja_env()
+    template = jinja_env.get_template("report.html")
+    info = {
+        "documents": all_docs,
+        "standalone": standalone,
+        "no_doc_positions": True,
+    } | _get_template_data()
+    if annotator_name is not None:
+        info["annotator_name"] = annotator_name
+    if project_name is not None:
+        info["project_name"] = project_name
+    return template.render(info)
+
+
+def report_command(args: Optional[List[str]] = None) -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--project_name", type=str, default=None)
+    parser.add_argument("-a", "--annotator_name", type=str, default=None)
+    parsed_args = parser.parse_args(args)
+    if parsed_args.annotator_name is None:
+        annotator_name = repo.annotator_name()
+    else:
+        annotator_name = parsed_args.annotator_name
+    project_name = parsed_args.project_name
+    html = get_report(
+        annotator_name=annotator_name,
+        project_name=project_name,
+        standalone=True,
     )
-    out_file = labelbuddy_file.with_name(
-        f"{annotator_name}_participants_report.html"
+    out_dir = repo.repo_root() / "analysis" / "data" / "reports"
+    out_dir.mkdir(exist_ok=True, parents=True)
+    proj_repr = "" if project_name is None else f"_{project_name}"
+    out_file = (
+        out_dir / f"participants_report_{annotator_name}{proj_repr}.html"
     )
-    pathlib.Path(out_file).write_text(html)
+    out_file.write_text(html)
     print(f"Report saved in {out_file}")
 
 
