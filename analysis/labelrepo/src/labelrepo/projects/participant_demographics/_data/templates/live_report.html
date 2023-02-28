@@ -10,8 +10,17 @@
          const websocket = new WebSocket("ws://localhost:{{ port }}/");
 
          websocket.onmessage = ({data}) => {
-           document.getElementById("live-report-content")
-                   .innerHTML = data;
+             let activeElems = document.querySelectorAll(
+                 "*[data-annotation-stack-is-shown='true']");
+             document.getElementById("live-report-content")
+                     .innerHTML = data;
+             if (! activeElems.length){
+                 return;
+             }
+             let reactivate = document.getElementById(activeElems[0].id);
+             if (reactivate !== null){
+                 showBuddy(reactivate);
+             }
          };
 
          websocket.onclose = (event) => {
@@ -22,6 +31,9 @@
                      + "at <code>localhost:{{ port }}</code>. </p>");
          };
      });
+    </script>
+    <script>
+     {% include "hide_show_annotations.js"%}
     </script>
 </head>
 
