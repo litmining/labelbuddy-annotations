@@ -1,0 +1,20 @@
+{% if standalone %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annotations</title>
+        <style>
+         {% include "participants.css" %}
+        </style>
+    </head>
+    <body>
+{% endif %}
+<div class="labelrepo-flow labelrepo-wrapper">
+    {% for annotation_stack in annotation_stacks %}
+    {% include "annotation_stack.html" %}
+    {% endfor %}
+</div>
+{% if standalone %}
+    </body>
+</html>
+{% endif %}

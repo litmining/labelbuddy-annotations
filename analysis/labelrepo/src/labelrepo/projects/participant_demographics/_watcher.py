@@ -67,18 +67,13 @@ class _Watcher:
         while True:
             previous_wake_up_time = self.last_wake_up_time
             self.last_wake_up_time = time.time()
-            if (
-                previous_wake_up_time is None
-                or (
-                    self.labelbuddy_file.stat().st_mtime
-                    > previous_wake_up_time
-                )
-                or self.last_update_time is None
-                or (time.time() - self.last_update_time > 5)
+            if previous_wake_up_time is None or (
+                self.labelbuddy_file.stat().st_mtime > previous_wake_up_time
             ):
                 try:
                     self._update_content()
                 except Exception:
+                    raise
                     self.content = """<div>
                     There was an error while generating the report
                     </div>"""
@@ -89,6 +84,7 @@ class _Watcher:
                 await asyncio.sleep(to_wait)
 
     def _update_content(self) -> None:
+        start = time.time()
         doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
@@ -104,15 +100,22 @@ class _Watcher:
             map("'{}'".format, _participant_demographics._DEMOGRAPHICS_LABELS)
         )
         annotations = self.connection.execute(
-            f"""
-        with doc as (select content from document where id = :doc)
+            f"""with annot as
+        (select document.content,
+        annotation.*, max(0, start_char - 200) as context_start_char,
+        min(length(content), end_char + 200) as context_end_char
+        from annotation, document
+        where annotation.doc_id = :doc and document.id = :doc)
         select label.name as label_name, label.color as label_color,
         start_char, end_char, extra_data,
+        context_start_char, context_end_char,
+        length(content) as doc_length,
         substring(content, start_char + 1, end_char - start_char)
-        as selected_text
-        from annotation, doc
-        inner join label on annotation.label_id = label.id
-        where doc_id = :doc
+        as selected_text,
+        substring(content, context_start_char + 1,
+        context_end_char - context_start_char) as context
+        from annot
+        inner join label on annot.label_id = label.id
         and label_name in ({demo_labels})
         """,
             {"doc": doc_result["id"]},
@@ -131,13 +134,17 @@ class _Watcher:
             summaries = _participant_demographics._get_document_summaries(
                 anno_df
             )
+            summaries[0]["doc_uid"] = doc_result["id"]
         self.content = self.template.render(
             {
                 "documents": summaries,
                 "standalone": False,
                 "no_doc_positions": True,
-                "live_report": True,
+                "noscript": True,
             }
+            | _participant_demographics._get_template_data(
+                self.labelbuddy_file
+            )
         )
 
     async def register(self, socket):
