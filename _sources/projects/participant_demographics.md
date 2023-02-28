@@ -41,9 +41,13 @@ from labelrepo import displays
 from labelrepo.projects import participant_demographics
 
 def show_pmcid(pmcid):
-  annotations = participant_demographics.select_participants_annotations("Jerome_Dockes", "participant_demographics", pmcid)
-  html = participant_demographics.get_annotation_stacks_display(annotations, standalone=False)
-  return displays.HTMLDisplay(html)
+    html = participant_demographics.get_report(
+        project_name="participant_demographics",
+        annotator_name="Jerome_Dockes",
+        pmcid=pmcid,
+        standalone=False,
+    )
+    return displays.HTMLDisplay(html)
 ```
 
 Annotating demographic information about the participants is more complex than other projects in this repository, because studies typically involve several groups of participants, with diverse structures, and there is some variation in how the relevant information is reported.
@@ -137,17 +141,9 @@ show_pmcid(3447931)
 
 ## Participant demographics summaries
 
-The repository contains utilities to extract summaries about the participant groups from an article's annotations.
+The repository contains utilities to extract summaries about the participant groups from an article's annotations and display them as shown in this page.
 
-- `scripts/participants_report.py` creates a report for all the articles in a `.labelbuddy` file, similar to the list shown below.
+- `scripts/participants_report.py` creates a report for all the articles exported from a given annotator and project.
 - `scripts/watch_participants.py` serves a live summary of the participant groups in the document we are currently annotating in **labelbuddy**.
 
-Below we show the information about participants that has been extracted from all the annotated documents (all projects and annotators).
-
-```{code-cell}
-:tags: [remove-input]
-
-html = participant_demographics.get_report_for_repo(remove_failed_docs=True)
-displays.HTMLDisplay(html)
-```
-
+You can also see some analyses of the currently existing annotations in [this page](../participant_demographics.py).

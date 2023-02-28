@@ -31,6 +31,7 @@
 .participants-report .report-header {
     text-align: center;
     font-size: large;
+    padding-block-end: 1rem;
 }
 
 .participants-report .labelrepo-flow>*+* {
