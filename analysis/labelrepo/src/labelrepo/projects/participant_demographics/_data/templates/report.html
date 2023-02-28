@@ -35,9 +35,19 @@ style="
         <main class="participants-report">
             <div class="labelrepo-flow labelrepo-wrapper" {{ label_color_style() }}>
             <header class="report-header">
-                {% block header %}
                 <h1>Participant demographics</h1>
-                {% endblock %}
+                <p>
+                    Information collected from
+                    <strong>{{ documents | length }}</strong> documents
+                    annotated
+                    {% if annotator_name %}
+                    by <strong><code>{{ annotator_name }}</code></strong>
+                    {% endif -%}
+                    {% if project_name %}
+                    in <strong><code>{{ project_name }}</code></strong>
+                    {% endif -%}
+                    .
+                </p>
             </header>
 {% else %}
             <div class="participants-report">

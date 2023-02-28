@@ -1,9 +1,8 @@
 from labelrepo.projects.participant_demographics._participant_demographics import (
     AnnotationError,
-    get_report_for_labelbuddy_file,
-    get_report_for_repo,
+    get_report,
     get_annotation_stacks_display,
-    labelbuddy_file_report_command,
+    report_command,
     select_participants_annotations,
     get_participant_demographics,
 )
@@ -13,11 +12,10 @@ from labelrepo.projects.participant_demographics._watcher import (
 
 __all__ = [
     "AnnotationError",
-    "get_report_for_labelbuddy_file",
-    "get_report_for_repo",
+    "get_report",
     "get_annotation_stacks_display",
     "get_participant_demographics",
-    "labelbuddy_file_report_command",
+    "report_command",
     "select_participants_annotations",
     "watch_participants",
 ]
