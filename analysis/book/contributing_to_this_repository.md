@@ -287,6 +287,7 @@ Another way to contribute is to add pages to this documentation, to share analys
 The contents are in `analysis/book` below the root of the repository.
 
 ```bash
+pip install -e analysis/labelrepo[all]
 cd analysis/book
 pip install -r requirements.txt
 ```
