@@ -408,7 +408,7 @@ We don’t want to end up counting participant groups several times so here we s
 
 <span class="n">kept_annotators</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
     <span class="n">subgroups</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">subset</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;pmcid&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;pmcid&quot;</span><span class="p">,))</span>
     <span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
 <span class="p">)</span>
 <span class="n">subgroups</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
@@ -468,13 +468,13 @@ Finally, we turn the publication year into a <code class="docutils literal notra
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-73b17e10cdcc4a15a614e4f44045b66b"></div>
+<div id="altair-viz-4c295046ff214ee99830ca23a837cdf0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-73b17e10cdcc4a15a614e4f44045b66b") {
-      outputDiv = document.getElementById("altair-viz-73b17e10cdcc4a15a614e4f44045b66b");
+    if (outputDiv.id !== "altair-viz-4c295046ff214ee99830ca23a837cdf0") {
+      outputDiv = document.getElementById("altair-viz-4c295046ff214ee99830ca23a837cdf0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -527,7 +527,7 @@ Finally, we turn the publication year into a <code class="docutils literal notra
 <p>We start by selecting groups for which the mean age is known.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;age mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">subgroups</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;age mean&quot;</span><span class="p">,))</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -582,13 +582,13 @@ Finally, we turn the publication year into a <code class="docutils literal notra
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b69fbeb034044f1dab54bc80f32474c7"></div>
+<div id="altair-viz-7879c416c3fc4f529f886ab4d97fa5f9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b69fbeb034044f1dab54bc80f32474c7") {
-      outputDiv = document.getElementById("altair-viz-b69fbeb034044f1dab54bc80f32474c7");
+    if (outputDiv.id !== "altair-viz-7879c416c3fc4f529f886ab4d97fa5f9") {
+      outputDiv = document.getElementById("altair-viz-7879c416c3fc4f529f886ab4d97fa5f9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
