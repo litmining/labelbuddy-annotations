@@ -104,7 +104,8 @@ displays.AnnotationsDisplay(annotations)
 Here is all the information in that table for the first annotation:
 
 ```{code-cell}
-(
+try:
+    display = (
     annotations.iloc[:1]
     .stack()
     .reset_index()
@@ -112,6 +113,11 @@ Here is all the information in that table for the first annotation:
     .hide(axis="index")
     .hide(axis="columns")
 )
+except AttributeError:
+    # old pandas version
+    display = annotations.iloc[0]
+
+display     
 ```
 
 ## Using the JSON and JSONLines files directly

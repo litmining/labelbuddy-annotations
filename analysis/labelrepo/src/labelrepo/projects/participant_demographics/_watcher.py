@@ -131,25 +131,24 @@ class _Watcher:
             "project_name": self.project_name,
             "annotator_name": self.annotator_name,
         }
-        anno_df = pd.DataFrame(doc_info | dict(anno) for anno in annotations)
+        anno_df = pd.DataFrame({**doc_info, **anno} for anno in annotations)
         if not anno_df.shape[0]:
-            summaries = [doc_info | {"participants": None}]
+            summaries = [dict(doc_info, participants=None)]
         else:
             summaries = _participant_demographics._get_document_summaries(
                 anno_df
             )
             summaries[0]["doc_uid"] = doc_result["id"]
-        self.content = self.template.render(
-            {
-                "documents": summaries,
-                "standalone": False,
-                "no_doc_positions": True,
-                "noscript": True,
-            }
-            | _participant_demographics._get_template_data(
-                self.labelbuddy_file
-            )
+        template_params = {
+            "documents": summaries,
+            "standalone": False,
+            "no_doc_positions": True,
+            "noscript": True,
+        }
+        template_params.update(
+            _participant_demographics._get_template_data(self.labelbuddy_file)
         )
+        self.content = self.template.render(template_params)
 
     async def register(self, socket):
         self.socket_connections.add(socket)
