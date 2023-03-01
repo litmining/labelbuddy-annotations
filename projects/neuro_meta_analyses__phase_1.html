@@ -4,57 +4,49 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>neuro_meta_analyses.phase_1 &#8212; Biomedical literature annotations</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="../_static/global.css" />
     <link rel="stylesheet" type="text/css" href="../_static/label-set.css" />
     <link rel="stylesheet" type="text/css" href="../_static/annotation-set.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -62,366 +54,56 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/neuro_meta_analyses__phase_1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="neuro_meta_analyses.phase_2" href="neuro_meta_analyses__phase_2.html" />
     <link rel="prev" title="dynamic_functional_connectivity" href="dynamic_functional_connectivity.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
-  <label class="overlay overlay-primary" for="__primary"></label>
-
-  
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div>
-
-  
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
-  </label>
-  <div id="navbar-start">
     
+    <div class="container-fluid" id="banner"></div>
+
     
-  
 
-
-<a class="navbar-brand logo" href="../overview.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-    <p class="title logo__title">Biomedical literature annotations</p>
-  
-</a>
-    
-  </div>
-
-  
-  <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../using_this_repository.html">
-                        Using this repository
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
-                        Contributing to this repository
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../participant_demographics.html">
-                        Participant demographics
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="autism_mri.html">
-                        autism_mri
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="cluster_inference.html">
-                        cluster_inference
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="dynamic_functional_connectivity.html">
-                        dynamic_functional_connectivity
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        neuro_meta_analyses.phase_1
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_2.html">
-                        neuro_meta_analyses.phase_2
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
-                        neurobridge_fmri
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="participant_demographics.html">
-                        participant_demographics
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-        <div class="navbar-end-item navbar-persistent--container">
+    <div class="container-xl">
+      <div class="row">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-        </div>
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
+      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
       
-    </div>
-  </div>
-
-
-  
-  
-    <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-    </div>
-  
-
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-  </label>
-  
-
-</div>
-  </nav>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-      <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../using_this_repository.html">
-                        Using this repository
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
-                        Contributing to this repository
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../participant_demographics.html">
-                        Participant demographics
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="autism_mri.html">
-                        autism_mri
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="cluster_inference.html">
-                        cluster_inference
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="dynamic_functional_connectivity.html">
-                        dynamic_functional_connectivity
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        neuro_meta_analyses.phase_1
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_2.html">
-                        neuro_meta_analyses.phase_2
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
-                        neurobridge_fmri
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="participant_demographics.html">
-                        participant_demographics
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
-      
-      </div>
-    
-
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-    
-  </div>
-
-  
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-  
-
-
-<a class="navbar-brand logo" href="../overview.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-    <p class="title logo__title">Biomedical literature annotations</p>
-  
-</a>
-    </div>
-    <div class="sidebar-start-items__item">
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -430,175 +112,267 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../using_this_repository.html">Using this repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing_to_this_repository.html">Contributing to this repository</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_this_repository.html">
+   Using this repository
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing_to_this_repository.html">
+   Contributing to this repository
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../participant_demographics.html">Participant demographics</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../participant_demographics.html">
+   Participant demographics
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="autism_mri.html">autism_mri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cluster_inference.html">cluster_inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">neuro_meta_analyses.phase_1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_2.html">neuro_meta_analyses.phase_2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurobridge_fmri.html">neurobridge_fmri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">participant_demographics</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="autism_mri.html">
+   autism_mri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cluster_inference.html">
+   cluster_inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_functional_connectivity.html">
+   dynamic_functional_connectivity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   neuro_meta_analyses.phase_1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="neuro_meta_analyses__phase_2.html">
+   neuro_meta_analyses.phase_2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="neurobridge_fmri.html">
+   neurobridge_fmri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="participant_demographics.html">
+   participant_demographics
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav>
-    </div>
-  </div>
-  
-
-  
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
-  </div>
-
-  
-  <div id="rtd-footer-container"></div>
-
-      </div>
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-        <div class="bd-content">
-          <div class="bd-article-container">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <div class="bd-header-article">
-                
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
-            <span class="fa-solid fa-bars"></span>
-        </label>
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
     <div class="header-article__right">
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-  </ul>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/projects/neuro_meta_analyses__phase_1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
 </div>
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm"
+  class="headerbtn"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
-<a href="https://github.com/neurodatascience/labelbuddy-annotations" target="_blank"
-   class="btn btn-sm"
+<a href="https://github.com/neurodatascience/labelbuddy-annotations"
+   class="headerbtn"
    data-toggle="tooltip"
 data-placement="bottom"
 title="Source repository"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
   </button>
-  <ul class="dropdown-menu">
-      <li><a href="../_sources/projects/neuro_meta_analyses__phase_1.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/projects/neuro_meta_analyses__phase_1.ipynb"
+   class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
 title="Download notebook file"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-code"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
-</a>
+
+      </li>
       
-      <li><a href="../_sources/projects/neuro_meta_analyses__phase_1.md" target="_blank"
-   class="btn btn-sm dropdown-item"
+      <li>
+        <a href="../_sources/projects/neuro_meta_analyses__phase_1.md"
+   class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
-</a>
+
+      </li>
       
       <li>
+        
 <button onclick="printPdf(this)"
-  class="btn btn-sm dropdown-item"
+  class="headerbtn"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="btn__text-container">.pdf</span>
+<span class="headerbtn__text-container">.pdf</span>
 </button>
-</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
-            <span class="fa-solid fa-list"></span>
-        </label>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
-            </div>
-            
-            
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>neuro_meta_analyses.phase_1</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#labels-in-this-project">
    Labels in this project
@@ -606,29 +380,54 @@ title="Print to PDF"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>neuro_meta_analyses.phase_1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
 
-            <article class="bd-article" role="main">
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="neuro-meta-analyses-phase-1">
-<h1>neuro_meta_analyses.phase_1<a class="headerlink" href="#neuro-meta-analyses-phase-1" title="Permalink to this heading">#</a></h1>
+<h1>neuro_meta_analyses.phase_1<a class="headerlink" href="#neuro-meta-analyses-phase-1" title="Permalink to this headline">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_1/">on GitHub</a>.</p>
 <section id="labels-in-this-project">
-<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
+<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div class="detailed-label-set">
-    
+
     <details style="--label-color: #98df8a;">
         <summary class="label-display">fmri (91 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Costafreda, Sergi G.
@@ -659,7 +458,7 @@ study design
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …gmo and Long, Xiangyu and Neumann, Jane and Maeda, Yumi and Nierhaus, Till and Liang, Fanrong and Witt, Claudia M.
@@ -674,9 +473,9 @@ Characterizing Acupuncture Stimuli Using Brain Imaging with <mark class="annotat
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 The mechanisms of action underlying acupuncture, including acupuncture point specificity, are n…
                 </div>
                 <div class="annotation-footer">
@@ -686,7 +485,7 @@ The mechanisms of action underlying acupuncture, including acupuncture point spe
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Hattingh, Coenraad J. and Ipser, J. and Tromp, S. A. and Syal, S. and Lochner, C. and Brooks, S. J. and Stein, D. J.
@@ -707,7 +506,7 @@ fMRI
 
 
 # Abstract
- 
+
  Backgroun…
                 </div>
                 <div class="annotation-footer">
@@ -717,7 +516,7 @@ fMRI
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … Helgi B.
@@ -732,9 +531,9 @@ Increased Prefrontal and Parahippocampal Activation with Reduced Dorsolateral Pr
 
 
 # Abstract
- 
+
 ## Background and Objectives 
-  
+
 Obesity is emerging as the most significant health concern of the twenty-first century. A wealth of neuroimaging data suggest that…
                 </div>
                 <div class="annotation-footer">
@@ -744,7 +543,7 @@ Obesity is emerging as the most significant health concern of the twenty-first c
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Jamadar, Sharna D. and Fielding, Joanne and Egan, Gary F.
@@ -767,7 +566,7 @@ functional magnetic resonance …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …e, Charlotte L. and Hughes, Laura E. and Weaver, Chelan and Anderson, Michael C. and Rowe, James B.
@@ -793,7 +592,7 @@ Act…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Wagner, Stefanie and Sebastian, Alexandra and Lieb, Klaus and Tüscher, Oliver and Tadić, André
@@ -818,7 +617,7 @@ Health…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …. and Hoffstaedter, Felix and Clos, Mareike and Goya-Maldonado, Roberto and Gruber, Oliver and Eickhoff, Simon B.
@@ -833,7 +632,7 @@ Meta-Analytically Informed Network Analysis of Resting State <mark class="annota
 
 
 # Abstract
- 
+
 Alterations of social cognition and dysfunctional interpersonal expectations are though…
                 </div>
                 <div class="annotation-footer">
@@ -843,7 +642,7 @@ Alterations of social cognition and dysfunctional interpersonal expectations are
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Boccia, Maddalena and Nemmi, Federico and Guariglia, Cecilia
@@ -863,7 +662,7 @@ Experimental paradigm
 
 
 # Abstract
- 
+
 In the past 20 years, many studies in the cognitive neuroscien…
                 </div>
                 <div class="annotation-footer">
@@ -873,7 +672,7 @@ In the past 20 years, many studies in the cognitive neuroscien…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …Max C. and Müller-Axt, Christa and Langner, Robert and Eickhoff, Simon B. and Forstmann, Birte U. and Neumann, Jane
@@ -891,7 +690,7 @@ fronto-parietal-basal ganglia
 
 
 # Abstract
- 
+
 In the recent perceptual decision-making literature, a fronto-parietal network is typically r…
                 </div>
                 <div class="annotation-footer">
@@ -901,17 +700,17 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #dbdb8d;">
         <summary class="label-display">mri (63 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …nk and Lee, Yi-Chung and Tsushima, Yoshito and Alphs, Hannah and Ladd, Susanne C and Warlow, Charles and Wardlaw, Joanna M and Al-Shahi Salman, Rustam
@@ -926,7 +725,7 @@ Incidental findings on brain <mark class="annotated-text">magnetic resonance ima
 
 
 # Abstract
- 
+
  Objective   To quantify the prevalence of incidental findings on magnetic resonance imaging (MRI) of the brain. 
 
  Design   Systemati…
@@ -938,7 +737,7 @@ Incidental findings on brain <mark class="annotated-text">magnetic resonance ima
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Debette, Stéphanie and Markus, H S
@@ -953,7 +752,7 @@ The clinical importance of white matter hyperintensities on brain <mark class="a
 
 
 # Abstract
- 
+
  Objectives   To review the evidence for an association of white matter hyperintensities with risk of stroke, cognitive decline, demen…
                 </div>
                 <div class="annotation-footer">
@@ -963,7 +762,7 @@ The clinical importance of white matter hyperintensities on brain <mark class="a
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …us and Harbord, Roger M and Astin, Margaret and Burke, Margaret and Bessell, Alysson and Ben-Shlomo, Yoav and Hawkins, James and Hollingworth, William and Whiting, Penny
@@ -983,9 +782,9 @@ Systematic review
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Identifi…
                 </div>
                 <div class="annotation-footer">
@@ -995,7 +794,7 @@ Identifi…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Vita, A and De Peri, L and Deste, G and Sacchetti, E
@@ -1016,7 +815,7 @@ schizophrenia
 
 
 # Abstract
- 
+
 Cortical gray matter deficits have been found in patien…
                 </div>
                 <div class="annotation-footer">
@@ -1026,7 +825,7 @@ Cortical gray matter deficits have been found in patien…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …o and Borgwardt, Stefan and Busatto, Geraldo F
@@ -1046,9 +845,9 @@ Neuroimaging
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 The resul…
                 </div>
                 <div class="annotation-footer">
@@ -1058,7 +857,7 @@ The resul…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …and Ho, B.C. and Andreasen, N.C. and Borgwardt, S.
@@ -1080,9 +879,9 @@ Dopamine
 
 
 # Abstract
- 
+
 ## Context 
-  
+
 Antipsychotic treatment is the first-line treatment option for schizophre…
                 </div>
                 <div class="annotation-footer">
@@ -1092,7 +891,7 @@ Antipsychotic treatment is the first-line treatment option for schizophre…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Rao, S. M. and Martin, A. L. and Huelin, R. and Wissinger, E. and Khankhel, Z. and Kim, E. and Fahrbach, K.
@@ -1107,7 +906,7 @@ Correlations between <mark class="annotated-text">MRI</mark> and Information Pro
 
 
 # Abstract
- 
+
  Objectives  . To examine relationships between conventional MRI measures and the paced auditory serial addition te…
                 </div>
                 <div class="annotation-footer">
@@ -1117,7 +916,7 @@ Correlations between <mark class="annotated-text">MRI</mark> and Information Pro
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …oudse-Moens, Cornelieke S. H. and Leenders, Arnold G. E. and Mol, Ben Willem J. and de Haan, Timo R.
@@ -1137,9 +936,9 @@ MRI
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 This study aims to determine the prognostic accuracy of term MRI in v…
                 </div>
                 <div class="annotation-footer">
@@ -1149,7 +948,7 @@ This study aims to determine the prognostic accuracy of term MRI in v…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Gargiulo, Giuseppe and Sannino, Anna and Stabile, Eugenio and Perrino, Cinzia and Trimarco, Bruno and Esposito, Giovanni
@@ -1164,9 +963,9 @@ New Cerebral Lesions at <mark class="annotated-text">Magnetic Resonance Imaging<
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Carotid endarterectomy (CEA) or stenting (CAS) are associated with a relati…
                 </div>
                 <div class="annotation-footer">
@@ -1176,7 +975,7 @@ Carotid endarterectomy (CEA) or stenting (CAS) are associated with a relati…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Boccia, Maddalena and Piccardi, Laura and Guariglia, Paola
@@ -1191,7 +990,7 @@ The Meditative Mind: A Comprehensive Meta-Analysis of <mark class="annotated-tex
 
 
 # Abstract
- 
+
 Over the past decade mind and body practices, such as yoga and meditation, have raised interest in different scientific fields; in particular, the physiological me…
                 </div>
                 <div class="annotation-footer">
@@ -1201,17 +1000,17 @@ Over the past decade mind and body practices, such as yoga and meditation, have 
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #aec7e8;">
         <summary class="label-display">exclude not brain (58 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Pan, LingLing and Han, Yuan and Sun, XiaoGuang and Liu, JianJun and Gang, Huang
@@ -1233,9 +1032,9 @@ Meta-analysis
 
 
 # Abstract
- 
+
 ## Background and purpose 
-  
+
 Breast carcinoma …
                 </div>
                 <div class="annotation-footer">
@@ -1245,7 +1044,7 @@ Breast carcinoma …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Bohte, Anneloes E. and van Werven, Jochem R. and Bipat, Shandra and Stoker, Jaap
@@ -1271,7 +1070,7 @@ Ultrasonography…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …oes E. and van Werven, Jochem R. and Bipat, Shandra and Stoker, Jaap
@@ -1292,7 +1091,7 @@ Ultrasonography
 
 
 # Abstract
- 
+
 ## Objective 
 …
                 </div>
@@ -1303,7 +1102,7 @@ Ultrasonography
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …and Zhang, Yicheng and Xiong, Weining
@@ -1322,9 +1121,9 @@ meta-analysis
 
 
 # Abstract
- 
+
 ## Introduction 
-  
+
 The aim of th…
                 </div>
                 <div class="annotation-footer">
@@ -1334,7 +1133,7 @@ The aim of th…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …iu, Jianjun and Huang, Gang and Song, Shaoli
@@ -1349,7 +1148,7 @@ The Role of 18F-FDG PET/CT and MRI in Assessing Pathological Complete Response t
 
 
 # Abstract
- 
+
  Purpose  . We performed this meta-analysis to determine the utilities of  F-FDG PET/CT and MRI in assessing the pathological comple…
                 </div>
                 <div class="annotation-footer">
@@ -1359,7 +1158,7 @@ The Role of 18F-FDG PET/CT and MRI in Assessing Pathological Complete Response t
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Wang, Hong and Ma, Jingxu and Zhao, Liping and Wang, Yunling and Jia, Xiaowen
@@ -1379,9 +1178,9 @@ Peripheral Nervous System Diseases
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 After s…
                 </div>
                 <div class="annotation-footer">
@@ -1391,7 +1190,7 @@ After s…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …Chao and Zhu, Si Pin and Dai, Bing and Xiang, Guang Heng
@@ -1410,7 +1209,7 @@ Meta-Analysis
 
 
 # Abstract
- 
+
 This meta-analysis was designed t…
                 </div>
                 <div class="annotation-footer">
@@ -1420,7 +1219,7 @@ This meta-analysis was designed t…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Shen, Guohua and Hu, Shuang and Liu, Bin and Kuang, Anren
@@ -1435,9 +1234,9 @@ Diagnostic Performance of <mark class="annotated-text">Whole-Body</mark> PET/MRI
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 As an evolving imaging modality, PET/MRI is preliminarily applied in clinical prac…
                 </div>
                 <div class="annotation-footer">
@@ -1447,7 +1246,7 @@ As an evolving imaging modality, PET/MRI is preliminarily applied in clinical pr
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Bennani-Baiti, Barbara and Bennani-Baiti, Nabila and Baltzer, Pascal A.
@@ -1462,9 +1261,9 @@ Diagnostic Performance of <mark class="annotated-text">Breast</mark> Magnetic Re
 
 
 # Abstract
- 
+
 ## Objectives 
-  
+
 To evaluate the performance of …
                 </div>
                 <div class="annotation-footer">
@@ -1474,7 +1273,7 @@ To evaluate the performance of …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Gao, Peng and Shi, Changzheng and Zhao, Lianping and Zhou, Quan and Luo, Liangping
@@ -1499,17 +1298,17 @@ meta-…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #9edae5;">
         <summary class="label-display">pet (32 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Jamadar, Sharna D. and Fielding, Joanne and Egan, Gary F.
@@ -1533,7 +1332,7 @@ functional magnetic resonance imaging
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …ebenthal, Einat and Desai, Rutvik H. and Humphries, Colin and Sabri, Merav and Desai, Anjali
@@ -1559,7 +1358,7 @@ positron emission tom…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Paulesu, Eraldo and Danelli, Laura and Berlingeri, Manuela
@@ -1580,7 +1379,7 @@ hierarchical clustering
 
 
 # Abstract
- 
+
 Developmental dyslexia has been the focus of much functional anatomic…
                 </div>
                 <div class="annotation-footer">
@@ -1590,7 +1389,7 @@ Developmental dyslexia has been the focus of much functional anatomic…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …ang and Cai, Yiyun and Xu, Yifeng and Dutt, Anirban and Shi, Shenxun and Bramon, Elvira
@@ -1609,9 +1408,9 @@ Activation likelihood estimation
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Major depressive disorder (MDD) is a common…
                 </div>
                 <div class="annotation-footer">
@@ -1621,7 +1420,7 @@ Major depressive disorder (MDD) is a common…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …s, Elizabeth and Chalkidou, Anastasia and Hammers, Alexander and Peacock, Janet and Summers, Jennifer and Keevil, Stephen
@@ -1642,7 +1441,7 @@ Alzheimer’s disease
 
 
 # Abstract
- 
+
 Imaging or tis…
                 </div>
                 <div class="annotation-footer">
@@ -1652,7 +1451,7 @@ Imaging or tis…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Seo, Eun Hyun and Park, Woon Yeong and Choo, IL Han
@@ -1679,7 +1478,7 @@ Meta-analysis
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …ng, Xiangqi and States, Lisa J. and Zhang, Zishu and Zhou, Jianhua and Farwell, Michael D. and Zhang, Paul and Xiao, Bo and Yang, Li
@@ -1699,11 +1498,11 @@ SPECT
 
 
 # Abstract
- 
+
 Supplemental Digital Content is available in the text 
-  
+
 ## Background: 
-  
+
 W…
                 </div>
                 <div class="annotation-footer">
@@ -1713,7 +1512,7 @@ W…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Li, Ye and Jin, Guanqiao and Su, Danke
@@ -1737,7 +1536,7 @@ positron emission tomog…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zou, Yaru and Tong, Jianjing and Leng, Haiyan and Jiang, Jingwei and Pan, Meng and Chen, Zi
@@ -1760,7 +1559,7 @@ positron em…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zou, Yaru and Tong, Jianjing and Leng, Haiyan and Jiang, Jingwei and Pan, Meng and Chen, Zi
@@ -1783,17 +1582,17 @@ positron emission t…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #f7b6d2;">
         <summary class="label-display">CT (12 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …Roger M and Astin, Margaret and Burke, Margaret and Bessell, Alysson and Ben-Shlomo, Yoav and Hawkins, James and Hollingworth, William and Whiting, Penny
@@ -1813,9 +1612,9 @@ Systematic review
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Identification of cause…
                 </div>
                 <div class="annotation-footer">
@@ -1825,7 +1624,7 @@ Identification of cause…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Li, Ye and Jin, Guanqiao and Su, Danke
@@ -1849,7 +1648,7 @@ positron emission tomograp…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zou, Yaru and Tong, Jianjing and Leng, Haiyan and Jiang, Jingwei and Pan, Meng and Chen, Zi
@@ -1872,7 +1671,7 @@ positron emission tomo…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Yang, Yihan and He, Mike Z. and Li, Tao and Yang, Xuejun
@@ -1891,7 +1690,7 @@ Diagnostic accuracy
 
 
 # Abstract
- 
+
 Based on studies focusing on …
                 </div>
                 <div class="annotation-footer">
@@ -1901,7 +1700,7 @@ Based on studies focusing on …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zhang, Qing and Gao, Xian and Wei, Guohua and Qiu, Cheng and Qu, Hongyi and Zhou, Xin
@@ -1922,7 +1721,7 @@ survival
 
 
 # Abstract
- 
+
  Background:   In the past decade, positron emission tomography/…
                 </div>
                 <div class="annotation-footer">
@@ -1932,7 +1731,7 @@ survival
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …and Muoio, Barbara and Nicod-Lalonde, Marie and Schaefer, Niklaus and Giovanella, Luca and Prior, John O. and Treglia, Giorgio
@@ -1961,7 +1760,7 @@ meta-analysis
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Xiao, Jiarui and Jin, Yizi and Nie, Ji and Chen, Fukun and Ma, Xuelei
@@ -1980,9 +1779,9 @@ Meta-analysis
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Positron emission tomography (PET) and PET/computed to…
                 </div>
                 <div class="annotation-footer">
@@ -1992,14 +1791,14 @@ Positron emission tomography (PET) and PET/computed to…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … a foremost cause for disability and death worldwide. This study is conducted in order to compare the diagnostic values between transcranial Doppler ultrasound (ultrasonography), computed tomography (<mark class="annotated-text">CT</mark>), and magnetic resonance imaging (MRI) in patients suffering from ischemic stroke by performing a network meta-analysis. 
 
 
 ## Methods: 
-  
+
 We made use of Cochrane Library, PubMed, and Embase in orde…
                 </div>
                 <div class="annotation-footer">
@@ -2009,7 +1808,7 @@ We made use of Cochrane Library, PubMed, and Embase in orde…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …ra and Trevisi, Gianluca and Mattoli, Maria Vittoria and Albano, Domenico and Bertagna, Francesco and Giovanella, Luca
@@ -2036,7 +1835,7 @@ progn…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Choi, Yangsean and Lee, Min Kyoung
@@ -2060,17 +1859,17 @@ ICH, intracranial h…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #c5b0d5;">
         <summary class="label-display">perfusion mri (7 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Wan, Bing and Wang, Siqi and Tu, Mengqi and Wu, Bo and Han, Ping and Xu, Haibo
@@ -2090,9 +1889,9 @@ pseudoprogression
 
 
 # Abstract
- 
+
 ## Background: 
-  
+
 The purpose of this met…
                 </div>
                 <div class="annotation-footer">
@@ -2102,7 +1901,7 @@ The purpose of this met…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …anein, Sara M and Sanverdi, Eser and Golay, Xavier and Thust, Stefanie and Panovska‐Griffiths, Jasmina and Bisdas, Sotirios
@@ -2122,9 +1921,9 @@ perfusion
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 T1‐weighted dynamic …
                 </div>
                 <div class="annotation-footer">
@@ -2134,7 +1933,7 @@ T1‐weighted dynamic …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Wang, Longlong and Wei, Lizhou and Wang, Jingjian and Li, Na and Gao, Yanzhong and Ma, Hongge and Qu, Xinran and Zhang, Ming
@@ -2154,7 +1953,7 @@ tumor progression
 
 
 # Abstract
- 
+
 ## Objectives: 
  …
                 </div>
@@ -2165,7 +1964,7 @@ tumor progression
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Fu, Rongwei and Szidonya, Laszlo and Barajas, Ramon F and Ambady, Prakash and Varallyay, Csanad and Neuwelt, Edward A
@@ -2189,7 +1988,7 @@ m…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …nd Meijer, Frederick and Smits, Marion and Henssen, Dylan
@@ -2208,7 +2007,7 @@ Molecular classification
 
 
 # Abstract
- 
+
 ## B…
                 </div>
                 <div class="annotation-footer">
@@ -2218,7 +2017,7 @@ Molecular classification
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Daqqaq, Tareef S. and Alhasan, Ayman S.
@@ -2233,9 +2032,9 @@ Positron emission tomography and <mark class="annotated-text">perfusion weighted
 
 
 # Abstract
- 
+
 ## Objectives: 
-  
+
 To assess and compare the diagnostic accuracy, sensitivity and specificity of perfusion-weighted imaging (PW…
                 </div>
                 <div class="annotation-footer">
@@ -2245,7 +2044,7 @@ To assess and compare the diagnostic accuracy, sensitivity and specificity of pe
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zhang, Jun and Wang, Yulin and Wang, Yan and Xiao, Huafeng and Chen, Xinjing and Lei, Yifei and Feng, Zhebin and Ma, Xiaodong and Ma, Lin
@@ -2269,17 +2068,17 @@ ps…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #98df8a;">
         <summary class="label-display">INTERESTING (7 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …Haller, Sven and Frangou, Sophia and Goodwin, Guy M. and McDonald, Colm and Kempton, Matthew J.
@@ -2300,7 +2099,7 @@ White matter
 
 # Abstract
   Highlights  
-  
+
 The meta-analysis revealed …
                 </div>
                 <div class="annotation-footer">
@@ -2310,7 +2109,7 @@ The meta-analysis revealed …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …schewski, Tobias and Barker, Gareth J. and Bokde, Arun L. W. and Martinot, Jean-Luc and Lemaitre, Herve and Paus, Tomáš and Millenet, Sabina and Moerkerke, Beatrijs
@@ -2331,7 +2130,7 @@ reliability
 
 
 # Abstract
- 
+
 Given the increasing amoun…
                 </div>
                 <div class="annotation-footer">
@@ -2341,7 +2140,7 @@ Given the increasing amoun…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …ttoria and Albano, Domenico and Bertagna, Francesco and Giovanella, Luca
@@ -2364,7 +2163,7 @@ meta-analysis
 
 
 # Abstract
- 
+
 Background: Several meta-analyses reporting data on the…
                 </div>
                 <div class="annotation-footer">
@@ -2374,7 +2173,7 @@ Background: Several meta-analyses reporting data on the…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Clausen, Malene M. and Vogelius, Ivan R. and Kjær, Andreas and Bentzen, Søren M.
@@ -2394,7 +2193,7 @@ publication bias
 
 
 # Abstract
- 
+
 Positron emission…
                 </div>
                 <div class="annotation-footer">
@@ -2404,7 +2203,7 @@ Positron emission…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …Veronese, Mattia and Wang, Yuchuan and Cervenka, Simon
@@ -2426,9 +2225,9 @@ Translocator protein
 
 
 # Abstract
- 
+
 ## BACKGROUND: 
-  
+
 Accumulating evidence suggests that …
                 </div>
                 <div class="annotation-footer">
@@ -2438,7 +2237,7 @@ Accumulating evidence suggests that …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … M and Dimitriadis, Stavros I and Perry, Gavin and Zammit, Stan and O’Donovan, Michael C and Linden, David E
@@ -2459,7 +2258,7 @@ polygenic
 
 
 # Abstract
- 
+
 Schizophrenia…
                 </div>
                 <div class="annotation-footer">
@@ -2469,7 +2268,7 @@ Schizophrenia…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … and Ma, Lin
@@ -2489,9 +2288,9 @@ meta-analysis
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Tumor recurrence and pseudoprogression (PsP) have similar i…
                 </div>
                 <div class="annotation-footer">
@@ -2501,17 +2300,17 @@ Tumor recurrence and pseudoprogression (PsP) have similar i…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #ff9896;">
         <summary class="label-display">structural mri (6 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Seo, Eun Hyun and Park, Woon Yeong and Choo, IL Han
@@ -2535,7 +2334,7 @@ MRI
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … Jon S. and Rowe, James B. and O'Callaghan, Claire and Murray, Graham K. and Suckling, John
@@ -2557,9 +2356,9 @@ Neurodegenerative
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Hallucinations…
                 </div>
                 <div class="annotation-footer">
@@ -2569,7 +2368,7 @@ Hallucinations…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …. and Eddy, Kamryn T. and Thomas, Jennifer J. and Holsen, Laura M. and Lawson, Elizabeth A. and Misra, Madhusmita and Lyall, Amanda E. and Breithaupt, Lauren
@@ -2589,7 +2388,7 @@ Recovery
 
 
 # Abstract
- 
+
 ## Background…
                 </div>
                 <div class="annotation-footer">
@@ -2599,7 +2398,7 @@ Recovery
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Zacková, Mgr. Lenka and Jáni, Mgr. Martin and Brázdil, Milan and Nikolova, Yuliya S. and Marečková, Klára
@@ -2628,7 +2427,7 @@ Shared volumetric reductions
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Lancaster, Thomas M and Dimitriadis, Stavros I and Perry, Gavin and Zammit, Stan and O’Donovan, Michael C and Linden, David E
@@ -2651,7 +2450,7 @@ normative …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …
@@ -2668,7 +2467,7 @@ Diseases of the nervous system
 
 
 # Abstract
- 
+
 Major depressive disorder (MDD), anxiety disorders (ANX), and chronic pain (CP) are closely…
                 </div>
                 <div class="annotation-footer">
@@ -2678,17 +2477,17 @@ Major depressive disorder (MDD), anxiety disorders (ANX), and chronic pain (CP) 
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #c49c94;">
         <summary class="label-display">dmrid (6 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Bajaj, Sweta and Krismer, Florian and Palma, Jose-Alberto and Wenning, Gregor K. and Kaufmann, Horacio and Poewe, Werner and Seppi, Klaus
@@ -2703,9 +2502,9 @@ PLoS One, 2017
 
 
 # Abstract
- 
+
 ## Background 
-  
+
 Putaminal diffusivity in …
                 </div>
                 <div class="annotation-footer">
@@ -2715,7 +2514,7 @@ Putaminal diffusivity in …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Yu, Yang and Ma, Yue and Sun, Mengyao and Jiang, Wenyan and Yuan, Tingting and Tong, Dan
@@ -2738,7 +2537,7 @@ glioma r…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Lv, Bin and Jing, Feng and Tian, Cheng-lin and Liu, Jian-chao and Wang, Jun and Cao, Xiang-yu and Liu, Xin-feng and Yu, Sheng-yuan
@@ -2766,7 +2565,7 @@ Sensitivity
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Santos, Francisco de Souza and Verma, Nupur and Watte, Guilherme and Marchiori, Edson and Mohammed, Tan-Lucien H. and Medeiros, Tássia Machado and Hochhegger, Bruno
@@ -2790,7 +2589,7 @@ Thoracic neopla…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Lim, Su Jin and Kim, Minjae and Suh, Chong Hyun and Kim, Sang Yeong and Shim, Woo Hyun and Kim, Sang Joon
@@ -2814,7 +2613,7 @@ Systematic review and meta…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Carreira Figueiredo, Inês and Borgan, Faith and Pasternak, Ofer and Turkheimer, Federico E. and Howes, Oliver D.
@@ -2831,7 +2630,7 @@ Psychosis
 
 
 # Abstract
- 
+
 White-matter abnormalities, including increases in extracellular free-water, are implicated…
                 </div>
                 <div class="annotation-footer">
@@ -2841,17 +2640,17 @@ White-matter abnormalities, including increases in extracellular free-water, are
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #aec7e8;">
         <summary class="label-display">SPECT (3 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     … and Tang, Xiangqi and States, Lisa J. and Zhang, Zishu and Zhou, Jianhua and Farwell, Michael D. and Zhang, Paul and Xiao, Bo and Yang, Li
@@ -2871,9 +2670,9 @@ SPECT
 
 
 # Abstract
- 
+
 Supplemental Digital Content is available in the text 
-  
+
 ## Background: …
                 </div>
                 <div class="annotation-footer">
@@ -2883,7 +2682,7 @@ Supplemental Digital Content is available in the text
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …or and Stamenkovic, Mara and Kasper, Siegfried and Lanzenberger, Rupert
@@ -2898,7 +2697,7 @@ Striatal dopaminergic alterations in Tourette’s syndrome: a meta-analysis base
 
 
 # Abstract
- 
+
 Despite intense research, the underlying mechanisms and the etiology of Tourette’s syndrome (TS) remain unknown. Data from molecular imaging studies t…
                 </div>
                 <div class="annotation-footer">
@@ -2908,7 +2707,7 @@ Despite intense research, the underlying mechanisms and the etiology of Tourette
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … and Tamburin, Stefano
@@ -2931,7 +2730,7 @@ meta-analysis
 
 
 # Abstract
- 
+
  Background:   Around 30% Parkinson's disease (PD) patients dev…
                 </div>
                 <div class="annotation-footer">
@@ -2941,17 +2740,17 @@ meta-analysis
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #ffbb78;">
         <summary class="label-display">arterial spin labelling mri (2 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …Huang, Li and Zhang, Yusi and Li, Zuanfang and Liang, Shengxiang
@@ -2971,7 +2770,7 @@ activation likelihood estimation
 
 
 # Abstract
- 
+
 In mild cognitive impairment (MCI), cognitive decline i…
                 </div>
                 <div class="annotation-footer">
@@ -2981,7 +2780,7 @@ In mild cognitive impairment (MCI), cognitive decline i…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     Kapasouri, Efthymia Maria and Ioannidis, Diomidis C. and Cameron, Donnie and Vassiliou, Vassilios S. and Hornberger, Michael
@@ -3005,17 +2804,17 @@ dem…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #ff9896;">
         <summary class="label-display">exclude not meta analysis (2 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …ttoria and Albano, Domenico and Bertagna, Francesco and Giovanella, Luca
@@ -3038,7 +2837,7 @@ meta-analysis
 
 
 # Abstract
- 
+
 Background: Several meta-an…
                 </div>
                 <div class="annotation-footer">
@@ -3048,7 +2847,7 @@ Background: Several meta-an…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     … M and Dimitriadis, Stavros I and Perry, Gavin and Zammit, Stan and O’Donovan, Michael C and Linden, David E
@@ -3074,17 +2873,17 @@ pol…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #c5b0d5;">
         <summary class="label-display">vessel wall MRI (2 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Lee, Han Na and Ryu, Chang-Woo and Yun, Seong Jong
@@ -3108,7 +2907,7 @@ brain ischemia–diagnosis…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
             <div class="annotation">
                 <div class="context">
                     …sa-Basha, Mahmud and Zhu, Chengcheng
@@ -3129,7 +2928,7 @@ statin
 
 
 # Abstract
- 
+
  Background and Aims:   Statin therapy is an essentia…
                 </div>
                 <div class="annotation-footer">
@@ -3139,17 +2938,17 @@ statin
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #ffbb78;">
         <summary class="label-display">exclude not humans (1 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     … Pascal and Granberg, Tobias and Absinta, Martina and Lee, Nathanael J. and Lefeuvre, Jennifer A. and Reich, Daniel S.
@@ -3178,17 +2977,17 @@ Guidelines
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #c49c94;">
         <summary class="label-display">exclude incomplete (1 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Keuken, Max C. and Müller-Axt, Christa and Langner, Robert and Eickhoff, Simon B. and Forstmann, Birte U. and Neumann, Jane
@@ -3211,7 +3010,7 @@ GingerALE
 
 
 # Body
- 
+
 ## Intr…
                 </div>
                 <div class="annotation-footer">
@@ -3221,17 +3020,17 @@ GingerALE
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #f7b6d2;">
         <summary class="label-display">MRS (1 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …qi and States, Lisa J. and Zhang, Zishu and Zhou, Jianhua and Farwell, Michael D. and Zhang, Paul and Xiao, Bo and Yang, Li
@@ -3251,11 +3050,11 @@ SPECT
 
 
 # Abstract
- 
+
 Supplemental Digital Content is available in the text 
-  
+
 ## Background: 
-  
+
 We perform…
                 </div>
                 <div class="annotation-footer">
@@ -3265,17 +3064,17 @@ We perform…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #dbdb8d;">
         <summary class="label-display">TMS (1 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     Zhong, Siqian and Hu, Yiru and Fu, Yu and Cao, Liping and Zhang, Bin
@@ -3293,9 +3092,9 @@ magnetic resonance imaging
 
 
 # Abstract
- 
+
 ## Introduction 
-  
+
 Schizop…
                 </div>
                 <div class="annotation-footer">
@@ -3305,26 +3104,26 @@ Schizop…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
     <details style="--label-color: #9edae5;">
         <summary class="label-display">ultrasound (1 docs)</summary>
-        
+
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
+
             <div class="annotation">
                 <div class="context">
                     …d and objective: 
-  
+
 Ischemic stroke is a foremost cause for disability and death worldwide. This study is conducted in order to compare the diagnostic values between transcranial Doppler ultrasound (<mark class="annotated-text">ultrasonography</mark>), computed tomography (CT), and magnetic resonance imaging (MRI) in patients suffering from ischemic stroke by performing a network meta-analysis. 
 
 
 ## Methods: 
-  
+
 We made use of Cochrane Library, …
                 </div>
                 <div class="annotation-footer">
@@ -3334,11 +3133,11 @@ We made use of Cochrane Library, …
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </details>
-    
+
 </div>
 </div></div>
 </div>
@@ -3365,105 +3164,50 @@ We made use of Cochrane Library, …
     </script>
     <script>kernelName = 'python3'</script>
 
-            </article>
-            
-
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="dynamic_functional_connectivity.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">dynamic_functional_connectivity</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="neuro_meta_analyses__phase_2.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">neuro_meta_analyses.phase_2</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    <a class='left-prev' id="prev-link" href="dynamic_functional_connectivity.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">dynamic_functional_connectivity</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="neuro_meta_analyses__phase_2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">neuro_meta_analyses.phase_2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
-              
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#labels-in-this-project">
-   Labels in this project
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-            </div>
-          
-          
         </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-<p class="copyright">
-
-    &copy; Copyright 2022.<br>
-
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    <p class="last-updated">
-Last updated on None.<br>
-</p>
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </div>
-        </footer>
-        
-
-      </main>
     </div>
-  </div>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
   
+    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
+</div>
+
+
+      </div>
+    </div>
+  
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
