@@ -2,6 +2,9 @@
 
 {% block main_content %}
 
+
+Some analyses of this project's annotations are shown in [this page](../participant_demographics.py).
+
 ## How to annotate
 
 ```{code-cell}
@@ -42,6 +45,7 @@ In {numref}`participants-tree-fig` we see the general way of annotating informat
 We start by describing the most complex case but for most annotations the situation will be simpler.
 
 This video (without sound) illustrates the annotation process that is described below.
+The report on the left shows a continuously updated summary of the participants in the current document, it is launched with the `scripts/watch_participants.py` script as explained {ref}`here<using-participants-reports>`.
 
 
 ```{code-cell}
@@ -98,9 +102,12 @@ show_pmcid(8883821)
 
 When the participant structure of an article is simpler, we can omit any of the labels as long as it does not introduce an ambiguity.
 For example, if there is only one group of patients, we do not need to indicate a subgroup.
+If the study contains only patients or only healthy participants, we do not need to use the `patients` or `healthy` labels.
+Which label applies will be inferred from the presence of a `diagnosis`.
+The {ref}`live report<using-participants-reports>` can help check that any information we leave out is being correctly inferred as we annotate.
 
 Below is an example for the article **PMC3447931** where only the count is provided, for the patients and for the healthy controls.
-Note that "diagnosis" implicitly refers to patients, so we can omit the group label here (but would not be an error to add it).
+Note that "diagnosis" implicitly refers to patients, so we can omit the group label here (but it would not be an error to add it).
 
 ```{code-cell}
 :tags: [remove-input]
@@ -108,15 +115,23 @@ Note that "diagnosis" implicitly refers to patients, so we can omit the group la
 show_pmcid(3447931)
 ```
 
-
+(using-participants-reports)=
 ## Participant demographics summaries
 
 The repository contains utilities to extract summaries about the participant groups from an article's annotations and display them as shown in this page.
 
-- `scripts/participants_report.py` creates a report for all the articles exported from a given annotator and project.
-- `scripts/watch_participants.py` serves a live summary of the participant groups in the document we are currently annotating in **labelbuddy**.
+`scripts/participants_report.py` creates a report for all the articles exported from a given annotator and project.
 
-You can also see some analyses of the currently existing annotations in [this page](../participant_demographics.py).
+
+`scripts/watch_participants.py` serves a live summary of the participant groups in the document we are currently annotating in **labelbuddy**.
+From the root of the repository you can run it with:
+```
+scripts/watch_participants.py projects/participant_demographics/Your_Name.labelbuddy
+```
+It will print the path to a file that you can open in a web browser and that can help to check annotations are correctly interpreted as you create them.
+
+See `scripts/participants_report.py --help` and `scripts/watch_participants.py --help` for details.
+
 
 ## Some more examples
 
