@@ -41,9 +41,12 @@ class _Watcher:
 
     def __enter__(self) -> _Watcher:
         self.labelbuddy_file.stat()
-        self.connection = sqlite3.connect(
-            f"file:{self.labelbuddy_file}?mode=ro"
-        )
+        try:
+            self.connection = sqlite3.connect(
+                f"{self.labelbuddy_file.resolve().as_uri()}?mode=ro"
+            )
+        except sqlite3.OperationalError:
+            self.connection = sqlite3.connect(self.labelbuddy_file.resolve())
         self.connection.row_factory = sqlite3.Row
         return self
 
