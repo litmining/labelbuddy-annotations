@@ -85,11 +85,11 @@ style="
                 </header>
                 <div class="labelrepo-flow doc-participants-content">
                     {% if doc.get("extraction_failed") %}
-                    <p>
-                        <pre>
+                    <div class="labelrepo-error-message">
+                        <code class="labelrepo-pre-wrap">
                         {{- doc.get("error_message", "Annotation error") -}}
-                        </pre>
-                    </p>
+                        </code>
+                    </div>
                     {% elif not doc["participants"] %}
                     <p>
                         No participant information annotated in this document (yet!).
@@ -100,7 +100,9 @@ style="
                         <strong>{{ sourced(doc["participants"]["count"], doc, "total-count") }}</strong> participants
                     </p>
                     {% else %}
-                    <strong>Warning: could not infer total number of participants.</strong>
+                    <div class="labelrepo-warning-message">
+                        could not infer total number of participants.
+                    </div>
                     {% endif %}
                     {% for subgroup_name, subgroup in doc["participants"]["subgroups"].items() | sort %}
                     <div class="participants-subgroup {{ subgroup["group_name"] }}-subgroup">
@@ -115,14 +117,18 @@ style="
                             Diagnosis: <strong>{{ sourced(subgroup["diagnosis"], doc, "diagnosis-" + subgroup_name ) }}</strong>
                         </p>
                         {% elif subgroup["group_name"] == "patients" %}
-                        <strong>Warning: missing diagnosis.</strong>
+                        <div class="labelrepo-warning-message">
+                            missing diagnosis.
+                        </div>
                         {% endif %}
                         <p>
                             {% if subgroup["count"] %}
                             <strong>{{ sourced(subgroup["count"], doc, "count-" + subgroup_name) }}</strong>
                             {{ "participants" if subgroup["group_name"] == "healthy" else "patients" }}
                             {% else %}
-                            <strong>Warning: could not infer the number of participants in this subgroup.</strong>
+                            <div class="labelrepo-warning-message">
+                                could not infer the number of participants in this subgroup.
+                            </div>
                             {%- endif %}
                             {%- for sex in ("female", "male") -%}
                             {%- if sex in subgroup and "count" in subgroup[sex] -%}

@@ -25,8 +25,9 @@ class _Watcher:
         self.target_file = self.labelbuddy_file.with_name(
             f"{self.labelbuddy_file.stem}_participants_live_report_{port}.html"
         ).resolve()
-        self.last_wake_up_time: Optional[float] = None
+        self.last_update_time: Optional[float] = None
         self.delay = 0.25
+        self.max_delay = 5
         self.project_name = self.labelbuddy_file.parents[1].name
         self.annotator_name = self.labelbuddy_file.stem
         jinja_env = _participant_demographics._get_jinja_env()
@@ -58,6 +59,13 @@ class _Watcher:
         except Exception:
             pass
 
+    def _need_update(self) -> bool:
+        return (
+            self.last_update_time is None
+            or (self.last_update_time < self.labelbuddy_file.stat().st_mtime)
+            or self.last_update_time < time.time() - self.max_delay
+        )
+
     async def start(self) -> None:
         assert (
             self.connection is not None
@@ -69,11 +77,8 @@ class _Watcher:
             f"{self.target_file}\n"
         )
         while True:
-            previous_wake_up_time = self.last_wake_up_time
-            self.last_wake_up_time = time.time()
-            if previous_wake_up_time is None or (
-                self.labelbuddy_file.stat().st_mtime > previous_wake_up_time
-            ):
+            if self._need_update():
+                self.last_update_time = time.time()
                 try:
                     self._update_content()
                 except Exception:

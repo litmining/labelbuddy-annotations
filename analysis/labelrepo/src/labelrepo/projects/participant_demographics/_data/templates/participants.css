@@ -165,11 +165,32 @@
     display: inline-block;
 }
 
-.labelrepo-clickable:hover {
-    text-decoration:none;
-}
-
 .labelrepo-clickable[data-annotation-stack-is-shown="true"] {
     text-decoration: none;
     border: 2px solid
+}
+
+.labelrepo-pre-wrap {
+    white-space: pre-wrap;
+}
+
+.labelrepo-warning-message, .labelrepo-error-message {
+    font-family: monospace;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+    display: block;
+}
+
+:is(.labelrepo-warning-message, .labelrepo-error-message)::before {
+    font-weight: bold;
+    font-size: large;
+}
+
+.labelrepo-warning-message::before{
+    content: "Warning";
+}
+
+.labelrepo-error-message::before{
+    content: "Error\A";
+    white-space: pre;
 }

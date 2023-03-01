@@ -117,4 +117,20 @@ The repository contains utilities to extract summaries about the participant gro
 - `scripts/watch_participants.py` serves a live summary of the participant groups in the document we are currently annotating in **labelbuddy**.
 
 You can also see some analyses of the currently existing annotations in [this page](../participant_demographics.py).
+
+## Some more examples
+
+Below are a few more examples of annotated documents to help annotators get started.
+
+```{code-cell}
+:tags: [remove-input]
+
+from labelrepo import database
+connection = database.get_database_connection()
+example_pmcids = connection.execute("select distinct pmcid from detailed_annotation where annotator_name = 'Jerome_Dockes' and label_name = 'count' and pmcid not in (8883821, 3447931) limit 15").fetchall()
+divs = []
+for pmcid in example_pmcids:
+    divs.append(show_pmcid(pmcid["pmcid"]).get_div())
+displays.HTMLDisplay(f"<div>{''.join(divs)}</div>")    
+```
 {% endblock %}
