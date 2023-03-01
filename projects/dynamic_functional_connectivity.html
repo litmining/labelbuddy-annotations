@@ -4,49 +4,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>dynamic_functional_connectivity &#8212; Biomedical literature annotations</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="../_static/global.css" />
     <link rel="stylesheet" type="text/css" href="../_static/label-set.css" />
     <link rel="stylesheet" type="text/css" href="../_static/annotation-set.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -54,56 +62,366 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/dynamic_functional_connectivity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="neuro_meta_analyses.phase_1" href="neuro_meta_analyses__phase_1.html" />
     <link rel="prev" title="cluster_inference" href="cluster_inference.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+  
 
-    <div class="container-xl">
-      <div class="row">
+
+<a class="navbar-brand logo" href="../overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_2.html">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
       
       
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
-      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_2.html">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,338 +430,216 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_this_repository.html">
-   Using this repository
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing_to_this_repository.html">
-   Contributing to this repository
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_this_repository.html">Using this repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing_to_this_repository.html">Contributing to this repository</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Analyses
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../participant_demographics.html">
-   Participant demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../participant_demographics.html">Participant demographics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="autism_mri.html">
-   autism_mri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cluster_inference.html">
-   cluster_inference
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   dynamic_functional_connectivity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="neuro_meta_analyses__phase_1.html">
-   neuro_meta_analyses.phase_1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="neuro_meta_analyses__phase_2.html">
-   neuro_meta_analyses.phase_2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="neurobridge_fmri.html">
-   neurobridge_fmri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="participant_demographics.html">
-   participant_demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autism_mri.html">autism_mri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_inference.html">cluster_inference</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">dynamic_functional_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_1.html">neuro_meta_analyses.phase_1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_2.html">neuro_meta_analyses.phase_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurobridge_fmri.html">neurobridge_fmri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">participant_demographics</a></li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
+</nav>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  </div>
+  
 
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
 
-          
+  
+  <div id="rtd-footer-container"></div>
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+      </div>
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/projects/dynamic_functional_connectivity.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
+  <ul class="dropdown-menu">
+  </ul>
 </div>
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
-<a href="https://github.com/neurodatascience/labelbuddy-annotations"
-   class="headerbtn"
+<a href="https://github.com/neurodatascience/labelbuddy-annotations" target="_blank"
+   class="btn btn-sm"
    data-toggle="tooltip"
 data-placement="bottom"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/projects/dynamic_functional_connectivity.ipynb"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/projects/dynamic_functional_connectivity.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download notebook file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-code"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="../_sources/projects/dynamic_functional_connectivity.md"
-   class="headerbtn"
+      <li><a href="../_sources/projects/dynamic_functional_connectivity.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</a>
       
       <li>
-        
 <button onclick="printPdf(this)"
-  class="headerbtn"
+  class="btn btn-sm dropdown-item"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">
-   Dynamic Functional Connectivity methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#labels-in-this-project">
-   Labels in this project
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>dynamic_functional_connectivity</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">
-   Dynamic Functional Connectivity methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#labels-in-this-project">
-   Labels in this project
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>dynamic_functional_connectivity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">
+   Dynamic Functional Connectivity methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
   <section class="tex2jax_ignore mathjax_ignore" id="dynamic-functional-connectivity">
-<h1>dynamic_functional_connectivity<a class="headerlink" href="#dynamic-functional-connectivity" title="Permalink to this headline">#</a></h1>
+<h1>dynamic_functional_connectivity<a class="headerlink" href="#dynamic-functional-connectivity" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity/">on GitHub</a>.</p>
 <section id="dynamic-functional-connectivity-methods">
-<h2>Dynamic Functional Connectivity methods<a class="headerlink" href="#dynamic-functional-connectivity-methods" title="Permalink to this headline">#</a></h2>
+<h2>Dynamic Functional Connectivity methods<a class="headerlink" href="#dynamic-functional-connectivity-methods" title="Permalink to this heading">#</a></h2>
 <p>The focus of this project is to explore how methods for estimating Dynamic Functional Connectivity (DFC) are used in the literature.
 Related code and documentation can be found in a dedicated GitHub <a class="reference external" href="https://github.com/neurodatascience/dfc_text_mining">repository</a>.</p>
 <p>The documents have been collected with <strong>pubget</strong> and the whole <strong>pubget</strong> output can be found on <a class="reference external" href="https://osf.io/2ekbd">OSF</a>.</p>
 </section>
 <section id="labels-in-this-project">
-<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this headline">#</a></h2>
+<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div class="detailed-label-set">
-
+    
     <details >
         <summary class="label-display">SW (32 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     …e location of neighbouring voxels around the centre voxel, and the neighbourhood was also defined as a 3 × 3 × 3 cluster of voxels. 
@@ -459,7 +655,7 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … while unmedicated (  n   = 34), after 1 week (  n   = 29) and 6 weeks of treatment with risperidone (  n   = 24), as well as matched controls at baseline (  n   = 35) and after 6 weeks (  n   = 19). <mark class="annotated-text">After identifying 41 independent components (ICs) comprising resting-state networks, sliding window analysis was performed on IC timecourses using an optimal window size validated with linear support vector machines. </mark>Windowed correlation matrices were then clustered into three discrete connectivity states (a relatively sparsely connected state, a relatively abundantly connected state, and an intermediately connect…
@@ -471,14 +667,14 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … outlined with a small black box are indicated if   p   < 0.05. No significant differences were observed when week 1 patients were compared to baseline and week 6 patients. 
-
+  
 
 ### dFNC Analysis 
-
+  
 <mark class="annotated-text">A sliding window technique was used to estimate dFNC where windowed segments of the component time courses were used to compute transient functional network connectivity patterns (Figure  ). Sliding window analysis was iteratively performed with window sizes of 30, 40, 44, 50, and 60 s. </mark>Window sizes were selected based on previous studies indicating functional connectivity can be robustly estimated using a window size between 30 and 60 s ( ,  ), as well as previous implementation of …
                 </div>
                 <div class="annotation-footer">
@@ -488,14 +684,14 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …spherical ROI in the medial primary motor cortex (Montreal Neurological Institute coordinates=−1, −8, 63), a region not previously linked to depression. 
 
 
 ### Sliding window correlation analysis 
-
+  
 <mark class="annotated-text">The sliding window analysis was performed using custom Python ( ) scripts. The data were split into 40 s Gaussian moving windows, staggered by one repetition time, created using a Gaussian kernel with a standard deviation of 8 s (see   for a detailed discussion of the sliding window methodology).</mark> This time period has been shown to be appropriate for characterizing dynamic functional connectivity  and provides a fine-grained picture of temporal changes in connectivity. For each window, correla…
                 </div>
                 <div class="annotation-footer">
@@ -505,7 +701,7 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …network graph. However, brain network dynamic changes occur at many temporal scales and other strategies have been used to take full advantage of the temporal information contained in the fcMRI data. <mark class="annotated-text">The sliding-window approach extracts the dynamic interactions between brain areas by using a time moving-window along the BOLD time-series (Hutchison et al.,  ; Allen et al.,  ; Leonardi and Van De Ville,  ). Following that strategy, we use an overlapping time-moving window   w[t]   of length 15 on the time series (15 time-points per window, corresponding to 45 s) to calculate Pearson's cross-correlations (R) (Figure  ):</mark> 
@@ -519,16 +715,16 @@ Where   i   denotes the sliding window position,   t   states the specific time 
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …es in these measures between ASD and TD. 
-
+  
 Demographic details of the samples included in this study. 
-
+  
 
 ### Dynamic FC 
-
+  
 We used the DynamicBC toolbox (Liao et al.,  ) for Dynamic FC creation. <mark class="annotated-text">We used a tapered sliding window length of 30 s in accordance with previous studies (Allen et al.,  ; Betzel et al.,  ) and the window was moved with a stride of 1. A set of sliding window correlation matrices was calculated for each subject. </mark>A Fisher Z-Transformation (to transform the Pearson's   r  , i.e., the correlation coefficient) was then applied to improve the normality of the distribution of the correlation matrices. Finally, the …
                 </div>
                 <div class="annotation-footer">
@@ -538,19 +734,19 @@ We used the DynamicBC toolbox (Liao et al.,  ) for Dynamic FC creation. <mark cl
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … 
 
 
 ## Methods 
-
+  
 Whole-brain resting-state functional MRI data were acquired on a 3 T whole-body clinical MRI scanner from 18 subjects clinically diagnosed with JME and 25 healthy control subjects. <mark class="annotated-text">2-min sliding-window approach was incorporated in the quantitative data-driven data analysis framework to assess both the dynamic and static functional connectivity in the resting brains. </mark>Two-sample   t  -tests were performed voxel-wise to detect the differences in functional connectivity metrics based on connectivity strength and density. 
 
 
 ## Results 
-
+  
 The static functional connec…
                 </div>
                 <div class="annotation-footer">
@@ -560,14 +756,14 @@ The static functional connec…
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … 2) Connection Count Index (CCI) which is the number of voxel pairs involving the current voxel in question with the absolute CC ≥ 0.3. 
 
 
 ### Dynamic functional connectivity with SWATCH analysis 
-
+  
 <mark class="annotated-text">To characterize the time variations of the CCI and CSI maps we incorporated a 2 min sliding window into the quantitative data-driven analysis procedure. We computed CCI and CSI maps for every 2 min window (60 time-frames). The increment between the adjacent sliding windows was one frame, therefore, we obtained a time series of CCI and CSI maps with 235 time-frames for each Resting-state functional MRI dataset. </mark>Then, we computed the voxel-wise temporal averages of the 2-min sliding window CCI and CSI time series for each Resting-state functional MRI dataset for further statistical analysis. The pipeline of t…
                 </div>
                 <div class="annotation-footer">
@@ -577,14 +773,14 @@ The static functional connec…
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …olation of outliers using a third-order spline fit to the clean parts of the time courses, and (3) low-pass filtering using a fifth-order Butterworth filter with a cutoff frequency of 0.15 Hz. 
 
 
 ### <mark class="annotated-text">Sliding window analysis</mark> 
-
+  
 The postprocessed dual regression time series were analyzed with a sliding window method to assess changes in between-network connectivity over time ( C). This analysis was performed in Matlab (R…
                 </div>
                 <div class="annotation-footer">
@@ -594,14 +790,14 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …third-order spline fit to the clean parts of the time courses, and (3) low-pass filtering using a fifth-order Butterworth filter with a cutoff frequency of 0.15 Hz. 
 
 
 ### Sliding window analysis 
-
+  
 <mark class="annotated-text">The postprocessed dual regression time series were analyzed with a sliding window method to assess changes in between-network connectivity over time ( C)</mark>. This analysis was performed in Matlab (R2016b) based on functions from GIFT ( ). A tapered window was created by convolving a rectangle of 22TR (66 s) with a Gaussian with sigma of 3TR and moved in …
                 </div>
                 <div class="annotation-footer">
@@ -611,17 +807,17 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details >
         <summary class="label-display">SWC (19 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     … 41 independent components (ICs) comprising resting-state networks, sliding window analysis was performed on IC timecourses using an optimal window size validated with linear support vector machines. <mark class="annotated-text">Windowed correlation matrices were then clustered into three discrete connectivity states (a relatively sparsely connected state, a relatively abundantly connected state, and an intermediately connected state)</mark>. In unmedicated patients, static connectivity was increased between five pairs of ICs and decreased between two pairs of ICs when compared to controls, dynamic connectivity showed increased connectiv…
@@ -633,14 +829,14 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …y in differentiating control and patient ALFF-FC using the SVM classifier. This SVM classification was performed using the Statistics and Machine Learning Toolbox in MATLAB ( ). 
 
 
 ### Clustering 
-
+  
 <mark class="annotated-text">In order to characterize reoccurring patterns of connectivity across groups and time,   k  -means clustering was performed on the windowed correlation matrices for all subjects (Figure  B)</mark>. Clustering of a sub-sampled number of windows (i.e., windows with relative maxima of variance) for all groups and time points was carried out in order to estimate initial cluster centroids (cluster …
                 </div>
                 <div class="annotation-footer">
@@ -650,7 +846,7 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …were organized in nine groups: subcortical (SBC), cerebellum (CER), auditory (AUD), sensorimotor (SEN), visual (VIS), salience (SAL), default mode (DMN), executive control (ECN) and language (LAN). 
@@ -664,14 +860,14 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …d the effect of covariates) can be estimated ( ,  ,  ). Bootstrapping with 1000 simulations was applied in order to ensure stability of estimations. 
 
 
 ### Dynamic functional network connectivity 
-
+  
 <mark class="annotated-text">Recent studies have shown that FNC has dynamic properties ( ). With regard to rs-fMRI data, dynamic behavior of FNC can be captured, for example, by applying a sliding window approach ( ). In this approach, FNC is first estimated within smaller portions of the time course (tapered windows with a size of 30 TRs = 60s). Then, these windowed FNC matrices are used to identify recurring patterns of whole-brain connectivity via   k  -means clustering, yielding distinct ‘states’ (see   for further details). </mark>The optimal number of clusters can be estimated based on objective criteria like the elbow criterion that reflects the ratio of within- to between-cluster distances while testing for different numbers…
                 </div>
                 <div class="annotation-footer">
@@ -681,14 +877,14 @@ The postprocessed dual regression time series were analyzed with a sliding windo
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …s all connections between RSN pairs was computed. Additionally, the mean SD for each network across all other networks was considered and each RSN-to-RSN connection was also tested separately. 
 
 
 ### <mark class="annotated-text">K-means clustering </mark>
-
+  
 To assess patterns of functional connectivity that reoccur over time across different participants, k-means clustering was applied to the windowed covariance matrices from all windows and all part…
                 </div>
                 <div class="annotation-footer">
@@ -698,14 +894,14 @@ To assess patterns of functional connectivity that reoccur over time across diff
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …en RSN pairs was computed. Additionally, the mean SD for each network across all other networks was considered and each RSN-to-RSN connection was also tested separately. 
 
 
 ### K-means clustering 
-
+  
 <mark class="annotated-text">To assess patterns of functional connectivity that reoccur over time across different participants, k-means clustering was applied to the windowed covariance matrices from all windows and all participants using the Manhattan (L1) distance function ( D). The optimal number of clusters k was chosen based on the elbow criterion of the cluster validity index, computed as the ratio of within-cluster to between-cluster distance ( ).</mark> The clustering algorithm was repeated 500 times in Matlab with random initializations of cluster centroid positions to get a stable solution. In addition to using the optimal value for k, the analyse…
                 </div>
                 <div class="annotation-footer">
@@ -715,14 +911,14 @@ To assess patterns of functional connectivity that reoccur over time across diff
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … of the sliding window correlations; (4) run clustering analysis on all subjects’ tvFNC data to identify reoccurring connectivity states and their derivatives patterns. 
 
 
 ### Clustering Analysis 
-
+  
 <mark class="annotated-text">In both methods dFNC and tvFNC, time-varying connectivity is captured by performing k-means clustering analysis, assigning all subjects’ temporal FNC data into a selected number of clusters representing distinct functional connectivity states. </mark>The clustering algorithm selection is based on previous connectivity studies that successfully applied k-means algorithm to identify reoccurring patterns of connectivity within and between subjects ac…
                 </div>
                 <div class="annotation-footer">
@@ -732,7 +928,7 @@ To assess patterns of functional connectivity that reoccur over time across diff
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …e produced for each timepoint (using MATLAB code made freely available by Shine et al. at  ) , since together, these two measures quantify both a node’s inter- modular and intra-modular connectivity. <mark class="annotated-text">For each subject, the joint patterns were then used to assign each timepoint to one of two clusters, using an unsupervised machine learning algorithm known as k-means clustering (setting   k   = 2)</mark> . To avoid the possibility of the algorithm becoming stuck in local minima, it was repeated 500 times with random re-initialisation of the two clusters’ initial points. This was performed individuall…
@@ -744,16 +940,16 @@ To assess patterns of functional connectivity that reoccur over time across diff
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ion matrix was calculated. The sliding step was 1 sample, resulting in a total of 178 dynamic FNC matrices. 
-
+  
 The whole data processing steps. 
-
+  
 
 ### Brain State Clustering and State Analysis 
-
+  
 <mark class="annotated-text">To examine the reoccurring FNC patterns in the temporal process, we used k-means clustering on all sliding-window FNC matrixes of all subjects by Manhattan distance because L  distance is more suitable for calculating similarity of high-dimensional data ( ).</mark> A maximum iteration of 150 was used on the time-varying FNC matrices to cluster brain states. Different number of clusters was calculated from 2 to 10. Through dividing within- by between-cluster dis…
                 </div>
                 <div class="annotation-footer">
@@ -763,14 +959,14 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …could be quantitatively estimated and compared between different groups. The original FCV matrices were then Fisher   z  -transformed and were statistically compared. 
 
 
 ###  k  -means Clustering 
-
+  
 <mark class="annotated-text">To identify dFNC patterns reoccurring across temporal matrices,   k  -means clustering was employed on all the dynamic correlation matrices to divide the dFNC into discrete clusters. </mark>The   k  -means algorithm aggregates information with similarities into “  k  ” groups, ensuring that the sum of squares within clusters is minimal. During the clustering estimation, the correlation d…
                 </div>
                 <div class="annotation-footer">
@@ -780,17 +976,17 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details >
         <summary class="label-display">others (5 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     …ct was excluded from the analysis due to segmentation error in any single ROI. However, no difference was observed in the results between 26 of the MDD subjects and the 27 healthy control subjects. 
@@ -804,14 +1000,14 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … temporal and spectral domains. (d) Temporal and spectral features are concatenated and (e) used as the feature vector for subject-level prediction. 
-
+  
 
 ### Dynamic Conditional Correlation Model 
-
+  
 <mark class="annotated-text">To model dynamic functional connectivity between resting-state networks, we consider the Dynamic Conditional Correlation (DCC) model of [ ]</mark>. Let    Z    = (  Z  ,   Z  )′ be a random vector representing a pair of BOLD time series of any two ROIs in the brain at time   t  , for each of   i   = 1, …,   N   subjects. For simplicity, below w…
                 </div>
                 <div class="annotation-footer">
@@ -821,14 +1017,14 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …us pallidus, amygdala, and hippocampus;  ), and 28 cerebellar regions from the SUIT atlas (Diedrichsen et al.,  ) for each participant in the study. 
 
 
 #### Time-resolved functional connectivity. 
-
+  
 <mark class="annotated-text">To estimate time-resolved functional connectivity (Hutchison et al.,  ; Sakoğlu et al.,  ) between the 375 ROIs, we used the multiplication of temporal derivatives approach (MTD;  ; Shine et al.,  ). The MTD is computed by calculating the pointwise product of temporal derivative of pairwise time series ( ). To reduce the contamination of high-frequency noise in the time-resolved connectivity data, the MTD is averaged by calculating the mean value over a temporal window,   w  . Time-resolved functional connectivity was calculated between all 375 brain regions by using the MTD within a sliding temporal window of 15 time points (33 seconds at 2.2 s per window), which allowed for estimates of signals amplified at approximately 0.1 Hz. Individual functional connectivity matrices were then calculated within each temporal window, thus generating an unthresholded (i.e., signed and weighted) three-dimensional adjacency matrix (region × region × time) for each participant.</mark> The MTD for the pairwise interaction between region   i   and   j   is defined according to  : where   dt   is the first temporal derivative of the   i   or   j   time series at time   t  ,   σ   is …
                 </div>
                 <div class="annotation-footer">
@@ -838,7 +1034,7 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …instantaneous phase coherence, multiple temporal derivative, or dynamic conditional correlation approach (Glerean, Salmi, Lahnakoski, Jääskeläinen, & Sams,  ; Lindquist et al.,  ; Shine et al.,  ). 
@@ -852,7 +1048,7 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ng functional magnetic resonance imaging to track spatiotemporal activity patterns at the whole brain level in lightly anesthetized mice, during both resting conditions and visual stimulation trials. <mark class="annotated-text">Our results provide evidence that quasiperiodic patterns (QPPs) are the most prominent component of mouse resting brain dynamics</mark>. These QPPs captured the temporal alignment of anticorrelation between the default mode (DMN)- and task-positive (TPN)-like networks, with global brain fluctuations, and activity in neuromodulatory n…
@@ -864,14 +1060,14 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … desired analysis, global signal regression (GSR) was performed. To determine spatiotemporal patterns, a brain mask was used to exclude ventricles. 
 
 
 ### Spatiotemporal Pattern Finding Algorithm 
-
+  
 <mark class="annotated-text">QPPs were determined using the spatiotemporal pattern finding algorithm described by  ). Briefly, the algorithm identifies BOLD spatiotemporal patterns</mark> (distribution and propagation of BOLD activity across different brain areas over the duration of a specific predefined time window) that recur frequently over the duration of the functional scans. Th…
                 </div>
                 <div class="annotation-footer">
@@ -881,24 +1077,24 @@ The whole data processing steps.
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details >
         <summary class="label-display">CAP (3 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     … to allow for signal stabilization, and timeseries were concatenated within and across participants. 
 
 
 ### Coactivation pattern analysis 
-
+  
 A summary of the analytic steps is presented in Figure  . <mark class="annotated-text">Within REST1, a   k   means clustering analysis of coactivation patterns (CAPs) was conducted to identify “states” of resting brain activity after an initial PCA dimensionality reduction step. </mark>Silhouette scores were calculated to evaluate the optimal clustering solution, and   k   means clustering solutions employing between 4 and 18 clusters were explored. The   k   = 8 was selected, as th…
                 </div>
                 <div class="annotation-footer">
@@ -908,7 +1104,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …selected, as this solution had the highest mean silhouette score (average silhouette scores shown in  ) and the lowest number of individuals for which the solution failed to fit the data (  n   = 1). <mark class="annotated-text">To confirm that these CAPs represent reliable states of resting brain activity rather than noise, the CAP analysis for   k   = 8 was run 100 more times on the REST1 data, and a PCA was run to verify congruence among the states. </mark>State data within   k   = 8 were then normalized (by subtracting the within‐state global average) and projected back into anatomic space for visualization (Figure  , raw unnormalized representation of…
@@ -920,14 +1116,14 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ivation with the precuneus superimposed with clusters of increased global signal representation (in blue) in iNPH compared with HCs 
-
+  
 
 #### Step 3: Temporal characterization of   DMN   dynamics 
-
+  
 <mark class="annotated-text">The fMRI volumes selected by precuneus activations were clustered into three states using the   k  ‐means algorithm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu & Duyn,  ; Liu, Zhang, Chang, & Duyn,  )</mark>. The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (t…
                 </div>
                 <div class="annotation-footer">
@@ -937,7 +1133,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …thm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu & Duyn,  ; Liu, Zhang, Chang, & Duyn,  ). <mark class="annotated-text">The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (the average number of consecutive volumes classified in one CAP‐cluster) and frequency (the number of disjoint volume‐sets classified in one CAP‐cluster normalized by the recording time) of the three CAPs were computed for each subject.</mark> The choice of the number of clusters (  k   = 3) was based on a consensus clustering assessment from data bootstrapping (Bolton et al.,  ; Monti, Tamayo, Mesirov, & Golub,  ) and ensuring a minimum c…
@@ -949,7 +1145,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …e volumes and mask were later used with FSL randomise. 
@@ -963,14 +1159,14 @@ The volumes were reshaped and concatenated, and the resulting data matrix was tr
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …r‐package function hclust (method = "ward.D2") (Müllner,  ). The results from 30 to 2 clusters (in total, 58 clusters or CAPs) were evaluated. We aggregated the fMRI volumes assigned to each cluster. <mark class="annotated-text">The mean image of such a cluster's volumes provided an overall view of the resulting CAP and was then normalized by the standard error (within‐cluster and across fMRI volumes) to generate   z  ‐statistic maps, which quantify the degree of significance to which the CAP map values for each voxel deviate from zero (Liu et al.,  ,  ). </mark>
 
 
 ### Group comparison   t   tests 
-
+  
 The 11,930 RS‐fMRI volumes concatenated into one file were used as input for FSL's randomise (Anderson & Robinson,  ; Winkler et al.,  ). The voxel‐wise differe…
                 </div>
                 <div class="annotation-footer">
@@ -980,24 +1176,24 @@ The 11,930 RS‐fMRI volumes concatenated into one file were used as input for F
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details >
         <summary class="label-display">HMM (2 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     …t  ] 
-
+  
 
 ## DYNAMIC FUNCTIONAL CONNECTIVITY IN REAL DATA 
-
+  
 Having demonstrated the utility of the NPC approach to relate FC to behavior in a synthetic scenario where the estimation was very noisy, <mark class="annotated-text">we next evaluated it using real data by applying the Hidden Markov model (HMM) to resting state fMRI data from the Human Connectome Project (HCP). The HMM assumes that the data can be described using a finite number of states. </mark>Each state is represented using a probability distribution, which in this case is chosen to be a Gaussian distribution (Vidaurre, Smith, & Woolrich,  ); that is, each state is described by a character…
                 </div>
                 <div class="annotation-footer">
@@ -1007,14 +1203,14 @@ Having demonstrated the utility of the NPC approach to relate FC to behavior in 
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …pocampus, thalamus, as well caudate, putamen, and pallidum regions that they are heavily connected to (see   for the independent components grouped into the 7 ICNs). 
 
 
 ### Hidden markov modeling 
-
+  
 <mark class="annotated-text">We applied a hidden Markov model (HMM) to the minimally preprocessed region-wise BOLD time-series, resulting in   K   discrete states of whole-brain connectivity, each associated with state-specific timecourse. The HMM assumes that time series data can be described using a finite sequence of a hidden number of states. Each state and its associated time series comprise a unique connectivity pattern that temporally re-occurs over time. Using the HMM-MAR (multivariate autoregressive) toolbox ( ), discrete connectome states were inferred from region-wise BOLD time-series temporally concatenated across all subjects</mark>. Whereas the states are estimated at the grouplevel, each individual has a subject-specific state time course, indicating when a given state is active. For a given K, the best fitting model correspon…
                 </div>
                 <div class="annotation-footer">
@@ -1024,11 +1220,11 @@ Having demonstrated the utility of the NPC approach to relate FC to behavior in 
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
 </div>
 </div></div>
 </div>
@@ -1055,50 +1251,110 @@ Having demonstrated the utility of the NPC approach to relate FC to behavior in 
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="cluster_inference.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">cluster_inference</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="neuro_meta_analyses__phase_1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">neuro_meta_analyses.phase_1</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+  <a class='left-prev' id="prev-link" href="cluster_inference.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">cluster_inference</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="neuro_meta_analyses__phase_1.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">neuro_meta_analyses.phase_1</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
   
-    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">
+   Dynamic Functional Connectivity methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+</nav>
 </div>
 
-
-      </div>
-    </div>
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>

@@ -4,49 +4,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Contributing to this repository &#8212; Biomedical literature annotations</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="_static/global.css" />
     <link rel="stylesheet" type="text/css" href="_static/label-set.css" />
     <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -54,56 +62,366 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing_to_this_repository';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Participant demographics" href="participant_demographics.html" />
     <link rel="prev" title="Using this repository" href="using_this_repository.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+  
 
-    <div class="container-xl">
-      <div class="row">
+
+<a class="navbar-brand logo" href="overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/dynamic_functional_connectivity.html">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neuro_meta_analyses__phase_2.html">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
       
       
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
-      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/dynamic_functional_connectivity.html">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neuro_meta_analyses__phase_2.html">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="projects/participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,426 +430,250 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="using_this_repository.html">
-   Using this repository
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Contributing to this repository
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="using_this_repository.html">Using this repository</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing to this repository</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Analyses
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="participant_demographics.html">
-   Participant demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">Participant demographics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/autism_mri.html">
-   autism_mri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/cluster_inference.html">
-   cluster_inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/dynamic_functional_connectivity.html">
-   dynamic_functional_connectivity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">
-   neuro_meta_analyses.phase_1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">
-   neuro_meta_analyses.phase_2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/neurobridge_fmri.html">
-   neurobridge_fmri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects/participant_demographics.html">
-   participant_demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="projects/autism_mri.html">autism_mri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/cluster_inference.html">cluster_inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/neuro_meta_analyses__phase_1.html">neuro_meta_analyses.phase_1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/neuro_meta_analyses__phase_2.html">neuro_meta_analyses.phase_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/neurobridge_fmri.html">neurobridge_fmri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects/participant_demographics.html">participant_demographics</a></li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
+</nav>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  </div>
+  
 
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
 
-          
+  
+  <div id="rtd-footer-container"></div>
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+      </div>
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
-<a href="https://github.com/neurodatascience/labelbuddy-annotations"
-   class="headerbtn"
+<a href="https://github.com/neurodatascience/labelbuddy-annotations" target="_blank"
+   class="btn btn-sm"
    data-toggle="tooltip"
 data-placement="bottom"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/contributing_to_this_repository.md"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="_sources/contributing_to_this_repository.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</a>
       
       <li>
-        
 <button onclick="printPdf(this)"
-  class="headerbtn"
+  class="btn btn-sm dropdown-item"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloning-the-repository">
-   Cloning the repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-annotations-to-an-existing-project">
-   Adding annotations to an existing project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-labelbuddy-file">
-     Creating the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .labelbuddy
-      </span>
-     </code>
-     file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-some-annotations">
-     Creating some annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exporting-the-annotations">
-     Exporting the annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#publishing-the-new-annotations">
-     Publishing the new annotations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-new-project">
-   Adding a new project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-documents">
-     Adding documents
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
-       Reusing documents from another project
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
-       Downloading new documents with
-       <strong>
-        pubget
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adding-the-source-dataset-location-information">
-       Adding the source dataset location information
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-the-labels">
-     Adding the labels
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#publishing-the-new-project">
-     Publishing the new project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
-   Adding pages to this documentation
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Contributing to this repository</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloning-the-repository">
-   Cloning the repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-annotations-to-an-existing-project">
-   Adding annotations to an existing project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-labelbuddy-file">
-     Creating the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .labelbuddy
-      </span>
-     </code>
-     file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-some-annotations">
-     Creating some annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exporting-the-annotations">
-     Exporting the annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#publishing-the-new-annotations">
-     Publishing the new annotations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-new-project">
-   Adding a new project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-documents">
-     Adding documents
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
-       Reusing documents from another project
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
-       Downloading new documents with
-       <strong>
-        pubget
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adding-the-source-dataset-location-information">
-       Adding the source dataset location information
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-the-labels">
-     Adding the labels
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#publishing-the-new-project">
-     Publishing the new project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
-   Adding pages to this documentation
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contributing to this repository</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cloning-the-repository">
+   Cloning the repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-annotations-to-an-existing-project">
+   Adding annotations to an existing project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-the-labelbuddy-file">
+     Creating the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .labelbuddy
+      </span>
+     </code>
+     file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-some-annotations">
+     Creating some annotations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exporting-the-annotations">
+     Exporting the annotations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publishing-the-new-annotations">
+     Publishing the new annotations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-new-project">
+   Adding a new project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-documents">
+     Adding documents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
+       Reusing documents from another project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
+       Downloading new documents with
+       <strong>
+        pubget
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-the-source-dataset-location-information">
+       Adding the source dataset location information
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-the-labels">
+     Adding the labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publishing-the-new-project">
+     Publishing the new project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
+   Adding pages to this documentation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
   <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-this-repository">
-<h1>Contributing to this repository<a class="headerlink" href="#contributing-to-this-repository" title="Permalink to this headline">#</a></h1>
+<h1>Contributing to this repository<a class="headerlink" href="#contributing-to-this-repository" title="Permalink to this heading">#</a></h1>
 <p>Here we describe how to contribute new annotations to a project in this repository, then how to add a new project.
 If you run into any difficulties don’t hesitate to ask for help by <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/issues">opening an issue</a>.</p>
 <section id="cloning-the-repository">
-<span id="clone-the-repository"></span><h2>Cloning the repository<a class="headerlink" href="#cloning-the-repository" title="Permalink to this headline">#</a></h2>
+<span id="clone-the-repository"></span><h2>Cloning the repository<a class="headerlink" href="#cloning-the-repository" title="Permalink to this heading">#</a></h2>
 <p>The first step is to obtain a local clone of the repository.
 <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/fork">Fork</a> the repository and clone your fork:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourgithubusername/labelbuddy-annotations.git
@@ -544,7 +686,7 @@ If you run into any difficulties don’t hesitate to ask for help by <a class="r
 </div>
 </section>
 <section id="adding-annotations-to-an-existing-project">
-<span id="id1"></span><h2>Adding annotations to an existing project<a class="headerlink" href="#adding-annotations-to-an-existing-project" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>Adding annotations to an existing project<a class="headerlink" href="#adding-annotations-to-an-existing-project" title="Permalink to this heading">#</a></h2>
 <p>Here we want to contribute to an existing annotation project, using the <code class="docutils literal notranslate"><span class="pre">autism_mri</span></code> project as an example.
 The repository contains the documents we will annotate and the labels we will use.
 Locally, we will</p>
@@ -561,12 +703,12 @@ We recommend using the same name as in your git configuration, ie the output of:
 </div>
 <p>This way the name of the annotations file you create and your name in the git log will match.</p>
 <section id="creating-the-labelbuddy-file">
-<span id="create-the-labelbuddy-file"></span><h3>Creating the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file<a class="headerlink" href="#creating-the-labelbuddy-file" title="Permalink to this headline">#</a></h3>
+<span id="create-the-labelbuddy-file"></span><h3>Creating the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file<a class="headerlink" href="#creating-the-labelbuddy-file" title="Permalink to this heading">#</a></h3>
 <p>We first need to install <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="db04f879-75f7-4b9a-a382-2860e1b489ea" name="6fd97777-e32c-4662-9ca9-50603dc6b15d" type="radio">
-</input><label class="sd-tab-label" for="db04f879-75f7-4b9a-a382-2860e1b489ea">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/start_project.py<span class="w"> </span>projects/autism_mri
@@ -581,8 +723,8 @@ labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span
 </pre></div>
 </div>
 </div>
-<input id="91138623-823b-4bec-bcd2-ac95c52e4681" name="6fd97777-e32c-4662-9ca9-50603dc6b15d" type="radio">
-</input><label class="sd-tab-label" for="91138623-823b-4bec-bcd2-ac95c52e4681">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -595,7 +737,7 @@ Click <strong>Import docs &amp; annotations</strong>, select the <code class="do
 </div>
 </section>
 <section id="creating-some-annotations">
-<h3>Creating some annotations<a class="headerlink" href="#creating-some-annotations" title="Permalink to this headline">#</a></h3>
+<h3>Creating some annotations<a class="headerlink" href="#creating-some-annotations" title="Permalink to this heading">#</a></h3>
 <p>If you haven’t opened <strong>labelbuddy</strong> yet you can find it in your applications menu, or invoke it with this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy
 </pre></div>
@@ -604,12 +746,12 @@ Click <strong>Import docs &amp; annotations</strong>, select the <code class="do
 See the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/">labelbuddy documentation</a> for more information about <strong>labelbuddy</strong>.</p>
 </section>
 <section id="exporting-the-annotations">
-<h3>Exporting the annotations<a class="headerlink" href="#exporting-the-annotations" title="Permalink to this headline">#</a></h3>
+<h3>Exporting the annotations<a class="headerlink" href="#exporting-the-annotations" title="Permalink to this heading">#</a></h3>
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9fdedf30-6ff5-4027-8b38-f3c2b5e41a50" name="5a5c3283-e3ff-465f-be0b-44dc383a5343" type="radio">
-</input><label class="sd-tab-label" for="9fdedf30-6ff5-4027-8b38-f3c2b5e41a50">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -624,8 +766,8 @@ make<span class="w"> </span>annotations
 </pre></div>
 </div>
 </div>
-<input id="7bb824c7-8616-41f3-b65f-014e4a163f15" name="5a5c3283-e3ff-465f-be0b-44dc383a5343" type="radio">
-</input><label class="sd-tab-label" for="7bb824c7-8616-41f3-b65f-014e4a163f15">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Using <strong>labelbuddy</strong>’s graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -640,7 +782,7 @@ Make sure that the checkboxes are in these states:</p>
 </div>
 </section>
 <section id="publishing-the-new-annotations">
-<h3>Publishing the new annotations<a class="headerlink" href="#publishing-the-new-annotations" title="Permalink to this headline">#</a></h3>
+<h3>Publishing the new annotations<a class="headerlink" href="#publishing-the-new-annotations" title="Permalink to this heading">#</a></h3>
 <p>The last step is to get our work included in the upstream repository.
 We commit and push the changes, then open a Pull Request.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>projects/autism_mri/annotations/Firstname_Lastname.jsonl
@@ -650,7 +792,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </section>
 </section>
 <section id="adding-a-new-project">
-<h2>Adding a new project<a class="headerlink" href="#adding-a-new-project" title="Permalink to this headline">#</a></h2>
+<h2>Adding a new project<a class="headerlink" href="#adding-a-new-project" title="Permalink to this heading">#</a></h2>
 <p>Rather than contributing to an existing project you can also start a new one.
 If you haven’t yet, <a class="reference internal" href="#clone-the-repository"><span class="std std-ref">Clone the repository</span></a>, then create a new directory for your project in <code class="docutils literal notranslate"><span class="pre">projects/</span></code>.</p>
 <p>Suppose we want to start a project in which we will annotate imaging modalities.
@@ -663,9 +805,9 @@ mkdir<span class="w"> </span>documents<span class="w"> </span>labels<span class=
 </div>
 <p>Please also add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file describing your project.</p>
 <section id="adding-documents">
-<h3>Adding documents<a class="headerlink" href="#adding-documents" title="Permalink to this headline">#</a></h3>
+<h3>Adding documents<a class="headerlink" href="#adding-documents" title="Permalink to this heading">#</a></h3>
 <section id="reusing-documents-from-another-project">
-<h4>Reusing documents from another project<a class="headerlink" href="#reusing-documents-from-another-project" title="Permalink to this headline">#</a></h4>
+<h4>Reusing documents from another project<a class="headerlink" href="#reusing-documents-from-another-project" title="Permalink to this heading">#</a></h4>
 <p>Whenever it makes sense, different projects should annotate the same documents.
 Indeed, this makes it possible to combine the annotations from different projects and obtain rich annotations for the shared documents.
 For example, if our <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code> project uses the same documents as the <code class="docutils literal notranslate"><span class="pre">participant_demographics</span></code> project, by combining them we obtain documents richly annotated with these two types of information.</p>
@@ -684,7 +826,7 @@ ln<span class="w"> </span>-s<span class="w"> </span>../../participant_demographi
 <p>(See a more detailed explanation <a class="reference internal" href="#add-doc-sources-json"><span class="std std-ref">here</span></a>.)</p>
 </section>
 <section id="downloading-new-documents-with-pubget">
-<h4>Downloading new documents with <strong>pubget</strong><a class="headerlink" href="#downloading-new-documents-with-pubget" title="Permalink to this headline">#</a></h4>
+<h4>Downloading new documents with <strong>pubget</strong><a class="headerlink" href="#downloading-new-documents-with-pubget" title="Permalink to this heading">#</a></h4>
 <p>If none of the existing document sets suit your project, you can create a new one using <a class="reference external" href="https://neuroquery.github.io/pubget/">pubget</a>.
 <strong>pubget</strong> lets you download articles from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/">PubMedCentral</a> and store them in the format used by this repository.
 The articles to download can be selected from a list of PMCIDs, or from a search query for PMC.
@@ -719,7 +861,7 @@ By default <strong>pubget</strong> splits its output into files containing 500 a
 </div>
 </section>
 <section id="adding-the-source-dataset-location-information">
-<span id="add-doc-sources-json"></span><h4>Adding the source dataset location information<a class="headerlink" href="#adding-the-source-dataset-location-information" title="Permalink to this headline">#</a></h4>
+<span id="add-doc-sources-json"></span><h4>Adding the source dataset location information<a class="headerlink" href="#adding-the-source-dataset-location-information" title="Permalink to this heading">#</a></h4>
 <p>This repository provides an easy way to <a class="reference internal" href="using_this_repository.html#obtaining-the-full-datasets"><span class="std std-ref">download the full dataset</span></a>.
 For this to work, we must tell it where to find it by adding a JSON file in our project’s <code class="docutils literal notranslate"><span class="pre">documents/</span></code> directory.
 The file must be in <code class="docutils literal notranslate"><span class="pre">projects/my_project/documents/datasets.json</span></code>.
@@ -742,7 +884,7 @@ Therefore in our case the file would look like:</p>
 </section>
 </section>
 <section id="adding-the-labels">
-<h3>Adding the labels<a class="headerlink" href="#adding-the-labels" title="Permalink to this headline">#</a></h3>
+<h3>Adding the labels<a class="headerlink" href="#adding-the-labels" title="Permalink to this heading">#</a></h3>
 <p>Next we need to create the labels.
 Here also, when it makes sense consider reusing some labels from other projects, possibly using GitHub issues to communicate with other contributors about harmonizing labels.
 Indeed, if all projects agree that for example the number of study participant is denoted <code class="docutils literal notranslate"><span class="pre">n_participants</span></code>, that makes it easier to aggregate and reuse annotations than if one project calls it <code class="docutils literal notranslate"><span class="pre">n_participants</span></code> and another uses <code class="docutils literal notranslate"><span class="pre">Participants</span> <span class="pre">count</span></code>.
@@ -754,29 +896,29 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Labels &amp; Documents</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ada92729-22e1-4461-8068-a5d815555e4d" name="55d2d3f4-29b2-49ed-9409-0498cbd61094" type="radio">
-</input><label class="sd-tab-label" for="ada92729-22e1-4461-8068-a5d815555e4d">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--export-labels<span class="w"> </span>labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="1d0cd810-7f25-474d-9925-ac86b64f71db" name="55d2d3f4-29b2-49ed-9409-0498cbd61094" type="radio">
-</input><label class="sd-tab-label" for="1d0cd810-7f25-474d-9925-ac86b64f71db">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>
 </div>
 </section>
 <section id="publishing-the-new-project">
-<h3>Publishing the new project<a class="headerlink" href="#publishing-the-new-project" title="Permalink to this headline">#</a></h3>
+<h3>Publishing the new project<a class="headerlink" href="#publishing-the-new-project" title="Permalink to this heading">#</a></h3>
 <p>Once all of this is done you can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> your changes, open a Pull Request, and the new project will become visible in the upstream repository.
 You can start creating annotations as explained <a class="reference internal" href="#adding-annotations-to-an-existing-project"><span class="std std-ref">above</span></a>.</p>
 </section>
 </section>
 <section id="adding-pages-to-this-documentation">
-<h2>Adding pages to this documentation<a class="headerlink" href="#adding-pages-to-this-documentation" title="Permalink to this headline">#</a></h2>
+<h2>Adding pages to this documentation<a class="headerlink" href="#adding-pages-to-this-documentation" title="Permalink to this heading">#</a></h2>
 <p>Another way to contribute is to add pages to this documentation, to share analyses, describe a project in depth etc.</p>
 <p>The contents are in <code class="docutils literal notranslate"><span class="pre">analysis/book</span></code> below the root of the repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>analysis/book
@@ -813,50 +955,185 @@ Instead, edit the project’s <code class="docutils literal notranslate"><span c
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="using_this_repository.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Using this repository</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="participant_demographics.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Participant demographics</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+  <a class='left-prev' id="prev-link" href="using_this_repository.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Using this repository</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="participant_demographics.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Participant demographics</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
   
-    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cloning-the-repository">
+   Cloning the repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-annotations-to-an-existing-project">
+   Adding annotations to an existing project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-the-labelbuddy-file">
+     Creating the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .labelbuddy
+      </span>
+     </code>
+     file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-some-annotations">
+     Creating some annotations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exporting-the-annotations">
+     Exporting the annotations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publishing-the-new-annotations">
+     Publishing the new annotations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-new-project">
+   Adding a new project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-documents">
+     Adding documents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reusing-documents-from-another-project">
+       Reusing documents from another project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#downloading-new-documents-with-pubget">
+       Downloading new documents with
+       <strong>
+        pubget
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-the-source-dataset-location-information">
+       Adding the source dataset location information
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-the-labels">
+     Adding the labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publishing-the-new-project">
+     Publishing the new project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-pages-to-this-documentation">
+   Adding pages to this documentation
+  </a>
+ </li>
+</ul>
+
+</nav>
 </div>
 
-
-      </div>
-    </div>
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>

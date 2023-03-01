@@ -4,49 +4,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>neuro_meta_analyses.phase_2 &#8212; Biomedical literature annotations</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="../_static/global.css" />
     <link rel="stylesheet" type="text/css" href="../_static/label-set.css" />
     <link rel="stylesheet" type="text/css" href="../_static/annotation-set.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -54,56 +62,366 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/neuro_meta_analyses__phase_2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="neurobridge_fmri" href="neurobridge_fmri.html" />
     <link rel="prev" title="neuro_meta_analyses.phase_1" href="neuro_meta_analyses__phase_1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+  
 
-    <div class="container-xl">
-      <div class="row">
+
+<a class="navbar-brand logo" href="../overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="dynamic_functional_connectivity.html">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
       
       
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
-      <h1 class="site-logo" id="site-title">Biomedical literature annotations</h1>
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../using_this_repository.html">
+                        Using this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing_to_this_repository.html">
+                        Contributing to this repository
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../participant_demographics.html">
+                        Participant demographics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="autism_mri.html">
+                        autism_mri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="cluster_inference.html">
+                        cluster_inference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="dynamic_functional_connectivity.html">
+                        dynamic_functional_connectivity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neuro_meta_analyses__phase_1.html">
+                        neuro_meta_analyses.phase_1
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        neuro_meta_analyses.phase_2
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="neurobridge_fmri.html">
+                        neurobridge_fmri
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="participant_demographics.html">
+                        participant_demographics
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../overview.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">Biomedical literature annotations</p>
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,322 +430,205 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_this_repository.html">
-   Using this repository
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../contributing_to_this_repository.html">
-   Contributing to this repository
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_this_repository.html">Using this repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing_to_this_repository.html">Contributing to this repository</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Analyses
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../participant_demographics.html">
-   Participant demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../participant_demographics.html">Participant demographics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="autism_mri.html">
-   autism_mri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cluster_inference.html">
-   cluster_inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dynamic_functional_connectivity.html">
-   dynamic_functional_connectivity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="neuro_meta_analyses__phase_1.html">
-   neuro_meta_analyses.phase_1
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   neuro_meta_analyses.phase_2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="neurobridge_fmri.html">
-   neurobridge_fmri
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="participant_demographics.html">
-   participant_demographics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autism_mri.html">autism_mri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_inference.html">cluster_inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_1.html">neuro_meta_analyses.phase_1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">neuro_meta_analyses.phase_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurobridge_fmri.html">neurobridge_fmri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">participant_demographics</a></li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
+</nav>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  </div>
+  
 
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
 
-          
+  
+  <div id="rtd-footer-container"></div>
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+      </div>
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/neurodatascience/labelbuddy-annotations/main?urlpath=tree/analysis/book/projects/neuro_meta_analyses__phase_2.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
+  <ul class="dropdown-menu">
+  </ul>
 </div>
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
-<a href="https://github.com/neurodatascience/labelbuddy-annotations"
-   class="headerbtn"
+<a href="https://github.com/neurodatascience/labelbuddy-annotations" target="_blank"
+   class="btn btn-sm"
    data-toggle="tooltip"
 data-placement="bottom"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/projects/neuro_meta_analyses__phase_2.ipynb"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/projects/neuro_meta_analyses__phase_2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download notebook file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-code"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="../_sources/projects/neuro_meta_analyses__phase_2.md"
-   class="headerbtn"
+      <li><a href="../_sources/projects/neuro_meta_analyses__phase_2.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</a>
       
       <li>
-        
 <button onclick="printPdf(this)"
-  class="headerbtn"
+  class="btn btn-sm dropdown-item"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#labels-in-this-project">
-   Labels in this project
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>neuro_meta_analyses.phase_2</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#labels-in-this-project">
-   Labels in this project
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>neuro_meta_analyses.phase_2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
   <section class="tex2jax_ignore mathjax_ignore" id="neuro-meta-analyses-phase-2">
-<h1>neuro_meta_analyses.phase_2<a class="headerlink" href="#neuro-meta-analyses-phase-2" title="Permalink to this headline">#</a></h1>
+<h1>neuro_meta_analyses.phase_2<a class="headerlink" href="#neuro-meta-analyses-phase-2" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_2/">on GitHub</a>.</p>
 <section id="labels-in-this-project">
-<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this headline">#</a></h2>
+<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div class="detailed-label-set">
-
+    
     <details style="--label-color: #cc0000;">
         <summary class="label-display">meta-analysis method (83 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     …on software ( ). The anatomical image was generated using MRIcron software. 
@@ -441,7 +642,7 @@ The meta-analyses were conducted (JN, XYL, WJH) in Talairach space, using the ac
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …(ALE) technique, in response to emotion recognition tasks in individuals with SAD.   Methods:   A systematic search of fMRI studies of neural responses to socially emotive cues in SAD was undertaken. <mark class="annotated-text">ALE</mark> meta-analysis, a voxel-based meta-analytic technique, was used to estimate the most significant activations during emotional recognition.   Results:   Seven studies were eligible for inclusion in the…
@@ -453,14 +654,14 @@ The meta-analyses were conducted (JN, XYL, WJH) in Talairach space, using the ac
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …To this aim, 10 studies were found with a total of 126 obese participants, 129 healthy controls, equaling 184 foci (146 increased, 38 decreased activation) using the Activation Likelihood Estimation (<mark class="annotated-text">ALE</mark>) technique. Out of the 10 studies, 7 investigated neural responses to food versus non-food images. 
 
 
 ## Results 
-
+  
 In response to food images, obese in comparison to healthy weight subjects had inc…
                 </div>
                 <div class="annotation-footer">
@@ -470,11 +671,11 @@ In response to food images, obese in comparison to healthy weight subjects had i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ysis procedures 
-
+  
 Quantitative meta-analysis was conducted using activation likelihood estimation (ALE) as implemented in GingerALE v2.1 (Turkeltaub et al.,  ; Laird et al.,  ; Eickhoff et al.,  ). <mark class="annotated-text">ALE</mark> is a random effects voxel-based method for finding concordance across manuscripts and does not rely upon author-assigned anatomical labels; rather, it only requires that activation foci are reported …
                 </div>
                 <div class="annotation-footer">
@@ -484,7 +685,7 @@ Quantitative meta-analysis was conducted using activation likelihood estimation 
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … GingerALE tool, version 2.3 ( ) to perform two separate meta-analyses of selection and stopping studies, and then to perform a conjunction of these two ALE meta-analyses (selection AND stopping). An <mark class="annotated-text">ALE</mark> (Activation Likelihood Estimation) analysis uses the peak coordinates of activations from multiple published studies to identify regions associated with performance of a cognitive task across the mul…
@@ -496,7 +697,7 @@ Quantitative meta-analysis was conducted using activation likelihood estimation 
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     Wagner, Stefanie and Sebastian, Alexandra and Lieb, Klaus and Tüscher, Oliver and Tadić, André
@@ -520,7 +721,7 @@ Verbal…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …RI studies of human navigation to underline the importance of the experimental designs and cognitive tasks used to assess navigational skills. We performed a general activation likelihood estimation (<mark class="annotated-text">ALE</mark>) meta-analysis of 66 fMRI experiments to identify the neural substrates underpinning general aspects of human navigation. Four individual ALE analyses were performed to identify the neural substrates…
@@ -532,7 +733,7 @@ Verbal…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …. and Müller-Axt, Christa and Langner, Robert and Eickhoff, Simon B. and Forstmann, Birte U. and Neumann, Jane
@@ -550,7 +751,7 @@ fronto-parietal-basal ganglia
 
 
 # Abstract
-
+ 
 In the recent perceptual decision-making literature, a fronto-parietal network is typically repor…
                 </div>
                 <div class="annotation-footer">
@@ -560,7 +761,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …e included in final analyses. Coordinates extracted from the original reports were assigned to two categories based on directionality of findings. Meta-analyses were calculated using the non-additive <mark class="annotated-text">activation likelihood estimation</mark> approach with coordinates organized by subject group to account for non-independent samples. Converging evidence revealed a distributed pattern of brain regions with increased or decreased spontaneou…
@@ -572,7 +773,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …plication of the BrainMap software was used to perform the meta-analysis, with fixed 10 mm FWHM Gaussian smoothing (Turkeltaub et al.,  ; Eickhoff et al.,  ,  ). The activation likelihood estimation (<mark class="annotated-text">ALE</mark>) technique estimates the convergence of neuroimaging activation foci by modeling them as Gaussian probability distributions based on assessment of spatial uncertainty due to intersubject and co-regis…
@@ -584,17 +785,17 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details style="--label-color: #f57900;">
         <summary class="label-display">final n (79 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     … the effect of acupuncture on the human brain (at least one group that received needle-based acupuncture). 779 papers were identified, 149 met the inclusion criteria for the descriptive analysis, and <mark class="annotated-text">34</mark> were eligible for the meta-analyses. From a descriptive perspective, multiple studies reported that acupuncture modulates activity within specific brain areas, including somatosensory cortices, limbi…
@@ -606,7 +807,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …socially emotive cues in SAD was undertaken. ALE meta-analysis, a voxel-based meta-analytic technique, was used to estimate the most significant activations during emotional recognition.   Results:   <mark class="annotated-text">Seven</mark> studies were eligible for inclusion in the meta-analysis, constituting a total of 91 subjects with SAD, and 93 healthy controls. The most significant areas of activation during emotional vs. neutral …
@@ -618,14 +819,14 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …muli. 
 
 
 ## Data Source 
-
+  
 We conducted a search using several journal databases and adhered to the ‘Preferred Reporting Items for Systematic Reviews and Meta-analyses’ (PRISMA) method. To this aim, <mark class="annotated-text">10</mark> studies were found with a total of 126 obese participants, 129 healthy controls, equaling 184 foci (146 increased, 38 decreased activation) using the Activation Likelihood Estimation (ALE) technique.…
                 </div>
                 <div class="annotation-footer">
@@ -635,7 +836,7 @@ We conducted a search using several journal databases and adhered to the ‘Pref
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … in the meta-analysis (Table  ). Of these studies, ten were block-design, seven were event-related, and one was mixed-design. Sample sizes were modest (range 9–54 subjects), four studies used PET and <mark class="annotated-text">fourteen</mark> used fMRI, three included a developmental/psychiatric/neurologically-impaired group, and two rated subjects on the basis of other factors (smoking, schizotypy) but were otherwise psychiatrically and …
@@ -647,7 +848,7 @@ We conducted a search using several journal databases and adhered to the ‘Pref
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … (stopping). The large number of search terms used to identify action selection studies reflects the wide range of terminology historically applied to describe this concept. In March 2012, a total of <mark class="annotated-text">17</mark> studies, containing 24 appropriate contrasts, were identified for selection, and 16 studies, containing 19 appropriate contrasts, were identified for stopping. These studies reported a total of 231 f…
@@ -660,7 +861,7 @@ We conducted a search using several journal databases and adhered to the ‘Pref
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ies reflects the wide range of terminology historically applied to describe this concept. In March 2012, a total of 17 studies, containing 24 appropriate contrasts, were identified for selection, and <mark class="annotated-text">16</mark> studies, containing 19 appropriate contrasts, were identified for stopping. These studies reported a total of 231 foci for selection (10 outside the brain mask used in the meta-analysis process) and …
@@ -672,14 +873,14 @@ We conducted a search using several journal databases and adhered to the ‘Pref
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … verbal fluency. We conducted a coordinate-based activation likelihood estimation (ALE) meta-analysis on brain activation during the processing of phonemic and semantic verbal fluency tasks involving <mark class="annotated-text">28</mark> individual studies with 490 healthy volunteers. 
 
 
 ## Results 
-
+  
 For phonemic as well as for semantic verbal fluency, the most prominent clusters of brain activation were found in the left inferior/…
                 </div>
                 <div class="annotation-footer">
@@ -689,7 +890,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …vigation to underline the importance of the experimental designs and cognitive tasks used to assess navigational skills. We performed a general activation likelihood estimation (ALE) meta-analysis of <mark class="annotated-text">66</mark> fMRI experiments to identify the neural substrates underpinning general aspects of human navigation. Four individual ALE analyses were performed to identify the neural substrates of different experim…
@@ -701,7 +902,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …making. Selection of relevant studies was based on a recently published ALE meta-analysis on reward processing in the brain conducted by Liu et al. ( ). For this meta-analysis, the authors identified <mark class="annotated-text">142</mark> neuroimaging studies that examined brain activation in reward-related decision-making tasks in healthy adults. In order to ensure direct comparability with the perceptual decision-making meta-analysi…
@@ -713,7 +914,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …his analysis was to consolidate spatial information about alterations of spontaneous brain activity in MDD, primarily to serve as feature selection for multivariate pattern analysis techniques (MVPA).<mark class="annotated-text"> Thirty two</mark> studies were included in final analyses. Coordinates extracted from the original reports were assigned to two categories based on directionality of findings. Meta-analyses were calculated using the n…
@@ -725,17 +926,17 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details style="--label-color: #888a85;">
         <summary class="label-display">exclude? (13 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     …g can be achieved through meta-analysis (the pooled analysis of published results), mega-analysis (the pooled analysis of raw data) or multi-site studies, which can be seen as designed mega-analyses. <mark class="annotated-text">Current limitations in function-location brain mapping and how data-pooling can be used to remediate them are reviewed,</mark> with particular attention to power aggregation and mitigation of false positive results. Some recently developed analysis tools for meta- and mega-analysis are also presented, and recommendations for…
@@ -748,7 +949,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     Schilbach, Leonhard and Müller, Veronika I. and Hoffstaedter, Felix and Clos, Mareike and Goya-Maldonado, Roberto and Gruber, Oliver and Eickhoff, Simon B.
@@ -763,7 +964,7 @@ PLoS One, 2014
 
 
 # Abstract
-
+ 
 Alterations of social cognition and dysfunctional interpersonal ex…
                 </div>
                 <div class="annotation-footer">
@@ -774,7 +975,7 @@ Alterations of social cognition and dysfunctional interpersonal ex…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     Zang, Yu-Feng and Zuo, Xi-Nian and Milham, Michael and Hallett, Mark
@@ -792,7 +993,7 @@ Biomed Res Int, 2015
 
 
 # Body
-
+ 
 Coordinate-based meta-analysis (CB-meta) is playing an important role in identifying spatially consistent findings for targeted questions in the neuroimaging liter…
                 </div>
                 <div class="annotation-footer">
@@ -803,7 +1004,7 @@ Coordinate-based meta-analysis (CB-meta) is playing an important role in identif
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …Banaschewski, Tobias and Barker, Gareth J. and Bokde, Arun L. W. and Martinot, Jean-Luc and Lemaitre, Herve and Paus, Tomáš and Millenet, Sabina and Moerkerke, Beatrijs
@@ -824,7 +1025,7 @@ reliability
 
 
 # Abstract
-
+ 
 Given the increasing amount of neuroimaging studies, there is a g…
                 </div>
                 <div class="annotation-footer">
@@ -835,7 +1036,7 @@ Given the increasing amount of neuroimaging studies, there is a g…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     Acar, Freya and Seurinck, Ruth and Eickhoff, Simon B. and Moerkerke, Beatrijs
@@ -850,7 +1051,7 @@ PLoS One, 2018
 
 
 # Abstract
-
+ 
 The importance of integrating research findings is incontrovertible and procedures for coordinate-based meta-analysis (CBMA) such as Activation Likelihood Estimation (ALE)…
                 </div>
                 <div class="annotation-footer">
@@ -861,7 +1062,7 @@ The importance of integrating research findings is incontrovertible and procedur
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …hose including participants by the basic or attenuated symptom presentation criteria were included. 
@@ -875,19 +1076,19 @@ Individual study methodology and results were extracted and systematically revie
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ic review and Meta-Analysis Protocols (PRISMA-P). The Seed-based   d   Mapping with Permutation of Subject Images (SDM-PSI) software will be used for this voxel-wise meta-analysis. 
 
 
 ## Results: 
-
+  
 <mark class="annotated-text">This meta-analysis will </mark>identify the most consistent ReHo alterations in CP. 
 
 
 ## Conclusions: 
-
+  
 To our knowledge, this will be the first voxel-wise meta-analysis that integrates ReHo findings in CP. This meta-analysis wi…
                 </div>
                 <div class="annotation-footer">
@@ -898,7 +1099,7 @@ To our knowledge, this will be the first voxel-wise meta-analysis that integrate
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …matter signals. The obtained images were smoothened with an isotropic Gaussian smooth kernel with a full width at half maximum of 6 mm, followed by detrending and filtering (0.01–0.08 Hz) in order. 
@@ -913,14 +1114,14 @@ To our knowledge, this will be the first voxel-wise meta-analysis that integrate
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …gnitive/affective processes but likely involves a combination of mechanisms that may differ depending on the paradigm and other individual factors. 
 
 
 ## Methods 
-
+  
 The present study is a systematic <mark class="annotated-text">meta-analysis of participant-level data</mark> across 20 published studies. A previous paper on this dataset  tested placebo effects on a single, a priori pain-related measure (the neurologic pain signature ). Here, we used the same data set to m…
                 </div>
                 <div class="annotation-footer">
@@ -930,14 +1131,14 @@ The present study is a systematic <mark class="annotated-text">meta-analysis of 
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …statistical analyses. Subgroup analysis will be performed if necessary. If the data is insufficient, qualitative synthesis will be conducted instead of quantitative synthesis. 
 
 
 ## Results: 
-
+  
 This <mark class="annotated-text">study will analyze</mark> the effect of acupuncture on the brain activity changes, improvement of sleep quality and clinical symptoms of anxiety and depression with insomnia comorbid with emotional disorders. 
 
 
@@ -951,17 +1152,17 @@ This <mark class="annotated-text">study will analyze</mark> the effect of acupun
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details >
         <summary class="label-display">non-image result (4 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     Guàrdia-Olmos, Joan and Peró-Cebollero, Maribel and Gudayol-Ferré, Esteve
@@ -981,7 +1182,7 @@ cognitive neuroscience
 
 
 # Abstract
-
+ 
 Structural Equation Models (SEM) is among of the most extensively appl…
                 </div>
                 <div class="annotation-footer">
@@ -991,22 +1192,22 @@ Structural Equation Models (SEM) is among of the most extensively appl…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …ooling results found no significance between training and control group in sedation use (  P   = .09) and successful MRI scanning (  P   = .63). 
 
 
 ## Conclusions: 
-
+  
 It is cautious to conclude that <mark class="annotated-text">pre-MRI training does not improve the image quality and reduce sedation </mark>use among children, for the limited number of studies and sample size. More trials should be encouraged to demonstrate this issue. 
 
-
+ 
 
 # Body
-
+ 
 ## Introduction 
-
+  
 Magnetic resonance imaging (MRI) is…
                 </div>
                 <div class="annotation-footer">
@@ -1016,7 +1217,7 @@ Magnetic resonance imaging (MRI) is…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     Cohen, Sem E. and Zantvoord, Jasper B. and Wezenberg, Babet N. and Bockting, Claudi L. H. and van Wingen, Guido A.
@@ -1034,7 +1235,7 @@ Depression
 
 
 # Abstract
-
+ 
 No tools are currently available to predict whether a patien…
                 </div>
                 <div class="annotation-footer">
@@ -1044,15 +1245,15 @@ No tools are currently available to predict whether a patien…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …dies. 
-
+  
 
 
 ### Meta-analytic method 
-
+  
 For quantitative analysis, we used confusion matrices to pool studies using Reitsma’s bivariate random effect model, as suggested in the Cochrane handbook for <mark class="annotated-text">diagnostic tests of accuracy studies </mark>. We used this method for computing our main outcomes, which were the overall area under the summary receiver operating characteristic (SROC) curve, sensitivity, and specificity, as well as sensitivit…
                 </div>
                 <div class="annotation-footer">
@@ -1062,7 +1263,7 @@ For quantitative analysis, we used confusion matrices to pool studies using Reit
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     … de Carvalho, Emerson Assis and Rodrigues, Igor Duarte and Bastos, Guilherme Sousa and de Souza, Adler Diniz and de Brito, Lucelmo Lacerda
@@ -1082,7 +1283,7 @@ Mathematics and computing
 
 
 # Abstract
-
+ 
 Autism Spectrum Disorder (ASD) diagnosis is still based o…
                 </div>
                 <div class="annotation-footer">
@@ -1092,17 +1293,17 @@ Autism Spectrum Disorder (ASD) diagnosis is still based o…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details style="--label-color: #888a85;">
         <summary class="label-display">LOOK UP LATER (2 docs)</summary>
-
+        
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-
+            
             <div class="annotation">
                 <div class="context">
                     Costafreda, Sergi G.
@@ -1125,7 +1326,7 @@ study design
 
 
 # Abstract
-
+ 
 The quantitative analysis of pooled data from relat…
                 </div>
                 <div class="annotation-footer">
@@ -1135,7 +1336,7 @@ The quantitative analysis of pooled data from relat…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
             <div class="annotation">
                 <div class="context">
                     …Banaschewski, Tobias and Barker, Gareth J. and Bokde, Arun L. W. and Martinot, Jean-Luc and Lemaitre, Herve and Paus, Tomáš and Millenet, Sabina and Moerkerke, Beatrijs
@@ -1156,7 +1357,7 @@ reliability
 
 
 # Abstract
-
+ 
 Given the increasing amount of neuroimaging studies, there is a g…
                 </div>
                 <div class="annotation-footer">
@@ -1166,67 +1367,67 @@ Given the increasing amount of neuroimaging studies, there is a g…
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-
+            
         </div>
-
+        
     </details>
-
+    
     <details style="--label-color: #fcaf3e;">
         <summary class="label-display">literature query (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #ff9896;">
         <summary class="label-display">literature sources (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #8ae234;">
         <summary class="label-display">literature search date (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #aec7e8;">
         <summary class="label-display">original n (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #729fcf;">
         <summary class="label-display">exclusion criteria (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #c5b0d5;">
         <summary class="label-display">inference (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #fce94f;">
         <summary class="label-display">covariates (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
     <details style="--label-color: #4e9a06;">
         <summary class="label-display">n individual participants (0 docs)</summary>
-
+        
         <p>(No annotations with this label in the current project)</p>
-
+        
     </details>
-
+    
 </div>
 </div></div>
 </div>
@@ -1253,50 +1454,105 @@ Given the increasing amount of neuroimaging studies, there is a g…
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="neuro_meta_analyses__phase_1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">neuro_meta_analyses.phase_1</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="neurobridge_fmri.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">neurobridge_fmri</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+  <a class='left-prev' id="prev-link" href="neuro_meta_analyses__phase_1.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">neuro_meta_analyses.phase_1</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="neurobridge_fmri.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">neurobridge_fmri</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
   
-    By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-in-this-project">
+   Labels in this project
+  </a>
+ </li>
+</ul>
+
+</nav>
 </div>
 
-
-      </div>
-    </div>
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>
