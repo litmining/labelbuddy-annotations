@@ -131,7 +131,7 @@ def _get_sex(annotation_stack: pd.DataFrame) -> Dict:
         return {"sex": sex[0]}
     raise AnnotationError(
         "Conflicting sex qualifiers applied to the same text:",
-        sex_anno.drop_duplicates(subset="label_name"),
+        sex_anno.drop_duplicates(subset=("label_name",)),
     )
 
 
@@ -258,7 +258,7 @@ def _coalesce_extra_selected(tokens: pd.DataFrame) -> None:
 
 
 def _check_conflicts(tokens: pd.DataFrame) -> None:
-    for _, token_group in tokens.dropna(subset="label_name").groupby(
+    for _, token_group in tokens.dropna(subset=("label_name",)).groupby(
         ["group_name", "subgroup_name", "sex", "label_name"], dropna=False
     ):
         if token_group["coalesced"].nunique() > 1:
@@ -302,7 +302,7 @@ def _get_payload_from_token(
             },
         }
     except (TypeError, ValueError):
-        full_token = {"label_name": label_name} | tok.to_dict()
+        full_token = dict(tok.to_dict(), label_name=label_name)
         full_token.update(
             zip(
                 ("group_name", "subgroup_name", "sex"),
@@ -648,11 +648,12 @@ def get_participant_demographics():
             k: doc[k] for k in ("project_name", "annotator_name", "pmcid")
         }
         for subgroup in doc["participants"]["subgroups"].values():
-            row = (
-                doc_info
-                | {k: subgroup.get(k) for k in ("group_name", "subgroup_name")}
-                | {k: subgroup.get(k, {}).get("value") for k in _PAYLOAD_NAMES}
-            )
+            row = {}
+            row.update(doc_info)
+            for k in ("group_name", "subgroup_name"):
+                row[k] = subgroup.get(k)
+            for k in _PAYLOAD_NAMES:
+                row[k] = subgroup.get(k, {}).get("value")
             row["female count"] = (
                 subgroup.get("female", {}).get("count", {}).get("value")
             )
@@ -708,7 +709,8 @@ def get_report(
         "documents": all_docs,
         "standalone": standalone,
         "no_doc_positions": True,
-    } | _get_template_data()
+    }
+    info.update(_get_template_data())
     if annotator_name is not None:
         info["annotator_name"] = annotator_name
     if project_name is not None:

@@ -45,7 +45,7 @@ subset = ["pmcid", "project_name", "annotator_name"]
 
 kept_annotators = set(
     subgroups.loc[:, subset]
-    .drop_duplicates(subset="pmcid")
+    .drop_duplicates(subset=("pmcid",))
     .itertuples(index=False),
 )
 subgroups = subgroups.loc[
@@ -103,7 +103,7 @@ altair.Chart(total_counts).mark_point(size=60).encode(
 # We start by selecting groups for which the mean age is known.
 
 # +
-data = subgroups.dropna(subset="age mean").copy()
+data = subgroups.dropna(subset=("age mean",)).copy()
 # -
 
 # The rest is not especially interesting, it is just configuring the plot.
