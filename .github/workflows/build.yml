@@ -18,6 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        pip install analysis/labelrepo[all]
         cd analysis/book/
         pip install -r requirements.txt
 

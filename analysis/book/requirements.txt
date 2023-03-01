@@ -2,11 +2,10 @@
 ipython!=8.7.0
 
 altair
-jupyter-book
+jupyter-book!=0.14
 jupytext
 matplotlib
 pandas
 seaborn
 plotly
 kaleido
-../labelrepo/
