@@ -230,6 +230,9 @@ def get_database_connection(
     database_path: Optional[pathlib.Path] = None,
 ) -> sqlite3.Connection:
     db_path = make_database(database_path, overwrite=False).resolve()
-    connection = sqlite3.connect(f"file:{db_path}?ro")
+    try:
+        connection = sqlite3.connect(f"{db_path.resolve().as_uri()}?mode=ro")
+    except sqlite3.OperationalError:
+        connection = sqlite3.connect(db_path.resolve())
     connection.row_factory = sqlite3.Row
     return connection
