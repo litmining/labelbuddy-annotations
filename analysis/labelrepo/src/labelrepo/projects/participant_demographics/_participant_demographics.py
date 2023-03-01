@@ -59,7 +59,7 @@ def _format_error_token(token: Dict, indent=0) -> str:
     formatted = (
         f"{' ' * indent}"
         f"(char {token['start_char']} – char {token['end_char']}) "
-        f"{', '.join(values)}{', ' if values else ''}"
+        f"{' / '.join(values)}{', ' if values else ''}"
         f"'{token['label_name']}'"
     )
     if "coalesced" in token:
@@ -75,6 +75,8 @@ def _format_error(annotation_or_token: Dict, indent=0) -> str:
 
 class AnnotationError(Exception):
     def __init__(self, message, error_tokens=[], error_positions=None):
+        if isinstance(error_tokens, pd.DataFrame):
+            error_tokens = error_tokens.to_dict(orient="records")
         self.error_tokens = error_tokens
         if error_positions is None:
             self.error_positions = {
@@ -114,7 +116,7 @@ def _get_group_and_subgroup(
         return {"group_name": group_name, "subgroup_name": subgroup_name}
     raise AnnotationError(
         "Too many participant group qualifiers applied to the same text:",
-        group_anno.to_dict(orient="records"),
+        group_anno,
     )
 
 
@@ -129,9 +131,7 @@ def _get_sex(annotation_stack: pd.DataFrame) -> Dict:
         return {"sex": sex[0]}
     raise AnnotationError(
         "Conflicting sex qualifiers applied to the same text:",
-        sex_anno.drop_duplicates(subset="label_name").to_dict(
-            orient="records"
-        ),
+        sex_anno.drop_duplicates(subset="label_name"),
     )
 
 
@@ -140,15 +140,18 @@ def _get_payload(annotation_stack: pd.DataFrame) -> Dict:
         ~annotation_stack["label_name"].isin(_GROUP_NAMES + _SEX_NAMES)
     ]
     if payload_anno.shape[0] == 0:
-        return {"label_name": None, "extra_data": None}
+        raise AnnotationError(
+            "Group descriptors applied "
+            "but data label (eg 'count', 'age mean', etc.) is missing:",
+            annotation_stack,
+        )
     if payload_anno.shape[0] == 1:
         return {
             "label_name": payload_anno.iloc[0]["label_name"],
             "extra_data": payload_anno.iloc[0]["extra_data"],
         }
     raise AnnotationError(
-        "Too many data labels applied to the same text:",
-        payload_anno.to_dict(orient="records"),
+        "Too many data labels applied to the same text:", payload_anno
     )
 
 
@@ -181,18 +184,18 @@ def _check_sex_on_non_leaf_nodes(tokens: pd.DataFrame) -> None:
         groups = tokens["group_name"].dropna().unique()
         if len(groups) == 1:
             drop_group_msg = (
-                "\nIf there is only one group of participants,\n"
-                f"you can solve this by removing the '{groups[0]}' label.\n"
+                "If there is only one group of participants, "
+                f"you can solve this by removing the '{groups[0]}' label. "
                 "Otherwise please add group labels "
-                "to the 'female' and 'male' counts.\n"
+                "to the 'female' and 'male' counts.\n\n"
             )
         raise AnnotationError(
-            "When explicit group labels are used,\n"
+            "When explicit group labels are used, "
             "'female' and 'male' counts should be "
-            "attached to specific groups.\n"
+            "attached to specific groups.\n\n"
             f"{drop_group_msg}"
-            "\n'patients' or 'healthy' label is missing:",
-            bad_tokens.to_dict(orient="records"),
+            "'patients' or 'healthy' label is missing:",
+            bad_tokens,
         )
 
 
@@ -255,14 +258,14 @@ def _coalesce_extra_selected(tokens: pd.DataFrame) -> None:
 
 
 def _check_conflicts(tokens: pd.DataFrame) -> None:
-    for _, token_group in tokens.groupby(
+    for _, token_group in tokens.dropna(subset="label_name").groupby(
         ["group_name", "subgroup_name", "sex", "label_name"], dropna=False
     ):
         if token_group["coalesced"].nunique() > 1:
             raise AnnotationError(
                 "The following annotations provide conflicting "
                 f"information:",
-                token_group.to_dict(orient="records"),
+                token_group,
             )
 
 
@@ -277,8 +280,8 @@ def _add_info(tokens: pd.DataFrame, root: Dict) -> None:
         .sort_index()
     )
     _add_subtree_info(root, (None, None, None), 0, tokens)
-    _infer_info_up("all participants", root)
-    _infer_info_down("all participants", root)
+    _infer_info_up(["all participants"], root)
+    _infer_info_down(["all participants"], root)
 
 
 def _get_payload_from_token(
@@ -330,18 +333,19 @@ def _add_subtree_info(
 
 
 def _check_count_conflict(
-    root_name: str, root: Dict, children_sum: int
+    parent_path: List[str], root: Dict, children_sum: int
 ) -> None:
     if "count" not in root:
         return
     root_count = root["count"]["value"]
     if root_count == children_sum:
         return
+    parent_name = " / ".join(f"'{p}'" for p in parent_path)
     msg = (
         "The group count is not the sum of subgroup counts:\n\n"
-        f"  {root_name}: {root_count}\n\n  subgroups:\n\n"
+        f"{parent_name}: {root_count}\n\nsubgroups:\n\n"
     ) + "\n".join(
-        f"    {root_name}, {n}: {c.get('count', {}).get('value', '??')}"
+        f"  {parent_name} / '{n}': {c.get('count', {}).get('value', '??')}"
         for (n, c) in root["children"].items()
     )
     raise AnnotationError(
@@ -357,15 +361,15 @@ def _check_count_conflict(
     )
 
 
-def _infer_info_up(root_name: str, root: Dict) -> None:
+def _infer_info_up(parent_path: List[str], root: Dict) -> None:
     if "children" not in root:
         return
     for child_name, child in root["children"].items():
-        _infer_info_up(f"{root_name}, {child_name}", child)
+        _infer_info_up(parent_path + [child_name], child)
     children = root["children"].values()
     if all("count" in child for child in children):
         children_sum = sum(child["count"]["value"] for child in children)
-        _check_count_conflict(root_name, root, children_sum)
+        _check_count_conflict(parent_path, root, children_sum)
         root["count"] = {"value": children_sum}
         if (
             all("age mean" in child for child in children)
@@ -405,7 +409,7 @@ def _infer_info_up(root_name: str, root: Dict) -> None:
                 root[label_name]["source"] = child[label_name]["source"]
 
 
-def _infer_info_down(root_name: str, root: Dict) -> None:
+def _infer_info_down(parent_path: List[str], root: Dict) -> None:
     if "children" not in root:
         return
     missing_count = [
@@ -417,7 +421,7 @@ def _infer_info_down(root_name: str, root: Dict) -> None:
             for child in root["children"].values()
         )
         if rest > root["count"]["value"]:
-            _check_count_conflict(root_name, root, rest)
+            _check_count_conflict(parent_path, root, rest)
         if len(root["children"]) == 1:
             missing_count[0]["count"] = root["count"]
         else:
@@ -435,7 +439,7 @@ def _infer_info_down(root_name: str, root: Dict) -> None:
         ):
             child["diagnosis"] = root["diagnosis"]
     for child_name, child in root["children"].items():
-        _infer_info_down(f"{root_name}, {child_name}", child)
+        _infer_info_down(parent_path + [child_name], child)
 
 
 def _prune_empty_groups(root: Dict) -> None:
