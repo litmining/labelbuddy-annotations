@@ -644,6 +644,8 @@ def get_participant_demographics():
     all_docs = _get_document_summaries(all_anno)
     all_rows = []
     for doc in all_docs:
+        if doc.get("extraction_failed", False):
+            continue
         doc_info = {
             k: doc[k] for k in ("project_name", "annotator_name", "pmcid")
         }
