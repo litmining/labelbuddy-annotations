@@ -22,6 +22,7 @@
 # The `labelrepo` package provides helpers to work with these annotations.
 # Here we illustrate loading the annotations to make a couple of simple plots.
 # The `get_participant_demographics` function returns a `pd.DataFrame` in which each row corresponds to a group of participants in a study, according to one annotator.
+# The data used here is also available directly <a href="generated/participant_groups.csv">as a CSV file</a>.
 
 # +
 from labelrepo.projects.participant_demographics import (
