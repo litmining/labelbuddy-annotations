@@ -67,7 +67,8 @@ from labelrepo.database import get_database_connection
 import pandas as pd
 
 docs_info = pd.read_sql(
-    "select pmcid, publication_year from document", get_database_connection()
+    "select pmcid, publication_year, title from document",
+    get_database_connection(),
 )
 subgroups = subgroups.merge(docs_info, on="pmcid")
 subgroups["pmc_url"] = [
