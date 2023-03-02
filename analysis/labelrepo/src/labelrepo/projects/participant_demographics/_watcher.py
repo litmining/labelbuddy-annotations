@@ -77,7 +77,7 @@ class _Watcher:
         print(
             "\nTo see the live participant demographics report, "
             "visit this file in your web browser:\n\n"
-            f"{self.target_file}\n"
+            f"{self.target_file.as_uri()}\n"
         )
         while True:
             if self._need_update():
@@ -95,7 +95,7 @@ class _Watcher:
         doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
-        coalesce(list_title, substring(content, 1, 150)) as title
+        coalesce(list_title, substr(content, 1, 150)) as title
         from document
         where id = coalesce( (select last_visited_doc from app_state),
             (select id from document limit 1) )
@@ -117,9 +117,9 @@ class _Watcher:
         start_char, end_char, extra_data,
         context_start_char, context_end_char,
         length(content) as doc_length,
-        substring(content, start_char + 1, end_char - start_char)
+        substr(content, start_char + 1, end_char - start_char)
         as selected_text,
-        substring(content, context_start_char + 1,
+        substr(content, context_start_char + 1,
         context_end_char - context_start_char) as context
         from annot
         inner join label on annot.label_id = label.id
