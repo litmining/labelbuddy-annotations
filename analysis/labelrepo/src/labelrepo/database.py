@@ -83,13 +83,15 @@ def _insert_documents(
                 doc_row["text"] = doc_info["text"]
                 text_metadata = _extract_metadata_from_text(doc_info)
                 for field, field_type in metadata_field_types.items():
-                    try:
-                        doc_row[field] = field_type(
-                            doc_info["metadata"].get(
-                                field, text_metadata.get(field, None)
-                            )
-                        )
-                    except (KeyError, ValueError, TypeError):
+                    raw_value = doc_info["metadata"].get(
+                        field, text_metadata.get(field, None)
+                    )
+                    if raw_value is not None:
+                        try:
+                            doc_row[field] = field_type(raw_value)
+                        except (KeyError, ValueError, TypeError):
+                            doc_row[field] = None
+                    else:
                         doc_row[field] = None
                 connection.execute(
                     """

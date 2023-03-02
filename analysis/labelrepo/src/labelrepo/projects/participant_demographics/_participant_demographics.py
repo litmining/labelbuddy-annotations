@@ -639,7 +639,7 @@ def _get_jinja_env() -> jinja2.Environment:
     return env
 
 
-def get_participant_demographics():
+def get_participant_demographics() -> pd.DataFrame:
     all_anno = select_participants_annotations()
     all_docs = _get_document_summaries(all_anno)
     all_rows = []
