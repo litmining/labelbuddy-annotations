@@ -76,7 +76,7 @@ class _Watcher:
         self.target_file.write_text(self.page)
         print(
             "\nTo see the live participant demographics report, "
-            "visit this file in your web browser:\n\n"
+            "visit this address in your web browser:\n\n"
             f"{self.target_file.as_uri()}\n"
         )
         while True:
