@@ -16,15 +16,22 @@ from labelrepo.projects.participant_demographics import (
 )
 
 
+def get_live_report_path(
+    labelbuddy_file: Union[pathlib.Path, str], port
+) -> pathlib.Path:
+    lb_file = pathlib.Path(labelbuddy_file)
+    return lb_file.with_name(
+        f"{lb_file.stem}_participants_live_report_{port}.html"
+    ).resolve()
+
+
 class _Watcher:
     def __init__(
         self, labelbuddy_file: Union[pathlib.Path, str], port: int
     ) -> None:
         self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
-        self.target_file = self.labelbuddy_file.with_name(
-            f"{self.labelbuddy_file.stem}_participants_live_report_{port}.html"
-        ).resolve()
+        self.target_file = get_live_report_path(self.labelbuddy_file, port)
         self.last_update_time: Optional[float] = None
         self.delay = 0.25
         self.max_delay = 5

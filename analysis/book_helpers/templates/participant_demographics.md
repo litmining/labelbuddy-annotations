@@ -128,7 +128,10 @@ From the root of the repository you can run it with:
 ```
 scripts/watch_participants.py projects/participant_demographics/Your_Name.labelbuddy
 ```
+(If you call it without specifying a file it will pick the most recently modified `.labelbuddy` file in the `projects/` directory.)
+
 It will print the path to a file that you can open in a web browser and that can help to check annotations are correctly interpreted as you create them.
+If possible, the report will be automatically opened in the default web browser.
 
 See `scripts/participants_report.py --help` and `scripts/watch_participants.py --help` for details.
 
