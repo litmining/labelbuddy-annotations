@@ -46,7 +46,7 @@ or using **SQLite** bindings that are available in many languages, including Pyt
 
 A small Python package containing a few utilities for working with this repository is also provided in `analysis/labelrepo`. You can install it with
 ```bash
-pip install -e "analysis/labelrepo[all]"
+pip install -e "analysis/labelrepo"
 ```
 (note the `-e`, or `--editable`, option).
 
