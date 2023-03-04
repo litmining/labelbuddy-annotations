@@ -4,9 +4,8 @@ import asyncio
 import json
 import pathlib
 import sqlite3
-import time
 import sys
-from typing import Optional, Set, Union
+from typing import Set, Union
 
 import pandas as pd
 import websockets
@@ -32,9 +31,7 @@ class _Watcher:
         self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
         self.target_file = get_live_report_path(self.labelbuddy_file, port)
-        self.last_update_time: Optional[float] = None
         self.delay = 0.25
-        self.max_delay = 5
         self.project_name = self.labelbuddy_file.parents[1].name
         self.annotator_name = self.labelbuddy_file.stem
         jinja_env = _participant_demographics._get_jinja_env()
@@ -45,6 +42,7 @@ class _Watcher:
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
         self.connection = None
+        self.data_version = None
 
     def __enter__(self) -> _Watcher:
         self.labelbuddy_file.stat()
@@ -70,11 +68,13 @@ class _Watcher:
             pass
 
     def _need_update(self) -> bool:
-        return (
-            self.last_update_time is None
-            or (self.last_update_time < self.labelbuddy_file.stat().st_mtime)
-            or self.last_update_time < time.time() - self.max_delay
-        )
+        old_data_version = self.data_version
+        self.data_version = self.connection.execute(
+            "pragma data_version"
+        ).fetchone()[0]
+        if old_data_version is None:
+            return True
+        return self.data_version != old_data_version
 
     async def start(self) -> None:
         assert (
@@ -88,7 +88,6 @@ class _Watcher:
         )
         while True:
             if self._need_update():
-                self.last_update_time = time.time()
                 try:
                     self._update_content()
                 except Exception:
