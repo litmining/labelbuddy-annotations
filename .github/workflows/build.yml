@@ -18,13 +18,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install analysis/labelrepo[all]
         cd analysis/book/
         pip install -r requirements.txt
 
     - name: Install labelrepo
       run: |
-        pip install -e "analysis/labelrepo[all]"
+        pip install -e "analysis/labelrepo/"
 
     - name: Build the book
       run: |
