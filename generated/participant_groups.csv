@@ -1,4 +1,6 @@
 project_name,annotator_name,pmcid,group_name,subgroup_name,count,age mean,age minimum,age maximum,age median,diagnosis,female count,male count,publication_year,title
+participant_demographics,Flemming_Kondrup_2,3520927,healthy,_,40,,18.0,23.0,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
+participant_demographics,Jerome_Dockes,3520927,healthy,study 1,1220,,,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
 participant_demographics,Jerome_Dockes,3002948,healthy,phobic prone,15,39.2,,,,,6.0,9.0,2010,Affective Response to a Loved One's Pain: Insula Activity as a Function of Individual Differences
 participant_demographics,Jerome_Dockes,5776089,healthy,_,21,25.77,20.0,40.0,,,,21.0,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
 participant_demographics,Jerome_Dockes,4029023,healthy,_,10,27.72,,,,,3.0,7.0,2014,The compensatory dynamic of inter-hemispheric interactions in visuospatial attention revealed using rTMS and fMRI
@@ -39,7 +41,6 @@ participant_demographics,Jerome_Dockes,7156375,healthy,_,33,25.242,,,,,15.0,18.0
 participant_demographics,joon_hong,7156375,healthy,_,33,25.242,,,,,15.0,18.0,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
 participant_demographics,Jerome_Dockes,4330553,healthy,_,23,22.0,,,,,5.0,18.0,2013,Brain correlates of subjective freedom of choice
 participant_demographics,Jerome_Dockes,6328158,healthy,_,11,33.1,25.0,47.0,,,3.0,8.0,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
-participant_demographics,Jerome_Dockes,3520927,healthy,study 1,1220,,,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
 participant_demographics,Jerome_Dockes,3362560,healthy,_,24,,,,,,12.0,12.0,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
 participant_demographics,Jerome_Dockes,6382839,patients,_,17,,,,,panic disorder,15.0,2.0,2019,Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
 participant_demographics,Jerome_Dockes,2648877,healthy,_,18,32.0,,,,,5.0,13.0,2008,Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
