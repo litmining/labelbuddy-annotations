@@ -565,8 +565,8 @@ We recommend using the same name as in your git configuration, ie the output of:
 <p>We first need to install <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/">labelbuddy</a>, see the <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/installation/">installation instructions</a>.
 Next we create our <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="84b79057-0804-4370-8eaa-e1726f0cbcce" name="1878b197-49b7-4c76-a4d7-a9a1f447b753" type="radio">
-</input><label class="sd-tab-label" for="84b79057-0804-4370-8eaa-e1726f0cbcce">
+<input checked="checked" id="5a9de9b5-2a03-4d45-8361-28de0a951056" name="cdce040b-cc7d-4614-a39a-3dfdf08e673e" type="radio">
+</input><label class="sd-tab-label" for="5a9de9b5-2a03-4d45-8361-28de0a951056">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done using a script provided in the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/start_project.py<span class="w"> </span>projects/autism_mri
@@ -581,8 +581,8 @@ labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span
 </pre></div>
 </div>
 </div>
-<input id="4a495426-f57e-487a-b9ac-0362a98c3cf5" name="1878b197-49b7-4c76-a4d7-a9a1f447b753" type="radio">
-</input><label class="sd-tab-label" for="4a495426-f57e-487a-b9ac-0362a98c3cf5">
+<input id="8ce6a4bc-169a-4471-91f1-39e67e2a41c9" name="cdce040b-cc7d-4614-a39a-3dfdf08e673e" type="radio">
+</input><label class="sd-tab-label" for="8ce6a4bc-169a-4471-91f1-39e67e2a41c9">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>Open labelbuddy from the applications menu, and click <strong>File &gt; Open database</strong>.
 In the file dialog, navigate from the root of the repository to <code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code>, and name the file <code class="docutils literal notranslate"><span class="pre">Firstname_Lastname.labelbuddy</span></code>.</p>
@@ -608,8 +608,8 @@ See the <a class="reference external" href="https://jeromedockes.github.io/label
 <p>Once we have annotated a few documents, we want to push our work back to the upstream repository.
 The first step is to export the annotations out of the <code class="docutils literal notranslate"><span class="pre">.labelbuddy</span></code> binary file into a <code class="docutils literal notranslate"><span class="pre">.jsonl</span></code> file.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="0512e409-f8e2-4458-adf1-a2b1c4f9dcb1" name="2578375f-84fe-4763-92ce-111595386edd" type="radio">
-</input><label class="sd-tab-label" for="0512e409-f8e2-4458-adf1-a2b1c4f9dcb1">
+<input checked="checked" id="d3fd8e04-a3b8-4475-8ff7-c08e2dd039d4" name="0ca3ebae-7793-4585-bb34-3ba687af398e" type="radio">
+</input><label class="sd-tab-label" for="d3fd8e04-a3b8-4475-8ff7-c08e2dd039d4">
 Using the command-line</label><div class="sd-tab-content docutils">
 <p>This can be done with <code class="docutils literal notranslate"><span class="pre">make</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> found at the root of the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
@@ -624,8 +624,8 @@ make<span class="w"> </span>annotations
 </pre></div>
 </div>
 </div>
-<input id="f887dc18-2c5d-4673-8ed4-9e2adfd06c30" name="2578375f-84fe-4763-92ce-111595386edd" type="radio">
-</input><label class="sd-tab-label" for="f887dc18-2c5d-4673-8ed4-9e2adfd06c30">
+<input id="da6d55c1-a353-4211-892d-c3d65078a30a" name="0ca3ebae-7793-4585-bb34-3ba687af398e" type="radio">
+</input><label class="sd-tab-label" for="da6d55c1-a353-4211-892d-c3d65078a30a">
 Using <strong>labelbuddy</strong>’s graphical interface </label><div class="sd-tab-content docutils">
 <p>Go to the <strong>Import / Export</strong> tab.
 Make sure that the checkboxes are in these states:</p>
@@ -754,16 +754,16 @@ Thus you will end up with a file like <code class="docutils literal notranslate"
 Open it, and add some labels in the <strong>Labels &amp; Documents</strong> tab.
 Then export the labels.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1bad5d66-bd24-4935-a9c2-7ebd3107ba53" name="9a47cb05-3aeb-4fe8-8858-5421a4715d39" type="radio">
-</input><label class="sd-tab-label" for="1bad5d66-bd24-4935-a9c2-7ebd3107ba53">
+<input checked="checked" id="fcfe6ac8-b57b-44d0-aa8c-c9f074a65335" name="66310e13-9fa8-473f-8f41-0f9f2d20b377" type="radio">
+</input><label class="sd-tab-label" for="fcfe6ac8-b57b-44d0-aa8c-c9f074a65335">
 Using the command-line</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>labelbuddy<span class="w"> </span>annotations/Firstname_Lastname.labelbuddy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--export-labels<span class="w"> </span>labels/imaging_modality_labels.json
 </pre></div>
 </div>
 </div>
-<input id="32b8d35e-324f-4e82-983c-696bc01273e9" name="9a47cb05-3aeb-4fe8-8858-5421a4715d39" type="radio">
-</input><label class="sd-tab-label" for="32b8d35e-324f-4e82-983c-696bc01273e9">
+<input id="c641031e-bb58-4d2b-9332-368f15ce5e75" name="66310e13-9fa8-473f-8f41-0f9f2d20b377" type="radio">
+</input><label class="sd-tab-label" for="c641031e-bb58-4d2b-9332-368f15ce5e75">
 Using <strong>labelbuddy</strong>’s graphical interface</label><div class="sd-tab-content docutils">
 <p>In the <strong>Import / Export</strong> tab, click <strong>Export labels</strong>, and select a file in the <code class="docutils literal notranslate"><span class="pre">annotations</span></code> directory; make sure the extension is <code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p>
 </div>
