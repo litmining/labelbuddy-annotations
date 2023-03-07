@@ -703,7 +703,7 @@ def get_report(
     ):
         key = lambda d: (d.get("position_in_labelbuddy_file", -1), d["pmcid"])
     else:
-        key = lambda d: d["pmcid"]
+        key = lambda d: (d["pmcid"], d["project_name"], d["annotator_name"])
     all_docs = sorted(all_docs, key=key)
     jinja_env = _get_jinja_env()
     template = jinja_env.get_template("report.html")
@@ -724,8 +724,11 @@ def report_command(args: Optional[List[str]] = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--project_name", type=str, default=None)
     parser.add_argument("-a", "--annotator_name", type=str, default=None)
+    parser.add_argument("-A", "--all_annotators", action="store_true")
     parsed_args = parser.parse_args(args)
-    if parsed_args.annotator_name is None:
+    if parsed_args.all_annotators:
+        annotator_name = None
+    elif parsed_args.annotator_name is None:
         annotator_name = repo.annotator_name()
     else:
         annotator_name = parsed_args.annotator_name
@@ -738,8 +741,9 @@ def report_command(args: Optional[List[str]] = None) -> None:
     out_dir = repo.repo_root() / "analysis" / "data" / "reports"
     out_dir.mkdir(exist_ok=True, parents=True)
     proj_repr = "" if project_name is None else f"_{project_name}"
+    annotator_repr = "" if annotator_name is None else f"_{annotator_name}"
     out_file = (
-        out_dir / f"participants_report_{annotator_name}{proj_repr}.html"
+        out_dir / f"participants_report{annotator_repr}{proj_repr}.html"
     )
     out_file.write_text(html)
     print(f"Report saved in {out_file}")
