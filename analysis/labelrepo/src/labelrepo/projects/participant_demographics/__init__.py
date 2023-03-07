@@ -8,6 +8,7 @@ from labelrepo.projects.participant_demographics._participant_demographics impor
 )
 from labelrepo.projects.participant_demographics._watcher import (
     watch_participants,
+    get_live_report_path,
 )
 
 __all__ = [
@@ -18,4 +19,5 @@ __all__ = [
     "report_command",
     "select_participants_annotations",
     "watch_participants",
+    "get_live_report_path",
 ]

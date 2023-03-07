@@ -4,9 +4,8 @@ import asyncio
 import json
 import pathlib
 import sqlite3
-import time
 import sys
-from typing import Optional, Set, Union
+from typing import Set, Union
 
 import pandas as pd
 import websockets
@@ -16,16 +15,22 @@ from labelrepo.projects.participant_demographics import (
 )
 
 
+def get_live_report_path(
+    labelbuddy_file: Union[pathlib.Path, str], port
+) -> pathlib.Path:
+    lb_file = pathlib.Path(labelbuddy_file)
+    return lb_file.with_name(
+        f"{lb_file.stem}_participants_live_report_{port}.html"
+    ).resolve()
+
+
 class _Watcher:
     def __init__(
         self, labelbuddy_file: Union[pathlib.Path, str], port: int
     ) -> None:
         self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
-        self.target_file = self.labelbuddy_file.with_name(
-            f"{self.labelbuddy_file.stem}_participants_live_report_{port}.html"
-        ).resolve()
-        self.last_wake_up_time: Optional[float] = None
+        self.target_file = get_live_report_path(self.labelbuddy_file, port)
         self.delay = 0.25
         self.project_name = self.labelbuddy_file.parents[1].name
         self.annotator_name = self.labelbuddy_file.stem
@@ -37,12 +42,16 @@ class _Watcher:
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
         self.connection = None
+        self.data_version = None
 
     def __enter__(self) -> _Watcher:
         self.labelbuddy_file.stat()
-        self.connection = sqlite3.connect(
-            f"file:{self.labelbuddy_file}?mode=ro"
-        )
+        try:
+            self.connection = sqlite3.connect(
+                f"{self.labelbuddy_file.resolve().as_uri()}?mode=ro"
+            )
+        except sqlite3.OperationalError:
+            self.connection = sqlite3.connect(self.labelbuddy_file.resolve())
         self.connection.row_factory = sqlite3.Row
         return self
 
@@ -58,6 +67,15 @@ class _Watcher:
         except Exception:
             pass
 
+    def _need_update(self) -> bool:
+        old_data_version = self.data_version
+        self.data_version = self.connection.execute(
+            "pragma data_version"
+        ).fetchone()[0]
+        if old_data_version is None:
+            return True
+        return self.data_version != old_data_version
+
     async def start(self) -> None:
         assert (
             self.connection is not None
@@ -65,15 +83,11 @@ class _Watcher:
         self.target_file.write_text(self.page)
         print(
             "\nTo see the live participant demographics report, "
-            "visit this file in your web browser:\n\n"
-            f"{self.target_file}\n"
+            "visit this address in your web browser:\n\n"
+            f"{self.target_file.as_uri()}\n"
         )
         while True:
-            previous_wake_up_time = self.last_wake_up_time
-            self.last_wake_up_time = time.time()
-            if previous_wake_up_time is None or (
-                self.labelbuddy_file.stat().st_mtime > previous_wake_up_time
-            ):
+            if self._need_update():
                 try:
                     self._update_content()
                 except Exception:
@@ -87,7 +101,7 @@ class _Watcher:
         doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
-        coalesce(list_title, substring(content, 1, 150)) as title
+        coalesce(list_title, substr(content, 1, 150)) as title
         from document
         where id = coalesce( (select last_visited_doc from app_state),
             (select id from document limit 1) )
@@ -109,9 +123,9 @@ class _Watcher:
         start_char, end_char, extra_data,
         context_start_char, context_end_char,
         length(content) as doc_length,
-        substring(content, start_char + 1, end_char - start_char)
+        substr(content, start_char + 1, end_char - start_char)
         as selected_text,
-        substring(content, context_start_char + 1,
+        substr(content, context_start_char + 1,
         context_end_char - context_start_char) as context
         from annot
         inner join label on annot.label_id = label.id
@@ -126,25 +140,24 @@ class _Watcher:
             "project_name": self.project_name,
             "annotator_name": self.annotator_name,
         }
-        anno_df = pd.DataFrame(doc_info | dict(anno) for anno in annotations)
+        anno_df = pd.DataFrame({**doc_info, **anno} for anno in annotations)
         if not anno_df.shape[0]:
-            summaries = [doc_info | {"participants": None}]
+            summaries = [dict(doc_info, participants=None)]
         else:
             summaries = _participant_demographics._get_document_summaries(
                 anno_df
             )
             summaries[0]["doc_uid"] = doc_result["id"]
-        self.content = self.template.render(
-            {
-                "documents": summaries,
-                "standalone": False,
-                "no_doc_positions": True,
-                "noscript": True,
-            }
-            | _participant_demographics._get_template_data(
-                self.labelbuddy_file
-            )
+        template_params = {
+            "documents": summaries,
+            "standalone": False,
+            "no_doc_positions": True,
+            "noscript": True,
+        }
+        template_params.update(
+            _participant_demographics._get_template_data(self.labelbuddy_file)
         )
+        self.content = self.template.render(template_params)
 
     async def register(self, socket):
         self.socket_connections.add(socket)

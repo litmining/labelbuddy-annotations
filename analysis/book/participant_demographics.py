@@ -22,6 +22,7 @@
 # The `labelrepo` package provides helpers to work with these annotations.
 # Here we illustrate loading the annotations to make a couple of simple plots.
 # The `get_participant_demographics` function returns a `pd.DataFrame` in which each row corresponds to a group of participants in a study, according to one annotator.
+# The data used here is also available directly <a href="generated/participant_groups.csv">as a CSV file</a>.
 
 # +
 from labelrepo.projects.participant_demographics import (
@@ -45,7 +46,7 @@ subset = ["pmcid", "project_name", "annotator_name"]
 
 kept_annotators = set(
     subgroups.loc[:, subset]
-    .drop_duplicates(subset="pmcid")
+    .drop_duplicates(subset=("pmcid",))
     .itertuples(index=False),
 )
 subgroups = subgroups.loc[
@@ -67,7 +68,8 @@ from labelrepo.database import get_database_connection
 import pandas as pd
 
 docs_info = pd.read_sql(
-    "select pmcid, publication_year from document", get_database_connection()
+    "select pmcid, publication_year, title from document",
+    get_database_connection(),
 )
 subgroups = subgroups.merge(docs_info, on="pmcid")
 subgroups["pmc_url"] = [
@@ -103,7 +105,7 @@ altair.Chart(total_counts).mark_point(size=60).encode(
 # We start by selecting groups for which the mean age is known.
 
 # +
-data = subgroups.dropna(subset="age mean").copy()
+data = subgroups.dropna(subset=("age mean",)).copy()
 # -
 
 # The rest is not especially interesting, it is just configuring the plot.

@@ -8,7 +8,7 @@ import shutil
 import sqlite3
 import tempfile
 import time
-from typing import List
+from typing import List, Union
 from urllib import request
 
 from labelrepo import repo
@@ -123,7 +123,9 @@ def _download_archive(url: str, downloads_dir: pathlib.Path) -> pathlib.Path:
     return extracted_path
 
 
-def _get_archive(url: str, downloads_dir: str | pathlib.Path) -> pathlib.Path:
+def _get_archive(
+    url: str, downloads_dir: Union[str, pathlib.Path]
+) -> pathlib.Path:
     downloads_dir = pathlib.Path(downloads_dir)
     with _downloads_db_connection(downloads_dir) as connection:
         result = connection.execute(

@@ -42,6 +42,16 @@ def data_dir() -> pathlib.Path:
     return data_dir
 
 
+def last_modified_labelbuddy_file():
+    lb_files = sorted(
+        (lbf.stat().st_mtime, lbf)
+        for lbf in (repo_root() / "projects").glob("**/*.labelbuddy")
+    )
+    if not lb_files:
+        return None
+    return lb_files[-1][1]
+
+
 def annotator_name(suggested_name: Optional[str] = None) -> str:
     if suggested_name:
         return suggested_name
