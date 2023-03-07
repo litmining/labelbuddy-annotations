@@ -23,7 +23,7 @@ jobs:
 
     - name: Install labelrepo
       run: |
-        pip install -e "analysis/labelrepo[all]"
+        pip install -e "analysis/labelrepo/"
 
     - name: Build the book
       run: |

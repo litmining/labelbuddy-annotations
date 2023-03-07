@@ -1,23 +1,49 @@
 <html>
 
 <head>
-    <title>Participant demographics</title>
+    <title>Live participants report</title>
     <style>
         {% include "participants.css" %}
     </style>
     <script>
      window.addEventListener("DOMContentLoaded", () => {
          const websocket = new WebSocket("ws://localhost:{{ port }}/");
+
          websocket.onmessage = ({data}) => {
+             let activeElems = document.querySelectorAll(
+                 "*[data-annotation-stack-is-shown='true']");
              document.getElementById("live-report-content")
                      .innerHTML = data;
+             if (! activeElems.length){
+                 return;
+             }
+             let reactivate = document.getElementById(activeElems[0].id);
+             if (reactivate !== null){
+                 showBuddy(reactivate);
+             }
+         };
+
+         websocket.onclose = (event) => {
+           document.getElementById("live-report-content")
+                   .innerHTML = (
+                     "<p>This annotation live report has been shut down. "
+                     + "Please reload this page after starting a new report "
+                     + "at <code>localhost:{{ port }}</code>. </p>");
          };
      });
+    </script>
+    <script>
+     {% include "hide_show_annotations.js"%}
     </script>
 </head>
 
 <body>
     <main id=live-report-content >
+        <p>
+            Waiting for connection to the live annotation report server
+            (please make sure one is running at port
+            <code>localhost:{{ port }}</code> and reload this page).
+        </p>
     </main>
 </body>
 
