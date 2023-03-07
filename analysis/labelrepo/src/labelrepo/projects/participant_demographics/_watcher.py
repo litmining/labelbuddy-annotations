@@ -2,12 +2,10 @@ from __future__ import annotations
 
 import asyncio
 import json
-import os
 import pathlib
 import sqlite3
-import time
-import tempfile
-from typing import Optional, Set, Union
+import sys
+from typing import Set, Union
 
 import pandas as pd
 import websockets
@@ -17,25 +15,23 @@ from labelrepo.projects.participant_demographics import (
 )
 
 
+def get_live_report_path(
+    labelbuddy_file: Union[pathlib.Path, str], port
+) -> pathlib.Path:
+    lb_file = pathlib.Path(labelbuddy_file)
+    return lb_file.with_name(
+        f"{lb_file.stem}_participants_live_report_{port}.html"
+    ).resolve()
+
+
 class _Watcher:
     def __init__(
         self, labelbuddy_file: Union[pathlib.Path, str], port: int
     ) -> None:
         self.socket_connections: Set = set()
         self.labelbuddy_file = pathlib.Path(labelbuddy_file)
-        stem = f"{self.labelbuddy_file.stem}_participants_live_report_"
-        fd, target_file = tempfile.mkstemp(
-            dir=self.labelbuddy_file.parent, prefix=stem, suffix=".html"
-        )
-        os.close(fd)
-        self.target_file = pathlib.Path(target_file).resolve()
-        self.last_wake_up_time: Optional[float] = None
-        self.last_update_time: Optional[float] = None
-        self.period = 0.5
-        self.connection = sqlite3.connect(
-            f"file:{self.labelbuddy_file}?mode=ro"
-        )
-        self.connection.row_factory = sqlite3.Row
+        self.target_file = get_live_report_path(self.labelbuddy_file, port)
+        self.delay = 0.25
         self.project_name = self.labelbuddy_file.parents[1].name
         self.annotator_name = self.labelbuddy_file.stem
         jinja_env = _participant_demographics._get_jinja_env()
@@ -45,9 +41,18 @@ class _Watcher:
         self.template = jinja_env.get_template("report.html")
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
-        self._update_content()
+        self.connection = None
+        self.data_version = None
 
     def __enter__(self) -> _Watcher:
+        self.labelbuddy_file.stat()
+        try:
+            self.connection = sqlite3.connect(
+                f"{self.labelbuddy_file.resolve().as_uri()}?mode=ro"
+            )
+        except sqlite3.OperationalError:
+            self.connection = sqlite3.connect(self.labelbuddy_file.resolve())
+        self.connection.row_factory = sqlite3.Row
         return self
 
     def __exit__(self, exc_type, exc_val, tb):
@@ -62,95 +67,97 @@ class _Watcher:
         except Exception:
             pass
 
+    def _need_update(self) -> bool:
+        old_data_version = self.data_version
+        self.data_version = self.connection.execute(
+            "pragma data_version"
+        ).fetchone()[0]
+        if old_data_version is None:
+            return True
+        return self.data_version != old_data_version
+
     async def start(self) -> None:
+        assert (
+            self.connection is not None
+        ), f"Use {self.__class__.__name__} as a context manager."
         self.target_file.write_text(self.page)
         print(
             "\nTo see the live participant demographics report, "
-            "visit this file in your web browser:\n\n"
-            f"{self.target_file}\n"
+            "visit this address in your web browser:\n\n"
+            f"{self.target_file.as_uri()}\n"
         )
         while True:
-            previous_wake_up_time = self.last_wake_up_time
-            self.last_wake_up_time = time.time()
-            if (
-                previous_wake_up_time is None
-                or (
-                    self.labelbuddy_file.stat().st_mtime
-                    > previous_wake_up_time
-                )
-                or self.last_update_time is None
-                or (time.time() - self.last_update_time > 5)
-            ):
+            if self._need_update():
                 try:
                     self._update_content()
                 except Exception:
                     self.content = """<div>
                     There was an error while generating the report
                     </div>"""
-                self.last_update_time = time.time()
                 websockets.broadcast(self.socket_connections, self.content)
-            to_wait = self.period - (time.time() - self.last_wake_up_time)
-            if to_wait > 0:
-                await asyncio.sleep(to_wait)
+            await asyncio.sleep(self.delay)
 
     def _update_content(self) -> None:
-        doc_info = self.connection.execute(
+        doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,
-        coalesce(list_title, substring(content, 1, 150)) as title
+        coalesce(list_title, substr(content, 1, 150)) as title
         from document
-        where id = (select last_visited_doc from app_state)
+        where id = coalesce( (select last_visited_doc from app_state),
+            (select id from document limit 1) )
         """
         ).fetchone()
-        metadata = json.loads(doc_info["metadata"])
+        metadata = json.loads(doc_result["metadata"])
 
         demo_labels = ", ".join(
             map("'{}'".format, _participant_demographics._DEMOGRAPHICS_LABELS)
         )
         annotations = self.connection.execute(
-            f"""
-        with doc as (select content from document where id = :doc)
+            f"""with annot as
+        (select document.content,
+        annotation.*, max(0, start_char - 200) as context_start_char,
+        min(length(content), end_char + 200) as context_end_char
+        from annotation, document
+        where annotation.doc_id = :doc and document.id = :doc)
         select label.name as label_name, label.color as label_color,
         start_char, end_char, extra_data,
-        substring(content, start_char + 1, end_char - start_char)
-        as selected_text
-        from annotation, doc
-        inner join label on annotation.label_id = label.id
-        where doc_id = :doc
+        context_start_char, context_end_char,
+        length(content) as doc_length,
+        substr(content, start_char + 1, end_char - start_char)
+        as selected_text,
+        substr(content, context_start_char + 1,
+        context_end_char - context_start_char) as context
+        from annot
+        inner join label on annot.label_id = label.id
         and label_name in ({demo_labels})
         """,
-            {"doc": doc_info["id"]},
+            {"doc": doc_result["id"]},
         )
-
-        anno_df = pd.DataFrame(
-            {
-                "pmcid": metadata["pmcid"],
-                "title": doc_info["title"],
-                "doc_md5": doc_info["md5"],
-                "project_name": self.project_name,
-                "annotator_name": self.annotator_name,
-            }
-            | dict(anno)
-            for anno in annotations
-        )
+        doc_info = {
+            "pmcid": metadata["pmcid"],
+            "title": doc_result["title"],
+            "doc_md5": doc_result["md5"],
+            "project_name": self.project_name,
+            "annotator_name": self.annotator_name,
+        }
+        anno_df = pd.DataFrame({**doc_info, **anno} for anno in annotations)
         if not anno_df.shape[0]:
-            self.content = f"""<div>
-            <h2>PMC{metadata['pmcid']}</h2>
-            <p>
-            No participant group annotations for this document (yet!)
-            </p>
-            </div>
-            """
-            return
-        summaries = _participant_demographics._get_document_summaries(anno_df)
-        self.content = self.template.render(
-            {
-                "documents": summaries,
-                "standalone": False,
-                "no_doc_positions": True,
-                "live_report": True,
-            }
+            summaries = [dict(doc_info, participants=None)]
+        else:
+            summaries = _participant_demographics._get_document_summaries(
+                anno_df
+            )
+            summaries[0]["doc_uid"] = doc_result["id"]
+        template_params = {
+            "documents": summaries,
+            "standalone": False,
+            "no_doc_positions": True,
+            "noscript": True,
+        }
+        template_params.update(
+            _participant_demographics._get_template_data(self.labelbuddy_file)
         )
+        self.content = self.template.render(template_params)
 
     async def register(self, socket):
         self.socket_connections.add(socket)
@@ -164,6 +171,11 @@ class _Watcher:
 async def watch_participants(
     labelbuddy_file: Union[pathlib.Path, str], port: int = 8765
 ) -> None:
-    with _Watcher(labelbuddy_file, port) as watcher:
+    watcher = _Watcher(labelbuddy_file, port)
+    try:
         async with websockets.serve(watcher.register, "localhost", port):
-            await watcher.start()
+            with watcher:
+                await watcher.start()
+    except OSError as error:
+        print(f"\nServing the live report failed due to:\n\n    {error}\n")
+        sys.exit(1)

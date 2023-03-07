@@ -35,5 +35,6 @@ book-full: database csv
 	rm -rf analysis/book/_build/
 	rm -rf analysis/book/projects/
 	python3 scripts/make_repo_stats_figure.py
+	python3 scripts/make_participants_csv.py
 	python3 analysis/book_helpers/add_project_pages.py
 	./scripts/make_book.sh

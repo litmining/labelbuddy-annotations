@@ -59,7 +59,13 @@ df = pd.read_sql(
     connection,
 )
 df.iloc[:-1, 0] = [f'<a href="./projects/{proj.replace(".", "__")}.html">{proj}</a>' for proj in df.iloc[:-1, 0]]
-df.style.hide(axis="index")
+display = df.style
+try:
+  display = df.style.hide(axis="index")
+except AttributeError:
+  pass
+
+display
 ```
 
 Each project contains 3 directories: `labels/`, `documents/` and `annotations/`, corresponding to the 3 types of objects stored in this repository.

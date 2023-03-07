@@ -1,54 +1,80 @@
+.labelrepo-unselectable {
+    user-select: none;
+}
 .participants-report h1 {
     margin-block-start: 2rem;
     margin-block-end: 2rem;
 }
+
 .participants-report :is(h2, h3, p) {
     margin: 0;
+    line-height: 1.1;
 }
+
+.participants-report footer {
+    border: 0;
+}
+
 .participants-report :is(h2, h3) {
     font-size: large;
 }
+
 .participants-report code {
     color: inherit;
 }
+
 .participants-report :is(a, a:visited) {
     color: inherit;
     text-decoration: underline;
 }
-.participants-report  .report-header {
+
+.participants-report .report-header {
     text-align: center;
     font-size: large;
+    padding-block-end: 1rem;
 }
-.participants-report .labelrepo-flow > * + * {
+
+.participants-report .labelrepo-flow>*+* {
     margin-block-start: 0.5rem;
 }
-.labelrepo-flow > * + * {
+
+.labelrepo-flow>*+* {
     margin-block-start: 0.5rem;
 }
+
 .labelrepo-card {
     margin: 1rem;
     border-radius: .25rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2), 0px 4px 10px 0px rgba(0, 0, 0, .2);
     overflow: hidden;
 }
-.doc-participants > header {
+
+.doc-participants>header {
     padding: 0.5rem;
     border-block-end: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 .doc-participants-content {
     padding: 0.5rem;
 }
+
 .labelrepo-wrapper {
     max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
 }
-.doc-participants > header {
+
+.doc-participants>header {
     background-color: #E8E8E8;
 }
-.doc-participants[data-extraction-failure] > header {
+
+.doc-participants[data-has-warnings] > header {
+    background-color: #F1A83A;
+}
+.doc-participants[data-extraction-failure]>header {
     background-color: #FF7C76;
 }
+
 .doc-participants :is(.healthy-subgroup, .patients-subgroup) {
     padding: 0.25rem;
     padding-left: 0.5rem;
@@ -57,19 +83,41 @@
     border-radius: 0.25rem;
     overflow: hidden;
 }
-.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3{
+
+.doc-participants :is(.healthy-subgroup, .patients-subgroup) h3 {
     margin-bottom: 0.25rem;
 }
+
 .doc-participants .healthy-subgroup {
-    background-color: #B3FFFF;
+    background-color: var(--label-color-healthy, #B3FFFF);
 }
+
 .doc-participants .patients-subgroup {
-    background-color: #FFFC9C;
+    background-color: var(--label-color-patients, #FFFC9C);
+}
+
+.doc-participants .participants-subgroup .group-label-extra-data {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.hidden-annotation-stack {
+    display: none;
+}
+.hidden-annotation-stack .labelrepo-card {
+    box-shadow: none;
+    margin: 0;
+    padding-block-start:0;
+}
+
+.hidden-annotation-stack[data-is-selected="true"] {
+    display: block;
 }
 
 .annotation-stack {
     padding: 0.5rem;
 }
+
 .annotation-stack highlight {
     background-color: #5A5A5A;
     color: white;
@@ -79,9 +127,11 @@
     padding: 0.25rem;
     font-weight: bold;
 }
-.annotation-stack > * {
+
+.annotation-stack>* {
     padding: 0.25rem;
 }
+
 .label-and-extra-data {
     border-radius: 0.25rem;
     overflow: hidden;
@@ -89,16 +139,58 @@
     padding-inline-start: 0.25rem;
     padding-inline-end: 0.25rem;
 }
-.label-and-extra-data > .extra-data {
+
+.label-and-extra-data>.extra-data {
     font-style: italic;
 }
-.label-and-extra-data > * {
+
+.label-and-extra-data>* {
     display: inline-block;
     padding: 0.25rem;
 }
+
 .label-cluster {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.25rem;
+}
+
+.labelrepo-clickable {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-block-start: 0.1rem;
+    margin-block-end: 0.1rem;
+    padding: 0.1rem;
+    display: inline-block;
+}
+
+.labelrepo-clickable[data-annotation-stack-is-shown="true"] {
+    text-decoration: none;
+    border: 2px solid
+}
+
+.labelrepo-pre-wrap {
+    white-space: pre-wrap;
+}
+
+.labelrepo-warning-message, .labelrepo-error-message {
+    font-family: monospace;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+    display: block;
+}
+
+:is(.labelrepo-warning-message, .labelrepo-error-message)::before {
+    font-weight: bold;
+    font-size: large;
+}
+
+.labelrepo-warning-message::before{
+    content: "Warning";
+}
+
+.labelrepo-error-message::before{
+    content: "Error\A";
+    white-space: pre;
 }
