@@ -39,13 +39,12 @@ style="
                 <p>
                     Information collected from
                     <strong>{{ documents | length }}</strong> documents
-                    annotated
-                    {% if annotator_name %}
-                    by <strong><code>{{ annotator_name }}</code></strong>
-                    {% endif -%}
-                    {% if project_name %}
+                    {%- if annotator_name %}
+                    annotated by <strong><code>{{ annotator_name }}</code></strong>
+                    {%- endif -%}
+                    {%- if project_name %}
                     in <strong><code>{{ project_name }}</code></strong>
-                    {% endif -%}
+                    {%- endif -%}
                     .
                 </p>
             </header>
