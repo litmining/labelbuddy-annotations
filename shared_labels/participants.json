@@ -1,0 +1,52 @@
+[
+    {
+        "color": "#00ffff",
+        "name": "healthy",
+        "shortcut_key": "h"
+    },
+    {
+        "color": "#fff700",
+        "name": "patients",
+        "shortcut_key": "p"
+    },
+    {
+        "color": "#6bf700",
+        "name": "female",
+        "shortcut_key": "f"
+    },
+    {
+        "color": "#ff65de",
+        "name": "male",
+        "shortcut_key": "m"
+    },
+    {
+        "color": "#e6c68f",
+        "name": "count",
+        "shortcut_key": "c"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age minimum",
+        "shortcut_key": "j"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age maximum",
+        "shortcut_key": "k"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age mean",
+        "shortcut_key": "u"
+    },
+    {
+        "color": "#d1cbff",
+        "name": "age median",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#fbc5ff",
+        "name": "diagnosis",
+        "shortcut_key": "d"
+    }
+]

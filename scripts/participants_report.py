@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+from labelrepo import database
 from labelrepo.projects import participant_demographics
 
-participant_demographics.labelbuddy_file_report_command()
+database.make_database()
+participant_demographics.report_command()

@@ -1,8 +1,11 @@
 import argparse
+import re
 import sqlite3
 import pathlib
 import contextlib
-from typing import Dict, List, Optional, Tuple
+import secrets
+import hashlib
+from typing import Dict, List, Optional, Tuple, Union
 
 import jinja2
 import pandas as pd
@@ -11,22 +14,24 @@ from labelrepo import database, repo, displays
 
 _SEX_NAMES = ("female", "male")
 _GROUP_NAMES = ("healthy", "patients")
-_DEMOGRAPHICS_LABELS = (
-    _SEX_NAMES
-    + _GROUP_NAMES
-    + (
-        "count",
-        "age mean",
-        "age minimum",
-        "age maximum",
-        "age median",
-        "diagnosis",
-    )
+_PAYLOAD_NAMES = (
+    "count",
+    "age mean",
+    "age minimum",
+    "age maximum",
+    "age median",
+    "diagnosis",
 )
+_PAYLOAD_TYPES = {
+    "count": int,
+    "age mean": float,
+    "age minimum": float,
+    "age maximum": float,
+    "age median": float,
+    "diagnosis": str,
+}
 
-
-class AnnotationError(Exception):
-    pass
+_DEMOGRAPHICS_LABELS = _SEX_NAMES + _GROUP_NAMES + _PAYLOAD_NAMES
 
 
 def _format_error_annotation(annotation: Dict, indent=0) -> str:
@@ -51,12 +56,40 @@ def _format_error_token(token: Dict, indent=0) -> str:
         for k in keys
         if not pd.isnull(token[k]) and token[k] != "_"
     ]
-    return (
+    formatted = (
         f"{' ' * indent}"
         f"(char {token['start_char']} – char {token['end_char']}) "
-        f"{', '.join(values)}, "
-        f"'{token['label_name']}', '{token['coalesced']}'"
+        f"{' / '.join(values)}{', ' if values else ''}"
+        f"'{token['label_name']}'"
     )
+    if "coalesced" in token:
+        formatted += f", '{token['coalesced']}'"
+    return formatted
+
+
+def _format_error(annotation_or_token: Dict, indent=0) -> str:
+    if "group_name" in annotation_or_token:
+        return _format_error_token(annotation_or_token, indent)
+    return _format_error_annotation(annotation_or_token, indent)
+
+
+class AnnotationError(Exception):
+    def __init__(self, message, error_tokens=[], error_positions=None):
+        if isinstance(error_tokens, pd.DataFrame):
+            error_tokens = error_tokens.to_dict(orient="records")
+        self.error_tokens = error_tokens
+        if error_positions is None:
+            self.error_positions = {
+                (tok["start_char"], tok["end_char"])
+                for tok in self.error_tokens
+            }
+        else:
+            self.error_positions = error_positions
+        formatted_tokens = "\n".join(
+            _format_error(tok, 2) for tok in self.error_tokens
+        )
+        formatted_message = f"""{message}\n\n{formatted_tokens}"""
+        super().__init__(formatted_message)
 
 
 def _get_tokens(annotations: pd.DataFrame) -> pd.DataFrame:
@@ -81,13 +114,9 @@ def _get_group_and_subgroup(
         if pd.isnull(subgroup_name):
             subgroup_name = None
         return {"group_name": group_name, "subgroup_name": subgroup_name}
-    formatted_annotations = "\n".join(
-        _format_error_annotation(anno, 2)
-        for anno in group_anno.to_dict(orient="records")
-    )
     raise AnnotationError(
-        "Too many participant group qualifiers applied "
-        f"to the same text:\n\n{formatted_annotations}"
+        "Too many participant group qualifiers applied to the same text:",
+        group_anno,
     )
 
 
@@ -100,15 +129,9 @@ def _get_sex(annotation_stack: pd.DataFrame) -> Dict:
         return {"sex": None}
     if sex.shape[0] == 1:
         return {"sex": sex[0]}
-    formatted_annotations = "\n".join(
-        _format_error_annotation(anno, 2)
-        for anno in sex_anno.drop_duplicates(subset="label_name").to_dict(
-            orient="records"
-        )
-    )
     raise AnnotationError(
-        "Conflicting sex qualifiers applied to the same text:"
-        f"\n\n{formatted_annotations}"
+        "Conflicting sex qualifiers applied to the same text:",
+        sex_anno.drop_duplicates(subset=("label_name",)),
     )
 
 
@@ -117,19 +140,18 @@ def _get_payload(annotation_stack: pd.DataFrame) -> Dict:
         ~annotation_stack["label_name"].isin(_GROUP_NAMES + _SEX_NAMES)
     ]
     if payload_anno.shape[0] == 0:
-        return {"label_name": None, "extra_data": None}
+        raise AnnotationError(
+            "Group descriptors applied "
+            "but data label (eg 'count', 'age mean', etc.) is missing:",
+            annotation_stack,
+        )
     if payload_anno.shape[0] == 1:
         return {
             "label_name": payload_anno.iloc[0]["label_name"],
             "extra_data": payload_anno.iloc[0]["extra_data"],
         }
-    formatted_annotations = "\n".join(
-        _format_error_annotation(anno, 2)
-        for anno in payload_anno.to_dict(orient="records")
-    )
     raise AnnotationError(
-        "Too many data labels applied to the same text:\n\n"
-        f"{formatted_annotations}"
+        "Too many data labels applied to the same text:", payload_anno
     )
 
 
@@ -148,38 +170,85 @@ def _token_from_annotations(
 
 
 def _build_group_tree(tokens: pd.DataFrame) -> Dict:
-    root: Dict = {"children": {}, "name": "all participants"}
-    if (
-        "patients" in tokens["group_name"].values
-        or "diagnosis" in tokens["label_name"].values
-    ):
-        root["children"]["patients"] = {"name": "patients"}
-        if "healthy" in tokens["group_name"].values:
-            root["children"]["healthy"] = {"name": "healthy"}
-        else:
-            tokens["group_name"] = "patients"
-    else:
-        root["children"]["healthy"] = {"name": "healthy"}
-        tokens["group_name"] = "healthy"
-    for group_name, group in root["children"].items():
-        group_idx = tokens[tokens["group_name"] == group_name].index
-        subgroup_names = set(
-            tokens.loc[group_idx, "subgroup_name"].dropna().values
-        )
-        if not subgroup_names:
-            tokens.loc[group_idx, "subgroup_name"] = "_"
-            subgroup_names = {"_"}
-        group["children"] = {
-            sg_name: {
-                "name": sg_name,
-                "children": {
-                    "female": {"name": "female"},
-                    "male": {"name": "male"},
-                },
-            }
-            for sg_name in subgroup_names
-        }
+    root = {}
+    _build_groups(root, tokens)
     return root
+
+
+def _check_sex_on_non_leaf_nodes(tokens: pd.DataFrame) -> None:
+    bad_tokens = tokens.loc[
+        tokens["group_name"].isnull() & tokens["sex"].notnull()
+    ]
+    if bad_tokens.shape[0]:
+        drop_group_msg = ""
+        groups = tokens["group_name"].dropna().unique()
+        if len(groups) == 1:
+            drop_group_msg = (
+                "If there is only one group of participants, "
+                f"you can solve this by removing the '{groups[0]}' label. "
+                "Otherwise please add group labels "
+                "to the 'female' and 'male' counts.\n\n"
+            )
+        raise AnnotationError(
+            "When explicit group labels are used, "
+            "'female' and 'male' counts should be "
+            "attached to specific groups.\n\n"
+            f"{drop_group_msg}"
+            "'patients' or 'healthy' label is missing:",
+            bad_tokens,
+        )
+
+
+def _build_groups(root: Dict, tokens: pd.DataFrame) -> None:
+    # if any group is mentioned explicitly, both groups are present if we have
+    # a total count, otherwise only mentioned groups are present
+    if tokens["group_name"].notnull().any():
+        _check_sex_on_non_leaf_nodes(tokens)
+        if (
+            tokens["group_name"].isnull() & (tokens["label_name"] == "count")
+        ).any():
+            used_groups = _GROUP_NAMES
+        else:
+            used_groups = tokens["group_name"].dropna().unique()
+        root["children"] = {g_name: {} for g_name in used_groups}
+    # if no group is mentioned explicitly, we assume all patients if there is a
+    # diagnosis and all healthy otherwise.
+    elif "diagnosis" in tokens["label_name"].values:
+        root["children"] = {"patients": {}}
+    else:
+        root["children"] = {"healthy": {}}
+    if len(root["children"]) == 1:
+        tokens["group_name"] = tuple(root["children"].keys())[0]
+    for group_name, group in root["children"].items():
+        _build_subgroups(group_name, group, tokens)
+
+
+def _build_subgroups(group_name, group, tokens):
+    group_idx = tokens[tokens["group_name"] == group_name].index
+    subgroup_names = tokens.loc[group_idx, "subgroup_name"].dropna().unique()
+    if not len(subgroup_names):
+        tokens.loc[group_idx, "subgroup_name"] = "_"
+        subgroup_names = ("_",)
+    group["children"] = {sg_name: {} for sg_name in subgroup_names}
+    for sg_name, sg in group["children"].items():
+        _build_sexes(group_name, sg_name, sg, tokens)
+
+
+def _build_sexes(group_name, subgroup_name, subgroup, tokens):
+    sg_tokens = tokens[
+        (tokens["group_name"] == group_name)
+        & (tokens["subgroup_name"] == subgroup_name)
+    ]
+    used_sexes = _SEX_NAMES
+    mentioned_sexes = sg_tokens["sex"].dropna().unique()
+    if (
+        len(mentioned_sexes)
+        and not (
+            sg_tokens["sex"].isnull() & (sg_tokens["label_name"] == "count")
+        ).any()
+    ):
+        used_sexes = mentioned_sexes
+    subgroup["children"] = {s_name: {} for s_name in used_sexes}
 
 
 def _coalesce_extra_selected(tokens: pd.DataFrame) -> None:
@@ -189,17 +258,14 @@ def _coalesce_extra_selected(tokens: pd.DataFrame) -> None:
 
 
 def _check_conflicts(tokens: pd.DataFrame) -> None:
-    for _, token_group in tokens.groupby(
+    for _, token_group in tokens.dropna(subset=("label_name",)).groupby(
         ["group_name", "subgroup_name", "sex", "label_name"], dropna=False
     ):
         if token_group["coalesced"].nunique() > 1:
-            formatted_tokens = "\n".join(
-                _format_error_token(tok, 2)
-                for tok in token_group.to_dict(orient="records")
-            )
             raise AnnotationError(
                 "The following annotations provide conflicting "
-                f"information:\n\n{formatted_tokens}"
+                f"information:",
+                token_group,
             )
 
 
@@ -214,28 +280,40 @@ def _add_info(tokens: pd.DataFrame, root: Dict) -> None:
         .sort_index()
     )
     _add_subtree_info(root, (None, None, None), 0, tokens)
-    _infer_info_up(root)
-    _infer_info_down(root)
+    _infer_info_up(["all participants"], root)
+    _infer_info_down(["all participants"], root)
 
 
-def _format_conversion_error(
-    node_index: Tuple[Optional[str], ...],
-    label_name: str,
-    token: Dict,
-    target_dtype: str,
-) -> str:
-    value = token["coalesced"]
-    formatted_token = _format_error_token(
-        token
-        | dict(zip(("group_name", "subgroup_name", "sex"), node_index))
-        | {"label_name": label_name},
-        2,
-    )
-    return (
-        f"Could not convert '{value}' to "
-        f"{target_dtype}:"
-        f"\n{formatted_token}"
-    )
+def _get_payload_from_token(
+    label_name: str, node_index: Tuple, tokens: pd.DataFrame
+) -> Optional[Dict]:
+    full_index = node_index + (label_name,)
+    if full_index not in tokens.index:
+        return None
+    tok = tokens.loc[full_index]
+    raw_value = tok["coalesced"]
+    try:
+        value = _PAYLOAD_TYPES[label_name](raw_value)
+        return {
+            "value": value,
+            "source": {
+                "start_char": int(tok["start_char"]),
+                "end_char": int(tok["end_char"]),
+            },
+        }
+    except (TypeError, ValueError):
+        full_token = dict(tok.to_dict(), label_name=label_name)
+        full_token.update(
+            zip(
+                ("group_name", "subgroup_name", "sex"),
+                node_index,
+            )
+        )
+        raise AnnotationError(
+            f"Could not convert '{raw_value}' to "
+            f"{_PAYLOAD_TYPES[label_name].__name__}:",
+            [full_token],
+        )
 
 
 def _add_subtree_info(
@@ -244,101 +322,94 @@ def _add_subtree_info(
     level: int,
     tokens: pd.DataFrame,
 ) -> None:
-    dtypes = {
-        "count": int,
-        "age mean": float,
-        "age minimum": float,
-        "age maximum": float,
-        "age median": float,
-        "diagnosis": str,
-    }
-    for label_name in dtypes.keys():
-        if node_index + (label_name,) in tokens.index:
-            tok = tokens.loc[node_index + (label_name,)]
-            value = tok["coalesced"]
-            try:
-                node[label_name] = dtypes[label_name](value)
-            except (TypeError, ValueError):
-                raise AnnotationError(
-                    _format_conversion_error(
-                        node_index,
-                        label_name,
-                        tok.to_dict(),
-                        dtypes[label_name].__name__,
-                    )
-                )
-    if node_index + ("count",) not in tokens.index:
-        male_index = (*node_index[:-1], "male", "count")
-        has_male = male_index in tokens.index
-        female_index = (*node_index[:-1], "female", "count")
-        has_female = female_index in tokens.index
-        if has_male and not has_female:
-            _set_single_sex(node, "male")
-        elif has_female and not has_male:
-            _set_single_sex(node, "female")
+    for label_name in _PAYLOAD_NAMES:
+        label_data = _get_payload_from_token(label_name, node_index, tokens)
+        if label_data is not None:
+            node[label_name] = label_data
     for child_name, child in node.get("children", {}).items():
         child_index = list(node_index)
         child_index[level] = child_name
         _add_subtree_info(child, tuple(child_index), level + 1, tokens)
 
 
-def _set_single_sex(root: Dict, sex: str) -> None:
-    remove_sex = {"male": "female", "female": "male"}[sex]
-    if "children" not in root:
-        return
-    if remove_sex in root["children"]:
-        del root["children"][remove_sex]
-    for child in root["children"].values():
-        _set_single_sex(child, sex)
-
-
 def _check_count_conflict(
-    root: Dict, children: Dict, children_sum: int
+    parent_path: List[str], root: Dict, children_sum: int
 ) -> None:
     if "count" not in root:
         return
-    if root["count"] == children_sum:
+    root_count = root["count"]["value"]
+    if root_count == children_sum:
         return
+    parent_name = " / ".join(f"'{p}'" for p in parent_path)
     msg = (
         "The group count is not the sum of subgroup counts:\n\n"
-        f"  '{root['name']}': {root['count']}\n\n  subgroups:\n\n"
+        f"{parent_name}: {root_count}\n\nsubgroups:\n\n"
     ) + "\n".join(
-        f"    '{root['name']}', '{n}': {c.get('count', '??')}"
-        for (n, c) in children.items()
+        f"  {parent_name} / '{n}': {c.get('count', {}).get('value', '??')}"
+        for (n, c) in root["children"].items()
     )
-    raise AnnotationError(msg)
+    raise AnnotationError(
+        msg,
+        error_positions=[
+            (
+                n["count"]["source"]["start_char"],
+                n["count"]["source"]["end_char"],
+            )
+            for n in (root,) + tuple(root["children"].values())
+            if "count" in n and "source" in n["count"]
+        ],
+    )
 
 
-def _infer_info_up(root: Dict) -> None:
+def _infer_info_up(parent_path: List[str], root: Dict) -> None:
     if "children" not in root:
         return
+    for child_name, child in root["children"].items():
+        _infer_info_up(parent_path + [child_name], child)
     children = root["children"].values()
-    for child in children:
-        _infer_info_up(child)
     if all("count" in child for child in children):
-        children_sum = sum(child["count"] for child in children)
-        _check_count_conflict(root, root["children"], children_sum)
-        root["count"] = children_sum
+        children_sum = sum(child["count"]["value"] for child in children)
+        _check_count_conflict(parent_path, root, children_sum)
+        root["count"] = {"value": children_sum}
         if (
             all("age mean" in child for child in children)
             and "age mean" not in root
         ):
-            root["age mean"] = sum(
-                child["count"] * child["age mean"] for child in children
-            ) / children_sum
+            root["age mean"] = {
+                "value": (
+                    sum(
+                        child["count"]["value"] * child["age mean"]["value"]
+                        for child in children
+                    )
+                    / children_sum
+                )
+            }
     if (
         all("age minimum" in child for child in children)
         and "age minimum" not in root
     ):
-        root["age minimum"] = min(child["age minimum"] for child in children)
+        root["age minimum"] = {
+            "value": min(child["age minimum"]["value"] for child in children)
+        }
     if (
         all("age maximum" in child for child in children)
         and "age maximum" not in root
     ):
-        root["age maximum"] = max(child["age maximum"] for child in children)
+        root["age maximum"] = {
+            "value": max(child["age maximum"]["value"] for child in children)
+        }
+    if len(root["children"]) == 1:
+        child = tuple(root["children"].values())[0]
+        for label_name in _PAYLOAD_NAMES:
+            if (
+                "source" in child.get(label_name, {})
+                and label_name in root
+                and "source" not in root[label_name]
+            ):
+                root[label_name]["source"] = child[label_name]["source"]
 
 
-def _infer_info_down(root: Dict) -> None:
+def _infer_info_down(parent_path: List[str], root: Dict) -> None:
     if "children" not in root:
         return
     missing_count = [
@@ -346,11 +417,17 @@ def _infer_info_down(root: Dict) -> None:
     ]
     if "count" in root and len(missing_count) == 1:
         rest = sum(
-            child.get("count", 0) for child in root["children"].values()
+            child.get("count", {}).get("value", 0)
+            for child in root["children"].values()
         )
-        if rest > root["count"]:
-            _check_count_conflict(root, root["children"], rest)
-        missing_count[0]["count"] = root["count"] - rest
+        if rest > root["count"]["value"]:
+            _check_count_conflict(parent_path, root, rest)
+        if len(root["children"]) == 1:
+            missing_count[0]["count"] = root["count"]
+        else:
+            missing_count[0]["count"] = {
+                "value": root["count"]["value"] - rest
+            }
     for child_name, child in root["children"].items():
         for label_name in ("age minimum", "age maximum"):
             if label_name in root and label_name not in child:
@@ -361,8 +438,20 @@ def _infer_info_down(root: Dict) -> None:
             and child_name != "healthy"
         ):
             child["diagnosis"] = root["diagnosis"]
+    for child_name, child in root["children"].items():
+        _infer_info_down(parent_path + [child_name], child)
+
+
+def _prune_empty_groups(root: Dict) -> None:
+    if "children" not in root:
+        return
+    root["children"] = {
+        c_name: c
+        for c_name, c in root["children"].items()
+        if c.get("count", {}).get("value", -1) != 0
+    }
     for child in root["children"].values():
-        _infer_info_down(child)
+        _prune_empty_groups(child)
 
 
 def _summarize(root: Dict) -> Dict:
@@ -376,14 +465,17 @@ def _summarize(root: Dict) -> Dict:
             if len(group["children"]) == 1:
                 subgroup_summary_name = group_name
             else:
-                subgroup_summary_name = f"{group_name}: {subgroup_name}"
-            subgroup_summary = {"category": group_name}
+                subgroup_summary_name = f"{group_name} {subgroup_name}"
+            subgroup_summary = {
+                "group_name": group_name,
+                "subgroup_name": subgroup_name,
+            }
             for label_name in _DEMOGRAPHICS_LABELS:
                 if label_name in subgroup:
                     subgroup_summary[label_name] = subgroup[label_name]
             for sex in _SEX_NAMES:
                 if subgroup["children"].get(sex):
-                    subgroup_summary[f"{sex}s"] = subgroup["children"][sex]
+                    subgroup_summary[sex] = subgroup["children"][sex]
             summary["subgroups"][subgroup_summary_name] = subgroup_summary
     return summary
 
@@ -392,6 +484,7 @@ def _get_participants_info(annotations: pd.DataFrame) -> Dict:
     tokens = _get_tokens(annotations)
     root = _build_group_tree(tokens)
     _add_info(tokens, root)
+    _prune_empty_groups(root)
     summary = _summarize(root)
     return summary
 
@@ -428,12 +521,14 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
     ), anno in all_annotations.groupby(
         ["project_name", "annotator_name", "doc_md5"]
     ):
-        pmcid = anno["pmcid"].iloc[0]
+        pmcid = anno["pmcid"].iloc[0].tolist()
         doc = {
             "project_name": project_name,
             "annotator_name": annotator_name,
             "pmcid": pmcid,
             "title": anno["title"].iloc[0],
+            "annotation_stacks": _get_annotation_stacks(anno),
+            "doc_uid": secrets.token_hex(4),
         }
         if doc_md5 in positions[(project_name, annotator_name)]:
             doc.update(
@@ -441,21 +536,31 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
                     "position_in_labelbuddy_file": positions[
                         (project_name, annotator_name)
                     ][doc_md5]["position"],
-                    "labelbuddy_file": _get_labelbuddy_file(
-                        project_name, annotator_name
+                    "labelbuddy_file": str(
+                        _get_labelbuddy_file(project_name, annotator_name)
                     ),
                 }
             )
         try:
             doc["participants"] = _get_participants_info(anno)
-            if any(
-                (sg["category"] == "patients")
-                for sg in doc["participants"]["subgroups"].values()
-            ):
-                doc["has_patients"] = True
+            for sg in doc["participants"]["subgroups"].values():
+                if sg["group_name"] == "patients":
+                    doc["has_patients"] = True
+                    if "diagnosis" not in sg:
+                        doc["warnings"] = doc.get("warnings", []) + [
+                            "missing diagnosis"
+                        ]
+                if "count" not in sg:
+                    doc["warnings"] = doc.get("warnings", []) + [
+                        "missing count"
+                    ]
         except Exception as error:
+            doc["participants"] = None
             doc["extraction_failed"] = True
             doc["error_message"] = str(error)
+            if isinstance(error, AnnotationError):
+                doc["error_positions"] = error.error_positions
+
         all_docs.append(doc)
     return all_docs
 
@@ -522,82 +627,129 @@ from detailed_annotation where label_name in ({demo_labels})
 
 
 def _get_jinja_env() -> jinja2.Environment:
-    return jinja2.Environment(
+    env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(
             pathlib.Path(__file__).resolve().parent / "_data" / "templates",
             encoding="UTF-8",
         )
     )
+    env.filters["md5"] = lambda text: hashlib.md5(
+        text.encode("utf-8")
+    ).hexdigest()
+    return env
 
 
-def get_report_for_labelbuddy_file(
-    project_name: str, annotator_name: str, standalone: bool = False
-) -> str:
-    all_anno = select_participants_annotations(
-        project_name=project_name, annotator_name=annotator_name
-    )
-    all_docs = _get_document_summaries(all_anno)
-    all_docs = sorted(all_docs, key=lambda d: d["position_in_labelbuddy_file"])
-    jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("labelbuddy_file_report.html")
-    return template.render(
-        {
-            "documents": all_docs,
-            "project_name": project_name,
-            "annotator_name": annotator_name,
-            "standalone": standalone,
-        }
-    )
-
-
-def get_report_for_repo(
-    standalone: bool = False, remove_failed_docs: bool = False
-) -> str:
+def get_participant_demographics() -> pd.DataFrame:
     all_anno = select_participants_annotations()
     all_docs = _get_document_summaries(all_anno)
-    if remove_failed_docs:
-        all_docs = [
-            doc for doc in all_docs if not doc.get("extraction_failed")
-        ]
-    all_docs = sorted(all_docs, key=lambda d: d["pmcid"])
-    jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("repository_report.html")
-    return template.render(
-        {
-            "documents": all_docs,
-            "standalone": standalone,
-            "no_doc_positions": True,
+    all_rows = []
+    for doc in all_docs:
+        if doc.get("extraction_failed", False):
+            continue
+        doc_info = {
+            k: doc[k] for k in ("project_name", "annotator_name", "pmcid")
         }
-    )
+        for subgroup in doc["participants"]["subgroups"].values():
+            row = {}
+            row.update(doc_info)
+            for k in ("group_name", "subgroup_name"):
+                row[k] = subgroup.get(k)
+            for k in _PAYLOAD_NAMES:
+                row[k] = subgroup.get(k, {}).get("value")
+            row["female count"] = (
+                subgroup.get("female", {}).get("count", {}).get("value")
+            )
+            row["male count"] = (
+                subgroup.get("male", {}).get("count", {}).get("value")
+            )
+            all_rows.append(row)
+    return pd.DataFrame(all_rows)
 
 
-def labelbuddy_file_report_command(args: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("labelbuddy_file", type=str, nargs="?", default=None)
-    parsed_args = parser.parse_args(args)
-    if parsed_args.labelbuddy_file is None:
-        labelbuddy_file = (
-            repo.repo_root()
-            / "projects"
-            / "participant_demographics"
-            / "annotations"
-            / f"{repo.annotator_name()}.labelbuddy"
-        )
+def _get_template_data(
+    database_file: Optional[Union[str, pathlib.Path]] = None
+) -> Dict:
+    if database_file is not None:
+        connection = sqlite3.connect(database_file)
     else:
-        labelbuddy_file = pathlib.Path(parsed_args.labelbuddy_file)
-    project_name = labelbuddy_file.parents[1].name
-    annotator_name = labelbuddy_file.stem
-    html = get_report_for_labelbuddy_file(
-        project_name, annotator_name, standalone=True
+        connection = database.get_database_connection()
+    with contextlib.closing(connection), connection:
+        label_color_rows = connection.execute(
+            "select name, color from label "
+            "where name in ('patients', 'healthy')"
+        ).fetchall()
+    label_colors = {}
+    for name, color in label_color_rows:
+        match = re.match(r"#(..)(..)(..)", color)
+        if match is not None:
+            label_colors[name] = [int(p, 16) for p in match.groups()]
+    return {"label_colors": label_colors}
+
+
+def get_report(
+    annotator_name: Optional[str] = None,
+    project_name: Optional[str] = None,
+    pmcid: Optional[int] = None,
+    standalone: bool = False,
+) -> str:
+    all_anno = select_participants_annotations(
+        annotator_name=annotator_name, project_name=project_name, pmcid=pmcid
     )
-    out_file = labelbuddy_file.with_name(
-        f"{annotator_name}_participants_report.html"
+    all_docs = _get_document_summaries(all_anno)
+    if (
+        project_name is not None
+        and annotator_name is not None
+        and pmcid is None
+    ):
+        key = lambda d: (d.get("position_in_labelbuddy_file", -1), d["pmcid"])
+    else:
+        key = lambda d: (d["pmcid"], d["project_name"], d["annotator_name"])
+    all_docs = sorted(all_docs, key=key)
+    jinja_env = _get_jinja_env()
+    template = jinja_env.get_template("report.html")
+    info = {
+        "documents": all_docs,
+        "standalone": standalone,
+        "no_doc_positions": True,
+    }
+    info.update(_get_template_data())
+    if annotator_name is not None:
+        info["annotator_name"] = annotator_name
+    if project_name is not None:
+        info["project_name"] = project_name
+    return template.render(info)
+
+
+def report_command(args: Optional[List[str]] = None) -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--project_name", type=str, default=None)
+    parser.add_argument("-a", "--annotator_name", type=str, default=None)
+    parser.add_argument("-A", "--all_annotators", action="store_true")
+    parsed_args = parser.parse_args(args)
+    if parsed_args.all_annotators:
+        annotator_name = None
+    elif parsed_args.annotator_name is None:
+        annotator_name = repo.annotator_name()
+    else:
+        annotator_name = parsed_args.annotator_name
+    project_name = parsed_args.project_name
+    html = get_report(
+        annotator_name=annotator_name,
+        project_name=project_name,
+        standalone=True,
     )
-    pathlib.Path(out_file).write_text(html)
+    out_dir = repo.repo_root() / "analysis" / "data" / "reports"
+    out_dir.mkdir(exist_ok=True, parents=True)
+    proj_repr = "" if project_name is None else f"_{project_name}"
+    annotator_repr = "" if annotator_name is None else f"_{annotator_name}"
+    out_file = (
+        out_dir / f"participants_report{annotator_repr}{proj_repr}.html"
+    )
+    out_file.write_text(html)
     print(f"Report saved in {out_file}")
 
 
-def get_annotation_stacks_display(annotations):
+def _get_annotation_stacks(annotations: pd.DataFrame) -> List[Dict]:
     stacks = []
     for _, anno in annotations.groupby(
         ["doc_md5", "project_name", "annotator_name", "start_char", "end_char"]
@@ -607,13 +759,24 @@ def get_annotation_stacks_display(annotations):
             first_anno
         )
         anno_stack = {
+            "start_char": first_anno["start_char"],
+            "end_char": first_anno["end_char"],
             "prefix": prefix,
             "selected_text": selected_text,
             "suffix": suffix,
             "annotations": anno.to_dict(orient="records"),
         }
         stacks.append(anno_stack)
+    return stacks
+
+
+def get_annotation_stacks_display(
+    annotations: pd.DataFrame, standalone=False
+) -> str:
+    stacks = _get_annotation_stacks(annotations)
     jinja_env = _get_jinja_env()
-    template = jinja_env.get_template("annotation_stack.html")
-    html = template.render({"standalone": True, "annotation_stacks": stacks})
+    template = jinja_env.get_template("annotation_stack_list.html")
+    html = template.render(
+        {"standalone": standalone, "annotation_stacks": stacks}
+    )
     return html
