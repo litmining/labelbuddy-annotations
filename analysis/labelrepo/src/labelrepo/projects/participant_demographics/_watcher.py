@@ -5,7 +5,7 @@ import json
 import pathlib
 import sqlite3
 import sys
-from typing import Set, Union
+from typing import Optional, Set, Union
 
 import pandas as pd
 import websockets
@@ -41,7 +41,7 @@ class _Watcher:
         self.template = jinja_env.get_template("report.html")
         print(f"Watching file: {self.labelbuddy_file}")
         self.content = ""
-        self.connection = None
+        self.connection: Optional[sqlite3.Connection] = None
         self.data_version = None
 
     def __enter__(self) -> _Watcher:
@@ -63,12 +63,14 @@ class _Watcher:
             except Exception:
                 pass
         try:
-            self.connection.close()
+            if self.connection is not None:
+                self.connection.close()
         except Exception:
             pass
 
     def _need_update(self) -> bool:
         old_data_version = self.data_version
+        assert self.connection is not None
         self.data_version = self.connection.execute(
             "pragma data_version"
         ).fetchone()[0]
@@ -98,6 +100,7 @@ class _Watcher:
             await asyncio.sleep(self.delay)
 
     def _update_content(self) -> None:
+        assert self.connection is not None
         doc_result = self.connection.execute(
             """
         select id, lower(hex(content_md5)) as md5, metadata,

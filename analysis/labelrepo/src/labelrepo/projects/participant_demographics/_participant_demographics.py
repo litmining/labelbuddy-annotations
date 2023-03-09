@@ -5,31 +5,70 @@ import pathlib
 import contextlib
 import secrets
 import hashlib
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Optional, Union
 
 import jinja2
 import pandas as pd
 
 from labelrepo import database, repo, displays
 
+
+class AgeRange:
+    name = "range"
+
+    def __init__(self, text: str, label_name, start_char, end_char) -> None:
+        del label_name
+        match = re.match(
+            r"\s*\b(\d+(?:[.]\d+)?)\b"
+            r"\s*(?:\S|to|and)\s*"
+            r"\b(\d+(?:[.]\d+)?)\b\s*",
+            text,
+        )
+        assert match is not None
+        self.data = {
+            "age minimum": {
+                "value": float(match.group(1)),
+                "source": {"start_char": start_char, "end_char": end_char},
+            },
+            "age maximum": {
+                "value": float(match.group(2)),
+                "source": {"start_char": start_char, "end_char": end_char},
+            },
+        }
+
+
+def _vtype(dtype):
+    class Value:
+        name = dtype.__name__
+
+        def __init__(
+            self, text: str, label_name, start_char, end_char
+        ) -> None:
+            self.data = {
+                label_name: {
+                    "value": dtype(text),
+                    "source": {
+                        "start_char": start_char,
+                        "end_char": end_char,
+                    },
+                }
+            }
+
+    return Value
+
+
 _SEX_NAMES = ("female", "male")
 _GROUP_NAMES = ("healthy", "patients")
-_PAYLOAD_NAMES = (
-    "count",
-    "age mean",
-    "age minimum",
-    "age maximum",
-    "age median",
-    "diagnosis",
-)
 _PAYLOAD_TYPES = {
-    "count": int,
-    "age mean": float,
-    "age minimum": float,
-    "age maximum": float,
-    "age median": float,
-    "diagnosis": str,
+    "count": _vtype(int),
+    "age mean": _vtype(float),
+    "age minimum": _vtype(float),
+    "age maximum": _vtype(float),
+    "age range": AgeRange,
+    "age median": _vtype(float),
+    "diagnosis": _vtype(str),
 }
+_PAYLOAD_NAMES = tuple(_PAYLOAD_TYPES.keys())
 
 _DEMOGRAPHICS_LABELS = _SEX_NAMES + _GROUP_NAMES + _PAYLOAD_NAMES
 
@@ -146,10 +185,15 @@ def _get_payload(annotation_stack: pd.DataFrame) -> Dict:
             annotation_stack,
         )
     if payload_anno.shape[0] == 1:
-        return {
+        payload = {
             "label_name": payload_anno.iloc[0]["label_name"],
             "extra_data": payload_anno.iloc[0]["extra_data"],
         }
+        if pd.isnull(payload["extra_data"]):
+            payload["coalesced"] = payload_anno.iloc[0]["selected_text"]
+        else:
+            payload["coalesced"] = payload["extra_data"]
+        return payload
     raise AnnotationError(
         "Too many data labels applied to the same text:", payload_anno
     )
@@ -170,7 +214,7 @@ def _token_from_annotations(
 
 
 def _build_group_tree(tokens: pd.DataFrame) -> Dict:
-    root = {}
+    root: Dict = {}
     _build_groups(root, tokens)
     return root
 
@@ -251,85 +295,59 @@ def _build_sexes(group_name, subgroup_name, subgroup, tokens):
     subgroup["children"] = {s_name: {} for s_name in used_sexes}
 
 
-def _coalesce_extra_selected(tokens: pd.DataFrame) -> None:
-    values = tokens["extra_data"].copy()
-    values[values.isnull()] = tokens["selected_text"][values.isnull()]
-    tokens["coalesced"] = values
-
-
-def _check_conflicts(tokens: pd.DataFrame) -> None:
-    for _, token_group in tokens.dropna(subset=("label_name",)).groupby(
-        ["group_name", "subgroup_name", "sex", "label_name"], dropna=False
-    ):
-        if token_group["coalesced"].nunique() > 1:
-            raise AnnotationError(
-                "The following annotations provide conflicting "
-                f"information:",
-                token_group,
-            )
+def _find_node(token: pd.Series, root: Dict) -> Dict:
+    node = root
+    for step in ("group_name", "subgroup_name", "sex"):
+        if token[step] is None:
+            return node
+        node = node["children"][token[step]]
+    return node
 
 
 def _add_info(tokens: pd.DataFrame, root: Dict) -> None:
-    _coalesce_extra_selected(tokens)
-    _check_conflicts(tokens)
-    tokens = (
-        tokens.drop_duplicates(
-            subset=("group_name", "subgroup_name", "sex", "label_name")
-        )
-        .set_index(["group_name", "subgroup_name", "sex", "label_name"])
-        .sort_index()
-    )
-    _add_subtree_info(root, (None, None, None), 0, tokens)
+    for _, tok in tokens.iterrows():
+        node = _find_node(tok, root)
+        payload = _get_payload_from_token(tok)
+        _update_node(node, tok, payload)
     _infer_info_up(["all participants"], root)
     _infer_info_down(["all participants"], root)
 
 
-def _get_payload_from_token(
-    label_name: str, node_index: Tuple, tokens: pd.DataFrame
-) -> Optional[Dict]:
-    full_index = node_index + (label_name,)
-    if full_index not in tokens.index:
-        return None
-    tok = tokens.loc[full_index]
-    raw_value = tok["coalesced"]
+def _get_payload_from_token(token) -> Dict:
+    raw_value = token["coalesced"]
+    label_name = token["label_name"]
     try:
-        value = _PAYLOAD_TYPES[label_name](raw_value)
-        return {
-            "value": value,
-            "source": {
-                "start_char": int(tok["start_char"]),
-                "end_char": int(tok["end_char"]),
-            },
-        }
-    except (TypeError, ValueError):
-        full_token = dict(tok.to_dict(), label_name=label_name)
-        full_token.update(
-            zip(
-                ("group_name", "subgroup_name", "sex"),
-                node_index,
-            )
-        )
+        return _PAYLOAD_TYPES[label_name](
+            raw_value,
+            label_name,
+            int(token["start_char"]),
+            int(token["end_char"]),
+        ).data
+    except Exception:
         raise AnnotationError(
             f"Could not convert '{raw_value}' to "
-            f"{_PAYLOAD_TYPES[label_name].__name__}:",
-            [full_token],
+            f"{_PAYLOAD_TYPES[label_name].name}:",
+            [token],
         )
 
 
-def _add_subtree_info(
-    node: Dict,
-    node_index: Tuple[Optional[str], ...],
-    level: int,
-    tokens: pd.DataFrame,
-) -> None:
-    for label_name in _PAYLOAD_NAMES:
-        label_data = _get_payload_from_token(label_name, node_index, tokens)
-        if label_data is not None:
-            node[label_name] = label_data
-    for child_name, child in node.get("children", {}).items():
-        child_index = list(node_index)
-        child_index[level] = child_name
-        _add_subtree_info(child, tuple(child_index), level + 1, tokens)
+def _update_node(node, token, payload):
+    for key, data in payload.items():
+        if key in node and node[key]["value"] != data["value"]:
+            new_token = token.to_dict()
+            new_token.update(label_name=key, coalesced=data["value"])
+            old_token = token.to_dict()
+            old_token.update(
+                node[key]["source"],
+                coalesced=node[key]["value"],
+                label_name=key,
+            )
+            raise AnnotationError(
+                "The following annotations provide conflicting information:",
+                [old_token, new_token],
+            )
+        else:
+            node[key] = data
 
 
 def _check_count_conflict(
@@ -701,7 +719,10 @@ def get_report(
         and annotator_name is not None
         and pmcid is None
     ):
-        key = lambda d: (d.get("position_in_labelbuddy_file", -1), d["pmcid"])
+        key = lambda d: (
+            d.get("position_in_labelbuddy_file", -1),
+            d["pmcid"],
+        )
     else:
         key = lambda d: (d["pmcid"], d["project_name"], d["annotator_name"])
     all_docs = sorted(all_docs, key=key)
@@ -742,9 +763,7 @@ def report_command(args: Optional[List[str]] = None) -> None:
     out_dir.mkdir(exist_ok=True, parents=True)
     proj_repr = "" if project_name is None else f"_{project_name}"
     annotator_repr = "" if annotator_name is None else f"_{annotator_name}"
-    out_file = (
-        out_dir / f"participants_report{annotator_repr}{proj_repr}.html"
-    )
+    out_file = out_dir / f"participants_report{annotator_repr}{proj_repr}.html"
     out_file.write_text(html)
     print(f"Report saved in {out_file}")
 

@@ -59,6 +59,7 @@ style="
                     {% endif %}
             {% for doc in documents %}
             <article id="doc-{{ doc["doc_uid"] }}" class="doc-participants labelrepo-card"
+                     {{ "data-has-valid-annotations" if doc["participants"]["count"] }}
                      {{ "data-has-patients" if doc["has_patients"] }}
                      {{ "data-has-warnings" if doc.get("warnings", []).__len__() }}
                      {{ "data-extraction-failure" if doc["extraction_failed"] }} >
@@ -123,16 +124,14 @@ style="
                         <p>
                             {% if subgroup["count"] %}
                             <strong>{{ sourced(subgroup["count"], doc, "count-" + subgroup_name) }}</strong>
-                            {{ "participants" if subgroup["group_name"] == "healthy" else "patients" }}
+                            {{ "participants" if subgroup["group_name"] == "healthy" else "patients" -}}
                             {% else %}
                             <div class="labelrepo-warning-message">
                                 could not infer the number of participants in this subgroup.
                             </div>
-                            {%- endif %}
-                            {%- for sex in ("female", "male") -%}
-                            {%- if sex in subgroup and "count" in subgroup[sex] -%}
-                            {{" ," if not loop.first  }}<strong>{{ sourced(subgroup[sex]["count"], doc, "count-" + subgroup_name + "-" + sex) }}</strong> {{ sex }}s
                             {%- endif -%}
+                            {%- for sex in ("female", "male") if sex in subgroup and "count" in subgroup[sex] -%},
+                            <strong>{{ sourced(subgroup[sex]["count"], doc, "count-" + subgroup_name + "-" + sex) }}</strong> {{ sex }}s
                             {%- endfor -%}
                             {% if ('age minimum' in subgroup) or ('age maximum' in subgroup) -%}
                             <br/>Age range:

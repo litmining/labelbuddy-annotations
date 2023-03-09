@@ -16,6 +16,7 @@ from labelrepo.projects.participant_demographics import (
 parser = argparse.ArgumentParser()
 parser.add_argument("labelbuddy_database", type=str, nargs="?", default=None)
 parser.add_argument("-p", "--port", type=int, default=8765)
+parser.add_argument("--no_browser", action="store_true")
 args = parser.parse_args()
 
 if args.labelbuddy_database is not None:
@@ -51,8 +52,9 @@ def start_browser():
             return
 
 
-opener = threading.Thread(target=start_browser)
-opener.start()
+if not args.no_browser:
+    opener = threading.Thread(target=start_browser)
+    opener.start()
 
 try:
     asyncio.run(watch_participants(labelbuddy_database, port))
