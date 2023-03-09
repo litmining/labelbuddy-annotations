@@ -15,6 +15,7 @@ participant_demographics,Jerome_Dockes,6290711,patients,_,26,26.8,,,,,Psychogeni
 participant_demographics,kailu_song,6290711,patients,_,26,26.8,,,,,Psychogenic erectile dysfunction,,26.0,2017,Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
 participant_demographics,Jerome_Dockes,3502502,healthy,Würzburg,24,26.0,23.0,34.0,,,,12.0,12.0,2012,A Brain Network Processing the Age of Faces
 participant_demographics,calvin_surbey,3502502,healthy,_,24,26.0,23.0,34.0,,,,12.0,12.0,2012,A Brain Network Processing the Age of Faces
+participant_demographics,Jerome_Dockes,7260173,healthy,tsd,39,33.5,,,,,,17.0,22.0,2020,Two nights of recovery sleep restores hippocampal connectivity but not episodic memory after total sleep deprivation
 participant_demographics,Jerome_Dockes,5324609,healthy,_,15,23.8,,,,,,8.0,7.0,2017,The role of the hippocampus in generalizing configural relationships
 participant_demographics,kailu_song,5324609,healthy,_,15,23.8,,,,,,8.0,7.0,2017,The role of the hippocampus in generalizing configural relationships
 participant_demographics,Jerome_Dockes,8752963,healthy,_,110,,,,,,,,,2021,Cortical correlation structure of aperiodic neuronal population activity
@@ -25,6 +26,7 @@ participant_demographics,Jerome_Dockes,3147157,healthy,_,20,24.4,,,,,,8.0,12.0,2
 participant_demographics,kailu_song,3147157,healthy,_,20,24.4,19.0,35.0,,,,8.0,12.0,2011,Neural Underpinnings of Distortions in the Experience of Time Across Senses
 participant_demographics,Jerome_Dockes,2775905,healthy,_,18,26.7,18.0,60.0,,22.5,,,,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
 participant_demographics,calvin_surbey,2775905,healthy,_,22,26.7,18.0,60.0,,22.5,,9.0,13.0,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
+participant_demographics,Jerome_Dockes,7272423,healthy,post-partum,25,,,,,,,25.0,,2020,Altered neural substrates within cognitive networks of postpartum women during working memory process and resting-state
 participant_demographics,Jerome_Dockes,8544331,patients,_,18,,55.0,,,,neovascular age-related macular degeneration,9.0,9.0,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
 participant_demographics,kailu_song,8544331,patients,_,18,,55.0,,,,neovascular age-related macular degeneration,9.0,9.0,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
 participant_demographics,Jerome_Dockes,4115625,healthy,_,272,24.454779411764704,18.0,68.0,,,,149.0,123.0,2014,Gender differences in the temporal voice areas
@@ -49,6 +51,8 @@ participant_demographics,Jerome_Dockes,4017227,patients,_,23,,,,,,Mesial tempora
 participant_demographics,kailu_song,4017227,patients,_,23,,,,,,Mesial temporal lobe epilepsy,,,2014,Atypical language organization in temporal lobe epilepsy revealed by a passive semantic paradigm
 participant_demographics,Jerome_Dockes,5460048,patients,_,75,19.38,18.0,23.0,,,chronic dieters,75.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
 participant_demographics,kailu_song,5460048,patients,_,75,19.38,18.0,23.0,,,chronic dieters,75.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
+participant_demographics,Jerome_Dockes,4352055,healthy,dataset 1,20,,,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
+participant_demographics,kailu_song,4352055,healthy,_,19,,,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
 participant_demographics,Jerome_Dockes,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
 participant_demographics,Sean_Moore,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
 participant_demographics,kailu_song,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
@@ -132,6 +136,7 @@ participant_demographics,Jerome_Dockes,6136263,healthy,_,20,,18.0,31.0,,,,19.0,1
 participant_demographics,Jerome_Dockes,5548834,healthy,_,47,19.62,,,,,,47.0,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
 participant_demographics,kailu_song,5548834,healthy,_,47,19.62,,,,,,47.0,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
 participant_demographics,Jerome_Dockes,3182403,patients,_,21,60.8,44.0,73.0,,,Parkinson's disease,8.0,13.0,2011,A Perfusion MRI Study of Emotional Valence and Arousal in Parkinson's Disease
+participant_demographics,Jerome_Dockes,5413198,patients,_,34,,,,,,Alcohol dependence,,34.0,2017,Dorsolateral prefrontal cortex contributes to the impaired behavioral adaptation in alcohol dependence☆
 participant_demographics,Jerome_Dockes,7829678,patients,_,53,,,,,,Type 2 diabetes mellitus,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
 participant_demographics,kailu_song,7829678,patients,_,53,,,,,,Type 2 diabetes mellitus,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
 participant_demographics,maximiliane_jousse,7829678,patients,T2DM,53,,45.0,75.0,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
@@ -228,6 +233,5 @@ participant_demographics,Jerome_Dockes,3676955,healthy,_,33,25.3,,,,,,16.0,17.0,
 participant_demographics,kailu_song,3676955,healthy,_,33,25.3,,,,,,16.0,17.0,2013,fMRI Evidence of Acupoints Specificity in Two Adjacent Acupoints
 participant_demographics,Jerome_Dockes,6509414,patients,_,26,,,,,,hearing loss,,,2019,Exploring Differences in Speech Processing Among Older Hearing-Impaired Listeners With or Without Hearing Aid Experience: Eye-Tracking and fMRI Measurements
 participant_demographics,Jerome_Dockes,8883821,patients,schizophrenia,28,,21.0,54.0,,,schizophrenia,8.0,20.0,2021,Disease-Specific Contribution of Pulvinar Dysfunction to Impaired Emotion Recognition in Schizophrenia
-participant_demographics,kailu_song,4352055,healthy,_,19,,,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
 participant_demographics,maximiliane_jousse,5596109,healthy,_,6,,,,,,,2.0,4.0,2017,"A Novel Feature-Map Based ICA Model for Identifying the Individual, Intra/Inter-Group Brain Networks across Multiple fMRI Datasets"
 participant_demographics,maximiliane_jousse,6664004,healthy,adults study 1,51,43.71,27.49,55.91,,,,41.0,10.0,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
