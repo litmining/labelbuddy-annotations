@@ -26,6 +26,11 @@
     },
     {
         "color": "#d1cbff",
+        "name": "age range",
+        "shortcut_key": "r"
+    },
+    {
+        "color": "#d1cbff",
         "name": "age minimum",
         "shortcut_key": "j"
     },
@@ -48,19 +53,6 @@
         "color": "#fbc5ff",
         "name": "diagnosis",
         "shortcut_key": "d"
-    },
-    {
-        "color": "#c4c4c4",
-        "name": "N participants"
-    },
-    {
-        "color": "#c4c4c4",
-        "name": "N included"
-    },
-    {
-        "color": "#c4c4c4",
-        "name": "_to discuss",
-        "shortcut_key": "q"
     },
     {
         "color": "#c4c4c4",

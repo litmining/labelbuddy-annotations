@@ -26,6 +26,11 @@
     },
     {
         "color": "#d1cbff",
+        "name": "age range",
+        "shortcut_key": "r"
+    },
+    {
+        "color": "#d1cbff",
         "name": "age minimum",
         "shortcut_key": "j"
     },
