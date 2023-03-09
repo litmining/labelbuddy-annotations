@@ -68,6 +68,10 @@
     background-color: #E8E8E8;
 }
 
+.doc-participants[data-has-valid-annotations] > header {
+    background-color: #98DFA7;
+}
+
 .doc-participants[data-has-warnings] > header {
     background-color: #F1A83A;
 }
