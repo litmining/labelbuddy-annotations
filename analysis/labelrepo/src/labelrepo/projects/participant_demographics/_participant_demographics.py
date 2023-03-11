@@ -13,10 +13,10 @@ import pandas as pd
 from labelrepo import database, repo, displays
 
 
-class AgeRange:
+class _AgeRangeParser:
     name = "range"
 
-    def __init__(self, text: str, label_name, start_char, end_char) -> None:
+    def __call__(self, text: str, label_name, start_char, end_char) -> Dict:
         del label_name
         match = re.match(
             r"\s*\b(\d+(?:[.]\d+)?)\b"
@@ -25,7 +25,7 @@ class AgeRange:
             text,
         )
         assert match is not None
-        self.data = {
+        return {
             "age minimum": {
                 "value": float(match.group(1)),
                 "source": {"start_char": start_char, "end_char": end_char},
@@ -37,38 +37,35 @@ class AgeRange:
         }
 
 
-def _vtype(dtype):
-    class Value:
-        name = dtype.__name__
+class _ValueParser:
+    def __init__(self, value_type):
+        self.value_type = value_type
+        self.name = value_type.__name__
 
-        def __init__(
-            self, text: str, label_name, start_char, end_char
-        ) -> None:
-            self.data = {
-                label_name: {
-                    "value": dtype(text),
-                    "source": {
-                        "start_char": start_char,
-                        "end_char": end_char,
-                    },
-                }
+    def __call__(self, text: str, label_name, start_char, end_char) -> Dict:
+        return {
+            label_name: {
+                "value": self.value_type(text),
+                "source": {
+                    "start_char": start_char,
+                    "end_char": end_char,
+                },
             }
-
-    return Value
+        }
 
 
 _SEX_NAMES = ("female", "male")
 _GROUP_NAMES = ("healthy", "patients")
-_PAYLOAD_TYPES = {
-    "count": _vtype(int),
-    "age mean": _vtype(float),
-    "age minimum": _vtype(float),
-    "age maximum": _vtype(float),
-    "age range": AgeRange,
-    "age median": _vtype(float),
-    "diagnosis": _vtype(str),
+_PAYLOAD_PARSERS = {
+    "count": _ValueParser(int),
+    "age mean": _ValueParser(float),
+    "age minimum": _ValueParser(float),
+    "age maximum": _ValueParser(float),
+    "age range": _AgeRangeParser(),
+    "age median": _ValueParser(float),
+    "diagnosis": _ValueParser(str),
 }
-_PAYLOAD_NAMES = tuple(_PAYLOAD_TYPES.keys())
+_PAYLOAD_NAMES = tuple(_PAYLOAD_PARSERS.keys())
 
 _DEMOGRAPHICS_LABELS = _SEX_NAMES + _GROUP_NAMES + _PAYLOAD_NAMES
 
@@ -317,16 +314,16 @@ def _get_payload_from_token(token) -> Dict:
     raw_value = token["coalesced"]
     label_name = token["label_name"]
     try:
-        return _PAYLOAD_TYPES[label_name](
+        return _PAYLOAD_PARSERS[label_name](
             raw_value,
             label_name,
             int(token["start_char"]),
             int(token["end_char"]),
-        ).data
+        )
     except Exception:
         raise AnnotationError(
             f"Could not convert '{raw_value}' to "
-            f"{_PAYLOAD_TYPES[label_name].name}:",
+            f"{_PAYLOAD_PARSERS[label_name].name}:",
             [token],
         )
 
