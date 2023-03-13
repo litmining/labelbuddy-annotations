@@ -82,7 +82,7 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
             
             <div class="annotation">
                 <div class="context">
-                    … outlined with a small black box are indicated if   p   < 0.05. No significant differences were observed when week 1 patients were compared to baseline and week 6 patients. 
+                    … outlined with a small black box are indicated if   p   &lt; 0.05. No significant differences were observed when week 1 patients were compared to baseline and week 6 patients. 
   
 
 ### dFNC Analysis 
@@ -116,7 +116,7 @@ For the resting-state and continuous HCO task data, ReHoV was computed using sli
             
             <div class="annotation">
                 <div class="context">
-                    …network graph. However, brain network dynamic changes occur at many temporal scales and other strategies have been used to take full advantage of the temporal information contained in the fcMRI data. <mark class="annotated-text">The sliding-window approach extracts the dynamic interactions between brain areas by using a time moving-window along the BOLD time-series (Hutchison et al.,  ; Allen et al.,  ; Leonardi and Van De Ville,  ). Following that strategy, we use an overlapping time-moving window   w[t]   of length 15 on the time series (15 time-points per window, corresponding to 45 s) to calculate Pearson's cross-correlations (R) (Figure  ):</mark> 
+                    …network graph. However, brain network dynamic changes occur at many temporal scales and other strategies have been used to take full advantage of the temporal information contained in the fcMRI data. <mark class="annotated-text">The sliding-window approach extracts the dynamic interactions between brain areas by using a time moving-window along the BOLD time-series (Hutchison et al.,  ; Allen et al.,  ; Leonardi and Van De Ville,  ). Following that strategy, we use an overlapping time-moving window   w[t]   of length 15 on the time series (15 time-points per window, corresponding to 45 s) to calculate Pearson&#39;s cross-correlations (R) (Figure  ):</mark> 
 
 Where   i   denotes the sliding window position,   t   states the specific time point,   n  , being the sliding offset, indicates how many time points the window has shifted along the time axis, an…
                 </div>
@@ -137,7 +137,7 @@ Demographic details of the samples included in this study.
 
 ### Dynamic FC 
   
-We used the DynamicBC toolbox (Liao et al.,  ) for Dynamic FC creation. <mark class="annotated-text">We used a tapered sliding window length of 30 s in accordance with previous studies (Allen et al.,  ; Betzel et al.,  ) and the window was moved with a stride of 1. A set of sliding window correlation matrices was calculated for each subject. </mark>A Fisher Z-Transformation (to transform the Pearson's   r  , i.e., the correlation coefficient) was then applied to improve the normality of the distribution of the correlation matrices. Finally, the …
+We used the DynamicBC toolbox (Liao et al.,  ) for Dynamic FC creation. <mark class="annotated-text">We used a tapered sliding window length of 30 s in accordance with previous studies (Allen et al.,  ; Betzel et al.,  ) and the window was moved with a stride of 1. A set of sliding window correlation matrices was calculated for each subject. </mark>A Fisher Z-Transformation (to transform the Pearson&#39;s   r  , i.e., the correlation coefficient) was then applied to improve the normality of the distribution of the correlation matrices. Finally, the …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -449,9 +449,9 @@ The whole data processing steps.
             
             <div class="annotation">
                 <div class="context">
-                    …instantaneous phase coherence, multiple temporal derivative, or dynamic conditional correlation approach (Glerean, Salmi, Lahnakoski, Jääskeläinen, & Sams,  ; Lindquist et al.,  ; Shine et al.,  ). 
+                    …instantaneous phase coherence, multiple temporal derivative, or dynamic conditional correlation approach (Glerean, Salmi, Lahnakoski, Jääskeläinen, &amp; Sams,  ; Lindquist et al.,  ; Shine et al.,  ). 
 
-<mark class="annotated-text">This study used dynamic conditional correlation (DCC) without moving average (Engle,  ; Lindquist et al.,  ), which is based on the multivariate generalized autoregressive conditional heteroscedasticity model (Engle,  ) that can be effective for estimating nonstationary temporal associations when the model of time series is well‐known</mark> (Lebo & Box‐Steffensmeier,  ). We used the code implemented by Lindquist et al. ( ) shared in  , which ran on MATLAB R2018b utilizing 120 high‐performance computing SLURM nodes. It first performs est…
+<mark class="annotated-text">This study used dynamic conditional correlation (DCC) without moving average (Engle,  ; Lindquist et al.,  ), which is based on the multivariate generalized autoregressive conditional heteroscedasticity model (Engle,  ) that can be effective for estimating nonstationary temporal associations when the model of time series is well‐known</mark> (Lebo &amp; Box‐Steffensmeier,  ). We used the code implemented by Lindquist et al. ( ) shared in  , which ran on MATLAB R2018b utilizing 120 high‐performance computing SLURM nodes. It first performs est…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -536,7 +536,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
 
 #### Step 3: Temporal characterization of   DMN   dynamics 
   
-<mark class="annotated-text">The fMRI volumes selected by precuneus activations were clustered into three states using the   k  ‐means algorithm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu & Duyn,  ; Liu, Zhang, Chang, & Duyn,  )</mark>. The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (t…
+<mark class="annotated-text">The fMRI volumes selected by precuneus activations were clustered into three states using the   k  ‐means algorithm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu &amp; Duyn,  ; Liu, Zhang, Chang, &amp; Duyn,  )</mark>. The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (t…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -548,7 +548,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
             
             <div class="annotation">
                 <div class="context">
-                    …thm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu & Duyn,  ; Liu, Zhang, Chang, & Duyn,  ). <mark class="annotated-text">The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (the average number of consecutive volumes classified in one CAP‐cluster) and frequency (the number of disjoint volume‐sets classified in one CAP‐cluster normalized by the recording time) of the three CAPs were computed for each subject.</mark> The choice of the number of clusters (  k   = 3) was based on a consensus clustering assessment from data bootstrapping (Bolton et al.,  ; Monti, Tamayo, Mesirov, & Golub,  ) and ensuring a minimum c…
+                    …thm. The z‐scored centroids of the clusters represent distinct precuneus co‐activation patterns (CAPs) with positive and negative cortical contributions (Liu &amp; Duyn,  ; Liu, Zhang, Chang, &amp; Duyn,  ). <mark class="annotated-text">The relative temporal occurrence (defined as the number of fMRI volumes classified in one CAP‐cluster normalized by the number of volumes corresponding to precuneus activations), average duration (the average number of consecutive volumes classified in one CAP‐cluster) and frequency (the number of disjoint volume‐sets classified in one CAP‐cluster normalized by the recording time) of the three CAPs were computed for each subject.</mark> The choice of the number of clusters (  k   = 3) was based on a consensus clustering assessment from data bootstrapping (Bolton et al.,  ; Monti, Tamayo, Mesirov, &amp; Golub,  ) and ensuring a minimum c…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -562,7 +562,7 @@ A summary of the analytic steps is presented in Figure  . <mark class="annotated
                 <div class="context">
                     …e volumes and mask were later used with FSL randomise. 
 
-The volumes were reshaped and concatenated, and the resulting data matrix was transferred to the R environment (Bengtsson,  ; R Core Team,  ). <mark class="annotated-text">We applied clustering to all the BOLD fMRI volumes acquired from the 55 participants that had survived censoring.</mark> As mentioned in the introduction, the volumes are described by their voxels' signal amplitudes, and their relation to other volumes has to be defined via a suitable function. Here, individual volumes…
+The volumes were reshaped and concatenated, and the resulting data matrix was transferred to the R environment (Bengtsson,  ; R Core Team,  ). <mark class="annotated-text">We applied clustering to all the BOLD fMRI volumes acquired from the 55 participants that had survived censoring.</mark> As mentioned in the introduction, the volumes are described by their voxels&#39; signal amplitudes, and their relation to other volumes has to be defined via a suitable function. Here, individual volumes…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -574,12 +574,12 @@ The volumes were reshaped and concatenated, and the resulting data matrix was tr
             
             <div class="annotation">
                 <div class="context">
-                    …r‐package function hclust (method = "ward.D2") (Müllner,  ). The results from 30 to 2 clusters (in total, 58 clusters or CAPs) were evaluated. We aggregated the fMRI volumes assigned to each cluster. <mark class="annotated-text">The mean image of such a cluster's volumes provided an overall view of the resulting CAP and was then normalized by the standard error (within‐cluster and across fMRI volumes) to generate   z  ‐statistic maps, which quantify the degree of significance to which the CAP map values for each voxel deviate from zero (Liu et al.,  ,  ). </mark>
+                    …r‐package function hclust (method = &#34;ward.D2&#34;) (Müllner,  ). The results from 30 to 2 clusters (in total, 58 clusters or CAPs) were evaluated. We aggregated the fMRI volumes assigned to each cluster. <mark class="annotated-text">The mean image of such a cluster&#39;s volumes provided an overall view of the resulting CAP and was then normalized by the standard error (within‐cluster and across fMRI volumes) to generate   z  ‐statistic maps, which quantify the degree of significance to which the CAP map values for each voxel deviate from zero (Liu et al.,  ,  ). </mark>
 
 
 ### Group comparison   t   tests 
   
-The 11,930 RS‐fMRI volumes concatenated into one file were used as input for FSL's randomise (Anderson & Robinson,  ; Winkler et al.,  ). The voxel‐wise differe…
+The 11,930 RS‐fMRI volumes concatenated into one file were used as input for FSL&#39;s randomise (Anderson &amp; Robinson,  ; Winkler et al.,  ). The voxel‐wise differe…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -606,7 +606,7 @@ The 11,930 RS‐fMRI volumes concatenated into one file were used as input for F
 
 ## DYNAMIC FUNCTIONAL CONNECTIVITY IN REAL DATA 
   
-Having demonstrated the utility of the NPC approach to relate FC to behavior in a synthetic scenario where the estimation was very noisy, <mark class="annotated-text">we next evaluated it using real data by applying the Hidden Markov model (HMM) to resting state fMRI data from the Human Connectome Project (HCP). The HMM assumes that the data can be described using a finite number of states. </mark>Each state is represented using a probability distribution, which in this case is chosen to be a Gaussian distribution (Vidaurre, Smith, & Woolrich,  ); that is, each state is described by a character…
+Having demonstrated the utility of the NPC approach to relate FC to behavior in a synthetic scenario where the estimation was very noisy, <mark class="annotated-text">we next evaluated it using real data by applying the Hidden Markov model (HMM) to resting state fMRI data from the Human Connectome Project (HCP). The HMM assumes that the data can be described using a finite number of states. </mark>Each state is represented using a probability distribution, which in this case is chosen to be a Gaussian distribution (Vidaurre, Smith, &amp; Woolrich,  ); that is, each state is described by a character…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"

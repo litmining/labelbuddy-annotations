@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style="--label-color: #aec7e8;">
+    <details style=&#34;--label-color: #aec7e8;&#34;>
         <summary class="label-display">smoothing_snippet (175 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -108,7 +108,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …removed to allow the hemodynamics to achieve a steady state and to minimize transient effects of magnetic saturation. Further preprocessing involved slice scan time correction, 3-D motion correction, <mark class="annotated-text">smoothing with a Gaussian kernel of 6 mm FWHM</mark>, normalization (each voxels's time series was divided by its mean intensity to convert the data from arbitrary image intensity units to percent signal modulation) and linear trend removal. Group anal…
+                    …removed to allow the hemodynamics to achieve a steady state and to minimize transient effects of magnetic saturation. Further preprocessing involved slice scan time correction, 3-D motion correction, <mark class="annotated-text">smoothing with a Gaussian kernel of 6 mm FWHM</mark>, normalization (each voxels&#39;s time series was divided by its mean intensity to convert the data from arbitrary image intensity units to percent signal modulation) and linear trend removal. Group anal…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -120,7 +120,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …removed to allow the hemodynamics to achieve a steady state and to minimize transient effects of magnetic saturation. Further preprocessing involved slice scan time correction, 3-D motion correction, <mark class="annotated-text">smoothing with a Gaussian kernel of 6 mm FWHM</mark>, normalization (each voxels's time series was divided by its mean intensity to convert the data from arbitrary image intensity units to percent signal modulation) and linear trend removal. Group anal…
+                    …removed to allow the hemodynamics to achieve a steady state and to minimize transient effects of magnetic saturation. Further preprocessing involved slice scan time correction, 3-D motion correction, <mark class="annotated-text">smoothing with a Gaussian kernel of 6 mm FWHM</mark>, normalization (each voxels&#39;s time series was divided by its mean intensity to convert the data from arbitrary image intensity units to percent signal modulation) and linear trend removal. Group anal…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -170,7 +170,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #ffbb78;">
+    <details style=&#34;--label-color: #ffbb78;&#34;>
         <summary class="label-display">cluster_thresh_used (152 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -178,7 +178,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …roup analysis on the contrast images from individual analyses (  ), using one-sample t tests. Clusters of activated voxels were then identified as significant at a voxel level of p < 0.001, T > 4.50, <mark class="annotated-text">extended threshold</mark> of 15 voxels. The group analysis allowed identifying language regions significantly more activated within one hemisphere with respect to the other one. The brain regions were reported according to th…
+                    …roup analysis on the contrast images from individual analyses (  ), using one-sample t tests. Clusters of activated voxels were then identified as significant at a voxel level of p &lt; 0.001, T &gt; 4.50, <mark class="annotated-text">extended threshold</mark> of 15 voxels. The group analysis allowed identifying language regions significantly more activated within one hemisphere with respect to the other one. The brain regions were reported according to th…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -190,7 +190,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …tions and inhomogeneity of variance across groups. All main effects of condition (across groups) and group-by-condition interaction SPMs were evaluated under an uncorrected alpha level of 0.001 and a <mark class="annotated-text">minimum cluster size</mark> of 5 contiguous voxels. The SPM for the main effect of condition was masked exclusively with the SPM for the group-by-condition interaction, using a liberal uncorrected threshold of   P   < 0.05 for …
+                    …tions and inhomogeneity of variance across groups. All main effects of condition (across groups) and group-by-condition interaction SPMs were evaluated under an uncorrected alpha level of 0.001 and a <mark class="annotated-text">minimum cluster size</mark> of 5 contiguous voxels. The SPM for the main effect of condition was masked exclusively with the SPM for the group-by-condition interaction, using a liberal uncorrected threshold of   P   &lt; 0.05 for …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -202,7 +202,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …excluding regions from the masked SPM.) All T-contrasts were 1-tailed. Simple effect SPMs (for within-group comparisons) were similarly evaluated under an uncorrected threshold of   P   < 0.001 and a <mark class="annotated-text">minimum cluster size</mark> of 5. Maxima of significant clusters were localized on individual normalized structural images.       Results     Neuropsychological Test Results    Group characteristics and standardized   Z   -scor…
+                    …excluding regions from the masked SPM.) All T-contrasts were 1-tailed. Simple effect SPMs (for within-group comparisons) were similarly evaluated under an uncorrected threshold of   P   &lt; 0.001 and a <mark class="annotated-text">minimum cluster size</mark> of 5. Maxima of significant clusters were localized on individual normalized structural images.       Results     Neuropsychological Test Results    Group characteristics and standardized   Z   -scor…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -214,7 +214,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … (  ;  ;  )]. Then a third-level analysis (combining participants) used the “full” version of FLAME.   Z-   statistic images were thresholded using clusters determined by   z   >2.3 and a (corrected) <mark class="annotated-text">cluster significance threshold</mark> of   P   < 0.01 (  ;  ).      ROI analyses    The ROI analyses tested for any differences between areas within the cluster of activated medial frontal cortical regions reported in the whole-brain ana…
+                    … (  ;  ;  )]. Then a third-level analysis (combining participants) used the “full” version of FLAME.   Z-   statistic images were thresholded using clusters determined by   z   &gt;2.3 and a (corrected) <mark class="annotated-text">cluster significance threshold</mark> of   P   &lt; 0.01 (  ;  ).      ROI analyses    The ROI analyses tested for any differences between areas within the cluster of activated medial frontal cortical regions reported in the whole-brain ana…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -250,7 +250,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …s was carried out using FILM with local autocorrelation correction  .   Z   (Gaussianised   T   /   F   ) statistic images were thresholded using clusters determined by   Z    > 2.3 and a (corrected) <mark class="annotated-text">cluster significance threshold</mark> of   P    = 0.05  . Registration to high resolution and/or standard images was carried out using FLIRT  .    Higher-level analysis was carried out using FLAME (FMRIB’s Local Analysis of Mixed Effects…
+                    …s was carried out using FILM with local autocorrelation correction  .   Z   (Gaussianised   T   /   F   ) statistic images were thresholded using clusters determined by   Z    &gt; 2.3 and a (corrected) <mark class="annotated-text">cluster significance threshold</mark> of   P    = 0.05  . Registration to high resolution and/or standard images was carried out using FLIRT  .    Higher-level analysis was carried out using FLAME (FMRIB’s Local Analysis of Mixed Effects…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -262,7 +262,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …   T   /   F   ) Statistical images were thresholded using clusters determined by   Z    > 1.9 and a (corrected) cluster significance threshold of   P    = 0.05  .    The use of a combined height and <mark class="annotated-text">cluster threshold</mark> is a standard and generally accepted method to solve the problem of multiple comparisons with functional imaging data  . The combined height and cluster threshold is the default option with FSL, and …
+                    …   T   /   F   ) Statistical images were thresholded using clusters determined by   Z    &gt; 1.9 and a (corrected) cluster significance threshold of   P    = 0.05  .    The use of a combined height and <mark class="annotated-text">cluster threshold</mark> is a standard and generally accepted method to solve the problem of multiple comparisons with functional imaging data  . The combined height and cluster threshold is the default option with FSL, and …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -274,7 +274,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …   t   -tests were used to assess the group-level significance of each contrast. Results were subject to voxel-level thresholds of   P   < 0.001, within this we report clusters that yielded corrected <mark class="annotated-text">cluster-level significance</mark> of   P   < 0.05. Montreal Neurological Institute coordinates are reported. In order to identify anatomical regions within clusters and cluster maxima the Montreal Neurological Institute coordinates w…
+                    …   t   -tests were used to assess the group-level significance of each contrast. Results were subject to voxel-level thresholds of   P   &lt; 0.001, within this we report clusters that yielded corrected <mark class="annotated-text">cluster-level significance</mark> of   P   &lt; 0.05. Montreal Neurological Institute coordinates are reported. In order to identify anatomical regions within clusters and cluster maxima the Montreal Neurological Institute coordinates w…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -286,7 +286,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …   t   -tests were used to assess the group-level significance of each contrast. Results were subject to voxel-level thresholds of   P   < 0.001, within this we report clusters that yielded corrected <mark class="annotated-text">cluster-level significance</mark> of   P   < 0.05. Montreal Neurological Institute coordinates are reported. In order to identify anatomical regions within clusters and cluster maxima the Montreal Neurological Institute coordinates w…
+                    …   t   -tests were used to assess the group-level significance of each contrast. Results were subject to voxel-level thresholds of   P   &lt; 0.001, within this we report clusters that yielded corrected <mark class="annotated-text">cluster-level significance</mark> of   P   &lt; 0.05. Montreal Neurological Institute coordinates are reported. In order to identify anatomical regions within clusters and cluster maxima the Montreal Neurological Institute coordinates w…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -300,7 +300,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #98df8a;">
+    <details style=&#34;--label-color: #98df8a;&#34;>
         <summary class="label-display">cluster_thresh_in_voxels (82 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -308,7 +308,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ontrast images from individual analyses (  ), using one-sample t tests. Clusters of activated voxels were then identified as significant at a voxel level of p < 0.001, T > 4.50, extended threshold of <mark class="annotated-text">15</mark> voxels. The group analysis allowed identifying language regions significantly more activated within one hemisphere with respect to the other one. The brain regions were reported according to the ster…
+                    …ontrast images from individual analyses (  ), using one-sample t tests. Clusters of activated voxels were then identified as significant at a voxel level of p &lt; 0.001, T &gt; 4.50, extended threshold of <mark class="annotated-text">15</mark> voxels. The group analysis allowed identifying language regions significantly more activated within one hemisphere with respect to the other one. The brain regions were reported according to the ster…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -320,7 +320,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …of variance across groups. All main effects of condition (across groups) and group-by-condition interaction SPMs were evaluated under an uncorrected alpha level of 0.001 and a minimum cluster size of <mark class="annotated-text">5</mark> contiguous voxels. The SPM for the main effect of condition was masked exclusively with the SPM for the group-by-condition interaction, using a liberal uncorrected threshold of   P   < 0.05 for the m…
+                    …of variance across groups. All main effects of condition (across groups) and group-by-condition interaction SPMs were evaluated under an uncorrected alpha level of 0.001 and a minimum cluster size of <mark class="annotated-text">5</mark> contiguous voxels. The SPM for the main effect of condition was masked exclusively with the SPM for the group-by-condition interaction, using a liberal uncorrected threshold of   P   &lt; 0.05 for the m…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -332,7 +332,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …he masked SPM.) All T-contrasts were 1-tailed. Simple effect SPMs (for within-group comparisons) were similarly evaluated under an uncorrected threshold of   P   < 0.001 and a minimum cluster size of <mark class="annotated-text">5</mark>. Maxima of significant clusters were localized on individual normalized structural images.       Results     Neuropsychological Test Results    Group characteristics and standardized   Z   -scores fo…
+                    …he masked SPM.) All T-contrasts were 1-tailed. Simple effect SPMs (for within-group comparisons) were similarly evaluated under an uncorrected threshold of   P   &lt; 0.001 and a minimum cluster size of <mark class="annotated-text">5</mark>. Maxima of significant clusters were localized on individual normalized structural images.       Results     Neuropsychological Test Results    Group characteristics and standardized   Z   -scores fo…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -344,7 +344,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …h contrast (i.e., ‘retention (ss5 + ss2) - baseline’ and ‘baseline - retention’) at a corrected voxel threshold of p<0.05 using family-wise error correction  ,  and a cluster threshold of p<0.01 (k = <mark class="annotated-text">27</mark> resampled voxels, corrected for multiple comparisons using Monte Carlo simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For th…
+                    …h contrast (i.e., ‘retention (ss5 + ss2) - baseline’ and ‘baseline - retention’) at a corrected voxel threshold of p&lt;0.05 using family-wise error correction  ,  and a cluster threshold of p&lt;0.01 (k = <mark class="annotated-text">27</mark> resampled voxels, corrected for multiple comparisons using Monte Carlo simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For th…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -356,7 +356,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …h contrast (i.e., ‘retention (ss5 + ss2) - baseline’ and ‘baseline - retention’) at a corrected voxel threshold of p<0.05 using family-wise error correction  ,  and a cluster threshold of p<0.01 (k = <mark class="annotated-text">27</mark> resampled voxels, corrected for multiple comparisons using Monte Carlo simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For th…
+                    …h contrast (i.e., ‘retention (ss5 + ss2) - baseline’ and ‘baseline - retention’) at a corrected voxel threshold of p&lt;0.05 using family-wise error correction  ,  and a cluster threshold of p&lt;0.01 (k = <mark class="annotated-text">27</mark> resampled voxels, corrected for multiple comparisons using Monte Carlo simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For th…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -368,7 +368,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …essors.    For all frequency bands, EEG-BOLD signal correlations were considered significant at an uncorrected voxel threshold of p<0.001 (t = 3.1) and at a corrected cluster threshold of p<0.01 (k = <mark class="annotated-text">27</mark> resampled voxels using Monte Carlo simulations). The same voxel threshold has been used in a recent EEG-fMRI WM study  .    For the load specific analysis first load sensitive regions from the BOLD c…
+                    …essors.    For all frequency bands, EEG-BOLD signal correlations were considered significant at an uncorrected voxel threshold of p&lt;0.001 (t = 3.1) and at a corrected cluster threshold of p&lt;0.01 (k = <mark class="annotated-text">27</mark> resampled voxels using Monte Carlo simulations). The same voxel threshold has been used in a recent EEG-fMRI WM study  .    For the load specific analysis first load sensitive regions from the BOLD c…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -380,7 +380,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …chieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   < 0.01. Monte Carlo simulations with the AFNI program “Alphasim” were used to set a cluster criterion of <mark class="annotated-text">220</mark> contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   < 0.05. In one case, a smaller search volume was used, as indicated in the Results section. For display of time courses, sphe…
+                    …chieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   &lt; 0.01. Monte Carlo simulations with the AFNI program “Alphasim” were used to set a cluster criterion of <mark class="annotated-text">220</mark> contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   &lt; 0.05. In one case, a smaller search volume was used, as indicated in the Results section. For display of time courses, sphe…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -392,7 +392,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … For pS-SS trials, the first stop included both error and success trials as there were not enough of either to consider separating the two in GLM analyses. At a threshold of p<0.005, uncorrected, and <mark class="annotated-text">5</mark> voxels in the extent of activation, this contrast (pS-SS > pG-SS) involved activation of several prefrontal structures, including the right lateral orbitofrontal cortex (OFC), bilateral lateral prefr…
+                    … For pS-SS trials, the first stop included both error and success trials as there were not enough of either to consider separating the two in GLM analyses. At a threshold of p&lt;0.005, uncorrected, and <mark class="annotated-text">5</mark> voxels in the extent of activation, this contrast (pS-SS &gt; pG-SS) involved activation of several prefrontal structures, including the right lateral orbitofrontal cortex (OFC), bilateral lateral prefr…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -404,7 +404,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … For pS-SS trials, the first stop included both error and success trials as there were not enough of either to consider separating the two in GLM analyses. At a threshold of p<0.005, uncorrected, and <mark class="annotated-text">5</mark> voxels in the extent of activation, this contrast (pS-SS > pG-SS) involved activation of several prefrontal structures, including the right lateral orbitofrontal cortex (OFC), bilateral lateral prefr…
+                    … For pS-SS trials, the first stop included both error and success trials as there were not enough of either to consider separating the two in GLM analyses. At a threshold of p&lt;0.005, uncorrected, and <mark class="annotated-text">5</mark> voxels in the extent of activation, this contrast (pS-SS &gt; pG-SS) involved activation of several prefrontal structures, including the right lateral orbitofrontal cortex (OFC), bilateral lateral prefr…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -560,7 +560,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #c5b0d5;">
+    <details style=&#34;--label-color: #c5b0d5;&#34;>
         <summary class="label-display">nonparametric_cluster_thresh (55 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -568,7 +568,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    ….05 corrected) using minimum cluster size estimation (  ). After setting the voxel-level threshold to   P   < 0.01 (uncorrected), the maps were corrected at whole brain level using 1000 iterations of <mark class="annotated-text">Monte Carlo</mark> simulation to estimate the minimum cluster size threshold that would yield a false positive rate of 5%. Voxels activated above the indicated threshold (   P   < 0.05 corrected) were selected and the …
+                    ….05 corrected) using minimum cluster size estimation (  ). After setting the voxel-level threshold to   P   &lt; 0.01 (uncorrected), the maps were corrected at whole brain level using 1000 iterations of <mark class="annotated-text">Monte Carlo</mark> simulation to estimate the minimum cluster size threshold that would yield a false positive rate of 5%. Voxels activated above the indicated threshold (   P   &lt; 0.05 corrected) were selected and the …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -580,7 +580,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …line - retention’) at a corrected voxel threshold of p<0.05 using family-wise error correction  ,  and a cluster threshold of p<0.01 (k = 27 resampled voxels, corrected for multiple comparisons using <mark class="annotated-text">Monte Carlo</mark> simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For the load dependent fMRI analysis we calculated the contrasts ‘ss5–ss2’ an…
+                    …line - retention’) at a corrected voxel threshold of p&lt;0.05 using family-wise error correction  ,  and a cluster threshold of p&lt;0.01 (k = 27 resampled voxels, corrected for multiple comparisons using <mark class="annotated-text">Monte Carlo</mark> simulations with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For the load dependent fMRI analysis we calculated the contrasts ‘ss5–ss2’ an…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -592,7 +592,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …line - retention’) at a corrected voxel threshold of p<0.05 using family-wise error correction  ,  and a cluster threshold of p<0.01 (k = 27 resampled voxels, corrected for multiple comparisons using <mark class="annotated-text">Monte Carlo simulations</mark> with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For the load dependent fMRI analysis we calculated the contrasts ‘ss5–ss2’ and ‘ss2–ss5’.…
+                    …line - retention’) at a corrected voxel threshold of p&lt;0.05 using family-wise error correction  ,  and a cluster threshold of p&lt;0.01 (k = 27 resampled voxels, corrected for multiple comparisons using <mark class="annotated-text">Monte Carlo simulations</mark> with 1000 iterations,  ).The cluster threshold method was applied to control for the overall type I error.    For the load dependent fMRI analysis we calculated the contrasts ‘ss5–ss2’ and ‘ss2–ss5’.…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -604,7 +604,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …cy bands, EEG-BOLD signal correlations were considered significant at an uncorrected voxel threshold of p<0.001 (t = 3.1) and at a corrected cluster threshold of p<0.01 (k = 27 resampled voxels using <mark class="annotated-text">Monte Carlo</mark> simulations). The same voxel threshold has been used in a recent EEG-fMRI WM study  .    For the load specific analysis first load sensitive regions from the BOLD contrast ‘ss5> ss2’ were identified …
+                    …cy bands, EEG-BOLD signal correlations were considered significant at an uncorrected voxel threshold of p&lt;0.001 (t = 3.1) and at a corrected cluster threshold of p&lt;0.01 (k = 27 resampled voxels using <mark class="annotated-text">Monte Carlo</mark> simulations). The same voxel threshold has been used in a recent EEG-fMRI WM study  .    For the load specific analysis first load sensitive regions from the BOLD contrast ‘ss5&gt; ss2’ were identified …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -616,7 +616,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ests run and their interpretations. Correction for multiple comparisons in whole-brain maps was achieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   < 0.01. <mark class="annotated-text">Monte Carlo simulations</mark> with the AFNI program “Alphasim” were used to set a cluster criterion of 220 contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   < 0.05. In one case, a smaller search volume was…
+                    …ests run and their interpretations. Correction for multiple comparisons in whole-brain maps was achieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   &lt; 0.01. <mark class="annotated-text">Monte Carlo simulations</mark> with the AFNI program “Alphasim” were used to set a cluster criterion of 220 contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   &lt; 0.05. In one case, a smaller search volume was…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -628,7 +628,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … for multiple comparisons in whole-brain maps was achieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   < 0.01. Monte Carlo simulations with the AFNI program <mark class="annotated-text">“Alphasim”</mark> were used to set a cluster criterion of 220 contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   < 0.05. In one case, a smaller search volume was used, as indicated in the Result…
+                    … for multiple comparisons in whole-brain maps was achieved through setting a cluster-size criterion, combined with a voxelwise threshold of   P   &lt; 0.01. Monte Carlo simulations with the AFNI program <mark class="annotated-text">“Alphasim”</mark> were used to set a cluster criterion of 220 contiguous voxels (1.76 mL), for a whole-brain family-wise error of   P   &lt; 0.05. In one case, a smaller search volume was used, as indicated in the Result…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -652,7 +652,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …tor GROUP and the interaction are reported on p<.001 (uncorrected). For all reported comparisons, the likelihood of Type I error was reduced based on cluster size threshold estimation  ,  involving a <mark class="annotated-text">Monte Carlo</mark> simulation calculating the likelihood to obtain different cluster sizes. Calculations resulted in a cluster size threshold of 16 voxels. Active voxels are displayed in native resolution without inter…
+                    …tor GROUP and the interaction are reported on p&lt;.001 (uncorrected). For all reported comparisons, the likelihood of Type I error was reduced based on cluster size threshold estimation  ,  involving a <mark class="annotated-text">Monte Carlo</mark> simulation calculating the likelihood to obtain different cluster sizes. Calculations resulted in a cluster size threshold of 16 voxels. Active voxels are displayed in native resolution without inter…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -664,7 +664,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …tor GROUP and the interaction are reported on p<.001 (uncorrected). For all reported comparisons, the likelihood of Type I error was reduced based on cluster size threshold estimation  ,  involving a <mark class="annotated-text">Monte Carlo simulation</mark> calculating the likelihood to obtain different cluster sizes. Calculations resulted in a cluster size threshold of 16 voxels. Active voxels are displayed in native resolution without interpolation an…
+                    …tor GROUP and the interaction are reported on p&lt;.001 (uncorrected). For all reported comparisons, the likelihood of Type I error was reduced based on cluster size threshold estimation  ,  involving a <mark class="annotated-text">Monte Carlo simulation</mark> calculating the likelihood to obtain different cluster sizes. Calculations resulted in a cluster size threshold of 16 voxels. Active voxels are displayed in native resolution without interpolation an…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -676,7 +676,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …xact masks for both networks are available from the authors by request.    Significant activity within each network mask was corrected for multiple comparisons using a cluster size criterion based on <mark class="annotated-text">Monte Carlo</mark> simulations  ,  , via the AlphaSim software within AFNI  . To assure a multiple comparisons corrected   p   <.05 criteria, significant regions were identified based on a per-voxel minimum   z   >2.32…
+                    …xact masks for both networks are available from the authors by request.    Significant activity within each network mask was corrected for multiple comparisons using a cluster size criterion based on <mark class="annotated-text">Monte Carlo</mark> simulations  ,  , via the AlphaSim software within AFNI  . To assure a multiple comparisons corrected   p   &lt;.05 criteria, significant regions were identified based on a per-voxel minimum   z   &gt;2.32…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -722,7 +722,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …atch the Montreal Neurological Institute (MNI) EPI template. Two of eighteen subjects were excluded from the analysis due to major head movements (i.e., translation >1.5 mm) during scanning. Finally, <mark class="annotated-text">functional volumes were resampled to isotropic 3 mm3 voxels</mark> and spatially smoothed with a 9 mm full width at half maximum isotropic Gaussian kernel. Functional images were temporally high-pass filtered with a cut-off period of 128 s, and serial correlations w…
+                    …atch the Montreal Neurological Institute (MNI) EPI template. Two of eighteen subjects were excluded from the analysis due to major head movements (i.e., translation &gt;1.5 mm) during scanning. Finally, <mark class="annotated-text">functional volumes were resampled to isotropic 3 mm3 voxels</mark> and spatially smoothed with a 9 mm full width at half maximum isotropic Gaussian kernel. Functional images were temporally high-pass filtered with a cut-off period of 128 s, and serial correlations w…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -734,7 +734,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ns were acquired using T1-weighted MRI sequences (Magnetization prepared rapid gradient echo (MP-RAGE): TR/TE = 1,700/3.5 ms, flip angle = 9°, 208 sagittal slices, FOV 240 × 195 mm, matrix 320 × 260, <mark class="annotated-text">voxel size 0.75 × 0.75 × 0.75 mm</mark>.      fMRI analysis    fMRI-analysis was performed with FSL (FMRIB's Software Library,  ). The following pre-processing procedure was applied: Employing different modules of the FSL-software package,…
+                    …ns were acquired using T1-weighted MRI sequences (Magnetization prepared rapid gradient echo (MP-RAGE): TR/TE = 1,700/3.5 ms, flip angle = 9°, 208 sagittal slices, FOV 240 × 195 mm, matrix 320 × 260, <mark class="annotated-text">voxel size 0.75 × 0.75 × 0.75 mm</mark>.      fMRI analysis    fMRI-analysis was performed with FSL (FMRIB&#39;s Software Library,  ). The following pre-processing procedure was applied: Employing different modules of the FSL-software package,…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -770,7 +770,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …versity School of Medicine. High-resolution anatomical images were acquired for each participant using a sagittal T1-weighted MP-RAGE sequence (TE = 3.16 ms, TR = 2400 ms, flip angle = 8° 176 slices, <mark class="annotated-text">1×1×1 mm voxels</mark>). Anatomical images were aligned with each individual's functional images. To facilitate registration of the T1 and functional scans, a T2-weighted image was also acquired in the same space as the fu…
+                    …versity School of Medicine. High-resolution anatomical images were acquired for each participant using a sagittal T1-weighted MP-RAGE sequence (TE = 3.16 ms, TR = 2400 ms, flip angle = 8° 176 slices, <mark class="annotated-text">1×1×1 mm voxels</mark>). Anatomical images were aligned with each individual&#39;s functional images. To facilitate registration of the T1 and functional scans, a T2-weighted image was also acquired in the same space as the fu…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -782,7 +782,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … derives the cluster volume needed to hold the false-positive rate for cluster detection at a desired level. Using a voxel-wise threshold of   P   <0.005, a cluster volume threshold of 102 contiguous <mark class="annotated-text">2-mm  voxels</mark> was determined necessary to hold the probability of map-wise false-positive detection at   P   <0.05 in whole-brain analyses. Owing to an   a priori   interest in the amygdala, a small volume correct…
+                    … derives the cluster volume needed to hold the false-positive rate for cluster detection at a desired level. Using a voxel-wise threshold of   P   &lt;0.005, a cluster volume threshold of 102 contiguous <mark class="annotated-text">2-mm  voxels</mark> was determined necessary to hold the probability of map-wise false-positive detection at   P   &lt;0.05 in whole-brain analyses. Owing to an   a priori   interest in the amygdala, a small volume correct…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -794,7 +794,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …30 ms/90°). Thirty-two axial slices were acquired per volume. An intra-session high-resolution structural scan was acquired using a T1-weighted 3D magnetization prepared rapid gradient echo sequence (<mark class="annotated-text">1 mm3voxel size</mark>).    The functional imaging data were analyzed using BrainVoyager QX (Brain innovation; Goebel et al.,  ). The first four volumes of each subject's functional data set were discarded to allow for T1 …
+                    …30 ms/90°). Thirty-two axial slices were acquired per volume. An intra-session high-resolution structural scan was acquired using a T1-weighted 3D magnetization prepared rapid gradient echo sequence (<mark class="annotated-text">1 mm3voxel size</mark>).    The functional imaging data were analyzed using BrainVoyager QX (Brain innovation; Goebel et al.,  ). The first four volumes of each subject&#39;s functional data set were discarded to allow for T1 …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -912,7 +912,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …isorder, head trauma, substance use, or medical contraindications to magnetic resonance imaging. Participants were 12 high functioning male adults with ASD (x = 31.8 years old; range 19–52 years) and <mark class="annotated-text">12</mark> typically developed male controls (x = 32 years old; range 19–57 years). The two groups did not differ significantly in age (t(22) = −0.04, p<0.97). The study groups were matched on age, sex and non-…
+                    …isorder, head trauma, substance use, or medical contraindications to magnetic resonance imaging. Participants were 12 high functioning male adults with ASD (x = 31.8 years old; range 19–52 years) and <mark class="annotated-text">12</mark> typically developed male controls (x = 32 years old; range 19–57 years). The two groups did not differ significantly in age (t(22) = −0.04, p&lt;0.97). The study groups were matched on age, sex and non-…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1210,7 +1210,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #ff9896;">
+    <details style=&#34;--label-color: #ff9896;&#34;>
         <summary class="label-display">cluster_thresh_in_mm (22 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1218,7 +1218,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …eshold of FDR   q   < 0.05 resulted in corrected statistical thresholds of   p   < 0.0038 for w > p and   p   < 0.0036 for   p   > w. Only clusters of voxels that exceeded a minimum cluster volume of <mark class="annotated-text">100</mark> mm  are reported.    In describing the pattern of differential responses observed for words and pseudowords we will focus on responses in left hemisphere regions that as reviewed previously have been…
+                    …eshold of FDR   q   &lt; 0.05 resulted in corrected statistical thresholds of   p   &lt; 0.0038 for w &gt; p and   p   &lt; 0.0036 for   p   &gt; w. Only clusters of voxels that exceeded a minimum cluster volume of <mark class="annotated-text">100</mark> mm  are reported.    In describing the pattern of differential responses observed for words and pseudowords we will focus on responses in left hemisphere regions that as reviewed previously have been…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1230,7 +1230,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …rom 97 peak voxels from 11 functional imaging studies comparing neural responses to spoken words and pseudowords. ALE maps are thresholded at   p   < 0.05 FDR corrected, and only clusters larger than <mark class="annotated-text">100</mark> mm  are shown. Additional activation for pseudowords compared with words (red) and words compared with pseudowords (blue) is shown (   a   ) rendered onto the left hemisphere, (   b   ) displayed on …
+                    …rom 97 peak voxels from 11 functional imaging studies comparing neural responses to spoken words and pseudowords. ALE maps are thresholded at   p   &lt; 0.05 FDR corrected, and only clusters larger than <mark class="annotated-text">100</mark> mm  are shown. Additional activation for pseudowords compared with words (red) and words compared with pseudowords (blue) is shown (   a   ) rendered onto the left hemisphere, (   b   ) displayed on …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1242,7 +1242,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …r 29 peak voxels in studies reporting a greater neural response to spoken pseudowords than words (shown in red in  ). Results thresholded at   p   < 0.05 FDR corrected, and with clusters greater than <mark class="annotated-text">100</mark> mm  reported. Entries shown in bold are cluster summary statistics (including centre of mass and volume), entries in plain type show local maxima.      In the superior portion of the left temporal lo…
+                    …r 29 peak voxels in studies reporting a greater neural response to spoken pseudowords than words (shown in red in  ). Results thresholded at   p   &lt; 0.05 FDR corrected, and with clusters greater than <mark class="annotated-text">100</mark> mm  reported. Entries shown in bold are cluster summary statistics (including centre of mass and volume), entries in plain type show local maxima.      In the superior portion of the left temporal lo…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1254,7 +1254,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … a cluster-size criterion, combined with a voxelwise threshold of   P   < 0.01. Monte Carlo simulations with the AFNI program “Alphasim” were used to set a cluster criterion of 220 contiguous voxels (<mark class="annotated-text">1.76 mL</mark>), for a whole-brain family-wise error of   P   < 0.05. In one case, a smaller search volume was used, as indicated in the Results section. For display of time courses, spherical regions of interest (…
+                    … a cluster-size criterion, combined with a voxelwise threshold of   P   &lt; 0.01. Monte Carlo simulations with the AFNI program “Alphasim” were used to set a cluster criterion of 220 contiguous voxels (<mark class="annotated-text">1.76 mL</mark>), for a whole-brain family-wise error of   P   &lt; 0.05. In one case, a smaller search volume was used, as indicated in the Results section. For display of time courses, spherical regions of interest (…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1314,7 +1314,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …g in ROIs was then set to   p   <0.05 uncorrected (due to an anticipated loss of power from a between-group ANOVA second-level analysis) with a minimum cluster size of   k    = 10 contiguous voxels (><mark class="annotated-text">270</mark> mm3). The SPM5 toolbox ‘rfxplot’ was used to calculate effects sizes for the random effects group SPM5 analyses and was also used to create subsequent effect size bar graphs  .      Correlation of fM…
+                    …g in ROIs was then set to   p   &lt;0.05 uncorrected (due to an anticipated loss of power from a between-group ANOVA second-level analysis) with a minimum cluster size of   k    = 10 contiguous voxels (&gt;<mark class="annotated-text">270</mark> mm3). The SPM5 toolbox ‘rfxplot’ was used to calculate effects sizes for the random effects group SPM5 analyses and was also used to create subsequent effect size bar graphs  .      Correlation of fM…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1326,7 +1326,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …g., the ventral striatum) for whole brain analyses in each group. Significant differences in the between-group analysis were reported using the criteria of   P   <0.001, uncorrected, cluster size ≥7 (<mark class="annotated-text">189</mark> µl), which corresponds to a corrected threshold of   P   <0.05 as determined by AlphaSim in AFNI (  ). Our previous report also described this threshold in order to prevent detection of false positiv…
+                    …g., the ventral striatum) for whole brain analyses in each group. Significant differences in the between-group analysis were reported using the criteria of   P   &lt;0.001, uncorrected, cluster size ≥7 (<mark class="annotated-text">189</mark> µl), which corresponds to a corrected threshold of   P   &lt;0.05 as determined by AlphaSim in AFNI (  ). Our previous report also described this threshold in order to prevent detection of false positiv…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1360,7 +1360,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … design because familiar violin excerpts were unfamiliar to actors and familiar dramatic monologues were unfamiliar to violinists. A correction for nonsphericity was included. Unless otherwise stated,<mark class="annotated-text"> results are reported at   P   < 0.05 at the cluster and/or peak level using a height threshold of   P   < 0.001 (uncorrected)</mark>, Family-Wise Error (FWE) corrected for multiple comparisons across the whole brain. Probabilistic mapping was determined by comparing the overlap between the projected activations on the cortical sur…
+                    … design because familiar violin excerpts were unfamiliar to actors and familiar dramatic monologues were unfamiliar to violinists. A correction for nonsphericity was included. Unless otherwise stated,<mark class="annotated-text"> results are reported at   P   &lt; 0.05 at the cluster and/or peak level using a height threshold of   P   &lt; 0.001 (uncorrected)</mark>, Family-Wise Error (FWE) corrected for multiple comparisons across the whole brain. Probabilistic mapping was determined by comparing the overlap between the projected activations on the cortical sur…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1384,7 +1384,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …he visual transfer task as dependent variable. Within this analysis a main effect of Time would reflect unspecific effects of task repetition from pre-to post-test and was therefore, not evaluated.   <mark class="annotated-text">To achieve a desirable balance between Types I and II error rates i.e., not to miss any potential activity by avoiding an unnecessarily high rate false of positives, the resulting F-maps were thresholded at a more liberal threshold of   p   < 0.005 (uncorrected) using clusters determined by the number of anatomical voxels > 135 </mark>(see Lieberman and Cunningham,  , for a detailed discussion). To further specify the Time by Group interaction we defined functional volumes-of-interest (VOI) on the basis of these cluster activations…
+                    …he visual transfer task as dependent variable. Within this analysis a main effect of Time would reflect unspecific effects of task repetition from pre-to post-test and was therefore, not evaluated.   <mark class="annotated-text">To achieve a desirable balance between Types I and II error rates i.e., not to miss any potential activity by avoiding an unnecessarily high rate false of positives, the resulting F-maps were thresholded at a more liberal threshold of   p   &lt; 0.005 (uncorrected) using clusters determined by the number of anatomical voxels &gt; 135 </mark>(see Lieberman and Cunningham,  , for a detailed discussion). To further specify the Time by Group interaction we defined functional volumes-of-interest (VOI) on the basis of these cluster activations…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1408,7 +1408,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …gnificance threshold for the main effects of winning versus losing or vice versa, or for the interaction effects between wins versus losses and active versus vicarious playing or vice versa. However, <mark class="annotated-text">using a small-volume correction for our   a priori   regions of interest (FWE-corrected threshold   P   < 0.05 at cluster-level)</mark> and a slightly more lenient threshold   P   < 0.001 (uncorrected) at voxel-level, we found stronger activations for wins versus losses in omPFC and bilateral ventral striatum. Furthermore, ventral st…
+                    …gnificance threshold for the main effects of winning versus losing or vice versa, or for the interaction effects between wins versus losses and active versus vicarious playing or vice versa. However, <mark class="annotated-text">using a small-volume correction for our   a priori   regions of interest (FWE-corrected threshold   P   &lt; 0.05 at cluster-level)</mark> and a slightly more lenient threshold   P   &lt; 0.001 (uncorrected) at voxel-level, we found stronger activations for wins versus losses in omPFC and bilateral ventral striatum. Furthermore, ventral st…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1420,7 +1420,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … of the normalized iEMG regressor.    In the group-level SPM, the threshold was initially set at a voxel-wise height-level of   P   < 0.05 corrected for multiple comparisons (family-wise error; FWE). <mark class="annotated-text">Clusters exceeding a height threshold of uncorrected   P   < 0.005 were reported as a trend.</mark> The cytoarchitectonic nomenclature of significant brain activity was identified according to the SPM5 anatomy toolbox when applicable.      Distribution of TMS- and afferent-induced brain activity in…
+                    … of the normalized iEMG regressor.    In the group-level SPM, the threshold was initially set at a voxel-wise height-level of   P   &lt; 0.05 corrected for multiple comparisons (family-wise error; FWE). <mark class="annotated-text">Clusters exceeding a height threshold of uncorrected   P   &lt; 0.005 were reported as a trend.</mark> The cytoarchitectonic nomenclature of significant brain activity was identified according to the SPM5 anatomy toolbox when applicable.      Distribution of TMS- and afferent-induced brain activity in…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1478,7 +1478,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ns and cluster size for all significantly activated regions for the genotype effect. There were no significant differences in MTL activation for the contrast of familiar relative to novel pictures.   <mark class="annotated-text"> The whole brain analyses for the novel vs familiar and familiar vs novel contrasts (p < 0.05; FDR corrected for multiple comparisons) revealed no significant differences between the groups for either contrast. In order to examine potential compensatory activity in the cortical regions of ε3/4 heterozygotes, we conducted a follow-up analysis (p < 0.01, uncorrected) using a two-sample t-test in which the analysis was constrained to include only those regions that were active for each contrast (i.e. novel versus familiar or familiar versus novel) collapsed across all 40 subjects (i.e. a one-sample t-test). </mark>In addition to reduced MTL activation, the ε3/4 heterozygotes also displayed reduced activation compared to the ε3/3 homozygotes for the novel versus familiar contrast in the right ventral temporal co…
+                    …ns and cluster size for all significantly activated regions for the genotype effect. There were no significant differences in MTL activation for the contrast of familiar relative to novel pictures.   <mark class="annotated-text"> The whole brain analyses for the novel vs familiar and familiar vs novel contrasts (p &lt; 0.05; FDR corrected for multiple comparisons) revealed no significant differences between the groups for either contrast. In order to examine potential compensatory activity in the cortical regions of ε3/4 heterozygotes, we conducted a follow-up analysis (p &lt; 0.01, uncorrected) using a two-sample t-test in which the analysis was constrained to include only those regions that were active for each contrast (i.e. novel versus familiar or familiar versus novel) collapsed across all 40 subjects (i.e. a one-sample t-test). </mark>In addition to reduced MTL activation, the ε3/4 heterozygotes also displayed reduced activation compared to the ε3/3 homozygotes for the novel versus familiar contrast in the right ventral temporal co…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1514,7 +1514,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ed under the General Linear Model (GLM), setting up individual orthogonalization of ratings versus main effect in order to prevent overestimation. All analyses were performed as whole-brain analyses. <mark class="annotated-text">Statistical significance for whole brain analysis was set at p<0.05, Z score > 2.3</mark>.       Supporting Information
+                    …ed under the General Linear Model (GLM), setting up individual orthogonalization of ratings versus main effect in order to prevent overestimation. All analyses were performed as whole-brain analyses. <mark class="annotated-text">Statistical significance for whole brain analysis was set at p&lt;0.05, Z score &gt; 2.3</mark>.       Supporting Information
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1538,7 +1538,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … .    We performed a whole-brain voxel-wise analysis. The study design allows the calculation of various effects, i.e. main effect of Group, main effect of Type, and interaction effect Group by Type. <mark class="annotated-text">An uncorrected statistical threshold (i.e., voxel level of significance uncorrected (unc.) for multiple testing) of p<0.005 was set for the main effects and interaction effect. The minimum cluster-size was set at 10 voxels.  </mark>  Our main hypotheses were tested using one-sided t-tests. The participants were measured as ANP and EP in the patient group (DIDanp/DIDep) and in the control group (SIManp/SIMep). Group differences b…
+                    … .    We performed a whole-brain voxel-wise analysis. The study design allows the calculation of various effects, i.e. main effect of Group, main effect of Type, and interaction effect Group by Type. <mark class="annotated-text">An uncorrected statistical threshold (i.e., voxel level of significance uncorrected (unc.) for multiple testing) of p&lt;0.005 was set for the main effects and interaction effect. The minimum cluster-size was set at 10 voxels.  </mark>  Our main hypotheses were tested using one-sided t-tests. The participants were measured as ANP and EP in the patient group (DIDanp/DIDep) and in the control group (SIManp/SIMep). Group differences b…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1550,7 +1550,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …al activity related to both color or motion concepts remained unchanged. Statistical comparison of concept vs. non-concept activity yielded identical results with or without masking (concept color:   <mark class="annotated-text">p   < 0.05, FWE bilateral; concept motion   p   < 0.05, FWE right hemisphere</mark>). The distinctness of color and motion representations is illustrated in   Figure 8   , showing separable groupings of concept related activity (plotted at a significant level of   p   < 0.001). Cons…
+                    …al activity related to both color or motion concepts remained unchanged. Statistical comparison of concept vs. non-concept activity yielded identical results with or without masking (concept color:   <mark class="annotated-text">p   &lt; 0.05, FWE bilateral; concept motion   p   &lt; 0.05, FWE right hemisphere</mark>). The distinctness of color and motion representations is illustrated in   Figure 8   , showing separable groupings of concept related activity (plotted at a significant level of   p   &lt; 0.001). Cons…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1574,7 +1574,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …t comparing musicians and nonmusicians (   P   < 0.005). Correction for multiple comparisons was applied at the cluster level following Monte Carlo simulations conducted in the AlphaSim program [  ]. <mark class="annotated-text">To better detect differences between the two groups, we only included the clusters which were found significantly different between the two groups after five consecutive Tc values of FCD comparisons in the following analysis. Then, for each cluster in which a significant difference was found, the intersection was used as region of interest (ROI) in the subsequent functional connectivity analyses</mark>.      2.6. Functional Connectivity among ROIs    We adopted two strategies to evaluate the relationships among the regions with different local FCD between musicians and nonmusicians: functional conn…
+                    …t comparing musicians and nonmusicians (   P   &lt; 0.005). Correction for multiple comparisons was applied at the cluster level following Monte Carlo simulations conducted in the AlphaSim program [  ]. <mark class="annotated-text">To better detect differences between the two groups, we only included the clusters which were found significantly different between the two groups after five consecutive Tc values of FCD comparisons in the following analysis. Then, for each cluster in which a significant difference was found, the intersection was used as region of interest (ROI) in the subsequent functional connectivity analyses</mark>.      2.6. Functional Connectivity among ROIs    We adopted two strategies to evaluate the relationships among the regions with different local FCD between musicians and nonmusicians: functional conn…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1586,7 +1586,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    … that particular component were entered into a random-effect analysis model (1 sample   t   -test in SPM5). Brain regions were considered to be within each network if they met a height threshold of   <mark class="annotated-text">P<   0.00001 corrected for multiple comparisons using the family-wise error (FWE) correction and an extent threshold of 50 voxels</mark>.      Second-level analyses of networks of interest    Translations and rotations of the head estimated during realignment stage of pre-processing were regressed out from the time course of each of t…
+                    … that particular component were entered into a random-effect analysis model (1 sample   t   -test in SPM5). Brain regions were considered to be within each network if they met a height threshold of   <mark class="annotated-text">P&lt;   0.00001 corrected for multiple comparisons using the family-wise error (FWE) correction and an extent threshold of 50 voxels</mark>.      Second-level analyses of networks of interest    Translations and rotations of the head estimated during realignment stage of pre-processing were regressed out from the time course of each of t…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1668,7 +1668,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …cted along the upper bank of the superior temporal sulcus (STS); 3 clusters were identified surviving a threshold of 6.5 (threshold   T   value for a   P   < 0.05 familywise error [FWE] corrected, see<mark class="annotated-text">  </mark>and  ).      Effect of Voice Gender    As hypothesized by the overlapping neuronal population model, the regressor modeling the degree of morph did not reveal any regions showing greater activity to e…
+                    …cted along the upper bank of the superior temporal sulcus (STS); 3 clusters were identified surviving a threshold of 6.5 (threshold   T   value for a   P   &lt; 0.05 familywise error [FWE] corrected, see<mark class="annotated-text">  </mark>and  ).      Effect of Voice Gender    As hypothesized by the overlapping neuronal population model, the regressor modeling the degree of morph did not reveal any regions showing greater activity to e…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1680,7 +1680,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …along the upper bank of the superior temporal sulcus (STS); 3 clusters were identified surviving a threshold of 6.5 (threshold   T   value for a   P   < 0.05 familywise error [FWE] corrected, see  and<mark class="annotated-text">  </mark>).      Effect of Voice Gender    As hypothesized by the overlapping neuronal population model, the regressor modeling the degree of morph did not reveal any regions showing greater activity to either…
+                    …along the upper bank of the superior temporal sulcus (STS); 3 clusters were identified surviving a threshold of 6.5 (threshold   T   value for a   P   &lt; 0.05 familywise error [FWE] corrected, see  and<mark class="annotated-text">  </mark>).      Effect of Voice Gender    As hypothesized by the overlapping neuronal population model, the regressor modeling the degree of morph did not reveal any regions showing greater activity to either…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1692,7 +1692,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …f and other descriptiveness   vs   performance of the experimental component of the VV-SORP-T). Results concerning individual differences are reported in  and  , and  and  .    We report within Tables<mark class="annotated-text"> </mark>clusters of size   k    ≥ 67 voxels (approximating the volume of the smoothing kernel) with uncorrected voxel-wise   P    < 0.005 as a criterion selected so as to balance risk against type-I and type-…
+                    …f and other descriptiveness   vs   performance of the experimental component of the VV-SORP-T). Results concerning individual differences are reported in  and  , and  and  .    We report within Tables<mark class="annotated-text"> </mark>clusters of size   k    ≥ 67 voxels (approximating the volume of the smoothing kernel) with uncorrected voxel-wise   P    &lt; 0.005 as a criterion selected so as to balance risk against type-I and type-…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1750,7 +1750,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ssibility that the discrepancy may simply reflect differences in behavioral tasks. Fourth, the current results were obtained with a relatively liberal threshold. In reporting the correlation results, <mark class="annotated-text">we used an arbitrary threshold </mark>of p<0.005 to highlight the differences between error and non-error processes. These results are thus preliminary and need to be replicated in the future.      Conclusions    We have two main conclusi…
+                    …ssibility that the discrepancy may simply reflect differences in behavioral tasks. Fourth, the current results were obtained with a relatively liberal threshold. In reporting the correlation results, <mark class="annotated-text">we used an arbitrary threshold </mark>of p&lt;0.005 to highlight the differences between error and non-error processes. These results are thus preliminary and need to be replicated in the future.      Conclusions    We have two main conclusi…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1798,7 +1798,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …subsequent memory effect model were used to identify regions related to face perception (family-wise correction   p   < 0.05) and successful memory formation (subsequent memory effect:   p   < 0.001, <mark class="annotated-text">uncorrected</mark>) at the group level. Due to the robust effect in left hippocampus, we limited our regions of interest to the left hemisphere, which was also motivated by Smith et al. (  ). As a result, face percepti…
+                    …subsequent memory effect model were used to identify regions related to face perception (family-wise correction   p   &lt; 0.05) and successful memory formation (subsequent memory effect:   p   &lt; 0.001, <mark class="annotated-text">uncorrected</mark>) at the group level. Due to the robust effect in left hippocampus, we limited our regions of interest to the left hemisphere, which was also motivated by Smith et al. (  ). As a result, face percepti…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1810,7 +1810,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …re used to identify regions related to face perception (family-wise correction   p   < 0.05) and successful memory formation (subsequent memory effect:   p   < 0.001, uncorrected) at the group level. <mark class="annotated-text">Due to the robust effect in left hippocampus, we limited our regions of interest to the left hemisphere</mark>, which was also motivated by Smith et al. (  ). As a result, face perception related regions included the inferior occipital gyrus (IOG:   x   = −40,   y   = −78,   z   = −10) and fusiform gyrus (FUS…
+                    …re used to identify regions related to face perception (family-wise correction   p   &lt; 0.05) and successful memory formation (subsequent memory effect:   p   &lt; 0.001, uncorrected) at the group level. <mark class="annotated-text">Due to the robust effect in left hippocampus, we limited our regions of interest to the left hemisphere</mark>, which was also motivated by Smith et al. (  ). As a result, face perception related regions included the inferior occipital gyrus (IOG:   x   = −40,   y   = −78,   z   = −10) and fusiform gyrus (FUS…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1822,7 +1822,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …el random effects analysis for PPI was first FWE corrected at   P    < 0.05. However, because we did not find any significant functional connectivity between brain regions at this threshold level, we <mark class="annotated-text">decided to apply a more lenient threshold</mark> for PPI analysis to investigate any possible connectivity during vicarious reward (for discussion of employing a lenient threshold in social neuroscience studies, see  ): the   t   -images were first…
+                    …el random effects analysis for PPI was first FWE corrected at   P    &lt; 0.05. However, because we did not find any significant functional connectivity between brain regions at this threshold level, we <mark class="annotated-text">decided to apply a more lenient threshold</mark> for PPI analysis to investigate any possible connectivity during vicarious reward (for discussion of employing a lenient threshold in social neuroscience studies, see  ): the   t   -images were first…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1836,7 +1836,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #dbdb8d;">
+    <details style=&#34;--label-color: #dbdb8d;&#34;>
         <summary class="label-display">discard_this_paper (5 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1893,7 +1893,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">PMID26096737</mark>        TITLE         Impaired planning in Parkinson's disease is reflected by reduced brain activation and connectivity        ABSTRACT           ObjectiveParkinson's disease (PD) often entails impai…
+                    <mark class="annotated-text">PMID26096737</mark>        TITLE         Impaired planning in Parkinson&#39;s disease is reflected by reduced brain activation and connectivity        ABSTRACT           ObjectiveParkinson&#39;s disease (PD) often entails impai…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1905,7 +1905,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">PMID26096737</mark>        TITLE         Impaired planning in Parkinson's disease is reflected by reduced brain activation and connectivity        ABSTRACT           ObjectiveParkinson's disease (PD) often entails impai…
+                    <mark class="annotated-text">PMID26096737</mark>        TITLE         Impaired planning in Parkinson&#39;s disease is reflected by reduced brain activation and connectivity        ABSTRACT           ObjectiveParkinson&#39;s disease (PD) often entails impai…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1919,7 +1919,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #f7b6d2;">
+    <details style=&#34;--label-color: #f7b6d2;&#34;>
         <summary class="label-display">is_annotated (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1973,7 +1973,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …ts exceeded an uncorrected threshold of   p   <.001. Clusters were considered significant with a {t} threshold of 3.58, and a “k” extent of 150 voxels. As the “k” extent threshold was estimated using <mark class="annotated-text">resels</mark>, all clusters reached significance after correction for multiple comparisons (p<.05). Interactions between the   shape/category   and   same/different   dimensions were initially evaluated using samp…
+                    …ts exceeded an uncorrected threshold of   p   &lt;.001. Clusters were considered significant with a {t} threshold of 3.58, and a “k” extent of 150 voxels. As the “k” extent threshold was estimated using <mark class="annotated-text">resels</mark>, all clusters reached significance after correction for multiple comparisons (p&lt;.05). Interactions between the   shape/category   and   same/different   dimensions were initially evaluated using samp…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1999,7 +1999,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #b8b8b8;">
+    <details style=&#34;--label-color: #b8b8b8;&#34;>
         <summary class="label-display">annotation_in_progress (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2007,7 +2007,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …al MNI space. The SPM anatomy toolbox  was used to establish cytoarchitectonic reference where possible. To investigate the overall effects of tactile stimulation, we used a significance threshold of <mark class="annotated-text">pcluster</mark><0.05, family-wise error (FWE) corrected. To investigate stimulus-specific differences within the network associated with tactile stimulation, this contrast was used as a mask and, based on a priori a…
+                    …al MNI space. The SPM anatomy toolbox  was used to establish cytoarchitectonic reference where possible. To investigate the overall effects of tactile stimulation, we used a significance threshold of <mark class="annotated-text">pcluster</mark>&lt;0.05, family-wise error (FWE) corrected. To investigate stimulus-specific differences within the network associated with tactile stimulation, this contrast was used as a mask and, based on a priori a…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2032,7 +2032,7 @@ text = """
                     …nse to the CS in the PG mice    Within‐group analysis of brain activation in response to the CS compared with baseline in the PG mice revealed activation of the left amygdala region (   P    = 0.013, <mark class="annotated-text">cluster extent</mark> = 751 voxels, peak   T    = 10.0, coordinates 24, −18, −49; Table   ; Fig.   A). There was a trend for a cluster of activation that extended over the left ectorhinal cortex (Ect), perirhinal cortex (…
                 </div>
                 <div class="annotation-footer">
-                    <div class="extra-data">"cluster extent" used here to give the actual size of the cluster, not the min/threshold size AFAICT</div>
+                    <div class="extra-data">&#34;cluster extent&#34; used here to give the actual size of the cluster, not the min/threshold size AFAICT</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4744695/"
                                        >PMC4744695</a></div>
@@ -2052,7 +2052,7 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    PMID25136305        TITLE         <mark class="annotated-text">The influence of expertise on brain activation of the action observation network during anticipation of tennis and volleyball serve</mark>s        ABSTRACT           In many daily activities, and especially in sport, it is necessary to predict the effects of others' actions in order to initiate appropriate responses. Recently, researche…
+                    PMID25136305        TITLE         <mark class="annotated-text">The influence of expertise on brain activation of the action observation network during anticipation of tennis and volleyball serve</mark>s        ABSTRACT           In many daily activities, and especially in sport, it is necessary to predict the effects of others&#39; actions in order to initiate appropriate responses. Recently, researche…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2066,7 +2066,7 @@ text = """
         
     </details>
     
-    <details style="--label-color: #c49c94;">
+    <details style=&#34;--label-color: #c49c94;&#34;>
         <summary class="label-display">info_removed_in_name_extract (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>

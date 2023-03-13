@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style="--label-color: #cc0000;">
+    <details style=&#34;--label-color: #cc0000;&#34;>
         <summary class="label-display">meta-analysis method (83 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -207,7 +207,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
         
     </details>
     
-    <details style="--label-color: #f57900;">
+    <details style=&#34;--label-color: #f57900;&#34;>
         <summary class="label-display">final n (79 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -348,7 +348,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
         
     </details>
     
-    <details style="--label-color: #888a85;">
+    <details style=&#34;--label-color: #888a85;&#34;>
         <summary class="label-display">exclude? (13 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -521,10 +521,10 @@ To our knowledge, this will be the first voxel-wise meta-analysis that integrate
                 <div class="context">
                     …matter signals. The obtained images were smoothened with an isotropic Gaussian smooth kernel with a full width at half maximum of 6 mm, followed by detrending and filtering (0.01–0.08 Hz) in order. 
 
-<mark class="annotated-text">The ROI was obtained from the previous ALE meta‐analysis</mark> (Zhang et al.,  ). ALE meta‐analysis data processing was completed in the MNI standard space coordinate system, and the results were corrected using the false discovery rate (  p   < .05, cluster siz…
+<mark class="annotated-text">The ROI was obtained from the previous ALE meta‐analysis</mark> (Zhang et al.,  ). ALE meta‐analysis data processing was completed in the MNI standard space coordinate system, and the results were corrected using the false discovery rate (  p   &lt; .05, cluster siz…
                 </div>
                 <div class="annotation-footer">
-                    <div class="extra-data">this isn't a meta-analysis</div>
+                    <div class="extra-data">this isn&#39;t a meta-analysis</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7428490/"
                                        >PMC7428490</a></div>
@@ -562,7 +562,7 @@ This <mark class="annotated-text">study will analyze</mark> the effect of acupun
 ## Conclusion…
                 </div>
                 <div class="annotation-footer">
-                    <div class="extra-data">hasn't been done yet</div>
+                    <div class="extra-data">hasn&#39;t been done yet</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8136997/"
                                        >PMC8136997</a></div>
@@ -587,7 +587,7 @@ Front Behav Neurosci, 2018
 
 # Title
 
-Meta-Analysis of the Structural Equation Models' Parameters <mark class="annotated-text">for the Estimation of Brain Connectivity with fMRI
+Meta-Analysis of the Structural Equation Models&#39; Parameters <mark class="annotated-text">for the Estimation of Brain Connectivity with fMRI
 </mark>
 # Keywords
 
@@ -715,7 +715,7 @@ Autism Spectrum Disorder (ASD) diagnosis is still based o…
         
     </details>
     
-    <details style="--label-color: #888a85;">
+    <details style=&#34;--label-color: #888a85;&#34;>
         <summary class="label-display">LOOK UP LATER (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -789,56 +789,56 @@ Given the increasing amount of neuroimaging studies, there is a g…
         
     </details>
     
-    <details style="--label-color: #fcaf3e;">
+    <details style=&#34;--label-color: #fcaf3e;&#34;>
         <summary class="label-display">literature query (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #ff9896;">
+    <details style=&#34;--label-color: #ff9896;&#34;>
         <summary class="label-display">literature sources (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #8ae234;">
+    <details style=&#34;--label-color: #8ae234;&#34;>
         <summary class="label-display">literature search date (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #aec7e8;">
+    <details style=&#34;--label-color: #aec7e8;&#34;>
         <summary class="label-display">original n (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #729fcf;">
+    <details style=&#34;--label-color: #729fcf;&#34;>
         <summary class="label-display">exclusion criteria (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #c5b0d5;">
+    <details style=&#34;--label-color: #c5b0d5;&#34;>
         <summary class="label-display">inference (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #fce94f;">
+    <details style=&#34;--label-color: #fce94f;&#34;>
         <summary class="label-display">covariates (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style="--label-color: #4e9a06;">
+    <details style=&#34;--label-color: #4e9a06;&#34;>
         <summary class="label-display">n individual participants (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>

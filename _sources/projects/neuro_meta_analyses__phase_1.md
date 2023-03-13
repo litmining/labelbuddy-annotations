@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style="--label-color: #98df8a;">
+    <details style=&#34;--label-color: #98df8a;&#34;>
         <summary class="label-display">fmri (91 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -323,7 +323,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
         
     </details>
     
-    <details style="--label-color: #dbdb8d;">
+    <details style=&#34;--label-color: #dbdb8d;&#34;>
         <summary class="label-display">mri (63 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -623,7 +623,7 @@ Over the past decade mind and body practices, such as yoga and meditation, have 
         
     </details>
     
-    <details style="--label-color: #aec7e8;">
+    <details style=&#34;--label-color: #aec7e8;&#34;>
         <summary class="label-display">exclude not brain (58 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -921,7 +921,7 @@ meta-…
         
     </details>
     
-    <details style="--label-color: #9edae5;">
+    <details style=&#34;--label-color: #9edae5;&#34;>
         <summary class="label-display">pet (32 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1077,12 +1077,12 @@ Psychiatry Investig, 2017
 
 # Title
 
-Structural MRI and Amyloid <mark class="annotated-text">PET</mark> Imaging for Prediction of Conversion to Alzheimer's Disease in Patients with Mild Cognitive Impairment: A Meta-Analysis
+Structural MRI and Amyloid <mark class="annotated-text">PET</mark> Imaging for Prediction of Conversion to Alzheimer&#39;s Disease in Patients with Mild Cognitive Impairment: A Meta-Analysis
 
 # Keywords
 
 Mild cognitive impairment
-Alzheimer's disease
+Alzheimer&#39;s disease
 MRI
 Meta-analysis
 
@@ -1205,7 +1205,7 @@ positron emission t…
         
     </details>
     
-    <details style="--label-color: #f7b6d2;">
+    <details style=&#34;--label-color: #f7b6d2;&#34;>
         <summary class="label-display">CT (12 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1482,7 +1482,7 @@ ICH, intracranial h…
         
     </details>
     
-    <details style="--label-color: #c5b0d5;">
+    <details style=&#34;--label-color: #c5b0d5;&#34;>
         <summary class="label-display">perfusion mri (7 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1691,7 +1691,7 @@ ps…
         
     </details>
     
-    <details style="--label-color: #98df8a;">
+    <details style=&#34;--label-color: #98df8a;&#34;>
         <summary class="label-display">INTERESTING (7 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1923,7 +1923,7 @@ Tumor recurrence and pseudoprogression (PsP) have similar i…
         
     </details>
     
-    <details style="--label-color: #ff9896;">
+    <details style=&#34;--label-color: #ff9896;&#34;>
         <summary class="label-display">structural mri (6 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1936,12 +1936,12 @@ Psychiatry Investig, 2017
 
 # Title
 
-<mark class="annotated-text">Structural MRI</mark> and Amyloid PET Imaging for Prediction of Conversion to Alzheimer's Disease in Patients with Mild Cognitive Impairment: A Meta-Analysis
+<mark class="annotated-text">Structural MRI</mark> and Amyloid PET Imaging for Prediction of Conversion to Alzheimer&#39;s Disease in Patients with Mild Cognitive Impairment: A Meta-Analysis
 
 # Keywords
 
 Mild cognitive impairment
-Alzheimer's disease
+Alzheimer&#39;s disease
 MRI
 …
                 </div>
@@ -1955,7 +1955,7 @@ MRI
             
             <div class="annotation">
                 <div class="context">
-                    … Jon S. and Rowe, James B. and O'Callaghan, Claire and Murray, Graham K. and Suckling, John
+                    … Jon S. and Rowe, James B. and O&#39;Callaghan, Claire and Murray, Graham K. and Suckling, John
 EClinicalMedicine, 2019
 
 # Title
@@ -2100,7 +2100,7 @@ Major depressive disorder (MDD), anxiety disorders (ANX), and chronic pain (CP) 
         
     </details>
     
-    <details style="--label-color: #c49c94;">
+    <details style=&#34;--label-color: #c49c94;&#34;>
         <summary class="label-display">dmrid (6 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2263,7 +2263,7 @@ White-matter abnormalities, including increases in extracellular free-water, are
         
     </details>
     
-    <details style="--label-color: #aec7e8;">
+    <details style=&#34;--label-color: #aec7e8;&#34;>
         <summary class="label-display">SPECT (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2333,11 +2333,11 @@ Front Neurol, 2018
 
 # Title
 
-Dopaminergic Neurotransmission in Patients With Parkinson's Disease and Impulse Control Disorders: A Systematic Review and Meta-Analysis of PET and <mark class="annotated-text">SPECT</mark> Studies
+Dopaminergic Neurotransmission in Patients With Parkinson&#39;s Disease and Impulse Control Disorders: A Systematic Review and Meta-Analysis of PET and <mark class="annotated-text">SPECT</mark> Studies
 
 # Keywords
 
-Parkinson's disease
+Parkinson&#39;s disease
 impulse control disorder
 dopamine
 PET
@@ -2349,7 +2349,7 @@ meta-analysis
 
 # Abstract
  
- Background:   Around 30% Parkinson's disease (PD) patients dev…
+ Background:   Around 30% Parkinson&#39;s disease (PD) patients dev…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2363,7 +2363,7 @@ meta-analysis
         
     </details>
     
-    <details style="--label-color: #ffbb78;">
+    <details style=&#34;--label-color: #ffbb78;&#34;>
         <summary class="label-display">arterial spin labelling mri (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2427,7 +2427,7 @@ dem…
         
     </details>
     
-    <details style="--label-color: #ff9896;">
+    <details style=&#34;--label-color: #ff9896;&#34;>
         <summary class="label-display">exclude not meta analysis (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2496,7 +2496,7 @@ pol…
         
     </details>
     
-    <details style="--label-color: #c5b0d5;">
+    <details style=&#34;--label-color: #c5b0d5;&#34;>
         <summary class="label-display">vessel wall MRI (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2561,7 +2561,7 @@ statin
         
     </details>
     
-    <details style="--label-color: #ffbb78;">
+    <details style=&#34;--label-color: #ffbb78;&#34;>
         <summary class="label-display">exclude not humans (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2600,7 +2600,7 @@ Guidelines
         
     </details>
     
-    <details style="--label-color: #c49c94;">
+    <details style=&#34;--label-color: #c49c94;&#34;>
         <summary class="label-display">exclude incomplete (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2643,7 +2643,7 @@ GingerALE
         
     </details>
     
-    <details style="--label-color: #f7b6d2;">
+    <details style=&#34;--label-color: #f7b6d2;&#34;>
         <summary class="label-display">MRS (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2687,7 +2687,7 @@ We perform…
         
     </details>
     
-    <details style="--label-color: #dbdb8d;">
+    <details style=&#34;--label-color: #dbdb8d;&#34;>
         <summary class="label-display">TMS (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2705,7 +2705,7 @@ Functional MRI in the effect of <mark class="annotated-text">transcranial magnet
 # Keywords
 
 neuroradiology
-schizophrenia & psychotic disorders
+schizophrenia &amp; psychotic disorders
 magnetic resonance imaging
 
 
@@ -2727,7 +2727,7 @@ Schizop…
         
     </details>
     
-    <details style="--label-color: #9edae5;">
+    <details style=&#34;--label-color: #9edae5;&#34;>
         <summary class="label-display">ultrasound (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>

@@ -1,4 +1,6 @@
 project_name,annotator_name,pmcid,group_name,subgroup_name,count,age mean,age minimum,age maximum,age range,age median,diagnosis,female count,male count,publication_year,title
+autism_mri,David_Kennedy,9230060,patients,va,6,,,,,,criminals committing affective,,6.0,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
+participant_demographics,Jerome_Dockes,9230060,patients,_,20,,,,,,offenders,,20.0,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
 participant_demographics,Flemming_Kondrup_2,3520927,healthy,_,40,,18.0,23.0,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
 participant_demographics,Jerome_Dockes,3520927,healthy,study 1,1220,,,,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
 participant_demographics,Jerome_Dockes,3002948,healthy,phobic prone,15,39.2,,,,,,6.0,9.0,2010,Affective Response to a Loved One's Pain: Insula Activity as a Function of Individual Differences
@@ -38,7 +40,6 @@ participant_demographics,Sean_Moore,4075342,healthy,_,12,38.0,23.0,60.0,,,,5.0,7
 participant_demographics,kailu_song,4075342,healthy,_,12,38.0,23.0,60.0,,,,5.0,7.0,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
 participant_demographics,Jerome_Dockes,3447931,patients,_,20,,,,,,amyotrophic lateral sclerosis,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
 participant_demographics,kailu_song,3447931,patients,_,20,,,,,,amyotrophic lateral sclerosis,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
-participant_demographics,Jerome_Dockes,9230060,patients,_,20,,,,,,offenders,,20.0,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
 participant_demographics,Jerome_Dockes,3984441,patients,_,16,,,,,,dementia with Lewy bodies,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
 participant_demographics,kailu_song,3984441,patients,_,16,,,,,,dementia with Lewy bodies,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
 participant_demographics,Jerome_Dockes,4174863,patients,_,157,,,,,,incarcerated,157.0,,2014,Neural correlates of moral and non-moral emotion in female psychopathy
