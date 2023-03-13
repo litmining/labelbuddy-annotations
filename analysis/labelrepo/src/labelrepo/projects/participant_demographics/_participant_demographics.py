@@ -610,7 +610,8 @@ def select_participants_annotations(
     pmcid_query = "" if pmcid is None else "and pmcid = :pmcid"
     query = f"""
 select pmcid, title, doc_md5, label_name, extra_data, selected_text,
-    start_char, end_char, project_name, annotator_name, label_color, context,
+    start_char, end_char, project_name, annotator_name,
+    coalesce(label_color, '#E0E0E0') as label_color, context,
     context_start_char, context_end_char, doc_length
 from detailed_annotation where label_name in ({demo_labels})
 {annotator_query}
@@ -646,7 +647,8 @@ def _get_jinja_env() -> jinja2.Environment:
         loader=jinja2.FileSystemLoader(
             pathlib.Path(__file__).resolve().parent / "_data" / "templates",
             encoding="UTF-8",
-        )
+        ),
+        autoescape=True,
     )
     env.filters["md5"] = lambda text: hashlib.md5(
         text.encode("utf-8")
@@ -690,7 +692,7 @@ def _get_template_data(
         connection = database.get_database_connection()
     with contextlib.closing(connection), connection:
         label_color_rows = connection.execute(
-            "select name, color from label "
+            "select name, coalesce(color, '#00ffff') as color from label "
             "where name in ('patients', 'healthy')"
         ).fetchall()
     label_colors = {}
