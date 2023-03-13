@@ -85,7 +85,8 @@ def escape_quotes(value, jsonify=True):
 helpers_dir = pathlib.Path(__file__).parent.resolve()
 
 jinja_env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(helpers_dir / "templates", encoding="UTF-8")
+    loader=jinja2.FileSystemLoader(helpers_dir / "templates", encoding="UTF-8"),
+    autoescape=True
 )
 
 connection = database.get_database_connection()

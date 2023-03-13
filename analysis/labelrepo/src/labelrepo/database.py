@@ -23,6 +23,10 @@ def _initialize_database(db_path: pathlib.Path) -> None:
 def _fill_database(db_path: pathlib.Path):
     with contextlib.closing(sqlite3.connect(db_path)) as connection:
         connection.execute("pragma foreign_keys = on")
+        for labels_file in _utils.glob_json(
+            repo.repo_root() / "shared_labels"
+        ):
+            _insert_labels(connection, labels_file)
         projects_root_dir = repo.repo_root() / "projects"
         for project_dir in sorted(projects_root_dir.glob("*")):
             if not project_dir.is_dir():
@@ -119,7 +123,7 @@ def _insert_project_labels(
 def _insert_labels(
     connection: sqlite3.Connection,
     labels_file: pathlib.Path,
-    project_name: str,
+    project_name: Optional[str] = None,
 ) -> None:
     labels = _utils.read_json(labels_file)
     with connection:
@@ -128,14 +132,16 @@ def _insert_labels(
                 "insert or ignore into label (name, color) values (?, ?)",
                 (label_info["name"], label_info.get("color")),
             )
-            label_id = connection.execute(
-                "select id from label where name = ?", (label_info["name"],)
-            ).fetchone()[0]
-            connection.execute(
-                "insert into project_label (project_name, label_id) "
-                "values (?, ?)",
-                (project_name, label_id),
-            )
+            if project_name is not None:
+                label_id = connection.execute(
+                    "select id from label where name = ?",
+                    (label_info["name"],),
+                ).fetchone()[0]
+                connection.execute(
+                    "insert into project_label (project_name, label_id) "
+                    "values (?, ?)",
+                    (project_name, label_id),
+                )
 
 
 def _insert_project_annotations(
