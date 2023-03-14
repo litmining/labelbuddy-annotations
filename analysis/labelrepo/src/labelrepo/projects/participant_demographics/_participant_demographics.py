@@ -217,10 +217,10 @@ def _build_group_tree(tokens: pd.DataFrame) -> Dict:
 
 
 def _check_sex_on_non_leaf_nodes(tokens: pd.DataFrame) -> None:
-    bad_tokens = tokens.loc[
-        tokens["group_name"].isnull() & tokens["sex"].notnull()
+    missing_group = tokens.loc[
+        tokens["sex"].notnull() & tokens["group_name"].isnull()
     ]
-    if bad_tokens.shape[0]:
+    if missing_group.shape[0]:
         drop_group_msg = ""
         groups = tokens["group_name"].dropna().unique()
         if len(groups) == 1:
@@ -236,7 +236,24 @@ def _check_sex_on_non_leaf_nodes(tokens: pd.DataFrame) -> None:
             "attached to specific groups.\n\n"
             f"{drop_group_msg}"
             "'patients' or 'healthy' label is missing:",
-            bad_tokens,
+            missing_group,
+        )
+    groups_with_subgroups = tokens.loc[
+        tokens["subgroup_name"].notnull(), "group_name"
+    ].unique()
+    missing_subgroup = tokens.loc[
+        tokens["sex"].notnull()
+        & (
+            tokens["subgroup_name"].isnull()
+            & tokens["group_name"].isin(groups_with_subgroups)
+        )
+    ]
+    if missing_subgroup.shape[0]:
+        raise AnnotationError(
+            "When explicit subgroup names are used, 'female' and 'male' "
+            "counts should be attached to specific subgroups.\n\nSubgroup "
+            "name is missing:",
+            missing_subgroup,
         )
 
 
