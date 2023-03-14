@@ -519,16 +519,6 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
     if not all_annotations.shape[0]:
         return []
     all_docs = []
-    positions = {}
-    for project_name, annotator_name in (
-        all_annotations.loc[:, ["project_name", "annotator_name"]]
-        .drop_duplicates()
-        .values
-    ):
-        lb_file = _get_labelbuddy_file(project_name, annotator_name)
-        positions[(project_name, annotator_name)] = _get_doc_positions_in_db(
-            lb_file
-        )
     for (
         project_name,
         annotator_name,
@@ -544,18 +534,8 @@ def _get_document_summaries(all_annotations: pd.DataFrame) -> List[Dict]:
             "title": anno["title"].iloc[0],
             "annotation_stacks": _get_annotation_stacks(anno),
             "doc_uid": secrets.token_hex(4),
+            "doc_md5": doc_md5,
         }
-        if doc_md5 in positions[(project_name, annotator_name)]:
-            doc.update(
-                {
-                    "position_in_labelbuddy_file": positions[
-                        (project_name, annotator_name)
-                    ][doc_md5]["position"],
-                    "labelbuddy_file": str(
-                        _get_labelbuddy_file(project_name, annotator_name)
-                    ),
-                }
-            )
         try:
             doc["participants"] = _get_participants_info(anno)
             for sg in doc["participants"]["subgroups"].values():
@@ -593,6 +573,22 @@ def _get_doc_positions_in_db(db_path: pathlib.Path) -> Dict:
             row[0]: {"id": row[1], "position": i}
             for (i, row) in enumerate(docs)
         }
+
+
+def _add_positions_in_db(
+    doc_summaries: List[Dict], project_name: str, annotator_name: str
+) -> None:
+    lb_file = _get_labelbuddy_file(project_name, annotator_name)
+    positions = _get_doc_positions_in_db(lb_file)
+    for doc in doc_summaries:
+        md5 = doc["doc_md5"]
+        if md5 in positions:
+            doc.update(
+                {
+                    "position_in_labelbuddy_file": positions[md5]["position"],
+                    "labelbuddy_file": str(lb_file),
+                }
+            )
 
 
 def select_participants_annotations(
@@ -718,6 +714,7 @@ def get_report(
         and annotator_name is not None
         and pmcid is None
     ):
+        _add_positions_in_db(all_docs, project_name, annotator_name)
         key = lambda d: (
             d.get("position_in_labelbuddy_file", -1),
             d["pmcid"],
