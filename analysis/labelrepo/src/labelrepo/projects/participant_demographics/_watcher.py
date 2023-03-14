@@ -96,7 +96,8 @@ class _Watcher:
                     self.content = """<div>
                     There was an error while generating the report
                     </div>"""
-                websockets.broadcast(self.socket_connections, self.content)
+                for connection in self.socket_connections:
+                    await connection.send(self.content)
             await asyncio.sleep(self.delay)
 
     def _update_content(self) -> None:
