@@ -141,6 +141,7 @@ patients,_,participant_demographics,Jerome_Dockes,5413198,Alcohol dependence,34,
 patients,_,participant_demographics,Jerome_Dockes,7829678,Type 2 diabetes mellitus,53,,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
 patients,_,participant_demographics,kailu_song,7829678,Type 2 diabetes mellitus,53,,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
 patients,T2DM,participant_demographics,maximiliane_jousse,7829678,,53,,,,45.0,75.0,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
+healthy,experiment 1,participant_demographics,Jerome_Dockes,5902547,,41,16.0,,25.0,,,,2018,Incidental haptic sensations influence judgment of crimes
 healthy,_,participant_demographics,Jerome_Dockes,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
 healthy,_,participant_demographics,Sean_Moore,3775427,,102,36.0,21.5,66.0,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
 healthy,_,participant_demographics,kailu_song,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
