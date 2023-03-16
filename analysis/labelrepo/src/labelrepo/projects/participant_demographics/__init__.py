@@ -1,5 +1,4 @@
 from labelrepo.projects.participant_demographics._participant_demographics import (
-    AnnotationError,
     get_report,
     get_annotation_stacks_display,
     report_command,
@@ -12,7 +11,6 @@ from labelrepo.projects.participant_demographics._watcher import (
 )
 
 __all__ = [
-    "AnnotationError",
     "get_report",
     "get_annotation_stacks_display",
     "get_participant_demographics",

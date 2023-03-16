@@ -11,7 +11,7 @@ import pandas as pd
 import websockets
 
 from labelrepo.projects.participant_demographics import (
-    _participant_demographics,
+    _participant_demographics, _interpreter
 )
 
 
@@ -114,7 +114,7 @@ class _Watcher:
         metadata = json.loads(doc_result["metadata"])
 
         demo_labels = ", ".join(
-            map("'{}'".format, _participant_demographics._DEMOGRAPHICS_LABELS)
+            map("'{}'".format, _interpreter.demographics_labels())
         )
         annotations = self.connection.execute(
             f"""with annot as

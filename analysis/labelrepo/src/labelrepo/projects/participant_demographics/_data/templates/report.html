@@ -1,15 +1,21 @@
-{% macro sourced(data, doc, id, fmt='{}') %}
-    {% set has_source = "start_char" in data.get("source", {}) %}
-    {% if has_source %}
+{% macro sourced(attribute, doc, id, fmt='{}') %}
+{% if attribute.sources %}
     <span id="{{ id | md5 }}-{{ doc['doc_uid'] }}"
-          class="labelrepo-clickable" onclick="showBuddy(this)"
-          data-doc-id="doc-{{ doc['doc_uid'] }}"
-          data-annotation-stack-id="{{ doc['doc_uid'] }}-{{ data["source"]["start_char"] }}-{{ data['source']['end_char'] }}">
-    {%- endif -%}
-    {{ fmt.format(data["value"]) }}
-    {%- if has_source -%}
+        class="labelrepo-clickable" onclick="showBuddy(this)"
+        data-doc-id="doc-{{ doc['doc_uid'] }}"
+        data-annotation-stack-ids="
+            {%- for source in attribute.sources -%}
+            {%- if not loop.first -%}
+            ,
+            {%- endif -%}
+            anno-{{ source["start_char"] }}-{{ source["end_char"] }}-{{ doc["doc_uid"] -}}
+        {%- endfor -%}
+        " >
+{%- endif -%}
+{{ fmt.format(attribute.value) }}
+{%- if attribute.sources -%}
     </span>
-    {% endif %}
+{%- endif -%}
 {% endmacro %}
 
 {% macro label_color_style() %}
@@ -59,9 +65,10 @@ style="
                     {% endif %}
             {% for doc in documents %}
             <article id="doc-{{ doc["doc_uid"] }}" class="doc-participants labelrepo-card"
-                     {{ "data-has-valid-annotations" if doc["participants"]["count"] }}
-                     {{ "data-has-patients" if doc["has_patients"] }}
-                     {{ "data-has-warnings" if doc.get("warnings", []).__len__() }}
+                     {% if doc["participants"] and doc["participants"].tree.attributes["count"] -%}
+                      data-has-valid-annotations
+                     {%- endif %}
+                     {{ "data-has-warnings" if doc["warnings"] }}
                      {{ "data-extraction-failure" if doc["extraction_failed"] }} >
                 <header class="labelrepo-flow">
                     <h2><span class="labelrepo-unselectable">PMC</span>{{ doc["pmcid"] }}</h2>
@@ -87,7 +94,7 @@ style="
                     {% if doc.get("extraction_failed") %}
                     <div class="labelrepo-error-message">
                         <code class="labelrepo-pre-wrap">
-                        {{- doc.get("error_message", "Annotation error") -}}
+                        {{- doc.get("error_message", "Error") -}}
                         </code>
                     </div>
                     {% elif not doc["participants"] %}
@@ -95,52 +102,54 @@ style="
                         No participant information annotated in this document (yet!).
                     </p>
                     {% else %}
-                    {% if doc["participants"]["count"] %}
+                    {% if doc["participants"].tree.attributes["count"] %}
                     <p>
-                        <strong>{{ sourced(doc["participants"]["count"], doc, "total-count") }}</strong> participants
+                        <strong>{{ sourced(doc["participants"].tree.attributes["count"], doc, "total-count") }}</strong> participants
                     </p>
                     {% else %}
                     <div class="labelrepo-warning-message">
                         could not infer total number of participants.
                     </div>
                     {% endif %}
-                    {% for subgroup_name, subgroup in doc["participants"]["subgroups"].items() | sort %}
-                    <div class="participants-subgroup {{ subgroup["group_name"] }}-subgroup">
-                        <h3>{{ subgroup["group_name"] | capitalize }}
-                            {{ "participants" if subgroup["group_name"] == "healthy" }}
-                            {% if subgroup_name != subgroup["group_name"] %} &nbsp;
-                            <span class="group-label-extra-data">{{ subgroup["subgroup_name"] }}</span>
+                    {% for group_name, subgroup_name, subgroup in doc["participants"].subgroups() | sort %}
+                    {% set subgroup_id = "group-" + (group_name | md5) + "-subgroup-" + (subgroup_name | md5) %}
+                    <div class="participants-subgroup {{ group_name }}-subgroup">
+                        <h3>{{ group_name | capitalize }}
+                            {{ "participants" if group_name == "healthy" }}
+                            {% if subgroup_name != "_" %} &nbsp;
+                            <span class="group-label-extra-data">{{ subgroup_name }}</span>
                             {% endif %}
                         </h3>
-                        {% if 'diagnosis' in subgroup %}
+                        {% if "diagnosis" in subgroup.attributes %}
                         <p>
-                            Diagnosis: <strong>{{ sourced(subgroup["diagnosis"], doc, "diagnosis-" + subgroup_name ) }}</strong>
+                            Diagnosis: <strong>{{ sourced(subgroup.attributes["diagnosis"], doc, "diagnosis-" + subgroup_id ) }}</strong>
                         </p>
-                        {% elif subgroup["group_name"] == "patients" %}
+                        {% elif group_name == "patients" %}
                         <div class="labelrepo-warning-message">
                             missing diagnosis.
                         </div>
                         {% endif %}
                         <p>
-                            {% if subgroup["count"] %}
-                            <strong>{{ sourced(subgroup["count"], doc, "count-" + subgroup_name) }}</strong>
-                            {{ "participants" if subgroup["group_name"] == "healthy" else "patients" -}}
+                            {% if subgroup.attributes["count"] %}
+                            <strong>{{ sourced(subgroup.attributes["count"], doc, "count-" + subgroup_id) }}</strong>
+                            {{ "participants" if group_name == "healthy" else "patients" -}}
                             {% else %}
                             <div class="labelrepo-warning-message">
                                 could not infer the number of participants in this subgroup.
                             </div>
                             {%- endif -%}
-                            {%- for sex in ("female", "male") if sex in subgroup and "count" in subgroup[sex] -%},
-                            <strong>{{ sourced(subgroup[sex]["count"], doc, "count-" + subgroup_name + "-" + sex) }}</strong> {{ sex }}s
+                            {%- for sex in ("female", "male") if sex in subgroup.children and "count" in subgroup.children[sex].attributes -%},
+                            {% set sex_group = subgroup.children[sex] %}
+                            <strong>{{ sourced(sex_group.attributes["count"], doc, sex + "-count-" + subgroup_id  ) }}</strong> {{ sex }}s
                             {%- endfor -%}
-                            {% if ('age minimum' in subgroup) or ('age maximum' in subgroup) -%}
+                            {% if ('age minimum' in subgroup.attributes) or ('age maximum' in subgroup.attributes) -%}
                             <br/>Age range:
-                            <strong>{{ sourced(subgroup.get("age minimum", {"value": "??"}), doc, "age-min-" + subgroup_name) }}</strong> –
-                            <strong>{{ sourced(subgroup.get("age maximum", {"value": "??"}), doc, "age-max-" + subgroup_name) }}</strong> years
+                            <strong>{{ sourced(subgroup.attributes.get("age minimum", "?"), doc, "age-min-" + subgroup_id) }}</strong> –
+                            <strong>{{ sourced(subgroup.attributes.get("age maximum", "?"), doc, "age-max-" + subgroup_id) }}</strong> years
                             {%- endif -%}
                             {% for metric in ['age mean', 'age median'] %}
-                            {% if metric in subgroup %}
-                            <br/>{{ metric | capitalize }}: <strong>{{ sourced(subgroup[metric], doc, metric + "-" + subgroup_name, '{:.1f}') }}</strong> years
+                            {% if metric in subgroup.attributes %}
+                            <br/>{{ metric | capitalize }}: <strong>{{ sourced(subgroup.attributes[metric], doc, metric + "-" + subgroup_id, '{:.1f}') }}</strong> years
                             {% endif %}
                             {% endfor %}
                         </p>
@@ -149,9 +158,19 @@ style="
                     {% endif %}
                 </div>
                 <footer>
+                    {% if doc["participants"] and not doc["extraction_failed"] %}
+                    {% set tree = doc["participants"].tree %}
+                    {% include "participant_tree.html" %}
+                    {% endif %}
+
                     {% for annotation_stack in doc["annotation_stacks"] %}
-                    <div class="hidden-annotation-stack" id="{{ doc['doc_uid'] }}-{{ annotation_stack["start_char"] }}-{{ annotation_stack["end_char"] }}"
-                         {{ "data-is-selected='true'" if doc["extraction_failed"] and doc.get("error_positions", ()).__contains__((annotation_stack["start_char"], annotation_stack["end_char"])) }}>
+                    <div class="hidden-annotation-stack" id="anno-{{ annotation_stack["start_char"] }}-{{ annotation_stack["end_char"] }}-{{ doc['doc_uid'] }}"
+                         {% if doc["extraction_failed"] and "participants" in doc %}
+                         {% if doc["participants"].error.error_positions.__contains__((annotation_stack["start_char"], annotation_stack["end_char"])) %}
+                         data-is-selected="true"
+                         {% endif %}
+                         {% endif %}
+                         >
                     {% include "annotation_stack.html" %}
                     </div>
                     {% endfor %}

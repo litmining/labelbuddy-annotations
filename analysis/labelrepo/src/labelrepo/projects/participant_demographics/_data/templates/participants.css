@@ -1,6 +1,7 @@
 .labelrepo-unselectable {
     user-select: none;
 }
+
 .participants-report h1 {
     margin-block-start: 2rem;
     margin-block-end: 2rem;
@@ -13,6 +14,7 @@
 
 .participants-report footer {
     border: 0;
+    padding-block-end: 0.5rem;
 }
 
 .participants-report :is(h2, h3) {
@@ -59,7 +61,7 @@
 }
 
 .labelrepo-wrapper {
-    max-width: 80ch;
+    max-width: var(--max-width, 80ch);
     margin-left: auto;
     margin-right: auto;
 }
@@ -68,13 +70,14 @@
     background-color: #E8E8E8;
 }
 
-.doc-participants[data-has-valid-annotations] > header {
+.doc-participants[data-has-valid-annotations]>header {
     background-color: #98DFA7;
 }
 
-.doc-participants[data-has-warnings] > header {
+.doc-participants[data-has-warnings]>header {
     background-color: #F1A83A;
 }
+
 .doc-participants[data-extraction-failure]>header {
     background-color: #FF7C76;
 }
@@ -108,10 +111,11 @@
 .hidden-annotation-stack {
     display: none;
 }
+
 .hidden-annotation-stack .labelrepo-card {
     box-shadow: none;
     margin: 0;
-    padding-block-start:0;
+    padding-block-start: 0;
 }
 
 .hidden-annotation-stack[data-is-selected="true"] {
@@ -178,7 +182,35 @@
     white-space: pre-wrap;
 }
 
-.labelrepo-warning-message, .labelrepo-error-message {
+.labelrepo-pre-scroll {
+    white-space: pre;
+    overflow: auto;
+}
+
+.labelrepo-debug-details {
+    font-family: monospace;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+}
+
+.labelrepo-debug-details summary {
+    font-family: monospace;
+    list-style: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-block-end: 0.25rem;
+}
+
+.labelrepo-debug-details details>summary::before {
+    content: "Show ";
+}
+
+.labelrepo-debug-details details[open]>summary::before {
+    content: "Hide ";
+}
+
+.labelrepo-warning-message,
+.labelrepo-error-message {
     font-family: monospace;
     margin-block-start: 0.5rem;
     margin-block-end: 0.5rem;
@@ -190,11 +222,24 @@
     font-size: large;
 }
 
-.labelrepo-warning-message::before{
+.labelrepo-warning-message::before {
     content: "Warning";
 }
 
-.labelrepo-error-message::before{
+.labelrepo-error-message::before {
     content: "Error\A";
     white-space: pre;
+}
+
+.labelrepo-participant-node>.node-contents {
+    padding-inline-start: 2ch;
+}
+
+.labelrepo-participant-node h3 {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.labelrepo-key-value-pair {
+    display: inline-block;
 }
