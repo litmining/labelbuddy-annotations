@@ -1,238 +1,237 @@
-project_name,annotator_name,pmcid,group_name,subgroup_name,count,age mean,age minimum,age maximum,age range,age median,diagnosis,female count,male count,publication_year,title
-autism_mri,David_Kennedy,9230060,patients,va,6,,,,,,criminals committing affective,,6.0,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
-participant_demographics,Jerome_Dockes,9230060,patients,_,20,,,,,,offenders,,20.0,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
-participant_demographics,Flemming_Kondrup_2,3520927,healthy,_,40,,18.0,23.0,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
-participant_demographics,Jerome_Dockes,3520927,healthy,study 1,1220,,,,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
-participant_demographics,Jerome_Dockes,3002948,healthy,phobic prone,15,39.2,,,,,,6.0,9.0,2010,Affective Response to a Loved One's Pain: Insula Activity as a Function of Individual Differences
-participant_demographics,Jerome_Dockes,2561002,healthy,rh,19,24.7,19.0,30.0,,,,12.0,7.0,2008,Cortical Activations in Humans Grasp-Related Areas Depend on Hand Used and Handedness
-participant_demographics,Jerome_Dockes,7989009,healthy,_,29,23.6,21.0,33.0,,,,13.0,16.0,2021,Framing and self-responsibility modulate brain activities in decision escalation
-participant_demographics,Jerome_Dockes,5776089,healthy,_,21,25.77,20.0,40.0,,,,,21.0,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
-participant_demographics,Sean_Moore,5776089,healthy,_,22,25.769999999999996,20.0,40.0,,,,,22.0,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
-participant_demographics,kailu_song,5776089,healthy,_,21,25.77,20.0,40.0,,,,,21.0,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
-participant_demographics,Jerome_Dockes,4029023,healthy,_,10,27.72,,,,,,3.0,7.0,2014,The compensatory dynamic of inter-hemispheric interactions in visuospatial attention revealed using rTMS and fMRI
-participant_demographics,kailu_song,4029023,healthy,_,10,27.72,,,,,,3.0,7.0,2014,The compensatory dynamic of inter-hemispheric interactions in visuospatial attention revealed using rTMS and fMRI
-participant_demographics,Jerome_Dockes,4318429,healthy,_,18,,20.0,32.0,,,,9.0,9.0,2015,Seeking pleasant touch: neural correlates of behavioral preferences for skin stroking
-participant_demographics,kailu_song,4318429,healthy,_,18,,20.0,32.0,,,,9.0,9.0,2015,Seeking pleasant touch: neural correlates of behavioral preferences for skin stroking
-participant_demographics,Jerome_Dockes,6290711,patients,_,26,26.8,,,,,Psychogenic erectile dysfunction,,26.0,2017,Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
-participant_demographics,kailu_song,6290711,patients,_,26,26.8,,,,,Psychogenic erectile dysfunction,,26.0,2017,Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
-participant_demographics,Jerome_Dockes,3502502,healthy,Würzburg,24,26.0,23.0,34.0,,,,12.0,12.0,2012,A Brain Network Processing the Age of Faces
-participant_demographics,calvin_surbey,3502502,healthy,_,24,26.0,23.0,34.0,,,,12.0,12.0,2012,A Brain Network Processing the Age of Faces
-participant_demographics,Jerome_Dockes,7260173,healthy,tsd,39,33.5,,,,,,17.0,22.0,2020,Two nights of recovery sleep restores hippocampal connectivity but not episodic memory after total sleep deprivation
-participant_demographics,Jerome_Dockes,5324609,healthy,_,15,23.8,,,,,,8.0,7.0,2017,The role of the hippocampus in generalizing configural relationships
-participant_demographics,kailu_song,5324609,healthy,_,15,23.8,,,,,,8.0,7.0,2017,The role of the hippocampus in generalizing configural relationships
-participant_demographics,Jerome_Dockes,8752963,healthy,_,110,,,,,,,,,2021,Cortical correlation structure of aperiodic neuronal population activity
-participant_demographics,Jerome_Dockes,3554651,healthy,proficient,11,28.73,19.0,46.0,,,,8.0,3.0,2013,Lexical Processing in Deaf Readers: An fMRI Investigation of Reading Proficiency
-participant_demographics,Jerome_Dockes,5218407,healthy,_,17,25.0,19.0,30.0,,,,10.0,7.0,2017,Predicting the Multisensory Consequences of One’s Own Action: BOLD Suppression in Auditory and Visual Cortices
-participant_demographics,Jerome_Dockes,6854061,patients,_,121,,,,,,panic disorder with agoraphobia,,,2019,Association of NPSR1 gene variation and neural activity in patients with panic disorder and agoraphobia and healthy controls
-participant_demographics,Jerome_Dockes,3147157,healthy,_,20,24.4,,,,,,8.0,12.0,2011,Neural Underpinnings of Distortions in the Experience of Time Across Senses
-participant_demographics,kailu_song,3147157,healthy,_,20,24.4,19.0,35.0,,,,8.0,12.0,2011,Neural Underpinnings of Distortions in the Experience of Time Across Senses
-participant_demographics,Jerome_Dockes,2775905,healthy,_,18,26.7,18.0,60.0,,22.5,,,,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
-participant_demographics,calvin_surbey,2775905,healthy,_,22,26.7,18.0,60.0,,22.5,,9.0,13.0,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
-participant_demographics,Jerome_Dockes,7272423,healthy,post-partum,25,,,,,,,25.0,,2020,Altered neural substrates within cognitive networks of postpartum women during working memory process and resting-state
-participant_demographics,Jerome_Dockes,8544331,patients,_,18,,55.0,,,,neovascular age-related macular degeneration,9.0,9.0,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
-participant_demographics,kailu_song,8544331,patients,_,18,,55.0,,,,neovascular age-related macular degeneration,9.0,9.0,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
-participant_demographics,Jerome_Dockes,4115625,healthy,_,272,24.454779411764704,18.0,68.0,,,,149.0,123.0,2014,Gender differences in the temporal voice areas
-participant_demographics,kailu_song,4115625,healthy,_,272,24.454779411764704,18.0,68.0,,,,149.0,123.0,2014,Gender differences in the temporal voice areas
-participant_demographics,Jerome_Dockes,4473263,patients,_,32,62.0,,,,,chronic left-hemisphere stroke,5.0,27.0,2015,Altered resting-state network connectivity in stroke patients with and without apraxia of speech
-participant_demographics,kailu_song,4473263,patients,_,32,62.0,,,,,chronic left-hemisphere stroke,5.0,27.0,2015,Altered resting-state network connectivity in stroke patients with and without apraxia of speech
-participant_demographics,Jerome_Dockes,4075342,healthy,_,12,38.0,23.0,60.0,,,,5.0,7.0,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
-participant_demographics,Sean_Moore,4075342,healthy,_,12,38.0,23.0,60.0,,,,5.0,7.0,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
-participant_demographics,kailu_song,4075342,healthy,_,12,38.0,23.0,60.0,,,,5.0,7.0,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
-participant_demographics,Jerome_Dockes,3447931,patients,_,20,,,,,,amyotrophic lateral sclerosis,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
-participant_demographics,kailu_song,3447931,patients,_,20,,,,,,amyotrophic lateral sclerosis,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
-participant_demographics,Jerome_Dockes,3984441,patients,_,16,,,,,,dementia with Lewy bodies,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
-participant_demographics,kailu_song,3984441,patients,_,16,,,,,,dementia with Lewy bodies,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
-participant_demographics,Jerome_Dockes,4174863,patients,_,157,,,,,,incarcerated,157.0,,2014,Neural correlates of moral and non-moral emotion in female psychopathy
-participant_demographics,kailu_song,4174863,patients,_,157,,,,,,incarcerated,157.0,,2014,Neural correlates of moral and non-moral emotion in female psychopathy
-participant_demographics,Jerome_Dockes,2144768,healthy,_,18,23.67,19.0,35.0,,,,9.0,9.0,2007,What Are You Feeling? Using Functional Magnetic Resonance Imaging to Assess the Modulation of Sensory and Affective Responses during Empathy for Pain
-participant_demographics,kailu_song,2144768,healthy,be,23,27.69,,,,,,19.0,4.0,2007,What Are You Feeling? Using Functional Magnetic Resonance Imaging to Assess the Modulation of Sensory and Affective Responses during Empathy for Pain
-participant_demographics,Jerome_Dockes,8785614,patients,ais,26,,,,,,arterial ischemic stroke,,,2021,"Frontal interhemispheric structural connectivity, attention, and executive function in children with perinatal stroke"
-participant_demographics,Jerome_Dockes,9108497,healthy,_,134,5.34,5.08,5.22,,,,62.0,72.0,2022,Feasibility of FreeSurfer Processing for T1-Weighted Brain Images of 5-Year-Olds: Semiautomated Protocol of FinnBrain Neuroimaging Lab
-participant_demographics,Jerome_Dockes,4017227,patients,_,23,,,,,,Mesial temporal lobe epilepsy,,,2014,Atypical language organization in temporal lobe epilepsy revealed by a passive semantic paradigm
-participant_demographics,kailu_song,4017227,patients,_,23,,,,,,Mesial temporal lobe epilepsy,,,2014,Atypical language organization in temporal lobe epilepsy revealed by a passive semantic paradigm
-participant_demographics,Jerome_Dockes,5460048,patients,_,75,19.38,18.0,23.0,,,chronic dieters,75.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
-participant_demographics,kailu_song,5460048,patients,_,75,19.38,18.0,23.0,,,chronic dieters,75.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
-participant_demographics,Jerome_Dockes,4352055,healthy,dataset 1,20,,,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
-participant_demographics,kailu_song,4352055,healthy,_,19,,,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
-participant_demographics,Jerome_Dockes,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
-participant_demographics,Sean_Moore,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
-participant_demographics,kailu_song,7649291,healthy,_,12,25.8,,,,,,7.0,5.0,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
-participant_demographics,Jerome_Dockes,6344389,healthy,_,16,22.5,,,,,,8.0,8.0,2018,Explaining the neural activity distribution associated with discrete movement sequences: Evidence for parallel functional systems
-participant_demographics,kailu_song,6344389,healthy,_,16,22.5,,,,,,8.0,8.0,2018,Explaining the neural activity distribution associated with discrete movement sequences: Evidence for parallel functional systems
-participant_demographics,Jerome_Dockes,6246657,patients,mdd,40,,,,,,major depressive disorder,,,2018,Decreased Functional Connectivity in Insular Subregions in Depressive Episodes of Bipolar Disorder and Major Depressive Disorder
-participant_demographics,calvin_surbey,6246657,patients,Bipolar Disorder,21,,16.0,48.0,,,,,,2018,Decreased Functional Connectivity in Insular Subregions in Depressive Episodes of Bipolar Disorder and Major Depressive Disorder
-participant_demographics,Jerome_Dockes,7838677,patients,amci,11,,65.0,81.0,,,amnestic mild cognitive impairment,7.0,4.0,2020,The Human Brain Representation of Odor Identification in Amnestic Mild Cognitive Impairment and Alzheimer's Dementia of Mild Degree
-participant_demographics,Jerome_Dockes,7430162,healthy,_,13,28.4,19.0,45.0,,,,,,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
-participant_demographics,Sean_Moore,7430162,healthy,_,13,28.4,19.0,45.0,,,,7.0,6.0,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
-participant_demographics,kailu_song,7430162,healthy,_,13,28.4,19.0,45.0,,,,,,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
-participant_demographics,Jerome_Dockes,8318202,healthy,young,29,,19.0,30.0,,,,,,2020,Age-Related Differences in Auditory Cortex Activity During Spoken Word Recognition
-participant_demographics,kailu_song,8318202,healthy,young,29,23.8,19.0,30.0,,,,19.0,10.0,2020,Age-Related Differences in Auditory Cortex Activity During Spoken Word Recognition
-participant_demographics,Jerome_Dockes,5390693,healthy,_,233,16.1,9.9,26.6,,,,117.0,116.0,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
-participant_demographics,kailu_song,5390693,healthy,_,233,16.1,9.9,26.6,,,,117.0,116.0,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
-participant_demographics,maximiliane_jousse,5390693,healthy,_,233,16.1,9.9,26.6,,,,117.0,116.0,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
-participant_demographics,Jerome_Dockes,2995581,healthy,experiment 1,12,,,,,,,,,2010,Face-Specific Resting Functional Connectivity between the Fusiform Gyrus and Posterior Superior Temporal Sulcus
-participant_demographics,calvin_surbey,2995581,healthy,_,12,,,,,,,,,2010,Face-Specific Resting Functional Connectivity between the Fusiform Gyrus and Posterior Superior Temporal Sulcus
-participant_demographics,Jerome_Dockes,7563756,healthy,_,29,,,,,,,,,2020,Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception
-participant_demographics,kailu_song,7563756,healthy,_,29,,,,,,,,,2020,Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception
-participant_demographics,Jerome_Dockes,6016936,healthy,experiment 1,14,,,,,,,,,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
-participant_demographics,joon_hong,6016936,healthy,_,24,,,,,,,15.0,9.0,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
-participant_demographics,kailu_song,6016936,healthy,experiment 1,14,,,,,,,,,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
-participant_demographics,Jerome_Dockes,3334814,healthy,_,103,32.5,,,,,,51.0,52.0,2012,The effects of age on cerebral activations: internally versus externally driven processes
-participant_demographics,joon_hong,3334814,healthy,_,103,32.5,18.0,72.0,,,,51.0,52.0,2012,The effects of age on cerebral activations: internally versus externally driven processes
-participant_demographics,kailu_song,3334814,healthy,_,103,32.5,,,,,,51.0,52.0,2012,The effects of age on cerebral activations: internally versus externally driven processes
-participant_demographics,Jerome_Dockes,7005761,healthy,_,26,11.4,8.0,16.0,,,,9.0,17.0,2012,Effects of the DRD4 genotype on neural networks associated with executive functions in children and adolescents
-participant_demographics,kailu_song,7005761,healthy,_,26,11.4,8.0,16.0,,,,9.0,17.0,2012,Effects of the DRD4 genotype on neural networks associated with executive functions in children and adolescents
-participant_demographics,Jerome_Dockes,7745153,healthy,_,46,22.61,,,,,,14.0,32.0,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
-participant_demographics,joon_hong,7745153,healthy,_,46,22.61,,,,,,14.0,32.0,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
-participant_demographics,kailu_song,7745153,healthy,_,46,22.61,,,,,,14.0,32.0,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
-participant_demographics,Jerome_Dockes,4265725,patients,_,18,30.4,,,,,Autism spectrum conditions,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
-participant_demographics,joon_hong,4265725,patients,ASC,18,30.4,,,,,ASC,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
-participant_demographics,kailu_song,4265725,patients,_,18,30.4,,,,,Autism spectrum conditions,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
-participant_demographics,Jerome_Dockes,5665859,healthy,_,15,,60.0,70.0,,,,,,2017,A Study of the Brain Functional Network of Post-Stroke Depression in Three Different Lesion Locations
-participant_demographics,kailu_song,5665859,healthy,_,15,,60.0,70.0,,,,,,2017,A Study of the Brain Functional Network of Post-Stroke Depression in Three Different Lesion Locations
-participant_demographics,Jerome_Dockes,8828908,healthy,_,216,,,,,,,,,2021,Default Mode Network Alterations Induced by Childhood Trauma Correlate With Emotional Function and SLC6A4 Expression
-participant_demographics,Jerome_Dockes,8172304,healthy,_,40,,25.0,63.0,,,,32.0,8.0,2021,Research on Characteristic of Chronic Spontaneous Urticaria Based on Multiscale Entropy
-participant_demographics,Jerome_Dockes,8978988,patients,_,1,,,,,,GNE myopathy with congenital thrombocytopenia,,1.0,2022,Novel compound heterozygous mutations in a GNE myopathy with congenital thrombocytopenia: A case report and literature review
-participant_demographics,Jerome_Dockes,5460049,healthy,_,56,34.4,21.0,60.0,,,,2.0,54.0,2017,Tribal love: the neural correlates of passionate engagement in football fans
-participant_demographics,Jerome_Dockes,6878729,patients,_,8,,10.0,30.0,,,right-sided cerebral palsy,5.0,3.0,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
-participant_demographics,kailu_song,6878729,patients,_,8,,10.0,30.0,,,right-sided cerebral palsy,5.0,3.0,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
-participant_demographics,maximiliane_jousse,6878729,patients,Cerebral Palsy,8,,10.0,30.0,,,right-sided cerebral palsy,5.0,3.0,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
-participant_demographics,Jerome_Dockes,8782893,healthy,_,79,,,,,,,,,2021,An examination of the relationships between attention/deficit hyperactivity disorder symptoms and functional connectivity over time
-participant_demographics,Jerome_Dockes,6347794,patients,_,38,,,,,,ADHD,20.0,18.0,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
-participant_demographics,kailu_song,6347794,patients,_,38,,,,,,ADHD,20.0,18.0,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
-participant_demographics,maximiliane_jousse,6347794,patients,methylphenidate-naïve adults with childhood-onset ADHD,38,40.5,,,,,methylphenidate-naïve adults with childhood-onset ADHD,20.0,18.0,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
-participant_demographics,Jerome_Dockes,7156375,healthy,_,33,25.242,,,,,,15.0,18.0,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
-participant_demographics,joon_hong,7156375,healthy,_,33,25.242,,,,,,15.0,18.0,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
-participant_demographics,kailu_song,7156375,healthy,_,33,25.242,,,,,,15.0,18.0,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
-participant_demographics,Jerome_Dockes,4330553,healthy,_,23,22.0,,,,,,5.0,18.0,2013,Brain correlates of subjective freedom of choice
-participant_demographics,kailu_song,4330553,healthy,_,23,22.0,,,,,,5.0,18.0,2013,Brain correlates of subjective freedom of choice
-participant_demographics,Jerome_Dockes,6989437,healthy,_,13,,20.0,22.0,,,,5.0,8.0,2020,Left Amygdala Regulates the Cerebral Reading Network During Fast Emotion Word Processing
-participant_demographics,Xiaotian_Hua,6989437,healthy,_,96,,20.0,22.0,,,,,,2020,Left Amygdala Regulates the Cerebral Reading Network During Fast Emotion Word Processing
-participant_demographics,Jerome_Dockes,6328158,healthy,_,11,33.1,25.0,47.0,,,,3.0,8.0,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
-participant_demographics,Sean_Moore,6328158,healthy,_,11,33.1,25.0,47.0,,,,3.0,8.0,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
-participant_demographics,kailu_song,6328158,healthy,_,11,33.1,25.0,47.0,,,,3.0,8.0,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
-participant_demographics,Jerome_Dockes,3511796,healthy,smokers,45,,,,,,,,,2012,Altered spontaneous activity in young chronic cigarette smokers revealed by regional homogeneity
-participant_demographics,kailu_song,3511796,healthy,_,44,,,,,,,,,2012,Altered spontaneous activity in young chronic cigarette smokers revealed by regional homogeneity
-participant_demographics,Jerome_Dockes,4190683,healthy,_,30,,10.0,17.0,,,,,,2013,Pattern classification of response inhibition in ADHD: Toward the development of neurobiological markers for ADHD
-participant_demographics,Jerome_Dockes,3362560,healthy,_,24,,,,,,,12.0,12.0,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
-participant_demographics,Sean_Moore,3362560,healthy,_,24,,,,,,,12.0,12.0,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
-participant_demographics,kailu_song,3362560,healthy,_,24,,,,,,,12.0,12.0,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
-participant_demographics,Jerome_Dockes,6382839,patients,_,17,,,,,,panic disorder,15.0,2.0,2019,Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
-participant_demographics,kailu_song,6382839,patients,_,17,,,,,,panic disorder,15.0,2.0,2019,Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
-participant_demographics,Jerome_Dockes,2648877,healthy,_,18,32.0,,,,,,5.0,13.0,2008,Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
-participant_demographics,kailu_song,2648877,healthy,_,18,32.0,,,,,,5.0,13.0,2008,Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
-participant_demographics,Jerome_Dockes,6908505,patients,_,70,37.0,18.0,65.0,,,bipolar disorder,,,2019,The BDNF Val66Met Polymorphism Has No Effect on Encoding-Related Hippocampal Response But Influences Recall in Remitted Patients With Bipolar Disorder
-participant_demographics,Jerome_Dockes,8785646,healthy,_,15,,,,,,,,,2021,Differential mechanisms of posterior cingulate cortex downregulation and symptom decreases in posttraumatic stress disorder and healthy individuals using real‐time fMRI neurofeedback
-participant_demographics,Jerome_Dockes,8379626,healthy,_,67,15.6,,,,,,31.0,36.0,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
-participant_demographics,kailu_song,8379626,healthy,_,67,15.6,,,,,,31.0,36.0,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
-participant_demographics,Jerome_Dockes,5279905,patients,_,16,,8.0,18.0,,,autism spectrum disorder,,16.0,2017,Young adolescents with autism show abnormal joint attention network: A gaze contingent fMRI study
-participant_demographics,Jerome_Dockes,2494616,patients,_,13,52.92,32.0,75.0,,,phantom limb pain,2.0,11.0,2008,"Phantom limb pain, cortical reorganization and the therapeutic effect of mental imagery"
-participant_demographics,Jerome_Dockes,3877773,patients,_,17,,,,,,Tourette syndrome,,,2013,Abnormal baseline brain activity in drug-naïve patients with Tourette syndrome: a resting-state fMRI study
-participant_demographics,Jerome_Dockes,6197719,patients,_,44,,,,,,schizophrenia,,,2018,"Disrupted asymmetry of inter- and intra-hemispheric functional connectivity in patients with drug-naive, first-episode schizophrenia and their unaffected siblings"
-participant_demographics,kailu_song,6197719,patients,_,44,,,,,,schizophrenia,,,2018,"Disrupted asymmetry of inter- and intra-hemispheric functional connectivity in patients with drug-naive, first-episode schizophrenia and their unaffected siblings"
-participant_demographics,Jerome_Dockes,8018944,healthy,fmri experiment,30,23.0,,,,,,21.0,9.0,2021,Role of the fronto-parietal cortex in prospective action judgments
-participant_demographics,Jerome_Dockes,3409150,healthy,_,18,25.11,21.0,33.0,,,,,18.0,2012,Intense Passionate Love Attenuates Cigarette Cue-Reactivity in Nicotine-Deprived Smokers: An fMRI Study
-participant_demographics,kailu_song,3409150,healthy,_,18,25.11,21.0,33.0,,,,,18.0,2012,Intense Passionate Love Attenuates Cigarette Cue-Reactivity in Nicotine-Deprived Smokers: An fMRI Study
-participant_demographics,Jerome_Dockes,6136263,healthy,_,20,,18.0,31.0,,,,19.0,1.0,2018,Functional Neuroanatomy of Second Language Sentence Comprehension: An fMRI Study of Late Learners of American Sign Language
-participant_demographics,Jerome_Dockes,5548834,healthy,_,47,19.62,,,,,,47.0,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
-participant_demographics,kailu_song,5548834,healthy,_,47,19.62,,,,,,47.0,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
-participant_demographics,Jerome_Dockes,3182403,patients,_,21,60.8,44.0,73.0,,,Parkinson's disease,8.0,13.0,2011,A Perfusion MRI Study of Emotional Valence and Arousal in Parkinson's Disease
-participant_demographics,Jerome_Dockes,5413198,patients,_,34,,,,,,Alcohol dependence,,34.0,2017,Dorsolateral prefrontal cortex contributes to the impaired behavioral adaptation in alcohol dependence☆
-participant_demographics,Jerome_Dockes,7829678,patients,_,53,,,,,,Type 2 diabetes mellitus,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
-participant_demographics,kailu_song,7829678,patients,_,53,,,,,,Type 2 diabetes mellitus,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
-participant_demographics,maximiliane_jousse,7829678,patients,T2DM,53,,45.0,75.0,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
-participant_demographics,Jerome_Dockes,3775427,healthy,_,102,21.5,20.0,23.0,,,,,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
-participant_demographics,Sean_Moore,3775427,healthy,_,102,21.5,20.0,23.0,,,,66.0,36.0,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
-participant_demographics,kailu_song,3775427,healthy,_,102,21.5,20.0,23.0,,,,,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
-participant_demographics,Jerome_Dockes,3483694,healthy,_,23,,23.0,41.0,,,,17.0,6.0,2012,Neural activity associated with self-reflection
-participant_demographics,kailu_song,3483694,healthy,_,23,,23.0,41.0,,,,17.0,6.0,2012,Neural activity associated with self-reflection
-participant_demographics,maximiliane_jousse,3483694,healthy,_,25,,23.0,41.0,,,,17.0,8.0,2012,Neural activity associated with self-reflection
-participant_demographics,Jerome_Dockes,3742334,patients,_,10,,,,,,chronic marijuana use,2.0,8.0,2012,A Preliminary Study of Functional Brain Activation among Marijuana Users during Performance of a Virtual Water Maze Task
-participant_demographics,Jerome_Dockes,2748718,healthy,_,30,,,,,,,16.0,14.0,2009,The Neural Correlates of Religious and Nonreligious Belief
-participant_demographics,kailu_song,2748718,healthy,_,30,,,,,,,16.0,14.0,2009,The Neural Correlates of Religious and Nonreligious Belief
-participant_demographics,Jerome_Dockes,9407088,patients,abide 1,539,,,,,,autism spectrum disorder,,,2022,Custom 3D fMRI Registration Template Construction Method Based on Time-Series Fusion
-participant_demographics,Jerome_Dockes,4838249,healthy,_,15,22.33,,,,,,,15.0,2016,The Role of the Insular Cortex in Retaliation
-participant_demographics,calvin_surbey,4838249,healthy,_,15,22.33,,,,,,,15.0,2016,The Role of the Insular Cortex in Retaliation
-participant_demographics,Jerome_Dockes,5030332,patients,_,21,,,,,,posttraumatic stress disorder,,,2016,Alpha oscillation neurofeedback modulates amygdala complex connectivity and arousal in posttraumatic stress disorder
-participant_demographics,kailu_song,5030332,patients,_,21,,,,,,posttraumatic stress disorder,,,2016,Alpha oscillation neurofeedback modulates amygdala complex connectivity and arousal in posttraumatic stress disorder
-participant_demographics,Jerome_Dockes,6847157,healthy,_,31,24.3,20.0,29.0,,,,21.0,10.0,2019,Laughter is in the air: involvement of key nodes of the emotional motor system in the anticipation of tickling
-participant_demographics,Jerome_Dockes,6024199,patients,_,21,21.5,18.0,31.0,,,posttraumatic stress disorder,15.0,6.0,2018,Neural responses to emotional involuntary memories in posttraumatic stress disorder: Differences in timing and activity
-participant_demographics,Jerome_Dockes,5068584,healthy,_,56,24.3,,,,,,56.0,,2015,Role of emotional processing in depressive responses to sex-hormone manipulation: a pharmacological fMRI study
-participant_demographics,Jerome_Dockes,7194032,patients,_,26,,8.0,18.0,,,Autism spectrum disorder,,,2020,Social Attention in Autism: Neural Sensitivity to Speech Over Background Noise Predicts Encoding of Social Information
-participant_demographics,Jerome_Dockes,4319399,healthy,_,284,25.0,,,,,,140.0,144.0,2015,Between-hand difference in ipsilateral deactivation is associated with hand lateralization: fMRI mapping of 284 volunteers balanced for handedness
-participant_demographics,calvin_surbey,4319399,healthy,_,142,26.8,,,,,,71.0,71.0,2015,Between-hand difference in ipsilateral deactivation is associated with hand lateralization: fMRI mapping of 284 volunteers balanced for handedness
-participant_demographics,Jerome_Dockes,8550949,healthy,_,35,27.12,,,,,,9.0,26.0,2019,The neural and molecular basis of working memory function in psychosis: a multimodal PET-fMRI study
-participant_demographics,Jerome_Dockes,6528067,healthy,_,10,20.8,,,,,,6.0,4.0,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
-participant_demographics,kailu_song,6528067,healthy,_,10,,,,,,,6.0,4.0,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
-participant_demographics,Jerome_Dockes,7875881,patients,_,19,,18.0,55.0,,,major depressive disorder,,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
-participant_demographics,calvin_surbey,7875881,patients,_,19,,18.0,55.0,,,,,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
-participant_demographics,Jerome_Dockes,3869649,healthy,_,19,22.8,19.0,31.0,,,,9.0,10.0,2013,fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
-participant_demographics,kailu_song,3869649,healthy,_,19,22.8,19.0,31.0,,,,9.0,10.0,2013,fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
-participant_demographics,Jerome_Dockes,3407245,healthy,_,10,,22.0,43.0,,,,5.0,5.0,2012,"Functional Anatomy of the Masking Level Difference, an fMRI Study"
-participant_demographics,kailu_song,3407245,healthy,_,10,,22.0,43.0,,,,5.0,5.0,2012,"Functional Anatomy of the Masking Level Difference, an fMRI Study"
-participant_demographics,Jerome_Dockes,3660406,healthy,young,19,22.6,18.0,27.0,,,,14.0,5.0,2013,Action Prediction in Younger versus Older Adults: Neural Correlates of Motor Familiarity
-participant_demographics,Jerome_Dockes,5394595,patients,_,42,,,,,,bronchial asthma without acute attacks,,,2017,Group Cognitive Behavior Therapy Reversed Insula Subregions Functional Connectivity in Asthmatic Patients
-participant_demographics,Jerome_Dockes,2151069,healthy,_,12,25.4,20.0,40.0,,,,6.0,6.0,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
-participant_demographics,Sean_Moore,2151069,healthy,_,12,25.4,20.0,40.0,,,,6.0,6.0,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
-participant_demographics,kailu_song,2151069,healthy,_,12,25.4,20.0,40.0,,,,6.0,6.0,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
-participant_demographics,Jerome_Dockes,6820536,patients,_,20,46.4,22.0,70.0,,,fibromyalgia,20.0,,2019,Functional connectivity of music-induced analgesia in fibromyalgia
-participant_demographics,kailu_song,6820536,patients,_,20,46.4,22.0,70.0,,,fibromyalgia,20.0,,2019,Functional connectivity of music-induced analgesia in fibromyalgia
-participant_demographics,Jerome_Dockes,4274095,healthy,_,20,5.8,5.2,6.8,,,,,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
-participant_demographics,kailu_song,4274095,healthy,_,20,5.8,5.2,6.8,,,,,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
-participant_demographics,maximiliane_jousse,4274095,healthy,_,20,5.8,5.2,6.8,,,,,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
-participant_demographics,Jerome_Dockes,6678781,patients,_,61,,,,,,Pedophilic Child Sexual Offenders,,61.0,2019,Two Sides of One Coin: A Comparison of Clinical and Neurobiological Characteristics of Convicted and Non-Convicted Pedophilic Child Sexual Offenders
-participant_demographics,kailu_song,6678781,patients,_,61,,,,,,Pedophilic Child Sexual Offenders,,61.0,2019,Two Sides of One Coin: A Comparison of Clinical and Neurobiological Characteristics of Convicted and Non-Convicted Pedophilic Child Sexual Offenders
-participant_demographics,Jerome_Dockes,3492343,healthy,_,58,24.02,,,,,,32.0,26.0,2012,Distinct Contributions of the Dorsolateral Prefrontal and Orbitofrontal Cortex during Emotion Regulation
-participant_demographics,kailu_song,3492343,healthy,_,58,24.02,,,,,,32.0,26.0,2012,Distinct Contributions of the Dorsolateral Prefrontal and Orbitofrontal Cortex during Emotion Regulation
-participant_demographics,Jerome_Dockes,8315277,patients,_,104,,,,,,White matter hyperintensities,,,2021,Abnormal Degree Centrality in White Matter Hyperintensities: A Resting-State Functional Magnetic Resonance Imaging Study
-participant_demographics,kailu_song,8315277,patients,_,104,,,,,,White matter hyperintensities,,,2021,Abnormal Degree Centrality in White Matter Hyperintensities: A Resting-State Functional Magnetic Resonance Imaging Study
-participant_demographics,Jerome_Dockes,7779563,healthy,_,34,73.2,56.0,83.0,,,,,,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
-participant_demographics,kailu_song,7779563,healthy,_,34,73.2,56.0,83.0,,,,,,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
-participant_demographics,maximiliane_jousse,7779563,healthy,_,36,73.2,56.0,83.0,,,,20.0,16.0,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
-participant_demographics,Jerome_Dockes,3183226,healthy,_,16,,18.0,35.0,,,,7.0,9.0,2011,Hedging Your Bets by Learning Reward Correlations in the Human Brain
-participant_demographics,kailu_song,3183226,healthy,_,16,,18.0,35.0,,,,7.0,9.0,2011,Hedging Your Bets by Learning Reward Correlations in the Human Brain
-participant_demographics,Jerome_Dockes,3780305,healthy,_,17,7.4,6.9,7.8,,,,9.0,8.0,2013,Brain activation patterns resulting from learning letter forms through active self-production and passive observation in young children
-participant_demographics,kailu_song,3780305,healthy,_,17,7.4,6.9,7.8,,,,9.0,8.0,2013,Brain activation patterns resulting from learning letter forms through active self-production and passive observation in young children
-participant_demographics,Jerome_Dockes,7395771,healthy,work with children,19,,,,,,,10.0,9.0,2020,Familiarity with children improves the ability to recognize children’s mental states: an fMRI study using the Reading the Mind in the Eyes Task and the Nencki Children Eyes Test
-participant_demographics,kailu_song,7395771,healthy,work with children,19,,,,,,,10.0,9.0,2020,Familiarity with children improves the ability to recognize children’s mental states: an fMRI study using the Reading the Mind in the Eyes Task and the Nencki Children Eyes Test
-participant_demographics,Jerome_Dockes,4175730,patients,_,30,,,,,,knee osteoarthritis,,,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
-participant_demographics,joon_hong,4175730,patients,chronic osteoarthritis,44,,43.0,70.0,,,chronic osteoarthritis,19.0,25.0,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
-participant_demographics,kailu_song,4175730,patients,_,30,,,,,,knee osteoarthritis,,,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
-participant_demographics,Jerome_Dockes,6585311,healthy,young adults,12,25.2,,,,,,4.0,8.0,2019,Tasked-Based Functional Brain Connectivity in Multisensory Control of Wrist Movement After Stroke
-participant_demographics,Jerome_Dockes,5598991,patients,eod,58,,,,,,early adult onset depression,,,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
-participant_demographics,Sean_Moore,5598991,patients,_,147,,18.0,44.0,,,early adult onset depression,97.0,50.0,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
-participant_demographics,kailu_song,5598991,patients,eod,58,,,,,,early adult onset depression,,,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
-participant_demographics,Jerome_Dockes,5870086,patients,_,28,,10.0,17.0,,,autism spectrum disorder,,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
-participant_demographics,Sean_Moore,5870086,patients,_,33,13.43,10.0,17.0,,,,,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
-participant_demographics,kailu_song,5870086,patients,_,28,,10.0,17.0,,,autism spectrum disorder,,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
-participant_demographics,Jerome_Dockes,6868994,healthy,_,29,34.5,,,,,,14.0,15.0,2012,Effects of prior information on decoding degraded speech: An fMRI study
-participant_demographics,kailu_song,6868994,healthy,_,14,34.5,,,,,,14.0,,2012,Effects of prior information on decoding degraded speech: An fMRI study
-participant_demographics,Jerome_Dockes,8154462,patients,_,11,56.21,45.0,68.0,,,stroke,,11.0,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
-participant_demographics,kailu_song,8154462,patients,_,11,56.21,45.0,68.0,,,stroke,,11.0,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
-participant_demographics,Jerome_Dockes,3991323,healthy,adolescents,220,14.61,14.0,15.0,,,,105.0,115.0,2014,Differential representation of feedback and decision in adolescents and adults
-participant_demographics,kailu_song,3991323,healthy,adolescents,220,14.61,14.0,15.0,,,,105.0,115.0,2014,Differential representation of feedback and decision in adolescents and adults
-participant_demographics,Jerome_Dockes,4030253,healthy,_,23,15.2,,,,,,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
-participant_demographics,joon_hong,4030253,patients,Internet Addiction,18,15.2,,,,,Internet Addiction,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
-participant_demographics,Jerome_Dockes,5717028,healthy,_,40,68.4,,,,,,16.0,24.0,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
-participant_demographics,calvin_surbey,5717028,healthy,_,40,68.4,,,,,,16.0,24.0,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
-participant_demographics,Jerome_Dockes,7481390,healthy,_,28,26.39,,,,,,13.0,15.0,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
-participant_demographics,calvin_surbey,7481390,healthy,_,28,26.39,,,,,,13.0,15.0,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
-participant_demographics,Jerome_Dockes,5537800,patients,_,16,46.31,,,,,obesity,16.0,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
-participant_demographics,joon_hong,5537800,patients,obese,16,46.31,35.0,55.0,,,obese,16.0,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
-participant_demographics,kailu_song,5537800,patients,_,16,46.31,,,,,obesity,16.0,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
-participant_demographics,Jerome_Dockes,5903407,patients,_,27,59.1,,,,,left hemisphere infarcts,,,2017,Domain-general subregions of the medial prefrontal cortex contribute to recovery of language after stroke
-participant_demographics,Jerome_Dockes,3510214,patients,_,20,,,,,,mal de debarquement syndrome,,,2012,Metabolic and Functional Connectivity Changes in Mal de Debarquement Syndrome
-participant_demographics,calvin_surbey,3510214,patients,MdDS,20,43.4,27.0,66.0,,,,15.0,5.0,2012,Metabolic and Functional Connectivity Changes in Mal de Debarquement Syndrome
-participant_demographics,Jerome_Dockes,6667657,patients,_,12,,,,,,chronic tinnitus,,,2019,Functional Brain Changes During Mindfulness-Based Cognitive Therapy Associated With Tinnitus Severity
-participant_demographics,kailu_song,6667657,patients,_,12,,,,,,chronic tinnitus,,,2019,Functional Brain Changes During Mindfulness-Based Cognitive Therapy Associated With Tinnitus Severity
-participant_demographics,Jerome_Dockes,4589842,patients,_,11,61.0,,,,,Depression,6.0,5.0,2015,A preliminary evaluation of the correlation between regional energy phosphates and resting state functional connectivity in depression
-participant_demographics,kailu_song,4589842,patients,_,11,61.0,,,,,Depression,6.0,5.0,2015,A preliminary evaluation of the correlation between regional energy phosphates and resting state functional connectivity in depression
-participant_demographics,Jerome_Dockes,7002496,healthy,_,20,22.3,19.0,28.0,,,,10.0,10.0,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
-participant_demographics,kailu_song,7002496,healthy,_,20,22.3,19.0,28.0,,,,10.0,10.0,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
-participant_demographics,maximiliane_jousse,7002496,healthy,_,20,22.3,19.0,28.0,,,,10.0,10.0,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
-participant_demographics,Jerome_Dockes,3676955,healthy,_,33,25.3,,,,,,16.0,17.0,2013,fMRI Evidence of Acupoints Specificity in Two Adjacent Acupoints
-participant_demographics,kailu_song,3676955,healthy,_,33,25.3,,,,,,16.0,17.0,2013,fMRI Evidence of Acupoints Specificity in Two Adjacent Acupoints
-participant_demographics,Jerome_Dockes,6509414,patients,_,26,,,,,,hearing loss,,,2019,Exploring Differences in Speech Processing Among Older Hearing-Impaired Listeners With or Without Hearing Aid Experience: Eye-Tracking and fMRI Measurements
-participant_demographics,Jerome_Dockes,8883821,patients,schizophrenia,28,,21.0,54.0,,,schizophrenia,8.0,20.0,2021,Disease-Specific Contribution of Pulvinar Dysfunction to Impaired Emotion Recognition in Schizophrenia
-participant_demographics,maximiliane_jousse,5596109,healthy,_,6,,,,,,,2.0,4.0,2017,"A Novel Feature-Map Based ICA Model for Identifying the Individual, Intra/Inter-Group Brain Networks across Multiple fMRI Datasets"
-participant_demographics,maximiliane_jousse,6664004,healthy,adults study 1,51,43.71,27.49,55.91,,,,41.0,10.0,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
+group_name,subgroup_name,project_name,annotator_name,pmcid,diagnosis,count,male count,age mean,female count,age minimum,age maximum,age median,publication_year,title
+patients,va,autism_mri,David_Kennedy,9230060,criminals committing affective,6,6.0,,,,,,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
+patients,_,participant_demographics,Jerome_Dockes,9230060,offenders,20,20.0,,,,,,2022,"Changes of Brain Structures and Psychological Characteristics in Predatory, Affective Violent and Nonviolent Offenders"
+healthy,_,participant_demographics,Flemming_Kondrup_2,3520927,,40,,,,18.0,23.0,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
+healthy,study 1,participant_demographics,Jerome_Dockes,3520927,,1220,,,,,,,2012,Effects of Apolipoprotein E Genotype on the Off-Line Memory Consolidation
+healthy,phobic prone,participant_demographics,Jerome_Dockes,3002948,,15,9.0,39.2,6.0,,,,2010,Affective Response to a Loved One's Pain: Insula Activity as a Function of Individual Differences
+healthy,rh,participant_demographics,Jerome_Dockes,2561002,,19,7.0,24.7,12.0,19.0,30.0,,2008,Cortical Activations in Humans Grasp-Related Areas Depend on Hand Used and Handedness
+healthy,_,participant_demographics,Jerome_Dockes,7989009,,29,16.0,23.6,13.0,21.0,33.0,,2021,Framing and self-responsibility modulate brain activities in decision escalation
+healthy,_,participant_demographics,Jerome_Dockes,5776089,,21,21.0,25.77,,20.0,40.0,,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
+healthy,_,participant_demographics,Sean_Moore,5776089,,22,22.0,25.77,,20.0,40.0,,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
+healthy,_,participant_demographics,kailu_song,5776089,,21,21.0,25.77,,20.0,40.0,,2018,Weak but Critical Links between Primary Somatosensory Centers and Motor Cortex during Movement
+healthy,_,participant_demographics,Jerome_Dockes,4029023,,10,7.0,27.72,3.0,,,,2014,The compensatory dynamic of inter-hemispheric interactions in visuospatial attention revealed using rTMS and fMRI
+healthy,_,participant_demographics,kailu_song,4029023,,10,7.0,27.72,3.0,,,,2014,The compensatory dynamic of inter-hemispheric interactions in visuospatial attention revealed using rTMS and fMRI
+healthy,_,participant_demographics,Jerome_Dockes,4318429,,18,9.0,,9.0,20.0,32.0,,2015,Seeking pleasant touch: neural correlates of behavioral preferences for skin stroking
+healthy,_,participant_demographics,kailu_song,4318429,,18,9.0,,9.0,20.0,32.0,,2015,Seeking pleasant touch: neural correlates of behavioral preferences for skin stroking
+patients,_,participant_demographics,Jerome_Dockes,6290711,Psychogenic erectile dysfunction,26,26.0,26.8,,,,,2017,Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
+patients,_,participant_demographics,kailu_song,6290711,Psychogenic erectile dysfunction,26,26.0,26.8,,,,,2017,Aberrant baseline brain activity in psychogenic erectile dysfunction patients: a resting state fMRI study
+healthy,Würzburg,participant_demographics,Jerome_Dockes,3502502,,24,12.0,26.0,12.0,23.0,34.0,,2012,A Brain Network Processing the Age of Faces
+healthy,_,participant_demographics,calvin_surbey,3502502,,24,12.0,26.0,12.0,23.0,34.0,,2012,A Brain Network Processing the Age of Faces
+healthy,tsd,participant_demographics,Jerome_Dockes,7260173,,39,22.0,33.5,17.0,,,,2020,Two nights of recovery sleep restores hippocampal connectivity but not episodic memory after total sleep deprivation
+healthy,_,participant_demographics,Jerome_Dockes,5324609,,15,7.0,23.8,8.0,,,,2017,The role of the hippocampus in generalizing configural relationships
+healthy,_,participant_demographics,kailu_song,5324609,,15,7.0,23.8,8.0,,,,2017,The role of the hippocampus in generalizing configural relationships
+healthy,_,participant_demographics,Jerome_Dockes,8752963,,110,,,,,,,2021,Cortical correlation structure of aperiodic neuronal population activity
+healthy,proficient,participant_demographics,Jerome_Dockes,3554651,,11,3.0,28.73,8.0,19.0,46.0,,2013,Lexical Processing in Deaf Readers: An fMRI Investigation of Reading Proficiency
+healthy,_,participant_demographics,Jerome_Dockes,5218407,,17,7.0,25.0,10.0,19.0,30.0,,2017,Predicting the Multisensory Consequences of One’s Own Action: BOLD Suppression in Auditory and Visual Cortices
+patients,_,participant_demographics,Jerome_Dockes,6854061,panic disorder with agoraphobia,121,,,,,,,2019,Association of NPSR1 gene variation and neural activity in patients with panic disorder and agoraphobia and healthy controls
+healthy,_,participant_demographics,Jerome_Dockes,3147157,,20,12.0,24.4,8.0,,,,2011,Neural Underpinnings of Distortions in the Experience of Time Across Senses
+healthy,_,participant_demographics,kailu_song,3147157,,20,12.0,24.4,8.0,19.0,35.0,,2011,Neural Underpinnings of Distortions in the Experience of Time Across Senses
+healthy,_,participant_demographics,Jerome_Dockes,2775905,,18,,26.7,,18.0,60.0,22.5,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
+healthy,_,participant_demographics,calvin_surbey,2775905,,22,13.0,26.7,9.0,18.0,60.0,22.5,2010,On-line plasticity in spoken sentence comprehension: Adapting to time-compressed speech
+healthy,post-partum,participant_demographics,Jerome_Dockes,7272423,,25,,,25.0,,,,2020,Altered neural substrates within cognitive networks of postpartum women during working memory process and resting-state
+patients,_,participant_demographics,Jerome_Dockes,8544331,neovascular age-related macular degeneration,18,9.0,,9.0,55.0,,,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
+patients,_,participant_demographics,kailu_song,8544331,neovascular age-related macular degeneration,18,9.0,,9.0,55.0,,,2021,Decreased gray matter volume and increased white matter volume in patients with neovascular age-related macular degeneration: a voxel-based morphometry study
+healthy,_,participant_demographics,Jerome_Dockes,4115625,,272,123.0,24.454779411764704,149.0,18.0,68.0,,2014,Gender differences in the temporal voice areas
+healthy,_,participant_demographics,kailu_song,4115625,,272,123.0,24.454779411764704,149.0,18.0,68.0,,2014,Gender differences in the temporal voice areas
+patients,_,participant_demographics,Jerome_Dockes,4473263,chronic left-hemisphere stroke,32,27.0,62.0,5.0,,,,2015,Altered resting-state network connectivity in stroke patients with and without apraxia of speech
+patients,_,participant_demographics,kailu_song,4473263,chronic left-hemisphere stroke,32,27.0,62.0,5.0,,,,2015,Altered resting-state network connectivity in stroke patients with and without apraxia of speech
+healthy,_,participant_demographics,Jerome_Dockes,4075342,,12,7.0,38.0,5.0,23.0,60.0,,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
+healthy,_,participant_demographics,Sean_Moore,4075342,,12,7.0,38.0,5.0,23.0,60.0,,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
+healthy,_,participant_demographics,kailu_song,4075342,,12,7.0,38.0,5.0,23.0,60.0,,2014,Mapping glucose-mediated gut-to-brain signalling pathways in humans☆
+patients,_,participant_demographics,Jerome_Dockes,3447931,amyotrophic lateral sclerosis,20,,,,,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
+patients,_,participant_demographics,kailu_song,3447931,amyotrophic lateral sclerosis,20,,,,,,,2012,Patterns of Spontaneous Brain Activity in Amyotrophic Lateral Sclerosis: A Resting-State fMRI Study
+patients,_,participant_demographics,Jerome_Dockes,3984441,dementia with Lewy bodies,16,,,,,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
+patients,_,participant_demographics,kailu_song,3984441,dementia with Lewy bodies,16,,,,,,,2014,fMRI resting state networks and their association with cognitive fluctuations in dementia with Lewy bodies.
+patients,_,participant_demographics,Jerome_Dockes,4174863,incarcerated,157,,,157.0,,,,2014,Neural correlates of moral and non-moral emotion in female psychopathy
+patients,_,participant_demographics,kailu_song,4174863,incarcerated,157,,,157.0,,,,2014,Neural correlates of moral and non-moral emotion in female psychopathy
+healthy,_,participant_demographics,Jerome_Dockes,2144768,,18,9.0,23.67,9.0,19.0,35.0,,2007,What Are You Feeling? Using Functional Magnetic Resonance Imaging to Assess the Modulation of Sensory and Affective Responses during Empathy for Pain
+healthy,be,participant_demographics,kailu_song,2144768,,23,4.0,27.69,19.0,,,,2007,What Are You Feeling? Using Functional Magnetic Resonance Imaging to Assess the Modulation of Sensory and Affective Responses during Empathy for Pain
+patients,ais,participant_demographics,Jerome_Dockes,8785614,arterial ischemic stroke,26,,,,,,,2021,"Frontal interhemispheric structural connectivity, attention, and executive function in children with perinatal stroke"
+healthy,_,participant_demographics,Jerome_Dockes,9108497,,134,72.0,5.34,62.0,5.08,5.22,,2022,Feasibility of FreeSurfer Processing for T1-Weighted Brain Images of 5-Year-Olds: Semiautomated Protocol of FinnBrain Neuroimaging Lab
+patients,_,participant_demographics,Jerome_Dockes,4017227,Mesial temporal lobe epilepsy,23,,,,,,,2014,Atypical language organization in temporal lobe epilepsy revealed by a passive semantic paradigm
+patients,_,participant_demographics,kailu_song,4017227,Mesial temporal lobe epilepsy,23,,,,,,,2014,Atypical language organization in temporal lobe epilepsy revealed by a passive semantic paradigm
+patients,_,participant_demographics,Jerome_Dockes,5460048,chronic dieters,75,,19.38,75.0,18.0,23.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
+patients,_,participant_demographics,kailu_song,5460048,chronic dieters,75,,19.38,75.0,18.0,23.0,,2017,A balance of activity in brain control and reward systems predicts self-regulatory outcomes
+healthy,dataset 1,participant_demographics,Jerome_Dockes,4352055,,20,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
+healthy,_,participant_demographics,kailu_song,4352055,,19,,,,,,,2015,Using data-driven model-brain mappings to constrain formal models of cognition.
+healthy,_,participant_demographics,Jerome_Dockes,7649291,,12,5.0,25.8,7.0,,,,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
+healthy,_,participant_demographics,Sean_Moore,7649291,,12,5.0,25.8,7.0,,,,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
+healthy,_,participant_demographics,kailu_song,7649291,,12,5.0,25.8,7.0,,,,2020,White Matter Neuroplasticity: Motor Learning Activates the Internal Capsule and Reduces Hemodynamic Response Variability
+healthy,_,participant_demographics,Jerome_Dockes,6344389,,16,8.0,22.5,8.0,,,,2018,Explaining the neural activity distribution associated with discrete movement sequences: Evidence for parallel functional systems
+healthy,_,participant_demographics,kailu_song,6344389,,16,8.0,22.5,8.0,,,,2018,Explaining the neural activity distribution associated with discrete movement sequences: Evidence for parallel functional systems
+patients,mdd,participant_demographics,Jerome_Dockes,6246657,major depressive disorder,40,,,,,,,2018,Decreased Functional Connectivity in Insular Subregions in Depressive Episodes of Bipolar Disorder and Major Depressive Disorder
+patients,Bipolar Disorder,participant_demographics,calvin_surbey,6246657,,21,,,,16.0,48.0,,2018,Decreased Functional Connectivity in Insular Subregions in Depressive Episodes of Bipolar Disorder and Major Depressive Disorder
+patients,amci,participant_demographics,Jerome_Dockes,7838677,amnestic mild cognitive impairment,11,4.0,,7.0,65.0,81.0,,2020,The Human Brain Representation of Odor Identification in Amnestic Mild Cognitive Impairment and Alzheimer's Dementia of Mild Degree
+healthy,_,participant_demographics,Jerome_Dockes,7430162,,13,,28.4,,19.0,45.0,,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
+healthy,_,participant_demographics,Sean_Moore,7430162,,13,6.0,28.4,7.0,19.0,45.0,,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
+healthy,_,participant_demographics,kailu_song,7430162,,13,,28.4,,19.0,45.0,,2020,Antero-Posterior vs. Lateral Vestibular Input Processing in Human Visual Cortex
+healthy,young,participant_demographics,Jerome_Dockes,8318202,,29,,,,19.0,30.0,,2020,Age-Related Differences in Auditory Cortex Activity During Spoken Word Recognition
+healthy,young,participant_demographics,kailu_song,8318202,,29,10.0,23.8,19.0,19.0,30.0,,2020,Age-Related Differences in Auditory Cortex Activity During Spoken Word Recognition
+healthy,_,participant_demographics,Jerome_Dockes,5390693,,233,116.0,16.1,117.0,9.9,26.6,,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
+healthy,_,participant_demographics,kailu_song,5390693,,233,116.0,16.1,117.0,9.9,26.6,,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
+healthy,_,participant_demographics,maximiliane_jousse,5390693,,233,116.0,16.1,117.0,9.9,26.6,,2016,Peers and parents: a comparison between neural activation when winning for friends and mothers in adolescence
+healthy,experiment 1,participant_demographics,Jerome_Dockes,2995581,,12,,,,,,,2010,Face-Specific Resting Functional Connectivity between the Fusiform Gyrus and Posterior Superior Temporal Sulcus
+healthy,_,participant_demographics,calvin_surbey,2995581,,12,,,,,,,2010,Face-Specific Resting Functional Connectivity between the Fusiform Gyrus and Posterior Superior Temporal Sulcus
+healthy,_,participant_demographics,Jerome_Dockes,7563756,,29,,,,,,,2020,Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception
+healthy,_,participant_demographics,kailu_song,7563756,,29,,,,,,,2020,Partial Similarity Reveals Dynamics in Brainstem-Midbrain Networks during Trigeminal Nociception
+healthy,experiment 1,participant_demographics,Jerome_Dockes,6016936,,14,,,,,,,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
+healthy,_,participant_demographics,joon_hong,6016936,,24,9.0,,15.0,,,,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
+healthy,experiment 1,participant_demographics,kailu_song,6016936,,14,,,,,,,2018,Effect of task difficulty on blood-oxygen-level-dependent signal: A functional magnetic resonance imaging study in a motion discrimination task
+healthy,_,participant_demographics,Jerome_Dockes,3334814,,103,52.0,32.5,51.0,,,,2012,The effects of age on cerebral activations: internally versus externally driven processes
+healthy,_,participant_demographics,joon_hong,3334814,,103,52.0,32.5,51.0,18.0,72.0,,2012,The effects of age on cerebral activations: internally versus externally driven processes
+healthy,_,participant_demographics,kailu_song,3334814,,103,52.0,32.5,51.0,,,,2012,The effects of age on cerebral activations: internally versus externally driven processes
+healthy,_,participant_demographics,Jerome_Dockes,7005761,,26,17.0,11.4,9.0,8.0,16.0,,2012,Effects of the DRD4 genotype on neural networks associated with executive functions in children and adolescents
+healthy,_,participant_demographics,kailu_song,7005761,,26,17.0,11.4,9.0,8.0,16.0,,2012,Effects of the DRD4 genotype on neural networks associated with executive functions in children and adolescents
+healthy,_,participant_demographics,Jerome_Dockes,7745153,,46,32.0,22.61,14.0,,,,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
+healthy,_,participant_demographics,joon_hong,7745153,,46,32.0,22.61,14.0,,,,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
+healthy,_,participant_demographics,kailu_song,7745153,,46,32.0,22.61,14.0,,,,2020,Expecting social punishment facilitates control over a decision under uncertainty by recruiting medial prefrontal cortex
+patients,_,participant_demographics,Jerome_Dockes,4265725,Autism spectrum conditions,18,,30.4,,,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
+patients,ASC,participant_demographics,joon_hong,4265725,ASC,18,,30.4,,,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
+patients,_,participant_demographics,kailu_song,4265725,Autism spectrum conditions,18,,30.4,,,,,2015,Lost for emotion words: What motor and limbic brain activity reveals about autism and semantic theory
+patients,_,participant_demographics,Jerome_Dockes,5665859,ischemic stroke,72,,,,60.0,70.0,,2017,A Study of the Brain Functional Network of Post-Stroke Depression in Three Different Lesion Locations
+patients,_,participant_demographics,kailu_song,5665859,ischemic stroke,72,,,,60.0,70.0,,2017,A Study of the Brain Functional Network of Post-Stroke Depression in Three Different Lesion Locations
+healthy,_,participant_demographics,Jerome_Dockes,8828908,,216,,,,,,,2021,Default Mode Network Alterations Induced by Childhood Trauma Correlate With Emotional Function and SLC6A4 Expression
+healthy,_,participant_demographics,Jerome_Dockes,8172304,,40,8.0,,32.0,25.0,63.0,,2021,Research on Characteristic of Chronic Spontaneous Urticaria Based on Multiscale Entropy
+patients,_,participant_demographics,Jerome_Dockes,8978988,GNE myopathy with congenital thrombocytopenia,1,1.0,,,,,,2022,Novel compound heterozygous mutations in a GNE myopathy with congenital thrombocytopenia: A case report and literature review
+healthy,_,participant_demographics,Jerome_Dockes,5460049,,56,54.0,34.4,2.0,21.0,60.0,,2017,Tribal love: the neural correlates of passionate engagement in football fans
+patients,_,participant_demographics,Jerome_Dockes,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
+patients,_,participant_demographics,kailu_song,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
+patients,Cerebral Palsy,participant_demographics,maximiliane_jousse,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
+patients,_,participant_demographics,Jerome_Dockes,8782893,attention/deficit hyperactivity disorder,88,,,,,,,2021,An examination of the relationships between attention/deficit hyperactivity disorder symptoms and functional connectivity over time
+patients,_,participant_demographics,Jerome_Dockes,6347794,ADHD,38,18.0,,20.0,,,,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
+patients,_,participant_demographics,kailu_song,6347794,ADHD,38,18.0,,20.0,,,,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
+patients,methylphenidate-naïve adults with childhood-onset ADHD,participant_demographics,maximiliane_jousse,6347794,methylphenidate-naïve adults with childhood-onset ADHD,38,18.0,40.5,20.0,,,,2019,Hyperactivity/restlessness is associated with increased functional connectivity in adults with ADHD: a dimensional analysis of resting state fMRI
+healthy,_,participant_demographics,Jerome_Dockes,7156375,,33,18.0,25.242,15.0,,,,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
+healthy,_,participant_demographics,joon_hong,7156375,,33,18.0,25.242,15.0,,,,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
+healthy,_,participant_demographics,kailu_song,7156375,,33,18.0,25.242,15.0,,,,2020,Interplay between midbrain and dorsal anterior cingulate regions arbitrates lingering reward effects on memory encoding
+healthy,_,participant_demographics,Jerome_Dockes,4330553,,23,18.0,22.0,5.0,,,,2013,Brain correlates of subjective freedom of choice
+healthy,_,participant_demographics,kailu_song,4330553,,23,18.0,22.0,5.0,,,,2013,Brain correlates of subjective freedom of choice
+healthy,_,participant_demographics,Jerome_Dockes,6989437,,13,8.0,,5.0,20.0,22.0,,2020,Left Amygdala Regulates the Cerebral Reading Network During Fast Emotion Word Processing
+healthy,_,participant_demographics,Xiaotian_Hua,6989437,,96,,,,20.0,22.0,,2020,Left Amygdala Regulates the Cerebral Reading Network During Fast Emotion Word Processing
+healthy,_,participant_demographics,Jerome_Dockes,6328158,,11,8.0,33.1,3.0,25.0,47.0,,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
+healthy,_,participant_demographics,Sean_Moore,6328158,,11,8.0,33.1,3.0,25.0,47.0,,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
+healthy,_,participant_demographics,kailu_song,6328158,,11,8.0,33.1,3.0,25.0,47.0,,2019,Embedded word priming elicits enhanced fMRI responses in the visual word form area
+healthy,smokers,participant_demographics,Jerome_Dockes,3511796,,45,,,,,,,2012,Altered spontaneous activity in young chronic cigarette smokers revealed by regional homogeneity
+healthy,_,participant_demographics,kailu_song,3511796,,44,,,,,,,2012,Altered spontaneous activity in young chronic cigarette smokers revealed by regional homogeneity
+patients,_,participant_demographics,Jerome_Dockes,4190683,Attention Deficit Hyperactivity Disorder,30,,,,10.0,17.0,,2013,Pattern classification of response inhibition in ADHD: Toward the development of neurobiological markers for ADHD
+healthy,_,participant_demographics,Jerome_Dockes,3362560,,24,12.0,,12.0,,,,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
+healthy,_,participant_demographics,Sean_Moore,3362560,,24,12.0,,12.0,,,,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
+healthy,_,participant_demographics,kailu_song,3362560,,24,12.0,,12.0,,,,2012,Brain Circuitries Involved in Semantic Interference by Demands of Emotional and Non-Emotional Distractors
+patients,_,participant_demographics,Jerome_Dockes,6382839,panic disorder,17,2.0,,15.0,,,,2019,Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
+patients,_,participant_demographics,kailu_song,6382839,panic disorder,17,2.0,,15.0,,,,2019,Brain activation during disorder-related script-driven imagery in panic disorder: a pilot study
+patients,_,participant_demographics,Jerome_Dockes,2648877,Autism Spectrum Disorder,15,12.0,38.0,3.0,,,,2008,Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
+patients,_,participant_demographics,kailu_song,2648877,Autism Spectrum Disorder,15,12.0,38.0,3.0,,,,2008,Atypical recruitment of medial prefrontal cortex in autism spectrum disorders: An fMRI study of two executive function tasks
+patients,_,participant_demographics,Jerome_Dockes,6908505,bipolar disorder,70,,37.0,,18.0,65.0,,2019,The BDNF Val66Met Polymorphism Has No Effect on Encoding-Related Hippocampal Response But Influences Recall in Remitted Patients With Bipolar Disorder
+patients,_,participant_demographics,Jerome_Dockes,8785646,posttraumatic stress disorder,14,,,,,,,2021,Differential mechanisms of posterior cingulate cortex downregulation and symptom decreases in posttraumatic stress disorder and healthy individuals using real‐time fMRI neurofeedback
+healthy,_,participant_demographics,Jerome_Dockes,8379626,,67,36.0,15.6,31.0,,,,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
+healthy,_,participant_demographics,kailu_song,8379626,,67,36.0,15.6,31.0,,,,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
+patients,_,participant_demographics,Jerome_Dockes,5279905,autism spectrum disorder,16,16.0,,,8.0,18.0,,2017,Young adolescents with autism show abnormal joint attention network: A gaze contingent fMRI study
+patients,_,participant_demographics,Jerome_Dockes,2494616,phantom limb pain,13,11.0,52.92,2.0,32.0,75.0,,2008,"Phantom limb pain, cortical reorganization and the therapeutic effect of mental imagery"
+patients,_,participant_demographics,Jerome_Dockes,3877773,Tourette syndrome,17,,,,,,,2013,Abnormal baseline brain activity in drug-naïve patients with Tourette syndrome: a resting-state fMRI study
+patients,_,participant_demographics,Jerome_Dockes,6197719,schizophrenia,44,,,,,,,2018,"Disrupted asymmetry of inter- and intra-hemispheric functional connectivity in patients with drug-naive, first-episode schizophrenia and their unaffected siblings"
+patients,_,participant_demographics,kailu_song,6197719,schizophrenia,44,,,,,,,2018,"Disrupted asymmetry of inter- and intra-hemispheric functional connectivity in patients with drug-naive, first-episode schizophrenia and their unaffected siblings"
+healthy,fmri experiment,participant_demographics,Jerome_Dockes,8018944,,30,9.0,23.0,21.0,,,,2021,Role of the fronto-parietal cortex in prospective action judgments
+healthy,_,participant_demographics,Jerome_Dockes,3409150,,18,18.0,25.11,,21.0,33.0,,2012,Intense Passionate Love Attenuates Cigarette Cue-Reactivity in Nicotine-Deprived Smokers: An fMRI Study
+healthy,_,participant_demographics,kailu_song,3409150,,18,18.0,25.11,,21.0,33.0,,2012,Intense Passionate Love Attenuates Cigarette Cue-Reactivity in Nicotine-Deprived Smokers: An fMRI Study
+healthy,_,participant_demographics,Jerome_Dockes,6136263,,20,1.0,,19.0,18.0,31.0,,2018,Functional Neuroanatomy of Second Language Sentence Comprehension: An fMRI Study of Late Learners of American Sign Language
+healthy,_,participant_demographics,Jerome_Dockes,5548834,,47,,19.62,47.0,,,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
+healthy,_,participant_demographics,kailu_song,5548834,,47,,19.62,47.0,,,,2017,Experimental manipulation of infant temperament affects amygdala functional connectivity
+patients,_,participant_demographics,Jerome_Dockes,3182403,Parkinson's disease,21,13.0,60.8,8.0,44.0,73.0,,2011,A Perfusion MRI Study of Emotional Valence and Arousal in Parkinson's Disease
+patients,_,participant_demographics,Jerome_Dockes,5413198,Alcohol dependence,34,34.0,,,,,,2017,Dorsolateral prefrontal cortex contributes to the impaired behavioral adaptation in alcohol dependence☆
+patients,_,participant_demographics,Jerome_Dockes,7829678,Type 2 diabetes mellitus,53,,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
+patients,_,participant_demographics,kailu_song,7829678,Type 2 diabetes mellitus,53,,,,,,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
+patients,T2DM,participant_demographics,maximiliane_jousse,7829678,,53,,,,45.0,75.0,,2020,Less Is Better: Single-Digit Brain Functional Connections Predict T2DM and T2DM-Induced Cognitive Impairment
+healthy,_,participant_demographics,Jerome_Dockes,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
+healthy,_,participant_demographics,Sean_Moore,3775427,,102,36.0,21.5,66.0,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
+healthy,_,participant_demographics,kailu_song,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
+healthy,_,participant_demographics,Jerome_Dockes,3483694,,23,6.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
+healthy,_,participant_demographics,kailu_song,3483694,,23,6.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
+healthy,_,participant_demographics,maximiliane_jousse,3483694,,25,8.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
+patients,_,participant_demographics,Jerome_Dockes,3742334,chronic marijuana use,10,8.0,,2.0,,,,2012,A Preliminary Study of Functional Brain Activation among Marijuana Users during Performance of a Virtual Water Maze Task
+healthy,_,participant_demographics,Jerome_Dockes,2748718,,30,14.0,,16.0,,,,2009,The Neural Correlates of Religious and Nonreligious Belief
+healthy,_,participant_demographics,kailu_song,2748718,,30,14.0,,16.0,,,,2009,The Neural Correlates of Religious and Nonreligious Belief
+patients,abide 1,participant_demographics,Jerome_Dockes,9407088,autism spectrum disorder,539,,,,,,,2022,Custom 3D fMRI Registration Template Construction Method Based on Time-Series Fusion
+healthy,_,participant_demographics,Jerome_Dockes,4838249,,15,15.0,22.33,,,,,2016,The Role of the Insular Cortex in Retaliation
+healthy,_,participant_demographics,calvin_surbey,4838249,,15,15.0,22.33,,,,,2016,The Role of the Insular Cortex in Retaliation
+patients,_,participant_demographics,Jerome_Dockes,5030332,posttraumatic stress disorder,21,,,,,,,2016,Alpha oscillation neurofeedback modulates amygdala complex connectivity and arousal in posttraumatic stress disorder
+patients,_,participant_demographics,kailu_song,5030332,posttraumatic stress disorder,21,,,,,,,2016,Alpha oscillation neurofeedback modulates amygdala complex connectivity and arousal in posttraumatic stress disorder
+healthy,_,participant_demographics,Jerome_Dockes,6847157,,31,10.0,24.3,21.0,20.0,29.0,,2019,Laughter is in the air: involvement of key nodes of the emotional motor system in the anticipation of tickling
+patients,_,participant_demographics,Jerome_Dockes,6024199,posttraumatic stress disorder,21,6.0,21.5,15.0,18.0,31.0,,2018,Neural responses to emotional involuntary memories in posttraumatic stress disorder: Differences in timing and activity
+healthy,_,participant_demographics,Jerome_Dockes,5068584,,56,,24.3,56.0,,,,2015,Role of emotional processing in depressive responses to sex-hormone manipulation: a pharmacological fMRI study
+patients,_,participant_demographics,Jerome_Dockes,7194032,Autism spectrum disorder,26,,,,8.0,18.0,,2020,Social Attention in Autism: Neural Sensitivity to Speech Over Background Noise Predicts Encoding of Social Information
+healthy,_,participant_demographics,Jerome_Dockes,4319399,,284,144.0,25.0,140.0,,,,2015,Between-hand difference in ipsilateral deactivation is associated with hand lateralization: fMRI mapping of 284 volunteers balanced for handedness
+healthy,_,participant_demographics,calvin_surbey,4319399,,142,71.0,26.8,71.0,,,,2015,Between-hand difference in ipsilateral deactivation is associated with hand lateralization: fMRI mapping of 284 volunteers balanced for handedness
+patients,_,participant_demographics,Jerome_Dockes,8550949,schizophrenia,31,26.0,26.64,5.0,,,,2019,The neural and molecular basis of working memory function in psychosis: a multimodal PET-fMRI study
+healthy,_,participant_demographics,Jerome_Dockes,6528067,,10,4.0,20.8,6.0,,,,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
+healthy,_,participant_demographics,kailu_song,6528067,,10,4.0,,6.0,,,,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
+patients,_,participant_demographics,Jerome_Dockes,7875881,major depressive disorder,19,,,,18.0,55.0,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
+patients,_,participant_demographics,calvin_surbey,7875881,,19,,,,18.0,55.0,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
+healthy,_,participant_demographics,Jerome_Dockes,3869649,,19,10.0,22.8,9.0,19.0,31.0,,2013,fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
+healthy,_,participant_demographics,kailu_song,3869649,,19,10.0,22.8,9.0,19.0,31.0,,2013,fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
+healthy,_,participant_demographics,Jerome_Dockes,3407245,,10,5.0,,5.0,22.0,43.0,,2012,"Functional Anatomy of the Masking Level Difference, an fMRI Study"
+healthy,_,participant_demographics,kailu_song,3407245,,10,5.0,,5.0,22.0,43.0,,2012,"Functional Anatomy of the Masking Level Difference, an fMRI Study"
+healthy,young,participant_demographics,Jerome_Dockes,3660406,,19,5.0,22.6,14.0,18.0,27.0,,2013,Action Prediction in Younger versus Older Adults: Neural Correlates of Motor Familiarity
+patients,_,participant_demographics,Jerome_Dockes,5394595,bronchial asthma without acute attacks,42,,,,,,,2017,Group Cognitive Behavior Therapy Reversed Insula Subregions Functional Connectivity in Asthmatic Patients
+healthy,_,participant_demographics,Jerome_Dockes,2151069,,12,6.0,25.4,6.0,20.0,40.0,,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
+healthy,_,participant_demographics,Sean_Moore,2151069,,12,6.0,25.4,6.0,20.0,40.0,,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
+healthy,_,participant_demographics,kailu_song,2151069,,12,6.0,25.4,6.0,20.0,40.0,,2007,Dissociation of neural correlates of verbal and non-verbal visual working memory with different delays
+patients,_,participant_demographics,Jerome_Dockes,6820536,fibromyalgia,20,,46.4,20.0,22.0,70.0,,2019,Functional connectivity of music-induced analgesia in fibromyalgia
+patients,_,participant_demographics,kailu_song,6820536,fibromyalgia,20,,46.4,20.0,22.0,70.0,,2019,Functional connectivity of music-induced analgesia in fibromyalgia
+healthy,_,participant_demographics,Jerome_Dockes,4274095,,20,,5.8,,5.2,6.8,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
+healthy,_,participant_demographics,kailu_song,4274095,,20,,5.8,,5.2,6.8,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
+healthy,_,participant_demographics,maximiliane_jousse,4274095,,20,,5.8,,5.2,6.8,,2014,Investigating the Neural Correlates of Voice versus Speech-Sound Directed Information in Pre-School Children
+patients,_,participant_demographics,Jerome_Dockes,6678781,Pedophilic Child Sexual Offenders,61,61.0,,,,,,2019,Two Sides of One Coin: A Comparison of Clinical and Neurobiological Characteristics of Convicted and Non-Convicted Pedophilic Child Sexual Offenders
+patients,_,participant_demographics,kailu_song,6678781,Pedophilic Child Sexual Offenders,61,61.0,,,,,,2019,Two Sides of One Coin: A Comparison of Clinical and Neurobiological Characteristics of Convicted and Non-Convicted Pedophilic Child Sexual Offenders
+healthy,_,participant_demographics,Jerome_Dockes,3492343,,58,26.0,24.02,32.0,,,,2012,Distinct Contributions of the Dorsolateral Prefrontal and Orbitofrontal Cortex during Emotion Regulation
+healthy,_,participant_demographics,kailu_song,3492343,,58,26.0,24.02,32.0,,,,2012,Distinct Contributions of the Dorsolateral Prefrontal and Orbitofrontal Cortex during Emotion Regulation
+patients,_,participant_demographics,Jerome_Dockes,8315277,White matter hyperintensities,104,,,,,,,2021,Abnormal Degree Centrality in White Matter Hyperintensities: A Resting-State Functional Magnetic Resonance Imaging Study
+patients,_,participant_demographics,kailu_song,8315277,White matter hyperintensities,104,,,,,,,2021,Abnormal Degree Centrality in White Matter Hyperintensities: A Resting-State Functional Magnetic Resonance Imaging Study
+healthy,_,participant_demographics,Jerome_Dockes,7779563,,34,,73.2,,56.0,83.0,,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
+healthy,_,participant_demographics,kailu_song,7779563,,34,,73.2,,56.0,83.0,,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
+healthy,_,participant_demographics,maximiliane_jousse,7779563,,36,16.0,73.2,20.0,56.0,83.0,,2021,Longitudinal change in executive function is associated with impaired top-down frontolimbic regulation during reappraisal in older adults
+healthy,_,participant_demographics,Jerome_Dockes,3183226,,16,9.0,,7.0,18.0,35.0,,2011,Hedging Your Bets by Learning Reward Correlations in the Human Brain
+healthy,_,participant_demographics,kailu_song,3183226,,16,9.0,,7.0,18.0,35.0,,2011,Hedging Your Bets by Learning Reward Correlations in the Human Brain
+healthy,_,participant_demographics,Jerome_Dockes,3780305,,17,8.0,7.4,9.0,6.9,7.8,,2013,Brain activation patterns resulting from learning letter forms through active self-production and passive observation in young children
+healthy,_,participant_demographics,kailu_song,3780305,,17,8.0,7.4,9.0,6.9,7.8,,2013,Brain activation patterns resulting from learning letter forms through active self-production and passive observation in young children
+healthy,work with children,participant_demographics,Jerome_Dockes,7395771,,19,9.0,,10.0,,,,2020,Familiarity with children improves the ability to recognize children’s mental states: an fMRI study using the Reading the Mind in the Eyes Task and the Nencki Children Eyes Test
+healthy,work with children,participant_demographics,kailu_song,7395771,,19,9.0,,10.0,,,,2020,Familiarity with children improves the ability to recognize children’s mental states: an fMRI study using the Reading the Mind in the Eyes Task and the Nencki Children Eyes Test
+patients,_,participant_demographics,Jerome_Dockes,4175730,knee osteoarthritis,30,,,,,,,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
+patients,chronic osteoarthritis,participant_demographics,joon_hong,4175730,chronic osteoarthritis,44,25.0,,19.0,43.0,70.0,,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
+patients,_,participant_demographics,kailu_song,4175730,knee osteoarthritis,30,,,,,,,2014,Acupuncture modulates cortical thickness and functional connectivity in knee osteoarthritis patients
+healthy,young adults,participant_demographics,Jerome_Dockes,6585311,,12,8.0,25.2,4.0,,,,2019,Tasked-Based Functional Brain Connectivity in Multisensory Control of Wrist Movement After Stroke
+patients,eod,participant_demographics,Jerome_Dockes,5598991,early adult onset depression,58,,,,,,,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
+patients,_,participant_demographics,Sean_Moore,5598991,early adult onset depression,147,50.0,,97.0,18.0,44.0,,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
+patients,eod,participant_demographics,kailu_song,5598991,early adult onset depression,58,,,,,,,2017,Identify changes of brain regional homogeneity in early and later adult onset patients with first-episode depression using resting-state fMRI
+patients,_,participant_demographics,Jerome_Dockes,5870086,autism spectrum disorder,28,,,,10.0,17.0,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
+patients,_,participant_demographics,Sean_Moore,5870086,,33,,13.43,,10.0,17.0,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
+patients,_,participant_demographics,kailu_song,5870086,autism spectrum disorder,28,,,,10.0,17.0,,2018,The effects of intranasal oxytocin on reward circuitry responses in children with autism spectrum disorder
+healthy,_,participant_demographics,Jerome_Dockes,6868994,,29,15.0,34.5,14.0,,,,2012,Effects of prior information on decoding degraded speech: An fMRI study
+healthy,_,participant_demographics,kailu_song,6868994,,14,,34.5,14.0,,,,2012,Effects of prior information on decoding degraded speech: An fMRI study
+patients,_,participant_demographics,Jerome_Dockes,8154462,stroke,11,11.0,56.21,,45.0,68.0,,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
+patients,_,participant_demographics,kailu_song,8154462,stroke,11,11.0,56.21,,45.0,68.0,,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
+healthy,adolescents,participant_demographics,Jerome_Dockes,3991323,,220,115.0,14.61,105.0,14.0,15.0,,2014,Differential representation of feedback and decision in adolescents and adults
+healthy,adolescents,participant_demographics,kailu_song,3991323,,220,115.0,14.61,105.0,14.0,15.0,,2014,Differential representation of feedback and decision in adolescents and adults
+healthy,_,participant_demographics,Jerome_Dockes,4030253,,23,,15.2,,,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
+patients,Internet Addiction,participant_demographics,joon_hong,4030253,Internet Addiction,18,,15.2,,,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
+healthy,_,participant_demographics,Jerome_Dockes,5717028,,40,24.0,68.4,16.0,,,,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
+healthy,_,participant_demographics,calvin_surbey,5717028,,40,24.0,68.4,16.0,,,,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
+healthy,_,participant_demographics,Jerome_Dockes,7481390,,28,15.0,26.39,13.0,,,,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
+healthy,_,participant_demographics,calvin_surbey,7481390,,28,15.0,26.39,13.0,,,,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
+patients,_,participant_demographics,Jerome_Dockes,5537800,obesity,16,,46.31,16.0,,,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
+patients,obese,participant_demographics,joon_hong,5537800,obese,16,,46.31,16.0,35.0,55.0,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
+patients,_,participant_demographics,kailu_song,5537800,obesity,16,,46.31,16.0,,,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
+patients,_,participant_demographics,Jerome_Dockes,5903407,left hemisphere infarcts,27,,59.1,,,,,2017,Domain-general subregions of the medial prefrontal cortex contribute to recovery of language after stroke
+patients,_,participant_demographics,Jerome_Dockes,3510214,mal de debarquement syndrome,20,,,,,,,2012,Metabolic and Functional Connectivity Changes in Mal de Debarquement Syndrome
+patients,_,participant_demographics,Jerome_Dockes,6667657,chronic tinnitus,12,,,,,,,2019,Functional Brain Changes During Mindfulness-Based Cognitive Therapy Associated With Tinnitus Severity
+patients,_,participant_demographics,kailu_song,6667657,chronic tinnitus,12,,,,,,,2019,Functional Brain Changes During Mindfulness-Based Cognitive Therapy Associated With Tinnitus Severity
+patients,_,participant_demographics,Jerome_Dockes,4589842,Depression,11,5.0,61.0,6.0,,,,2015,A preliminary evaluation of the correlation between regional energy phosphates and resting state functional connectivity in depression
+patients,_,participant_demographics,kailu_song,4589842,Depression,11,5.0,61.0,6.0,,,,2015,A preliminary evaluation of the correlation between regional energy phosphates and resting state functional connectivity in depression
+healthy,_,participant_demographics,Jerome_Dockes,7002496,,20,10.0,22.3,10.0,19.0,28.0,,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
+healthy,_,participant_demographics,kailu_song,7002496,,20,10.0,22.3,10.0,19.0,28.0,,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
+healthy,_,participant_demographics,maximiliane_jousse,7002496,,20,10.0,22.3,10.0,19.0,28.0,,2020,Stimulus arousal drives amygdalar responses to emotional expressions across sensory modalities
+healthy,_,participant_demographics,Jerome_Dockes,3676955,,33,17.0,25.3,16.0,,,,2013,fMRI Evidence of Acupoints Specificity in Two Adjacent Acupoints
+healthy,_,participant_demographics,kailu_song,3676955,,33,17.0,25.3,16.0,,,,2013,fMRI Evidence of Acupoints Specificity in Two Adjacent Acupoints
+patients,_,participant_demographics,Jerome_Dockes,6509414,hearing loss,26,,,,,,,2019,Exploring Differences in Speech Processing Among Older Hearing-Impaired Listeners With or Without Hearing Aid Experience: Eye-Tracking and fMRI Measurements
+patients,schizophrenia,participant_demographics,Jerome_Dockes,8883821,schizophrenia,28,20.0,,8.0,21.0,54.0,,2021,Disease-Specific Contribution of Pulvinar Dysfunction to Impaired Emotion Recognition in Schizophrenia
+healthy,_,participant_demographics,maximiliane_jousse,5596109,,6,4.0,,2.0,,,,2017,"A Novel Feature-Map Based ICA Model for Identifying the Individual, Intra/Inter-Group Brain Networks across Multiple fMRI Datasets"
+healthy,adults study 1,participant_demographics,maximiliane_jousse,6664004,,51,10.0,43.71,41.0,27.49,55.91,,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
