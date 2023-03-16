@@ -1,0 +1,30 @@
+{% macro participant_node(node, name, path, level=0) %}
+<div class="labelrepo-participant-node" data-depth="{{ level }}" style="--depth:{{ level }};">
+{% if name %}
+    <h3>{{ name }}</h3>
+{% endif %}
+    <div class="node-contents">
+{% for attribute in node.attributes -%}
+        <span class="labelrepo-key-value-pair">
+{{ attribute }} = {{ sourced(node.attributes[attribute], doc, attribute + path) }}
+{{- ", " if not loop.last -}}
+        </span>
+{% endfor %}
+{% for child in node.children %}
+    {{ participant_node(node.children[child], child, path + "-" + (child | md5), level + 1) }}
+{% endfor %}
+    </div>
+</div>
+{% endmacro %}
+
+<div class="labelrepo-debug-details">
+<details>
+    <summary>full extraction details</summary>
+    {% if (not tree.children) and (not tree.attributes)%}
+    <p>
+    (Empty participants tree.)
+    </p>
+    {% endif %}
+{{ participant_node(tree, None, ("participants detailed tree" | md5 )) }}
+</details>
+</div>

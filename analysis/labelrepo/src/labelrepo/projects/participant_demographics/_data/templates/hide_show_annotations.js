@@ -1,26 +1,44 @@
-function clearActiveAnnotationLinks(element) {
-    if (element.getAttribute('data-annotation-stack-is-shown') !== null) {
-        element.setAttribute('data-annotation-stack-is-shown', "false");
-    }
-    for (let childElem of element.children) {
-        clearActiveAnnotationLinks(childElem);
-    }
+function hideAnnotations(element) {
+    element.querySelectorAll(
+        "*[data-annotation-stack-is-shown='true']").forEach(
+        (elem) => {
+            elem.setAttribute("data-annotation-stack-is-shown", "false");
+            const allAnnoIds = elem.getAttribute(
+                'data-annotation-stack-ids').split(",");
+            allAnnoIds.forEach((annoId) => {
+                document.getElementById(annoId).setAttribute(
+                    "data-is-selected", "false");
+            });
+        }
+    );
 }
 
 function showBuddy(element) {
-    let wasActive = element.getAttribute('data-annotation-stack-is-shown');
-    let docElem = document.getElementById(element.getAttribute("data-doc-id"));
-    clearActiveAnnotationLinks(docElem);
-    let anno = document.getElementById(
-        element.getAttribute('data-annotation-stack-id')
-    );
-    let annoSibling = anno.parentNode.firstElementChild;
-    while (annoSibling !== null) {
-        annoSibling.setAttribute("data-is-selected", "false");
-        annoSibling = annoSibling.nextElementSibling;
-    }
+    const wasActive = element.getAttribute('data-annotation-stack-is-shown');
+    const docElem = document.getElementById(element.getAttribute("data-doc-id"));
+    hideAnnotations(docElem);
     if (wasActive !== "true") {
         element.setAttribute('data-annotation-stack-is-shown', "true");
-        anno.setAttribute("data-is-selected", "true");
+        const allAnnoIds = element.getAttribute(
+            'data-annotation-stack-ids').split(",");
+        allAnnoIds.forEach((annoId) => {
+            document.getElementById(annoId).setAttribute(
+                "data-is-selected", "true");
+        });
     }
 }
+
+function addDetailsEvents() {
+    const allDetails = document.querySelectorAll(
+        ".labelrepo-debug-details details");
+    allDetails.forEach((details) => {
+        details.addEventListener("toggle", (event) => {
+            if (event.target.hasAttribute("open")){
+                return;
+            }
+            hideAnnotations(event.target);
+        });
+    });
+}
+
+window.addEventListener("DOMContentLoaded", addDetailsEvents);

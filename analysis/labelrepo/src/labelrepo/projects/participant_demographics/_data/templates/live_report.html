@@ -6,14 +6,28 @@
         {% include "participants.css" %}
     </style>
     <script>
+     {% include "hide_show_annotations.js"%}
+    </script>
+    <script>
      window.addEventListener("DOMContentLoaded", () => {
          const websocket = new WebSocket("ws://localhost:{{ port }}/");
 
          websocket.onmessage = ({data}) => {
-             let activeElems = document.querySelectorAll(
+             const activeElems = document.querySelectorAll(
                  "*[data-annotation-stack-is-shown='true']");
-             document.getElementById("live-report-content")
-                     .innerHTML = data;
+             const detailsElem = document.querySelector("details");
+             let detailsOpen = false;
+             if (detailsElem !== null && detailsElem.hasAttribute("open")){
+                 detailsOpen = true;
+             }
+             document.getElementById("live-report-content").innerHTML = data;
+             addDetailsEvents();
+             if (detailsOpen) {
+                 const details = document.querySelector("details");
+                 if(details !== null){
+                     details.setAttribute("open", "");
+                 }
+             }
              if (! activeElems.length){
                  return;
              }
@@ -31,9 +45,6 @@
                      + "at <code>localhost:{{ port }}</code>. </p>");
          };
      });
-    </script>
-    <script>
-     {% include "hide_show_annotations.js"%}
     </script>
 </head>
 
