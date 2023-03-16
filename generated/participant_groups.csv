@@ -94,6 +94,7 @@ healthy,_,participant_demographics,Jerome_Dockes,8828908,,216,,,,,,,2021,Default
 healthy,_,participant_demographics,Jerome_Dockes,8172304,,40,8.0,,32.0,25.0,63.0,,2021,Research on Characteristic of Chronic Spontaneous Urticaria Based on Multiscale Entropy
 patients,_,participant_demographics,Jerome_Dockes,8978988,GNE myopathy with congenital thrombocytopenia,1,1.0,,,,,,2022,Novel compound heterozygous mutations in a GNE myopathy with congenital thrombocytopenia: A case report and literature review
 healthy,_,participant_demographics,Jerome_Dockes,5460049,,56,54.0,34.4,2.0,21.0,60.0,,2017,Tribal love: the neural correlates of passionate engagement in football fans
+healthy,study 1,participant_demographics,Jerome_Dockes,3965851,,24,,24.0,24.0,20.0,30.0,,2014,Recognizing the authenticity of emotional expressions: F0 contour matters when you need to know
 patients,_,participant_demographics,Jerome_Dockes,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
 patients,_,participant_demographics,kailu_song,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
 patients,Cerebral Palsy,participant_demographics,maximiliane_jousse,6878729,right-sided cerebral palsy,8,3.0,,5.0,10.0,30.0,,2019,An Individualized Approach to Neuroplasticity After Early Unilateral Brain Damage
@@ -125,6 +126,8 @@ patients,_,participant_demographics,Jerome_Dockes,6908505,bipolar disorder,70,,3
 patients,_,participant_demographics,Jerome_Dockes,8785646,posttraumatic stress disorder,14,,,,,,,2021,Differential mechanisms of posterior cingulate cortex downregulation and symptom decreases in posttraumatic stress disorder and healthy individuals using real‐time fMRI neurofeedback
 healthy,_,participant_demographics,Jerome_Dockes,8379626,,67,36.0,15.6,31.0,,,,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
 healthy,_,participant_demographics,kailu_song,8379626,,67,36.0,15.6,31.0,,,,2021,Is the prefrontal cortex organized by supramodal or modality-specific sensory demands during adolescence?
+healthy,study 1 adults,participant_demographics,Jerome_Dockes,6664004,,51,10.0,43.71,41.0,27.49,55.91,,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
+healthy,adults study 1,participant_demographics,maximiliane_jousse,6664004,,51,10.0,43.71,41.0,27.49,55.91,,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
 patients,_,participant_demographics,Jerome_Dockes,5279905,autism spectrum disorder,16,16.0,,,8.0,18.0,,2017,Young adolescents with autism show abnormal joint attention network: A gaze contingent fMRI study
 patients,_,participant_demographics,Jerome_Dockes,2494616,phantom limb pain,13,11.0,52.92,2.0,32.0,75.0,,2008,"Phantom limb pain, cortical reorganization and the therapeutic effect of mental imagery"
 patients,_,participant_demographics,Jerome_Dockes,3877773,Tourette syndrome,17,,,,,,,2013,Abnormal baseline brain activity in drug-naïve patients with Tourette syndrome: a resting-state fMRI study
@@ -145,7 +148,7 @@ healthy,experiment 1,participant_demographics,Jerome_Dockes,5902547,,41,16.0,,25
 healthy,_,participant_demographics,Jerome_Dockes,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
 healthy,_,participant_demographics,Sean_Moore,3775427,,102,36.0,21.5,66.0,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
 healthy,_,participant_demographics,kailu_song,3775427,,102,,21.5,,20.0,23.0,,2013,Task vs. rest—different network configurations between the coactivation and the resting-state brain networks
-healthy,_,participant_demographics,Jerome_Dockes,3483694,,23,6.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
+healthy,_,participant_demographics,Jerome_Dockes,3483694,,22,5.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
 healthy,_,participant_demographics,kailu_song,3483694,,23,6.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
 healthy,_,participant_demographics,maximiliane_jousse,3483694,,25,8.0,,17.0,23.0,41.0,,2012,Neural activity associated with self-reflection
 patients,_,participant_demographics,Jerome_Dockes,3742334,chronic marijuana use,10,8.0,,2.0,,,,2012,A Preliminary Study of Functional Brain Activation among Marijuana Users during Performance of a Virtual Water Maze Task
@@ -165,6 +168,7 @@ healthy,_,participant_demographics,calvin_surbey,4319399,,142,71.0,26.8,71.0,,,,
 patients,_,participant_demographics,Jerome_Dockes,8550949,schizophrenia,31,26.0,26.64,5.0,,,,2019,The neural and molecular basis of working memory function in psychosis: a multimodal PET-fMRI study
 healthy,_,participant_demographics,Jerome_Dockes,6528067,,10,4.0,20.8,6.0,,,,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
 healthy,_,participant_demographics,kailu_song,6528067,,10,4.0,,6.0,,,,2019,Functional Source Separation for EEG-fMRI Fusion: Application to Steady-State Visual Evoked Potentials
+patients,LMTLE,participant_demographics,Jerome_Dockes,8933759,Left Mesial Temporal Lobe Epilepsy,12,,,,,,,2022,Interhemispheric functional connectivity asymmetry is distinctly affected in left and right mesial temporal lobe epilepsy
 patients,_,participant_demographics,Jerome_Dockes,7875881,major depressive disorder,19,,,,18.0,55.0,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
 patients,_,participant_demographics,calvin_surbey,7875881,,19,,,,18.0,55.0,,2020,Enhanced Functional Connectivity Within Executive Function Network in Remitted or Partially Remitted MDD Patients
 healthy,_,participant_demographics,Jerome_Dockes,3869649,,19,10.0,22.8,9.0,19.0,31.0,,2013,fMRI Guided rTMS Evidence for Reduced Left Prefrontal Involvement after Task Practice
@@ -210,12 +214,14 @@ healthy,_,participant_demographics,Jerome_Dockes,6868994,,29,15.0,34.5,14.0,,,,2
 healthy,_,participant_demographics,kailu_song,6868994,,14,,34.5,14.0,,,,2012,Effects of prior information on decoding degraded speech: An fMRI study
 patients,_,participant_demographics,Jerome_Dockes,8154462,stroke,11,11.0,56.21,,45.0,68.0,,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
 patients,_,participant_demographics,kailu_song,8154462,stroke,11,11.0,56.21,,45.0,68.0,,2021,Brain activation in response to visual sexual stimuli in male patients with right middle cerebral artery infarction
+healthy,NC,participant_demographics,Jerome_Dockes,9205431,,38,16.0,,22.0,,,,2022,Inferring excitation-inhibition dynamics using a maximum entropy model unifying brain structure and function
 healthy,adolescents,participant_demographics,Jerome_Dockes,3991323,,220,115.0,14.61,105.0,14.0,15.0,,2014,Differential representation of feedback and decision in adolescents and adults
 healthy,adolescents,participant_demographics,kailu_song,3991323,,220,115.0,14.61,105.0,14.0,15.0,,2014,Differential representation of feedback and decision in adolescents and adults
 healthy,_,participant_demographics,Jerome_Dockes,4030253,,23,,15.2,,,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
 patients,Internet Addiction,participant_demographics,joon_hong,4030253,Internet Addiction,18,,15.2,,,,,2014,Impaired Frontal-Basal Ganglia Connectivity in Adolescents with Internet Addiction
 healthy,_,participant_demographics,Jerome_Dockes,5717028,,40,24.0,68.4,16.0,,,,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
 healthy,_,participant_demographics,calvin_surbey,5717028,,40,24.0,68.4,16.0,,,,2017,Effects of Field-Map Distortion Correction on Resting State Functional Connectivity MRI
+patients,_,participant_demographics,Jerome_Dockes,9461104,Pontocerebellar hypoplasia,6,,,,,,,2022,"Clinical, radiological, and genetic variation in pontocerebellar hypoplasia disorder and our clinical experience"
 healthy,_,participant_demographics,Jerome_Dockes,7481390,,28,15.0,26.39,13.0,,,,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
 healthy,_,participant_demographics,calvin_surbey,7481390,,28,15.0,26.39,13.0,,,,2020,Effects of Autonomous Sensory Meridian Response on the Functional Connectivity as Measured by Functional Magnetic Resonance Imaging
 patients,_,participant_demographics,Jerome_Dockes,5537800,obesity,16,,46.31,16.0,,,,2017,Brain Functional Connectivity Is Modified by a Hypocaloric Mediterranean Diet and Physical Activity in Obese Women
@@ -235,4 +241,3 @@ healthy,_,participant_demographics,kailu_song,3676955,,33,17.0,25.3,16.0,,,,2013
 patients,_,participant_demographics,Jerome_Dockes,6509414,hearing loss,26,,,,,,,2019,Exploring Differences in Speech Processing Among Older Hearing-Impaired Listeners With or Without Hearing Aid Experience: Eye-Tracking and fMRI Measurements
 patients,schizophrenia,participant_demographics,Jerome_Dockes,8883821,schizophrenia,28,20.0,,8.0,21.0,54.0,,2021,Disease-Specific Contribution of Pulvinar Dysfunction to Impaired Emotion Recognition in Schizophrenia
 healthy,_,participant_demographics,maximiliane_jousse,5596109,,6,4.0,,2.0,,,,2017,"A Novel Feature-Map Based ICA Model for Identifying the Individual, Intra/Inter-Group Brain Networks across Multiple fMRI Datasets"
-healthy,adults study 1,participant_demographics,maximiliane_jousse,6664004,,51,10.0,43.71,41.0,27.49,55.91,,2019,Behavioral and Neural Dysregulation to Social Rewards and Links to Internalizing Symptoms in Adolescents
