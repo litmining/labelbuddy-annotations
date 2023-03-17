@@ -2,6 +2,7 @@ from __future__ import annotations
 import abc
 
 import dataclasses
+import math
 import re
 from typing import Dict, Optional, Any, Set
 
@@ -112,9 +113,13 @@ class _SumCompleter(_Completer):
         children_sum = 0
         missing_count = False
         sources = set()
+        reason_parts = []
         for child in node.children.values():
             if attribute_name in child.attributes:
                 children_sum += child.attributes[attribute_name].value
+                reason_parts.append(
+                    child.attributes[attribute_name]._get_reason()
+                )
                 sources = sources.union(
                     child.attributes[attribute_name].sources
                 )
@@ -122,8 +127,9 @@ class _SumCompleter(_Completer):
                 missing_count = True
         if attribute_name not in node.attributes:
             if not missing_count:
+                reason = " + ".join(reason_parts)
                 node.attributes[attribute_name] = _Attribute(
-                    children_sum, sources
+                    children_sum, sources, f"{children_sum} = {reason}"
                 )
             return
         if (
@@ -131,7 +137,8 @@ class _SumCompleter(_Completer):
             and node.attributes[attribute_name].value != children_sum
         ) or node.attributes[attribute_name].value < children_sum:
             raise AnnotationValueError(
-                "Conflicting annotations",
+                "Conflicting annotations. "
+                "Total count is not the sum of subgroup counts",
                 sources.union(node.attributes[attribute_name].sources),
             )
 
@@ -142,11 +149,15 @@ class _SumCompleter(_Completer):
         if attribute_name not in node.attributes:
             return
         children_sum = 0
+        reason_parts = []
         missing_count = []
         sources = set(node.attributes[attribute_name].sources)
         for child in node.children.values():
             if attribute_name in child.attributes:
                 children_sum += child.attributes[attribute_name].value
+                reason_parts.append(
+                    child.attributes[attribute_name]._get_reason()
+                )
                 sources = sources.union(
                     child.attributes[attribute_name].sources
                 )
@@ -156,13 +167,21 @@ class _SumCompleter(_Completer):
             not missing_count
             and node.attributes[attribute_name].value != children_sum
         ) or node.attributes[attribute_name].value < children_sum:
-            raise AnnotationValueError("Conflicting annotations", sources)
+            raise AnnotationValueError(
+                "Conflicting annotations. Total count is not "
+                "the sum of subgroup counts",
+                sources,
+            )
         if len(missing_count) != 1:
             return
         computed_count = node.attributes[attribute_name].value - children_sum
+        total_reason = node.attributes[attribute_name]._get_reason()
+        sum_reason = " + ".join(reason_parts)
+        if len(reason_parts) > 1:
+            sum_reason = f"( {sum_reason} )"
+        reason = f"{computed_count} = {total_reason} - {sum_reason}"
         missing_count[0].attributes[attribute_name] = _Attribute(
-            computed_count,
-            sources,
+            computed_count, sources, reason
         )
 
 
@@ -191,17 +210,25 @@ class _MeanCompleter(_Completer):
         if total_count == 0:
             return
         mean = sum(m * c for (m, c) in values) / total_count
+        wsum_reason = " + ".join(f"{m}*{c}" for m, c in values)
+        tcount_reason = " + ".join(str(c) for _, c in values)
+        reason = f"{mean:.4g} = ( {wsum_reason} ) / ( {tcount_reason} )"
         if attribute_name not in node.attributes:
-            node.attributes[attribute_name] = _Attribute(mean, sources)
+            node.attributes[attribute_name] = _Attribute(mean, sources, reason)
             return
-        if abs(mean - node.attributes[attribute_name].value) > 1:
+        if not math.isclose(
+            mean, node.attributes[attribute_name].value, rel_tol=0.1
+        ):
             raise AnnotationValueError(
-                "Conflicting annotations",
+                "Conflicting annotations. "
+                "Overall mean and subgroup means do not match",
                 sources.union(node.attributes[attribute_name].sources),
             )
 
 
 class _BoundCompleter(_Completer):
+    _aggregate_name = "bound"
+
     @abc.abstractstaticmethod
     def _aggregate(values):
         pass
@@ -219,14 +246,19 @@ class _BoundCompleter(_Completer):
             sources = sources.union(child.attributes[attribute_name].sources)
         bound = cls._aggregate(values)
         if attribute_name not in node.attributes:
-            node.attributes[attribute_name] = _Attribute(bound, sources)
+            values_repr = ", ".join(map(str, values))
+            reason = f"{bound} = {cls._aggregate_name}( {values_repr} )"
+            node.attributes[attribute_name] = _Attribute(
+                bound, sources, reason
+            )
             return
         if (
             cls._aggregate([bound, node.attributes[attribute_name].value])
             != node.attributes[attribute_name].value
         ):
             raise AnnotationValueError(
-                "Conflicting annotations",
+                "Conflicting annotations."
+                "Subgroup bounds not contained in overall bounds.",
                 sources.union(node.attributes[attribute_name].sources),
             )
 
@@ -252,7 +284,8 @@ class _BoundCompleter(_Completer):
                 != node.attributes[attribute_name].value
             ):
                 raise AnnotationValueError(
-                    "Conflicting annotations",
+                    "Conflicting annotations"
+                    "Subgroup bounds not contained in overall bounds.",
                     node.attributes[attribute_name].sources.union(
                         child.attributes[attribute_name].sources
                     ),
@@ -260,12 +293,16 @@ class _BoundCompleter(_Completer):
 
 
 class _MinCompleter(_BoundCompleter):
+    _aggregate_name = "min"
+
     @staticmethod
     def _aggregate(values):
         return min(values)
 
 
 class _MaxCompleter(_BoundCompleter):
+    _aggregate_name = "max"
+
     @staticmethod
     def _aggregate(values):
         return max(values)
@@ -381,6 +418,14 @@ class _Token:
 class _Attribute:
     value: Any
     sources: Set[_Token]
+    reason: Optional[str] = None
+
+    def _get_reason(self, nestable=True):
+        if self.reason is None:
+            return repr(self.value)
+        if not nestable:
+            return self.reason
+        return f"( {self.reason} )"
 
     def __str__(self):
         return repr(self.value)
@@ -538,11 +583,11 @@ class DocAnnotations:
         for tok in self.tokens:
             node = self._find_node(tok)
             self._update_node(node, tok)
-        self._collect(self.tree)
-        self._broadcast(self.tree)
         # we could also do 1 first pass just for counts
         self._collect(self.tree)
+        self._broadcast(self.tree)
         self._prune_empty_groups(self.tree)
+        self._collect(self.tree)
 
     def _prune_empty_groups(self, node):
         node.children = {

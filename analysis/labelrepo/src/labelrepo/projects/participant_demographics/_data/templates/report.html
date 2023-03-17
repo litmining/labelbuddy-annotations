@@ -1,9 +1,12 @@
 {% macro sourced(attribute, doc, id, fmt='{}') %}
 {% if attribute.sources %}
     <span id="{{ id | md5 }}-{{ doc['doc_uid'] }}"
-        class="labelrepo-clickable" onclick="showBuddy(this)"
-        data-doc-id="doc-{{ doc['doc_uid'] }}"
-        data-annotation-stack-ids="
+          class="labelrepo-clickable labelrepo-sourced-value"
+          onclick="showBuddy(this)"
+          data-reason-as-json='{{ attribute.reason | tojson if attribute.reason }}'
+          data-reason-target-id="selected-sourced-reason-doc-{{ doc["doc_uid"] }}"
+          data-doc-id="doc-{{ doc['doc_uid'] }}"
+          data-annotation-stack-ids="
             {%- for source in attribute.sources -%}
             {%- if not loop.first -%}
             ,
@@ -12,7 +15,7 @@
         {%- endfor -%}
         " >
 {%- endif -%}
-{{ fmt.format(attribute.value) }}
+{{ ("{:.4g}" if (fmt == '{}' and attribute.value is float) else fmt).format(attribute.value) }}
 {%- if attribute.sources -%}
     </span>
 {%- endif -%}
@@ -137,6 +140,7 @@ style="
                             <div class="labelrepo-warning-message">
                                 could not infer the number of participants in this subgroup.
                             </div>
+                            <strong>?</strong>
                             {%- endif -%}
                             {%- for sex in ("female", "male") if sex in subgroup.children and "count" in subgroup.children[sex].attributes -%},
                             {% set sex_group = subgroup.children[sex] %}
@@ -163,6 +167,7 @@ style="
                     {% include "participant_tree.html" %}
                     {% endif %}
 
+                    <div id="selected-sourced-reason-doc-{{ doc["doc_uid"] }}" class="labelrepo-selected-sourced-reason labelrepo-debug-details"></div>
                     {% for annotation_stack in doc["annotation_stacks"] %}
                     <div class="hidden-annotation-stack" id="anno-{{ annotation_stack["start_char"] }}-{{ annotation_stack["end_char"] }}-{{ doc['doc_uid'] }}"
                          {% if doc["extraction_failed"] and "participants" in doc %}
