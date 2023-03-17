@@ -15,7 +15,7 @@
         {%- endfor -%}
         " >
 {%- endif -%}
-{{ ("{:.4g}" if (fmt == '{}' and attribute.value is float) else fmt).format(attribute.value) }}
+{{ ("{:.4g}" if (fmt == '{}' and attribute.value is float) else fmt).format(attribute.value if not(attribute is none) else "?") }}
 {%- if attribute.sources -%}
     </span>
 {%- endif -%}
@@ -44,7 +44,7 @@ style="
         <main class="participants-report">
             <div class="labelrepo-flow labelrepo-wrapper" {{ label_color_style() }}>
             <header class="report-header">
-                <h1>Participant demographics</h1>
+                <h1>{{ "Participant demographics" if title is undefined else title }}</h1>
                 <p>
                     Information collected from
                     <strong>{{ documents | length }}</strong> documents
@@ -133,27 +133,33 @@ style="
                         </div>
                         {% endif %}
                         <p>
+                            {% set sep = cycler("", ",", ",", ",") %}
                             {% if subgroup.attributes["count"] %}
+                            {{ sep.next() }}
                             <strong>{{ sourced(subgroup.attributes["count"], doc, "count-" + subgroup_id) }}</strong>
                             {{ "participants" if group_name == "healthy" else "patients" -}}
                             {% else %}
                             <div class="labelrepo-warning-message">
                                 could not infer the number of participants in this subgroup.
                             </div>
-                            <strong>?</strong>
                             {%- endif -%}
-                            {%- for sex in ("female", "male") if sex in subgroup.children and "count" in subgroup.children[sex].attributes -%},
+                            {%- for sex in ("female", "male") if sex in subgroup.children and "count" in subgroup.children[sex].attributes -%}
+                            {{ sep.next() }}
                             {% set sex_group = subgroup.children[sex] %}
                             <strong>{{ sourced(sex_group.attributes["count"], doc, sex + "-count-" + subgroup_id  ) }}</strong> {{ sex }}s
                             {%- endfor -%}
                             {% if ('age minimum' in subgroup.attributes) or ('age maximum' in subgroup.attributes) -%}
-                            <br/>Age range:
-                            <strong>{{ sourced(subgroup.attributes.get("age minimum", "?"), doc, "age-min-" + subgroup_id) }}</strong> –
-                            <strong>{{ sourced(subgroup.attributes.get("age maximum", "?"), doc, "age-max-" + subgroup_id) }}</strong> years
+                            <p>
+                            Age range:
+                            <strong>{{ sourced(subgroup.attributes.get("age minimum"), doc, "age-min-" + subgroup_id) }}</strong> –
+                            <strong>{{ sourced(subgroup.attributes.get("age maximum"), doc, "age-max-" + subgroup_id) }}</strong> years
+                            </p>
                             {%- endif -%}
                             {% for metric in ['age mean', 'age median'] %}
                             {% if metric in subgroup.attributes %}
-                            <br/>{{ metric | capitalize }}: <strong>{{ sourced(subgroup.attributes[metric], doc, metric + "-" + subgroup_id, '{:.1f}') }}</strong> years
+                            <p>
+                                {{ metric | capitalize }}: <strong>{{ sourced(subgroup.attributes[metric], doc, metric + "-" + subgroup_id, '{:.1f}') }}</strong> years
+                            </p>
                             {% endif %}
                             {% endfor %}
                         </p>

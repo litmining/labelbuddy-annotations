@@ -257,8 +257,8 @@ class _BoundCompleter(_Completer):
             != node.attributes[attribute_name].value
         ):
             raise AnnotationValueError(
-                "Conflicting annotations."
-                "Subgroup bounds not contained in overall bounds.",
+                "Conflicting annotations. "
+                "Subgroup bounds not contained in overall bounds",
                 sources.union(node.attributes[attribute_name].sources),
             )
 
@@ -284,8 +284,8 @@ class _BoundCompleter(_Completer):
                 != node.attributes[attribute_name].value
             ):
                 raise AnnotationValueError(
-                    "Conflicting annotations"
-                    "Subgroup bounds not contained in overall bounds.",
+                    "Conflicting annotations. "
+                    "Subgroup bounds not contained in overall bounds",
                     node.attributes[attribute_name].sources.union(
                         child.attributes[attribute_name].sources
                     ),

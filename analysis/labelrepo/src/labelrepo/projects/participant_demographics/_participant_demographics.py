@@ -215,6 +215,7 @@ def get_report(
     project_name: Optional[str] = None,
     pmcid: Optional[int] = None,
     standalone: bool = False,
+    errors_only: bool = False,
 ) -> str:
     all_anno = select_participants_annotations(
         annotator_name=annotator_name, project_name=project_name, pmcid=pmcid
@@ -232,6 +233,12 @@ def get_report(
         )
     else:
         key = lambda d: (d["pmcid"], d["project_name"], d["annotator_name"])
+    if errors_only:
+        all_docs = [
+            doc
+            for doc in all_docs
+            if doc.get("warnings") or doc.get("extraction_failed")
+        ]
     all_docs = sorted(all_docs, key=key)
     jinja_env = _get_jinja_env()
     template = jinja_env.get_template("report.html")
@@ -240,6 +247,8 @@ def get_report(
         "standalone": standalone,
         "no_doc_positions": True,
     }
+    if errors_only:
+        info["title"] = "Participant demographics annotation errors"
     info.update(_get_template_data())
     if annotator_name is not None:
         info["annotator_name"] = annotator_name
@@ -253,6 +262,12 @@ def report_command(args: Optional[List[str]] = None) -> None:
     parser.add_argument("-p", "--project_name", type=str, default=None)
     parser.add_argument("-a", "--annotator_name", type=str, default=None)
     parser.add_argument("-A", "--all_annotators", action="store_true")
+    parser.add_argument(
+        "-e",
+        "--errors_only",
+        action="store_true",
+        help="only show annotations with errors or warnings.",
+    )
     parsed_args = parser.parse_args(args)
     if parsed_args.all_annotators:
         annotator_name = None
@@ -265,12 +280,17 @@ def report_command(args: Optional[List[str]] = None) -> None:
         annotator_name=annotator_name,
         project_name=project_name,
         standalone=True,
+        errors_only=parsed_args.errors_only,
     )
     out_dir = repo.repo_root() / "analysis" / "data" / "reports"
     out_dir.mkdir(exist_ok=True, parents=True)
     proj_repr = "" if project_name is None else f"_{project_name}"
     annotator_repr = "" if annotator_name is None else f"_{annotator_name}"
-    out_file = out_dir / f"participants_report{annotator_repr}{proj_repr}.html"
+    err_repr = "_errors" if parsed_args.errors_only else ""
+    out_file = (
+        out_dir
+        / f"participants{err_repr}_report{annotator_repr}{proj_repr}.html"
+    )
     out_file.write_text(html)
     print(f"Report saved in {out_file}")
 
