@@ -1,3 +1,11 @@
+.participants-report {
+    color: black;
+}
+
+.participants-report :is(h1, h2, h3, h4, p, details, summary, header, footer, a) {
+    color: black;
+}
+
 .labelrepo-unselectable {
     user-select: none;
 }
@@ -14,6 +22,7 @@
 
 .participants-report footer {
     border: 0;
+    padding-block-start: 0;
     padding-block-end: 0.5rem;
 }
 
@@ -191,6 +200,7 @@
     font-family: monospace;
     padding-inline-start: 0.5rem;
     padding-inline-end: 0.5rem;
+    line-height: 1.1;
 }
 
 .labelrepo-selected-sourced-reason {
@@ -219,6 +229,10 @@
     content: "Hide ";
 }
 
+.labelrepo-debug-details details[open] {
+    margin-block-end: 0.5rem;
+}
+
 .labelrepo-warning-message,
 .labelrepo-error-message {
     font-family: monospace;
@@ -239,6 +253,10 @@
 .labelrepo-error-message::before {
     content: "Error\A";
     white-space: pre;
+}
+
+.labelrepo-participant-node {
+    margin-block-start: 0.5rem;
 }
 
 .labelrepo-participant-node>.node-contents {
