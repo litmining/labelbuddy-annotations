@@ -193,6 +193,16 @@
     padding-inline-end: 0.5rem;
 }
 
+.labelrepo-selected-sourced-reason {
+    font-size: normal;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+}
+
+.labelrepo-selected-sourced-reason:empty {
+    padding: 0;
+}
+
 .labelrepo-debug-details summary {
     font-family: monospace;
     list-style: none;
