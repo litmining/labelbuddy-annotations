@@ -569,7 +569,7 @@ class DocAnnotations:
         for attribute_name, attribute in new_attributes.items():
             if (
                 attribute_name in node.attributes
-                and node.attributes[attribute_name].value != attribute
+                and node.attributes[attribute_name].value != attribute.value
             ):
                 raise AnnotationValueError(
                     "Conflicting annotations",
