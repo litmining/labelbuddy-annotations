@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurobridge_fmri &#8212; Biomedical literature annotations</title>
+    <title>dynamic_functional_connectivity &#8212; Biomedical literature annotations</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/neurobridge_fmri';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/dynamic_functional_connectivity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="participant_demographics" href="participant_demographics.html" />
-    <link rel="prev" title="neuro_meta_analyses.phase_2" href="neuro_meta_analyses__phase_2.html" />
+    <link rel="next" title="neuro_meta_analyses.phase_1" href="neuro_meta_analyses__phase_1.html" />
+    <link rel="prev" title="cluster_inference" href="cluster_inference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,10 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="autism_mri.html">autism_mri</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cluster_inference.html">cluster_inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">dynamic_functional_connectivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_1.html">neuro_meta_analyses.phase_1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="neuro_meta_analyses__phase_2.html">neuro_meta_analyses.phase_2</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">neurobridge_fmri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurobridge_fmri.html">neurobridge_fmri</a></li>
 <li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">participant_demographics</a></li>
 </ul>
 
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/projects/neurobridge_fmri.md" target="_blank"
+      <li><a href="../_sources/projects/dynamic_functional_connectivity.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>neurobridge_fmri</h1>
+    <h1>dynamic_functional_connectivity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,7 +333,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fmri-tasks-in-neurobridge-documents">fMRI tasks in NeuroBridge documents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">Dynamic Functional Connectivity methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
             </nav>
@@ -346,17 +346,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="neurobridge-fmri">
-<h1>neurobridge_fmri<a class="headerlink" href="#neurobridge-fmri" title="Permalink to this heading">#</a></h1>
-<p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neurobridge_fmri/">on GitHub</a>.</p>
-<section id="fmri-tasks-in-neurobridge-documents">
-<h2>fMRI tasks in NeuroBridge documents<a class="headerlink" href="#fmri-tasks-in-neurobridge-documents" title="Permalink to this heading">#</a></h2>
-<p>This is a satellite project of the <a class="reference external" href="https://github.com/NeuroBridge/Annotation-Project">NeuroBridge annotation project</a>.
-The goal is to annotate the tasks used by task-based fMRI acquisitions described in the <strong>NeuroBridge</strong> papers.</p>
-<p>The documents were copied from <a class="reference external" href="https://github.com/NeuroBridge/Annotation-Project/tree/main/Phase_1/INPUT_Papers_for_Annotation/All_Papers_For_Annotation_From_Phase_2">this directory</a> in the <strong>NeuroBridge</strong> repository, and converted from WebAnno3 format to <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/">labelbuddy</a>’s format using <a class="reference external" href="https://github.com/jeromedockes/labelutils">labelutils</a>.</p>
-<p>As the documents for this project do not come from a <a class="reference external" href="https://neuroquery.github.io/pubget/pubget.html">pubget</a> download, they have less metadata and a different formatting (no headings or paragraph breaks) than documents in other projects in this repository.
-Also, a <strong>pubget</strong> dataset is not available for download with <code class="docutils literal notranslate"><span class="pre">/scripts/download_datasets.py</span></code>.
-But keeping the same version of the documents makes it possible to combine the annotations created here with those of the larger <strong>NeuroBridge</strong> project, down to the character positions, which trumps the other details.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamic-functional-connectivity">
+<h1>dynamic_functional_connectivity<a class="headerlink" href="#dynamic-functional-connectivity" title="Permalink to this heading">#</a></h1>
+<p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/dynamic_functional_connectivity/">on GitHub</a>.</p>
+<section id="dynamic-functional-connectivity-methods">
+<h2>Dynamic Functional Connectivity methods<a class="headerlink" href="#dynamic-functional-connectivity-methods" title="Permalink to this heading">#</a></h2>
+<p>The focus of this project is to explore how methods for estimating Dynamic Functional Connectivity (DFC) are used in the literature.</p>
 </section>
 <section id="labels-in-this-project">
 <h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
@@ -404,20 +399,20 @@ But keeping the same version of the documents makes it possible to combine the a
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="neuro_meta_analyses__phase_2.html"
+       href="cluster_inference.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">neuro_meta_analyses.phase_2</p>
+        <p class="prev-next-title">cluster_inference</p>
       </div>
     </a>
     <a class="right-next"
-       href="participant_demographics.html"
+       href="neuro_meta_analyses__phase_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">participant_demographics</p>
+        <p class="prev-next-title">neuro_meta_analyses.phase_1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -439,7 +434,7 @@ But keeping the same version of the documents makes it possible to combine the a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fmri-tasks-in-neurobridge-documents">fMRI tasks in NeuroBridge documents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-functional-connectivity-methods">Dynamic Functional Connectivity methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
   </nav></div>
