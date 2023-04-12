@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">smoothing_snippet (175 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -170,7 +170,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">cluster_thresh_used (152 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -300,7 +300,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">cluster_thresh_in_voxels (82 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -560,7 +560,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">nonparametric_cluster_thresh (55 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1210,7 +1210,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">cluster_thresh_in_mm (22 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1836,7 +1836,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #dbdb8d;&#34;>
+    <details style="--label-color: #dbdb8d;">
         <summary class="label-display">discard_this_paper (5 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1919,7 +1919,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #f7b6d2;&#34;>
+    <details style="--label-color: #f7b6d2;">
         <summary class="label-display">is_annotated (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1999,7 +1999,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #b8b8b8;&#34;>
+    <details style="--label-color: #b8b8b8;">
         <summary class="label-display">annotation_in_progress (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2066,7 +2066,7 @@ text = """
         
     </details>
     
-    <details style=&#34;--label-color: #c49c94;&#34;>
+    <details style="--label-color: #c49c94;">
         <summary class="label-display">info_removed_in_name_extract (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>

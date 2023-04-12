@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style=&#34;--label-color: #cc0000;&#34;>
+    <details style="--label-color: #cc0000;">
         <summary class="label-display">meta-analysis method (83 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -207,7 +207,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
         
     </details>
     
-    <details style=&#34;--label-color: #f57900;&#34;>
+    <details style="--label-color: #f57900;">
         <summary class="label-display">final n (79 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -348,7 +348,7 @@ For phonemic as well as for semantic verbal fluency, the most prominent clusters
         
     </details>
     
-    <details style=&#34;--label-color: #888a85;&#34;>
+    <details style="--label-color: #888a85;">
         <summary class="label-display">exclude? (13 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -715,7 +715,7 @@ Autism Spectrum Disorder (ASD) diagnosis is still based o…
         
     </details>
     
-    <details style=&#34;--label-color: #888a85;&#34;>
+    <details style="--label-color: #888a85;">
         <summary class="label-display">LOOK UP LATER (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -789,56 +789,56 @@ Given the increasing amount of neuroimaging studies, there is a g…
         
     </details>
     
-    <details style=&#34;--label-color: #fcaf3e;&#34;>
+    <details style="--label-color: #fcaf3e;">
         <summary class="label-display">literature query (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">literature sources (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #8ae234;&#34;>
+    <details style="--label-color: #8ae234;">
         <summary class="label-display">literature search date (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">original n (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #729fcf;&#34;>
+    <details style="--label-color: #729fcf;">
         <summary class="label-display">exclusion criteria (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">inference (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #fce94f;&#34;>
+    <details style="--label-color: #fce94f;">
         <summary class="label-display">covariates (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #4e9a06;&#34;>
+    <details style="--label-color: #4e9a06;">
         <summary class="label-display">n individual participants (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>

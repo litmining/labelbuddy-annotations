@@ -40,7 +40,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">fmri (91 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -323,7 +323,7 @@ In the recent perceptual decision-making literature, a fronto-parietal network i
         
     </details>
     
-    <details style=&#34;--label-color: #dbdb8d;&#34;>
+    <details style="--label-color: #dbdb8d;">
         <summary class="label-display">mri (63 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -623,7 +623,7 @@ Over the past decade mind and body practices, such as yoga and meditation, have 
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">exclude not brain (58 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -921,7 +921,7 @@ meta-…
         
     </details>
     
-    <details style=&#34;--label-color: #9edae5;&#34;>
+    <details style="--label-color: #9edae5;">
         <summary class="label-display">pet (32 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1205,7 +1205,7 @@ positron emission t…
         
     </details>
     
-    <details style=&#34;--label-color: #f7b6d2;&#34;>
+    <details style="--label-color: #f7b6d2;">
         <summary class="label-display">CT (12 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1482,7 +1482,7 @@ ICH, intracranial h…
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">perfusion mri (7 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1691,7 +1691,7 @@ ps…
         
     </details>
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">INTERESTING (7 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1923,7 +1923,7 @@ Tumor recurrence and pseudoprogression (PsP) have similar i…
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">structural mri (6 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2100,7 +2100,7 @@ Major depressive disorder (MDD), anxiety disorders (ANX), and chronic pain (CP) 
         
     </details>
     
-    <details style=&#34;--label-color: #c49c94;&#34;>
+    <details style="--label-color: #c49c94;">
         <summary class="label-display">dmrid (6 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2263,7 +2263,7 @@ White-matter abnormalities, including increases in extracellular free-water, are
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">SPECT (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2363,7 +2363,7 @@ meta-analysis
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">arterial spin labelling mri (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2427,7 +2427,7 @@ dem…
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">exclude not meta analysis (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2496,7 +2496,7 @@ pol…
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">vessel wall MRI (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2561,7 +2561,7 @@ statin
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">exclude not humans (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2600,7 +2600,7 @@ Guidelines
         
     </details>
     
-    <details style=&#34;--label-color: #c49c94;&#34;>
+    <details style="--label-color: #c49c94;">
         <summary class="label-display">exclude incomplete (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2643,7 +2643,7 @@ GingerALE
         
     </details>
     
-    <details style=&#34;--label-color: #f7b6d2;&#34;>
+    <details style="--label-color: #f7b6d2;">
         <summary class="label-display">MRS (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2687,7 +2687,7 @@ We perform…
         
     </details>
     
-    <details style=&#34;--label-color: #dbdb8d;&#34;>
+    <details style="--label-color: #dbdb8d;">
         <summary class="label-display">TMS (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -2727,7 +2727,7 @@ Schizop…
         
     </details>
     
-    <details style=&#34;--label-color: #9edae5;&#34;>
+    <details style="--label-color: #9edae5;">
         <summary class="label-display">ultrasound (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>

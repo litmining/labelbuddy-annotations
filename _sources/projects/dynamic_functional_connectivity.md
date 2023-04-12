@@ -43,7 +43,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">SW (14 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -217,7 +217,7 @@ MRI images were collected from 99 participants including 56 healthy controls and
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">SWC (7 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -367,7 +367,7 @@ MRI images were collected from 99 participants including 56 healthy controls and
         
     </details>
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">others (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -408,7 +408,7 @@ MRI images were collected from 99 participants including 56 healthy controls and
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">HMM (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -435,7 +435,7 @@ Having demonstrated the utility of the NPC approach to relate FC to behavior in 
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">CAP (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>

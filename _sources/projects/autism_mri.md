@@ -65,7 +65,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">FieldStrength (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -126,7 +126,7 @@ Imaging took place on a Siemens <mark class="annotated-text">3</mark>T TiM Trio 
         
     </details>
     
-    <details style=&#34;--label-color: #dbdb8d;&#34;>
+    <details style="--label-color: #dbdb8d;">
         <summary class="label-display">N_Patients (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -214,7 +214,7 @@ KOALA is a prospective, multicentre, longitudinal cohort study of children aged 
         
     </details>
     
-    <details style=&#34;--label-color: #9edae5;&#34;>
+    <details style="--label-color: #9edae5;">
         <summary class="label-display">N_Controls (3 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -260,7 +260,7 @@ KOALA is a prospective, multicentre, longitudinal cohort study of children aged 
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">Diagnosis (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -320,7 +320,7 @@ magnetic resonance imaging
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">N_Controls_Male (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -354,7 +354,7 @@ magnetic resonance imaging
         
     </details>
     
-    <details style=&#34;--label-color: #c49c94;&#34;>
+    <details style="--label-color: #c49c94;">
         <summary class="label-display">Age_Min (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -388,7 +388,7 @@ magnetic resonance imaging
         
     </details>
     
-    <details style=&#34;--label-color: #f7b6d2;&#34;>
+    <details style="--label-color: #f7b6d2;">
         <summary class="label-display">Age_Max (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -422,7 +422,7 @@ magnetic resonance imaging
         
     </details>
     
-    <details style=&#34;--label-color: #dbdb8d;&#34;>
+    <details style="--label-color: #dbdb8d;">
         <summary class="label-display">Scanner (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -466,7 +466,7 @@ Imaging took place on a <mark class="annotated-text">Siemens 3T TiM Trio</mark> 
         
     </details>
     
-    <details style=&#34;--label-color: #9edae5;&#34;>
+    <details style="--label-color: #9edae5;">
         <summary class="label-display">AnalysisTool (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -624,7 +624,7 @@ Individual cortical surfaces were rendered from the high-resolution anatomical i
         
     </details>
     
-    <details style=&#34;--label-color: #00ffff;&#34;>
+    <details style="--label-color: #00ffff;">
         <summary class="label-display">healthy (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -664,7 +664,7 @@ One-way ANOVA analysis revealed that, in psychological assessments, only the AUD
         
     </details>
     
-    <details style=&#34;--label-color: #fff700;&#34;>
+    <details style="--label-color: #fff700;">
         <summary class="label-display">patients (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -804,7 +804,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #6bf700;&#34;>
+    <details style="--label-color: #6bf700;">
         <summary class="label-display">female (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -838,7 +838,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #ff65de;&#34;>
+    <details style="--label-color: #ff65de;">
         <summary class="label-display">male (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -896,7 +896,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #e6c68f;&#34;>
+    <details style="--label-color: #e6c68f;">
         <summary class="label-display">count (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -967,7 +967,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #d1cbff;&#34;>
+    <details style="--label-color: #d1cbff;">
         <summary class="label-display">age mean (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1020,7 +1020,7 @@ One-way ANOVA analysis revealed that, in psychological assessments, only the AUD
         
     </details>
     
-    <details style=&#34;--label-color: #fbc5ff;&#34;>
+    <details style="--label-color: #fbc5ff;">
         <summary class="label-display">diagnosis (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1079,7 +1079,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">N_Total (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1101,7 +1101,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #ffbb78;&#34;>
+    <details style="--label-color: #ffbb78;">
         <summary class="label-display">N_Controls_Female (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1123,7 +1123,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #98df8a;&#34;>
+    <details style="--label-color: #98df8a;">
         <summary class="label-display">N_Patients_Male (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1157,7 +1157,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">N_Patients_Female (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1191,7 +1191,7 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #aec7e8;&#34;>
+    <details style="--label-color: #aec7e8;">
         <summary class="label-display">MRI_Modality (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1213,21 +1213,21 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
         
     </details>
     
-    <details style=&#34;--label-color: #ff9896;&#34;>
+    <details style="--label-color: #ff9896;">
         <summary class="label-display">N_Total_Male (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">N_Total_Female (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
     </details>
     
-    <details style=&#34;--label-color: #c5b0d5;&#34;>
+    <details style="--label-color: #c5b0d5;">
         <summary class="label-display">Age_Mean (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
