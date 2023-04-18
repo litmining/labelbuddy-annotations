@@ -493,14 +493,15 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <p>Rather than contributing to an existing project you can also start a new one.
 If you haven’t yet, <a class="reference internal" href="#clone-the-repository"><span class="std std-ref">Clone the repository</span></a>, then create a new directory for your project in <code class="docutils literal notranslate"><span class="pre">projects/</span></code>.</p>
 <p>Suppose we want to start a project in which we will annotate imaging modalities.
-We choose to name the project <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code>.</p>
+We choose to name the project <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code>.
+To initiate the project, we make a copy of the <code class="docutils literal notranslate"><span class="pre">template_project</span></code> and name it <code class="docutils literal notranslate"><span class="pre">imaging_modalities</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>projects/
-mkdir<span class="w"> </span>imaging_modalities
+cp<span class="w"> </span>-r<span class="w"> </span>template_project<span class="w"> </span>imaging_modalities
 <span class="nb">cd</span><span class="w"> </span>imaging_modalities
-mkdir<span class="w"> </span>documents<span class="w"> </span>labels<span class="w"> </span>annotations
+ls
 </pre></div>
 </div>
-<p>Please also add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file describing your project.</p>
+<p>The previous two lines of code change into your new project directory, and lists the contents. You can see that we have all the subfolders we need: <code class="docutils literal notranslate"><span class="pre">documents</span></code>, <code class="docutils literal notranslate"><span class="pre">annotations</span></code>, and <code class="docutils literal notranslate"><span class="pre">labels</span></code>. There is also a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file here. You should edit this file with the details of your project. Having a README in the same format for each project will allow us to share and understand each others’ projects more easily.</p>
 <section id="adding-documents">
 <h3>Adding documents<a class="headerlink" href="#adding-documents" title="Permalink to this heading">#</a></h3>
 <section id="reusing-documents-from-another-project">
