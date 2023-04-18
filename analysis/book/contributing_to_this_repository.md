@@ -144,15 +144,15 @@ If you haven't yet, {ref}`Clone the repository <clone_the_repository>`, then cre
 
 Suppose we want to start a project in which we will annotate imaging modalities.
 We choose to name the project `imaging_modalities`.
+To initiate the project, we make a copy of the `template_project` and name it `imaging_modalities`.
 
 ```bash
 cd projects/
-mkdir imaging_modalities
+cp -r template_project imaging_modalities
 cd imaging_modalities
-mkdir documents labels annotations
+ls
 ```
-
-Please also add a `README.md` file describing your project.
+The previous two lines of code change into your new project directory, and lists the contents. You can see that we have all the subfolders we need: `documents`, `annotations`, and `labels`. There is also a `README.md` file here. You should edit this file with the details of your project. Having a README in the same format for each project will allow us to share and understand each others' projects more easily.
 
 ### Adding documents
 
