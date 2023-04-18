@@ -33,7 +33,7 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     {% for label in labels %}
-    <details {{ 'style="--label-color: {};"'.format(label.color) if label.color }}>
+    <details {{ ('style="--label-color: {};"'.format(label.color) if label.color) | safe }}>
         <summary class="label-display">{{ label.name }} ({{ label.n_annotated_docs }} docs)</summary>
         {% if label.n_annotated_docs > 0 %}
         <p><b>Example annotations:</b></p>
