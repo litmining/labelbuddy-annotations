@@ -28,7 +28,11 @@ def _fill_database(db_path: pathlib.Path):
         ):
             _insert_labels(connection, labels_file)
         projects_root_dir = repo.repo_root() / "projects"
-        for project_dir in sorted(projects_root_dir.glob("*")):
+        projects = sorted(projects_root_dir.glob("*"))
+        for proj in ['template_project', 'sandbox']:
+            i_proj = [str(p) for p in projects].index(f'projects/{proj}')
+            del projects[i_proj]
+        for project_dir in projects:
             if not project_dir.is_dir():
                 continue
             _insert_project(connection, project_dir)
