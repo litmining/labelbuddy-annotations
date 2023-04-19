@@ -1,5 +1,13 @@
 [
     {
-    "url": "https://osf.io/download/kfmdp/"
+        "url": "https://osf.io/download/kfmdp/"
+    },
+    {
+        "url": "https://osf.io/download/meya4/",
+        "comment": "autism_mri documents"
+    },
+    {
+        "url": "https://osf.io/download/td3cm/",
+        "comment": "dynamic_functional_connectivity documents"
     }
 ]
