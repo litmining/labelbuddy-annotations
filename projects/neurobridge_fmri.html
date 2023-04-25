@@ -333,7 +333,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fmri-tasks-in-neurobridge-documents">fMRI tasks in NeuroBridge documents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">neurobridge_fmri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
             </nav>
@@ -349,14 +360,46 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="neurobridge-fmri">
 <h1>neurobridge_fmri<a class="headerlink" href="#neurobridge-fmri" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neurobridge_fmri/">on GitHub</a>.</p>
-<section id="fmri-tasks-in-neurobridge-documents">
-<h2>fMRI tasks in NeuroBridge documents<a class="headerlink" href="#fmri-tasks-in-neurobridge-documents" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>neurobridge_fmri<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>This is a satellite project of the <a class="reference external" href="https://github.com/NeuroBridge/Annotation-Project">NeuroBridge annotation project</a>.
 The goal is to annotate the tasks used by task-based fMRI acquisitions described in the <strong>NeuroBridge</strong> papers.</p>
+</section>
+<section id="papers">
+<h2>Papers<a class="headerlink" href="#papers" title="Permalink to this heading">#</a></h2>
+<section id="how-the-papers-were-obtained">
+<h3>How the papers were obtained<a class="headerlink" href="#how-the-papers-were-obtained" title="Permalink to this heading">#</a></h3>
 <p>The documents were copied from <a class="reference external" href="https://github.com/NeuroBridge/Annotation-Project/tree/main/Phase_1/INPUT_Papers_for_Annotation/All_Papers_For_Annotation_From_Phase_2">this directory</a> in the <strong>NeuroBridge</strong> repository, and converted from WebAnno3 format to <a class="reference external" href="https://jeromedockes.github.io/labelbuddy/labelbuddy/current/">labelbuddy</a>’s format using <a class="reference external" href="https://github.com/jeromedockes/labelutils">labelutils</a>.</p>
 <p>As the documents for this project do not come from a <a class="reference external" href="https://neuroquery.github.io/pubget/pubget.html">pubget</a> download, they have less metadata and a different formatting (no headings or paragraph breaks) than documents in other projects in this repository.
 Also, a <strong>pubget</strong> dataset is not available for download with <code class="docutils literal notranslate"><span class="pre">/scripts/download_datasets.py</span></code>.
 But keeping the same version of the documents makes it possible to combine the annotations created here with those of the larger <strong>NeuroBridge</strong> project, down to the character positions, which trumps the other details.</p>
+</section>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this heading">#</a></h2>
+<section id="file-s-being-annotated">
+<h3>File(s) being annotated:<a class="headerlink" href="#file-s-being-annotated" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/projects/neurobridge_fmri/documents/neurobridge_documents.jsonl</span></code></p></li>
+</ul>
+</section>
+<section id="annotation-labels">
+<h3>Annotation labels:<a class="headerlink" href="#annotation-labels" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label1&gt;:</span> <span class="pre">&lt;description</span> <span class="pre">of</span> <span class="pre">label1&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;:</span> <span class="pre">&lt;description</span> <span class="pre">of</span> <span class="pre">label2&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="labels-found-in-other-projects-as-well">
+<h3>Labels found in other projects as well:<a class="headerlink" href="#labels-found-in-other-projects-as-well" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="instructions-for-annotators">
+<h3>Instructions for annotators<a class="headerlink" href="#instructions-for-annotators" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
+</section>
 </section>
 <section id="labels-in-this-project">
 <h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
@@ -439,7 +482,18 @@ But keeping the same version of the documents makes it possible to combine the a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fmri-tasks-in-neurobridge-documents">fMRI tasks in NeuroBridge documents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">neurobridge_fmri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
   </nav></div>

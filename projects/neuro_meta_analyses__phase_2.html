@@ -333,6 +333,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">neuro_meta_analyses.phase_2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
             </nav>
@@ -348,6 +361,74 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="neuro-meta-analyses-phase-2">
 <h1>neuro_meta_analyses.phase_2<a class="headerlink" href="#neuro-meta-analyses-phase-2" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/neuro_meta_analyses.phase_2/">on GitHub</a>.</p>
+<section id="id1">
+<h2>neuro_meta_analyses.phase_2<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Phase 2 of a review of neuroimaging meta-analyses. In this phase, we labelled fMRI meta-analyses for their meta-analysis method</p>
+</section>
+<section id="papers">
+<h2>Papers<a class="headerlink" href="#papers" title="Permalink to this heading">#</a></h2>
+<section id="how-the-papers-were-obtained">
+<h3>How the papers were obtained<a class="headerlink" href="#how-the-papers-were-obtained" title="Permalink to this heading">#</a></h3>
+<p>The phase 2 data consists of the phase 1 meta-analysis papers that were labelled as having meta-analyzed fMRI papers.</p>
+<p>We ran the following bash script to get the phase 1 data:
+<code class="docutils literal notranslate"><span class="pre">​</span></code>​`bash
+#!/bin/bash</p>
+<p>pubget run -f 0_pmc_search.txt <br />
+–fit_neuroquery                                          <br />
+–labelbuddy                                              <br />
+~/data/pubget_data
+<code class="docutils literal notranslate"><span class="pre">​</span></code>​<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">file</span></code>0_pmc_search.txt` is in the current directory. It contains the search query for PubMed Central.</p>
+</section>
+<section id="where-the-full-papers-are-stored">
+<h3>Where the full papers are stored<a class="headerlink" href="#where-the-full-papers-are-stored" title="Permalink to this heading">#</a></h3>
+<p>The full pubget output can be found on OSF: <a class="reference external" href="https://osf.io/eu398">https://osf.io/eu398</a>.  This includes the papers used in both phases 1 and 2. Phase 1 used all the papers; phase 2 used a subset that had been labelled as using fMRI</p>
+</section>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this heading">#</a></h2>
+<section id="file-s-being-annotated">
+<h3>File(s) being annotated:<a class="headerlink" href="#file-s-being-annotated" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/projects/neuro_meta_analyses.phase_2/documents/documents_included_from_phase_1.jsonl</span></code></p>
+<ul>
+<li><p>corresponding to some (but not all) of the papers in these files in the pubget output:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">review_neuro_meta_analyses__meta_analyses/query_7f23003d269ec31139a1b8ead2b5f74f/subset_allArticles_labelbuddyData/documents_00001.jsonl</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">review_neuro_meta_analyses__meta_analyses/query_7f23003d269ec31139a1b8ead2b5f74f/subset_allArticles_labelbuddyData/documents_00002.jsonl</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="annotation-labels">
+<h3>Annotation labels:<a class="headerlink" href="#annotation-labels" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>literature query</p></li>
+<li><p>literature sources</p></li>
+<li><p>literature search date</p></li>
+<li><p>original n</p></li>
+<li><p>final n</p></li>
+<li><p>exclusion criteria</p></li>
+<li><p>meta-analysis method</p></li>
+<li><p>inference</p></li>
+<li><p>covariates</p></li>
+<li><p>n individual participants</p></li>
+<li><p>LOOK UP LATER</p></li>
+<li><p>exclude?</p></li>
+</ul>
+</section>
+<section id="labels-found-in-other-projects-as-well">
+<h3>Labels found in other projects as well:<a class="headerlink" href="#labels-found-in-other-projects-as-well" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="instructions-for-annotators">
+<h3>Instructions for annotators<a class="headerlink" href="#instructions-for-annotators" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
+</section>
+</section>
 <section id="labels-in-this-project">
 <h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
@@ -1233,6 +1314,19 @@ Given the increasing amount of neuroimaging studies, there is a g…
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">neuro_meta_analyses.phase_2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
   </nav></div>

@@ -333,6 +333,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">cluster_inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
             </nav>
@@ -348,6 +361,73 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="cluster-inference">
 <h1>cluster_inference<a class="headerlink" href="#cluster-inference" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/cluster_inference/">on GitHub</a>.</p>
+<section id="id1">
+<h2>cluster_inference<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Repo to do LabelBuddy annotations of a corpus of fMRI literature.
+This corpus consists of the open-access portion of NeuroQuery papers that conatain fMRI in the title or abstract.</p>
+</section>
+<section id="papers">
+<h2>Papers<a class="headerlink" href="#papers" title="Permalink to this heading">#</a></h2>
+<section id="how-the-papers-were-obtained">
+<h3>How the papers were obtained<a class="headerlink" href="#how-the-papers-were-obtained" title="Permalink to this heading">#</a></h3>
+<p>We rand a script with this code:
+<code class="docutils literal notranslate"><span class="pre">​</span></code>​`bash
+#!/bin/bash</p>
+<p>pubget run –pmcids_file pmcids_for_open_fmri_papers.txt <br />
+–fit_neuroquery                                          <br />
+–labelbuddy                                              <br />
+–nimare                                              <br />
+~/data/pubget_data
+<code class="docutils literal notranslate"><span class="pre">​</span></code>​`</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pmcids_for_open_fmri_papers.txt</span></code> file is found in the current directory.
+It contains the pmcids for all the papers in the <code class="docutils literal notranslate"><span class="pre">neuroquery</span></code> dataset that could be found on PubMed Central (i.e., that were open access).</p>
+</section>
+<section id="where-the-full-papers-are-stored">
+<h3>Where the full papers are stored<a class="headerlink" href="#where-the-full-papers-are-stored" title="Permalink to this heading">#</a></h3>
+<p>The full pubget output is stored on OSF: <a class="reference external" href="https://osf.io/gukw2">https://osf.io/gukw2</a>.</p>
+</section>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this heading">#</a></h2>
+<section id="file-s-being-annotated">
+<h3>File(s) being annotated:<a class="headerlink" href="#file-s-being-annotated" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/projects/cluster_inference/documents/documents.jsonl</span></code></p>
+<ul>
+<li><p>corresponding file in the pubget output:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cluster_inference/pmcidList_a84871e6b29a46f53d30d0463f66407f/subset_allArticles_labelbuddyData/documents00001.jsonl</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="annotation-labels">
+<h3>Annotation labels:<a class="headerlink" href="#annotation-labels" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>smoothing_snippet</p></li>
+<li><p>cluster_thresh_used</p></li>
+<li><p>cluster_thresh_in_voxels</p></li>
+<li><p>cluster_thresh_in_mm</p></li>
+<li><p>nonparametric_cluster_thresh</p></li>
+<li><p>info_removed_in_name_extract</p></li>
+<li><p>is_annotated</p></li>
+<li><p>annotation_in_progress</p></li>
+<li><p>discard_this_paper</p></li>
+</ul>
+</section>
+<section id="labels-found-in-other-projects-as-well">
+<h3>Labels found in other projects as well:<a class="headerlink" href="#labels-found-in-other-projects-as-well" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="instructions-for-annotators">
+<h3>Instructions for annotators<a class="headerlink" href="#instructions-for-annotators" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
+</section>
+</section>
 <section id="labels-in-this-project">
 <h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
@@ -2461,6 +2541,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">cluster_inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
   </nav></div>

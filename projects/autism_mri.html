@@ -333,9 +333,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-6b2c09de69c29c29626f794757ea4c68">query_6b2c09de69c29c29626f794757ea4c68</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubget">PubGet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labelbuddy">LabelBuddy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">autism_mri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
             </nav>
@@ -351,24 +361,70 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="autism-mri">
 <h1>autism_mri<a class="headerlink" href="#autism-mri" title="Permalink to this heading">#</a></h1>
 <p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/autism_mri/">on GitHub</a>.</p>
-<section id="query-6b2c09de69c29c29626f794757ea4c68">
-<h2>query_6b2c09de69c29c29626f794757ea4c68<a class="headerlink" href="#query-6b2c09de69c29c29626f794757ea4c68" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>autism_mri<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Repo to do LabelBuddy annotations of a corpus of Autism MRI literature</p>
 </section>
-<section id="pubget">
-<h2>PubGet<a class="headerlink" href="#pubget" title="Permalink to this heading">#</a></h2>
-<p>This process was initialized with a <em>pubget</em> call:</p>
+<section id="papers">
+<h2>Papers<a class="headerlink" href="#papers" title="Permalink to this heading">#</a></h2>
+<section id="how-the-papers-were-obtained">
+<h3>How the papers were obtained<a class="headerlink" href="#how-the-papers-were-obtained" title="Permalink to this heading">#</a></h3>
+<p>We ran the following bash command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">​</span></code>​<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">pubget</span> <span class="pre">run</span> <span class="pre">-q</span> <span class="pre">&quot;Brain</span> <span class="pre">Volume</span> <span class="pre">MRI</span> <span class="pre">2022</span> <span class="pre">Autism&quot;</span> <span class="pre">pubget/test</span> <span class="pre">--labelbuddy</span> <span class="pre">--n_jobs</span> <span class="pre">4</span> </code>​<code class="docutils literal notranslate"><span class="pre">​</span></code></p>
-<p>The whole <code class="docutils literal notranslate"><span class="pre">pubget</span></code> output has been uploaded to OSF: <a class="reference external" href="https://osf.io/meya4">https://osf.io/meya4</a></p>
 </section>
-<section id="labelbuddy">
-<h2>LabelBuddy<a class="headerlink" href="#labelbuddy" title="Permalink to this heading">#</a></h2>
-<p>We are currently annotating the following file:</p>
-<p><code class="docutils literal notranslate"><span class="pre">projects/autism_mri/documents/documents_00001.jsonl</span></code></p>
-<p>Which in the <code class="docutils literal notranslate"><span class="pre">pubget</span></code> output corresponds to:</p>
-<p><code class="docutils literal notranslate"><span class="pre">query_6b2c09de69c29c29626f794757ea4c68/subset_allArticles_labelbuddyData/documents_00001.jsonl</span></code></p>
-<p>And writing the annotation files found in:
-<code class="docutils literal notranslate"><span class="pre">projects/autism_mri/annotations/</span></code></p>
+<section id="where-the-full-papers-are-stored">
+<h3>Where the full papers are stored<a class="headerlink" href="#where-the-full-papers-are-stored" title="Permalink to this heading">#</a></h3>
+<p>The full pubget output is stored on OSF: <a class="reference external" href="https://osf.io/meya4">https://osf.io/meya4</a>.</p>
+</section>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Permalink to this heading">#</a></h2>
+<section id="file-s-being-annotated">
+<h3>File(s) being annotated:<a class="headerlink" href="#file-s-being-annotated" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/projects/autism_mri/documents/documents_00001.jsonl</span></code></p>
+<ul>
+<li><p>corresponding file in the pubget output:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_6b2c09de69c29c29626f794757ea4c68/subset_allArticles_labelbuddyData/documents_00001.jsonl</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="annotation-labels">
+<h3>Annotation labels:<a class="headerlink" href="#annotation-labels" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>FieldStrength: <code class="docutils literal notranslate"><span class="pre">&lt;description</span> <span class="pre">of</span> <span class="pre">label1&gt;</span></code></p></li>
+<li><p>Diagnosis: <code class="docutils literal notranslate"><span class="pre">&lt;description</span> <span class="pre">of</span> <span class="pre">label2&gt;</span></code></p></li>
+<li><p>N_Total:</p></li>
+<li><p>N_Total_Male:</p></li>
+<li><p>N_Total_Female</p></li>
+<li><p>N_Patients</p></li>
+<li><p>N_Controls</p></li>
+<li><p>N_Controls_Male</p></li>
+<li><p>N_Controls_Female</p></li>
+<li><p>N_Patients_Male</p></li>
+<li><p>N_Patients_Female</p></li>
+<li><p>Age_Mean</p></li>
+<li><p>Age_Min</p></li>
+<li><p>Age_Max</p></li>
+<li><p>Scanner</p></li>
+<li><p>AnalysisTool</p></li>
+<li><p>MRI_Modality</p></li>
+</ul>
+</section>
+<section id="labels-found-in-other-projects-as-well">
+<h3>Labels found in other projects as well:<a class="headerlink" href="#labels-found-in-other-projects-as-well" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="instructions-for-annotators">
+<h3>Instructions for annotators<a class="headerlink" href="#instructions-for-annotators" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
+</section>
 </section>
 <section id="labels-in-this-project">
 <h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Permalink to this heading">#</a></h2>
@@ -1619,9 +1675,19 @@ Purpose: Violent subjects were demonstrated to exhibit abnormal brain structures
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-6b2c09de69c29c29626f794757ea4c68">query_6b2c09de69c29c29626f794757ea4c68</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubget">PubGet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labelbuddy">LabelBuddy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">autism_mri</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained">How the papers were obtained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored">Where the full papers are stored</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
 </ul>
   </nav></div>
