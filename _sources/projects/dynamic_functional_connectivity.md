@@ -44,7 +44,163 @@ text = """
 <div class="detailed-label-set">
     
     <details style="--label-color: #aec7e8;">
-        <summary class="label-display">SW (20 docs)</summary>
+        <summary class="label-display">Sliding Window (14 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …rical ROI in the medial primary motor cortex (Montreal Neurological Institute coordinates=−1, −8, 63), a region not previously linked to depression. 
+
+
+### Sliding window correlation analysis 
+  
+The <mark class="annotated-text">sliding window</mark> analysis was performed using custom Python ( ) scripts. The data were split into 40 s Gaussian moving windows, staggered by one repetition time, created using a Gaussian kernel with a standard deviat…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5416685/"
+                                       >PMC5416685</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …etween conditions and averaged across windows to derive areas that revealed significant changes with sedation. Beta values, which are a measure of the connectivity strength, were calculated from each <mark class="annotated-text">sliding window</mark>, and their fluctuations  were measured. The between-region correlation and multiband frequency analysis were also performed to further characterize the temporal covariance and frequency specificity o…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5561230/"
+                                       >PMC5561230</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … Methods 
+  
+Whole-brain resting-state functional MRI data were acquired on a 3 T whole-body clinical MRI scanner from 18 subjects clinically diagnosed with JME and 25 healthy control subjects. 2-min <mark class="annotated-text">sliding-window</mark> approach was incorporated in the quantitative data-driven data analysis framework to assess both the dynamic and static functional connectivity in the resting brains. Two-sample   t  -tests were perf…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6412974/"
+                                       >PMC6412974</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ROI pair between GM was calculated directly to construct a static FC of GM (sGFC). And static FC between GM and WM (sWGFC) was obtained by calculating each ROI pair&#39;s   r   between WM and GM. Then, a <mark class="annotated-text">sliding time window</mark> strategy was applied, and a complete time series was divided into several subsequent series by overlapping windows. We allowed the window length to be 30 and the step size to be 1. Then, the correlat…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6790327/"
+                                       >PMC6790327</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …rate and objective image-based diagnosis system for MDD. 
+
+
+## Methods 
+  
+MRI images were collected from 99 participants including 56 healthy controls and 43 MDD patients. DFC was calculated using a <mark class="annotated-text">sliding-window</mark> algorithm. A non-linear support vector machine (SVM) approach was then used with the DFC matrices as features to distinguish MDD patients from healthy controls. The spatiotemporal characteristics of …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7118554/"
+                                       >PMC7118554</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …cients were calculated for each pair of regions, representing the functional connectivity between these two nodes in the network. 
+
+When measuring dynamic functional connectivity (d-FC), we adopted a <mark class="annotated-text">sliding-window</mark> method, with window length = 100 TR (200 s) and step size = 3 TR (6 s). A previous research proved that this combination can extract as much features while minimizing computation costs [ ]. The prepr…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7485713/"
+                                       >PMC7485713</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … ROI were obtained in the subject’s fMRI space. Static FC were estimated by computing the Pearson’s correlation coefficient between time series from each ROI pair. Dynamic FC were estimated using the <mark class="annotated-text">sliding-window</mark> method with both SSTD window-sizes and multiple conventional fixed window-sizes. Pearson’s correlation between time series from all ROI pairs were computed within the defined window and the window wa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7594665/"
+                                       >PMC7594665</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …removal of detected outliers, and (d) low‐pass filtering with a cutoff frequency of 0.15 Hz. 
+
+
+### Dynamic functional network connectivity 
+  
+For each subject, dynamic FNC (dFNC) was estimated by a <mark class="annotated-text">sliding window</mark> approach. A tapered window, created by convolving a rectangle (width = 20 TRs = 40 s, TR = 2 s) with a Gaussian (  σ   = 3 TRs), was used to segment the TCs. We slid the window in steps of 1 TR, resu…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7721229/"
+                                       >PMC7721229</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … patients with ASDs. 
+
+In the current study, rs-fMRI data from Autism Brain Imaging Data Exchange II (ABIDE II) were used, and 29 core seeds of 10 classic functional networks were selected to perform <mark class="annotated-text">sliding-window</mark> seed-to-whole-brain DFC analyses in a comprehensive manner. Moreover, the relationships between significant DFC changes and symptom severity were further explored in patients with ASDs. Furthermore, …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8784878/"
+                                       >PMC8784878</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …brain sFC matrix was generated. In this experiment, one resting‐state sFC matrix and one natural viewing sFC matrix was separately obtained for each subject during each session. 
+
+
+####  dFC  
+  
+The <mark class="annotated-text">sliding‐window</mark> strategy was adopted to assess the dFC time series. Briefly, a rectangle time window with an interval of one TR was applied. Within each sliding window, the Pearson correlation coefficients between e…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837589/"
+                                       >PMC8837589</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
+        <summary class="label-display">SW (14 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -97,35 +253,6 @@ text = """
             
             <div class="annotation">
                 <div class="context">
-                    …rical ROI in the medial primary motor cortex (Montreal Neurological Institute coordinates=−1, −8, 63), a region not previously linked to depression. 
-
-
-### Sliding window correlation analysis 
-  
-The <mark class="annotated-text">sliding window</mark> analysis was performed using custom Python ( ) scripts. The data were split into 40 s Gaussian moving windows, staggered by one repetition time, created using a Gaussian kernel with a standard deviat…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5416685/"
-                                       >PMC5416685</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …etween conditions and averaged across windows to derive areas that revealed significant changes with sedation. Beta values, which are a measure of the connectivity strength, were calculated from each <mark class="annotated-text">sliding window</mark>, and their fluctuations  were measured. The between-region correlation and multiband frequency analysis were also performed to further characterize the temporal covariance and frequency specificity o…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5561230/"
-                                       >PMC5561230</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
                     … 
 
 
@@ -137,20 +264,6 @@ Whole-brain resting-state functional MRI data were acquired on a 3 T whole-bod
 ## Results 
   
 The static functional connec…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6412974/"
-                                       >PMC6412974</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … Methods 
-  
-Whole-brain resting-state functional MRI data were acquired on a 3 T whole-body clinical MRI scanner from 18 subjects clinically diagnosed with JME and 25 healthy control subjects. 2-min <mark class="annotated-text">sliding-window</mark> approach was incorporated in the quantitative data-driven data analysis framework to assess both the dynamic and static functional connectivity in the resting brains. Two-sample   t  -tests were perf…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -210,12 +323,58 @@ Within each of the resulting overlapping temporal windows of 22 …
                 </div>
             </div>
             
+            <div class="annotation">
+                <div class="context">
+                    …ction of the “Uncertain” network is not specific, we mainly paid attention to the other 12 brain networks consisting of 236 seed sites. 
+
+
+### Dynamic Functional Network Connectivity Construction 
+  
+<mark class="annotated-text">The 236 available ROIs were used to analyze DFC using DynamicBC toolbox ( ). Since there was no formal consensus on window length, dynamic functional network connectivity (dFNC) was constructed using the sliding-window Pearson&#39;s correlation method with a length of 20 TRs (40 s) and a step size of 1TR, as previously performed ( ), resulting in 111 windows.</mark> In each window, we computed Pearson correlation coefficients between the time series of each pair of the 236 ROIs. As a result, we obtained a 236 × 236 matrix of Pearson correlation coefficients betw…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6902076/"
+                                       >PMC6902076</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …(DFC) and developed an accurate and objective image-based diagnosis system for MDD. 
+
+
+## Methods 
+  
+MRI images were collected from 99 participants including 56 healthy controls and 43 MDD patients. <mark class="annotated-text">DFC was calculated using a sliding-window algorithm. </mark>A non-linear support vector machine (SVM) approach was then used with the DFC matrices as features to distinguish MDD patients from healthy controls. The spatiotemporal characteristics of the most dis…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7118554/"
+                                       >PMC7118554</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … of the regions numbered 255 with a low probability density was not identified, thus 273 regions were left. Then, Pearson’s correlation coefficient was used for measuring the functional connectivity. <mark class="annotated-text">DFC between any pair of these regions was then calculated using a sliding-window algorithm. </mark>Sliding-window algorithm is one of the most widely used to evaluate dynamic brain functional connectivity. The functional connectivity between two nodes was first calculated using a subsection of the …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7118554/"
+                                       >PMC7118554</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
         </div>
         
     </details>
     
     <details style="--label-color: #ffbb78;">
-        <summary class="label-display">SWC (8 docs)</summary>
+        <summary class="label-display">Clustering (8 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -223,18 +382,6 @@ Within each of the resulting overlapping temporal windows of 22 …
             <div class="annotation">
                 <div class="context">
                     …ith risperidone (  n   = 24), as well as matched controls at baseline (  n   = 35) and after 6 weeks (  n   = 19). After identifying 41 independent components (ICs) comprising resting-state networks, <mark class="annotated-text">sliding window analysis</mark> was performed on IC timecourses using an optimal window size validated with linear support vector machines. Windowed correlation matrices were then clustered into three discrete connectivity states (…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5292583/"
-                                       >PMC5292583</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … 41 independent components (ICs) comprising resting-state networks, sliding window analysis was performed on IC timecourses using an optimal window size validated with linear support vector machines. <mark class="annotated-text">Windowed correlation matrices were then clustered into three discrete connectivity states (a relatively sparsely connected state, a relatively abundantly connected state, and an intermediately connected state)</mark>. In unmedicated patients, static connectivity was increased between five pairs of ICs and decreased between two pairs of ICs when compared to controls, dynamic connectivity showed increased connectiv…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -258,43 +405,9 @@ Within each of the resulting overlapping temporal windows of 22 …
             
             <div class="annotation">
                 <div class="context">
-                    …y in differentiating control and patient ALFF-FC using the SVM classifier. This SVM classification was performed using the Statistics and Machine Learning Toolbox in MATLAB ( ). 
-
-
-### Clustering 
-  
-<mark class="annotated-text">In order to characterize reoccurring patterns of connectivity across groups and time,   k  -means clustering was performed on the windowed correlation matrices for all subjects (Figure  B)</mark>. Clustering of a sub-sampled number of windows (i.e., windows with relative maxima of variance) for all groups and time points was carried out in order to estimate initial cluster centroids (cluster …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5292583/"
-                                       >PMC5292583</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
                     …ormed by all wFNC derivatives, and is referred to as the first order derivatives of the sliding window correlations. 
 
 The tvFNC method pipeline is as follows, for all subjects (1) compute dFNC data (<mark class="annotated-text">sliding windowed</mark> correlations wFNC); (2) estimate DdFNC data (derivatives of sliding windowed correlations DwFNC); (3) concatenate row wise zero and first order windowed correlations [wFNC and DwFNC] divided by their…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6611425/"
-                                       >PMC6611425</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … of the sliding window correlations; (4) run clustering analysis on all subjects’ tvFNC data to identify reoccurring connectivity states and their derivatives patterns. 
-
-
-### Clustering Analysis 
-  
-<mark class="annotated-text">In both methods dFNC and tvFNC, time-varying connectivity is captured by performing k-means clustering analysis, assigning all subjects’ temporal FNC data into a selected number of clusters representing distinct functional connectivity states. </mark>The clustering algorithm selection is based on previous connectivity studies that successfully applied k-means algorithm to identify reoccurring patterns of connectivity within and between subjects ac…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -340,7 +453,7 @@ Dynamic connectivity matrices were derived using an overlapping <mark class="ann
             
             <div class="annotation">
                 <div class="context">
-                    …e produced for each timepoint (using MATLAB code made freely available by Shine et al. at  ) , since together, these two measures quantify both a node’s inter- modular and intra-modular connectivity. <mark class="annotated-text">For each subject, the joint patterns were then used to assign each timepoint to one of two clusters, using an unsupervised machine learning algorithm known as k-means clustering (setting   k   = 2)</mark> . To avoid the possibility of the algorithm becoming stuck in local minima, it was repeated 500 times with random re-initialisation of the two clusters’ initial points. This was performed individuall…
+                    … modular and intra-modular connectivity. For each subject, the joint patterns were then used to assign each timepoint to one of two clusters, using an unsupervised machine learning algorithm known as <mark class="annotated-text">k-means clustering</mark> (setting   k   = 2) . To avoid the possibility of the algorithm becoming stuck in local minima, it was repeated 500 times with random re-initialisation of the two clusters’ initial points. This was p…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -352,12 +465,60 @@ Dynamic connectivity matrices were derived using an overlapping <mark class="ann
             
             <div class="annotation">
                 <div class="context">
-                    … modular and intra-modular connectivity. For each subject, the joint patterns were then used to assign each timepoint to one of two clusters, using an unsupervised machine learning algorithm known as <mark class="annotated-text">k-means clustering</mark> (setting   k   = 2) . To avoid the possibility of the algorithm becoming stuck in local minima, it was repeated 500 times with random re-initialisation of the two clusters’ initial points. This was p…
+                    …236 available ROIs were used to analyze DFC using DynamicBC toolbox ( ). Since there was no formal consensus on window length, dynamic functional network connectivity (dFNC) was constructed using the <mark class="annotated-text">sliding-window</mark> Pearson&#39;s correlation method with a length of 20 TRs (40 s) and a step size of 1TR, as previously performed ( ), resulting in 111 windows. In each window, we computed Pearson correlation coefficients…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6787094/"
-                                       >PMC6787094</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6902076/"
+                                       >PMC6902076</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …roups. The original FCV matrices were then Fisher   z  -transformed and were statistically compared. 
+
+
+###  k  -means Clustering 
+  
+To identify dFNC patterns reoccurring across temporal matrices,   <mark class="annotated-text">k  -means clustering</mark> was employed on all the dynamic correlation matrices to divide the dFNC into discrete clusters. The   k  -means algorithm aggregates information with similarities into “  k  ” groups, ensuring that t…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6902076/"
+                                       >PMC6902076</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …### Dynamic FC analysis 
+  
+Dynamic FC analysis was performed using the Dynamic Brain Connectome (Dynamic BC) toolbox (Liao et al.  ) (V2.1  ). Temporal dynamic patterns were characterized by using a <mark class="annotated-text">sliding-window approach</mark>, which was created by convolving a rectangle with a Gaussian kernel (σ = 3TRs). Previous studies have revealed that a frequency interval of [0 − 1/w] Hz should be the target due to the low-pass filte…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7275001/"
+                                       >PMC7275001</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …of windows was calculated and the Fisher Z-transformed used to acquire variables similar to a normal distribution (Liao et al.  ). 
+
+
+### Clustering analysis 
+  
+To assess reoccurring dFC patterns, a <mark class="annotated-text">k-means clustering algorithm</mark> was used to analyze dFC estimates of all subjects (combining the lung cancer and HC groups) (Allen et al.  ). We used the L1 distance function to assess the similarity between sliding window FCs, as …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7275001/"
+                                       >PMC7275001</a></div>
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
@@ -482,6 +643,156 @@ To thoroughly validate DICE’s performance, we conduct a series of experiments 
         
     </details>
     
+    <details >
+        <summary class="label-display">SWC (7 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … 41 independent components (ICs) comprising resting-state networks, sliding window analysis was performed on IC timecourses using an optimal window size validated with linear support vector machines. <mark class="annotated-text">Windowed correlation matrices were then clustered into three discrete connectivity states (a relatively sparsely connected state, a relatively abundantly connected state, and an intermediately connected state)</mark>. In unmedicated patients, static connectivity was increased between five pairs of ICs and decreased between two pairs of ICs when compared to controls, dynamic connectivity showed increased connectiv…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5292583/"
+                                       >PMC5292583</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …y in differentiating control and patient ALFF-FC using the SVM classifier. This SVM classification was performed using the Statistics and Machine Learning Toolbox in MATLAB ( ). 
+
+
+### Clustering 
+  
+<mark class="annotated-text">In order to characterize reoccurring patterns of connectivity across groups and time,   k  -means clustering was performed on the windowed correlation matrices for all subjects (Figure  B)</mark>. Clustering of a sub-sampled number of windows (i.e., windows with relative maxima of variance) for all groups and time points was carried out in order to estimate initial cluster centroids (cluster …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5292583/"
+                                       >PMC5292583</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … of the sliding window correlations; (4) run clustering analysis on all subjects’ tvFNC data to identify reoccurring connectivity states and their derivatives patterns. 
+
+
+### Clustering Analysis 
+  
+<mark class="annotated-text">In both methods dFNC and tvFNC, time-varying connectivity is captured by performing k-means clustering analysis, assigning all subjects’ temporal FNC data into a selected number of clusters representing distinct functional connectivity states. </mark>The clustering algorithm selection is based on previous connectivity studies that successfully applied k-means algorithm to identify reoccurring patterns of connectivity within and between subjects ac…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6611425/"
+                                       >PMC6611425</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …e produced for each timepoint (using MATLAB code made freely available by Shine et al. at  ) , since together, these two measures quantify both a node’s inter- modular and intra-modular connectivity. <mark class="annotated-text">For each subject, the joint patterns were then used to assign each timepoint to one of two clusters, using an unsupervised machine learning algorithm known as k-means clustering (setting   k   = 2)</mark> . To avoid the possibility of the algorithm becoming stuck in local minima, it was repeated 500 times with random re-initialisation of the two clusters’ initial points. This was performed individuall…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6787094/"
+                                       >PMC6787094</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …could be quantitatively estimated and compared between different groups. The original FCV matrices were then Fisher   z  -transformed and were statistically compared. 
+
+
+###  k  -means Clustering 
+  
+<mark class="annotated-text">To identify dFNC patterns reoccurring across temporal matrices,   k  -means clustering was employed on all the dynamic correlation matrices to divide the dFNC into discrete clusters. </mark>The   k  -means algorithm aggregates information with similarities into “  k  ” groups, ensuring that the sum of squares within clusters is minimal. During the clustering estimation, the correlation d…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6902076/"
+                                       >PMC6902076</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …viation of each voxel across a number of windows was calculated and the Fisher Z-transformed used to acquire variables similar to a normal distribution (Liao et al.  ). 
+
+
+### Clustering analysis 
+  
+<mark class="annotated-text">To assess reoccurring dFC patterns, a k-means clustering algorithm was used to analyze dFC estimates of all subjects (combining the lung cancer and HC groups) (Allen et al.  )</mark>. We used the L1 distance function to assess the similarity between sliding window FCs, as L1 distance has been proved to be an effective measurement method for high-dimensional data (Aggarwal et al. …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7275001/"
+                                       >PMC7275001</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …he functional connectivity matrices will be transformed to z-scores using Fisher’s z-transformation and covariates (age, gender, and education) will be regressed out. 
+
+
+##### Clustering analysis 
+  
+<mark class="annotated-text">A K-means clustering algorithm will be applied to the windowed functional connectivity matrices to assess the recurring functional connectivity patterns (states), as expressed by the frequency and structure of these states</mark>. Then a cluster validity analysis will be performed on the exemplars of all subjects to estimate the optimal number of clusters. We will use a subset of windows (local maxima in functional connectivi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8461094/"
+                                       >PMC8461094</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …t. We flipped the corresponding regions of the right hemisphere to the left hemisphere in right TLE‐HS patients and proportionate HC for the following analysis. 
+
+
+### Dynamic functional analysis 
+  
+<mark class="annotated-text">Dynamic functional analysis was performed using DynamicBC toolbox ( ) with the sliding‐window approach and k‐mean clustering method (see Supporting Information Figure   in Appendix S1).</mark> First, to capture the hippocampal network time‐varying correlations, we segmented the whole time series into a fixed window with a width of 20 TRs. This setting has demonstrated good balance between …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8933317/"
+                                       >PMC8933317</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … With a step‐wise slide of 1 TR along the 170‐TR length scan, we constructed 150 successive 24 × 24 matrices for each subject. The resulting correlation matrices were converted to z‐values with Fz. 
+
+<mark class="annotated-text">Second, we used the K‐means clustering algorithm to cluster dynamic FC patterns across control and patients together (Lloyd,  ). </mark>This clustering algorithm was repeated 100 times to weaken the impact of local minima (Pascual‐Marqui, Michel, &amp; Lehmann,  ). The correlation distance function was used to measure similarity between F…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8933317/"
+                                       >PMC8933317</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #98df8a;">
         <summary class="label-display">others (5 docs)</summary>
         
@@ -598,7 +909,7 @@ Like these approaches, to estimate brain networks’ connectivity that is 1) dir
     </details>
     
     <details style="--label-color: #ff9896;">
-        <summary class="label-display">HMM (4 docs)</summary>
+        <summary class="label-display">Hidden Makrov Model (4 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -613,23 +924,6 @@ Within the <mark class="annotated-text">product HMM</mark> framework, this paper
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4918689/"
                                        >PMC4918689</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …t  ] 
-  
-
-## DYNAMIC FUNCTIONAL CONNECTIVITY IN REAL DATA 
-  
-Having demonstrated the utility of the NPC approach to relate FC to behavior in a synthetic scenario where the estimation was very noisy, <mark class="annotated-text">we next evaluated it using real data by applying the Hidden Markov model (HMM) to resting state fMRI data from the Human Connectome Project (HCP). The HMM assumes that the data can be described using a finite number of states. </mark>Each state is represented using a probability distribution, which in this case is chosen to be a Gaussian distribution (Vidaurre, Smith, &amp; Woolrich,  ); that is, each state is described by a character…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492297/"
-                                       >PMC6492297</a></div>
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
@@ -802,6 +1096,50 @@ Large-scale networks of brain activity can be detected as fluctuations of blood 
     </details>
     
     <details style="--label-color: #c5b0d5;">
+        <summary class="label-display">Co-Activation Patterns (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … clusters (in total, 58 clusters or CAPs) were evaluated. We aggregated the fMRI volumes assigned to each cluster. The mean image of such a cluster&#39;s volumes provided an overall view of the resulting <mark class="annotated-text">CAP</mark> and was then normalized by the standard error (within‐cluster and across fMRI volumes) to generate   z  ‐statistic maps, which quantify the degree of significance to which the CAP map values for each…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8213933/"
+                                       >PMC8213933</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #aec7e8;">
+        <summary class="label-display">Time-Frequency (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …s shaped the field of dynamic functional connectivity (DFC). Mainstream DFC research relies on (sliding window) correlations to identify recurrent FC patterns. Recently, functional relevance of the   <mark class="annotated-text">instantaneous phase synchrony   (IPS)</mark> of fMRI signals has been revealed using imaging studies and computational models. In the present paper, we identify the repertoire of whole-brain inter-network IPS states at rest. Moreover, we uncove…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7118690/"
+                                       >PMC7118690</a></div>
+                    <div class="annotator-name">mtorabi59</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
         <summary class="label-display">CAP (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -838,36 +1176,29 @@ The 11,930 RS‐fMRI volumes concatenated into one file were used as input for F
                 </div>
             </div>
             
-            <div class="annotation">
-                <div class="context">
-                    … clusters (in total, 58 clusters or CAPs) were evaluated. We aggregated the fMRI volumes assigned to each cluster. The mean image of such a cluster&#39;s volumes provided an overall view of the resulting <mark class="annotated-text">CAP</mark> and was then normalized by the standard error (within‐cluster and across fMRI volumes) to generate   z  ‐statistic maps, which quantify the degree of significance to which the CAP map values for each…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8213933/"
-                                       >PMC8213933</a></div>
-                    <div class="annotator-name">mtorabi59</div>
-                </div>
-            </div>
-            
         </div>
         
     </details>
     
-    <details style="--label-color: #aec7e8;">
-        <summary class="label-display">TF (1 docs)</summary>
+    <details >
+        <summary class="label-display">HMM (1 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    …s shaped the field of dynamic functional connectivity (DFC). Mainstream DFC research relies on (sliding window) correlations to identify recurrent FC patterns. Recently, functional relevance of the   <mark class="annotated-text">instantaneous phase synchrony   (IPS)</mark> of fMRI signals has been revealed using imaging studies and computational models. In the present paper, we identify the repertoire of whole-brain inter-network IPS states at rest. Moreover, we uncove…
+                    …t  ] 
+  
+
+## DYNAMIC FUNCTIONAL CONNECTIVITY IN REAL DATA 
+  
+Having demonstrated the utility of the NPC approach to relate FC to behavior in a synthetic scenario where the estimation was very noisy, <mark class="annotated-text">we next evaluated it using real data by applying the Hidden Markov model (HMM) to resting state fMRI data from the Human Connectome Project (HCP). The HMM assumes that the data can be described using a finite number of states. </mark>Each state is represented using a probability distribution, which in this case is chosen to be a Gaussian distribution (Vidaurre, Smith, &amp; Woolrich,  ); that is, each state is described by a character…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7118690/"
-                                       >PMC7118690</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492297/"
+                                       >PMC6492297</a></div>
                     <div class="annotator-name">mtorabi59</div>
                 </div>
             </div>
