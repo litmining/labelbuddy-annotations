@@ -1,23 +1,23 @@
 [
     {
         "color": "#aec7e8",
-        "name": "SW"
+        "name": "Sliding Window"
     },
     {
         "color": "#ffbb78",
-        "name": "SWC"
+        "name": "Clustering"
     },
     {
         "color": "#ff9896",
-        "name": "HMM"
+        "name": "Hidden Makrov Model"
     },
     {
         "color": "#c5b0d5",
-        "name": "CAP"
+        "name": "Co-Activation Patterns"
     },
     {
         "color": "#aec7e8",
-        "name": "TF"
+        "name": "Time-Frequency"
     },
     {
         "color": "#ffbb78",
