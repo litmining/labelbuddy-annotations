@@ -1,0 +1,29 @@
+(
+    (fmri[Title/Abstract]) 
+    OR 
+    (functional mri[Title/Abstract]) 
+    OR
+    (functional magnetic resonance imaging[Title/Abstract])
+    OR
+    (MRI[Title/Abstract])
+    OR
+    (magnetic resonance imaging[Title/Abstract])
+    OR
+    (PET[Title/Abstract])
+    OR
+    (positron emission tomography[Title/Abstract])
+) 
+AND
+(
+    (brain)
+    OR
+    (neural)
+    OR
+    (neuroimag*)
+)
+AND
+(
+    (meta-analy*[Title/Abstract])
+    OR
+    (meta analy*[Title/Abstract])
+)
