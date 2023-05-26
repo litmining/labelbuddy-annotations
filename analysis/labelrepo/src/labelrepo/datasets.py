@@ -76,7 +76,7 @@ def _download_url(url: str, target_file: pathlib.Path) -> None:
                 eta = int(remaining / (speed + 1e-9))
                 eta_msg = f"eta {_format_time(eta)}"
                 print(
-                    f"\r{proportion: <4.0%} {dl_msg: <10} {eta_msg: >10}",
+                    f"\r{proportion: <4.0%} {dl_msg: <10} {eta_msg: >10}\033[K",
                     end="",
                     flush=True,
                 )
@@ -132,7 +132,9 @@ def _get_archive(
             "SELECT local_path FROM downloads WHERE url=?", (url,)
         ).fetchone()
         if result is not None:
-            return downloads_dir / result[0]
+            result_dir = downloads_dir / result[0]
+            if result_dir.is_dir():
+                return result_dir
     url = _convert_osf_url_to_download(url)
     return _download_archive(url, downloads_dir)
 
