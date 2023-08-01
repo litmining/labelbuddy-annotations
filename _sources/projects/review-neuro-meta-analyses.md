@@ -1,0 +1,3681 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.1
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+% !!!
+%
+% Don't edit this page directly!
+% It has been automatically generated.
+% Instead, edit the project's README.md file which gets inserted here,
+% or the templates in /analysis/book_helpers/templates/
+%
+% !!!
+
+
+# review-neuro-meta-analyses
+
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/review-neuro-meta-analyses/).
+
+## `<Project Name>`
+
+`<1-2 sentences describing the project>`
+
+## Papers
+
+### How the papers were obtained
+Typically with [pubget](https://neuroquery.github.io/pubget/pubget.html).
+We recommend invoking `pubget` with the `--query_file` option, and storing a copy of the query file in the project's directory, or including a copy in the `README.md`.
+
+`<description>`
+
+### Where the full papers are stored
+
+Typically on [OSF](https://osf.io/).
+Please also add a `documents/datasets.json` file containing the URL where the full `pubget` dataset can be downloaded, that looks like:
+`​`​`
+[
+    {
+    "url": "https://osf.io/download/<...>/"
+    }
+]
+`​`​`
+
+`<description>`
+
+
+## Annotations
+### File(s) being annotated: 
+- `/projects/<project_name>/documents/<documents_file1_name>.jsonl`
+  - corresponding file in the pubget output: 
+    - `<pubget_folder_name>/subset_allArticles_labelbuddyData/<documents_file1_name>.jsonl`
+- `/projects/<project_name>/documents/<documents_file2_name>.jsonl`
+  - corresponding file in the pubget output: 
+    - `<pubget_folder_name>/subset_allArticles_labelbuddyData/<documents_file2_name>.jsonl`
+  
+### Annotation labels:
+- `<label1>: <description of label1>`
+- `<label2>: <description of label2>` 
+
+### Labels found in other projects as well:
+- `<label2>`
+
+### Instructions for annotators
+`<description>`
+
+
+
+
+## Labels in this project
+
+
+
+```{code-cell}
+:tags: [remove-input]
+
+from labelrepo import displays
+text = """
+<div class="detailed-label-set">
+    
+    <details >
+        <summary class="label-display">N studies included (157 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …port hand or finger movement-related BOLD signal changes in right-handed healthy adult subjects, (2) coordinates had to be given either in Talairach or in MNI (Montreal Neurological Institute) space. <mark class="annotated-text">20</mark> studies meeting these criteria were surveyed  – . In total, 42 stereotaxic coordinates (23 on the left, 19 on the right hemisphere) were analyzed. Talairach coordinates were translated to match the M…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1800344/"
+                                       >PMC1800344</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …c processes for words and pseudowords, we also excluded studies in which the word/non-word contrast was confounded by task differences (such as the studies reviewed in  ). Following these exclusions, <mark class="annotated-text">11</mark> studies reporting a direct contrast between responses to spoken words and pseudowords remained, as summarized in  . Since certain of these studies included multiple contrasts, we focus our meta-analy…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2846311/"
+                                       >PMC2846311</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … stereotactic space, and employ standardized facial emotion recognition (FER) or theory of mind (TOM) paradigms. 
+
+
+## Data Extraction 
+  
+Activation foci from studies meeting inclusion criteria (n = <mark class="annotated-text">33</mark>) were subjected to a quantitative voxel-based meta-analysis using activation likelihood estimation, and encompassed 146 subjects with ASD, 336 SZ patients and 492 healthy controls. 
+
+
+## Results 
+  
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
+                                       >PMC3187762</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … the effect of acupuncture on the human brain (at least one group that received needle-based acupuncture). 779 papers were identified, 149 met the inclusion criteria for the descriptive analysis, and <mark class="annotated-text">34</mark> were eligible for the meta-analyses. From a descriptive perspective, multiple studies reported that acupuncture modulates activity within specific brain areas, including somatosensory cortices, limbi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322129/"
+                                       >PMC3322129</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing rest by asking for activations during experiments were participants we instructed to remain passive (  Conditions: Instruction is Passive/Rest AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">485</mark> papers, with 1648 of 2417 experiments matching criteria. This analysis yielded foci in the posterior medial, anterior medial, and lateral temporoparietal cortices (Figure  ). This network of regions …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …cond, we investigated activations related to the broad domain of social cognition (  Experiments: Behavioral Domain is Cognition: Social Cognition AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">52</mark> papers, with 186 of 216 experiments matching criteria. This analysis (Figure  ) yielded results very similar to those described above for the resting state, including medial frontal, posterior cingul…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ed to this domain of social cognition by searching for activations related to theory of mind (  Experiments: Paradigm Class is Theory of Mind Task AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">24</mark> papers, with 99 of 124 experiments matching criteria. Again, a similar network was noticeable (Figure  ), although to a lesser extent. A conjunction between the DMN defined in the first analysis and …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …thods 
+  
+We conducted a literature search for PET and fMRI studies of PTSD that were published before February 2011. The article search resulted in 79 functional neuroimaging PTSD studies. Data from <mark class="annotated-text">26</mark> PTSD peer-reviewed neuroimaging articles reporting results from 342 adult patients and 342 adult controls were included. Peak activation coordinates from selected articles were used to generate activ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3430553/"
+                                       >PMC3430553</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …y during processing of monetary incentives with high (either positive or negative) versus low skewness (but which controlled for variance and mean). 
+
+Activation foci coordinates for contrasts in the <mark class="annotated-text">28</mark> studies that met inclusion criteria were submitted to ALE meta-analyses (Table  ). Of these, 21 contrasts were included in the mean map, 10 in the variance map, and 4 in the skewness map. Three studi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487049/"
+                                       >PMC3487049</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …socially emotive cues in SAD was undertaken. ALE meta-analysis, a voxel-based meta-analytic technique, was used to estimate the most significant activations during emotional recognition.   Results:   <mark class="annotated-text">Seven</mark> studies were eligible for inclusion in the meta-analysis, constituting a total of 91 subjects with SAD, and 93 healthy controls. The most significant areas of activation during emotional vs. neutral …
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">7</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3547329/"
+                                       >PMC3547329</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ef2929;">
+        <summary class="label-display">ALE (141 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … used for this analysis is within the range of the smoothing filters used in the original studies included in the meta-analysis (from 4 mm to 12 mm). Subsequently an ‘activation likelihood estimate’ (<mark class="annotated-text">ALE</mark>)  , given by the union of the probabilities associated with the different foci, was calculated for an area comprising the whole Y and Z extent of the insular cortex. The later was determined by manua…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1800344/"
+                                       >PMC1800344</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ord recognition. We therefore report a meta-analysis of published PET and fMRI studies that include a direct contrast between spoken words and pseudowords. We use an Activation Likelihood Estimation (<mark class="annotated-text">ALE</mark>) method to derive a statistical map of the brain regions in which activation differences between words and pseudowords are expected ( ). This procedure is implemented in software [GingerALE v1.1 from…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2846311/"
+                                       >PMC2846311</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …on (FER) or theory of mind (TOM) paradigms. 
+
+
+## Data Extraction 
+  
+Activation foci from studies meeting inclusion criteria (n = 33) were subjected to a quantitative voxel-based meta-analysis using <mark class="annotated-text">activation likelihood estimation</mark>, and encompassed 146 subjects with ASD, 336 SZ patients and 492 healthy controls. 
+
+
+## Results 
+  
+Both SZ and ASD showed medial prefrontal hypoactivation, which was more pronounced in ASD, while ve…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
+                                       >PMC3187762</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … anatomical image was generated using MRIcron software. 
+
+The meta-analyses were conducted (JN, XYL, WJH) in Talairach space, using the activation likelihood estimation technique (ALE) implemented in <mark class="annotated-text">GingerALE</mark> 2.1.1 software  – . This technique assesses the convergence between activation foci from different experiments. Prior to the analysis, coordinates reported in MNI (Montreal Neurological Institute) sp…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322129/"
+                                       >PMC3322129</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … 
+To further investigate the overlap between the DMN and the activity during social cognition tasks, we performed an additional meta-analysis of fMRI studies using the BrainMap database and performed <mark class="annotated-text">likelihood estimations</mark> (Eickhoff et al.,  ) of functional brain activity associated with rest and associated with social cognition. The BrainMap database was queried on Jan 30th, 2012, when the database contained 2177 pape…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …om 26 PTSD peer-reviewed neuroimaging articles reporting results from 342 adult patients and 342 adult controls were included. Peak activation coordinates from selected articles were used to generate <mark class="annotated-text">activation likelihood estimate</mark> maps separately for symptom provocation and cognitive-emotional studies of PTSD. A separate meta-analysis examined the coupling between ventromedial prefrontal cortex and amygdala activity in patient…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3430553/"
+                                       >PMC3430553</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …luminate affective mediators that bridge the gap between statistical input and choice output. To test this hypothesis, we conducted a quantitative meta-analysis (via activation likelihood estimate or <mark class="annotated-text">ALE</mark>) of functional magnetic resonance imaging experiments that focused on neural responses to financial options with varying statistical moments (i.e., mean, variance, skewness). Results suggested that d…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487049/"
+                                       >PMC3487049</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …. A. and Syal, S. and Lochner, C. and Brooks, S. J. and Stein, D. J.
+Front Hum Neurosci, 2012
+
+# Title
+
+Functional magnetic resonance imaging during emotion recognition in social anxiety disorder: an <mark class="annotated-text">activation likelihood</mark> meta-analysis
+
+# Keywords
+
+ALE
+social anxiety
+generalized social phobia
+SAD
+meta-analysis
+fMRI
+
+
+# Abstract
+ 
+ Background:   Social anxiety disorder (SAD) is characterized by abnormal fear and anxiet…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3547329/"
+                                       >PMC3547329</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ng parameters were used, we would find evidence of face-sensitive ATL activations that extend into the ventral ATL. 
+
+
+## Methods 
+  
+### Meta-analysis 
+  
+A total of 25 articles were included in the <mark class="annotated-text">ALE</mark> analysis. Seven of these studies were used in the personally familiar condition with a total of 136 subjects (70 male, 66 female; mean age = 28.9 years). The famous face condition was comprised of 18…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3561664/"
+                                       >PMC3561664</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Bernard, Jessica A. and Seidler, Rachael D.
+Front Hum Neurosci, 2013
+
+# Title
+
+Cerebellar contributions to visuomotor adaptation and motor sequence learning: an <mark class="annotated-text">ALE</mark> meta-analysis
+
+# Keywords
+
+cerebellum
+sequence learning
+visuomotor adaptation
+working memory
+meta-analysis
+
+
+# Abstract
+ 
+Cerebellar contributions to motor learning are well-documented. For example, …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3566602/"
+                                       >PMC3566602</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
+        <summary class="label-display">N studies found (133 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …y variables which displayed group differences were subjected to voxel-wise meta-regression analyses in order to examine their effect on the ALE results. 
+
+
+
+## Results 
+  
+The initial search returned <mark class="annotated-text">415</mark> citations. Of these, 337 studies were discarded after reviewing the abstracts while the full text of the remaining 76 citations was examined in more detail. Thirty three studies fulfilled the inclusi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
+                                       >PMC3187762</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …er 2009, without any language restrictions. We included all studies using fMRI to investigate the effect of acupuncture on the human brain (at least one group that received needle-based acupuncture). <mark class="annotated-text">779</mark> papers were identified, 149 met the inclusion criteria for the descriptive analysis, and 34 were eligible for the meta-analyses. From a descriptive perspective, multiple studies reported that acupunc…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322129/"
+                                       >PMC3322129</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing rest by asking for activations during experiments were participants we instructed to remain passive (  Conditions: Instruction is Passive/Rest AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">485</mark> papers, with 1648 of 2417 experiments matching criteria. This analysis yielded foci in the posterior medial, anterior medial, and lateral temporoparietal cortices (Figure  ). This network of regions …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …cond, we investigated activations related to the broad domain of social cognition (  Experiments: Behavioral Domain is Cognition: Social Cognition AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">52</mark> papers, with 186 of 216 experiments matching criteria. This analysis (Figure  ) yielded results very similar to those described above for the resting state, including medial frontal, posterior cingul…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ed to this domain of social cognition by searching for activations related to theory of mind (  Experiments: Paradigm Class is Theory of Mind Task AND Subjects: Diagnosis is Normals  ), which yielded <mark class="annotated-text">24</mark> papers, with 99 of 124 experiments matching criteria. Again, a similar network was noticeable (Figure  ), although to a lesser extent. A conjunction between the DMN defined in the first analysis and …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3380415/"
+                                       >PMC3380415</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …derstanding of the neurocircuitry of PTSD. 
+
+
+## Methods 
+  
+We conducted a literature search for PET and fMRI studies of PTSD that were published before February 2011. The article search resulted in <mark class="annotated-text">79</mark> functional neuroimaging PTSD studies. Data from 26 PTSD peer-reviewed neuroimaging articles reporting results from 342 adult patients and 342 adult controls were included. Peak activation coordinates…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3430553/"
+                                       >PMC3430553</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …s “mean” OR “reward” OR “expected value” OR “variance” OR “risk” OR “uncertainty” OR “skewness” AND “finance” OR “monetary” AND “human” AND “FMRI.” This search (performed on July 10, 2012) identified <mark class="annotated-text">248</mark> studies. We specifically searched for FMRI studies that used monetary incentives to manipulate one or more of the first three statistical moments of interest (i.e., mean, variance, skewness). We furt…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487049/"
+                                       >PMC3487049</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … all remaining articles was then assessed using with a data extraction template, constructed for the purpose of organizing and extracting information from included articles. Following this procedure, <mark class="annotated-text">244</mark> initial publications were found, which were reduced to 44 after examining the title and abstract. A total of 7 out of 44 studies fulfilled all inclusion criteria, resulting in a combined sample of 91…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3547329/"
+                                       >PMC3547329</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … imaging,” “motor sequence learning AND imaging,” and “working memory AND imaging.” Additionally, the searches used the limits “Humans,” “English,” and “Adult 19-44 years.” These searches resulted in <mark class="annotated-text">45</mark>, 149, and 1997 papers, respectively. We also consulted a recent review of motor learning and included related work on sensorimotor adaptation not found in our PubMed search (Seidler,  ). We followed …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3566602/"
+                                       >PMC3566602</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ging,” “motor sequence learning AND imaging,” and “working memory AND imaging.” Additionally, the searches used the limits “Humans,” “English,” and “Adult 19-44 years.” These searches resulted in 45, <mark class="annotated-text">149</mark>, and 1997 papers, respectively. We also consulted a recent review of motor learning and included related work on sensorimotor adaptation not found in our PubMed search (Seidler,  ). We followed the s…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3566602/"
+                                       >PMC3566602</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">exclude (113 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … firing.   KCNH2-3.1   mRNA levels are comparable to   KCNH2-1A   in brain, but 1000-fold lower in heart. In schizophrenic hippocampus,   KCNH2-3.1   expression is 2.5-fold greater than   KCNH2-1A  . <mark class="annotated-text">A meta-analysis of 5 clinical samples (367 families, 1158 unrelated cases, 1704 controls) shows association of SNPs in   KCNH2   with schizophrenia.</mark> Risk-associated alleles predict lower IQ scores and speed of cognitive processing, altered memory-linked fMRI signals, and increased   KCNH2-3.1   expression in post-mortem hippocampus.   KCNH2-3.1  …
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">assoc gene with diagnosis, not brain</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2756110/"
+                                       >PMC2756110</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …analysis of raw data) or multi-site studies, which can be seen as designed mega-analyses. Current limitations in function-location brain mapping and how data-pooling can be used to remediate them are <mark class="annotated-text">reviewed</mark>, with particular attention to power aggregation and mitigation of false positive results. Some recently developed analysis tools for meta- and mega-analysis are also presented, and recommendations fo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">review, not a summary</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2759345/"
+                                       >PMC2759345</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …campal gyrus
+telepathy
+
+
+# Abstract
+ 
+## Aim: 
+  
+“Telepathy” is defined as “the communication of impressions of any kind from one mind to another, independently of the recognized channels of sense”. <mark class="annotated-text">Meta-analyses of “ganzfield” studies as well as “card-guessing task” studies provide compelling evidence for the existence of telepathic phenomena. </mark>The aim of this study was to elucidate the neural basis of telepathy by examining an individual with this special ability. 
+
+
+## Materials and Methods: 
+  
+Using functional MRI, we examined a famous “…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">used/cited ma</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144613/"
+                                       >PMC3144613</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … multiple grounds. Nonetheless, the issue of whether or not there exists a set of brain areas preferentially dedicated to emotional processing remains central within affective neuroscience. Recently, <mark class="annotated-text">a widespread neural reference space for emotion which includes limbic as well as other regions was characterized in a large meta-analysis. </mark>As methodologically heterogeneous studies go into such meta-analyses, showing in an individual study in which all parameters are kept constant, the involvement of overlapping areas for various emotion…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">cites ma</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144904/"
+                                       >PMC3144904</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …l regions by identifying similarities and differences in connectivity profiles. Recent studies have provided initial evidence in support of the efficacy of this connectional parcellation methodology. <mark class="annotated-text">Such investigations have identified distinct cortical subregions which correlate strongly with functional regions identified via fMRI and meta-analyses.</mark> Furthermore, a strong parallel between the cortical regions defined via tractographic and more traditional cytoarchitectonic parcellation methods has been observed. However, the degree of corresponde…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">cites MA; not fMRI</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3429885/"
+                                       >PMC3429885</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …n functional and structural networks exhibit low correspondence. This example demonstrates how this tool can enhance the comparability of brain networks from different imaging modalities and studies. <mark class="annotated-text">The existence of this connectivity-based repository should foster broader data sharing and enable larger-scale meta-analyses comparing networks across imaging modality, age group, and disease state. </mark>
+ 
+
+# Body
+ 
+## Introduction 
+  
+Successful neuroimaging data sharing efforts have taken a variety of organizational approaches, including top-down centralized strategies and bottom-up grassroots effo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">not a ma</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3508475/"
+                                       >PMC3508475</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …es frequently find them during tasks involving episodic recollection. According to the Attention to Memory (AtoM) model, both phenomena can be explained by the same VPC function: bottom-up attention. <mark class="annotated-text">Yet, a recent functional MRI (fMRI) meta-analysis suggested that attention-reorienting activations are more frequent in anterior VPC, whereas recollection activations are more frequent in posterior VPC</mark>. Also, there is evidence that anterior and posterior VPC regions have different functional connectivity patterns. To investigate these issues, we conducted a resting-state functional connectivity ana…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">cites a ma</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3579187/"
+                                       >PMC3579187</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … (fMRI) studies have reported multiple activation foci associated with a variety of conditions, stimuli or tasks. However, most of these studies used fewer than 40 participants. 
+
+
+## Methodology 
+  
+<mark class="annotated-text">After extracting data (number of subjects, condition studied, number of foci identified and threshold) from 94 brain fMRI meta-analyses (  k   = 1,788 unique datasets) published through December of 2011,</mark> we analyzed the correlation between individual study sample sizes and number of significant foci reported. We also performed an analysis where we evaluated each meta-analysis to test whether there wa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">used mas for data</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3723634/"
+                                       >PMC3723634</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Tench, Christopher R. and Tanasescu, Radu and Auer, Dorothee P. and Constantinescu, Cris S.
+PLoS One, 2013
+
+# Title
+
+<mark class="annotated-text">Coordinate Based Meta-Analysis of Functional Neuroimaging Data; False Discovery Control and Diagnostics</mark>
+
+# Keywords
+
+
+
+# Abstract
+ 
+Coordinate based meta-analysis (CBMA) is widely used to find regions of consistent activation across fMRI studies that have been selected for their functional relevance to…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">about mas</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3726528/"
+                                       >PMC3726528</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …on conditions. Moreover, when exposed to smoking cues during the self-expanding versus the non-self-expanding cooperative games, smokers showed less activation in a cigarette cue-reactivity region,   <mark class="annotated-text">a priori   defined [temporo-parietal junction (TPJ)] from a recent meta-analysis of cue-reactivity.</mark> In smoking cue conditions, increases in excitement associated with the self-expanding condition (versus the non-self-expanding condition) were also negatively correlated with TPJ activation. These re…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">uses ma to define roi</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3984235/"
+                                       >PMC3984235</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
+        <summary class="label-display">has prisma chart (53 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …d in the attribution of salience to biological social cues (e.g. facial affect). 
+
+
+## Materials and Methods 
+  
+### Data sources and inclusion criteria 
+  
+The study design and report adhered to the <mark class="annotated-text">PRISMA</mark> Statement guidelines (supporting information   and  ). The search method and inclusion criteria were specified in advance, informed by existing meta-analyses  ,  ,  . All identified articles were rev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
+                                       >PMC3187762</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …esthetics, or originality of generated visual solutions (Dietrich &amp; Kanso,  ; Gonen‐Yaacovi et al.,  ). 
+
+
+## Methods 
+  
+### Search strategy 
+  
+This systematic review and ALE meta‐analysis followed <mark class="annotated-text">PRISMA</mark> guidelines (Liberati et al.,  ) and synthesized studies recording neural activity during active generation of visual‐based creative (i.e., novel and useful) ideas (Runco &amp; Jaeger,  ). Tasks involving…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5064346/"
+                                       >PMC5064346</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …s, as recommended [ ]. The Egger’s regression test is used to quantify the bias captured in the funnel plot, and uses the values of the effect sizes and their precision [ ]. 
+
+
+
+## 3. Results 
+  
+The <mark class="annotated-text">Flow Diagram</mark> displayed in   reflects the selection process. Our review of the literature using search items as described above identified 316 potential target articles [34 were identified via the PUBMED database,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5127572/"
+                                       >PMC5127572</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … monographs, theses, or reference lists in identified studies were also regarded as potential sources to be included in the meta-analysis. 
+
+
+### Inclusion and exclusion criteria 
+  
+According to the <mark class="annotated-text">Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines</mark>,  the following criteria were used for inclusion in the meta-analysis: 1) whole-brain analysis was used in task-free rs-fMRI studies; 2) studies included a comparison of the localized connectivity be…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5317331/"
+                                       >PMC5317331</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …activate memory systems). Each of these could confound the brain activation attributable to chemosensory perception of taste and thus cause false positives. After this step, 101 records remained. 
+  
+<mark class="annotated-text">Flowchart of the review process.</mark> The number of publications (n) in each stage is labeled 
+  
+In the next step, the full text of the remaining 101 records was further evaluated based on an extra ordered set of five inclusion criteria…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5390838/"
+                                       >PMC5390838</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …lusion. We contacted all corresponding authors for the 108 articles of whom 70 responded. Brain maps corresponding to 36 articles were received. Of these, 21 were excluded for reasons detailed in the <mark class="annotated-text">Prisma flow diagram</mark> (Fig.  ).   
+PRISMA flow diagram 
+  
+
+In total 15 sets of whole brain group maps were included in the meta-analysis of anticipation (Supplementary Table 1). Thirty-three articles were included in the…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6327084/"
+                                       >PMC6327084</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … included. 
+  
+Note: n/r: not reported. Age is reported either in mean and standard deviation or in range. * derived by whole-brain contrast, positive correlation with punishment frequency. 
+    
+The <mark class="annotated-text">PRISMA</mark> flowchart for the search and eligibility of the articles . 
+  
+
+
+## ALE map 
+  
+Two clusters were detected during the analysis (see Fig.  , Table  ; the coordinates are in Talairach space). One with …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6728376/"
+                                       >PMC6728376</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …and replicability of meta‐analyses. We accordingly report information advised such as research question, inclusion and exclusion criteria, detailed information for all experiments, and a step‐by‐step <mark class="annotated-text">flowchart</mark> (see Figure  ). 
+  
+Meta‐analysis flowchart. A flowchart diagram recommended in the best practice guidelines for the conducting of neuroimaging meta‐analyses (Müller et al.,  ). The flowchart lists e…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6771970/"
+                                       >PMC6771970</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ame original data set as a previous published paper were removed. In sum, a total of 94 studies met the inclusion and exclusion criteria. See   for a full overview of the study selection process. 
+  
+<mark class="annotated-text">Diagram outlining the study selection </mark>process.   n  , number of studies or experiments;   n   [f], number of foci;   n   [p], number of participants. 
+  
+Among those, fMRI coordinates were extracted from only 84 studies. Ten studies met t…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6847411/"
+                                       >PMC6847411</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …y (Cochrane Library), Scopus, and Informit (Health Collection). The searches were confined to full-text research manuscripts published in English and indexed from January 1990 to October 16, 2019.   
+<mark class="annotated-text">Preferred reporting items of systematic reviews and meta-analyses flow diagram.</mark> BOLD, blood oxygenation level dependent; mTBI, mild traumatic brain injury; ROI, region of interest; fMRI, functional magnetic resonance imaging. 
+  Fig. 1   
+
+Detailed electronic search strategies a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6939096/"
+                                       >PMC6939096</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #8ae234;">
+        <summary class="label-display">SDM (50 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …as insular activations were projected to the lateral surface of the rendered template brain in  . 
+
+In addition to the above specified descriptive approach, we conducted a quantitative meta-analysis (<mark class="annotated-text">effect-size signed differential mapping</mark> (ES-SDM); ( )) of all included functional imaging studies that reported coordinates of main activation peaks to quantitatively identify the anatomical regions that were associated with object-related…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4066186/"
+                                       >PMC4066186</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d Differential Mapping (ES-SDM) software ( ), a voxel-based meta-analytic approach used in previous meta-analyses of fMRI studies  ,   and described elsewhere  ,  ,  ,  ,   and briefly here. 
+
+First, <mark class="annotated-text">ES-SDM</mark> uses the significant peak coordinates to recreate maps of the effect size of medication condition differences in blood oxygen level-dependent response in ADHD patients for each study. For peak coordi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4183380/"
+                                       >PMC4183380</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … across studies. 
+
+
+## Methods 
+  
+A search for related papers published in English and Chinese was performed in Ovid Medline, Pubmed, and Embase database. Voxelwise meta-analysis was performed using <mark class="annotated-text">signed differential mapping</mark>. 
+
+
+## Results 
+  
+The findings from 55 fMRI studies on MND were tabulated, and some common findings were discussed in further details. 
+
+
+## Conclusion 
+  
+These findings are preliminary, sometimes …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4656846/"
+                                       >PMC4656846</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …parate meta‐analytic maps for children and adults to investigate regions of consistent activation across studies in each age‐specific set. In addition, we computed a difference map by subtracting the <mark class="annotated-text">ES‐SDM</mark> values of the map for children from the ES‐SDM values of the map for adults. This difference map was thresholded at the same voxel‐level and cluster‐level thresholds used for the separate maps. It pr…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950303/"
+                                       >PMC4950303</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …g amplitude of low-frequency fluctuations (ALFF) have reported inconsistent results about regional spontaneous neuronal activity in PD. Therefore, we conducted a comprehensive meta-analysis using the <mark class="annotated-text">Seed-based   d   Mapping</mark> and several complementary analyses. We searched PubMed, Embase, and Web of Science databases for eligible whole-brain rs-fMRI studies that measured ALFF differences between patients with PD and healt…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5228032/"
+                                       >PMC5228032</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …bservational Studies in Epidemiology (MOOSE) guidelines were followed in this study . 
+
+
+
+## Data analysis 
+  
+### Voxel-wise meta-analysis 
+  
+This voxel-wise meta-analysis was carried out using the <mark class="annotated-text">SDM</mark> software package available at  . The details of the approach have been described elsewhere  First, we extracted peak coordinates and effect sizes (  t  -values) of ALFF differences between patients w…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5228032/"
+                                       >PMC5228032</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … coordinates from contrasts measuring the main or task-set effect of each function were collected, and a separate voxel-based meta-analysis was carried out for each of the 14 main functions using the <mark class="annotated-text">Effect-Size Signed Differential Mapping</mark> software ( ) ( ,  ). First, a standard Talairach map of the effect-size of the regional activation was recreated separately for each study by means of a Gaussian kernel, which assigns higher effect-s…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5312783/"
+                                       >PMC5312783</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …-state functional magnetic resonance imaging, with 316 schizophrenia patients, 342 healthy controls, and 66 unaffected relatives, were included in the meta-analysis. This analysis was performed using <mark class="annotated-text">anisotropic effect-size-based signed differential mapping</mark> software. 
+
+
+## Results 
+  
+Schizophrenia patients showed increased ReHo in right superior frontal gyrus and right superior temporal gyrus, as well as decreased ReHo in left fusiform gyrus, left supe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5317331/"
+                                       >PMC5317331</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …utton is in the 1st position) 
+  
+
+
+### Data analysis 
+  
+#### Voxel-wise meta-analysis 
+  
+Differential BOLD activation patterns between the incongruent and congruent condition were meta-analyzed in <mark class="annotated-text">Anisotropic Effect-Size Signed Differential Mapping</mark> (ES-SDM) software, version 4.13 ( ). ES-SDM, which is a voxel-based meta-analytic approach, is described in detail in the SDM tutorial and publications ( ) [ ,  ,  ]. 
+
+The meta-analysis procedure fo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5891971/"
+                                       >PMC5891971</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …
+
+## Methods 
+  
+We performed a comprehensive series of meta-analyses of cognitive reappraisal fMRI studies contrasting patients with anxiety disorder with healthy control (HC) subjects, employing an <mark class="annotated-text">anisotropic effect-size signed differential mapping</mark> approach. We also conducted a subgroup analysis of medication status, anxiety disorder subtype, data-processing software, and MRI field strengths. Meta-regression was used to explore the effects of d…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5953307/"
+                                       >PMC5953307</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #9edae5;">
+        <summary class="label-display">read later (26 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Costafreda, Sergi G.
+Front Neuroinformatics, 2009
+
+# Title
+
+<mark class="annotated-text">Pooling fMRI Data: Meta-Analysis, Mega-Analysis and Multi-Center Studies
+</mark>
+# Keywords
+
+fMRI
+meta-analysis
+mega-analysis
+multi-center studies
+power
+false positive results
+random effects analysis
+study design
+
+
+# Abstract
+ 
+The quantitative analysis of pooled data from relate…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2759345/"
+                                       >PMC2759345</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    David, Sean P. and Ware, Jennifer J. and Chu, Isabella M. and Loftus, Pooja D. and Fusar-Poli, Paolo and Radua, Joaquim and Munafò, Marcus R. and Ioannidis, John P. A.
+PLoS One, 2013
+
+# Title
+
+<mark class="annotated-text">Potential Reporting Bias in fMRI Studies of the Brain
+</mark>
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Functional magnetic resonance imaging (fMRI) studies have reported multiple activation foci associated with a variety of conditions, stimuli or tasks. How…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3723634/"
+                                       >PMC3723634</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Tench, Christopher R. and Tanasescu, Radu and Auer, Dorothee P. and Constantinescu, Cris S.
+PLoS One, 2013
+
+# Title
+
+<mark class="annotated-text">Coordinate Based Meta-Analysis of Functional Neuroimaging Data; False Discovery Control and Diagnostics
+</mark>
+# Keywords
+
+
+
+# Abstract
+ 
+Coordinate based meta-analysis (CBMA) is widely used to find regions of consistent activation across fMRI studies that have been selected for their functional relevance to …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3726528/"
+                                       >PMC3726528</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …atform for large-scale, automated synthesis of functional magnetic resonance imaging (fMRI) data extracted from over 4393 published articles, which cover over 147,493 activations (Yarkoni et al.,  ). <mark class="annotated-text">The most appealing advantage of that platform is its ability to quantitatively distinguish forward inference from reverse inference. While a forward inference is able to identify brain regions that are consistently activated during a cognitive function in question, the reverse inference identifies brain regions that are preferentially involved in that specific function.</mark> A forward inference may not be very specific because some brain regions like the anterior cingulate are consistently active during many different cognitive tasks. However, by means of reverse interfe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009443/"
+                                       >PMC4009443</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …er, much more work in this area is required to characterize injury mechanisms and recovery factors and to achieve clinically-relevant capabilities for diagnosis. 
+   Highlights  
+  
+mTBI neuroimaging <mark class="annotated-text">literature review and meta-analyses of fMRI and DTI. </mark>
+  
+fMRI meta-analysis revealed differences between mTBI and controls in 13 regions. 
+  
+mTBI anisotropy findings are statistically more frequently reported in anterior regions. 
+  
+Anisotropy is elev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">DTI meta-analysis?</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4107372/"
+                                       >PMC4107372</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …s of drift rate. 
+
+
+### Reverse inference meta-analysis 
+  
+To infer which cognitive function were most likely involved in the different conditions, given observed activation patterns, we conducted a <mark class="annotated-text">formal reverse inference meta-analysis</mark> [ ] This meta-analysis quantifies the association between brain activation and terms describing perceptual, emotional, cognitive, and motor functions. These terms are single- or two-word combinations…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624809/"
+                                       >PMC4624809</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …  was set to 0.001 to avoid false positives and lack of specificity [ ] and a cluster was considered as significant when   Q   was less than 0.05. No minimum size of contiguous voxels was required. 
+
+<mark class="annotated-text">The obtained clusters were inspected in several anatomical ROIs specified by the Automated Anatomical Labeling (AAL) atlas [ ]. The most concurrent regions activated in response to viewing food pictures were selected according to the meta-analyses [ ,  ],   i  .  e  . fusiform gyrus, middle and superior occipital gyrus, lingual gyrus, lateral OFC (Frontal Mid Orb), insular cortex and amygdala. The parietal gyrus was not investigated because this region was outside the covered block in HR condition. 
+
+For analysing the effect, smoothing and selecting an appropriate FWHM in a given ROI, the selected value of FWHM was the lowest leading to a significant cluster. This choice is justified by the concern of obtaining less extensive clusters, so better localized, and prevents regions that are functionally different from merging together [ ]. 
+
+For further analysis at the individual level of the sensitivity differences between the two conditions LR and HR, three metrics were evaluated in several anatomical ROI. Firstly, the 95  percentile measures of the percent signal change (PSC) was calculated in order to quantify a BOLD variation representative of the typically active voxels within the ROI. Secondly, the baseline mean signal and the standard deviation of noise were also mapped from the 42 images of the EPI time-series acquired during the rest periods. To neutralize the between-subject changes of mean signal intensity, these individual maps were then intensity-normalized using the signal of the cerebral peduncle (delineated by the JHU white-matter atlas) as a reference. Finally, baseline mean signal and standard deviation of noise were averaged within each anatomical ROI. </mark>
+
+To compare the means of PSC, baseline signal and noise obtained in the two conditions, paired-sample two-tailed Student’s   t  -test or Wilcoxon signed-rank tests were applied according to a prior S…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">circular inference?</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4638337/"
+                                       >PMC4638337</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …J.
+Metab Brain Dis, 2015
+
+# Title
+
+A quantitative and qualitative review of the effects of testosterone on the function and structure of the human social-emotional brain
+
+# Keywords
+
+Testosterone
+ALE
+<mark class="annotated-text">VBM</mark>
+fMRI
+Amygdala
+Hippocampus
+
+
+# Abstract
+ 
+Social and affective research in humans is increasingly using functional and structural neuroimaging techniques to aid the understanding of how hormones, such…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">anatomic ALE?</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4718938/"
+                                       >PMC4718938</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Balsters, Joshua H. and Mantini, Dante and Apps, Matthew A.J. and Eickhoff, Simon B. and Wenderoth, Nicole
+Neuroimage Clin, 2016
+
+# Title
+
+<mark class="annotated-text">Connectivity-based parcellation increases network detection sensitivity in resting state fMRI: An investigation into the cingulate cortex in autism
+</mark>
+# Keywords
+
+Autism Spectrum Disorder
+Cingulate cortex
+Resting state fMRI
+Meta-Analytic Connectivity Modeling
+
+
+# Abstract
+ 
+Although resting state fMRI (RS-fMRI) is increasingly used to generate biom…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">example for MACM</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4832089/"
+                                       >PMC4832089</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Rubin, Timothy N. and Koyejo, Oluwasanmi and Gorgolewski, Krzysztof J. and Jones, Michael N. and Poldrack, Russell A. and Yarkoni, Tal
+PLoS Comput Biol, 2017
+
+# Title
+
+<mark class="annotated-text">Decoding brain activity using a large-scale probabilistic functional-anatomical atlas of human cognition
+</mark>
+# Keywords
+
+
+
+# Abstract
+ 
+A central goal of cognitive neuroscience is to decode human brain activity—that is, to infer mental processes from observed patterns of whole-brain activation. Previous dec…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">neurosynth decoding paper</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5683652/"
+                                       >PMC5683652</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">neurosynth encoding (22 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …In order to support our hypotheses and to objectively identify regions that are relevant for cognitive functions, an automated search using the meta-analytical software Neurosynth ( ) was undertaken. <mark class="annotated-text">This approach utilizes text-mining and machine-learning techniques to perform probabilistic mapping between neural and cognitive states (Yarkoni et al.,  ). In the present study, the Python-based version ( ) was used. The database was accessed on 24.10.13, searching for the key-words “executive” (237 studies), “visuospatial” (  n   = 116) and “memory” (  n   = 1470).</mark> 
+
+After the search overlapping patterns were found between cognitive domains. They were in line with the regions that have revealed an association with cognitive impairment in PD highlighted in the i…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3982053/"
+                                       >PMC3982053</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ent with the highest correlation coefficient was identified. The significance of that correlation was corrected for multiple comparisons by means of the same procedure proposed by Smith et al. ( ). 
+
+<mark class="annotated-text">The relevance of the observed SCA cluster map for language was evaluated with the NeuroSynth database ( ). </mark>NeuroSynth is an internet based platform for large-scale, automated synthesis of functional magnetic resonance imaging (fMRI) data extracted from over 4393 published articles, which cover over 147,493…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009443/"
+                                       >PMC4009443</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ew (i.e., previously unseen) documents; and formal Bayesian updating that can allow for explicit specification of the prior topic probabilities. We return to these features later. 
+
+In previous work, <mark class="annotated-text">we used a standard topic model to extract 200 semantically coherent topics from the abstracts of all published fMRI articles contained in an older and smaller version of the Neurosynth database</mark> [5,809 studies;  ]. We then projected each topic onto the space of brain activity to identify brain regions associated with distinct cognitive profiles. A direct replication of this earlier approach …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5683652/"
+                                       >PMC5683652</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ddition to offering the ReHo map alone, we further implemented a novel approach that seeds the connectivity analysis based on the ReHo map confined within a mask obtained from meta-analysis (RH + MA).<mark class="annotated-text"> For the analysis of language network, the meta-analysis result was downloaded from the Neurosynth ( ) by using the term “language” that resulted from 885 studies (Yarkoni et al.,  )</mark> and then inversely normalized the meta-analysis maps from standard space to the native space using SPM12. Since it was corrected for a false discovery rate (FDR) of 0.01, we did not apply an addition…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5854683/"
+                                       >PMC5854683</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ctivity) estimating maternal IL-6 are relevant for future working memory,
+we should be able to validate the models by testing their correspondence to
+regions known to be involved with working memory. <mark class="annotated-text">To do this we began with a
+meta-analysis of 901 fMRI working memory studies to identify the regions most
+tightly associated with working memory. This meta-analysis was conducted with
+the Neurosynth software </mark>. A
+reverse-inference mask was generated that included all voxels in the brain that
+corresponded to our search term “working memory”. We did not
+include any additional thresholding to avoid any potent…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5920734/"
+                                       >PMC5920734</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ain regions are evoked by the mere presence of social information using an automated meta-analysis and confirmatory data from an independent study of simple appraisal of social vs. non-social images. <mark class="annotated-text">Results of 1,000 published fMRI studies containing the keyword of “social” were subject to an automated meta-analysis</mark> ( ). To confirm that significant brain regions in the meta-analysis were driven by a social effect, these brain regions were used as regions of interest (ROIs) to extract and compare BOLD fMRI signal…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5933734/"
+                                       >PMC5933734</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … further evaluation in a larger period in more heterogeneous population. 
+
+   Highlights  
+  
+Two-year superior frontal gyrus surface area changes associated with Everyday Cognition Visuospatial. 
+  
+<mark class="annotated-text">Neurosynth meta-analysis on 224 functional magnetic resonance imaging studies in-line with our results. </mark>
+  
+Changes in global atrophy inconsistently associated with Montreal Cognitive Assessment, Functional Activities Questionnaire, and Everyday Cognition visuospatial. 
+  
+ 
+
+# Body
+ 
+## Introduction 
+ …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6258225/"
+                                       >PMC6258225</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ntribute to findings. Antipsychotic equivalent doses were computed according to Leucht and coworkers  and three translation and three rotation movement parameters were derived from SPM realignment. 
+
+<mark class="annotated-text">We conducted an automated meta-analysis of 149 motivation-related brain imaging studies in Neurosynth ( )  to further test the suggested link of the neuronal correlates of delusion to the processing of motivation . The meta-analysis assessed the brain regions more strongly associated with the term “motivational” than with the other terms. </mark>
+
+
+### Statistical methods 
+  
+Activation was familywise error-corrected for multiple comparisons in the whole brain and in the regions of interest (ROI) at the voxel level and at the cluster level. W…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6298954/"
+                                       >PMC6298954</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …0.01, corrected for FDR and multiple comparisons) F &gt; M and M &gt; F effects in the univariate analysis for each network. For example, a map of the effects of M &gt; F in the right fronto-parietal network. <mark class="annotated-text">Association test maps were created using custom code written in Python to access the Neurosynth ( ) database and analytic engine for each of the following terms: visuospatial; spatial; verbal; verbal fluency; semantic memory; rotation; recognition memory; reading and arithmetic.</mark> We selected these terms based on a qualitative review of the prior literature pertaining to significant performance differences between male and female subjects in psychological and neurocognitive pe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6460937/"
+                                       >PMC6460937</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …at are used as general words in neuroscience literature, such as ‘focus’ and ‘strength.’ Thus, we selected the 121 cognitive terms shown in   as the targets to be considered in this study. 
+
+Then, we <mark class="annotated-text">reconstructed the binary activation map</mark> on the 2-mm-resolution MNI 152 brain for each article registered in Neurosynth data by the following steps. First, we transformed the coordinates reported in the Talairach brain into the MNI brain us…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6965330/"
+                                       >PMC6965330</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #fcaf3e;">
+        <summary class="label-display">neurosynth decoding (18 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …guish ASD patients from typically developing controls. One network involves foci in the right temporal pole, left posterior cingulate cortex, left supramarginal gyrus, and left middle temporal gyrus. <mark class="annotated-text">Automated decoding of this network by the Neurosynth meta-analytic database</mark> suggests high-level concepts of “language” and “comprehension” as the likely functional correlates. The second network consists of the left banks of the superior temporal sulcus, right posterior supe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4474177/"
+                                       >PMC4474177</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … was also performed on an analysis on the RT runs, where explanatory variables for all face and all house trials (including error trials) were weighted with individual estimates of drift rate. 
+
+
+### <mark class="annotated-text">Reverse inference meta-analysis </mark>
+  
+To infer which cognitive function were most likely involved in the different conditions, given observed activation patterns, we conducted a formal reverse inference meta-analysis [ ] This meta-ana…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624809/"
+                                       >PMC4624809</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … information theoretic measures of variation of information and mutual information, functional parcellation patterns in both the left and the right insula were compared between the TD and ASD groups. <mark class="annotated-text">Furthermore, functional profiles of each sub-region were meta-analytically decoded using Neurosynth and were compared between the groups. </mark>
+
+
+## Results 
+  
+We observed notable alterations in the anterior sector of the left insula and the middle ventral sub-region of the right insula in the ASD brain. Meta-analytic decoding revealed that…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5052801/"
+                                       >PMC5052801</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …h represented plausible network constructs. These included PCNs such as “self” and “empathy” as well as BCNs such as “occipito-temporal” and “temporal-parietal”. For each term pairing, we performed a <mark class="annotated-text">reverse inference meta-analysis</mark> (FDR corrected at p &lt; 0.01) identifying fMRI spatial activation profiles stored in Neurosynth. Each pair-wise comparison between search queries   i   and   j   was conditional, ensuring that no artic…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5347156/"
+                                       >PMC5347156</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …rnel used) from the cross-validation of the training data could then be used to decode the test data. 
+
+
+#### Similarity with NeuroSynth maps 
+  
+In addition to these within-participant correlations, <mark class="annotated-text">each block was also correlated with 602 posterior probability maps derived from the NeuroSynth database</mark> [ ]. From the 3169 maps provided with NeuroSynth 0.3.5, we first selected the 2000 maps with the most non-zero voxel. This allowed to exclude many maps for unspecific keywords such as “design” or “ne…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6147600/"
+                                       >PMC6147600</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …erse inference. Here, the term “cognitive state” refers to the neural processing that occurs response to a specific stimulus (e.g., pain) or that underlies a psychological process (e.g., learning). 
+
+<mark class="annotated-text">To identify cognitive state correlates using brain maps of gene expression  we performed quantitative reverse inference via large-scale meta-analysis of functional neuroimaging data using mRNA brain expression maps on voxel-by-voxel left hemisphere brain maps, representing the average of 6 individuals (see Methods). Using the NeuroSynth framework, we correlated our voxel-by-voxel mRNA maps (Fig.  ) with association   Z   maps, reflecting the posterior probability maps, which display the likelihood of a given cognitive state term being used in a study if activation is observed at a particular voxel. </mark>We assessed the 15 strongest relationships (Spearman’s   r  ) between   OXTR  ,   CD38  , and   OXT   expression maps (5 unique terms for each gene) and all available cognitive state maps available in…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6368605/"
+                                       >PMC6368605</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …t study, we used custom Python code to access the Neurosynth database and generate association test maps corresponding to terms of interest, but otherwise all computational procedures were similar. 
+
+<mark class="annotated-text">Custom code was written in MATLAB to identify locations (voxels) in the brain where individual effect maps were spatially coincident with activations in association test maps for each neurocognitive function. </mark>This code is available in GitHub at ninadelacy/effect-mapping. Every combination of significant F &gt; M and M &gt; F effects and association test maps was computed, to determine voxels that were present in…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6460937/"
+                                       >PMC6460937</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …y, raw co-activation maps were corrected for multiple comparisons [voxel-wise false discovery rate (FDR) &lt; 0.05. All clusters sizes &gt;200 mm ]. 
+
+
+### Functional profiles of the co-activation maps 
+  
+<mark class="annotated-text">To assess associated functional terms of the co-activation maps generated by MACM, we used the Neurosynth meta-analytic database </mark>( ) ( ). We followed the methodology used in a previous study to assess topic terms associated with the principal connectivity gradient in the human brain ( ). More specifically, we conducted a term-b…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7328031/"
+                                       >PMC7328031</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …on its meta-analytical data corpus. Clearly, some terms in the table are brain regions (e.g., “ventromedial,” “vmpfc”), while others are cognitive processes (e.g., “terms,” “decision,” “choice”). 
+  
+<mark class="annotated-text">Meta-analysis results generated by   (retrieved on June 26, 2020). 
+</mark>  
+Not surprisingly, the term “reward” (highlighted in  ) appears in the association table. For this term of interest, the meta-analysis first returns a   z  -score of 5.39. This z-score shows whether…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7674591/"
+                                       >PMC7674591</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …Keywords
+
+mentalizing
+emotions
+cerebellum
+functional neuroimaging
+review
+meta-analysis
+
+
+# Abstract
+ 
+This meta-analysis explores the role of the posterior cerebellum Crus I/II in social mentalizing. <mark class="annotated-text">We identified over 200 functional magnetic resonance imaging (fMRI) studies via NeuroSynth that met our inclusion criteria and fell within bilateral Crus II areas related to ‘sequencing’ during mentalizing </mark>(coordinates ±24 −76 −40; from earlier studies) and mere social ‘mentalizing’ or self-related emotional cognition (coordinates ±26 −84 −34; from NeuroSynth), located in the cerebellar mentalizing netw…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7851889/"
+                                       >PMC7851889</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - previous ma for seed / roi (14 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing. However, no study to date has examined how individual differences in intrinsic functional architecture of the human brain are related to that of the task-switching. In the present study, we took <mark class="annotated-text">11 task-switching relevant areas from a meta-analysis study as the regions of interests (ROIs) </mark>and estimated their intrinsic functional connectivity (iFC) with the whole brain. This procedure was repeated for 32 healthy adults based upon their fMRI scans during resting-state (rfMRI) to investig…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696812/"
+                                       >PMC4696812</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …l volunteers comprising six, 20-subject, decade cohorts (from 20–29 to 70–79). Structural equation modeling (SEM) was used to assess age-related changes in inter-regional connectivity within the DMN. <mark class="annotated-text">SEM was applied both using a previously published, meta-analytically derived, node-and-edge model, and using exploratory modeling searching for connections that optimized model fit improvement.</mark> Although the two models were highly similar (only 3 of 13 paths differed), the sample demonstrated significantly better fit with the exploratory model. For this reason, the exploratory model was used…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4905965/"
+                                       >PMC4905965</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …DE) in number processing had the same underlying neural mechanisms. 24 healthy participants completed a number comparison task and a number priming task in the scanner. Imaging data were examined for <mark class="annotated-text">brain regions selected based on a meta-analysis of previous studies of number processing</mark>. Results revealed robust CDE and PDE at both behavioral and neural levels. The CDE had a significant hemodynamic signature in the right parietal cortex but not in the left parietal cortex, although a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5080342/"
+                                       >PMC5080342</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …aphic
+Phonological
+Lexico-semantic
+Children
+fMRI
+
+
+# Abstract
+  Highlights  
+  
+Systematic investigation of subcomponents of reading (prelexical, orthographic, phonological, and lexico-semantic). 
+  
+<mark class="annotated-text">Region of interest analysis based on a meta-analytic (in the present version meta is written in italic) map of the core reading system in children. </mark>
+  
+Task comparison showed important role of occipito-temporal and frontal systems in children. 
+  
+Results favor the idea of an interactive reading network in children. 
+  
+  
+The reading system can …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6987884/"
+                                       >PMC6987884</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …nalysis allowed comparison with findings from previous meta-analyses (Kompus et al. 2011, Jardri et al., 2011). 
+
+A number of regions of interest were selected based on an initial PCA, in addition to <mark class="annotated-text">regions nominated in the meta-analyses.</mark> For each region, for each start- and end-of-hallucination event, a time-course was extracted for the interval t=-10 to +15sec with respect to button-press onset. Time-courses were aligned and group-a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234577/"
+                                       >PMC7234577</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … a meta‐analysis. 
+
+
+## Methods 
+  
+Resting‐state functional magnetic resonance imaging (fMRI) and neuropsychological assessment were performed on 38 patients with T2DM and 33 healthy controls (HCs). <mark class="annotated-text">Functional connectivity between regions based on a meta‐analysis</mark> and other voxels in the brain was calculated and compared between the two groups using a two‐sample   t   test. A correlation analysis was conducted between clinical/cognitive variables and functiona…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7428490/"
+                                       >PMC7428490</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …-infrared spectroscopy (fNIRS) to test four hypotheses about the spatial organization of the VWM network in early development. Four-month-olds, 1-year-olds, and 2-year-olds completed a VWM task while <mark class="annotated-text">we recorded neural activity from 19 cortical regions-of-interest identified from a meta-analysis of the adult fMRI literature on VWM</mark>. Results showed significant task-specific functional activation near 6 of 19 ROIs, revealing spatial consistency in the brain regions activated in our study and brain regions identified to be part of…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7443700/"
+                                       >PMC7443700</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …, theory of mind, episodic memory”), semantic cognition (including “semantic memory, semantic control, conceptual knowledge”), and social cognition (including “theory of mind, mentalizing, empathy”). <mark class="annotated-text">Using the activation likelihood estimates (ALE) identified by these topic-focused meta-analyses, we identified 10 important nodes closely associated with different aspects of default-mode and semantic-related functions—</mark>the dmPFC, vmPFC, PCC, bilateral AG, bilateral TPJ, left ATL, left IFG, and left pMTG. At each of the ALE peak coordinates, we created a spherical ROI with 6-mm radius. Next, we evaluated the suitabil…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7472201/"
+                                       >PMC7472201</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …gnetic resonance imaging while performing a mental rotation task. Task-based functional connectivity was examined using a region-of-interest (ROI) to ROI approach, as implemented in the CONN Toolbox. <mark class="annotated-text">ROIs were selected from a previous meta-analysis on mental rotation. </mark>Logistic regression with Lasso regularization was performed, using train-test cross-validation. 
+
+
+## Results 
+  
+Schizophrenia was associated with a complex pattern of dysconnectivity between the sup…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8055358/"
+                                       >PMC8055358</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …
+
+# Abstract
+  Highlights  
+  
+Formal thought disorder (FTD) is a core symptom of schizophrenia, but its neurobiological substrates remain elusive. 
+  
+Resting-state functional connectivity (rsFC) of <mark class="annotated-text">three   meta  -analytically defined seeds</mark> were correlated to positive and negative symptom dimensions of FTD. 
+  
+RsFC patterns allowed individual prediction of positive FTD symptom severity. 
+  
+These findings generalized to an independent …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8105296/"
+                                       >PMC8105296</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - cites ma as justification (11 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …. The aim of the treatment is a reduction in sexual drive and, in consequence, a reduced risk of recidivism. Yet the therapeutic success of antiandrogens is uncertain especially regarding recidivism. <mark class="annotated-text">Meta-analyses and reviews report only moderate and often mutually inconsistent effects. </mark>
+
+
+## Case presentation 
+  
+Based on the case of a 47 year old exclusively pedophilic forensic inpatient, we examined the effectiveness of a new eye tracking method and a new functional magnetic reson…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4036749/"
+                                       >PMC4036749</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … phases with increased estrogen and/or progesterone, this review has not found sufficient evidence to support any of these hypotheses. Mental rotation has gained specific interest in this aspect, but <mark class="annotated-text">a meta-analysis yielded a standardized mean difference in error rate of 1.61 </mark>(95% CI −0.35 to 3.57), suggesting, at present, no favor of an early follicular phase improvement in mental rotation performance. Besides the sexually dimorphic cognitive skills, studies exploring men…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4241821/"
+                                       >PMC4241821</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ty were spatially identical in LIFG. 
+  
+Peaks for action and difficulty were distinct in occipital–temporal cortex. 
+  
+Difficult trials recruited additional ventral occipital–temporal areas. 
+  
+  
+<mark class="annotated-text">Executive–semantic control and action understanding appear to recruit overlapping brain regions but existing evidence from neuroimaging meta-analyses and neuropsychology lacks spatial precision;</mark> we therefore manipulated difficulty and feature type (visual vs. action) in a single fMRI study. Harder judgements recruited an executive–semantic network encompassing medial and inferior frontal reg…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4346273/"
+                                       >PMC4346273</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …esting-state functional magnetic resonance imaging (RS FMRI) has been widely used to analyze functional alterations in amnestic mild cognitive impairment (aMCI) and Alzheimer&#39;s disease (AD) patients. <mark class="annotated-text">Although many clinical studies of aMCI and AD patients using RS FMRI have been undertaken, conducting a meta-analysis has not been easy because of seed selection bias by the investigators.</mark> The purpose of our study was to investigate the functional differences in aMCI and AD patients compared with healthy subjects in a meta-analysis. Thus, a multimethod approach using regional homogenei…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4477185/"
+                                       >PMC4477185</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …tern analysis (MVPA)
+
+
+# Abstract
+ 
+According to the dual-route model, a printed string of letters can be processed by either a grapheme-to-phoneme conversion (GPC) route or a lexical-semantic route. <mark class="annotated-text">Although meta-analyses of the imaging literature support the existence of distinct but interacting reading procedures, individual neuroimaging studies that explored neural correlates of reading yielded inconclusive results.</mark> We used a list-manipulation paradigm to provide a fresh empirical look at this issue and to isolate specific areas that underlie the two reading procedures. In a lexical condition, we embedded disyll…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4585139/"
+                                       >PMC4585139</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …trol and Aberrant Salience for Patients with Schizophrenia
+
+# Keywords
+
+fMRI
+basal ganglia
+cognitive control
+interference control
+prefrontal cortex
+striatum
+psychosis
+aberrant salience
+
+
+# Abstract
+ 
+<mark class="annotated-text">A recent meta-analysis has shown that a large dopamine abnormality exists in the striatum when comparing patients with schizophrenia and controls, and this abnormality is thought to contribute to aberrant salience assignment </mark>(or a misattribution of relevance to irrelevant stimuli). This abnormality may also disrupt striatal contributions to cognitive control processing. We examined the relationship between striatal involv…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4738294/"
+                                       >PMC4738294</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …tworks to modulate behavior. Mounting evidence suggests that disturbances in SN function underlie abnormalities in cognitive control and may be a common etiology underlying many psychiatric disorders.<mark class="annotated-text"> Such functional and anatomical abnormalities have been recently apparent in studies and meta-analyses of psychiatric illness using functional magnetic resonance imaging (fMRI) and voxel-based morphometry (VBM).</mark> Of particular importance, abnormal structure and function in major cortical nodes of the SN, the dorsal anterior cingulate cortex (dACC) and anterior insula (AI), have been observed as a common neuro…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5187454/"
+                                       >PMC5187454</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …tivity
+whole brain parcellation
+spectral clustering
+supervoxel
+
+
+# Abstract
+ 
+Node definition is a very important issue in human brain network analysis and functional connectivity studies. Typically, <mark class="annotated-text">the atlases generated from meta-analysis, random criteria, and structural criteria are utilized as nodes in related applications.</mark> However, these atlases are not originally designed for such purposes and may not be suitable. In this study, we combined normalized cut (Ncut) and a supervoxel method called simple linear iterative c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5187473/"
+                                       >PMC5187473</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … studies and on recent clinically relevant applications such as fMRI-based diagnostic classification or neuromodulation therapies targeting fMRI deficits with neurofeedback (NF) or brain stimulation. <mark class="annotated-text">Meta-analyses of fMRI studies of executive functions (EFs) show that ADHD patients have cognitive-domain dissociated complex multisystem impairments in several right and left hemispheric dorsal, ventral and medial fronto-cingulo-striato-thalamic and fronto-parieto-cerebellar networks that mediate cognitive control, attention, timing and working memory (WM). </mark>There is furthermore emerging evidence for abnormalities in orbital and ventromedial prefrontal and limbic areas that mediate motivation and emotion control. In addition, poor deactivation of the defa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5884954/"
+                                       >PMC5884954</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …umber of recent works where ICA was shown to be a useful tool for unraveling the complexity of cancer biology from the analysis of different types of omics data, mainly collected for tumoral samples. <mark class="annotated-text">Such works highlight the use of ICA in dimensionality reduction, deconvolution, data pre-processing, meta-analysis, and others applied to different data types (transcriptome, methylome, proteome, single-cell data). </mark>We particularly focus on the technical aspects of ICA application in omics studies such as using different protocols, determining the optimal number of components, assessing and improving reproducibil…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6771121/"
+                                       >PMC6771121</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c4a000;">
+        <summary class="label-display">meta-analytic connectivity modelling (9 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … to establish the IFJ’s connectivity profile on a high formal level of evidence by aggregating published implicit knowledge about its co-activations. We applied meta-analytical connectivity modeling (<mark class="annotated-text">MACM</mark>) based on the activation likelihood estimation (ALE) method without specific assumptions regarding functional specialization on 180 (reporting left IFJ activity) and 131 (right IFJ) published functio…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3582543/"
+                                       >PMC3582543</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … phase when the subjects viewed emotional expressions below the threshold of subjective awareness, and during the decision phase, which was based on verbal descriptions as the choice criterion. Using <mark class="annotated-text">meta-analytic connectivity modeling</mark>, we found that the preparatory phase of the decision was associated with activity in a right-posterior portion of the DLFC featuring co-activations in the left-inferior frontal cortex. During the sub…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4516020/"
+                                       >PMC4516020</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …solely based on reported activation coordinates, not on any anatomical or functional labels. 
+
+Functional connectivity of the different seeds was evaluated using Meta-Analytic Connectivity Modelling (<mark class="annotated-text">MACM</mark>) ( ,  ). MACM assesses which brain regions are co-activated above chance with a particular seed region in functional neuroimaging experiments ( ,  ,  ). MACM first identifies all experiments in a dat…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4832089/"
+                                       >PMC4832089</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …chulz, Jörg B. and Reetz, Kathrin and Dogan, Imis
+Front Neurol, 2020
+
+# Title
+
+Functional Characterization of Atrophy Patterns Related to Cognitive Impairment
+
+# Keywords
+
+temporal lobe
+parietal lobe
+<mark class="annotated-text">meta-analytical connectivity modeling</mark>
+resting-state functional connectivity
+aging
+cognition
+neurodegeneration
+
+
+# Abstract
+ 
+ Introduction:   Mild cognitive impairment (MCI) is a heterogenous syndrome considered as a risk factor for deve…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6993791/"
+                                       >PMC6993791</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d number of studies and subjects included, no conjunction or contrast analyses were performed for four tasks to identify the overlap. 
+
+
+### Co-activation analyses using BrainMap 
+  
+We conducted the <mark class="annotated-text">MACM</mark> analyses on the regions from the ALE meta-analysis. More specifically, for each ROI, we used the BrainMap database ( ,  ) to search for experiments that also activated the particular ROI. Next, we re…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7328031/"
+                                       >PMC7328031</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …the region to identify six distinct structures within the region on the basis of data‐driven classification of functional connectivity patterns obtained using the meta‐analytic connectivity modeling (<mark class="annotated-text">MACM</mark>) approach. From anterior to posterior, the derived subregions included two lateralized posterior regions, an intermediate posterior region, a dorsal and ventral central region, and a single anterior …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7375078/"
+                                       >PMC7375078</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ter our neuroscientific and legal knowledge of the ways in which individuals deceive others. To this end, we conducted activation likelihood estimation (ALE) and meta-analytic connectivity modelling (<mark class="annotated-text">MACM</mark>) using BrainMap software to examine 45 task-based fMRI brain activation studies on deception. An activation likelihood estimation comparing activations during deceptive versus honest behavior reveale…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8386837/"
+                                       >PMC8386837</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …onducted descriptive analyses to understand which FC differences gave rise to these gradients (see  ). To this end, we performed seed-based resting-state FC and meta-analytic co-activation modelling (<mark class="annotated-text">MACM</mark>) analyses on hard clusters extracted from the extreme ends of the identified gradients. Finally, we probed the functional/task terms (e.g., “cognitive control”, “language”) associated with these IFG …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9915604/"
+                                       >PMC9915604</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …, Emanuele and Avesani, Paolo and Baldauf, Daniel
+Brain Struct Funct, 2023
+
+# Title
+
+Accurate localization and coactivation profiles of the frontal eye field and inferior frontal junction: an ALE and <mark class="annotated-text">MACM</mark> fMRI meta-analysis
+
+# Keywords
+
+Prefrontal cortex
+Saccades
+Working memory
+Cognitive control
+Activation likelihood estimation
+Meta-analytic connectivity modeling
+
+
+# Abstract
+ 
+The frontal eye field (…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10147761/"
+                                       >PMC10147761</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - review (9 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …a and Piarulli, Andrea and Laurino, Marco and Garbella, Erika and Menicucci, Danilo and Neri, Bruno and Gemignani, Angelo
+Front Hum Neurosci, 2018
+
+# Title
+
+How Breath-Control Can Change Your Life: A <mark class="annotated-text">Systematic Review</mark> on Psycho-Physiological Correlates of Slow Breathing
+
+# Keywords
+
+slow breathing
+breath-control
+pranayama
+paced breathing
+EEG
+fMRI
+HRV
+psychophysiology
+
+
+# Abstract
+ 
+ Background:   The psycho-physio…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6137615/"
+                                       >PMC6137615</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … and Shirakawa, Miyako and Sora, Ichiro and Lau, Hakwan and Yoneda, Hiroshi and Kawato, Mitsuo
+Front Hum Neurosci, 2019
+
+# Title
+
+Current Status of Neurofeedback for Post-traumatic Stress Disorder: A <mark class="annotated-text">Systematic Review</mark> and the Possibility of Decoded Neurofeedback
+
+# Keywords
+
+PTSD
+real-time functional magnetic resonance imaging
+multi-voxel decoding
+fMRI decoded neurofeedback (DecNef)
+neural reinforcement
+neuromodul…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6650780/"
+                                       >PMC6650780</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …and van der Werf, Ysbrand D. and Vriend, Chris
+Neuropsychol Rev, 2020
+
+# Title
+
+The Effects of Cognitive Training on Brain Network Activity and Connectivity in Aging and Neurodegenerative Diseases: a <mark class="annotated-text">Systematic Review</mark>
+
+# Keywords
+
+Cognitive training
+Neuroimaging
+Magnetic resonance imaging
+Network
+Neurodegenerative diseases
+Aging
+
+
+# Abstract
+ 
+Cognitive training (CT) is an increasingly popular, non-pharmacological…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7305076/"
+                                       >PMC7305076</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Deldar, Zoha and Gevers-Montoro, Carlos and Khatibi, Ali and Ghazi-Saidi, Ladan
+AIMS Neurosci, 2020
+
+# Title
+
+The interaction between language and working memory: a <mark class="annotated-text">systematic review</mark> of fMRI studies in the past two decades
+
+# Keywords
+
+language
+working memory
+neuroimaging
+fMRI
+neural networks
+cognitive processing
+neurocognition
+verbal working memory
+interaction
+
+
+# Abstract
+ 
+Lan…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7815476/"
+                                       >PMC7815476</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Schulz, Maximilian and Malherbe, Caroline and Cheng, Bastian and Thomalla, Götz and Schlemm, Eckhard
+BMC Med, 2021
+
+# Title
+
+Functional connectivity changes in cerebral small vessel disease - a <mark class="annotated-text">systematic review</mark> of the resting-state MRI literature
+
+# Keywords
+
+Brain network
+Cerebral small vessel disease
+Cognition
+Functional connectivity
+Magnetic resonance imaging
+Resting state
+Risk of bias
+Patho-connectomics…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8097883/"
+                                       >PMC8097883</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Rubia, Katya and Westwood, Samuel and Aggensteiner, Pascal-M. and Brandeis, Daniel
+Cells, 2021
+
+# Title
+
+Neurotherapeutics for Attention Deficit/Hyperactivity Disorder (ADHD): A <mark class="annotated-text">Review</mark>
+
+# Keywords
+
+attention deficit hyperactivity disorder (ADHD)
+functional magnetic resonance imaging (fMRI)
+neurofeedback
+EEG-neurofeedback
+fMRI-neurofeedback
+brain stimulation
+transcranial magnetic st…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8394071/"
+                                       >PMC8394071</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … Zhang, Ashley B. and Zhang, Veronica and Sharan, Ashwini and Wu, Chengyuan and Matias, Caio M.
+Front Neurol, 2022
+
+# Title
+
+Use of Functional MRI in Deep Brain Stimulation in Parkinson&#39;s Diseases: A <mark class="annotated-text">Systematic Review
+</mark>
+# Keywords
+
+Parkinson&#39;s disease
+functional connectivity
+DBS
+deep brain stimulation
+fMRI
+functional MRI
+neuroimaging
+
+
+# Abstract
+ 
+Deep brain stimulation (DBS) has been used to modulate aberrant circ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8984293/"
+                                       >PMC8984293</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ent ADHD, and 1 exploring ADHD symptom severity) and the effects of interventions (8 investigations of stimulant effects and 1 study of fMRI neurofeedback). Large heterogeneity in study methodologies <mark class="annotated-text">prevented a meta-analysis</mark>; thus, the data were summarized as a narrative synthesis. Across cognitive domains, functional connectivity in the cingulo-opercular, sensorimotor, visual, subcortical, and executive control networks…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9616264/"
+                                       >PMC9616264</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ickie and Holdsworth, Samantha Jane and Fernandez, Justin and Qiao, Miao and Kasabov, Nikola and Wang, Alan
+Bioengineering (Basel), 2023
+
+# Title
+
+Machine Learning for Brain MRI Data Harmonisation: A <mark class="annotated-text">Systematic Review
+</mark>
+# Keywords
+
+systematic review
+harmonisation
+normalisation
+standardisation
+MRI
+image pre-processing
+
+
+# Abstract
+ 
+Background: Magnetic Resonance Imaging (MRI) data collected from multiple centres can…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10135601/"
+                                       >PMC10135601</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #73d216;">
+        <summary class="label-display">brainmap decoding (8 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …tral default mode network, pDMN-posterior default mode network, dDMN-dorsal default mode network, tDMN-temporal default mode network. 
+  
+
+#### BrainMap functional meta-analysis 
+  
+Next, we used the <mark class="annotated-text">BrainMap functional meta-analysis to aid us with the nomenclature of the identified ICNs by associating each ICN with behavioral domains. </mark>Using BrainMap’s behavioral metadata we conducted a functional meta-analysis of the behavioral domains which are overrepresented (relative to the entire brain) within a 10 mm cubic region of interest …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3386248/"
+                                       >PMC3386248</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … MACM. Subsequently, a conjunction analysis across the resulting co-activation maps using a minimum statistic approach revealed those regions that were functionally related to all fMRI-based seeds. 
+
+<mark class="annotated-text">Here we used the BrainMap database (Laird et al.,  ,  ;  ) to assess the co-activation pattern of each seed (Eickhoff et al.,  ), considering all experiments which reported stereotaxic coordinates from normal mapping studies (no interventions and no group comparisons) in healthy subjects using either fMRI or positron emission tomography (PET). </mark>These inclusion criteria yielded (at the time of analysis) ~7200 functional neuroimaging experiments. For each individual seed region (left/right OP4, 7A, DPMC) we proceeded as follows: first, we iden…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3810651/"
+                                       >PMC3810651</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …estigate each group over time. 
+
+
+#### 2.2.3. Categorizing Connectomic Signatures Using Meta-Analysis 
+  
+BrainMap ( ) is an online database of published neuroimaging literature, which can be used to <mark class="annotated-text">identify the function of brain regions based on previous reported data</mark> from well-credited labs [ ]. Yuan et al. used the BrainMap software to identify the possible functional roles for each DICCCOL using meta-analysis [ ]. Using the BrainMap database, we can categorize …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4706919/"
+                                       >PMC4706919</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …vation in a given structure. We believe this is a powerful tool for supplementing task-free analyses because it can help to generate structure-function relationships. In this study the application of <mark class="annotated-text">functional decoding using the BrainMap</mark> database allows us to assign functions to our cingulate clusters, and subsequently infer what the behavioural consequences of deviant connectivity might be. 
+
+
+
+## Results 
+  
+### Clustering the cing…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4832089/"
+                                       >PMC4832089</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …with corrected threshold of   p   &lt; 0.05 (cluster-forming threshold at voxel-level   p   &lt; 0.001), and minimum cluster size of 47 voxels. 
+
+
+### Functional Characterization With BrainMap Database 
+  
+<mark class="annotated-text">To determine the functional roles of the brain regions showing changed functional connectivity, BrainMap database   was used to characterize the behavior of these areas. </mark>The behavioral domains were determined by examining which types of tasks were significantly associated with these areas. Functional characterization of these areas was determined using forward inferen…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6295569/"
+                                       >PMC6295569</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …hod 
+  
+Connectivity abnormalities were determined from a published degree centrality group comparison based on functional magnetic resonance imaging data from the Autism Brain Imaging Data Exchange. <mark class="annotated-text">Using BrainMap&#39;s database of task-based neuroimaging studies, behavioural profiles were created for abnormally connected regions by relating these regions to tasks activating them. 
+</mark>
+
+## Results 
+  
+Hyperconnectivity in ASD brains was significantly related to memory, attention, reasoning, social, execution and speech behaviours. Hypoconnectivity was related to vision, execution a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7001469/"
+                                       >PMC7001469</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …#### Potential Correlates With Real World Functionalities 
+  
+Through the third level clustering, the brain’s EC network patterns which were dominant and consistent across all subjects were obtained. <mark class="annotated-text">To interpret the neural connotations of these patterns, we related them to real world cognitive functionalities using the Brainmap Sleuth search engine ( ).</mark> Specifically, for a given third level centroid agent, the 164 regions inside the cerebrum were divided into six clusters. It should be noted that one of the six clusters (networks) was trivial becaus…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7017718/"
+                                       >PMC7017718</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ntricular ejection fraction and N-terminal prohormone of brain natriuretic peptide—and cognitive performance, predominantly executive function. Meta-analytical data-mining approaches—conducted in the <mark class="annotated-text">BrainMap</mark> and Neurosynth databases—revealed that social and executive cognitive functions are mainly associated with those neural networks. Remarkably, the precuneus, as identified in our study in a mid-life c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9870947/"
+                                       >PMC9870947</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #fce94f;">
+        <summary class="label-display">other (8 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ts&#39; BOLD signal in several 
+brain regions; however, within the
+clusters identified as significantly deviant 
+from one, R-squared values were
+lower and ranged between 0.1–0.46. 
+
+
+## 4. DISCUSSION 
+  
+<mark class="annotated-text">Here we report the preliminary use of a 
+novel meta-analysis technique </mark>in studies on
+aging, which localizes one factor of general 
+cognitive slowing to the
+sensorimotor transfer. These findings lend support to 
+existing data from
+event-related potential work indicating t…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">new technique</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2233772/"
+                                       >PMC2233772</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … interactions do arise when assessing grammatical class specificity in different tasks (e.g., Palti et al.,  ; Berlingeri et al.,  ), this would have been a serious limitation of the ALE procedure. 
+
+<mark class="annotated-text">We thus resorted to hierarchical clustering to carry out the meta-analysis</mark> (Jobard et al.,  ), using in particular the algorithm designed by Cattinelli et al. ( ) and previously adopted by Cattinelli et al. ( ). This algorithm permits the identification of clusters from a d…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">hierarchical clustering</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3695563/"
+                                       >PMC3695563</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …n site selective for ToM (for review, see  ;  ;  ). To relate our findings more directly to those in the literature, we co-localized the group-averaged size-selective localizer for LIM (Experiment 1) <mark class="annotated-text">to a meta-analysis of data from the above reports</mark>, and to additional data from our laboratory. 
+
+#### Experiment 5A: Selectivity for Faces 
+  
+Figure   A   shows the location of face- (or gaze-) selective sites reported in the literature (small soli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">unclear which method was used</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4585529/"
+                                       >PMC4585529</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …hen used to investigate the effect of each of the other variables of interest. Then, we investigated the effect of the variables of interest separately for each atlas region using Fisher‐exact tests. <mark class="annotated-text">We tested for the similarity of the anatomical distributions of results for each variable of interest using Spearman&#39;s rank correlation coefficients of the numbers of studies contributing to each atlas region. </mark>For example, to test whether studies of SCZ report similar results to BD, we calculated the correlation between the number of SCZ studies by atlas region to those of BD. 
+
+We performed Kruskal‐Wallis …
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">?</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5347927/"
+                                       >PMC5347927</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …te the assumption of independence. Instances of repeated coordinates were identified and removed to prevent bias. 
+
+
+### Coordinate based meta-analysis 
+  
+Here we use a recently developed algorithm (<mark class="annotated-text">LocalALE</mark>), which is freely available from  . This algorithm utilizes the coordinates from fMRI studies to estimate where there is consistently reported activation across studies. It is based on the commonly u…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">based on ALE</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5554296/"
+                                       >PMC5554296</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … of the association between functional activation and metrics of pubertal development across studies. 
+
+Therefore, to conduct a quantitative meta-analysis of this literature, we used a version of a   <mark class="annotated-text">label-based   approach</mark> to assess convergence in the patterns of findings within each functional domain. A label-based approach is especially useful when information from neuroimaging studies are insufficient for conducting…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">label-based approach</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6969369/"
+                                       >PMC6969369</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …h cluster was then reshaped to a spherical volume around the peak coordinate for the subsequent statistical analysis resulting in a total of 60 clusters for the inclusion into the further analysis. 
+
+<mark class="annotated-text">The Tensor Imaging and Fiber Tracking (TIFT) software package was used for statistical analyses, as described in a previous meta-analysis with diffusion-weighted MRI data. </mark> The statistical process was transferred to the present rs-fMRI data set: each of the 60 coordinates was placed as Gaussian shaped result-spheres with its corresponding size, weighted with the square-…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">fibre tracking ma?</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7412904/"
+                                       >PMC7412904</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …rated the process of this ALE meta-analysis. 
+  
+Flow chart that illustrates the process of activation likelihood estimation (ALE) meta-analysis. 
+  
+
+### Label-based meta-analysis 
+  
+In addition, a <mark class="annotated-text">“label-based meta-analysis”</mark> [method based on ( )] was performed to tabulate/summarize the activated brain regions commonly reported across the studies. The extracted activation foci were re-surveyed by entering them into Mango …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9808082/"
+                                       >PMC9808082</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ff5e5e;">
+        <summary class="label-display">MKDA (7 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …love (red), and regions common to both (purple). Using techniques reported previously by our group (Lewis,  ; Ortigue et al.,  ; Cacioppo et al.,  ), we adopted a Multi-level Kernel Density Analysis (<mark class="annotated-text">MKDA</mark>) approach (Wager et al.,  ). This approach quantitatively tested for consistency and specificity of regional activation across the two sets of studies: it minimizes biases such as having one study th…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3608908/"
+                                       >PMC3608908</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …orthogonal contrasts unclassified. We then passed all coordinates from classified contrasts to a Multilevel Kernel Density Analysis (MKDA; Wager et al.,  ). 
+
+
+### Multilevel Kernel Density Analysis (<mark class="annotated-text">MKDA</mark>) 
+  
+We first converted all peak coordinates reported in Talairach space to MNI space (Lancaster et al.,  ), and imported them into NeuroElf  to perform an MKDA. The coordinates were then smoothed us…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5951926/"
+                                       >PMC5951926</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …imaging studies of psychopathy, a clear and comprehensive picture of the disorder’s neural correlates has yet to emerge. The current study is a meta-analysis of functional MRI studies of psychopathy. <mark class="annotated-text">Multilevel kernel density analysis</mark> was used to identify consistent findings across 25 studies (460 foci) of task-related brain activity. Psychopathy was associated with increased task-related activity predominantly in midline cortical…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7203015/"
+                                       >PMC7203015</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … of males/females, mean age of the sample, IQ), and study inclusion/exclusion criteria for substance use and psychopathology. 
+
+
+### Statistical analysis 
+  
+#### Multi-level Kernel Density Analysis: <mark class="annotated-text">MKDA</mark>. 
+  
+Multi-level Kernel Density Analysis (MKDA) ( ) was used to determine spatial consistency of identified foci associated with substance use vulnerability. We provide a brief overview of MKDA metho…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7992390/"
+                                       >PMC7992390</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … distinguishing between in-group and out-group members generally. The current meta-analysis contains a total of 50 studies published through 2000–2018 and utilizes multilevel kernel density analysis (<mark class="annotated-text">MKDA</mark>) as opposed to activation likelihood estimation technique used in  . Moreover, the present paper extends this prior work, which did not distinguish between a variety of social categories and types of…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8421705/"
+                                       >PMC8421705</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ideos), social group (e.g. race, culture, gender and minimal), relational status of the target and reference (i.e. in-group or out-group), and coordinates of peak activation. 
+
+
+
+## Data analysis 
+  
+<mark class="annotated-text">MKDA</mark> (see   for more information) was implemented through the Matlab toolbox NeuroElf ( ). Consistent with MKDA and neuroimaging meta-analytic procedures ( ;  ;  ), contrast coordinates in Talairach space…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8421705/"
+                                       >PMC8421705</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …cts were extracted from included studies and grouped according to the network-assignment of their respective seed, yielding one list of between-group iFC-effects per network. 
+
+
+### Meta-analysis 
+  
+<mark class="annotated-text">MKDA</mark> meta-analysis of both GMV and network-iFC was conducted [ ,  ] following our previous work on transdiagnostic multimodal meta-analysis of structural and resting-state fMRI-studies across psychiatric …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8938548/"
+                                       >PMC8938548</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …-analysis of treatment prediction studies utilizing fMRI in patients with MDD to provide evidence that neural activity can be used to predict response to antidepressant treatment. 
+
+
+## Methods 
+  
+A <mark class="annotated-text">multi-level kernel density analysis</mark> was applied to these primary fMRI studies, in which we analyzed brain activation patterns of depressed patients (N= 364) before receiving antidepressant treatment. 
+
+
+## Results 
+  
+The results of th…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9567359/"
+                                       >PMC9567359</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - cites ma as consistent with findings (6 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …provided saliva samples for genotyping and underwent functional magnetic resonance imaging (fMRI) during which an emotion processing protocol were presented. Confirming the validity of this protocol, <mark class="annotated-text">we observed blood oxygen level–dependent (BOLD) activity consistent with fMRI meta-analyses on emotion processing.</mark> Region-of-interest analysis of the rACC and AMY revealed main effects of 5-HTTLPR and BDNF Val66Met, and an interaction of 5-HTTLPR and BDNF Val66Met. The effect of the BDNF Met66 allele was dependen…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3500464/"
+                                       >PMC3500464</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …A) and right pre-SMA and basal ganglia (including the putamen and right pallidum). Furthermore, correlations between neural activity in the right inferior frontal gyrus and SMA and timing performance <mark class="annotated-text">corroborate the results of a recent meta-analysis</mark> and are further evidence that the SMA forms part of a neural clock that is responsible for the accumulation of temporal information. Specifically, subjective lengthening of the perceived duration wer…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3547013/"
+                                       >PMC3547013</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … different affective valence: neutral, pleasant, unpleasant. The results showed that individual differences in ES trait predicted distinct neural activity patterns to the different stimulus conditions<mark class="annotated-text"> in a region of left anterior insula that a previous meta-analysis revealed to be linked with olfacto-gustatory processing. </mark>Specifically, low ES was associated with enhanced neural responses to both pleasant and unpleasant stimuli, compared to neutral stimuli. By contrast, high ES participants showed equally strong neural …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4633483/"
+                                       >PMC4633483</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ponent removal using general linear model approaches. Activity in Broca’s region and supplementary motor cortex was observed only when the filter was applied to the deoxyHb signal and was shown to be <mark class="annotated-text">spatially comparable to fMRI data acquired using a similar task and to meta-analysis data</mark>. oxyHb signals did not yield expected activity in Broca’s region with or without global component removal. This study demonstrates the utility of a PCA spatial filter on the deoxyHb signal in reveali…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5592780/"
+                                       >PMC5592780</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …processed using an FSL FEAT pipeline, with additional filtering using the ICA_AROMA method. Data were then subjected to statistical analysis, contrasting hallucinatory with non-hallucinatory periods; <mark class="annotated-text">higher-level analysis allowed comparison with findings from previous meta-analyses</mark> (Kompus et al. 2011, Jardri et al., 2011). 
+
+A number of regions of interest were selected based on an initial PCA, in addition to regions nominated in the meta-analyses. For each region, for each st…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234577/"
+                                       >PMC7234577</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ortex and precuneus (a region partly overlapping with the Dorsal Attentional Network (DAN)) in patients. Importantly, this latter finding was positively correlated to OCD symptom severity. 
+
+Overall, <mark class="annotated-text">our study partly replicated prior   meta  -analytic findings,</mark> highlighting hypoconnectivity between SN and DMN as a potential biomarker for OCD. Furthermore, we identified changes between the SN and the DMN with the visual network. This suggests that abnormal c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8688720/"
+                                       >PMC8688720</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - not a full report (6 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …au, Soldevila-Matias and Carlos, González-Vivas and Gracián, García-Martí and Olga, Soprano-Ros and Luis, Martí-Bonmatí and Benedicto, Crespo-Facorro and Julio, Sanjuán
+Schizophr Bull, 2018
+
+# Title
+
+<mark class="annotated-text">S153</mark>. WHERE IS THE ABNORMAL BRAIN ACTIVITY IN FIRST EPISODE PSYCHOSIS?
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Recent review about functional magnetic resonance imaging (fMRI) in first episode psych…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5887479/"
+                                       >PMC5887479</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Alústiza, Irene and Garcés, María Sol and Ortuño, Marta and Molero, Patricio and Ortuño, Felipe
+Schizophr Bull, 2018
+
+# Title
+
+<mark class="annotated-text">S71</mark>. ABERRANT TIMING AND SALIENCE NETWORK IN SCHIZOPHRENIA: FINDINGS FROM A META-ANALYSIS
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Schizophrenia (SZ) affects several domains of cognitive function. A…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5887562/"
+                                       >PMC5887562</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Rapp, Alexander and Purr, Franziska and Felsenheimer, Anne
+Schizophr Bull, 2018
+
+# Title
+
+<mark class="annotated-text">T58</mark>. SARCASM COMPREHENSION AS A SOCIAL COGNITION MEASURE IN SCHIZOPHRENIA – A SYSTEMATIC LITERATURE SEARCH AND META-ANALYSIS ON THE USE OF THE TASIT
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Social c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5888645/"
+                                       >PMC5888645</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Attademo, Luigi and Bernardini, Francesco and Verdolini, Norma
+Schizophr Bull, 2020
+
+# Title
+
+<mark class="annotated-text">S9</mark>. NEUROIMAGING AND NEUROPHYSIOLOGY BIOMARKERS OF SCHIZOTYPAL PERSONALITY DISORDER: A SYSTEMATIC REVIEW
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Schizotypal personality disorder (SPD) is a cluster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234122/"
+                                       >PMC7234122</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Lukow, Paulina and Kempton, Matthew and Turkheimer, Federico and Modinos, Gemma
+Schizophr Bull, 2020
+
+# Title
+
+<mark class="annotated-text">T133. </mark>NEURAL CORRELATES OF EMOTIONAL PROCESSING IN PSYCHOSIS RISK AND ONSET – A SYSTEMATIC REVIEW AND META-ANALYSIS OF FMRI STUDIES
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+Behavioural findings suggest…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234314/"
+                                       >PMC7234314</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Del Fabro, Lorenzo and Schmidt, André and Delvecchio, Giuseppe and D’Agostino, Armando and Borgwardt, Stefan and Brambilla, Paolo
+Schizophr Bull, 2020
+
+# Title
+
+<mark class="annotated-text">T156.</mark> FUNCTIONAL CONNECTIVITY AND RISK OF PSYCHOSIS: AN ACTIVATION LIKELIHOOD ESTIMATION (ALE) META-ANALYSIS OF FUNCTIONAL MAGNETIC RESONANCE IMAGING STUDIES
+
+# Keywords
+
+
+
+# Abstract
+ 
+## Background 
+  
+D…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234455/"
+                                       >PMC7234455</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
+        <summary class="label-display">check for n studies found (6 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ual–orthographic representations) and an age‐related decrease in activation in left TP regions (corresponding to abandonment of phonology‐based reading processes). 
+
+
+## MATERIALS AND METHODS 
+  
+The <mark class="annotated-text">selection of studies </mark>for the present coordinate‐based meta‐analysis was oriented on other meta‐analyses in the domain of reading [Houdé et al.,  ; Richlan et al.,  ,  ]. Studies were selected when they met the following c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950303/"
+                                       >PMC4950303</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ty of meta‐analyses. We accordingly report information advised such as research question, inclusion and exclusion criteria, detailed information for all experiments, and a step‐by‐step flowchart (see <mark class="annotated-text">Figure</mark>  ). 
+  
+Meta‐analysis flowchart. A flowchart diagram recommended in the best practice guidelines for the conducting of neuroimaging meta‐analyses (Müller et al.,  ). The flowchart lists eight section…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6771970/"
+                                       >PMC6771970</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ferent endings of the term. Dissertations and Theses databases were searched in order to identify unpublished experiments in an attempt to minimise bias. The search was limited to results in English. <mark class="annotated-text">Additional file   shows the search strategies used and the number of results the search returned</mark>. The search included a wide time span as no lower time criterion was imposed on the search engines allowing us to access the first available records. Results included records up to and including the …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6921539/"
+                                       >PMC6921539</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …tabase. 
+    
+Values age, percentage (%) of male, and percentage (%) of medicated are shown as mean (standard deviation); age in years. 
+  
+
+
+
+## Results 
+  
+### Studies and coordinates 
+  
+In total, <mark class="annotated-text">70</mark> articles were selected, comprising observations from 2,789 patients and 3,002 healthy individuals ( ). Full citations and details of the selected articles are provided in Table S1. There were no case…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7355168/"
+                                       >PMC7355168</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …o obtain an objective, systematic and quantitative summary of previous neuroimaging studies of emotion regulation which have considered acceptance as emotion regulation strategy. 
+
+
+## Method 
+  
+### <mark class="annotated-text">Data</mark> sources 
+  
+Neuroimaging studies on acceptance were collected through advanced searches in Google Scholar ( ) and PubMed ( ) of all articles that mentioned in the title the terms ‘acceptance’ and/or …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7943364/"
+                                       >PMC7943364</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …uary 1, 2021) by the first author MB to comply with the updated PRISMA guidelines (Page et al.  ) and as a sanity check. The selection procedure is reported in Figures S1 and S2 (created based on the <mark class="annotated-text">PRISMA flow diagram</mark>; Page et al.  ), which refer to the ‘FEF sample’ and the ‘IFJ sample’, respectively. All the bibliographical searches were carried out using the Web of Science ( ). We searched records in the Web of …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10147761/"
+                                       >PMC10147761</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - traditional ma (5 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …eement was settled by discussions. 
+
+
+### Statistical analysis 
+  
+The studies of fMRI are summarized in a table and used in this review. The meta-analyses of   COMT   studies were performed using the<mark class="annotated-text"> STATA 14.0</mark> (Stata Corporation, College Station, TX, USA). The relationship between the   COMT   polymorphisms and the aggression behavior susceptibility was assessed by applying the pooled odds ratios (ORs) and…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5308585/"
+                                       >PMC5308585</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …e beta value representing the corresponding study&#39;s neurofeedback blocks. 
+
+
+### Meta‐analysis 
+  
+To date, there is no consensus on how neurofeedback learning success should be defined and measured. <mark class="annotated-text">Thus, in order to improve generalizability, we investigated the two most commonly used measures for assessing neurofeedback learning success(Thibault, MacPherson, Lifshitz, Roth, &amp; Raz,  ), namely (a) the slope of the learning curve (i.e., the regression line over the success measures for each training run), and (b) the difference between neurofeedback regulation success during the last and the first training run.</mark> Success measures of studies where participants had to perform down‐regulation were multiplied by −1. For each study, we then calculated the correlation between pretraining brain activity and these tw…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7469782/"
+                                       >PMC7469782</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d Kempton, Matthew J. and Lukow, Paulina B. and Bennallick, Carly and Stone, James M. and Modinos, Gemma
+Front Psychiatry, 2021
+
+# Title
+
+GABA, Glutamate and Neural Activity: A Systematic Review With <mark class="annotated-text">Meta-Analysis of Multimodal 1H-MRS-fMRI Studies
+</mark>
+# Keywords
+
+glutamate
+GABA
+magnetic resonance spectroscopy
+fMRI
+multimodal neuroimaging
+
+
+# Abstract
+ 
+Multimodal neuroimaging studies combining proton magnetic resonance spectroscopy ( H-MRS) to qua…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7982484/"
+                                       >PMC7982484</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …
+  
+Intervention: cognitive tasks with no NFT, no EEG-NFT, or no fMRI-NFT; 
+  
+Control group: healthy population; 
+  
+Evaluation: data without assessment tools. 
+  
+
+All analyses were conducted using <mark class="annotated-text">Comprehensive Meta-Analysis 2.0</mark> software [ ]. We analyzed the total effect on PTSD symptoms (PTSD diagnosis, anxiety, and depression) using Hedges’ g with 95% confidence intervals (CIs). Hedges’ g is the index of an effect adjusted…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9603735/"
+                                       >PMC9603735</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ction using neuroimaging and neurophysiological measures in people with subjective or objective cognitive decline. Study characteristics and brain function effects were narratively synthesized, while <mark class="annotated-text">domain-specific cognitive performance was subjected to meta-analysis</mark>. Study quality was also assessed. 
+
+
+## Results 
+  
+5,204 records were identified and 12 unique trials met the eligibility criteria, representing 646 adults classified with cognitive frailty, mild or…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10228832/"
+                                       >PMC10228832</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #729fcf;">
+        <summary class="label-display">imba (3 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ted images, a one-sample   t  -test was performed (see   for the source code and data files). While conducting Bayesian second-level fMRI analysis, the Cauchy prior was adjusted with information from <mark class="annotated-text">image-based meta-analysis of statistical images</mark> containing either   t  - or   z  -statistics reported from previous fMRI studies of working memory. The meta-analyzed statistics images were downloaded from NeuroVault, an open online repository to s…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7866892/"
+                                       >PMC7866892</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …redictive methods of individual placebo analgesia from neuroimaging data, which would be of crucial importance both from a clinical and drug development point of view. Here, we conducted a systematic <mark class="annotated-text">participant-level meta-analysis of 20 independent neuroimaging studies</mark> on experimental placebo analgesia. Based on whole-brain activation patterns in a total of   N   = 603 healthy participants, we mapped the effects of placebo treatment on pain-related brain activity a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7925520/"
+                                       >PMC7925520</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …in images. Overcoming the heterogeneity, imbalance and noise in the training data, we successfully decoded more than 50 classes of mental processes on a large test set. This success demonstrates that <mark class="annotated-text">image-based meta-analyses</mark> can be undertaken at scale and with minimal manual data curation. It enables broad reverse inferences, that is, concluding on mental processes given the observed brain activity. 
+ 
+
+# Body
+ 
+## Intro…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9054752/"
+                                       >PMC9054752</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - protocol (3 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    … Fabricius, Martin E. and Knudsen, Gitte Moos and Møller, Kirsten and Kondziella, Daniel
+Front Neurol, 2018
+
+# Title
+
+Consciousness in Neurocritical Care Cohort Study Using fMRI and EEG (CONNECT-ME): <mark class="annotated-text">Protocol</mark> for a Longitudinal Prospective Study and a Tertiary Clinical Care Service
+
+# Keywords
+
+coma
+consciousness
+electroencephalography
+functional magnetic resonance imaging
+locked-in syndrome
+magnetic reso…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6278242/"
+                                       >PMC6278242</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … Horácio
+Trends Psychiatry Psychother, 2021
+
+# Title
+
+Attention-deficit/hyperactivity disorder and brain metabolites from proton magnetic resonance spectroscopy: a systematic review and meta-analysis <mark class="annotated-text">protocol</mark>
+
+# Keywords
+
+MRS
+spectroscopy
+ADHD
+meta-analysis
+protocol
+
+
+# Abstract
+ 
+Despite major advances in the study of the brain, investigations on neurochemistry in vivo still lack the solid ground of more…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7932040/"
+                                       >PMC7932040</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Yan, Yan and Sheng, Ru-ya and Wang, Yu and Zhang, Chun-hong
+Syst Rev, 2022
+
+# Title
+
+Acupuncture mechanism studies employing task-based fMRI: a scoping review <mark class="annotated-text">protocol</mark>
+
+# Keywords
+
+Acupuncture
+fMRI
+Mechanism study
+Scoping review
+
+
+# Abstract
+ 
+## Background 
+  
+Acupuncture is a widely used alternative and complementary therapy. Functional magnetic resonance imaging…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9215030/"
+                                       >PMC9215030</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - non-human focus (2 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …xes were compared between the patients and healthy controls. We used behavioural tests, electrophysiology, and molecular profiling techniques to investigate the functional role and molecular basis in <mark class="annotated-text">mouse</mark> models. 
+
+
+## Findings 
+  
+After performing a meta-analysis, we targeted the relevance between chronic kidney disease (CKD) and depression. In a CKD mouse model and a patient cohort, depression was i…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6838447/"
+                                       >PMC6838447</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … Dhenain, Marc and Dijkhuizen, Rick M. and Gozzi, Alessandro and Hess, Andreas and Keilholz, Shella D. and Lerch, Jason P. and Shih, Yen-Yu Ian and Grandjean, Joanes
+Front Neuroinform, 2019
+
+# Title
+
+<mark class="annotated-text">Animal</mark> Functional Magnetic Resonance Imaging: Trends and Path Toward Standardization
+
+# Keywords
+
+resting-state
+rodent
+non-human primate
+optogenetics
+DREADD
+
+
+# Abstract
+ 
+Animal whole-brain functional magn…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6987455/"
+                                       >PMC6987455</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">NiMARE! (2 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …endent from “task free” and “task‐based” states) identification of the functional network connected to the cluster of interest (Schnellbächer et al.,  ). See   for details. 
+
+
+#### Decoding 
+  
+Using <mark class="annotated-text">NiMARE</mark> python packages ( ), we decoded the cluster that emerged from the meta‐analysis. The decoding quantifies the probability that a specific term is present given the activity in a specific brain area ( …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8764475/"
+                                       >PMC8764475</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … voxel. Next, we quantified the convergence of activation across the identified experiments using the revised activation likelihood estimation (ALE) algorithm ( ) as implemented in the Python library <mark class="annotated-text">NiMARE</mark> ( ). This process was repeated for all voxels within the ROI, resulting in 1,813 unthresholded MACM maps that estimate the strength of co-activation between each ROI voxel and all other brain voxels …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9915604/"
+                                       >PMC9915604</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c17d11;">
+        <summary class="label-display">neurosynth coactivation modelling (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …d the left parahippocampus (−20, −33, −4). A total of 140 ROIs were used in the present study to construct brain networks (supplementary Table  ). 
+
+
+### Coactivation network 
+  
+The online database, <mark class="annotated-text">Neurosynth, was used to construct the coactivation</mark> network (Yarkoni et al.,  ). The database search was conducted in November, 2012 when the database had 4393 studies and 47,493 activations. For each of the 140 ROIs, Neurosynth identified all the pap…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3775427/"
+                                       >PMC3775427</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details >
+        <summary class="label-display">EXCLUDE - preprint (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Diveica, Veronica and Riedel, Michael C. and Salo, Taylor and Laird, Angela R. and Jackson, Rebecca L. and Binney, Richard J.
+<mark class="annotated-text">bioRxiv</mark>, 2023
+
+# Title
+
+Graded functional organisation in the left inferior frontal gyrus: evidence from task-free and task-based functional connectivity
+
+# Keywords
+
+ventrolateral prefrontal cortex
+connecti…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9915604/"
+                                       >PMC9915604</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ff9896;">
+        <summary class="label-display">KDA (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+</div>
+"""
+displays.HTMLDisplay(text)
+```
