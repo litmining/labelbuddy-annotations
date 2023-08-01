@@ -1,0 +1,10 @@
+{"color":"#4e9a06","name":"processing (pre or post)","shortcut_key":"p"}
+{"color":"#f57900","name":"features","shortcut_key":"f"}
+{"color":"#fcaf3e","name":"NER method","shortcut_key":"r"}
+{"color":"#729fcf","name":"entity","shortcut_key":"e"}
+{"color":"#ad7fa8","name":"location","shortcut_key":"w"}
+{"color":"#8ae234","name":"document type","shortcut_key":"d"}
+{"color":"#ef2929","name":"performance","shortcut_key":"a"}
+{"color":"#babdb6","name":"note","shortcut_key":"q"}
+{"color":"#888a85","name":"exclude","shortcut_key":"x"}
+{"color":"#eeeeec","name":"interesting","shortcut_key":"i"}
