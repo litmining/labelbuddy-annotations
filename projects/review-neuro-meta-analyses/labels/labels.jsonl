@@ -1,0 +1,22 @@
+{"color":"#ef2929","name":"ALE","shortcut_key":"a"}
+{"color":"#c4a000","name":"meta-analytic connectivity modelling","shortcut_key":"c"}
+{"color":"#8ae234","name":"SDM","shortcut_key":"s"}
+{"color":"#ff5e5e","name":"MKDA","shortcut_key":"m"}
+{"color":"#ff9896","name":"KDA","shortcut_key":"k"}
+{"color":"#729fcf","name":"imba","shortcut_key":"i"}
+{"color":"#fcaf3e","name":"neurosynth decoding","shortcut_key":"n"}
+{"color":"#ffbb78","name":"neurosynth encoding","shortcut_key":"e"}
+{"color":"#c17d11","name":"neurosynth coactivation modelling"}
+{"color":"#73d216","name":"brainmap decoding","shortcut_key":"d"}
+{"color":"#fce94f","name":"other","shortcut_key":"o"}
+{"color":"#9edae5","name":"read later","shortcut_key":"r"}
+{"color":"#888a85","name":"exclude","shortcut_key":"x"}
+{"color":"#888a85","name":"EXCLUDE - previous ma for seed / roi"}
+{"color":"#888a85","name":"EXCLUDE - cites ma as justification"}
+{"color":"#888a85","name":"EXCLUDE - cites ma as consistent with findings"}
+{"color":"#888a85","name":"EXCLUDE - traditional ma"}
+{"color":"#888a85","name":"EXCLUDE - review"}
+{"color":"#888a85","name":"EXCLUDE - protocol"}
+{"color":"#888a85","name":"EXCLUDE - non-human focus"}
+{"color":"#888a85","name":"EXCLUDE - not a full report"}
+{"color":"#ffbb78","name":"NiMARE!"}
