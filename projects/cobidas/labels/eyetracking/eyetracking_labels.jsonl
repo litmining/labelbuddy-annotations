@@ -1,0 +1,68 @@
+{"name": "The importance of auxiliary assumptions linking constructs and operational definitions", "color": "#a6cee3"}
+{"name": "The eye-tracker used", "color": "#1f78b4"}
+{"name": "The producer of the eye-tracker", "color": "#1f78b4"}
+{"name": "The type of eye-tracking device", "color": "#1f78b4"}
+{"name": "The type of eye-tracking device", "color": "#1f78b4"}
+{"name": "The lens size of the eye-tracker", "color": "#1f78b4"}
+{"name": "The sampling procedure used", "color": "#1f78b4"}
+{"name": "The sampling rate used", "color": "#1f78b4"}
+{"name": "The accuracy of the eye-tracker", "color": "#1f78b4"}
+{"name": "The precision of the eye-tracker", "color": "#1f78b4"}
+{"name": "The temporal precision", "color": "#1f78b4"}
+{"name": "Specification of stimulus-synchronization latencies", "color": "#1f78b4"}
+{"name": "Eye-tracker latency", "color": "#1f78b4"}
+{"name": "Tracking range of the head box in which participants can move without losing data", "color": "#1f78b4"}
+{"name": "If a chinrest was used", "color": "#1f78b4"}
+{"name": "The type of monitor used", "color": "#b2df8a"}
+{"name": "The resolution of the used monitor", "color": "#b2df8a"}
+{"name": "The screen size of the used monitor", "color": "#b2df8a"}
+{"name": "Screen refresh rate of the used monitor", "color": "#b2df8a"}
+{"name": "The software used to pre-process the eye-tracking data", "color": "#33a02c"}
+{"name": "The software used to present the stimuli", "color": "#33a02c"}
+{"name": "The size of the AOIs in pixel or degrees", "color": "#fb9a99"}
+{"name": "Overlap between the AOIs", "color": "#fb9a99"}
+{"name": "The minimal distance between AOIs in pixel", "color": "#fb9a99"}
+{"name": "The relative size of AOIs and Content within AOIs", "color": "#fb9a99"}
+{"name": "Example image presented in the paper", "color": "#fb9a99"}
+{"name": "Method for stimulus preparation", "color": "#fb9a99"}
+{"name": "Matching of the luminance between the stimuli", "color": "#fb9a99"}
+{"name": "The size of the stimulus", "color": "#fb9a99"}
+{"name": "Duration of inter stimulus interval", "color": "#e31a1c"}
+{"name": "Presentation duration of the fixation cross", "color": "#e31a1c"}
+{"name": "Position of the fixation cross", "color": "#e31a1c"}
+{"name": "Duration of stimulus presentation", "color": "#e31a1c"}
+{"name": "The order of the stimulus presentation", "color": "#e31a1c"}
+{"name": "Counter-balancing of the stimulus in the presentation across positions", "color": "#e31a1c"}
+{"name": "The number of trials in the experiment", "color": "#e31a1c"}
+{"name": "Description of the person running the experiment", "color": "#e31a1c"}
+{"name": "Settings and locations where data were collected", "color": "#e31a1c"}
+{"name": "The distance between participants and the screen", "color": "#e31a1c"}
+{"name": "Number of points that appeared in calibration", "color": "#fdbf6f"}
+{"name": "The background color of the calibration", "color": "#fdbf6f"}
+{"name": "Time, when the calibration was conducted.", "color": "#fdbf6f"}
+{"name": "Specification of the calibration procedure", "color": "#fdbf6f"}
+{"name": "The vision of the participants", "color": "#ff7f00"}
+{"name": "The percentage of women", "color": "#ff7f00"}
+{"name": "The mean age of participants", "color": "#ff7f00"}
+{"name": "Procedure for testing visual acuity or color vision", "color": "#ff7f00"}
+{"name": "Color vision ", "color": "#ff7f00"}
+{"name": "Procedure for handling of participant artefacts", "color": "#cab2d6"}
+{"name": "The obtained accuracy of the data", "color": "#cab2d6"}
+{"name": "Monitoring of data quality during experiment", "color": "#cab2d6"}
+{"name": "Percentage of trials excluded for the analysis", "color": "#cab2d6"}
+{"name": "Reasons for exclusion", "color": "#cab2d6"}
+{"name": "Number of participants excluded from the analysis", "color": "#cab2d6"}
+{"name": "The exact quality threshold for exclusion", "color": "#cab2d6"}
+{"name": "Percentage of lost data", "color": "#cab2d6"}
+{"name": "Test of assumptions for missing data", "color": "#cab2d6"}
+{"name": "Methods for addressing missing data", "color": "#cab2d6"}
+{"name": "The pre-processing of raw data through denoising, filtering or smoothing", "color": "#cab2d6"}
+{"name": "Other transformations of data", "color": "#6a3d9a"}
+{"name": "The algorithm used to identify blinks", "color": "#6a3d9a"}
+{"name": "Event detection procedure", "color": "#6a3d9a"}
+{"name": "The aggregation method for fixations during data preprocessing used", "color": "#6a3d9a"}
+{"name": "The artefact detection and removal method used", "color": "#ffff99"}
+{"name": "Specification of the algorithm to calculate the pupil size", "color": "#ffff99"}
+{"name": "The pupil measures used", "color": "#ffff99"}
+{"name": "Limitations mentioned due to the eye-tracking methodology, study specific or general stated?", "color": "#b15928"}
+{"name": "Limitations stated due to the eye-tracking methodology in general", "color": "#b15928"}
