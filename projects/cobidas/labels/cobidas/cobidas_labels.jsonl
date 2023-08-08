@@ -1,0 +1,341 @@
+{"name": "1.1 - Was this study a group comparison? ", "color": "#a6cee3"}
+{"name": "1.2 - Number of groups", "color": "#a6cee3"}
+{"name": "1.3 - Number of subjects planned", "color": "#a6cee3"}
+{"name": "1.4 - Number of subjects approached", "color": "#a6cee3"}
+{"name": "1.5 - Number of subjects consented", "color": "#a6cee3"}
+{"name": "1.8 - Number of subjects excluded after consenting but before data acquisition", "color": "#a6cee3"}
+{"name": "1.9 - Why were subjects excluded?", "color": "#a6cee3"}
+{"name": "1.10 - Age of participants: Mean", "color": "#a6cee3"}
+{"name": "1.11 - Age of participants: Standard deviation", "color": "#a6cee3"}
+{"name": "1.12 - Age of participants: minimum", "color": "#a6cee3"}
+{"name": "1.13 - Age of participants: maximum", "color": "#a6cee3"}
+{"name": "1.14 - Number of subjects scanned", "color": "#a6cee3"}
+{"name": "1.15 - Number of subjects scanned but rejected from analysis", "color": "#a6cee3"}
+{"name": "1.17 - Number of subjects included in analysis", "color": "#a6cee3"}
+{"name": "1.19 - Percentage of men in the study", "color": "#a6cee3"}
+{"name": "1.21 - Education level", "color": "#a6cee3"}
+{"name": "1.23 - Percentage of right handed in the study", "color": "#a6cee3"}
+{"name": "1.24 - Were there any screening criteria for handedness?", "color": "#a6cee3"}
+{"name": "1.25 - Describe any screening criteria, including those applied to “normal” sample such as MRI exclusion criteria", "color": "#a6cee3"}
+{"name": "1.26 - Description of the screening criteria.", "color": "#a6cee3"}
+{"name": "1.27 - Detail the area of recruitment as well as whether patients were currently in treatment", "color": "#a6cee3"}
+{"name": "1.28 - Describe the instruments used to obtain the diagnosis and provide tests of intra­ or inter-­rater reliability.", "color": "#a6cee3"}
+{"name": "1.29 - Describe how the different groups were matched.", "color": "#a6cee3"}
+{"name": "1.30 - Population from which subjects were drawn, and how and where recruitment took place.", "color": "#a6cee3"}
+{"name": "1.33 - Description of the institutional review board that granted the ethics approval", "color": "#a6cee3"}
+{"name": "1.35 - Were participants compensated for their participation?", "color": "#a6cee3"}
+{"name": "1.36 - How were participants compensated?", "color": "#a6cee3"}
+{"name": "1.37 - Other relevant demographic information", "color": "#a6cee3"}
+{"name": "1.1 - Was it task based MRI or resting state MRI?", "color": "#1f78b4"}
+{"name": "1.2 - What was the total scanning time?", "color": "#1f78b4"}
+{"name": "1.3 - Was the design efficiency optimized?", "color": "#1f78b4"}
+{"name": "1.4 - What method was used for optimization?", "color": "#1f78b4"}
+{"name": "1.5 - How was the equipment was synched to the scanner?", "color": "#1f78b4"}
+{"name": "1.6 - Was a power analysis performed?", "color": "#1f78b4"}
+{"name": "1.7 - Effect size used for the power calculation (magnitude and standard deviation)", "color": "#1f78b4"}
+{"name": "1.8 - The type of outcome used as the basis of power computations", "color": "#1f78b4"}
+{"name": "1.9 - Source of predicted effect size", "color": "#1f78b4"}
+{"name": "1.10 - Significance level", "color": "#1f78b4"}
+{"name": "1.11 - Target power", "color": "#1f78b4"}
+{"name": "1.12 - Any other parameters set (e.g. for spatial methods a brain volume and smoothness may be needed to be specified)", "color": "#1f78b4"}
+{"name": "1.1 - What type of design was used?", "color": "#b2df8a"}
+{"name": "1.2 - Clearly describe each condition and the stimuli used.", "color": "#b2df8a"}
+{"name": "1.3 - Number of trials/blocks per run per condition", "color": "#b2df8a"}
+{"name": "1.4 - What was the duration of one block?", "color": "#b2df8a"}
+{"name": "1.5 - What was the duration of one trial?", "color": "#b2df8a"}
+{"name": "1.6 - Provide the timing structure of the events in the task.", "color": "#b2df8a"}
+{"name": "1.7 - What was the intertrial interval range?", "color": "#b2df8a"}
+{"name": "1.8 - What was the intertrial interval distribution?", "color": "#b2df8a"}
+{"name": "1.9 - How many runs were used?", "color": "#b2df8a"}
+{"name": "1.10 - What was the duration of each imaging run?", "color": "#b2df8a"}
+{"name": "1.11 - What was the software used for stimuli presentation?", "color": "#b2df8a"}
+{"name": "1.12 - What was the software version used for stimuli presentation?", "color": "#b2df8a"}
+{"name": "1.13 - What operating system was used to present the stimuli?", "color": "#b2df8a"}
+{"name": "1.14 - Specify the URL of the experiment code.", "color": "#b2df8a"}
+{"name": "1.15 - Specify the instructions given to subjects for each condition", "color": "#b2df8a"}
+{"name": "1.16 - Specifics of stimuli used in each run.", "color": "#b2df8a"}
+{"name": "1.17 - Was the block or event ordering deterministic or randomized? ", "color": "#b2df8a"}
+{"name": "1.18 - Describe how and the criteria used to constrain the orders/timings", "color": "#b2df8a"}
+{"name": "1.19 - Order in which tasks / runs are conducted ", "color": "#b2df8a"}
+{"name": "1.20 - Was the order of the stimuli counterbalanced (across runs, across participants)?", "color": "#b2df8a"}
+{"name": "1.21 - How were responses collected?", "color": "#b2df8a"}
+{"name": "1.22 - URL of stimuli database", "color": "#b2df8a"}
+{"name": "1.23 - Calibration procedure", "color": "#b2df8a"}
+{"name": "1.24 - What sensory modality were used?", "color": "#b2df8a"}
+{"name": "1.25 - Visual stimuli: Specify the presentation hardware ", "color": "#b2df8a"}
+{"name": "1.26 - Visual stimuli: Stimuli apparent size", "color": "#b2df8a"}
+{"name": "1.27 - Visual stimuli: Viewing distance", "color": "#b2df8a"}
+{"name": "1.28 - Visual stimuli: Clarity", "color": "#b2df8a"}
+{"name": "1.29 - Visual stimuli: Color", "color": "#b2df8a"}
+{"name": "1.30 - Visual stimuli: Site of the stimulation", "color": "#b2df8a"}
+{"name": "1.31 - Visual stimuli: Position in the visual field", "color": "#b2df8a"}
+{"name": "1.32 - Visual stimuli: Display device and method of projection", "color": "#b2df8a"}
+{"name": "1.33 - Visual stimuli: Note if differences in intensity or contrast between different stimulus conditions", "color": "#b2df8a"}
+{"name": "1.34 - Audio stimuli: Stimulus properties", "color": "#b2df8a"}
+{"name": "1.35 - Audio stimuli: Intensity", "color": "#b2df8a"}
+{"name": "1.36 - Audio stimuli: Ear of stimulation", "color": "#b2df8a"}
+{"name": "1.37 - Audio stimuli: Type, manufacturer and model of the delivery device", "color": "#b2df8a"}
+{"name": "1.38 - Audio stimuli: Further, the presence of contralateral ear masking stimulation, and its intensity, should be noted.", "color": "#b2df8a"}
+{"name": "1.39 - Tactile stimuli: Stimulus type", "color": "#b2df8a"}
+{"name": "1.40 - Tactile stimuli: Stimulus characteristics", "color": "#b2df8a"}
+{"name": "1.41 - Tactile stimuli: Location on the body with reference to anatomical landmarks", "color": "#b2df8a"}
+{"name": "1.42 - Tactile stimuli: Was was the intensity of the stimulus? ", "color": "#b2df8a"}
+{"name": "1.44 - Describe in detail any other stimulation not involving auditory, visual or somatosensory stimuli", "color": "#b2df8a"}
+{"name": "1.45 - Enumerate the conditions and fully describe and reference each.", "color": "#b2df8a"}
+{"name": "1.46 - Was there any practice session?", "color": "#b2df8a"}
+{"name": "1.47 - Were feedbacks provided to the participant?", "color": "#b2df8a"}
+{"name": "1.49 - What variables were recorded?", "color": "#b2df8a"}
+{"name": "1.1 - Manufacturer of MRI scanner", "color": "#33a02c"}
+{"name": "1.2 - Model of MRI scanner", "color": "#33a02c"}
+{"name": "1.3 - Field strength of MRI scanner", "color": "#33a02c"}
+{"name": "1.4 - Software version of sequence software", "color": "#33a02c"}
+{"name": "1.5 - Description of the pulse sequence used", "color": "#33a02c"}
+{"name": "1.6 - Mention additional details about the sequence", "color": "#33a02c"}
+{"name": "1.7 - What imaging type was used for this sequence?", "color": "#33a02c"}
+{"name": "1.8 - Number of shots for multishot imaging", "color": "#33a02c"}
+{"name": "1.9 - Was partial Fourier used?", "color": "#33a02c"}
+{"name": "1.10 - Partial Fourier scheme and reconstruction method if used", "color": "#33a02c"}
+{"name": "1.11 - Specify the echo time", "color": "#33a02c"}
+{"name": "1.12 - Specify the repetition time ", "color": "#33a02c"}
+{"name": "1.13 - Specify the flip angle", "color": "#33a02c"}
+{"name": "1.14 - Specify the voxel dimensions ", "color": "#33a02c"}
+{"name": "1.15 - Specify the acquisition time ", "color": "#33a02c"}
+{"name": "1.16 - Specify the acquisition time per volume", "color": "#33a02c"}
+{"name": "1.17 - Specify the inversion time ", "color": "#33a02c"}
+{"name": "1.18 - Specify the field of view", "color": "#33a02c"}
+{"name": "1.19 - Specify the in-plane matrix size", "color": "#33a02c"}
+{"name": "1.20 - Specify the number of slices", "color": "#33a02c"}
+{"name": "1.21 - Specify the slice thickness ", "color": "#33a02c"}
+{"name": "1.22 - Specify the interslice gap ", "color": "#33a02c"}
+{"name": "1.23 - Specify the 3D matrix size", "color": "#33a02c"}
+{"name": "1.24 - Specify the slice orientation", "color": "#33a02c"}
+{"name": "1.25 - Is acquisition aligned with scanner axes?", "color": "#33a02c"}
+{"name": "1.26 - Specify phase encoding direction", "color": "#33a02c"}
+{"name": "1.27 - Specify the 3D phase encoding direction", "color": "#33a02c"}
+{"name": "1.28 - Is phase encoding reversal used?", "color": "#33a02c"}
+{"name": "1.29 - Was parallel imaging used?", "color": "#33a02c"}
+{"name": "1.30 - Description of parallel imaging method", "color": "#33a02c"}
+{"name": "1.31 - Pamaters of parallel imaging method (acceleration factor)", "color": "#33a02c"}
+{"name": "1.32 - Mention any other parameters about parallel imaging like matrix coil mode, and coil combining method (if non­standard)", "color": "#33a02c"}
+{"name": "1.34 - Describe readout parameters (receiver bandwidth, readout duration, echo spacing)", "color": "#33a02c"}
+{"name": "1.35 - Was fat suppression used for anatomical scans?", "color": "#33a02c"}
+{"name": "1.36 - Describe any specialized shimming procedures", "color": "#33a02c"}
+{"name": "1.37 - Specify the slice acquisition order", "color": "#33a02c"}
+{"name": "1.38 - Location of the first slice", "color": "#33a02c"}
+{"name": "1.40 - What was the brain coverage ?", "color": "#33a02c"}
+{"name": "1.41 - If axial and co­planar with AC­PC line, the volume coverage in terms of Z in mm", "color": "#33a02c"}
+{"name": "1.1 - What type of MRI was performed ?", "color": "#fb9a99"}
+{"name": "1.2 - Was an MRI simulator used to acclimate subjects to scanner environment?", "color": "#fb9a99"}
+{"name": "1.3 - Report the type of mock scanner and protocol.", "color": "#fb9a99"}
+{"name": "1.5 - How many experimenters interacted with the participants?", "color": "#fb9a99"}
+{"name": "1.6 - What type of receive coil was used?", "color": "#fb9a99"}
+{"name": "1.11 - Functional imaging:<br>Specify the number of volumes", "color": "#fb9a99"}
+{"name": "1.12 - Functional imaging:<br>Specify the sparse sampling delay if any.", "color": "#fb9a99"}
+{"name": "1.14 - Diffusion weighted imaging:<br>Number of direction used.", "color": "#fb9a99"}
+{"name": "1.15 - Diffusion weighted imaging:<br>Was direction optimization used?", "color": "#fb9a99"}
+{"name": "1.16 - Diffusion weighted imaging:<br>direction optimization type", "color": "#fb9a99"}
+{"name": "1.17 - Diffusion weighted imaging:<br>list of b values", "color": "#fb9a99"}
+{"name": "1.18 - Diffusion weighted imaging:<br>number of b=0 images", "color": "#fb9a99"}
+{"name": "1.19 - Diffusion weighted imaging:<br>number of averages", "color": "#fb9a99"}
+{"name": "1.20 - Diffusion weighted imaging:<br>shell type", "color": "#fb9a99"}
+{"name": "1.21 - Diffusion weighted imaging:<br>echo type", "color": "#fb9a99"}
+{"name": "1.22 - Diffusion weighted imaging:<br>gradient mode", "color": "#fb9a99"}
+{"name": "1.23 - Diffusion weighted imaging:<br>Was cardiac gating used?", "color": "#fb9a99"}
+{"name": "1.24 - Was any preprocessing done on the scanner side?", "color": "#fb9a99"}
+{"name": "1.25 - Was prospective motion correction used?", "color": "#fb9a99"}
+{"name": "1.26 - Describe the prospective motion correction.", "color": "#fb9a99"}
+{"name": "1.27 - Was there signal inhomogeneity correction?", "color": "#fb9a99"}
+{"name": "1.28 - Describe the signal inhomogeneity correction", "color": "#fb9a99"}
+{"name": "1.29 - Was distortion-correction applied?", "color": "#fb9a99"}
+{"name": "1.30 - What was the scan duration?", "color": "#fb9a99"}
+{"name": "1.31 - Describe any other non­standard procedures", "color": "#fb9a99"}
+{"name": "1.34 - ASL imaging:<br>Perfusion MRI labelling method", "color": "#fb9a99"}
+{"name": "1.35 - ASL imaging:<br>Use of background suppression pulses and their timing", "color": "#fb9a99"}
+{"name": "1.36 - ASL imaging:<br>Label Duration", "color": "#fb9a99"}
+{"name": "1.37 - ASL imaging:<br>Post-labeling delay (PLD)", "color": "#fb9a99"}
+{"name": "1.38 - ASL imaging:<br>Location of the labelling plane", "color": "#fb9a99"}
+{"name": "1.39 - ASL imaging:<br>Average labelling gradient", "color": "#fb9a99"}
+{"name": "1.40 - ASL imaging:<br>Slice­s elective labeling gradient", "color": "#fb9a99"}
+{"name": "1.41 - ASL imaging:<br>Flip angle of B1 pulses", "color": "#fb9a99"}
+{"name": "1.42 - ASL imaging:<br>Assessment of inversion efficiency; QC used to ensure off-resonance artifacts not problematic, signal obtained over whole brain", "color": "#fb9a99"}
+{"name": "1.43 - ASL imaging:<br>Use of a separate labelling coil", "color": "#fb9a99"}
+{"name": "1.44 - ASL imaging:<br>Control scan/pulse used", "color": "#fb9a99"}
+{"name": "1.45 - ASL imaging:<br>B1 amplitude", "color": "#fb9a99"}
+{"name": "1.46 - ASL imaging:<br>PASL-TI", "color": "#fb9a99"}
+{"name": "1.47 - ASL imaging:<br>Labelling slab thickness", "color": "#fb9a99"}
+{"name": "1.48 - ASL imaging:<br>Use of QUIPSS pulses and their timing", "color": "#fb9a99"}
+{"name": "1.49 - ASL imaging:<br>VSASL-TI", "color": "#fb9a99"}
+{"name": "1.50 - ASL imaging:<br>Choice of velocity selection cutoff (“VENC”)", "color": "#fb9a99"}
+{"name": "1.51 - Susceptibility weighted imaging:<br>Number of baseline volumes", "color": "#fb9a99"}
+{"name": "1.52 - Susceptibility weighted imaging:<br>Was a contrast agent injected?", "color": "#fb9a99"}
+{"name": "1.53 - Susceptibility weighted imaging:<br>Type, name and manufacturer of intravenous bolus", "color": "#fb9a99"}
+{"name": "1.54 - Susceptibility weighted imaging:<br>Bolus amount and concentration", "color": "#fb9a99"}
+{"name": "1.55 - Susceptibility weighted imaging:<br>Injection rate", "color": "#fb9a99"}
+{"name": "1.56 - Susceptibility weighted imaging:<br>post-injection of saline", "color": "#fb9a99"}
+{"name": "1.57 - Susceptibility weighted imaging:<br>injection method", "color": "#fb9a99"}
+{"name": "1.58 - For functional or diffusion acquisitions, any visual or quantitative checks for severe motion. For structural images, checks on motion or general image quality", "color": "#fb9a99"}
+{"name": "1.59 - Protocol for review of any incidental findings, and how they are handled in particular with respect to possible exclusion of a subject’s data", "color": "#fb9a99"}
+{"name": "1.1 - What type of MRI was performed ?", "color": "#e31a1c"}
+{"name": "1.2 - Was a single software package was used for preprocessing?", "color": "#e31a1c"}
+{"name": "1.3 - If a single software package was used for all analyses, specify that here", "color": "#e31a1c"}
+{"name": "1.4 - Version of software package used", "color": "#e31a1c"}
+{"name": "1.5 - Include URL and Research Resource Identifier for each software used", "color": "#e31a1c"}
+{"name": "1.6 - Specify which preprocessing steps were performed", "color": "#e31a1c"}
+{"name": "1.7 - Specify order of preprocessing operations", "color": "#e31a1c"}
+{"name": "1.8 - Number of “dummy” scans discarded if any", "color": "#e31a1c"}
+{"name": "1.9 - Software used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.10 - Software version used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.11 - Method used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.12 - Parameters used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.13 - Describe any eventual manual editing done to the brainmask.", "color": "#e31a1c"}
+{"name": "1.14 - Software used for segmentation", "color": "#e31a1c"}
+{"name": "1.15 - Software version used for the segmentation", "color": "#e31a1c"}
+{"name": "1.16 - Method used for segmentation", "color": "#e31a1c"}
+{"name": "1.17 - What parameters were used for the segmentation?", "color": "#e31a1c"}
+{"name": "1.18 - Software used for slice timing", "color": "#e31a1c"}
+{"name": "1.19 - Software version used for slice timing", "color": "#e31a1c"}
+{"name": "1.20 - Method used for the slice timing", "color": "#e31a1c"}
+{"name": "1.21 - What slice was used as reference for the slice timing?", "color": "#e31a1c"}
+{"name": "1.22 - Interpolation method used for the slice timing", "color": "#e31a1c"}
+{"name": "1.23 - Software used for the motion correction", "color": "#e31a1c"}
+{"name": "1.24 - Software version used for the motion correction", "color": "#e31a1c"}
+{"name": "1.25 - Was non-rigid registration applied?", "color": "#e31a1c"}
+{"name": "1.26 - Number of degrees of freedom for the motion correction", "color": "#e31a1c"}
+{"name": "1.27 - Was motion-susceptibility correction used?", "color": "#e31a1c"}
+{"name": "1.28 - Software used for the motion-susceptibility correction", "color": "#e31a1c"}
+{"name": "1.29 - Software version used for the motion-susceptibility correction", "color": "#e31a1c"}
+{"name": "1.30 - Reference scan used for motion correction", "color": "#e31a1c"}
+{"name": "1.31 - Similarity metric used for motion correction", "color": "#e31a1c"}
+{"name": "1.32 - Interpolation method used for motion correction", "color": "#e31a1c"}
+{"name": "1.33 - Any specific parameters for the motion correction that should be mentioned", "color": "#e31a1c"}
+{"name": "1.54 - Diffusion weighted imaging:<br>Specify set of subjects used to create custom atlas", "color": "#e31a1c"}
+{"name": "1.67 - Software used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.68 - Software version used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.69 - Method used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.70 - Target volume used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.71 - Source volume used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.72 - Number of degrees of freedom for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.73 - Similarity metric used for functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.74 - Interpolation method used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.76 - Software used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.77 - Software version used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.78 - Specify method used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.79 - Was the registration volume or surface based?", "color": "#e31a1c"}
+{"name": "1.80 - What was the modality of the source volume?", "color": "#e31a1c"}
+{"name": "1.81 - Was any additional preprocessing required?", "color": "#e31a1c"}
+{"name": "1.82 - Name of coordinate space for registration target", "color": "#e31a1c"}
+{"name": "1.83 - What was the modality of the target volume?", "color": "#e31a1c"}
+{"name": "1.84 - Voxel size of target template in millimeters", "color": "#e31a1c"}
+{"name": "1.85 - Name of target template image", "color": "#e31a1c"}
+{"name": "1.86 - Specify any additional template transformation", "color": "#e31a1c"}
+{"name": "1.87 - What type of registration was used?", "color": "#e31a1c"}
+{"name": "1.88 - If nonlinear registration was used, describe transform method", "color": "#e31a1c"}
+{"name": "1.89 - Was regularization used? ", "color": "#e31a1c"}
+{"name": "1.90 - Parameter(s) used to set degree of regularization", "color": "#e31a1c"}
+{"name": "1.91 - Interpolation method used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.93 - Similarity metric used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.94 - Use of cost­-function masking", "color": "#e31a1c"}
+{"name": "1.95 - Voxel size in mm of the resampled, atlas-space images", "color": "#e31a1c"}
+{"name": "1.96 - Specify the type of intensity correction of the anatomical image", "color": "#e31a1c"}
+{"name": "1.97 - Specify the type of intensity correction of the functional images", "color": "#e31a1c"}
+{"name": "1.98 - Type of scaling of image intensities before statistical modelling", "color": "#e31a1c"}
+{"name": "1.99 - Was any kind of denoising performed or were any nuisance covariate included in the subject level model?", "color": "#e31a1c"}
+{"name": "1.100 - What type of noise sources were included?", "color": "#e31a1c"}
+{"name": "1.101 - Expansion basis and order of motion parameters used ", "color": "#e31a1c"}
+{"name": "1.102 - Tissue signals included as nuisance regressor", "color": "#e31a1c"}
+{"name": "1.103 - Tissue definition to create the nuisance regressor", "color": "#e31a1c"}
+{"name": "1.104 - Method to define signal in each tissue class", "color": "#e31a1c"}
+{"name": "1.105 - Was volume censoring applied (a.k.a. “scrubbing” or “de-spiking”)?", "color": "#e31a1c"}
+{"name": "1.106 - Software used for volume censoring", "color": "#e31a1c"}
+{"name": "1.107 - Software version used for volume censoring", "color": "#e31a1c"}
+{"name": "1.108 - Method used for volume censoring", "color": "#e31a1c"}
+{"name": "1.109 - Criteria used for volume censoring", "color": "#e31a1c"}
+{"name": "1.110 - Interpolation used for volume censoring", "color": "#e31a1c"}
+{"name": "1.114 - Software used for smoothing", "color": "#e31a1c"}
+{"name": "1.115 - Software version used for smoothing", "color": "#e31a1c"}
+{"name": "1.116 - Describe the type of smoothing applied", "color": "#e31a1c"}
+{"name": "1.117 - The full-width at half-maximum of the smoothing kernel in millimeters", "color": "#e31a1c"}
+{"name": "1.118 - Filtering approach", "color": "#e31a1c"}
+{"name": "1.119 - Space in which smoothing is performed", "color": "#e31a1c"}
+{"name": "1.120 - Describe quality control measures", "color": "#e31a1c"}
+{"name": "1.1 - Independent variable type", "color": "#fdbf6f"}
+{"name": "1.2 - Class proportions", "color": "#fdbf6f"}
+{"name": "1.3 - Variable dimension", "color": "#fdbf6f"}
+{"name": "1.4 - Was any feature transformation applied?", "color": "#fdbf6f"}
+{"name": "1.5 - What type of feature transformation was used?", "color": "#fdbf6f"}
+{"name": "1.6 - Was feature selection used?", "color": "#fdbf6f"}
+{"name": "1.7 - What type of feature selection was used?", "color": "#fdbf6f"}
+{"name": "1.8 - Was dimension reduction used?", "color": "#fdbf6f"}
+{"name": "1.9 - What type of dimension reduction was used?", "color": "#fdbf6f"}
+{"name": "1.10 - Provide dimension before and after any feature selection and/or dimension reduction", "color": "#fdbf6f"}
+{"name": "1.11 - Information on how the target values relate to the population. Specify how this is taken into account in the predictive model", "color": "#fdbf6f"}
+{"name": "1.12 - Analysis type", "color": "#fdbf6f"}
+{"name": "1.13 - Model type", "color": "#fdbf6f"}
+{"name": "1.14 - Assumptions made on the covariance structure", "color": "#fdbf6f"}
+{"name": "1.15 - Statistic used to assess significance", "color": "#fdbf6f"}
+{"name": "1.16 - Model type", "color": "#fdbf6f"}
+{"name": "1.17 - For kernel-based methods (i.e. SVM) report type of kernel used, type and number of parameters needed to be estimated", "color": "#fdbf6f"}
+{"name": "1.18 - Figure-of-merit optimised", "color": "#fdbf6f"}
+{"name": "1.19 - Fitting method", "color": "#fdbf6f"}
+{"name": "1.20 - Parameter settings, those fixed and those estimated; specify how fixed parameter values were chosen", "color": "#fdbf6f"}
+{"name": "1.21 - How the convergence of the learning method is monitored", "color": "#fdbf6f"}
+{"name": "1.22 - Pipeline structure applied uniformly to all cases (e.g. that could be independently applied to a new case)", "color": "#fdbf6f"}
+{"name": "1.23 - Method for hyper-parameter setting", "color": "#fdbf6f"}
+{"name": "1.24 - Describe data splitting (cross validation)", "color": "#fdbf6f"}
+{"name": "1.25 - Response type", "color": "#fdbf6f"}
+{"name": "1.27 - Report accuracy", "color": "#fdbf6f"}
+{"name": "1.28 - Report precision", "color": "#fdbf6f"}
+{"name": "1.29 - Report recall", "color": "#fdbf6f"}
+{"name": "1.30 - Report false positive rate", "color": "#fdbf6f"}
+{"name": "1.31 - Report F1", "color": "#fdbf6f"}
+{"name": "1.32 - Report receiver operating characteristic curves and area under the curve.", "color": "#fdbf6f"}
+{"name": "1.33 - Report the confusion matrix", "color": "#fdbf6f"}
+{"name": "1.34 - Report Prediction R²", "color": "#fdbf6f"}
+{"name": "1.35 - For representational similarity analysis, report the Kendall Tau statistic for each candidate model considered.", "color": "#fdbf6f"}
+{"name": "1.36 - When possible use formal test to obtain P­value to assess whether evaluation metric is “significant” or consistent with noise.", "color": "#fdbf6f"}
+{"name": "1.37 - Procedure used to interpret the fit of the classifier, identifying the relative importance of the features (e.g. the weight vector in linear discriminant).", "color": "#fdbf6f"}
+{"name": "1.1 - Type of analysis performed", "color": "#ff7f00"}
+{"name": "1.2 - Provide a complete list of tested and omitted effects", "color": "#ff7f00"}
+{"name": "1.3 - Define how voxels/elements were selected", "color": "#ff7f00"}
+{"name": "1.4 - Unit used to report results ", "color": "#ff7f00"}
+{"name": "1.12 - P­-value forming basis of inference", "color": "#ff7f00"}
+{"name": "1.19 - Link to unthresholded statistic maps", "color": "#ff7f00"}
+{"name": "1.20 - Link to thresholded statistic maps", "color": "#ff7f00"}
+{"name": "1.21 - Link to effect size maps", "color": "#ff7f00"}
+{"name": "1.22 - Size of the analysis volume in voxels", "color": "#ff7f00"}
+{"name": "1.23 - Noise smoothness for statistical inference (FWHM)", "color": "#ff7f00"}
+{"name": "1.24 - Number of resels", "color": "#ff7f00"}
+{"name": "1.25 - For connectivty ICA based methods, report the total number of components (especially when estimated from the data and not fixed). Report the number of these analyzed and the reason for their selection", "color": "#ff7f00"}
+{"name": "1.26 - For connectivty graph-based methods, carefully state what is the null hypothesis of the test and how the statistic distribution under the null is computed", "color": "#ff7f00"}
+{"name": "1.27 - For multivariate, report optimised evaluation metrics", "color": "#ff7f00"}
+{"name": "1.1 - List types of images and non­imaging data provided", "color": "#cab2d6"}
+{"name": "1.2 - Report on the completeness of the data", "color": "#cab2d6"}
+{"name": "1.3 - data URL or DOI", "color": "#cab2d6"}
+{"name": "1.4 - Specific instructions on how to gain access to the data.", "color": "#cab2d6"}
+{"name": "1.5 - Cost of access", "color": "#cab2d6"}
+{"name": "1.6 - Confirm that the ethics board of the host institution generating the data approves the sharing of the data made available", "color": "#cab2d6"}
+{"name": "1.7 - Clarify any constraints on uses of shared data.", "color": "#cab2d6"}
+{"name": "1.8 - Provide URL to documentation, and specify its scope", "color": "#cab2d6"}
+{"name": "1.9 - Report the format of the image data shared.", "color": "#cab2d6"}
+{"name": "1.10 - Data organization structures, including Data Dictionaries and Schemas.", "color": "#cab2d6"}
+{"name": "1.11 - Is the software using an established ontology?", "color": "#cab2d6"}
+{"name": "1.12 - Availability of in-resource visualization of the imaging or non­imaging data", "color": "#cab2d6"}
+{"name": "1.13 - How, if at all, data are de-identified ?", "color": "#cab2d6"}
+{"name": "1.14 - Availability of detailed provenance of preprocessing and analysis of shared data", "color": "#cab2d6"}
+{"name": "1.15 - Ability of a repository to work in a multi-database environment, availability of API’s and ability to connect to analysis pipelines", "color": "#cab2d6"}
+{"name": "1.16 - Mechanisms available for constructing queries on the repository (e.g. SQL, SPARQL)", "color": "#cab2d6"}
+{"name": "1.17 - How users can check version of downloaded data and compare it to the current version at a later time", "color": "#cab2d6"}
+{"name": "1.1 - Tool names, versions, and URLs", "color": "#6a3d9a"}
+{"name": "1.2 - Machine CPU model, any use of parallelization", "color": "#6a3d9a"}
+{"name": "1.3 - operating system used for analysis", "color": "#6a3d9a"}
+{"name": "1.4 - operating system version", "color": "#6a3d9a"}
+{"name": "1.5 - Was a workflow system used?", "color": "#6a3d9a"}
+{"name": "1.6 - Name of workflow system used", "color": "#6a3d9a"}
+{"name": "1.7 - Version of the workflow system used", "color": "#6a3d9a"}
+{"name": "1.8 - Provide a permanent identifie to the workflow if possible", "color": "#6a3d9a"}
+{"name": "1.9 - State whether detailed provenance information is available", "color": "#6a3d9a"}
+{"name": "1.10 - Provide permanent identifier to the data if possible", "color": "#6a3d9a"}
+{"name": "1.11 - Provide a URL linking to the relevant resource.", "color": "#6a3d9a"}
+{"name": "1.12 - Is the documentation provided in English?", "color": "#6a3d9a"}
+{"name": "1.13 - Are the tools publically available?", "color": "#6a3d9a"}
+{"name": "1.14 - Is a virtual environment to facilitate a repeated analysis available?", "color": "#6a3d9a"}
