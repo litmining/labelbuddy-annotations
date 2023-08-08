@@ -1,0 +1,157 @@
+{"name": "Modality", "color": "#a6cee3"}
+{"name": "Scanner manufacturer", "color": "#a6cee3"}
+{"name": "PET scanner model name", "color": "#a6cee3"}
+{"name": "Details of anaesthesia used, if any.", "color": "#a6cee3"}
+{"name": "Name of the organ / body region scanned.", "color": "#a6cee3"}
+{"name": "Unit of the image file", "color": "#a6cee3"}
+{"name": "Experiment date", "color": "#a6cee3"}
+{"name": "Imaging center-site", "color": "#a6cee3"}
+{"name": "Imaging department", "color": "#a6cee3"}
+{"name": "Details of the pharmaceutical dose regimen.", "color": "#1f78b4"}
+{"name": "Name of the tracer compound used", "color": "#1f78b4"}
+{"name": "ID of the tracer compound from the RadLex Ontology.", "color": "#1f78b4"}
+{"name": "ID of the tracer compound from the SNOMED Ontology", "color": "#1f78b4"}
+{"name": "Name of pharmaceutical coadministered with tracer.", "color": "#1f78b4"}
+{"name": "Radioisotope labelling tracer.", "color": "#1f78b4"}
+{"name": "Accurate molecular weight of the tracer used.", "color": "#1f78b4"}
+{"name": "Time of administration of pharmaceutical dose, relative to time zero", "color": "#1f78b4"}
+{"name": "Dose amount of pharmaceutical coadministered with tracer.", "color": "#1f78b4"}
+{"name": "Mode of administration of the injection.", "color": "#b2df8a"}
+{"name": "Infusion speed", "color": "#b2df8a"}
+{"name": "Injected radioactivity", "color": "#b2df8a"}
+{"name": "Total mass of radiolabeled compound injected into subject.", "color": "#b2df8a"}
+{"name": "Moles tracer injected", "color": "#b2df8a"}
+{"name": "Bodyweight", "color": "#b2df8a"}
+{"name": "Molar activity of compound injected.", "color": "#b2df8a"}
+{"name": "Time to which molar radioactivity measurement above applies.", "color": "#b2df8a"}
+{"name": "Specific radioactivity", "color": "#b2df8a"}
+{"name": "Specific radioactivity measurement time", "color": "#b2df8a"}
+{"name": "Purity of the radiolabeled compound.", "color": "#b2df8a"}
+{"name": "Injected volume", "color": "#b2df8a"}
+{"name": "Formulation", "color": "#b2df8a"}
+{"name": "Date of scan", "color": "#33a02c"}
+{"name": "Time zero to which all scan and/or blood measurements have been adjusted to.", "color": "#33a02c"}
+{"name": "Time of start of scan wrt TimeZero", "color": "#33a02c"}
+{"name": "Time of start of injection wrt TimeZero", "color": "#33a02c"}
+{"name": "Time of end of injection wrt TimeZero", "color": "#33a02c"}
+{"name": "Start times for all frames relative to TimeZero", "color": "#33a02c"}
+{"name": "Time duration of each frame", "color": "#33a02c"}
+{"name": "Acquisition mode", "color": "#fb9a99"}
+{"name": "Specify whether the image data have been decay-corrected.", "color": "#fb9a99"}
+{"name": "Point in time from which the decay correction was applied wrt TimeZero", "color": "#fb9a99"}
+{"name": "Reconstruction method", "color": "#fb9a99"}
+{"name": "Names, value, units of reconstruction parameters.", "color": "#fb9a99"}
+{"name": "Recon-filter-type", "color": "#fb9a99"}
+{"name": "Attenuation correction", "color": "#fb9a99"}
+{"name": "Postrecon-filter-size", "color": "#fb9a99"}
+{"name": "PET voxel size", "color": "#fb9a99"}
+{"name": "Matrix Size", "color": "#fb9a99"}
+{"name": "Frame-Sequence", "color": "#fb9a99"}
+{"name": "Scale factor for each frame", "color": "#fb9a99"}
+{"name": "Scatter fraction for each frame", "color": "#fb9a99"}
+{"name": "Decay correction factor for each frame", "color": "#fb9a99"}
+{"name": "Prompt rate for each frame", "color": "#fb9a99"}
+{"name": "Random rate for each frame", "color": "#fb9a99"}
+{"name": "Singles rate for each frame", "color": "#fb9a99"}
+{"name": "Reconstruction data labels", "color": "#fb9a99"}
+{"name": "Reference paper for the attenuation correction method used.", "color": "#fb9a99"}
+{"name": "Boolean that specifies if continuous blood measurements are available.", "color": "#e31a1c"}
+{"name": "The rate at which the blood was withdrawn from the subject.", "color": "#e31a1c"}
+{"name": "Description of the type of tubing used, ideally including the material and (internal) diameter.", "color": "#e31a1c"}
+{"name": "The length of the blood tubing, from the subject to the detector.", "color": "#e31a1c"}
+{"name": "External dispersion time constant resulting from tubing.", "color": "#e31a1c"}
+{"name": "Dispersion correction", "color": "#e31a1c"}
+{"name": "Boolean that specifies if discrete blood measurements are available.", "color": "#e31a1c"}
+{"name": "Measured haematocrit, i.e. the volume of erythrocytes divided by the volume of whole blood.", "color": "#e31a1c"}
+{"name": "Measured blood density.", "color": "#e31a1c"}
+{"name": "Boolean that specifies if metabolite measurements are available.", "color": "#e31a1c"}
+{"name": "Method used to measure metabolites", "color": "#e31a1c"}
+{"name": "Radiolabeled Parent compound fraction", "color": "#e31a1c"}
+{"name": "Metabolite data labels", "color": "#e31a1c"}
+{"name": "Parent fraction units", "color": "#e31a1c"}
+{"name": "Parent fraction measurement error", "color": "#e31a1c"}
+{"name": "Metabolite analysis timepoints", "color": "#e31a1c"}
+{"name": "Fraction of radiometabolite needing quantitation", "color": "#e31a1c"}
+{"name": "Error on above measurement", "color": "#e31a1c"}
+{"name": "Radiolabeled metabolite fractions", "color": "#e31a1c"}
+{"name": "Metabolite correction", "color": "#e31a1c"}
+{"name": "Boolean that specifies if plasma measurements are available.", "color": "#e31a1c"}
+{"name": "Measured free fraction in plasma, i.e. concentration of free compound in plasma divided by total concentration of compound in plasma.", "color": "#e31a1c"}
+{"name": "Error of free fraction measurement", "color": "#e31a1c"}
+{"name": "Method used to estimate free fraction.", "color": "#e31a1c"}
+{"name": "decay corrected", "color": "#e31a1c"}
+{"name": "decay correction time", "color": "#e31a1c"}
+{"name": "plasma data type", "color": "#e31a1c"}
+{"name": "plasma data units", "color": "#e31a1c"}
+{"name": "hematocrit value", "color": "#e31a1c"}
+{"name": "Whole blood radioactivity", "color": "#e31a1c"}
+{"name": "Plasma to whole blood ratio", "color": "#e31a1c"}
+{"name": "Blood sampling device read", "color": "#fdbf6f"}
+{"name": "Blood sampling device measurement time", "color": "#fdbf6f"}
+{"name": "Phantom type", "color": "#fdbf6f"}
+{"name": "Phantom volume", "color": "#fdbf6f"}
+{"name": "Radiotracer-isotope", "color": "#fdbf6f"}
+{"name": "Phantom activity", "color": "#fdbf6f"}
+{"name": "Activity time", "color": "#fdbf6f"}
+{"name": "Residual activity", "color": "#fdbf6f"}
+{"name": "Residual activity time", "color": "#fdbf6f"}
+{"name": "Phantom acquisition time", "color": "#fdbf6f"}
+{"name": "Well counter sample volumes", "color": "#fdbf6f"}
+{"name": "Well counter measurement time", "color": "#fdbf6f"}
+{"name": "Well counter read", "color": "#fdbf6f"}
+{"name": "Phantom data", "color": "#fdbf6f"}
+{"name": "Hardware", "color": "#ff7f00"}
+{"name": "External MoCo software", "color": "#ff7f00"}
+{"name": "External MoCo software version", "color": "#ff7f00"}
+{"name": "Sampling Method", "color": "#cab2d6"}
+{"name": "Delay time correction", "color": "#cab2d6"}
+{"name": "Fitting", "color": "#cab2d6"}
+{"name": "Fitting description", "color": "#cab2d6"}
+{"name": "Blood data processing interpolation", "color": "#cab2d6"}
+{"name": "Model", "color": "#cab2d6"}
+{"name": "Reference volume", "color": "#cab2d6"}
+{"name": "Outcome measure", "color": "#cab2d6"}
+{"name": "Weighting", "color": "#cab2d6"}
+{"name": "Level of analysis", "color": "#cab2d6"}
+{"name": "Kinetic modelling software", "color": "#cab2d6"}
+{"name": "Kinetic modelling software version", "color": "#cab2d6"}
+{"name": "MoCo reference image", "color": "#cab2d6"}
+{"name": "MoCo cost function", "color": "#cab2d6"}
+{"name": "MoCo interpolation", "color": "#cab2d6"}
+{"name": "MoCo smoothing", "color": "#cab2d6"}
+{"name": "MoCo quality control", "color": "#cab2d6"}
+{"name": "MoCo software", "color": "#cab2d6"}
+{"name": "MoCo software version", "color": "#cab2d6"}
+{"name": "Registration reference image", "color": "#cab2d6"}
+{"name": "Registration target image", "color": "#cab2d6"}
+{"name": "Registration cost function", "color": "#cab2d6"}
+{"name": "Registration interpolation", "color": "#cab2d6"}
+{"name": "Registration smoothing", "color": "#cab2d6"}
+{"name": "Resolution of reference-target", "color": "#cab2d6"}
+{"name": "Registration quality control", "color": "#cab2d6"}
+{"name": "Registration software", "color": "#cab2d6"}
+{"name": "Registration software version", "color": "#cab2d6"}
+{"name": "Smoothing target image", "color": "#cab2d6"}
+{"name": "Shape of smoothing filter", "color": "#cab2d6"}
+{"name": "Size of smoothing filter", "color": "#cab2d6"}
+{"name": "Justification for smoothing size", "color": "#cab2d6"}
+{"name": "Space of smoothing", "color": "#cab2d6"}
+{"name": "Volumes of interest obtained from", "color": "#cab2d6"}
+{"name": "Volumes of interest operational criteria", "color": "#cab2d6"}
+{"name": "Volumes of interest mask", "color": "#cab2d6"}
+{"name": "Volumes of interest procedure", "color": "#cab2d6"}
+{"name": "Volumes of interest", "color": "#cab2d6"}
+{"name": "Volumes of interest software", "color": "#cab2d6"}
+{"name": "Partial volume correction technique", "color": "#cab2d6"}
+{"name": "Partial volume correction assumptions", "color": "#cab2d6"}
+{"name": "Partial volume correction software", "color": "#cab2d6"}
+{"name": "Partial volume correction software version", "color": "#cab2d6"}
+{"name": "Method", "color": "#6a3d9a"}
+{"name": "Threshold", "color": "#6a3d9a"}
+{"name": "Number of Tests", "color": "#6a3d9a"}
+{"name": "Alpha level", "color": "#6a3d9a"}
+{"name": "Power", "color": "#6a3d9a"}
+{"name": "Effect Size", "color": "#6a3d9a"}
+{"name": "Variance Assumption", "color": "#6a3d9a"}
+{"name": "Number of Subjects Needed", "color": "#6a3d9a"}
+{"name": "Link", "color": "#6a3d9a"}
