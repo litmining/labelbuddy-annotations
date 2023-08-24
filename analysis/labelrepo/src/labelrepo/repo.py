@@ -72,3 +72,23 @@ def annotator_name(suggested_name: Optional[str] = None) -> str:
     user_name = pathlib.Path.home().name
     host_name = socket.gethostname()
     return f"{user_name}_{host_name}"
+
+
+def git_working_directory_is_clean() -> bool:
+    result = subprocess.run(
+        ["git", "status", "--porcelain"],
+        cwd=str(repo_root()),
+        capture_output=True,
+        check=True,
+    )
+    return result.stdout.strip() == b""
+
+
+def git_head_checksum() -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=str(repo_root()),
+        capture_output=True,
+        check=True,
+    )
+    return result.stdout.strip().decode("UTF-8")
