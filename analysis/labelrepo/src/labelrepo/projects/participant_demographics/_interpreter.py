@@ -32,7 +32,12 @@ class _RangeParser:
             raw_value,
         )
         assert match is not None
-        return float(match.group(1)), float(match.group(2))
+        range_min, range_max = float(match.group(1)), float(match.group(2))
+        if range_max < range_min:
+            raise ParsingError(
+                f"Invalid range: max ({range_max}) < min ({range_min})"
+            )
+        return range_min, range_max
 
 
 class _Completer:
@@ -333,8 +338,39 @@ _COMPLETERS = {
 }
 
 
+class _RangeCheck:
+    def __init__(self, range_name):
+        self.range_name = range_name
+
+    def __call__(self, node):
+        if (
+            f"{self.range_name} minimum" not in node.attributes
+            or f"{self.range_name} maximum" not in node.attributes
+        ):
+            return
+        range_min, range_max = (
+            node.attributes[f"{self.range_name} minimum"].value,
+            node.attributes[f"{self.range_name} maximum"].value,
+        )
+        if range_max < range_min:
+            raise AnnotationValueError(
+                f"Invalid {self.range_name} range: "
+                f"maximum ({range_max}) < minimum ({range_min})",
+                node.attributes["age minimum"].sources.union(
+                    node.attributes["age maximum"].sources
+                ),
+            )
+
+
+_POST_CHECKS = [_RangeCheck("age")]
+
+
 def _head(seq):
     return next(iter(seq))
+
+
+class ParsingError(ValueError):
+    pass
 
 
 class AnnotationError(Exception):
@@ -399,6 +435,8 @@ class _Token:
         parser = _VALUE_PARSERS[self.label_name]
         try:
             value = parser(self.raw_value)
+        except ParsingError:
+            raise
         except Exception:
             raise ValueError(
                 f"Could not convert {self.raw_value!r} to {parser.name}"
@@ -588,6 +626,7 @@ class DocAnnotations:
         self._broadcast(self.tree)
         self._prune_empty_groups(self.tree)
         self._collect(self.tree)
+        self._run_post_checks(self.tree)
 
     def _prune_empty_groups(self, node):
         node.children = {
@@ -613,6 +652,12 @@ class DocAnnotations:
             completer.broadcast(attribute_name, node)
         for _, child in node.children.items():
             self._broadcast(child)
+
+    def _run_post_checks(self, node):
+        for check in _POST_CHECKS:
+            check(node)
+        for child in node.children.values():
+            self._run_post_checks(child)
 
     def subgroups(self):
         for group_name, group in self.tree.children.items():
