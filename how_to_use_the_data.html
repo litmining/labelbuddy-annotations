@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,15 +35,16 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
     <link rel="stylesheet" type="text/css" href="_static/global.css" />
-    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="_static/label-set.css" />
+    <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
+    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -80,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,6 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
   
 
 <a class="navbar-brand logo" href="overview.html">
+  
   
   
   
@@ -298,10 +309,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -309,7 +320,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -688,61 +699,61 @@ Below we review multiple cases to extract data from <span class="annotated-text"
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_e6f81">
+<table id="T_ae16b">
   <thead>
   </thead>
   <tbody>
     <tr>
-      <td id="T_e6f81_row0_col1" class="data row0 col1" >pmcid</td>
-      <td id="T_e6f81_row0_col2" class="data row0 col2" >8334182</td>
+      <td id="T_ae16b_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_ae16b_row0_col2" class="data row0 col2" >8334182</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row1_col1" class="data row1 col1" >pmid</td>
-      <td id="T_e6f81_row1_col2" class="data row1 col2" >34368270</td>
+      <td id="T_ae16b_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_ae16b_row1_col2" class="data row1 col2" >34368270</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row2_col1" class="data row2 col1" >publication_year</td>
-      <td id="T_e6f81_row2_col2" class="data row2 col2" >2021</td>
+      <td id="T_ae16b_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_ae16b_row2_col2" class="data row2 col2" >2021</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row3_col1" class="data row3 col1" >journal</td>
-      <td id="T_e6f81_row3_col2" class="data row3 col2" >Front Vet Sci</td>
+      <td id="T_ae16b_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_ae16b_row3_col2" class="data row3 col2" >Front Vet Sci</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row4_col1" class="data row4 col1" >title</td>
-      <td id="T_e6f81_row4_col2" class="data row4 col2" >Large-Scale Data Mining of Rapid Residue Detection Assay Data From HTML and PDF Documents: Improving Data Access and Visualization for Veterinarians</td>
+      <td id="T_ae16b_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_ae16b_row4_col2" class="data row4 col2" >Large-Scale Data Mining of Rapid Residue Detection Assay Data From HTML and PDF Documents: Improving Data Access and Visualization for Veterinarians</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row5_col1" class="data row5 col1" >label_name</td>
-      <td id="T_e6f81_row5_col2" class="data row5 col2" >entity</td>
+      <td id="T_ae16b_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_ae16b_row5_col2" class="data row5 col2" >entity</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row6_col1" class="data row6 col1" >label_color</td>
-      <td id="T_e6f81_row6_col2" class="data row6 col2" >#729fcf</td>
+      <td id="T_ae16b_row6_col1" class="data row6 col1" >label_color</td>
+      <td id="T_ae16b_row6_col2" class="data row6 col2" >#729fcf</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row7_col1" class="data row7 col1" >annotator_name</td>
-      <td id="T_e6f81_row7_col2" class="data row7 col2" >Kendra_Oudyk</td>
+      <td id="T_ae16b_row7_col1" class="data row7 col1" >annotator_name</td>
+      <td id="T_ae16b_row7_col2" class="data row7 col2" >Kendra_Oudyk</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row8_col1" class="data row8 col1" >start_char</td>
-      <td id="T_e6f81_row8_col2" class="data row8 col2" >229</td>
+      <td id="T_ae16b_row8_col1" class="data row8 col1" >start_char</td>
+      <td id="T_ae16b_row8_col2" class="data row8 col2" >229</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row9_col1" class="data row9 col1" >end_char</td>
-      <td id="T_e6f81_row9_col2" class="data row9 col2" >264</td>
+      <td id="T_ae16b_row9_col1" class="data row9 col1" >end_char</td>
+      <td id="T_ae16b_row9_col2" class="data row9 col2" >264</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row10_col1" class="data row10 col1" >project_name</td>
-      <td id="T_e6f81_row10_col2" class="data row10 col2" >NER_biomedical</td>
+      <td id="T_ae16b_row10_col1" class="data row10 col1" >project_name</td>
+      <td id="T_ae16b_row10_col2" class="data row10 col2" >NER_biomedical</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row11_col1" class="data row11 col1" >selected_text</td>
-      <td id="T_e6f81_row11_col2" class="data row11 col2" >Rapid Residue Detection Assay Data </td>
+      <td id="T_ae16b_row11_col1" class="data row11 col1" >selected_text</td>
+      <td id="T_ae16b_row11_col2" class="data row11 col2" >Rapid Residue Detection Assay Data </td>
     </tr>
     <tr>
-      <td id="T_e6f81_row12_col1" class="data row12 col1" >context</td>
-      <td id="T_e6f81_row12_col2" class="data row12 col2" >hian Dinani, Soudabeh and Millagaha Gedara, Nuwan Indika and Xu, Xuan and Richards, Emily and Maunsell, Fiona and Zad, Nader and Tell, Lisa A.
+      <td id="T_ae16b_row12_col1" class="data row12 col1" >context</td>
+      <td id="T_ae16b_row12_col2" class="data row12 col2" >hian Dinani, Soudabeh and Millagaha Gedara, Nuwan Indika and Xu, Xuan and Richards, Emily and Maunsell, Fiona and Zad, Nader and Tell, Lisa A.
 Front Vet Sci, 2021
 
 # Title
@@ -758,20 +769,20 @@ large scale data mining
 table extract</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row13_col1" class="data row13 col1" >context_start_char</td>
-      <td id="T_e6f81_row13_col2" class="data row13 col2" >29</td>
+      <td id="T_ae16b_row13_col1" class="data row13 col1" >context_start_char</td>
+      <td id="T_ae16b_row13_col2" class="data row13 col2" >29</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row14_col1" class="data row14 col1" >context_end_char</td>
-      <td id="T_e6f81_row14_col2" class="data row14 col2" >464</td>
+      <td id="T_ae16b_row14_col1" class="data row14 col1" >context_end_char</td>
+      <td id="T_ae16b_row14_col2" class="data row14 col2" >464</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row15_col1" class="data row15 col1" >doc_length</td>
-      <td id="T_e6f81_row15_col2" class="data row15 col2" >34250</td>
+      <td id="T_ae16b_row15_col1" class="data row15 col1" >doc_length</td>
+      <td id="T_ae16b_row15_col2" class="data row15 col2" >34250</td>
     </tr>
     <tr>
-      <td id="T_e6f81_row16_col1" class="data row16 col1" >doc_md5</td>
-      <td id="T_e6f81_row16_col2" class="data row16 col2" >813c6fa5fd4080082d6a66ba4a2fee44</td>
+      <td id="T_ae16b_row16_col1" class="data row16 col1" >doc_md5</td>
+      <td id="T_ae16b_row16_col2" class="data row16 col2" >813c6fa5fd4080082d6a66ba4a2fee44</td>
     </tr>
   </tbody>
 </table>
@@ -889,11 +900,10 @@ From the command-line this can be done with the <code class="docutils literal no
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="overview.html"
@@ -913,10 +923,7 @@ From the command-line this can be done with the <code class="docutils literal no
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -982,8 +989,8 @@ By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributor
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

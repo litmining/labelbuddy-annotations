@@ -726,7 +726,7 @@ Stereoscopic displays can induce visual discomfort despite their wide applicatio
     </details>
     
     <details style="--label-color: #ff9896;">
-        <summary class="label-display">Hidden Makrov Model (5 docs)</summary>
+        <summary class="label-display">Hidden Markov Model (5 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
