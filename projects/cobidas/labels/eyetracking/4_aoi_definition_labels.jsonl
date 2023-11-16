@@ -1,1 +1,8 @@
+{"name": "The size of the AOIs in pixel or degrees", "color": "#fb9a99"}
+{"name": "Overlap between the AOIs", "color": "#fb9a99"}
+{"name": "The minimal distance between AOIs in pixel", "color": "#fb9a99"}
+{"name": "The relative size of AOIs and Content within AOIs", "color": "#fb9a99"}
+{"name": "Example image presented in the paper", "color": "#fb9a99"}
+{"name": "Method for stimulus preparation", "color": "#fb9a99"}
+{"name": "Matching of the luminance between the stimuli", "color": "#fb9a99"}
 {"name": "The size of the stimulus", "color": "#fb9a99"}

@@ -1,1 +1,31 @@
+{"name": "Boolean that specifies if continuous blood measurements are available.", "color": "#e31a1c"}
+{"name": "The rate at which the blood was withdrawn from the subject.", "color": "#e31a1c"}
+{"name": "Description of the type of tubing used, ideally including the material and (internal) diameter.", "color": "#e31a1c"}
+{"name": "The length of the blood tubing, from the subject to the detector.", "color": "#e31a1c"}
+{"name": "External dispersion time constant resulting from tubing.", "color": "#e31a1c"}
+{"name": "Dispersion correction", "color": "#e31a1c"}
+{"name": "Boolean that specifies if discrete blood measurements are available.", "color": "#e31a1c"}
+{"name": "Measured haematocrit, i.e. the volume of erythrocytes divided by the volume of whole blood.", "color": "#e31a1c"}
+{"name": "Measured blood density.", "color": "#e31a1c"}
+{"name": "Boolean that specifies if metabolite measurements are available.", "color": "#e31a1c"}
+{"name": "Method used to measure metabolites", "color": "#e31a1c"}
+{"name": "Radiolabeled Parent compound fraction", "color": "#e31a1c"}
+{"name": "Metabolite data labels", "color": "#e31a1c"}
+{"name": "Parent fraction units", "color": "#e31a1c"}
+{"name": "Parent fraction measurement error", "color": "#e31a1c"}
+{"name": "Metabolite analysis timepoints", "color": "#e31a1c"}
+{"name": "Fraction of radiometabolite needing quantitation", "color": "#e31a1c"}
+{"name": "Error on above measurement", "color": "#e31a1c"}
+{"name": "Radiolabeled metabolite fractions", "color": "#e31a1c"}
+{"name": "Metabolite correction", "color": "#e31a1c"}
+{"name": "Boolean that specifies if plasma measurements are available.", "color": "#e31a1c"}
+{"name": "Measured free fraction in plasma, i.e. concentration of free compound in plasma divided by total concentration of compound in plasma.", "color": "#e31a1c"}
+{"name": "Error of free fraction measurement", "color": "#e31a1c"}
+{"name": "Method used to estimate free fraction.", "color": "#e31a1c"}
+{"name": "decay corrected", "color": "#e31a1c"}
+{"name": "decay correction time", "color": "#e31a1c"}
+{"name": "plasma data type", "color": "#e31a1c"}
+{"name": "plasma data units", "color": "#e31a1c"}
+{"name": "hematocrit value", "color": "#e31a1c"}
+{"name": "Whole blood radioactivity", "color": "#e31a1c"}
 {"name": "Plasma to whole blood ratio", "color": "#e31a1c"}

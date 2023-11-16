@@ -1,1 +1,14 @@
+{"name": "1.1 - Tool names, versions, and URLs", "color": "#6a3d9a"}
+{"name": "1.2 - Machine CPU model, any use of parallelization", "color": "#6a3d9a"}
+{"name": "1.3 - operating system used for analysis", "color": "#6a3d9a"}
+{"name": "1.4 - operating system version", "color": "#6a3d9a"}
+{"name": "1.5 - Was a workflow system used?", "color": "#6a3d9a"}
+{"name": "1.6 - Name of workflow system used", "color": "#6a3d9a"}
+{"name": "1.7 - Version of the workflow system used", "color": "#6a3d9a"}
+{"name": "1.8 - Provide a permanent identifie to the workflow if possible", "color": "#6a3d9a"}
+{"name": "1.9 - State whether detailed provenance information is available", "color": "#6a3d9a"}
+{"name": "1.10 - Provide permanent identifier to the data if possible", "color": "#6a3d9a"}
+{"name": "1.11 - Provide a URL linking to the relevant resource.", "color": "#6a3d9a"}
+{"name": "1.12 - Is the documentation provided in English?", "color": "#6a3d9a"}
+{"name": "1.13 - Are the tools publically available?", "color": "#6a3d9a"}
 {"name": "1.14 - Is a virtual environment to facilitate a repeated analysis available?", "color": "#6a3d9a"}
