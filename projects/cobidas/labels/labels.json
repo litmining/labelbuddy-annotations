@@ -1,0 +1,162 @@
+[
+    {
+        "color": "#73fdff",
+        "name": "PCC"
+    },
+    {
+        "color": "#73fdff",
+        "name": "Alff or fAlff"
+    },
+    {
+        "color": "#73fdff",
+        "name": "ReHo"
+    },
+    {
+        "color": "#73fdff",
+        "name": "wavelet coherence"
+    },
+    {
+        "color": "#73fdff",
+        "name": "ICs maps or networks"
+    },
+    {
+        "color": "#73fdff",
+        "name": "Other"
+    },
+    {
+        "color": "#941100",
+        "name": "whole-brain maps"
+    },
+    {
+        "color": "#941100",
+        "name": "connectivity matrices"
+    },
+    {
+        "color": "#941100",
+        "name": "network measurements"
+    },
+    {
+        "color": "#941100",
+        "name": "ROI-maps"
+    },
+    {
+        "color": "#fffc79",
+        "name": "AAL ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "Atlas-based ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "Litterature-based ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "ICA-based ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "Alff or ReHo based ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "Structural connectivity-based ROIs"
+    },
+    {
+        "color": "#fffc79",
+        "name": "Others"
+    },
+    {
+        "color": "#008f00",
+        "name": "seed-based"
+    },
+    {
+        "color": "#008f00",
+        "name": "roi-based"
+    },
+    {
+        "color": "#008f00",
+        "name": "network-based"
+    },
+    {
+        "color": "#9437ff",
+        "name": "interesting"
+    },
+    {
+        "color": "#9437ff",
+        "name": "supplementary file"
+    },
+    {
+        "color": "#9437ff",
+        "name": "exclusions"
+    },
+    {
+        "color": "#ff9300",
+        "name": "toolbox",
+        "shortcut_key": "t"
+    },
+    {
+        "color": "#ff9300",
+        "name": "distortion correction",
+        "shortcut_key": "d"
+    },
+    {
+        "color": "#ff9300",
+        "name": "realignment",
+        "shortcut_key": "r"
+    },
+    {
+        "color": "#ff9300",
+        "name": "slice-timing correction",
+        "shortcut_key": "s"
+    },
+    {
+        "color": "#ff9300",
+        "name": "segmentation",
+        "shortcut_key": "e"
+    },
+    {
+        "color": "#ff9300",
+        "name": "coregistration",
+        "shortcut_key": "c"
+    },
+    {
+        "color": "#ff9300",
+        "name": "standardization",
+        "shortcut_key": "m"
+    },
+    {
+        "color": "#ff9300",
+        "name": "smoothing",
+        "shortcut_key": "l"
+    },
+    {
+        "color": "#ff9300",
+        "name": "band-pass filtering",
+        "shortcut_key": "f"
+    },
+    {
+        "color": "#ff9300",
+        "name": "nuisance regressors",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#ff9300",
+        "name": "other preprocessing"
+    },
+    {
+        "color": "#ff9300",
+        "name": "removed volumes",
+        "shortcut_key": "v"
+    },
+    {
+        "color": "#ff9300",
+        "name": "outliers",
+        "shortcut_key": "o"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "GCA"
+    }
+]
