@@ -1,1 +1,0 @@
-(("resting state"[Abstract] OR "rsfMRI"[Abstract]) AND ("fMRI"[Abstract] OR "functional MRI"[Abstract] OR "functional magnetic resonance imaging"[Abstract]) AND ("2017/07/23"[PDat] : "2020/07/22"[PDat]))
