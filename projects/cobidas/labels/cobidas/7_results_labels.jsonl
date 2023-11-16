@@ -1,1 +1,14 @@
+{"name": "1.1 - Type of analysis performed", "color": "#ff7f00"}
+{"name": "1.2 - Provide a complete list of tested and omitted effects", "color": "#ff7f00"}
+{"name": "1.3 - Define how voxels/elements were selected", "color": "#ff7f00"}
+{"name": "1.4 - Unit used to report results ", "color": "#ff7f00"}
+{"name": "1.12 - P­-value forming basis of inference", "color": "#ff7f00"}
+{"name": "1.19 - Link to unthresholded statistic maps", "color": "#ff7f00"}
+{"name": "1.20 - Link to thresholded statistic maps", "color": "#ff7f00"}
+{"name": "1.21 - Link to effect size maps", "color": "#ff7f00"}
+{"name": "1.22 - Size of the analysis volume in voxels", "color": "#ff7f00"}
+{"name": "1.23 - Noise smoothness for statistical inference (FWHM)", "color": "#ff7f00"}
+{"name": "1.24 - Number of resels", "color": "#ff7f00"}
+{"name": "1.25 - For connectivty ICA based methods, report the total number of components (especially when estimated from the data and not fixed). Report the number of these analyzed and the reason for their selection", "color": "#ff7f00"}
+{"name": "1.26 - For connectivty graph-based methods, carefully state what is the null hypothesis of the test and how the statistic distribution under the null is computed", "color": "#ff7f00"}
 {"name": "1.27 - For multivariate, report optimised evaluation metrics", "color": "#ff7f00"}

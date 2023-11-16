@@ -1,1 +1,14 @@
+{"name": "Blood sampling device read", "color": "#fdbf6f"}
+{"name": "Blood sampling device measurement time", "color": "#fdbf6f"}
+{"name": "Phantom type", "color": "#fdbf6f"}
+{"name": "Phantom volume", "color": "#fdbf6f"}
+{"name": "Radiotracer-isotope", "color": "#fdbf6f"}
+{"name": "Phantom activity", "color": "#fdbf6f"}
+{"name": "Activity time", "color": "#fdbf6f"}
+{"name": "Residual activity", "color": "#fdbf6f"}
+{"name": "Residual activity time", "color": "#fdbf6f"}
+{"name": "Phantom acquisition time", "color": "#fdbf6f"}
+{"name": "Well counter sample volumes", "color": "#fdbf6f"}
+{"name": "Well counter measurement time", "color": "#fdbf6f"}
+{"name": "Well counter read", "color": "#fdbf6f"}
 {"name": "Phantom data", "color": "#fdbf6f"}
