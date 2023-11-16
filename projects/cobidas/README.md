@@ -28,6 +28,7 @@ Please also add a `documents/datasets.json` file containing the URL where the fu
 `<description>`
 -->
 
+<!-- 
 ## Annotations
 
 ### File(s) being annotated: 
@@ -37,7 +38,8 @@ Please also add a `documents/datasets.json` file containing the URL where the fu
 - `/projects/<project_name>/documents/<documents_file2_name>.jsonl`
   - corresponding file in the pubget output: 
     - `<pubget_folder_name>/subset_allArticles_labelbuddyData/<documents_file2_name>.jsonl`
-  
+-->
+
 ### Annotation labels:
 
 Generated from the [COBIDAS reproschema](https://github.com/ohbm/cobidas_schema):
