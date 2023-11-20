@@ -1,1 +1,9 @@
+{"name": "Details of the pharmaceutical dose regimen.", "color": "#1f78b4"}
+{"name": "Name of the tracer compound used", "color": "#1f78b4"}
+{"name": "ID of the tracer compound from the RadLex Ontology.", "color": "#1f78b4"}
+{"name": "ID of the tracer compound from the SNOMED Ontology", "color": "#1f78b4"}
+{"name": "Name of pharmaceutical coadministered with tracer.", "color": "#1f78b4"}
+{"name": "Radioisotope labelling tracer.", "color": "#1f78b4"}
+{"name": "Accurate molecular weight of the tracer used.", "color": "#1f78b4"}
+{"name": "Time of administration of pharmaceutical dose, relative to time zero", "color": "#1f78b4"}
 {"name": "Dose amount of pharmaceutical coadministered with tracer.", "color": "#1f78b4"}
