@@ -1,1 +1,11 @@
+{"name": "Procedure for handling of participant artefacts", "color": "#cab2d6"}
+{"name": "The obtained accuracy of the data", "color": "#cab2d6"}
+{"name": "Monitoring of data quality during experiment", "color": "#cab2d6"}
+{"name": "Percentage of trials excluded for the analysis", "color": "#cab2d6"}
+{"name": "Reasons for exclusion", "color": "#cab2d6"}
+{"name": "Number of participants excluded from the analysis", "color": "#cab2d6"}
+{"name": "The exact quality threshold for exclusion", "color": "#cab2d6"}
+{"name": "Percentage of lost data", "color": "#cab2d6"}
+{"name": "Test of assumptions for missing data", "color": "#cab2d6"}
+{"name": "Methods for addressing missing data", "color": "#cab2d6"}
 {"name": "The pre-processing of raw data through denoising, filtering or smoothing", "color": "#cab2d6"}

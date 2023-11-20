@@ -1,1 +1,10 @@
+{"name": "Duration of inter stimulus interval", "color": "#e31a1c"}
+{"name": "Presentation duration of the fixation cross", "color": "#e31a1c"}
+{"name": "Position of the fixation cross", "color": "#e31a1c"}
+{"name": "Duration of stimulus presentation", "color": "#e31a1c"}
+{"name": "The order of the stimulus presentation", "color": "#e31a1c"}
+{"name": "Counter-balancing of the stimulus in the presentation across positions", "color": "#e31a1c"}
+{"name": "The number of trials in the experiment", "color": "#e31a1c"}
+{"name": "Description of the person running the experiment", "color": "#e31a1c"}
+{"name": "Settings and locations where data were collected", "color": "#e31a1c"}
 {"name": "The distance between participants and the screen", "color": "#e31a1c"}

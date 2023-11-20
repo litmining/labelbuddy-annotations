@@ -1,1 +1,36 @@
+{"name": "1.1 - Independent variable type", "color": "#fdbf6f"}
+{"name": "1.2 - Class proportions", "color": "#fdbf6f"}
+{"name": "1.3 - Variable dimension", "color": "#fdbf6f"}
+{"name": "1.4 - Was any feature transformation applied?", "color": "#fdbf6f"}
+{"name": "1.5 - What type of feature transformation was used?", "color": "#fdbf6f"}
+{"name": "1.6 - Was feature selection used?", "color": "#fdbf6f"}
+{"name": "1.7 - What type of feature selection was used?", "color": "#fdbf6f"}
+{"name": "1.8 - Was dimension reduction used?", "color": "#fdbf6f"}
+{"name": "1.9 - What type of dimension reduction was used?", "color": "#fdbf6f"}
+{"name": "1.10 - Provide dimension before and after any feature selection and/or dimension reduction", "color": "#fdbf6f"}
+{"name": "1.11 - Information on how the target values relate to the population. Specify how this is taken into account in the predictive model", "color": "#fdbf6f"}
+{"name": "1.12 - Analysis type", "color": "#fdbf6f"}
+{"name": "1.13 - Model type", "color": "#fdbf6f"}
+{"name": "1.14 - Assumptions made on the covariance structure", "color": "#fdbf6f"}
+{"name": "1.15 - Statistic used to assess significance", "color": "#fdbf6f"}
+{"name": "1.16 - Model type", "color": "#fdbf6f"}
+{"name": "1.17 - For kernel-based methods (i.e. SVM) report type of kernel used, type and number of parameters needed to be estimated", "color": "#fdbf6f"}
+{"name": "1.18 - Figure-of-merit optimised", "color": "#fdbf6f"}
+{"name": "1.19 - Fitting method", "color": "#fdbf6f"}
+{"name": "1.20 - Parameter settings, those fixed and those estimated; specify how fixed parameter values were chosen", "color": "#fdbf6f"}
+{"name": "1.21 - How the convergence of the learning method is monitored", "color": "#fdbf6f"}
+{"name": "1.22 - Pipeline structure applied uniformly to all cases (e.g. that could be independently applied to a new case)", "color": "#fdbf6f"}
+{"name": "1.23 - Method for hyper-parameter setting", "color": "#fdbf6f"}
+{"name": "1.24 - Describe data splitting (cross validation)", "color": "#fdbf6f"}
+{"name": "1.25 - Response type", "color": "#fdbf6f"}
+{"name": "1.27 - Report accuracy", "color": "#fdbf6f"}
+{"name": "1.28 - Report precision", "color": "#fdbf6f"}
+{"name": "1.29 - Report recall", "color": "#fdbf6f"}
+{"name": "1.30 - Report false positive rate", "color": "#fdbf6f"}
+{"name": "1.31 - Report F1", "color": "#fdbf6f"}
+{"name": "1.32 - Report receiver operating characteristic curves and area under the curve.", "color": "#fdbf6f"}
+{"name": "1.33 - Report the confusion matrix", "color": "#fdbf6f"}
+{"name": "1.34 - Report Prediction R²", "color": "#fdbf6f"}
+{"name": "1.35 - For representational similarity analysis, report the Kendall Tau statistic for each candidate model considered.", "color": "#fdbf6f"}
+{"name": "1.36 - When possible use formal test to obtain P­value to assess whether evaluation metric is “significant” or consistent with noise.", "color": "#fdbf6f"}
 {"name": "1.37 - Procedure used to interpret the fit of the classifier, identifying the relative importance of the features (e.g. the weight vector in linear discriminant).", "color": "#fdbf6f"}
