@@ -1,1 +1,19 @@
+{"name": "Acquisition mode", "color": "#fb9a99"}
+{"name": "Specify whether the image data have been decay-corrected.", "color": "#fb9a99"}
+{"name": "Point in time from which the decay correction was applied wrt TimeZero", "color": "#fb9a99"}
+{"name": "Reconstruction method", "color": "#fb9a99"}
+{"name": "Names, value, units of reconstruction parameters.", "color": "#fb9a99"}
+{"name": "Recon-filter-type", "color": "#fb9a99"}
+{"name": "Attenuation correction", "color": "#fb9a99"}
+{"name": "Postrecon-filter-size", "color": "#fb9a99"}
+{"name": "PET voxel size", "color": "#fb9a99"}
+{"name": "Matrix Size", "color": "#fb9a99"}
+{"name": "Frame-Sequence", "color": "#fb9a99"}
+{"name": "Scale factor for each frame", "color": "#fb9a99"}
+{"name": "Scatter fraction for each frame", "color": "#fb9a99"}
+{"name": "Decay correction factor for each frame", "color": "#fb9a99"}
+{"name": "Prompt rate for each frame", "color": "#fb9a99"}
+{"name": "Random rate for each frame", "color": "#fb9a99"}
+{"name": "Singles rate for each frame", "color": "#fb9a99"}
+{"name": "Reconstruction data labels", "color": "#fb9a99"}
 {"name": "Reference paper for the attenuation correction method used.", "color": "#fb9a99"}

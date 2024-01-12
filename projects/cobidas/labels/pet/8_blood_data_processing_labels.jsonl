@@ -1,1 +1,43 @@
+{"name": "Sampling Method", "color": "#cab2d6"}
+{"name": "Delay time correction", "color": "#cab2d6"}
+{"name": "Fitting", "color": "#cab2d6"}
+{"name": "Fitting description", "color": "#cab2d6"}
+{"name": "Blood data processing interpolation", "color": "#cab2d6"}
+{"name": "Model", "color": "#cab2d6"}
+{"name": "Reference volume", "color": "#cab2d6"}
+{"name": "Outcome measure", "color": "#cab2d6"}
+{"name": "Weighting", "color": "#cab2d6"}
+{"name": "Level of analysis", "color": "#cab2d6"}
+{"name": "Kinetic modelling software", "color": "#cab2d6"}
+{"name": "Kinetic modelling software version", "color": "#cab2d6"}
+{"name": "MoCo reference image", "color": "#cab2d6"}
+{"name": "MoCo cost function", "color": "#cab2d6"}
+{"name": "MoCo interpolation", "color": "#cab2d6"}
+{"name": "MoCo smoothing", "color": "#cab2d6"}
+{"name": "MoCo quality control", "color": "#cab2d6"}
+{"name": "MoCo software", "color": "#cab2d6"}
+{"name": "MoCo software version", "color": "#cab2d6"}
+{"name": "Registration reference image", "color": "#cab2d6"}
+{"name": "Registration target image", "color": "#cab2d6"}
+{"name": "Registration cost function", "color": "#cab2d6"}
+{"name": "Registration interpolation", "color": "#cab2d6"}
+{"name": "Registration smoothing", "color": "#cab2d6"}
+{"name": "Resolution of reference-target", "color": "#cab2d6"}
+{"name": "Registration quality control", "color": "#cab2d6"}
+{"name": "Registration software", "color": "#cab2d6"}
+{"name": "Registration software version", "color": "#cab2d6"}
+{"name": "Smoothing target image", "color": "#cab2d6"}
+{"name": "Shape of smoothing filter", "color": "#cab2d6"}
+{"name": "Size of smoothing filter", "color": "#cab2d6"}
+{"name": "Justification for smoothing size", "color": "#cab2d6"}
+{"name": "Space of smoothing", "color": "#cab2d6"}
+{"name": "Volumes of interest obtained from", "color": "#cab2d6"}
+{"name": "Volumes of interest operational criteria", "color": "#cab2d6"}
+{"name": "Volumes of interest mask", "color": "#cab2d6"}
+{"name": "Volumes of interest procedure", "color": "#cab2d6"}
+{"name": "Volumes of interest", "color": "#cab2d6"}
+{"name": "Volumes of interest software", "color": "#cab2d6"}
+{"name": "Partial volume correction technique", "color": "#cab2d6"}
+{"name": "Partial volume correction assumptions", "color": "#cab2d6"}
+{"name": "Partial volume correction software", "color": "#cab2d6"}
 {"name": "Partial volume correction software version", "color": "#cab2d6"}
