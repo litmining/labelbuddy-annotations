@@ -1,1 +1,17 @@
+{"name": "1.1 - List types of images and non­imaging data provided", "color": "#cab2d6"}
+{"name": "1.2 - Report on the completeness of the data", "color": "#cab2d6"}
+{"name": "1.3 - data URL or DOI", "color": "#cab2d6"}
+{"name": "1.4 - Specific instructions on how to gain access to the data.", "color": "#cab2d6"}
+{"name": "1.5 - Cost of access", "color": "#cab2d6"}
+{"name": "1.6 - Confirm that the ethics board of the host institution generating the data approves the sharing of the data made available", "color": "#cab2d6"}
+{"name": "1.7 - Clarify any constraints on uses of shared data.", "color": "#cab2d6"}
+{"name": "1.8 - Provide URL to documentation, and specify its scope", "color": "#cab2d6"}
+{"name": "1.9 - Report the format of the image data shared.", "color": "#cab2d6"}
+{"name": "1.10 - Data organization structures, including Data Dictionaries and Schemas.", "color": "#cab2d6"}
+{"name": "1.11 - Is the software using an established ontology?", "color": "#cab2d6"}
+{"name": "1.12 - Availability of in-resource visualization of the imaging or non­imaging data", "color": "#cab2d6"}
+{"name": "1.13 - How, if at all, data are de-identified ?", "color": "#cab2d6"}
+{"name": "1.14 - Availability of detailed provenance of preprocessing and analysis of shared data", "color": "#cab2d6"}
+{"name": "1.15 - Ability of a repository to work in a multi-database environment, availability of API’s and ability to connect to analysis pipelines", "color": "#cab2d6"}
+{"name": "1.16 - Mechanisms available for constructing queries on the repository (e.g. SQL, SPARQL)", "color": "#cab2d6"}
 {"name": "1.17 - How users can check version of downloaded data and compare it to the current version at a later time", "color": "#cab2d6"}

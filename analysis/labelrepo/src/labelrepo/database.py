@@ -14,24 +14,18 @@ def _initialize_database(db_path: pathlib.Path) -> None:
     with contextlib.closing(sqlite3.connect(db_path)) as connection:
         with connection:
             connection.executescript(
-                (_utils.package_data() / "initialize_db.sql").read_text(
-                    "utf-8"
-                )
+                (_utils.package_data() / "initialize_db.sql").read_text("utf-8")
             )
 
 
 def _fill_database(db_path: pathlib.Path):
     with contextlib.closing(sqlite3.connect(db_path)) as connection:
         connection.execute("pragma foreign_keys = on")
-        for labels_file in _utils.glob_json(
-            repo.repo_root() / "shared_labels"
-        ):
+        for labels_file in _utils.glob_json(repo.repo_root() / "shared_labels"):
             _insert_labels(connection, labels_file)
         projects_root_dir = repo.repo_root() / "projects"
         all_project_dirs = sorted(
-            p
-            for p in projects_root_dir.glob("*")
-            if p.name != "template_project"
+            p for p in projects_root_dir.glob("*") if p.name != "template_project"
         )
         for project_dir in all_project_dirs:
             if not project_dir.is_dir():
@@ -42,13 +36,9 @@ def _fill_database(db_path: pathlib.Path):
             _insert_project_annotations(connection, project_dir)
 
 
-def _insert_project(
-    connection: sqlite3.Connection, project_dir: pathlib.Path
-) -> None:
+def _insert_project(connection: sqlite3.Connection, project_dir: pathlib.Path) -> None:
     with connection:
-        connection.execute(
-            "insert into project (name) values (?)", (project_dir.name,)
-        )
+        connection.execute("insert into project (name) values (?)", (project_dir.name,))
 
 
 def _insert_project_documents(
@@ -64,16 +54,14 @@ def _insert_project_documents(
 
 def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, str]:
     metadata = {}
-    for field, (start, end) in (
-        doc_info["metadata"].get("field_positions", {}).items()
-    ):
+    if isinstance(doc_info["metadata"], str):
+        doc_info["metadata"] = json.loads(doc_info["metadata"])
+    for field, (start, end) in doc_info["metadata"].get("field_positions", {}).items():
         metadata[field] = doc_info["text"][start:end]
     return metadata
 
 
-def _insert_documents(
-    connection: sqlite3.Connection, docs_file: pathlib.Path
-) -> None:
+def _insert_documents(connection: sqlite3.Connection, docs_file: pathlib.Path) -> None:
     metadata_field_types = {
         "pmid": int,
         "pmcid": int,
@@ -86,9 +74,7 @@ def _insert_documents(
             for doc_line in docs_fh:
                 doc_info = json.loads(doc_line)
                 doc_row = {}
-                doc_row["md5"] = hashlib.md5(
-                    doc_info["text"].encode("utf-8")
-                ).digest()
+                doc_row["md5"] = hashlib.md5(doc_info["text"].encode("utf-8")).digest()
                 doc_row["text"] = doc_info["text"]
                 text_metadata = _extract_metadata_from_text(doc_info)
                 for field, field_type in metadata_field_types.items():

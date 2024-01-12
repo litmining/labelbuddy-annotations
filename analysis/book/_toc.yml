@@ -3,7 +3,7 @@ root: overview
 parts:
   - caption: Introduction
     chapters:
-      - file: using_this_repository
+      - file: how_to_use_the_data
       - file: contributing_to_this_repository
   - caption: Analyses
     chapters:

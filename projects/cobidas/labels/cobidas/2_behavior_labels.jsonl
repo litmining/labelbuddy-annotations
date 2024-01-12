@@ -1,1 +1,47 @@
+{"name": "1.1 - What type of design was used?", "color": "#b2df8a"}
+{"name": "1.2 - Clearly describe each condition and the stimuli used.", "color": "#b2df8a"}
+{"name": "1.3 - Number of trials/blocks per run per condition", "color": "#b2df8a"}
+{"name": "1.4 - What was the duration of one block?", "color": "#b2df8a"}
+{"name": "1.5 - What was the duration of one trial?", "color": "#b2df8a"}
+{"name": "1.6 - Provide the timing structure of the events in the task.", "color": "#b2df8a"}
+{"name": "1.7 - What was the intertrial interval range?", "color": "#b2df8a"}
+{"name": "1.8 - What was the intertrial interval distribution?", "color": "#b2df8a"}
+{"name": "1.9 - How many runs were used?", "color": "#b2df8a"}
+{"name": "1.10 - What was the duration of each imaging run?", "color": "#b2df8a"}
+{"name": "1.11 - What was the software used for stimuli presentation?", "color": "#b2df8a"}
+{"name": "1.12 - What was the software version used for stimuli presentation?", "color": "#b2df8a"}
+{"name": "1.13 - What operating system was used to present the stimuli?", "color": "#b2df8a"}
+{"name": "1.14 - Specify the URL of the experiment code.", "color": "#b2df8a"}
+{"name": "1.15 - Specify the instructions given to subjects for each condition", "color": "#b2df8a"}
+{"name": "1.16 - Specifics of stimuli used in each run.", "color": "#b2df8a"}
+{"name": "1.17 - Was the block or event ordering deterministic or randomized? ", "color": "#b2df8a"}
+{"name": "1.18 - Describe how and the criteria used to constrain the orders/timings", "color": "#b2df8a"}
+{"name": "1.19 - Order in which tasks / runs are conducted ", "color": "#b2df8a"}
+{"name": "1.20 - Was the order of the stimuli counterbalanced (across runs, across participants)?", "color": "#b2df8a"}
+{"name": "1.21 - How were responses collected?", "color": "#b2df8a"}
+{"name": "1.22 - URL of stimuli database", "color": "#b2df8a"}
+{"name": "1.23 - Calibration procedure", "color": "#b2df8a"}
+{"name": "1.24 - What sensory modality were used?", "color": "#b2df8a"}
+{"name": "1.25 - Visual stimuli: Specify the presentation hardware ", "color": "#b2df8a"}
+{"name": "1.26 - Visual stimuli: Stimuli apparent size", "color": "#b2df8a"}
+{"name": "1.27 - Visual stimuli: Viewing distance", "color": "#b2df8a"}
+{"name": "1.28 - Visual stimuli: Clarity", "color": "#b2df8a"}
+{"name": "1.29 - Visual stimuli: Color", "color": "#b2df8a"}
+{"name": "1.30 - Visual stimuli: Site of the stimulation", "color": "#b2df8a"}
+{"name": "1.31 - Visual stimuli: Position in the visual field", "color": "#b2df8a"}
+{"name": "1.32 - Visual stimuli: Display device and method of projection", "color": "#b2df8a"}
+{"name": "1.33 - Visual stimuli: Note if differences in intensity or contrast between different stimulus conditions", "color": "#b2df8a"}
+{"name": "1.34 - Audio stimuli: Stimulus properties", "color": "#b2df8a"}
+{"name": "1.35 - Audio stimuli: Intensity", "color": "#b2df8a"}
+{"name": "1.36 - Audio stimuli: Ear of stimulation", "color": "#b2df8a"}
+{"name": "1.37 - Audio stimuli: Type, manufacturer and model of the delivery device", "color": "#b2df8a"}
+{"name": "1.38 - Audio stimuli: Further, the presence of contralateral ear masking stimulation, and its intensity, should be noted.", "color": "#b2df8a"}
+{"name": "1.39 - Tactile stimuli: Stimulus type", "color": "#b2df8a"}
+{"name": "1.40 - Tactile stimuli: Stimulus characteristics", "color": "#b2df8a"}
+{"name": "1.41 - Tactile stimuli: Location on the body with reference to anatomical landmarks", "color": "#b2df8a"}
+{"name": "1.42 - Tactile stimuli: Was was the intensity of the stimulus? ", "color": "#b2df8a"}
+{"name": "1.44 - Describe in detail any other stimulation not involving auditory, visual or somatosensory stimuli", "color": "#b2df8a"}
+{"name": "1.45 - Enumerate the conditions and fully describe and reference each.", "color": "#b2df8a"}
+{"name": "1.46 - Was there any practice session?", "color": "#b2df8a"}
+{"name": "1.47 - Were feedbacks provided to the participant?", "color": "#b2df8a"}
 {"name": "1.49 - What variables were recorded?", "color": "#b2df8a"}

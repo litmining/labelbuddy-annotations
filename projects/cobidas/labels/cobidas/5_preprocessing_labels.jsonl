@@ -1,1 +1,83 @@
+{"name": "1.1 - What type of MRI was performed ?", "color": "#e31a1c"}
+{"name": "1.2 - Was a single software package was used for preprocessing?", "color": "#e31a1c"}
+{"name": "1.3 - If a single software package was used for all analyses, specify that here", "color": "#e31a1c"}
+{"name": "1.4 - Version of software package used", "color": "#e31a1c"}
+{"name": "1.5 - Include URL and Research Resource Identifier for each software used", "color": "#e31a1c"}
+{"name": "1.6 - Specify which preprocessing steps were performed", "color": "#e31a1c"}
+{"name": "1.7 - Specify order of preprocessing operations", "color": "#e31a1c"}
+{"name": "1.8 - Number of “dummy” scans discarded if any", "color": "#e31a1c"}
+{"name": "1.9 - Software used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.10 - Software version used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.11 - Method used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.12 - Parameters used for the brain extraction", "color": "#e31a1c"}
+{"name": "1.13 - Describe any eventual manual editing done to the brainmask.", "color": "#e31a1c"}
+{"name": "1.14 - Software used for segmentation", "color": "#e31a1c"}
+{"name": "1.15 - Software version used for the segmentation", "color": "#e31a1c"}
+{"name": "1.16 - Method used for segmentation", "color": "#e31a1c"}
+{"name": "1.17 - What parameters were used for the segmentation?", "color": "#e31a1c"}
+{"name": "1.18 - Software used for slice timing", "color": "#e31a1c"}
+{"name": "1.19 - Software version used for slice timing", "color": "#e31a1c"}
+{"name": "1.20 - Method used for the slice timing", "color": "#e31a1c"}
+{"name": "1.21 - What slice was used as reference for the slice timing?", "color": "#e31a1c"}
+{"name": "1.22 - Interpolation method used for the slice timing", "color": "#e31a1c"}
+{"name": "1.23 - Software used for the motion correction", "color": "#e31a1c"}
+{"name": "1.24 - Software version used for the motion correction", "color": "#e31a1c"}
+{"name": "1.25 - Was non-rigid registration applied?", "color": "#e31a1c"}
+{"name": "1.26 - Number of degrees of freedom for the motion correction", "color": "#e31a1c"}
+{"name": "1.27 - Was motion-susceptibility correction used?", "color": "#e31a1c"}
+{"name": "1.28 - Software used for the motion-susceptibility correction", "color": "#e31a1c"}
+{"name": "1.29 - Software version used for the motion-susceptibility correction", "color": "#e31a1c"}
+{"name": "1.30 - Reference scan used for motion correction", "color": "#e31a1c"}
+{"name": "1.31 - Similarity metric used for motion correction", "color": "#e31a1c"}
+{"name": "1.32 - Interpolation method used for motion correction", "color": "#e31a1c"}
+{"name": "1.33 - Any specific parameters for the motion correction that should be mentioned", "color": "#e31a1c"}
+{"name": "1.54 - Diffusion weighted imaging:<br>Specify set of subjects used to create custom atlas", "color": "#e31a1c"}
+{"name": "1.67 - Software used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.68 - Software version used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.69 - Method used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.70 - Target volume used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.71 - Source volume used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.72 - Number of degrees of freedom for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.73 - Similarity metric used for functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.74 - Interpolation method used for the functional - anatomical coregistration", "color": "#e31a1c"}
+{"name": "1.76 - Software used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.77 - Software version used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.78 - Specify method used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.79 - Was the registration volume or surface based?", "color": "#e31a1c"}
+{"name": "1.80 - What was the modality of the source volume?", "color": "#e31a1c"}
+{"name": "1.81 - Was any additional preprocessing required?", "color": "#e31a1c"}
+{"name": "1.82 - Name of coordinate space for registration target", "color": "#e31a1c"}
+{"name": "1.83 - What was the modality of the target volume?", "color": "#e31a1c"}
+{"name": "1.84 - Voxel size of target template in millimeters", "color": "#e31a1c"}
+{"name": "1.85 - Name of target template image", "color": "#e31a1c"}
+{"name": "1.86 - Specify any additional template transformation", "color": "#e31a1c"}
+{"name": "1.87 - What type of registration was used?", "color": "#e31a1c"}
+{"name": "1.88 - If nonlinear registration was used, describe transform method", "color": "#e31a1c"}
+{"name": "1.89 - Was regularization used? ", "color": "#e31a1c"}
+{"name": "1.90 - Parameter(s) used to set degree of regularization", "color": "#e31a1c"}
+{"name": "1.91 - Interpolation method used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.93 - Similarity metric used for intersubject registration", "color": "#e31a1c"}
+{"name": "1.94 - Use of cost­-function masking", "color": "#e31a1c"}
+{"name": "1.95 - Voxel size in mm of the resampled, atlas-space images", "color": "#e31a1c"}
+{"name": "1.96 - Specify the type of intensity correction of the anatomical image", "color": "#e31a1c"}
+{"name": "1.97 - Specify the type of intensity correction of the functional images", "color": "#e31a1c"}
+{"name": "1.98 - Type of scaling of image intensities before statistical modelling", "color": "#e31a1c"}
+{"name": "1.99 - Was any kind of denoising performed or were any nuisance covariate included in the subject level model?", "color": "#e31a1c"}
+{"name": "1.100 - What type of noise sources were included?", "color": "#e31a1c"}
+{"name": "1.101 - Expansion basis and order of motion parameters used ", "color": "#e31a1c"}
+{"name": "1.102 - Tissue signals included as nuisance regressor", "color": "#e31a1c"}
+{"name": "1.103 - Tissue definition to create the nuisance regressor", "color": "#e31a1c"}
+{"name": "1.104 - Method to define signal in each tissue class", "color": "#e31a1c"}
+{"name": "1.105 - Was volume censoring applied (a.k.a. “scrubbing” or “de-spiking”)?", "color": "#e31a1c"}
+{"name": "1.106 - Software used for volume censoring", "color": "#e31a1c"}
+{"name": "1.107 - Software version used for volume censoring", "color": "#e31a1c"}
+{"name": "1.108 - Method used for volume censoring", "color": "#e31a1c"}
+{"name": "1.109 - Criteria used for volume censoring", "color": "#e31a1c"}
+{"name": "1.110 - Interpolation used for volume censoring", "color": "#e31a1c"}
+{"name": "1.114 - Software used for smoothing", "color": "#e31a1c"}
+{"name": "1.115 - Software version used for smoothing", "color": "#e31a1c"}
+{"name": "1.116 - Describe the type of smoothing applied", "color": "#e31a1c"}
+{"name": "1.117 - The full-width at half-maximum of the smoothing kernel in millimeters", "color": "#e31a1c"}
+{"name": "1.118 - Filtering approach", "color": "#e31a1c"}
+{"name": "1.119 - Space in which smoothing is performed", "color": "#e31a1c"}
 {"name": "1.120 - Describe quality control measures", "color": "#e31a1c"}
