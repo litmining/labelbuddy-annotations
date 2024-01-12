@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,16 +35,16 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="_static/annotation-set.css" />
     <link rel="stylesheet" type="text/css" href="_static/label-set.css" />
-    <link rel="stylesheet" type="text/css" href="_static/participants.css" />
     <link rel="stylesheet" type="text/css" href="_static/global.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -79,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -122,12 +122,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,6 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="#">
@@ -306,6 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -315,6 +325,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -360,7 +371,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="biomedical-literature-annotations">
 <h1>Biomedical literature annotations<a class="headerlink" href="#biomedical-literature-annotations" title="Permalink to this heading">#</a></h1>
@@ -407,93 +418,93 @@ Here are the currently existing projects:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_f30a4">
+<table id="T_0c577">
   <thead>
     <tr>
-      <th id="T_f30a4_level0_col0" class="col_heading level0 col0" >project_name</th>
-      <th id="T_f30a4_level0_col1" class="col_heading level0 col1" >documents</th>
-      <th id="T_f30a4_level0_col2" class="col_heading level0 col2" >labels</th>
-      <th id="T_f30a4_level0_col3" class="col_heading level0 col3" >annotators</th>
-      <th id="T_f30a4_level0_col4" class="col_heading level0 col4" >annotations</th>
+      <th id="T_0c577_level0_col0" class="col_heading level0 col0" >project_name</th>
+      <th id="T_0c577_level0_col1" class="col_heading level0 col1" >documents</th>
+      <th id="T_0c577_level0_col2" class="col_heading level0 col2" >labels</th>
+      <th id="T_0c577_level0_col3" class="col_heading level0 col3" >annotators</th>
+      <th id="T_0c577_level0_col4" class="col_heading level0 col4" >annotations</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_f30a4_row0_col0" class="data row0 col0" ><a href="./projects/review-neuro-meta-analyses.html">review-neuro-meta-analyses</a></td>
-      <td id="T_f30a4_row0_col1" class="data row0 col1" >734</td>
-      <td id="T_f30a4_row0_col2" class="data row0 col2" >67</td>
-      <td id="T_f30a4_row0_col3" class="data row0 col3" >5</td>
-      <td id="T_f30a4_row0_col4" class="data row0 col4" >7146</td>
+      <td id="T_0c577_row0_col0" class="data row0 col0" ><a href="./projects/review-neuro-meta-analyses.html">review-neuro-meta-analyses</a></td>
+      <td id="T_0c577_row0_col1" class="data row0 col1" >734</td>
+      <td id="T_0c577_row0_col2" class="data row0 col2" >67</td>
+      <td id="T_0c577_row0_col3" class="data row0 col3" >5</td>
+      <td id="T_0c577_row0_col4" class="data row0 col4" >7146</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row1_col0" class="data row1 col0" ><a href="./projects/participant_demographics.html">participant_demographics</a></td>
-      <td id="T_f30a4_row1_col1" class="data row1 col1" >294</td>
-      <td id="T_f30a4_row1_col2" class="data row1 col2" >17</td>
-      <td id="T_f30a4_row1_col3" class="data row1 col3" >10</td>
-      <td id="T_f30a4_row1_col4" class="data row1 col4" >4058</td>
+      <td id="T_0c577_row1_col0" class="data row1 col0" ><a href="./projects/participant_demographics.html">participant_demographics</a></td>
+      <td id="T_0c577_row1_col1" class="data row1 col1" >294</td>
+      <td id="T_0c577_row1_col2" class="data row1 col2" >17</td>
+      <td id="T_0c577_row1_col3" class="data row1 col3" >10</td>
+      <td id="T_0c577_row1_col4" class="data row1 col4" >4058</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row2_col0" class="data row2 col0" ><a href="./projects/cluster_inference.html">cluster_inference</a></td>
-      <td id="T_f30a4_row2_col1" class="data row2 col1" >193</td>
-      <td id="T_f30a4_row2_col2" class="data row2 col2" >20</td>
-      <td id="T_f30a4_row2_col3" class="data row2 col3" >2</td>
-      <td id="T_f30a4_row2_col4" class="data row2 col4" >1610</td>
+      <td id="T_0c577_row2_col0" class="data row2 col0" ><a href="./projects/cluster_inference.html">cluster_inference</a></td>
+      <td id="T_0c577_row2_col1" class="data row2 col1" >193</td>
+      <td id="T_0c577_row2_col2" class="data row2 col2" >20</td>
+      <td id="T_0c577_row2_col3" class="data row2 col3" >2</td>
+      <td id="T_0c577_row2_col4" class="data row2 col4" >1610</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row3_col0" class="data row3 col0" ><a href="./projects/dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></td>
-      <td id="T_f30a4_row3_col1" class="data row3 col1" >70</td>
-      <td id="T_f30a4_row3_col2" class="data row3 col2" >9</td>
-      <td id="T_f30a4_row3_col3" class="data row3 col3" >1</td>
-      <td id="T_f30a4_row3_col4" class="data row3 col4" >94</td>
+      <td id="T_0c577_row3_col0" class="data row3 col0" ><a href="./projects/dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></td>
+      <td id="T_0c577_row3_col1" class="data row3 col1" >70</td>
+      <td id="T_0c577_row3_col2" class="data row3 col2" >9</td>
+      <td id="T_0c577_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_0c577_row3_col4" class="data row3 col4" >94</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row4_col0" class="data row4 col0" ><a href="./projects/parkinsons.html">parkinsons</a></td>
-      <td id="T_f30a4_row4_col1" class="data row4 col1" >60</td>
-      <td id="T_f30a4_row4_col2" class="data row4 col2" >6</td>
-      <td id="T_f30a4_row4_col3" class="data row4 col3" >1</td>
-      <td id="T_f30a4_row4_col4" class="data row4 col4" >411</td>
+      <td id="T_0c577_row4_col0" class="data row4 col0" ><a href="./projects/parkinsons.html">parkinsons</a></td>
+      <td id="T_0c577_row4_col1" class="data row4 col1" >60</td>
+      <td id="T_0c577_row4_col2" class="data row4 col2" >6</td>
+      <td id="T_0c577_row4_col3" class="data row4 col3" >1</td>
+      <td id="T_0c577_row4_col4" class="data row4 col4" >411</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row5_col0" class="data row5 col0" ><a href="./projects/NER_biomedical.html">NER_biomedical</a></td>
-      <td id="T_f30a4_row5_col1" class="data row5 col1" >11</td>
-      <td id="T_f30a4_row5_col2" class="data row5 col2" >9</td>
-      <td id="T_f30a4_row5_col3" class="data row5 col3" >1</td>
-      <td id="T_f30a4_row5_col4" class="data row5 col4" >58</td>
+      <td id="T_0c577_row5_col0" class="data row5 col0" ><a href="./projects/NER_biomedical.html">NER_biomedical</a></td>
+      <td id="T_0c577_row5_col1" class="data row5 col1" >11</td>
+      <td id="T_0c577_row5_col2" class="data row5 col2" >9</td>
+      <td id="T_0c577_row5_col3" class="data row5 col3" >1</td>
+      <td id="T_0c577_row5_col4" class="data row5 col4" >58</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row6_col0" class="data row6 col0" ><a href="./projects/neurosynth_use.html">neurosynth_use</a></td>
-      <td id="T_f30a4_row6_col1" class="data row6 col1" >8</td>
-      <td id="T_f30a4_row6_col2" class="data row6 col2" >4</td>
-      <td id="T_f30a4_row6_col3" class="data row6 col3" >1</td>
-      <td id="T_f30a4_row6_col4" class="data row6 col4" >20</td>
+      <td id="T_0c577_row6_col0" class="data row6 col0" ><a href="./projects/neurosynth_use.html">neurosynth_use</a></td>
+      <td id="T_0c577_row6_col1" class="data row6 col1" >8</td>
+      <td id="T_0c577_row6_col2" class="data row6 col2" >4</td>
+      <td id="T_0c577_row6_col3" class="data row6 col3" >1</td>
+      <td id="T_0c577_row6_col4" class="data row6 col4" >20</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row7_col0" class="data row7 col0" ><a href="./projects/autism_mri.html">autism_mri</a></td>
-      <td id="T_f30a4_row7_col1" class="data row7 col1" >5</td>
-      <td id="T_f30a4_row7_col2" class="data row7 col2" >21</td>
-      <td id="T_f30a4_row7_col3" class="data row7 col3" >1</td>
-      <td id="T_f30a4_row7_col4" class="data row7 col4" >69</td>
+      <td id="T_0c577_row7_col0" class="data row7 col0" ><a href="./projects/autism_mri.html">autism_mri</a></td>
+      <td id="T_0c577_row7_col1" class="data row7 col1" >5</td>
+      <td id="T_0c577_row7_col2" class="data row7 col2" >21</td>
+      <td id="T_0c577_row7_col3" class="data row7 col3" >1</td>
+      <td id="T_0c577_row7_col4" class="data row7 col4" >69</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row8_col0" class="data row8 col0" ><a href="./projects/cobidas.html">cobidas</a></td>
-      <td id="T_f30a4_row8_col1" class="data row8 col1" >0</td>
-      <td id="T_f30a4_row8_col2" class="data row8 col2" >0</td>
-      <td id="T_f30a4_row8_col3" class="data row8 col3" >0</td>
-      <td id="T_f30a4_row8_col4" class="data row8 col4" >0</td>
+      <td id="T_0c577_row8_col0" class="data row8 col0" ><a href="./projects/cobidas.html">cobidas</a></td>
+      <td id="T_0c577_row8_col1" class="data row8 col1" >0</td>
+      <td id="T_0c577_row8_col2" class="data row8 col2" >0</td>
+      <td id="T_0c577_row8_col3" class="data row8 col3" >0</td>
+      <td id="T_0c577_row8_col4" class="data row8 col4" >0</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row9_col0" class="data row9 col0" ><a href="./projects/neurobridge_fmri.html">neurobridge_fmri</a></td>
-      <td id="T_f30a4_row9_col1" class="data row9 col1" >0</td>
-      <td id="T_f30a4_row9_col2" class="data row9 col2" >0</td>
-      <td id="T_f30a4_row9_col3" class="data row9 col3" >0</td>
-      <td id="T_f30a4_row9_col4" class="data row9 col4" >0</td>
+      <td id="T_0c577_row9_col0" class="data row9 col0" ><a href="./projects/neurobridge_fmri.html">neurobridge_fmri</a></td>
+      <td id="T_0c577_row9_col1" class="data row9 col1" >0</td>
+      <td id="T_0c577_row9_col2" class="data row9 col2" >0</td>
+      <td id="T_0c577_row9_col3" class="data row9 col3" >0</td>
+      <td id="T_0c577_row9_col4" class="data row9 col4" >0</td>
     </tr>
     <tr>
-      <td id="T_f30a4_row10_col0" class="data row10 col0" >Total</td>
-      <td id="T_f30a4_row10_col1" class="data row10 col1" >1349</td>
-      <td id="T_f30a4_row10_col2" class="data row10 col2" >145</td>
-      <td id="T_f30a4_row10_col3" class="data row10 col3" >18</td>
-      <td id="T_f30a4_row10_col4" class="data row10 col4" >13466</td>
+      <td id="T_0c577_row10_col0" class="data row10 col0" >Total</td>
+      <td id="T_0c577_row10_col1" class="data row10 col1" >1349</td>
+      <td id="T_0c577_row10_col2" class="data row10 col2" >145</td>
+      <td id="T_0c577_row10_col3" class="data row10 col3" >18</td>
+      <td id="T_0c577_row10_col4" class="data row10 col4" >13466</td>
     </tr>
   </tbody>
 </table>
@@ -942,7 +953,7 @@ Below we review multiple cases to extract data from <span class="annotated-text"
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="right-next"
        href="how_to_use_the_data.html"
@@ -961,6 +972,7 @@ Below we review multiple cases to extract data from <span class="annotated-text"
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -994,6 +1006,7 @@ By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributor
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1020,8 +1033,8 @@ By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributor
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>
