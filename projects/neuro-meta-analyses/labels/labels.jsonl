@@ -1,0 +1,75 @@
+{"color":"#eeeeec","name":"DONE","shortcut_key":"d"}
+{"color":"#babdb6","name":"DONE (but did not look into full paper)","shortcut_key":"a"}
+{"color":"#eeeeec","name":"read later"}
+{"color":"#eeeeec","name":"stopped here"}
+{"color":"#eeeeec","name":"no-access"}
+{"color":"#eeeeec","name":"ask about this one"}
+{"color":"#eeeeec","name":"candidate for replication"}
+{"color":"#ffbb78","name":"NO N studies found"}
+{"color":"#ffbb78","name":"NO N studies included"}
+{"color":"#ffbb78","name":"NO N contrasts included"}
+{"color":"#ffbb78","name":"N group-level stat maps included"}
+{"color":"#ffbb78","name":"N studies found","shortcut_key":"f"}
+{"color":"#ffbb78","name":"N studies included","shortcut_key":"i"}
+{"color":"#ffbb78","name":"N contrasts included","shortcut_key":"c"}
+{"color":"#c49c94","name":"N MAs","shortcut_key":"n"}
+{"color":"#c49c94","name":"MA1"}
+{"color":"#c49c94","name":"MA2"}
+{"color":"#c49c94","name":"MA3"}
+{"color":"#c49c94","name":"MA4"}
+{"color":"#c49c94","name":"MA5"}
+{"color":"#c49c94","name":"MA6"}
+{"color":"#c49c94","name":"MA7"}
+{"color":"#c49c94","name":"MA8"}
+{"color":"#c49c94","name":"MA9"}
+{"color":"#c49c94","name":"MA10"}
+{"color":"#c49c94","name":"MA11"}
+{"color":"#c49c94","name":"MA12"}
+{"color":"#c49c94","name":"MA13"}
+{"color":"#c49c94","name":"MA14"}
+{"color":"#ff9896","name":"algorithm-ALE","shortcut_key":"l"}
+{"color":"#ff9896","name":"algorithm-ABC"}
+{"color":"#ff9896","name":"algorithm-MKDA"}
+{"color":"#ff9896","name":"IMBA"}
+{"color":"#ff9896","name":"algorithm-ES-SDM"}
+{"color":"#ff9896","name":"algorithm-AES-SDM"}
+{"color":"#ff9896","name":"algorithm-SDM-PSI"}
+{"color":"#ff9896","name":"algorithm-SDM"}
+{"color":"#ff9896","name":"algorithm-KDA"}
+{"color":"#ff9896","name":"algorithm-GPR"}
+{"color":"#ff9896","name":"label-based review/MA"}
+{"color":"#ff9896","name":"algorithm-other ma method"}
+{"color":"#c5b0d5","name":"software-CluB"}
+{"color":"#c5b0d5","name":"software-neuroelf"}
+{"color":"#c5b0d5","name":"software-MKDA toolbox"}
+{"color":"#c5b0d5","name":"software-gingerale","shortcut_key":"g"}
+{"color":"#c5b0d5","name":"software-abc"}
+{"color":"#c5b0d5","name":"software-brainmap"}
+{"color":"#c5b0d5","name":"software-canlab mkda"}
+{"color":"#c5b0d5","name":"software-spm"}
+{"color":"#c5b0d5","name":"software-nimare"}
+{"color":"#c5b0d5","name":"software-other"}
+{"color":"#c5b0d5","name":"software-none-or-unclear"}
+{"color":"#98df8a","name":"largescale-MACM"}
+{"color":"#98df8a","name":"largescale-neurosynth MACM"}
+{"color":"#98df8a","name":"largescale-neurosynth encoding"}
+{"color":"#98df8a","name":"largescale-neurosynth decoding"}
+{"color":"#98df8a","name":"largescale-brainmap decoding"}
+{"color":"#98df8a","name":"largescale-neuroquery encoding"}
+{"color":"#98df8a","name":"largescale-other-or-undefined"}
+{"color":"#888a85","name":"exclude","shortcut_key":"x"}
+{"color":"#888a85","name":"EXCLUDE - review"}
+{"color":"#888a85","name":"EXCLUDE - traditional ma"}
+{"color":"#888a85","name":"EXCLUDE - not a full report"}
+{"color":"#888a85","name":"EXCLUDE - previous ma for seed / roi"}
+{"color":"#888a85","name":"EXCLUDE - cites ma as justification"}
+{"color":"#888a85","name":"EXCLUDE - not about the brain"}
+{"color":"#888a85","name":"EXCLUDE - cites ma as consistent with findings"}
+{"color":"#888a85","name":"EXCLUDE - non-human focus"}
+{"color":"#888a85","name":"EXCLUDE - protocol"}
+{"color":"#888a85","name":"EXCLUDE - preprint"}
+{"color":"#888a85","name":"EXCLUDE - not a ma, doesn't fit other exclusion"}
+{"color":"#888a85","name":"EXCLUDE - about ma's"}
+{"color":"#888a85","name":"EXCLUDE - ma not in title"}
+{"color":"#4e9a06","name":"has prisma chart"}
+{"color":"#aec7e8","name":"thresholding","shortcut_key":"t"}
