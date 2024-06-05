@@ -16,7 +16,7 @@
 
 # We started annotating information about each study's participants: their number, sex, age, and possible diagnosis.
 # More annotations are needed, but these annotations can already give an approximation of the number of participants in typical fMRI studies, and be used to validate systems that aim to extract that information automatically.
-# You can read more about the participant annotations in the corresponding [project page](../projects/participant_demographics.md).
+# You can read more about the participant annotations in the corresponding [project page](./projects/participant_demographics.md).
 
 #
 # The `labelrepo` package provides helpers to work with these annotations.
@@ -34,7 +34,7 @@ subgroups.iloc[0]
 # -
 
 # In this dataframe, each row contains the information collected by one annotator about a subgroup of participants in a study.
-# You can read more about the nature of the annotations in the [project page](../projects/participant_demographics.md).
+# You can read more about the nature of the annotations in the [project page](./projects/participant_demographics.md).
 # The participants are divided into groups ("patients" or "healthy"), then each group is divided into an arbitrary number of *subgroups* (usually there is only one, but there can be several, eg "adolescents" and "adults" within the "healthy" group), and finally each subgroup is divided into "females" and "males".
 # The summary dataframe provides information at the level of the subgroup: its name, the group it belongs to, the number of males and females in the subgroup.
 
