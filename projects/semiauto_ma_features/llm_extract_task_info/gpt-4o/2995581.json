@@ -1,0 +1,26 @@
+{
+    "tasks": [
+        {
+            "name": "Localizer Task",
+            "definition": "Participants viewed blocks of images from different categories (faces, flowers, bodies, scenes) interleaved with fixation blocks. They were required to either watch the stimuli or make specific judgments (e.g., male/female, indoor/outdoor) depending on the dataset.",
+            "conditions": [
+                "faces",
+                "flowers",
+                "bodies",
+                "scenes"
+            ],
+            "contrasts": [
+                "face > flower",
+                "flower > face",
+                "face > scene",
+                "scene > face"
+            ]
+        },
+        {
+            "name": "Resting State",
+            "definition": "Participants were instructed to fixate on a central point while resting scans were collected. The goal was to examine intrinsic functional connectivity without external stimulation.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

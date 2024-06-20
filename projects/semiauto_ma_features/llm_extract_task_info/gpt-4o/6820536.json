@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Music Listening Task",
+            "definition": "Participants listened to five-minute long auditory tracks, either music or pink noise (control), presented while no imaging was acquired, with participants inside the MRI scanner. The music tracks were self-chosen, familiar, highly pleasant, and slow-paced (<120 bpm). Pink noise was used as a control condition.",
+            "conditions": [
+                "Music",
+                "Pink Noise"
+            ],
+            "contrasts": [
+                "Music > Pink Noise"
+            ]
+        }
+    ]
+}

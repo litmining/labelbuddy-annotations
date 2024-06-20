@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Resting State Functional Connectivity (rsFC)",
+            "definition": "Participants underwent resting state fMRI scans to measure functional connectivity. These scans were collected before the first, third, and sixth acupuncture treatments.",
+            "conditions": [
+                "Pre-treatment 1",
+                "Pre-treatment 3",
+                "Pre-treatment 6"
+            ],
+            "contrasts": [
+                "Pre-treatment 6 > Pre-treatment 1"
+            ]
+        }
+    ]
+}

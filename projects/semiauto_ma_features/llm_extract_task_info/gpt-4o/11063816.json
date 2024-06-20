@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "name": "Episodic Memory Retrieval Task",
+            "definition": "Participants learned events comprising multiple overlapping pairs of event elements (e.g., person\u2013location, object\u2013location, location\u2013person). Encoding occurred either immediately before or 24 hours before retrieval. During retrieval, participants performed a six-alternative forced-choice cued-recognition task where they were presented with a cue and six potential targets and had to identify the correct target.",
+            "conditions": [
+                "open-loop, delay",
+                "closed-loop, delay",
+                "open-loop, no-delay",
+                "closed-loop, no-delay"
+            ],
+            "contrasts": [
+                "closed-loops > open-loops",
+                "delay > no-delay",
+                "closed-loops, delay > open-loops, delay",
+                "closed-loops, no-delay > open-loops, no-delay"
+            ]
+        }
+    ]
+}

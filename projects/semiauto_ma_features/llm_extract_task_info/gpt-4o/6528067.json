@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "aversive conditioning",
+            "definition": "Participants viewed periodically (10Hz) and rapidly phase-reversing Gabor patches (sine-wave gratings), evoking steady-state visual potentials (ssVEPs). The study included three phases: habituation, acquisition, and extinction. During the habituation phase, participants were instructed that they would not feel any shock but to fixate on the patterns. During the acquisition phase, participants were informed that they would intermittently feel a cutaneous electric shock during the experiment but were not instructed as to the contingencies of the shock administration. The extinction phase was also uninstructed, such that participants were not told that no more shocks were to be given.",
+            "conditions": [
+                "habituation",
+                "acquisition",
+                "extinction"
+            ],
+            "contrasts": [
+                "acquisition > habituation",
+                "acquisition > extinction"
+            ]
+        }
+    ]
+}

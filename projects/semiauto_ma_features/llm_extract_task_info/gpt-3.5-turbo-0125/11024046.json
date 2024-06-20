@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-state functional MRI",
+            "definition": "Investigating the effects of donepezil on local brain activity in AD patients using regional homogeneity (ReHo) during resting-state fMRI scans.",
+            "conditions": [
+                "Healthy controls",
+                "Pre-intervention AD patients",
+                "Post-intervention AD patients"
+            ],
+            "contrasts": [
+                "Post-intervention AD patients had reduced ReHo in the orbital part of the inferior frontal gyrus",
+                "Pre-intervention AD patients had reduced ReHo in the orbital part of the right inferior frontal gyrus"
+            ]
+        },
+        {
+            "name": "Pattern recognition models",
+            "definition": "Developing models to predict the efficacy of donepezil intervention in AD patients based on ReHo values in abnormal brain regions.",
+            "conditions": [
+                "Cognitive function efficacy prediction",
+                "Depressive symptom efficacy prediction"
+            ],
+            "contrasts": [
+                "Pre-intervention ReHo values in abnormal brain regions were 76% accurate for predicting the efficacy of donepezil on cognitive function",
+                "Pre-intervention ReHo values in abnormal brain regions were 65% accurate for predicting the efficacy of donepezil on depressive symptoms"
+            ]
+        }
+    ]
+}

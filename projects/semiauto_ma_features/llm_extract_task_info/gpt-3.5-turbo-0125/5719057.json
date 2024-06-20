@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "name": "Musical Imagery Task",
+            "definition": "Participants continuously imagine an 8-minute symphony as a silent movie cue during fMRI sessions. The visualization of the music serves as a real-time cue to inform subjects of the content of musical imagery and control the timing of the imagery process.",
+            "conditions": [
+                "Musical Perception",
+                "Musical Imagery"
+            ],
+            "contrasts": [
+                "Shared cortical activations between Musical Perception and Musical Imagery",
+                "Cortical activations with Musical Perception",
+                "Cortical activations with Musical Imagery",
+                "Responses at Wernicke\u2019s areas coded music-timbre features during Musical Imagery",
+                "Distinct and common cortical activations with Musical Perception and Musical Imagery",
+                "Musical Imagery and Perception evoked highly distinctive cortical networks"
+            ]
+        }
+    ]
+}

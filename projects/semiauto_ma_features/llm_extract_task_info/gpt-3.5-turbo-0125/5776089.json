@@ -1,0 +1,13 @@
+{
+    "tasks": [
+        {
+            "name": "Motor Task",
+            "description": "Repetitive alternating dorsiflexion and relaxation of the right foot paced by audio cues every 1.5 seconds. Participants were trained to perform the task gently to avoid large head motions.",
+            "conditions": [
+                "Task",
+                "Task+AgonistStim",
+                "Task+ControlStim"
+            ]
+        }
+    ]
+}

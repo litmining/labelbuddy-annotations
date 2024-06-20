@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "name": "Monetary Incentive Delay Task (MIDT)",
+            "definition": "Participants pressed a button to collect reward ($1, 1\u00a2, or nil) with a reaction time window titrated to achieve a success rate of approximately 67%.",
+            "conditions": [
+                "Dollar reward",
+                "Cent reward",
+                "No reward"
+            ],
+            "contrasts": [
+                "Dollar reward > No reward",
+                "Cent reward > No reward",
+                "Dollar reward > Cent reward",
+                "Dollar loss > No reward",
+                "Cent loss > No reward",
+                "Dollar loss > Cent loss"
+            ]
+        }
+    ]
+}

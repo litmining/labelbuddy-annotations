@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State Functional MRI (rsfMRI)",
+            "definition": "Resting-state functional MRI (rsfMRI) is a method used to evaluate regional interactions that occur when a subject is not performing an explicit task. It measures spontaneous brain activity by detecting changes associated with blood flow.",
+            "conditions": [
+                "Pre-intervention AD patients",
+                "Post-intervention AD patients",
+                "Healthy controls"
+            ],
+            "contrasts": [
+                "Pre-intervention AD patients > Healthy controls",
+                "Post-intervention AD patients > Healthy controls",
+                "Pre-intervention AD patients > Post-intervention AD patients"
+            ]
+        }
+    ]
+}

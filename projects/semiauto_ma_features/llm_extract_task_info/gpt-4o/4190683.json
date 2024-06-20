@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Stop Task",
+            "definition": "The Stop Task is a mixed-trial, event-related tracking fMRI task that measures the ability to suppress an already triggered motor response. Participants respond to go arrows pointing either right or left with a corresponding button press. In 20% of trials, a stop signal follows the go signal, and participants must inhibit their motor response. A tracking algorithm adjusts the time interval between go and stop signals to achieve 50% successful and 50% unsuccessful inhibition trials.",
+            "conditions": [
+                "Go trials",
+                "Stop trials"
+            ],
+            "contrasts": [
+                "Successful stop trials > Go trials"
+            ]
+        }
+    ]
+}

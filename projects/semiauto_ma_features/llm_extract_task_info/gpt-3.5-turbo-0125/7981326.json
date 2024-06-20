@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Sternberg verbal working memory task",
+            "definition": "A variant of the Sternberg task where participants encode a set of consonants, maintain them in memory, and then indicate if a probe letter matches one of the initial set by button press.",
+            "conditions": [
+                "High vs low cognitive load",
+                "Degraded vs non-degraded stimulus quality"
+            ],
+            "contrasts": [
+                "High load > Low load",
+                "Degraded stimulus > Non-degraded stimulus"
+            ]
+        }
+    ]
+}

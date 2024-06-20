@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "name": "FMICA",
+            "definition": "A feature-map based ICA framework for exploring brain functional networks at different scales: individual subject level, intragroup level, and intergroup level based on feature maps extracted from fMRI datasets.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

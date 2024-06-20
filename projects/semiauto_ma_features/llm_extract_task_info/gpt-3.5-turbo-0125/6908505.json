@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Picture Encoding Task",
+            "definition": "Participants viewed complex scene pictures and made indoor-outdoor judgments during fMRI. Memory for the pictures was tested with a subsequent free recall memory task.",
+            "conditions": [
+                "Viewing complex scene pictures",
+                "Making indoor-outdoor judgments"
+            ],
+            "contrasts": [
+                "Met carriers > ValVal homozygotes in lateral occipital cortex activity",
+                "Met carriers showed better free recall of encoded pictures"
+            ]
+        }
+    ]
+}

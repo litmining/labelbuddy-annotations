@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Motor Learning Task",
+            "description": "Participants completed fine motor and gross motor tasks with both hands using an MRI compatible computer mouse. The tasks were designed to be selectively difficult for the left hand, leading to a training effect only in that condition. Fine motor task involved accurate, rapid tracing of randomize trail mazes, with performance scores based on distance and error-rate. Gross motor task involved moving the mouse randomly with no accuracy metrics.",
+            "conditions": [
+                "Fine motor task with left hand",
+                "Fine motor task with right hand",
+                "Gross motor task with left hand",
+                "Gross motor task with right hand"
+            ],
+            "contrasts": [
+                "Left hand fine motor task > Right hand fine motor task",
+                "Left hand fine motor task at endpoint > Baseline",
+                "Reduction in dispersion of hemodynamic response in the right corticospinal tract after training period"
+            ]
+        }
+    ]
+}

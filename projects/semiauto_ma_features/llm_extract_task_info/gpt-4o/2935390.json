@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "name": "Laser Acupuncture Task",
+            "definition": "Participants were randomly stimulated with a fibreoptic infrared laser on 4 acupoints (LR14, CV14, LR8, and HT7) used for depression following the principles of Traditional Chinese Medicine (TCM), and 1 control non-acupoint (sham point) in a blocked design (alternating verum laser and placebo laser/rest blocks), while the blood oxygenation level-dependent (BOLD) fMRI response was recorded from the whole brain on a 3T scanner.",
+            "conditions": [
+                "LR14",
+                "CV14",
+                "LR8",
+                "HT7",
+                "Control non-acupoint (sham point)",
+                "Placebo (laser off)"
+            ],
+            "contrasts": [
+                "verum laser per point > all others",
+                "all others > verum laser per point"
+            ]
+        }
+    ]
+}

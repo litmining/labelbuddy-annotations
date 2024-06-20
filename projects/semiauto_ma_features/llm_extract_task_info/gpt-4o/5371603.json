@@ -1,0 +1,38 @@
+{
+    "tasks": [
+        {
+            "name": "Cued Speech (CS) Perception Task",
+            "definition": "Participants watched videos of a hearing female French speaker saying a randomized list of 45 bisyllabic frequent words under three conditions: (1) Cued Speech labial + manual (CSLM), (2) Cued Speech manual only (CSM), and (3) Cued Speech oral only (lipreading) (CSL). The task was to press a button when they detected the target word 'papa'.",
+            "conditions": [
+                "Cued Speech labial + manual (CSLM)",
+                "Cued Speech manual only (CSM)",
+                "Cued Speech oral only (lipreading) (CSL)"
+            ],
+            "contrasts": [
+                "CSLM > still",
+                "CSM > still",
+                "CSL > still",
+                "CSLM > CSM + CSL",
+                "CSLM > CSM",
+                "CSLM > CSL"
+            ]
+        },
+        {
+            "name": "Audiovisual (AV) Speech Perception Task",
+            "definition": "Participants watched videos of a hearing female French speaker saying a randomized list of 45 bisyllabic frequent words under three conditions: (1) Speech audiovisual (speech AV), (2) Speech auditory (speech A), and (3) Speech visual (lipreading) (speech V). The task was to press a button when they detected the target word 'papa'.",
+            "conditions": [
+                "Speech audiovisual (speech AV)",
+                "Speech auditory (speech A)",
+                "Speech visual (lipreading) (speech V)"
+            ],
+            "contrasts": [
+                "speech AV > still",
+                "speech A > still",
+                "speech V > still",
+                "speech AV > speech A + speech V",
+                "speech AV > speech A",
+                "speech AV > speech V"
+            ]
+        }
+    ]
+}

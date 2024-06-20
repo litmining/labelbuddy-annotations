@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Scene Recognition Task",
+            "definition": "Participants were asked to view 90 or 150 color pictures during the encoding session and told to remember them for later recognition testing. Each day participants learned a different set of picture stimuli consisting of scenes, landscapes, objects, and non-famous people. A few minutes after the encoding task, participants performed the recognition tests, in which they viewed 30 pictures from the encoding session mixed with 60 new pictures as foils. Participants were required to make a forced-choice response as to whether they remembered the picture from the encoding session (\u2018old\u2019) or believed they had not viewed the picture before (\u2018new\u2019).",
+            "conditions": [
+                "Old pictures (hits)",
+                "New pictures (correct rejections)",
+                "Old pictures incorrectly judged as new (misses)",
+                "New pictures incorrectly judged as old (false alarms)"
+            ],
+            "contrasts": [
+                "Hits > Misses",
+                "Correct rejections > False alarms"
+            ]
+        }
+    ]
+}

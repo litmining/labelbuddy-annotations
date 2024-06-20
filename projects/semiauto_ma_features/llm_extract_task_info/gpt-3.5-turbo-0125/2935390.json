@@ -1,0 +1,27 @@
+{
+    "tasks": [
+        {
+            "name": "laser acupuncture",
+            "definition": "Investigating the cerebral activation patterns from laser stimulation of relevant acupoints using fMRI. Laser acupuncture was performed on 4 acupoints used for depression and 1 control non-acupoint in a blocked design, while recording the BOLD fMRI response from the whole brain.",
+            "conditions": [
+                "LR14",
+                "CV14",
+                "LR8",
+                "HT7",
+                "Control Point"
+            ],
+            "contrasts": [
+                "LR14 > CV14",
+                "LR14 > LR8",
+                "LR14 > HT7",
+                "LR14 > Control Point",
+                "CV14 > LR8",
+                "CV14 > HT7",
+                "CV14 > Control Point",
+                "LR8 > HT7",
+                "LR8 > Control Point",
+                "HT7 > Control Point"
+            ]
+        }
+    ]
+}

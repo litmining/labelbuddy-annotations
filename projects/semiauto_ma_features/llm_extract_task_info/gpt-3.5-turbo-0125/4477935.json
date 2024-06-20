@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Rule-switching task",
+            "description": "Participants perform a rule-switching task where they respond to symbols that could be either univalent or bivalent by pressing buttons. The task includes two levels of conflict: bivalent rules and univalent rules.",
+            "conditions": [
+                "Univalent trials",
+                "Bivalent trials"
+            ],
+            "contrasts": [
+                "Trait feedback > Task feedback",
+                "Main effect of bivalent trials",
+                "Main effect of condition (task/trait)",
+                "Interaction between rule (bivalent/univalent) and condition (task/trait)"
+            ]
+        }
+    ]
+}

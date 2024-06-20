@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Script-driven imagery",
+            "definition": "Participants listened to disorder-related and neutral narrative scripts and were instructed to imagine the scenarios as vividly as possible. The disorder-related scripts depicted panic-related situations and involved suggestive descriptions of autonomic reactions, while neutral scripts described everyday life situations and sensory information.",
+            "conditions": [
+                "Disorder-related scripts",
+                "Neutral scripts"
+            ],
+            "contrasts": [
+                "Disorder-related scripts > Neutral scripts"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "name": "Cortical thickness analysis",
+            "description": "Investigating changes in cortical thickness across longitudinal acupuncture treatments in knee osteoarthritis patients.",
+            "conditions": [
+                "Verum acupuncture group",
+                "Sham acupuncture group"
+            ],
+            "contrasts": [
+                "Cortical thickness at left posterior medial prefrontal cortex (pMPFC) between verum and sham groups",
+                "Interaction between acupuncture mode (verum vs. sham) and time for cortical thickness of left pMPFC"
+            ]
+        },
+        {
+            "name": "Seed based functional connectivity analysis",
+            "description": "Analyzing functional connectivity using the left pMPFC as a seed region after longitudinal acupuncture treatments.",
+            "conditions": [
+                "Verum acupuncture group",
+                "Sham acupuncture group"
+            ],
+            "contrasts": [
+                "Functional connectivity changes between verum and sham groups",
+                "Interaction between acupuncture mode (verum vs. sham) and time for functional connectivity with regions like PAG, rACC, ventral striatum, and anterior MPFC"
+            ]
+        }
+    ]
+}

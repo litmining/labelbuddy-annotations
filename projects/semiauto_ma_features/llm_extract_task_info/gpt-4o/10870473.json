@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "faces task",
+            "definition": "Participants viewed pictures of faces with emotional expressions of disgust, sadness, and fear (negative condition) and the same pictures in a scrambled version (neutral condition). The task was designed to assess emotional face perception.",
+            "conditions": [
+                "negative condition (NgC) - emotional faces of disgust, sadness, and fear",
+                "neutral condition (NC) - scrambled faces"
+            ],
+            "contrasts": [
+                "NgC > NC"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Voice Localizer",
+            "definition": "Subjects were instructed to close their eyes and passively listen to a large variety of sounds. Stimuli were presented in a simple block design and divided into vocal (20 blocks) and non-vocal (20 blocks) conditions. Vocal blocks contained only sounds of human vocal origin (excluding sounds without vocal fold vibration such as whistling or whispering) and consisted of speech (e.g., words, syllables, connected speech in different languages) or non-speech (e.g., coughs, laughs, sighs and cries). The vocal stimuli consisted of recordings from 7 babies, 12 adults, 23 children, and 5 elderly people. Half of the vocal sounds (speech and non-speech) consisted of vocalizations from adults and elderly people (women and men) with comparable proportions for both genders (~24% female, ~22% male). The other half of the vocal sounds consisted of infant vocalizations (speech and non-speech) which also included baby crying/laughing. Recorded non-vocal sounds included various environmental sounds (e.g., animal vocalizations, musical instruments, nature and industrial sounds). A total number of 40 blocks were presented. Each block lasted for 8 s with an inter-block interval of 2 s. Stimuli (16bit, mono, 22050 Hz sampling rate) were normalized for RMS.",
+            "conditions": [
+                "Vocal",
+                "Non-vocal"
+            ],
+            "contrasts": [
+                "Vocal > Non-vocal"
+            ]
+        }
+    ]
+}

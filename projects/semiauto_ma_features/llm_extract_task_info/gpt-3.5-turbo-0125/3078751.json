@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Movement Observation Paradigm",
+            "definition": "Participants watched movies of a dancer performing sequences of movements according to auditory cues and had to judge if the movements violated the cues.",
+            "conditions": [
+                "Correct movements",
+                "Incorrect movements",
+                "Switch cues",
+                "Repetition cues"
+            ],
+            "contrasts": [
+                "Invalidly cued switches vs. validly cued switches",
+                "Invalidly cued repetitions vs. validly cued repetitions"
+            ]
+        }
+    ]
+}

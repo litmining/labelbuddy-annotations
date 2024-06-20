@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Sentence-in-Noise (SiN) Task",
+            "definition": "Participants listened to sentences presented in noise and were required to identify the target picture that correctly depicted the sentence meaning from a pair of pictures (one correct, one incorrect). The task was adapted for fMRI measurements to explore brain activation during speech comprehension.",
+            "conditions": [
+                "SiN with low linguistic complexity",
+                "SiN with high linguistic complexity",
+                "Noise-only"
+            ],
+            "contrasts": [
+                "SiN > noise",
+                "SiNhigh > SiNlow"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Probabilistic Reversal Learning Task (PRLT)",
+            "definition": "A reward-guided decision-making task with dynamically changing action-outcome contingencies. On each trial, subjects choose one of two abstract visual stimuli presented on a screen. The selected stimulus and its outcome (reward or punishment) are then displayed. The task includes multiple runs with different reward contingencies that shift unpredictably.",
+            "conditions": [
+                "20% left- and 80% right-hand choices leading to a reward, otherwise to a punishment",
+                "80% left- and 20% right-hand choices leading to a reward, otherwise to a punishment",
+                "50% left- and 50% right-hand choices leading to a reward, otherwise to a punishment"
+            ],
+            "contrasts": [
+                "reward > punishment",
+                "punishment > reward",
+                "positive prediction error (PE) > negative prediction error (PE)",
+                "negative prediction error (PE) > positive prediction error (PE)"
+            ]
+        }
+    ]
+}

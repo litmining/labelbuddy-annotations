@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "fMRI task",
+            "definition": "Participants performed a time perception task while undergoing fMRI scanning. The task involved judging the relative duration of successively presented standard interval\u2013comparison interval (CI) pairs, which were unimodal (A\u2013A, V\u2013V) or crossmodal (V\u2013A, A\u2013V).",
+            "conditions": [
+                "unimodal (A\u2013A, V\u2013V)",
+                "crossmodal (V\u2013A, A\u2013V)"
+            ],
+            "contrasts": [
+                "V\u2013A > A\u2013V",
+                "A\u2013A < V\u2013A",
+                "V\u2013V < V\u2013A",
+                "A\u2013A > A\u2013V"
+            ]
+        }
+    ]
+}

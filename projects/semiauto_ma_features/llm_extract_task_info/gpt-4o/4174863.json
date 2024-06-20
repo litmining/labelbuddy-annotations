@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Picture Rating Task",
+            "definition": "Participants viewed unpleasant pictures, half of which depicted moral transgressions, and neutral pictures. They rated each picture on moral transgression severity.",
+            "conditions": [
+                "Moral pictures",
+                "Non-moral pictures",
+                "Neutral pictures"
+            ],
+            "contrasts": [
+                "Moral + Non-moral > Neutral",
+                "Moral > Non-moral"
+            ]
+        }
+    ]
+}

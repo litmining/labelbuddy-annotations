@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Westphal-Paradigm",
+            "definition": "An fMRI task involving the anticipation and perception of agoraphobia-specific and neutral pictures. Participants differentiate between these stimuli during the task.",
+            "conditions": [
+                "Anticipation phase",
+                "Perception phase"
+            ],
+            "contrasts": [
+                "Main effect diagnosis: PD/AG > HC",
+                "Main effect NPSR1: T > AA",
+                "Linear Interaction: PD/AG > HC, T > AA"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "name": "Picture Encoding Task",
+            "definition": "Participants viewed six 24-s picture blocks, each block consisting of six pictures. Each picture was presented on the screen for 3 s followed by an inter-stimulus interval (ISI) of 1 s in a pseudo-randomized order. Each picture block was followed by a short rest in which participants saw a fixation cross presented in the middle of the screen for 24 s. Participants were instructed to pay careful attention to the presented pictures, as they would be required to complete a subsequent memory task. Participants were also instructed to make indoor-outdoor judgments for each picture, ensuring that participants paid attention to the task. Each picture block contained an equal number of indoor and outdoor scenes.",
+            "conditions": [
+                "Picture encoding",
+                "Rest"
+            ],
+            "contrasts": [
+                "Picture encoding > Rest"
+            ]
+        },
+        {
+            "name": "Free Recall Memory Task",
+            "definition": "Immediately following the scanning session, participants completed a free recall test of the pictures, in which participants were instructed to tell the experimenter about as many pictures they could remember and describe each picture in detail. One point was awarded for each remembered picture, yielding a total free recall score.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

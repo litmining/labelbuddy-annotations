@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Emotional Face Gender-Labelling Task",
+            "conditions": [
+                "Fearful faces",
+                "Angry faces",
+                "Happy faces",
+                "Neutral faces"
+            ],
+            "contrasts": [
+                "F\u2212N",
+                "A\u2212N",
+                "H\u2212N"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "name": "Implicit Emotion Recognition Task",
+            "definition": "Participants had to identify the sex of individuals displayed in facial stimuli to avoid conscious identification of face emotions during MRI scanning.",
+            "conditions": [
+                "Angry faces",
+                "Fear faces",
+                "Happy faces",
+                "Neutral faces",
+                "Sad faces"
+            ],
+            "contrasts": [
+                "Angry > Neutral",
+                "Fear > Neutral",
+                "Happy > Neutral",
+                "Sad > Neutral"
+            ]
+        }
+    ]
+}

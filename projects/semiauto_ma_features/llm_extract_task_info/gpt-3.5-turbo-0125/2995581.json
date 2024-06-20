@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Resting Functional Connectivity",
+            "definition": "Examining the correlations of the BOLD timeseries between the fusiform gyrus (FG) and the posterior superior temporal sulcus (pSTS) during periods of rest when no faces are present.",
+            "conditions": [
+                "Resting state with no external face stimuli",
+                "Partial functional connectivity approach removing variance from the FG shared with other category-selective and control regions"
+            ],
+            "contrasts": [
+                "FG-pSTS resting correlations",
+                "Overlap of FG-pSTS resting correlations with face-selective pSTS region from independent localizer runs"
+            ]
+        }
+    ]
+}

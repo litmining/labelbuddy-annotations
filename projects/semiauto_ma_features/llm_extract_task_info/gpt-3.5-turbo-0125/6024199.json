@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "name": "Memory Model",
+            "conditions": "Paired sounds vs. Unpaired sounds",
+            "contrasts": "Control early \u2265 late, PTSD late \u2265 early"
+        },
+        {
+            "name": "Emotion Model",
+            "conditions": "High emotion vs. Low emotion",
+            "contrasts": "PTSD \u2265 Control, Control \u2265 PTSD"
+        }
+    ]
+}

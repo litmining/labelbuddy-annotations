@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "name": "Speech task",
+            "definition": "Participants were required to define nouns presented in the form of colored picture stimuli. They were instructed to generate as much verbal information pertaining to the given object as possible.",
+            "conditions": [
+                "Speech trials"
+            ],
+            "contrasts": [
+                "Speech task > Rest"
+            ]
+        },
+        {
+            "name": "Count task",
+            "definition": "Participants counted up from 1 at a rate of 1 per second upon seeing the prompt '1...'.",
+            "conditions": [
+                "Count trials"
+            ],
+            "contrasts": [
+                "Count task > Rest"
+            ]
+        },
+        {
+            "name": "Decision task",
+            "definition": "Participants were required to press a button on seeing a target (a blue square) and make no response for a distractor (an orange circle), both of which were presented in equal frequencies in a random order.",
+            "conditions": [
+                "Decision trials"
+            ],
+            "contrasts": [
+                "Decision task > Rest",
+                "Decision task > Speech task",
+                "Decision task > Count task"
+            ]
+        }
+    ]
+}

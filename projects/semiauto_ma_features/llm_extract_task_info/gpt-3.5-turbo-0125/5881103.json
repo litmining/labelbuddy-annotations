@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "name": "Picture-naming task",
+            "conditions": "Participants named pictures in two languages alternatingly, with 24 pictures per language. The stimuli were high-frequency words in both Chinese and English, matched for word frequency between the two languages.",
+            "contrasts": "In the L1-L2 context, no significant differences in neural activations between congruent and incongruent conditions. In the L2-L3 context, incongruent conditions involved extra neural responses in the right inferior frontal gyrus and left supramarginal gyrus. In the L1-L3 context, both congruent and incongruent trials evoked neural activities in the right prefrontal cortex, right insula, and subcortical areas."
+        },
+        {
+            "name": "Flanker task",
+            "conditions": "Participants responded to the direction of a red chevron surrounded by other black chevrons. Incongruent trials showed additional brain activations in the left inferior parietal lobe in the L1-L2 context, right inferior frontal gyrus, bilateral insula, left rolandic operculum, bilateral supramarginal gyrus, and right thalamus in the L2-L3 context, and right prefrontal cortex, right insula, and subcortical areas in the L1-L3 context.",
+            "contrasts": "In the L1-L2 context, no significant differences in neural activations between congruent and incongruent conditions. In the L2-L3 context, the flanker effect was associated with activations in the right inferior frontal gyrus and left cerebellum. In the L1-L3 context, activations in the right middle frontal gyrus, right inferior frontal gyrus, and left insula were associated with the flanker effect."
+        }
+    ]
+}

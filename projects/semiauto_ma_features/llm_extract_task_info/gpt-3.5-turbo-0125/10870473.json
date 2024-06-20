@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Faces Task",
+            "definition": "An emotional face perception task where participants are presented with emotional expressions of disgust, sadness, and fear (negative condition) and with the same pictures in a scrambled version (neutral condition).",
+            "conditions": [
+                "Disgust",
+                "Sadness",
+                "Fear",
+                "Neutral"
+            ],
+            "contrasts": [
+                "Negative (Disgust, Sadness, Fear) > Neutral"
+            ]
+        }
+    ]
+}

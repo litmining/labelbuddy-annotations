@@ -1,0 +1,12 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State fMRI",
+            "definition": "Participants were scanned in a resting state, meaning they were not engaged in any specific cognitive task during the MRI. This method measures spontaneous brain activity by analyzing low-frequency fluctuations in the blood oxygenation level-dependent (BOLD) signal.",
+            "conditions": [
+                "Resting state"
+            ],
+            "contrasts": null
+        }
+    ]
+}

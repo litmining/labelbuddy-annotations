@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "name": "Multivariate Pattern Analysis with fMRI Data",
+            "definition": "Investigating specific neurological markers to diagnose individuals with chronic pain using fMRI data. Analyzing contrast fMRI images in stimulation versus rest to distinguish between chronic pain and normal controls.",
+            "conditions": [
+                "Painful electric stimulation applied to the lower back alternating with rest periods"
+            ],
+            "contrasts": [
+                "Chronic pain group vs. Normal control group based on multivariate patterns of activity in somatosensory and inferior parietal cortex"
+            ]
+        }
+    ]
+}

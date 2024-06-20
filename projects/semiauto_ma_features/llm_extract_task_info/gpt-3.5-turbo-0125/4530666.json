@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "name": "Implicit Emotion Processing Task",
+            "definition": "Participants were presented with face stimuli from a standard set of black-and-white images displaying seven basic emotions. They performed a gender identification task while undergoing fMRI and eyetracking.",
+            "conditions": [
+                "Anger",
+                "Disgust",
+                "Fear",
+                "Happiness",
+                "Sadness",
+                "Surprise",
+                "Neutral"
+            ],
+            "contrasts": [
+                "Own face > Neutral face"
+            ]
+        },
+        {
+            "name": "Explicit Emotion Identification Task",
+            "definition": "Participants were shown face stimuli from the same set as in the implicit task. They were asked to identify the emotion displayed in each face from a list of all emotions.",
+            "conditions": [
+                "Anger",
+                "Disgust",
+                "Fear",
+                "Happiness",
+                "Sadness",
+                "Surprise",
+                "Neutral"
+            ],
+            "contrasts": null
+        }
+    ]
+}

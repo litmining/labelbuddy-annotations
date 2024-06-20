@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Westphal-Paradigm",
+            "definition": "A disorder-specific fMRI task composed of 48 agoraphobia-related (e.g., scenes of subways, crowds) and 48 neutral pictures from the International Affective Picture System. The pictures were presented randomly to produce reciprocal emotions and anxiety-specific brain activation. Half of the pictures were cued by the words 'panic' or 'neutral' and the other half with a non-specific letter combination 'DGHNTFJ'. Each picture was presented for 2000 ms and each cue for 250 ms. The stimuli were separated by the presentation of a fixation cross (variable period of 2\u20134 s) with the objective of minimizing eye movements. The duration of the inter-trial intervals varied between 2 and 6 s. Participants were instructed to pay attention to the picture content, to imagine being in the shown situation and to confirm each presentation of a picture with a button press. All pictures were rated related to agoraphobic anxiety after the fMRI scan.",
+            "conditions": [
+                "agoraphobia-related pictures",
+                "neutral pictures",
+                "cued by 'panic'",
+                "cued by 'neutral'",
+                "cued by 'DGHNTFJ'"
+            ],
+            "contrasts": [
+                "panic cue minus neutral cue",
+                "all panic pictures minus all neutral pictures"
+            ]
+        }
+    ]
+}

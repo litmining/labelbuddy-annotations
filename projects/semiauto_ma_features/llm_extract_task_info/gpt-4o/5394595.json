@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State fMRI",
+            "definition": "Participants were required to keep their eyes closed, awake, and not think of specific things during scanning. This task involves measuring brain activity by detecting changes associated with blood flow when the subject is not performing any explicit task.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

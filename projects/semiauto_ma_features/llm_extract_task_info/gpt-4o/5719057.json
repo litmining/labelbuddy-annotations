@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "name": "Musical Imagery Task",
+            "definition": "Participants were instructed to imagine an 8-minute symphony while watching a silent movie that visualized the music. The visualization provided real-time visual cues to inform subjects of the content of musical imagery and assisted in controlling the timing of the imagery process.",
+            "conditions": [
+                "Imagery"
+            ],
+            "contrasts": [
+                "Imagery > Rest"
+            ]
+        },
+        {
+            "name": "Musical Perception Task",
+            "definition": "Participants listened to an 8-minute symphony with their eyes closed. The task involved direct auditory input without any visual stimuli.",
+            "conditions": [
+                "Perception"
+            ],
+            "contrasts": [
+                "Perception > Rest"
+            ]
+        }
+    ]
+}
