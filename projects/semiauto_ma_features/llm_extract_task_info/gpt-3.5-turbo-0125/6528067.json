@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Functional Source Separation (FSS) for EEG-fMRI Fusion",
+            "description": "Application of FSS as an optimization step in EEG-fMRI fusion to extract robust ssVEP signals during simultaneous recordings",
+            "conditions": [
+                "Habituation",
+                "Acquisition",
+                "Extinction"
+            ],
+            "contrasts": [
+                "Habituation vs. Acquisition",
+                "Acquisition vs. Extinction"
+            ]
+        }
+    ]
+}

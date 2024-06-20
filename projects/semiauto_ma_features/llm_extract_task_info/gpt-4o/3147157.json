@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "name": "Time Perception Task",
+            "definition": "Participants performed a time perception task while undergoing fMRI scanning. The task involved presentation of filled-auditory (1000\u2009Hz pure tones) and visual (blue ellipse) stimuli. Participants made a two-choice key-press response on a button box using the index or middle finger of their right hand. Pairs of auditory (A) and/or visual (V) stimuli were successively presented. In two unimodal conditions, the SI and the CI were of the same modality (A\u2013A, V\u2013V) and in two crossmodal conditions they were different (A\u2013V, V\u2013A). The participant indicated if the CI was shorter or longer than the SI by pressing a key with the right index or middle finger, respectively. Four SIs (1467, 1540, 1620, and 1710\u2009ms) were used to increase the demands of encoding an interval on each trial. For each SI, there were three shorter and three longer CIs that differed from the SI by successive increments of \u00b17%. Accuracy and reaction time (RT; measured from CI offset to the key press) were recorded.",
+            "conditions": [
+                "A\u2013A",
+                "V\u2013V",
+                "A\u2013V",
+                "V\u2013A"
+            ],
+            "contrasts": [
+                "V\u2013A > A\u2013V",
+                "A\u2013A < V\u2013A",
+                "V\u2013V < V\u2013A",
+                "A\u2013A > A\u2013V",
+                "V\u2013V > A\u2013V"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Painful Electric Stimulation Task",
+            "definition": "Participants received painful electric stimulation applied to the lower back while undergoing fMRI scanning. The stimulation was alternated with periods of no stimulation (rest). The level of stimulation was individually determined based on each participant's maximum tolerable pain level.",
+            "conditions": [
+                "Painful electric stimulation",
+                "Rest"
+            ],
+            "contrasts": [
+                "Painful electric stimulation > Rest"
+            ]
+        }
+    ]
+}

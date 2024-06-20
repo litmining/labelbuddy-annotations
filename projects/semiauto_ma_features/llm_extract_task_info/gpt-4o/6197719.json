@@ -1,0 +1,12 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State Functional MRI (rs-fMRI)",
+            "definition": "Participants underwent a resting-state functional MRI scan to assess voxel-wise inter- and intra-hemispheric functional connectivity (FC). The parameter of asymmetry (PAS) was calculated to reflect inter- and/or intra-hemispheric asymmetry.",
+            "conditions": [
+                "Resting state"
+            ],
+            "contrasts": null
+        }
+    ]
+}

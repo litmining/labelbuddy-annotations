@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "name": "Monetary Incentive Delay Task (MIDT)",
+            "definition": "In the MIDT, participants pressed a button to collect reward ($1, 1\u00a2, or nil), with the reaction time window titrated across trials so participants achieved a success rate of approximately 67%. A bet (a dollar, a cent, or no money, randomly intermixed) appeared on the screen at the beginning of each trial. After a randomized fore-period between 1 and 5 seconds, a target box was shown for a short period. Subjects were told to press a button as quickly as possible to collect the money (win) before the target box disappeared. An accurate trial was defined by a button press before disappearance of the target box. Otherwise, subjects would lose the bet, with the amount deducted from the total win. A premature button press prior to the appearance of the target box terminated the trial, and similarly resulted in loss. Feedback was shown on the screen after each trial to indicate the amount of money won or lost. The response window started at 300 ms, and was stair-cased for each trial type (dollar/cent/no money) separately; for instance, if the subject succeeded at two successive dollar trials, the window decreased by 30 ms, making it more difficult to win again; conversely, if a subject failed for two successive trials, the response window increased by 30 ms, making it easier to win.",
+            "conditions": [
+                "Dollar trials",
+                "Cent trials",
+                "No money (nil) trials",
+                "Dollar win",
+                "Dollar loss",
+                "Cent win",
+                "Cent loss"
+            ],
+            "contrasts": [
+                "Dollar win > Nil",
+                "Cent win > Nil",
+                "Dollar win > Cent win",
+                "Dollar loss > Nil",
+                "Cent loss > Nil",
+                "Dollar loss > Cent loss"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "name": "Motor Imagery",
+            "definition": "Mental rehearsal of spatial-motor actions toward a target object, involving representations of a given motor act internally rehearsed in working memory without any overt motor output.",
+            "conditions": [
+                "Visual Imagery in the First-Person Perspective (VI-1)",
+                "Visual Imagery in the Third-Person Perspective (VI-3)",
+                "Kinesthetic Imagery (KI)",
+                "Motor Execution (ME)",
+                "Perceptual Control (PC)"
+            ],
+            "contrasts": [
+                "ME > PC",
+                "VI-1 > PC",
+                "VI-3 > PC",
+                "KI > PC",
+                "VI-1 > VI-3",
+                "VI-1 > KI",
+                "KI > VI-3",
+                "KI > VI-1"
+            ]
+        }
+    ]
+}

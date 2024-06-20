@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "name": "Content Judgement Task",
+            "definition": "Participants watched five-second videos of an actor spontaneously communicating both social-abstract (S) and non-social-concrete (N) events in different modalities. They were asked to judge whether each video contains person-related (social) or object-related (non-social) information by pressing a button.",
+            "conditions": [
+                "Social Bimodal (SB)",
+                "Social Gesture (SG)",
+                "Social Speech (SS)",
+                "Non-social Bimodal (NB)",
+                "Non-social Gesture (NG)",
+                "Non-social Speech (NS)"
+            ],
+            "contrasts": [
+                "SS > NS",
+                "SG > NG",
+                "SB > NB",
+                "NS > SS",
+                "NG > SG",
+                "NB > SB"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "name": "Resting State fMRI",
+            "definition": "Participants underwent functional magnetic resonance imaging (fMRI) scans under resting state conditions before and six months after following a Mediterranean diet and physical activity program. They were asked to refrain from eating or drinking (except water) for five hours before the scan. All the MRI scans were performed at the same time in the afternoon. Functional connectivity of the regions of interest was assessed using a seed-based correlation approach.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

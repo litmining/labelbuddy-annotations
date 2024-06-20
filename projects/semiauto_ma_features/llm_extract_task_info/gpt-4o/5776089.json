@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Motor Task",
+            "definition": "The motor task consisted of repetitive alternating dorsiflexion and relaxation of the right foot (with range reaching 15\u00b0). Foot movements were paced following an audio cue that was sounded every 1.5 s. These small range of motion and medium speed were applied to avoid large head motions. In each task period, the last audio cue is a verbal command 'stop'. The verbal command, 'ready, right foot movement, go' was delivered within a 2 s duration that is 3 s ahead of each task period. These audio cues and commands were recorded in advance and transmitted via the intercom system of the MR scanner. Each subject was trained prior to MR scanning to perform the motor task as gently as possible.",
+            "conditions": [
+                "Task",
+                "Task+AgonistStim",
+                "Task+ControlStim"
+            ],
+            "contrasts": [
+                "Task+AgonistStim > Task",
+                "Task+ControlStim > Task",
+                "Task+AgonistStim > Task+ControlStim"
+            ]
+        }
+    ]
+}

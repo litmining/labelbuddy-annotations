@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Precision Grip Task",
+            "definition": "Participants were requested to reach towards and grasp an object with either the right or the left hand using a precision grip while scanned. The task involved the opposition of the thumb and index finger to grasp a spherical plastic object of 3 cm diameter presented at a constant distance of 30 cm.",
+            "conditions": [
+                "Grasping with the right hand (RH)",
+                "Grasping with the left hand (LH)"
+            ],
+            "contrasts": [
+                "(Right-handers/RH+Right-handers/LH)>(Left-handers/RH+Left-handers/LH)",
+                "(Left-handers/RH+Left-handers/LH)>(Right-handers/RH+Right-handers/LH)",
+                "(Right-handers/RH+Left-handers/RH)>(Right-handers/LH+Left-handers/LH)",
+                "(Right-handers/LH+Left-handers/LH)>(Right-handers/RH+Left-handers/RH)",
+                "(Right-handers/RH\u2212Right-handers/LH)\u2212(Left-handers/RH\u2212Left-handers/LH)"
+            ]
+        }
+    ]
+}

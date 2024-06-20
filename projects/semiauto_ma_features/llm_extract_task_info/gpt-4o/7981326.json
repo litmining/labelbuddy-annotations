@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "name": "Sternberg verbal working memory task",
+            "definition": "In each trial, subjects had to keep a briefly presented set of consonants in memory by rehearsal until a probe letter was presented, and to then indicate by button press whether this probe matched one of letters in the initially presented set. The task can be divided into discrete phases of stimulus encoding, maintenance, and retrieval which differ in terms of sensory and motor demands.",
+            "conditions": [
+                "normal stimulus quality",
+                "degraded stimulus quality",
+                "close spacing",
+                "wide spacing",
+                "high cognitive load (four letters)",
+                "low cognitive load (two letters)"
+            ],
+            "contrasts": [
+                "high cognitive load > low cognitive load",
+                "degraded stimulus quality > normal stimulus quality"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "tasks": [
+        {
+            "name": "Eye-tracking measurements",
+            "description": "Measure processing times and response times during sentence comprehension tasks using eye-tracking technology.",
+            "conditions": [
+                "Low linguistic complexity",
+                "High linguistic complexity"
+            ],
+            "contrasts": [
+                "eHA vs iHA",
+                "Low vs High linguistic complexity"
+            ]
+        },
+        {
+            "name": "fMRI measurements",
+            "description": "Measure brain activation patterns during speech comprehension tasks using fMRI technology.",
+            "conditions": [
+                "Speech-in-noise stimuli",
+                "Noise-only stimuli"
+            ],
+            "contrasts": [
+                "SiN vs Noise",
+                "High vs Low linguistic complexity",
+                "iHA vs eHA for SiN vs Noise",
+                "iHA vs eHA for High vs Low linguistic complexity",
+                "eHA vs iHA for High vs Low linguistic complexity"
+            ]
+        }
+    ]
+}

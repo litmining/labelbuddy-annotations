@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Episodic Memory Retrieval",
+            "description": "Participants retrieve episodic events composed of multiple overlapping pairs of event elements after a 24-hour delay.",
+            "conditions": [
+                "Immediate retrieval",
+                "24-hour delay retrieval"
+            ],
+            "contrasts": [
+                "Holistic reinstatement",
+                "Hippocampal pattern completion",
+                "Nonhippocampal contribution"
+            ]
+        }
+    ]
+}

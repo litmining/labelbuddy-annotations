@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "name": "Implicit Emotion Recognition Task",
+            "definition": "An event-related design implicit emotional face recognition task was implemented during fMRI scanning. Participants were required to identify the sex of grayscale facial stimuli displaying different emotions (angry, fear, happy, neutral, or sad). This task was designed to ensure participants paid attention to the stimuli without consciously identifying the face emotions.",
+            "conditions": [
+                "angry",
+                "fear",
+                "happy",
+                "neutral",
+                "sad"
+            ],
+            "contrasts": [
+                "angry > neutral",
+                "fear > neutral",
+                "happy > neutral",
+                "sad > neutral"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Real-time fMRI Neurofeedback (NFB)",
+            "definition": "Participants were trained to downregulate the posterior cingulate cortex (PCC) while processing trauma/stressful words. Feedback of PCC activation was displayed to participants in the form of thermometers that increased or decreased as BOLD signal in the PCC target fluctuated.",
+            "conditions": [
+                "Regulate",
+                "View",
+                "Neutral"
+            ],
+            "contrasts": [
+                "Regulate < View",
+                "View > Neutral",
+                "Regulate > View"
+            ]
+        }
+    ]
+}

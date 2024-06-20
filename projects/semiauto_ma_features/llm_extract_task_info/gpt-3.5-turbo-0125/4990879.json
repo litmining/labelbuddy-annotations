@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-state fMRI task",
+            "description": "Participants underwent resting-state fMRI scans to analyze regional homogeneity (ReHo) differences between heroin relapsers and non-relapsers under methadone maintenance treatment (MMT). ReHo measures the coherence of intraregional spontaneous low-frequency blood oxygenation level-dependent signal fluctuations in voxel-wise analysis across the whole brain.",
+            "conditions": [
+                "Heroin relapsers under MMT",
+                "Heroin non-relapsers under MMT"
+            ],
+            "contrasts": [
+                "Increased ReHo in bilateral medial orbitofrontal cortex, right caudate, and right cerebellum in heroin relapsers",
+                "Decreased ReHo in left parahippocampal gyrus, left middle temporal gyrus, right lingual gyrus, and precuneus in heroin relapsers",
+                "Positive correlation between altered ReHo in right caudate and heroin relapse rates or subjective craving response"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "n-back task",
+            "definition": "Working memory task involving the ability to temporarily maintain, update, or manipulate information in an active state. Crucially involved in cognitive control.",
+            "conditions": [
+                "0-back",
+                "1-back",
+                "2-back"
+            ],
+            "contrasts": [
+                "2-back > 0-back",
+                "2-back > 1-back"
+            ]
+        }
+    ]
+}

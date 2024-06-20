@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Emotional Face Gender-Labelling Task",
+            "definition": "Participants were to indicate the gender of photographs of faces with either fearful (F), angry (A), happy (H) or neutral (N) expressions. The different conditions were presented in blocks of six events, consisting of the block-specific expressions or null events (fixation crosses, one to three per block, pseudo-randomly intermixed). Events lasted for 1\u2009s and were interspersed with inter-stimulus fixation crosses presented for 1\u2009s. The gender response button rule (left or right for woman or man) was counterbalanced across subjects. Participants were instructed to answer as fast and as correct as possible. The testing was split up in two 7-min-long runs, each containing seven blocks of each type. All photographs were presented only once.",
+            "conditions": [
+                "Fearful faces (F)",
+                "Angry faces (A)",
+                "Happy faces (H)",
+                "Neutral faces (N)"
+            ],
+            "contrasts": [
+                "F > N",
+                "A > N",
+                "H > N"
+            ]
+        }
+    ]
+}

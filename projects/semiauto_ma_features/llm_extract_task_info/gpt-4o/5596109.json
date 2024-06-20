@@ -1,0 +1,39 @@
+{
+    "tasks": [
+        {
+            "name": "Visual Task",
+            "definition": "Participants were exposed to a visual stimulus consisting of a radial blue/yellow checkerboard reversing at 7 Hz during the 'ON' state. During the 'OFF' state, participants focused on a cross at the center of the screen. The experiment followed a two-state (OFF, ON) \u00d7 3 block design with a duration of 40 s for each block.",
+            "conditions": [
+                "ON state (visual stimulus)",
+                "OFF state (fixation cross)"
+            ],
+            "contrasts": [
+                "ON > OFF"
+            ]
+        },
+        {
+            "name": "Motor Task",
+            "definition": "Participants performed a motor task during the fMRI scan. Specific details of the motor task were not provided in the text.",
+            "conditions": null,
+            "contrasts": null
+        },
+        {
+            "name": "Covert Verb Generation Task",
+            "definition": "Participants performed a covert verb generation task during the fMRI scan. Specific details of the task were not provided in the text.",
+            "conditions": null,
+            "contrasts": null
+        },
+        {
+            "name": "Landmark Task",
+            "definition": "Participants performed a landmark task during the fMRI scan. Specific details of the task were not provided in the text.",
+            "conditions": null,
+            "contrasts": null
+        },
+        {
+            "name": "Resting-State",
+            "definition": "Participants were scanned at rest during the fMRI scan. No specific task was performed.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

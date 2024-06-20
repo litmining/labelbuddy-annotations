@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "name": "Picture Naming Task",
+            "definition": "Participants named pictures in two languages alternatingly, with 24 pictures per language. The stimuli were randomly selected from 96 black and white drawings for concrete non-living objects. The color of the frame (blue, red, and green) served as the naming cue (blue for Cantonese, red for Mandarin, and green for English). Participants were instructed to covertly name the picture in the target language within 3000 ms.",
+            "conditions": [
+                "Cantonese (L1)",
+                "Mandarin (L2)",
+                "English (L3)"
+            ],
+            "contrasts": null
+        },
+        {
+            "name": "Flanker Task",
+            "definition": "Participants responded to the direction of a red chevron (i.e., the target) surrounded by other black chevrons (i.e., the flankers). In congruent trials, flanker chevrons point in the same direction as the target, whereas in incongruent trials, flankers pointed in the opposite direction to the target.",
+            "conditions": [
+                "Congruent",
+                "Incongruent"
+            ],
+            "contrasts": [
+                "Incongruent > Congruent"
+            ]
+        }
+    ]
+}

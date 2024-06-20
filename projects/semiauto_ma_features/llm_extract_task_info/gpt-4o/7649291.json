@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "name": "fine motor learning task",
+            "definition": "Participants used an MRI compatible mouse to guide a cursor through a marked trail displayed on the monitor. Participants were instructed to minimize errors and maximize distance traveled. Performance metrics were recorded based on speed and accuracy. The task difficulty was designed to emphasize the difference in dominant and non-dominant hand proficiency.",
+            "conditions": [
+                "left-hand tracing",
+                "right-hand tracing"
+            ],
+            "contrasts": [
+                "left-hand tracing > right-hand tracing"
+            ]
+        },
+        {
+            "name": "gross motor training task",
+            "definition": "Participants moved the mouse at random, with no accuracy metrics, following the same block structure and visual display as the fine motor task.",
+            "conditions": [
+                "left-hand gross motor",
+                "right-hand gross motor"
+            ],
+            "contrasts": null
+        }
+    ]
+}

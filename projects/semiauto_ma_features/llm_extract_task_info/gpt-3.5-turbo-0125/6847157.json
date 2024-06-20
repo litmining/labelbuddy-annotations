@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Anticipation of Tickling",
+            "conditions": [
+                "Anticipation",
+                "Tickling",
+                "Monotonous foot contacts"
+            ],
+            "contrasts": [
+                "T > A",
+                "T > C"
+            ]
+        }
+    ]
+}

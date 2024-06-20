@@ -1,0 +1,22 @@
+{
+    "tasks": [
+        {
+            "name": "Motor Imagery (MI)",
+            "definition": "Motor imagery (MI) is a dynamic mental state during which representations of a given motor act are internally rehearsed in working memory without any overt motor output. This study explored different characteristics of brain activation among target-oriented kinesthetic imagery (KI) and visual imagery (VI) in the first-person (VI-1) and third-person (VI-3) perspectives.",
+            "conditions": [
+                "Kinesthetic Imagery (KI)",
+                "Visual Imagery in the first-person perspective (VI-1)",
+                "Visual Imagery in the third-person perspective (VI-3)",
+                "Perceptual Control (PC)"
+            ],
+            "contrasts": [
+                "KI > VI-1",
+                "KI > VI-3",
+                "ME > PC",
+                "VI-1 > PC",
+                "VI-3 > PC",
+                "KI > PC"
+            ]
+        }
+    ]
+}

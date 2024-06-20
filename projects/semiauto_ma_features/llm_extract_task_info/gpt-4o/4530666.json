@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "name": "Implicit Emotion Processing Task",
+            "definition": "Participants were presented with face stimuli from a standard set of black-and-white images, the Pictures of Facial Affect. The stimuli consist of male and female images displaying the seven basic emotions: anger, disgust, fear, happiness, sadness, surprise, and neutral. Participants were instructed to look at the face while it was on screen and to make a gender response with their right hand by clicking one of two buttons only when the fixation cross appeared following the face presentation.",
+            "conditions": [
+                "Anger",
+                "Disgust",
+                "Fear",
+                "Happiness",
+                "Sadness",
+                "Neutral",
+                "Own Face"
+            ],
+            "contrasts": [
+                "Angry > Neutral",
+                "Disgust > Neutral",
+                "Fear > Neutral",
+                "Happy > Neutral",
+                "Sad > Neutral",
+                "Own Face > Neutral"
+            ]
+        },
+        {
+            "name": "Explicit Emotion Identification Task",
+            "definition": "Participants were shown each stimulus once, resulting in eight presentations per emotion over one run. Following the presentation of each face stimulus, a forced-choice screen appeared on the monitor asking participants to identify the emotion displayed in the previous face from a list containing all of the emotions.",
+            "conditions": [
+                "Anger",
+                "Disgust",
+                "Fear",
+                "Happiness",
+                "Sadness",
+                "Surprise",
+                "Neutral",
+                "Own Face"
+            ],
+            "contrasts": null
+        }
+    ]
+}

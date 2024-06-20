@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "name": "Visually Guided Finger Movements",
+            "definition": "Participants performed index finger movements and observed movements with four different types of visual feedback: a simple circular cursor (CU), a point light (PL) pattern indicating finger joint positions, a shadow cartoon hand (SH), and a realistic virtual hand (VH). Brain activity was measured using fMRI during both action and observation conditions.",
+            "conditions": [
+                "CU (Cursor)",
+                "PL (Point Light)",
+                "SH (Shadow Hand)",
+                "VH (Virtual Hand)"
+            ],
+            "contrasts": [
+                "Hands > Circles",
+                "VH - CU and VH - (CU + PL)",
+                "SH - CU and SH - (CU + PL)"
+            ]
+        }
+    ]
+}

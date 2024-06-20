@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "n-back task",
+            "conditions": [
+                "0-back",
+                "1-back",
+                "2-back"
+            ],
+            "contrasts": [
+                "2-back > 0-back",
+                "2-back > 1-back"
+            ]
+        }
+    ]
+}

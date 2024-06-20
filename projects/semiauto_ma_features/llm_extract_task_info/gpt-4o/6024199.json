@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Involuntary Memory Task",
+            "definition": "Participants performed an involuntary memory task while undergoing an fMRI scan. Environmental sounds served as cues for well-associated pictures of negative and neutral scenes. Participants were presented with sound-picture pairs and unpaired sounds, and they were asked to rate the emotionality of the stimuli and to judge the location of the sound. Post-scan, participants reported whether they remembered a picture when the sound was played, how hard they tried to perform the task correctly, how hard they tried to recall a picture, and how vivid the memory was.",
+            "conditions": [
+                "Paired sounds that elicited a memory with low effort",
+                "Unpaired sounds that did not elicit a memory with low effort",
+                "High emotion paired sounds",
+                "Low emotion paired sounds"
+            ],
+            "contrasts": [
+                "Paired sounds > Unpaired sounds",
+                "High emotion > Low emotion"
+            ]
+        }
+    ]
+}

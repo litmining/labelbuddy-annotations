@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "name": "Discrete Sequence Production (DSP) task",
+            "definition": "Participants rested four fingers of the right hand on four keys of the key pad. Visual stimuli displayed on the screen involved filling one of four permanently displayed squares. The participants responded to these stimuli by pressing the spatially corresponding key. As soon as the correct key had been pressed, the square was filled again with the background color and immediately another square was filled until four keys had been pressed. Participants were instructed to press the associated key as fast as possible while keeping errors to a minimum. Faulty key presses were immediately followed by an error message.",
+            "conditions": [
+                "Unfamiliar sequences",
+                "Familiar sequences",
+                "Control sequences"
+            ],
+            "contrasts": [
+                "Unfamiliar sequences > Control sequences",
+                "Familiar sequences > Control sequences",
+                "Unfamiliar sequences > Familiar sequences"
+            ]
+        }
+    ]
+}

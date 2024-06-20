@@ -1,0 +1,42 @@
+{
+    "tasks": [
+        {
+            "name": "Cognition Assessment",
+            "definition": "Assessment of cognitive functions using various tests such as the Montreal Cognitive Assessment Beijing Version, the Minimum Mental State Examination, the Digit Symbol Test, the Rey Auditory Verbal Learning Test, and the Verbal Memory Test.",
+            "conditions": [
+                "Baseline assessment",
+                "Assessment 3 months after CAS"
+            ],
+            "contrasts": [
+                "MMSE scores",
+                "Verbal Memory test scores",
+                "Delayed recall scores",
+                "Immediate recall scores",
+                "Digit Symbol Test scores"
+            ]
+        },
+        {
+            "name": "Pulsed Arterial Spin Labeling (pASL) MRI",
+            "definition": "MRI technique used to measure cerebral blood flow changes by labeling arterial blood water protons",
+            "conditions": [
+                "Baseline pASL MRI",
+                "pASL MRI 3 months after CAS"
+            ],
+            "contrasts": [
+                "CBF differences between baseline and 3 months after CAS"
+            ]
+        },
+        {
+            "name": "Resting-State Functional MRI (R-fMRI)",
+            "definition": "MRI technique used to assess brain functional connectivity in the absence of a task",
+            "conditions": [
+                "Baseline R-fMRI",
+                "R-fMRI 3 months after CAS"
+            ],
+            "contrasts": [
+                "ALFF differences between baseline and 3 months after treatment",
+                "Functional connectivity differences to the posterior cingulate cortex between baseline and 3 months after intervention"
+            ]
+        }
+    ]
+}

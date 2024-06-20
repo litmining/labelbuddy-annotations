@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "name": "Visually Guided Finger Movements Task",
+            "definition": "Participants performed index finger movements ('action') and observed movements ('observation') with four different types of visual feedback: a simple circular cursor (CU), a point light (PL) pattern indicating finger joint positions, a shadow cartoon hand (SH), and a realistic virtual hand (VH). Finger movements were recorded using a data glove, and eye-tracking was recorded optically. The task involved moving a cursor to a target position and back to the starting position within a specified time frame.",
+            "conditions": [
+                "Action with Cursor (CU) feedback",
+                "Action with Point Light (PL) feedback",
+                "Action with Shadow Hand (SH) feedback",
+                "Action with Virtual Hand (VH) feedback",
+                "Observation with Cursor (CU) feedback",
+                "Observation with Point Light (PL) feedback",
+                "Observation with Shadow Hand (SH) feedback",
+                "Observation with Virtual Hand (VH) feedback"
+            ],
+            "contrasts": [
+                "Action > Observation",
+                "Observation > Action",
+                "SH > PL",
+                "PL > CU",
+                "Hands (VH, SH) > Circles (PL, CU)"
+            ]
+        }
+    ]
+}

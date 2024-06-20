@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State Functional MRI (R-fMRI)",
+            "definition": "Participants underwent resting-state functional MRI to measure brain activity by detecting changes associated with blood flow. This method relies on the fact that cerebral blood flow and neuronal activation are coupled.",
+            "conditions": [
+                "Baseline",
+                "3 months after CAS"
+            ],
+            "contrasts": [
+                "3 months after CAS > Baseline"
+            ]
+        }
+    ]
+}

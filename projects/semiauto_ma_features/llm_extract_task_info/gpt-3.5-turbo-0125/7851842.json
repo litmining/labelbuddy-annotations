@@ -1,0 +1,8 @@
+{
+    "tasks": [
+        {
+            "name": "Content Judgment Task",
+            "conditions": "1) Social Bimodal (SB), 2) Social Gesture (SG), 3) Social Speech (SS), 4) Non-social Bimodal (NB), 5) Non-social Gesture (NG), 6) Non-social Speech (NS"
+        }
+    ]
+}

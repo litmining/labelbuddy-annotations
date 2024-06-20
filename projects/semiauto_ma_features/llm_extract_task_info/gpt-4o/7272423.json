@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "n-back task",
+            "definition": "A letter variant of the n-back task paradigm in which three n-back blocks ranging from 0-back to 2-back interleaved with four fixation blocks (F). Participants were required to press a button with their right index finger on the appearance of the letter Z in a string of letters (0-back), or whenever the current letter was identical to the letter right before (1-back), or the letter two spaces before (2-back).",
+            "conditions": [
+                "0-back",
+                "1-back",
+                "2-back"
+            ],
+            "contrasts": [
+                "2-back > 0-back",
+                "2-back > 1-back"
+            ]
+        }
+    ]
+}

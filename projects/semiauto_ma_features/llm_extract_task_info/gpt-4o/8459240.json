@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "n-back task",
+            "definition": "The n-back task consisted of alternating blocks with three load levels: 0-back, 1-back, and 2-back. During each block, participants viewed a series of 15 letters in sequence, including five targets. Blocks lasted 30 s (each stimulus lasted 2 s), and the interblock interval was 5 s, during which the block instructions were repeated. In 0-back blocks, participants were instructed to indicate when the target letter \u201cX\u201d appeared on the screen. In 1-back blocks, participants had to decide if the letter on the screen was identical to the previous one. In 2-back blocks, targets were those letters identical to the letter presented two trials back. Participants were instructed to press a right response box button for targets (right index finger) and a left button for nontargets (left index finger). No additional speed or accuracy instructions were given. Each load level was repeated four times resulting in a 7-min task of 12 blocks. Prior to scanning, all participants first completed a practice block of the n-back task outside of the scanner.",
+            "conditions": [
+                "0-back",
+                "1-back",
+                "2-back"
+            ],
+            "contrasts": [
+                "2-back > 0-back",
+                "2-back > 1-back"
+            ]
+        }
+    ]
+}

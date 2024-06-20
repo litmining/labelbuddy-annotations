@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-State Functional MRI (rs-fMRI)",
+            "definition": "Participants were instructed to minimize head and neck movements, stay awake, relaxed, and keep their eyes closed throughout the scan. Earplugs and foam padding were used to decrease scanner noise and limit head movement. Resting-state functional MRI (rs-fMRI) data were recorded via a multi-band blood-oxygenation-level-dependent (BOLD) sequence.",
+            "conditions": null,
+            "contrasts": null
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "name": "Random generation task",
+            "description": "Participants were presented with a timing signal and instructed to press buttons in a random sequence in the experimental condition, while in the baseline condition they pressed buttons in a stereotyped sequence.",
+            "conditions": [
+                "Experimental condition (random sequence generation)",
+                "Baseline condition (stereotyped sequence generation)"
+            ],
+            "contrasts": [
+                "Random generation > Baseline",
+                "Baseline > Random generation"
+            ]
+        },
+        {
+            "name": "Alphabet task",
+            "description": "Participants alternated between stimulus-oriented (SO) and stimulus-independent (SI) phases. During SO phases, participants classified capital letters based on straight lines or curves, while in SI phases, they mentally continued the alphabet sequence.",
+            "conditions": [
+                "Stimulus-Oriented (SO) phase",
+                "Stimulus-Independent (SI) phase"
+            ],
+            "contrasts": [
+                "SI > SO",
+                "SO > SI"
+            ]
+        }
+    ]
+}

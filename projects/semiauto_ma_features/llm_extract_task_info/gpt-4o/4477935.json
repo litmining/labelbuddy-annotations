@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "name": "Rule-switching task",
+            "definition": "Participants were presented with a rule symbol on a computer screen for 1000ms, followed by a blank screen for 500ms before a response symbol appeared. Participants had a window of 2500ms to respond and received feedback immediately after the motor response. The task included two levels of conflict: bivalent rules and univalent rules. Bivalent trials involved response symbols that had different meanings depending on the current rule active, while univalent trials had fixed responses.",
+            "conditions": [
+                "Bivalent trials",
+                "Univalent trials"
+            ],
+            "contrasts": [
+                "Bivalent > Univalent",
+                "Trait feedback > Task feedback",
+                "Task feedback > Trait feedback"
+            ]
+        }
+    ]
+}

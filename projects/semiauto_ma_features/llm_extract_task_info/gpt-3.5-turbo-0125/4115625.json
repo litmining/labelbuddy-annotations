@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "name": "Univariate analysis",
+            "definition": "Analyzing brain activation differences in response to vocal vs. non-vocal sounds using the General Linear Model (GLM) and contrasts between conditions.",
+            "conditions": [
+                "Vocal sounds",
+                "Non-vocal sounds"
+            ],
+            "contrasts": [
+                "Vocal > Non-vocal",
+                "Male > Female",
+                "Female > Male"
+            ]
+        },
+        {
+            "name": "Multivariate pattern analysis (MVPA)",
+            "definition": "Analyzing brain activation patterns using multivariate pattern analysis to decode information reflected in brain activity patterns related to specific experimental conditions.",
+            "conditions": [
+                "Vocal sounds",
+                "Non-vocal sounds"
+            ],
+            "contrasts": [
+                "Female > Male",
+                "Male > Female"
+            ]
+        }
+    ]
+}

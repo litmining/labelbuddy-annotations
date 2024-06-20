@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Movement Observation Task",
+            "definition": "Participants watched movies of a dancer performing a sequence of whole-body movements according to auditory cues. The dancer performed the sequences either correctly (88% of the time) or incorrectly (12% of the time). Participants had to judge whether the dancer's last movement was correct or incorrect based on the auditory cue.",
+            "conditions": [
+                "Correct movements",
+                "Incorrect movements"
+            ],
+            "contrasts": [
+                "Incorrect movements > Correct movements"
+            ]
+        }
+    ]
+}

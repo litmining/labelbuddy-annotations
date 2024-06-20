@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "name": "Functional Connectivity Assessment",
+            "description": "Assessment of brain functional connectivity using seed-based correlations before and after a hypocaloric Mediterranean diet and physical activity program in obese women.",
+            "conditions": [
+                "Before intervention",
+                "After intervention"
+            ],
+            "contrasts": [
+                "Decreased connectivity between left inferior parietal cortex and right temporal cortex",
+                "Decreased connectivity between left inferior parietal cortex and left posterior cingulate",
+                "Decreased connectivity between left inferior parietal cortex and right posterior cingulate",
+                "Decreased connectivity between left superior frontal gyrus and right temporal cortex",
+                "Decreased connectivity between prefrontal cortex and somatosensory cortex",
+                "Decreased connectivity between left and right posterior cingulate"
+            ]
+        }
+    ]
+}

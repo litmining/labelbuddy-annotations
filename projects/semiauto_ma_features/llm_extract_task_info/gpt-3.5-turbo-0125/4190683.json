@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "name": "Stop task",
+            "definition": "A task that measures the ability to suppress an already triggered motor response. Participants respond to go arrows and inhibit their responses when a stop signal follows the go signal.",
+            "conditions": [
+                "Go trials",
+                "Stop trials"
+            ],
+            "contrasts": [
+                "ADHD > Controls",
+                "Controls > ADHD"
+            ]
+        }
+    ]
+}

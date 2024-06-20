@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "name": "Random generation task",
+            "definition": "Participants were presented with a timing signal and instructed to press one of four response buttons in synchrony with the appearance of the signal. In the experimental condition, participants pressed buttons in a random sequence. In the baseline condition, participants pressed buttons in a stereotyped sequence.",
+            "conditions": [
+                "Random sequence",
+                "Stereotyped sequence"
+            ],
+            "contrasts": [
+                "Random sequence > Stereotyped sequence"
+            ]
+        }
+    ]
+}

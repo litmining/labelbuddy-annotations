@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "name": "Resting-state functional magnetic resonance imaging (rs-fMRI) scan",
+            "description": "Participants received resting-state functional magnetic resonance imaging (rs-fMRI) scan during the study.",
+            "conditions": null,
+            "contrasts": null
+        },
+        {
+            "name": "Group Cognitive Behavior Therapy (GCBT)",
+            "description": "A cognitive behavior therapy program aimed at improving self-management behaviors and quality of life for asthmatic patients.",
+            "conditions": [
+                "Therapeutic alliance",
+                "Asthma and psychological",
+                "Asthma knowledge",
+                "Medicine and self-management",
+                "Emotion, thoughts, and behaviors",
+                "Cognitive rebuilding",
+                "Problem solving and separation"
+            ],
+            "contrasts": null
+        }
+    ]
+}
