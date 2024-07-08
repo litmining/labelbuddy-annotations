@@ -9422,6 +9422,35 @@ Delirium is an acute neuropsychiatric syndrome characterized by altered levels o
         
     </details>
     
+    <details style="--label-color: #eeeeec;">
+        <summary class="label-display">stopped here (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Huang, Xiao and <mark class="annotated-text">Tang</mark>, Shi and Lyu, Xiaojun and Yang, Changqiang and Chen, Xiaoping
+Sleep medicine, 2020
+
+# Title
+
+Structural and functional brain alterations in obstructive sleep apnea: a multimodal meta-analysis.
+
+# Key…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #c49c94;">
         <summary class="label-display">MA14 (1 docs)</summary>
         
@@ -10252,35 +10281,6 @@ Previous studies, predominantly in experimental animals, have suggested the pres
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Brent_McPherson</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details >
-        <summary class="label-display">stopped here (1 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Huang, Xiao and <mark class="annotated-text">Tang</mark>, Shi and Lyu, Xiaojun and Yang, Changqiang and Chen, Xiaoping
-Sleep medicine, 2020
-
-# Title
-
-Structural and functional brain alterations in obstructive sleep apnea: a multimodal meta-analysis.
-
-# Key…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
