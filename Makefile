@@ -3,16 +3,18 @@ annotation_files := $(patsubst %.labelbuddy, %.jsonl, $(labelbuddy_databases))
 repo_stats_fig := analysis/book/assets/generated/repo_stats.svg
 projects_tag_file := analysis/book/projects/DONT_EDIT_THIS_DIRECTORY_IT_IS_AUTOMATICALLY_GENERATED
 
-.PHONY: all annotations database csv book book-full
+.PHONY: all annotations database csv book book-full clean
 
 all: annotations
 
 annotations: $(annotation_files)
 
-database:
-	python3 ./scripts/make_database.py
+database: analysis/data/database.sqlite3
 
 csv: analysis/data/detailed_annotation.csv
+
+analysis/data/database.sqlite3:
+	python3 ./scripts/make_database.py
 
 analysis/data/detailed_annotation.csv: analysis/data/database.sqlite3
 	sqlite3 -header -csv $< "select * from detailed_annotation;" > $@
@@ -38,3 +40,6 @@ book-full: database csv
 	python3 scripts/make_participants_csv.py
 	python3 analysis/book_helpers/add_project_pages.py
 	./scripts/make_book.sh
+
+clean:
+	rm -rf analysis/data/database.sqlite3 analysis/data/detailed_annotation.csv analysis/book/_build analysis/book/projects

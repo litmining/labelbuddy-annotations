@@ -164,7 +164,7 @@ def _get_jinja_env() -> jinja2.Environment:
     return env
 
 
-def get_participant_demographics() -> pd.DataFrame:
+def get_participant_demographics(include_locations=False) -> pd.DataFrame:
     all_anno = select_participants_annotations()
     all_docs = _get_document_summaries(all_anno)
     all_rows = []
@@ -177,8 +177,13 @@ def get_participant_demographics() -> pd.DataFrame:
         for gn, sgn, subgroup in doc["participants"].subgroups():
             row = {"group_name": gn, "subgroup_name": sgn}
             row.update(doc_info)
+            row[f"start_char"] = []
+            row[f"end_char"] = []
             for k, v in subgroup.attributes.items():
                 row[k] = v.value
+                if include_locations:
+                    row[f"start_char"] += [v.start_char for v in v.sources]
+                    row[f"end_char"] += [v.end_char for v in v.sources]
             for sex in ("female", "male"):
                 try:
                     row[f"{sex} count"] = (

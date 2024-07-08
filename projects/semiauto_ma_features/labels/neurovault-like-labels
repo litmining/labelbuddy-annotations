@@ -1,0 +1,30 @@
+[
+    {
+        "color": "#ffbb78",
+        "name": "TaskName"
+    },
+    {
+        "color": "#98df8a",
+        "name": "ContrastDefinition"
+    },
+    {
+        "color": "#ff9896",
+        "name": "TaskDescription"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "Condition"
+    },
+    {
+        "color": "#f7b6d2",
+        "name": "AnalysisLevel"
+    },
+    {
+        "color": "#dbdb8d",
+        "name": "Modality"
+    },
+    {
+        "color": "#9edae5",
+        "name": "MapType"
+    }
+]
