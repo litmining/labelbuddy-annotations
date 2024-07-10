@@ -20,4 +20,9 @@
 {"color":"#77767b","name":"stopped here"}
 {"color":"#aec7e8","name":"not sure"}
 {"color":"#aaff7f","name":"new dataset"}
-{"color":"#ffaa00","name":"used hcp pipeline"}
+{"color":"#ffaa7f","name":"used hcp pipeline"}
+{"color":"#ffaa7f","name":"used hcp seed"}
+{"color":"#ffaa7f","name":"used hcp atlas"}
+{"color":"#ffaa7f","name":"used hcp stimuli"}
+{"color":"#ffaa7f","name":"used hcp acquisition parameters"}
+{"color":"#ffaa7f","name":"used hcp protocol"}
