@@ -1746,7 +1746,7 @@ Our subjects were selected from 4 imaging datasets: the <mark class="annotated-t
         
     </details>
     
-    <details style="--label-color: #ffaa00;">
+    <details style="--label-color: #ffaa7f;">
         <summary class="label-display">used hcp pipeline (2 docs)</summary>
         
         <p><b>Example annotations:</b></p>
@@ -1878,6 +1878,41 @@ Functional magnetic resonance imaging
     
     <details style="--label-color: #aec7e8;">
         <summary class="label-display">not sure (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+    <details style="--label-color: #ffaa7f;">
+        <summary class="label-display">used hcp seed (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+    <details style="--label-color: #ffaa7f;">
+        <summary class="label-display">used hcp atlas (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+    <details style="--label-color: #ffaa7f;">
+        <summary class="label-display">used hcp stimuli (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+    <details style="--label-color: #ffaa7f;">
+        <summary class="label-display">used hcp acquisition parameters (0 docs)</summary>
+        
+        <p>(No annotations with this label in the current project)</p>
+        
+    </details>
+    
+    <details style="--label-color: #ffaa7f;">
+        <summary class="label-display">used hcp protocol (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
