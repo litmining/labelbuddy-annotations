@@ -57,4 +57,12 @@ The label list is quite long, so I'm not including it here. But the labels group
 ### Instructions for annotators
 
 At this point, I have finished annotating the open-access full-text papers. I'd love help annotating the closed-access abstracts. To do this, follow these steps:
-- 
+- install labelbuddy
+- install labelbudd-annotations
+- navigate to the current directory `projects/review-neuro-meta-analyses`
+- start labelbuddy with this code: `labelbuddy review-neuro-meta-analyses.lb`
+- import the documents `projects/review-neuro-meta-analyses/documents/closed_documents_00000.jsonl`
+- import the labels `projects/review-neuro-meta-analyses/labels/labels.jsonl`
+- impport my annotations so you don't work on papers I've already finished `projects/review-neuro-meta-analyses/annotations/Kendra_Oudyk.jsonl`
+- Once you're done annotating, export your annotations (*without including the document text*) to a file called `projects/review-neuro-meta-analyses/annotations/<Firstname_Lastname>.jsonl`
+- add, commit, and push your annotations to this repo
