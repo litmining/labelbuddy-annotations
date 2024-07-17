@@ -1,6 +1,7 @@
 {"color":"#eeeeec","name":"DONE","shortcut_key":"d"}
 {"color":"#babdb6","name":"DONE (but did not look into full paper)","shortcut_key":"a"}
 {"color":"#eeeeec","name":"read later"}
+{"color":"#eeeeec","name":"stopped here"}
 {"color":"#eeeeec","name":"no-access"}
 {"color":"#eeeeec","name":"ask about this one"}
 {"color":"#eeeeec","name":"candidate for replication"}
@@ -54,7 +55,8 @@
 {"color":"#98df8a","name":"largescale-neurosynth decoding"}
 {"color":"#98df8a","name":"largescale-brainmap decoding"}
 {"color":"#98df8a","name":"largescale-neuroquery encoding"}
-{"color":"#888a85","name":"exclude"}
+{"color":"#98df8a","name":"largescale-other-or-undefined"}
+{"color":"#888a85","name":"exclude","shortcut_key":"x"}
 {"color":"#888a85","name":"EXCLUDE - review"}
 {"color":"#888a85","name":"EXCLUDE - traditional ma"}
 {"color":"#888a85","name":"EXCLUDE - not a full report"}
@@ -68,5 +70,5 @@
 {"color":"#888a85","name":"EXCLUDE - not a ma, doesn't fit other exclusion"}
 {"color":"#888a85","name":"EXCLUDE - about ma's"}
 {"color":"#888a85","name":"EXCLUDE - ma not in title"}
-{"color":"#aec7e8","name":"thresholding","shortcut_key":"t"}
 {"color":"#4e9a06","name":"has prisma chart"}
+{"color":"#aec7e8","name":"thresholding","shortcut_key":"t"}
