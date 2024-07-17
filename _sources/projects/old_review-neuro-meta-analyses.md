@@ -1,485 +1,136 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.1
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 
-<!DOCTYPE html>
+% !!!
+%
+% Don't edit this page directly!
+% It has been automatically generated.
+% Instead, edit the project's README.md file which gets inserted here,
+% or the templates in /analysis/book_helpers/templates/
+%
+% !!!
 
 
-<html lang="en" data-content_root="../" >
+# old_review-neuro-meta-analyses
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+You can see the full contents of this project [on GitHub](https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/old_review-neuro-meta-analyses/).
 
-    <title>review-neuro-meta-analyses &#8212; Biomedical literature annotations</title>
+## Review of neuroimaging meta-analyses: Topics, authors, and methods
+
+In this project, we review neuroimaging meta-analyses. 
+The manual annotation part of the project focuses on methods. 
+
+## Papers
+
+### How the papers were obtained [to be updated]
+There are two groups of papers:
+1. full-text open-access papers that were obtained from PMC via pubget, and
+2. abstracts from closed-access papers that were obtained from PubMed via a tweaked version of pubget (the out-of-the-box version can only access PMC).
+
+
+Typically with [pubget](https://neuroquery.github.io/pubget/pubget.html).
+We recommend invoking `pubget` with the `--query_file` option, and storing a copy of the query file in the project's directory, or including a copy in the `README.md`.
+
+`<description>`
+
+### Where the full papers are stored [to be updated]
+
+Typically on [OSF](https://osf.io/).
+Please also add a `documents/datasets.json` file containing the URL where the full `pubget` dataset can be downloaded, that looks like:
+`​`​`
+[
+    {
+    "url": "https://osf.io/download/<...>/"
+    }
+]
+`​`​`
+
+`<description>`
+
+
+## Annotations
+### File(s) being annotated: 
+1. full texts from open-access papers from PMC:
+   - `/projects/review-neuro-meta-analayses/documents/documents_00001-ma-in-title.jsonl`
+   - `/projects/review-neuro-meta-analayses/documents/documents_00002-ma-in-title.jsonl`
+   - `/projects/review-neuro-meta-analayses/documents/documents_00003-ma-in-title.jsonl`
+2. abstracts from closed-access papers from pubmed:
+   - `projects/review-neuro-meta-analyses/documents/closed_documents_00000.jsonl`
   
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+### Annotation labels:
+The label list is quite long, so I'm not including it here. But the labels group into these categories
+- Reasons to come back to the paper
+- info on the number of studies/contrasts found/included
+- meta-analysis number (many papers have multiple)
+- algorithm
+- software
+- large-scale meta-analysis method
+- exclusion criteria
+- has prisma chart
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+### Labels found in other projects as well:
+- `<label2>`
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/label-set.css?v=11afd262" />
-    <link rel="stylesheet" type="text/css" href="../_static/annotation-set.css?v=f809bc52" />
-    <link rel="stylesheet" type="text/css" href="../_static/global.css?v=3d573378" />
-    <link rel="stylesheet" type="text/css" href="../_static/participants.css?v=719265c2" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+### Instructions for annotators
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/review-neuro-meta-analyses';</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="semiauto_ma_features" href="semiauto_ma_features.html" />
-    <link rel="prev" title="participant_demographics" href="participant_demographics.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-    
-  
-
-<a class="navbar-brand logo" href="../overview.html">
-  
-  
-  
-  
-  
-  
-    <p class="title logo__title">Biomedical literature annotations</p>
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../overview.html">
-                    Biomedical literature annotations
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../how_to_use_the_data.html">How to use the data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing_to_this_repository.html">Contributing to this repository</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyses</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../participant_demographics.html">Participant demographics</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="NER_biomedical.html">NER_biomedical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="autism_mri.html">autism_mri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cluster_inference.html">cluster_inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cobidas.html">cobidas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic_functional_connectivity.html">dynamic_functional_connectivity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fmri_datasets.html">fmri_datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neuro-meta-analyses.html">neuro-meta-analyses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neuro-meta-analysis-tables.html">neuro-meta-analysis-tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neuro-meta-analysis_manually-inspected-topics.html">neuro-meta-analysis_manually-inspected-topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurobridge_fmri.html">neurobridge_fmri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurosynth_use.html">neurosynth_use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parkinsons.html">parkinsons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="participant_demographics.html">participant_demographics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">review-neuro-meta-analyses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semiauto_ma_features.html">semiauto_ma_features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_open_datasets.html">tracking_open_datasets</a></li>
-</ul>
-
-    </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-<a href="https://github.com/neurodatascience/labelbuddy-annotations" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
+At this point, I have finished annotating the open-access full-text papers. I'd love help annotating the closed-access abstracts. To do this, follow these steps:
+- install labelbuddy
+- install labelbudd-annotations
+- navigate to the current directory `projects/review-neuro-meta-analyses`
+- start labelbuddy with this code: `labelbuddy review-neuro-meta-analyses.lb`
+- import the documents `projects/review-neuro-meta-analyses/documents/closed_documents_00000.jsonl`
+- import the labels `projects/review-neuro-meta-analyses/labels/labels.jsonl`
+- impport my annotations so you don't work on papers I've already finished `projects/review-neuro-meta-analyses/annotations/Kendra_Oudyk.jsonl`
+- Once you're done annotating, export your annotations (*without including the document text*) to a file called `projects/review-neuro-meta-analyses/annotations/<Firstname_Lastname>.jsonl`
+- add, commit, and push your annotations to this repo
 
 
 
+## Labels in this project
 
 
 
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/projects/review-neuro-meta-analyses.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
+```{code-cell}
+:tags: [remove-input]
 
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>review-neuro-meta-analyses</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-neuroimaging-meta-analyses-topics-authors-and-methods">Review of neuroimaging meta-analyses: Topics, authors, and methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained-to-be-updated">How the papers were obtained [to be updated]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored-to-be-updated">Where the full papers are stored [to be updated]</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-i-have-finished-annotating-the-open-access-full-text-papers-i-d-love-help-annotating-the-closed-access-abstracts-to-do-this-follow-these-steps">At this point, I have finished annotating the open-access full-text papers. I’d love help annotating the closed-access abstracts. To do this, follow these steps:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
-</ul>
-            </nav>
-        </div>
-    </div>
-</div>
-
-              
-                
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="review-neuro-meta-analyses">
-<h1>review-neuro-meta-analyses<a class="headerlink" href="#review-neuro-meta-analyses" title="Link to this heading">#</a></h1>
-<p>You can see the full contents of this project <a class="reference external" href="https://github.com/neurodatascience/labelbuddy-annotations/tree/main/projects/review-neuro-meta-analyses/">on GitHub</a>.</p>
-<section id="review-of-neuroimaging-meta-analyses-topics-authors-and-methods">
-<h2>Review of neuroimaging meta-analyses: Topics, authors, and methods<a class="headerlink" href="#review-of-neuroimaging-meta-analyses-topics-authors-and-methods" title="Link to this heading">#</a></h2>
-<p>In this project, we review neuroimaging meta-analyses.
-The manual annotation part of the project focuses on methods.</p>
-</section>
-<section id="papers">
-<h2>Papers<a class="headerlink" href="#papers" title="Link to this heading">#</a></h2>
-<section id="how-the-papers-were-obtained-to-be-updated">
-<h3>How the papers were obtained [to be updated]<a class="headerlink" href="#how-the-papers-were-obtained-to-be-updated" title="Link to this heading">#</a></h3>
-<p>There are two groups of papers:</p>
-<ol class="arabic simple">
-<li><p>full-text open-access papers that were obtained from PMC via pubget, and</p></li>
-<li><p>abstracts from closed-access papers that were obtained from PubMed via a tweaked version of pubget (the out-of-the-box version can only access PMC).</p></li>
-</ol>
-<p>Typically with <a class="reference external" href="https://neuroquery.github.io/pubget/pubget.html">pubget</a>.
-We recommend invoking <code class="docutils literal notranslate"><span class="pre">pubget</span></code> with the <code class="docutils literal notranslate"><span class="pre">--query_file</span></code> option, and storing a copy of the query file in the project’s directory, or including a copy in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
-</section>
-<section id="where-the-full-papers-are-stored-to-be-updated">
-<h3>Where the full papers are stored [to be updated]<a class="headerlink" href="#where-the-full-papers-are-stored-to-be-updated" title="Link to this heading">#</a></h3>
-<p>Typically on <a class="reference external" href="https://osf.io/">OSF</a>.
-Please also add a <code class="docutils literal notranslate"><span class="pre">documents/datasets.json</span></code> file containing the URL where the full <code class="docutils literal notranslate"><span class="pre">pubget</span></code> dataset can be downloaded, that looks like:
-<code class="docutils literal notranslate"><span class="pre">​</span></code>​<code class="docutils literal notranslate"><span class="pre">[</span>&#160;&#160;&#160;&#160; <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;url&quot;:</span> <span class="pre">&quot;https://osf.io/download/&lt;...&gt;/&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">}</span> <span class="pre">]</span></code>​<code class="docutils literal notranslate"><span class="pre">​</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;description&gt;</span></code></p>
-</section>
-</section>
-<section id="annotations">
-<h2>Annotations<a class="headerlink" href="#annotations" title="Link to this heading">#</a></h2>
-<section id="file-s-being-annotated">
-<h3>File(s) being annotated:<a class="headerlink" href="#file-s-being-annotated" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>full texts from open-access papers from PMC:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/projects/review-neuro-meta-analayses/documents/documents_00001-ma-in-title.jsonl</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/projects/review-neuro-meta-analayses/documents/documents_00002-ma-in-title.jsonl</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/projects/review-neuro-meta-analayses/documents/documents_00003-ma-in-title.jsonl</span></code></p></li>
-</ul>
-</li>
-<li><p>abstracts from closed-access papers from pubmed:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">projects/review-neuro-meta-analyses/documents/closed_documents_00000.jsonl</span></code></p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="annotation-labels">
-<h3>Annotation labels:<a class="headerlink" href="#annotation-labels" title="Link to this heading">#</a></h3>
-<p>The label list is quite long, so I’m not including it here. But the labels group into these categories</p>
-<ul class="simple">
-<li><p>Reasons to come back to the paper</p></li>
-<li><p>info on the number of studies/contrasts found/included</p></li>
-<li><p>meta-analysis number (many papers have multiple)</p></li>
-<li><p>algorithm</p></li>
-<li><p>software</p></li>
-<li><p>large-scale meta-analysis method</p></li>
-<li><p>exclusion criteria</p></li>
-<li><p>has prisma chart</p></li>
-</ul>
-</section>
-<section id="labels-found-in-other-projects-as-well">
-<h3>Labels found in other projects as well:<a class="headerlink" href="#labels-found-in-other-projects-as-well" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label2&gt;</span></code></p></li>
-</ul>
-</section>
-<section id="instructions-for-annotators">
-<h3>Instructions for annotators<a class="headerlink" href="#instructions-for-annotators" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="at-this-point-i-have-finished-annotating-the-open-access-full-text-papers-i-d-love-help-annotating-the-closed-access-abstracts-to-do-this-follow-these-steps">
-<h2>At this point, I have finished annotating the open-access full-text papers. I’d love help annotating the closed-access abstracts. To do this, follow these steps:<a class="headerlink" href="#at-this-point-i-have-finished-annotating-the-open-access-full-text-papers-i-d-love-help-annotating-the-closed-access-abstracts-to-do-this-follow-these-steps" title="Link to this heading">#</a></h2>
-</section>
-<section id="labels-in-this-project">
-<h2>Labels in this project<a class="headerlink" href="#labels-in-this-project" title="Link to this heading">#</a></h2>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
+from labelrepo import displays
+text = """
 <div class="detailed-label-set">
     
     <details style="--label-color: #ffbb78;">
-        <summary class="label-display">N studies included (479 docs)</summary>
+        <summary class="label-display">N studies included (598 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fouragnan</mark>, Elsa and Retzler, Chris and Philiastides, Marios G
+Human brain mapping, 2019
+
+# Title
+
+Separate neural representations of prediction error valence and surprise: Evidence from an fMRI meta-analysis.
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">66</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
             
             <div class="annotation">
                 <div class="context">
@@ -555,41 +206,6 @@ Brain networks of perceptual decision…
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Yeung</mark>, Andy W K
-Journal of sleep research, 2020
-
-# Title
-
-Morphometric and functional connectivity changes in the brain of patients with obstructive sleep apnea: A meta-analysis.
-
-# Keywords
-
-brain mapping…
-                </div>
-                <div class="annotation-footer">
-                    <div class="extra-data">19</div>
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Pan</mark>, Nanfang and Wang, Song and Qin, Kun and Li, Lei and Chen, Ying and Zhang, Xun and Lai, Han and Suo, Xueling and Long, Yajing and Yu, Yifan and Ji, Shiyu and Radua, Joaquim and Sweeney, John A and Go…
-                </div>
-                <div class="annotation-footer">
-                    <div class="extra-data">124</div>
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
                     <mark class="annotated-text">Gilat</mark>, Moran and Dijkstra, Bauke W and D&#39;Cruz, Nicholas and Nieuwboer, Alice and Lewis, Simon J G
 Current neurology and neuroscience reports, 2020
 
@@ -617,6 +233,24 @@ Reading interv…
                 </div>
                 <div class="annotation-footer">
                     <div class="extra-data">8</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">K</mark>im, Hongkeun
+Neuroscience and biobehavioral reviews, 2021
+
+# Title
+
+Imaging recollection, familiarity, and novelty in the frontoparietal control and default mode networks and the anterior-posterior me…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">34</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
@@ -660,666 +294,8 @@ Journal of psychiatry &amp;…
         
     </details>
     
-    <details style="--label-color: #ff9896;">
-        <summary class="label-display">algorithm-ALE (418 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Yeung</mark>, Andy Wai Kan
-Public health nutrition, 2021
-
-# Title
-
-Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
-
-# Keywords
-
-Child obesi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Howes, Oliver and Bechdolf, Andreas and Borgwardt, Stefan
-Journal of psychiatry &amp; neuroscience : JPN, 2012
-
-# Title
-
-Mapping vulnerability to bipolar disorder: a systematic review and…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Sacheli</mark>, Lucia Maria and Tomasetig, Giulia and Musco, Margherita Adelaide and Pizzi, Stefano and Bottini, Gabriella and Pizzamiglio, Luigi and Paulesu, Eraldo
-Neuroscience and biobehavioral reviews, 2022
-
-# …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Kim</mark>, Hongkeun
-Biological psychology, 2019
-
-# Title
-
-Neural correlates of explicit and implicit memory at encoding and retrieval: A unified framework and meta-analysis of functional neuroimaging studies.
-…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Murty</mark>, Vishnu P and Ritchey, Maureen and Adcock, R Alison and LaBar, Kevin S
-Neuropsychologia, 2011
-
-# Title
-
-Reprint of: fMRI studies of successful emotional memory encoding: a quantitative meta-analysis.…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fischer</mark>, Manda and Moscovitch, Morris and Alain, Claude
-Wiley interdisciplinary reviews. Cognitive science, 2021
-
-# Title
-
-A systematic review and meta-analysis of memory-guided attention: Frontal and pariet…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Derrfuss</mark>, Jan and Brass, Marcel and Neumann, Jane and von Cramon, D Yves
-Human brain mapping, 2005
-
-# Title
-
-Involvement of the inferior frontal junction in cognitive control: meta-analyses of switching and S…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Miola</mark>, Alessandro and Meda, Nicola and Perini, Giulia and Sambataro, Fabio
-Psychiatry and clinical neurosciences, 2023
-
-# Title
-
-Structural and functional features of treatment-resistant depression: A syst…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Simmons</mark>, Alan N and Matthews, Scott C
-Neuropharmacology, 2012
-
-# Title
-
-Neural circuitry of PTSD with or without mild traumatic brain injury: a meta-analysis.
-
-# Keywords
-
-
-
-# Abstract
-
-Posttraumatic Stress …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Morriss</mark>, Jayne and Gell, Martin and van Reekum, Carien M
-Neuroscience and biobehavioral reviews, 2019
-
-# Title
-
-The uncertain brain: A co-ordinate based meta-analysis of the neural signatures supporting unce…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #c5b0d5;">
-        <summary class="label-display">software-gingerale (221 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Ji</mark>, Shanling and Zhang, Yinghui and Chen, Nan and Liu, Xia and Li, Yongchao and Shao, Xuexiao and Yang, Zhengwu and Yao, Zhijun and Hu, Bin
-Brain imaging and behavior, 2022
-
-# Title
-
-Shared increased en…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Costa</mark>, Cristiano and Cristea, Ioana Alina and Dal Bò, Elisa and Melloni, Caterina and Gentili, Claudio
-Journal of child psychology and psychiatry, and allied disciplines, 2021
-
-# Title
-
-Brain activity duri…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Hétu</mark>, Sébastien and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
-Neuroscience and biobehavioral reviews, 2014
-
-# Title…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Horn</mark>, Mathilde and Jardri, Renaud and D&#39;Hondt, Fabien and Vaiva, Guillaume and Thomas, Pierre and Pins, Delphine
-Cognitive, affective &amp; behavioral neuroscience, 2016
-
-# Title
-
-The multiple neural networks…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Eres</mark>, Robert and Louis, Winnifred R and Molenberghs, Pascal
-Social neuroscience, 2018
-
-# Title
-
-Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
-
-…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Ferraro</mark>, Stefania and Klugah-Brown, Benjamin and Tench, Christopher R and Bazinet, Vincent and Bore, Mercy Chepngetich and Nigri, Anna and Demichelis, Greta and Bruzzone, Maria Grazia and Palermo, Sara and Z…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Yang</mark>, Jie and Andric, Michael and Mathew, Mili M
-Neuroscience and biobehavioral reviews, 2016
-
-# Title
-
-The neural basis of hand gesture comprehension: A meta-analysis of functional magnetic resonance ima…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">King</mark>, M and Rauch, H G and Stein, D J and Brooks, S J
-NeuroImage, 2015
-
-# Title
-
-The handyman&#39;s brain: a neuroimaging meta-analysis describing the similarities and differences between grip type and patter…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Stefaniak</mark>, James D and Alyahya, Reem S W and Lambon Ralph, Matthew A
-NeuroImage, 2021
-
-# Title
-
-Language networks in aphasia and health: A 1000 participant activation likelihood estimation meta-analysis.
-
-# Ke…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Cona</mark>, Giorgia and Scarpazza, Cristina
-Human brain mapping, 2020
-
-# Title
-
-Where is the &#34;where&#34; in the brain? A meta-analysis of neuroimaging studies on spatial cognition.
-
-# Keywords
-
-activation likelihoo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #eeeeec;">
-        <summary class="label-display">DONE (192 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Societ…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
-NeuroImage, 2014
-
-# Title
-
-Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Societ…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
-NeuroImage, 2014
-
-# Title
-
-Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Societ…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
-NeuroImage, 2014
-
-# Title
-
-Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #c49c94;">
-        <summary class="label-display">MA1 (158 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    …f working memory: a meta-analysis.
-
-# Keywords
-
-
-
-# Abstract
-
-We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (<mark class="annotated-text">spatial</mark>, verbal, and object), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s, several neuroimaging studies have investigated the neural correlates of guilt, but no meta-analyses have yet identified the most robust activation patterns. A systematic review of literature found <mark class="annotated-text">16</mark> functional magnetic resonance imaging studies with whole-brain analyses meeting the inclusion criteria, for a total of 325 participants and 135 foci of activation. A meta-analysis was then conducted …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … aim of our study was to perform a meta-analysis of whole-brain functional magnetic resonance imaging (fMRI) studies that compared adult healthy relatives of patients with schizophrenia and controls. <mark class="annotated-text">Twenty-one</mark> whole-brain fMRI studies were included (17 using cognitive tasks and four using emotional tasks), published between 2003 and 2013. These studies included 467 healthy relatives of patients with schizo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … vocal signals and task demands. The present meta-analysis was designed to disentangle this diversity of results by summarizing neuroimaging data in the vocal emotion perception literature. Data from <mark class="annotated-text">44</mark> experiments contrasting emotional and neutral voices was analyzed to assess brain areas involved in vocal affect perception in general, as well as depending on the type of voice signal (speech prosod…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …f results by summarizing neuroimaging data in the vocal emotion perception literature. Data from 44 experiments contrasting emotional and neutral voices was analyzed to assess brain areas involved in <mark class="annotated-text">vocal affect perception in general</mark>, as well as depending on the type of voice signal (speech prosody or vocalizations), the task demands (implicit or explicit attention to emotions), and the specific emotion perceived. Results reasses…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …bolic number processing, arithmetic, and mental rotation. We used Activation Likelihood Estimation (ALE) to construct quantitative meta-analytic maps synthesizing results from 83 neuroimaging papers (<mark class="annotated-text">24</mark>-31 studies/cognitive process). All three cognitive processes were found to activate bilateral parietal regions in and around the intraparietal sulcus (IPS); a finding consistent with shared processin…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s process effort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (<mark class="annotated-text">23</mark> studies, 15 maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s process effort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (<mark class="annotated-text">23</mark> studies, 15 maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s process effort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (<mark class="annotated-text">23</mark> studies, 15 maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …s process effort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (<mark class="annotated-text">23</mark> studies, 15 maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
     <details style="--label-color: #babdb6;">
-        <summary class="label-display">DONE (but did not look into full paper) (131 docs)</summary>
+        <summary class="label-display">DONE (but did not look into full paper) (529 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -1524,8 +500,695 @@ Cerebellar Activation During Simple and Complex Bimanual Coordin…
         
     </details>
     
+    <details style="--label-color: #ff9896;">
+        <summary class="label-display">algorithm-ALE (428 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Yeung</mark>, Andy Wai Kan
+Public health nutrition, 2021
+
+# Title
+
+Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
+
+# Keywords
+
+Child obesi…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Howes, Oliver and Bechdolf, Andreas and Borgwardt, Stefan
+Journal of psychiatry &amp; neuroscience : JPN, 2012
+
+# Title
+
+Mapping vulnerability to bipolar disorder: a systematic review and…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Sacheli</mark>, Lucia Maria and Tomasetig, Giulia and Musco, Margherita Adelaide and Pizzi, Stefano and Bottini, Gabriella and Pizzamiglio, Luigi and Paulesu, Eraldo
+Neuroscience and biobehavioral reviews, 2022
+
+# …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Kim</mark>, Hongkeun
+Biological psychology, 2019
+
+# Title
+
+Neural correlates of explicit and implicit memory at encoding and retrieval: A unified framework and meta-analysis of functional neuroimaging studies.
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Murty</mark>, Vishnu P and Ritchey, Maureen and Adcock, R Alison and LaBar, Kevin S
+Neuropsychologia, 2011
+
+# Title
+
+Reprint of: fMRI studies of successful emotional memory encoding: a quantitative meta-analysis.…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fischer</mark>, Manda and Moscovitch, Morris and Alain, Claude
+Wiley interdisciplinary reviews. Cognitive science, 2021
+
+# Title
+
+A systematic review and meta-analysis of memory-guided attention: Frontal and pariet…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Derrfuss</mark>, Jan and Brass, Marcel and Neumann, Jane and von Cramon, D Yves
+Human brain mapping, 2005
+
+# Title
+
+Involvement of the inferior frontal junction in cognitive control: meta-analyses of switching and S…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Miola</mark>, Alessandro and Meda, Nicola and Perini, Giulia and Sambataro, Fabio
+Psychiatry and clinical neurosciences, 2023
+
+# Title
+
+Structural and functional features of treatment-resistant depression: A syst…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Simmons</mark>, Alan N and Matthews, Scott C
+Neuropharmacology, 2012
+
+# Title
+
+Neural circuitry of PTSD with or without mild traumatic brain injury: a meta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+Posttraumatic Stress …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Morriss</mark>, Jayne and Gell, Martin and van Reekum, Carien M
+Neuroscience and biobehavioral reviews, 2019
+
+# Title
+
+The uncertain brain: A co-ordinate based meta-analysis of the neural signatures supporting unce…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c5b0d5;">
+        <summary class="label-display">software-gingerale (222 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Ji</mark>, Shanling and Zhang, Yinghui and Chen, Nan and Liu, Xia and Li, Yongchao and Shao, Xuexiao and Yang, Zhengwu and Yao, Zhijun and Hu, Bin
+Brain imaging and behavior, 2022
+
+# Title
+
+Shared increased en…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Costa</mark>, Cristiano and Cristea, Ioana Alina and Dal Bò, Elisa and Melloni, Caterina and Gentili, Claudio
+Journal of child psychology and psychiatry, and allied disciplines, 2021
+
+# Title
+
+Brain activity duri…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Hétu</mark>, Sébastien and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
+Neuroscience and biobehavioral reviews, 2014
+
+# Title…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Horn</mark>, Mathilde and Jardri, Renaud and D&#39;Hondt, Fabien and Vaiva, Guillaume and Thomas, Pierre and Pins, Delphine
+Cognitive, affective &amp; behavioral neuroscience, 2016
+
+# Title
+
+The multiple neural networks…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Eres</mark>, Robert and Louis, Winnifred R and Molenberghs, Pascal
+Social neuroscience, 2018
+
+# Title
+
+Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
+
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Ferraro</mark>, Stefania and Klugah-Brown, Benjamin and Tench, Christopher R and Bazinet, Vincent and Bore, Mercy Chepngetich and Nigri, Anna and Demichelis, Greta and Bruzzone, Maria Grazia and Palermo, Sara and Z…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Yang</mark>, Jie and Andric, Michael and Mathew, Mili M
+Neuroscience and biobehavioral reviews, 2016
+
+# Title
+
+The neural basis of hand gesture comprehension: A meta-analysis of functional magnetic resonance ima…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">King</mark>, M and Rauch, H G and Stein, D J and Brooks, S J
+NeuroImage, 2015
+
+# Title
+
+The handyman&#39;s brain: a neuroimaging meta-analysis describing the similarities and differences between grip type and patter…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Tahmasian</mark>, Masoud and Noori, Khadijeh and Samea, Fateme and Zarei, Mojtaba and Spiegelhalder, Kai and Eickhoff, Simon B and Van Someren, Eus and Khazaie, Habibolah and Eickhoff, Claudia R
+Sleep medicine review…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Stefaniak</mark>, James D and Alyahya, Reem S W and Lambon Ralph, Matthew A
+NeuroImage, 2021
+
+# Title
+
+Language networks in aphasia and health: A 1000 participant activation likelihood estimation meta-analysis.
+
+# Ke…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #c49c94;">
-        <summary class="label-display">MA2 (114 docs)</summary>
+        <summary class="label-display">MA1 (200 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Eres, <mark class="annotated-text">Robert</mark> and Louis, Winnifred R and Molenberghs, Pascal
+Social neuroscience, 2018
+
+# Title
+
+Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
+
+# Keywor…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Ardila, <mark class="annotated-text">Alfredo</mark> and Bernal, Byron and Rosselli, Monica
+Archives of clinical neuropsychology : the official journal of the National Academy of Neuropsychologists, 2018
+
+# Title
+
+Executive Functions Brain System: An A…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Sacheli, <mark class="annotated-text">Lucia</mark> Maria and Tomasetig, Giulia and Musco, Margherita Adelaide and Pizzi, Stefano and Bottini, Gabriella and Pizzamiglio, Luigi and Paulesu, Eraldo
+Neuroscience and biobehavioral reviews, 2022
+
+# Title
+
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Etkin, Amit <mark class="annotated-text">and</mark> Wager, Tor D
+The American journal of psychiatry, 2007
+
+# Title
+
+Functional neuroimaging of anxiety: a meta-analysis of emotional processing in PTSD, social anxiety disorder, and specific phobia.
+
+# K…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …f working memory: a meta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (<mark class="annotated-text">spatial</mark>, verbal, and object), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …f working memory: a meta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (<mark class="annotated-text">spatial</mark>, verbal, and object), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing body of evidence suggests that empathy for pain is underpinned by neural structures that are also involved in the direct experience of pain. In order to assess the consistency of this finding, an <mark class="annotated-text">image-based meta-analysis</mark> of nine independent functional magnetic resonance imaging (fMRI) investigations and a coordinate-based meta-analysis of 32 studies that had investigated empathy for pain using fMRI were conducted. Th…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ual 
+
+
+# Abstract
+
+This meta-analysis compares the brain structures and mechanisms involved in facial and vocal emotion recognition. Neuroimaging studies contrasting emotional with neutral (face: N = <mark class="annotated-text">76</mark>, voice: N = 34) and explicit with implicit emotion processing (face: N = 27, voice: N = 20) were collected to shed light on stimulus and goal-driven mechanisms, respectively. Activation likelihood es…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … that empathy for pain is underpinned by neural structures that are also involved in the direct experience of pain. In order to assess the consistency of this finding, an image-based meta-analysis of <mark class="annotated-text">nine</mark> independent functional magnetic resonance imaging (fMRI) investigations and a coordinate-based meta-analysis of 32 studies that had investigated empathy for pain using fMRI were conducted. The result…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …s, several neuroimaging studies have investigated the neural correlates of guilt, but no meta-analyses have yet identified the most robust activation patterns. A systematic review of literature found <mark class="annotated-text">16</mark> functional magnetic resonance imaging studies with whole-brain analyses meeting the inclusion criteria, for a total of 325 participants and 135 foci of activation. A meta-analysis was then conducted …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #eeeeec;">
+        <summary class="label-display">DONE (194 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
+Journal of the Royal Statistical Societ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
+NeuroImage, 2014
+
+# Title
+
+Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
+Journal of the Royal Statistical Societ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
+NeuroImage, 2014
+
+# Title
+
+Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Samartsidis</mark>, Pantelis and Eickhoff, Claudia R and Eickhoff, Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
+Journal of the Royal Statistical Societ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Andrews</mark>-Hanna, Jessica R and Saxe, Rebecca and Yarkoni, Tal
+NeuroImage, 2014
+
+# Title
+
+Contributions of episodic retrieval and mentalizing to autobiographical thought: evidence from functional neuroimaging, …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c49c94;">
+        <summary class="label-display">MA2 (159 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -1538,6 +1201,80 @@ Journal of child psychology and psychiatry, and allied disciplines, 2021
 # Title
 
 Brain activity during facial p…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Eres, Robert <mark class="annotated-text">and</mark> Louis, Winnifred R and Molenberghs, Pascal
+Social neuroscience, 2018
+
+# Title
+
+Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
+
+# Keywords
+
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Sacheli, Lucia <mark class="annotated-text">Maria</mark> and Tomasetig, Giulia and Musco, Margherita Adelaide and Pizzi, Stefano and Bottini, Gabriella and Pizzamiglio, Luigi and Paulesu, Eraldo
+Neuroscience and biobehavioral reviews, 2022
+
+# Title
+
+The un…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Etkin, Amit and <mark class="annotated-text">Wager</mark>, Tor D
+The American journal of psychiatry, 2007
+
+# Title
+
+Functional neuroimaging of anxiety: a meta-analysis of emotional processing in PTSD, social anxiety disorder, and specific phobia.
+
+# Keyword…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Ardila, Alfredo <mark class="annotated-text">and</mark> Bernal, Byron and Rosselli, Monica
+Archives of clinical neuropsychology : the official journal of the National Academy of Neuropsychologists, 2018
+
+# Title
+
+Executive Functions Brain System: An Activ…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1593,13 +1330,21 @@ We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working 
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    … whole-brain functional magnetic resonance imaging (fMRI) studies that compared adult healthy relatives of patients with schizophrenia and controls. Twenty-one whole-brain fMRI studies were included (<mark class="annotated-text">17</mark> using cognitive tasks and four using emotional tasks), published between 2003 and 2013. These studies included 467 healthy relatives of patients with schizophrenia and 768 controls. To conduct the st…
+                    … memory: a meta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, <mark class="annotated-text">verbal</mark>, and object), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1611,31 +1356,9 @@ We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working 
             
             <div class="annotation">
                 <div class="context">
-                    …perception literature. Data from 44 experiments contrasting emotional and neutral voices was analyzed to assess brain areas involved in vocal affect perception in general, as well as depending on the <mark class="annotated-text">type of voice signal</mark> (speech prosody or vocalizations), the task demands (implicit or explicit attention to emotions), and the specific emotion perceived. Results reassessed a consistent bilateral network of Emotional Vo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …ic number processing, arithmetic, and mental rotation. We used Activation Likelihood Estimation (ALE) to construct quantitative meta-analytic maps synthesizing results from 83 neuroimaging papers (24-<mark class="annotated-text">31</mark> studies/cognitive process). All three cognitive processes were found to activate bilateral parietal regions in and around the intraparietal sulcus (IPS); a finding consistent with shared processing a…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (<mark class="annotated-text">15</mark> studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effec…
+                    …ct
+
+This meta-analysis compares the brain structures and mechanisms involved in facial and vocal emotion recognition. Neuroimaging studies contrasting emotional with neutral (face: N = 76, voice: N = <mark class="annotated-text">34</mark>) and explicit with implicit emotion processing (face: N = 27, voice: N = 20) were collected to shed light on stimulus and goal-driven mechanisms, respectively. Activation likelihood estimations were …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1647,21 +1370,57 @@ We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working 
             
             <div class="annotation">
                 <div class="context">
-                    … rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (<mark class="annotated-text">15</mark> studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effec…
+                    …n order to assess the consistency of this finding, an image-based meta-analysis of nine independent functional magnetic resonance imaging (fMRI) investigations and a coordinate-based meta-analysis of <mark class="annotated-text">32</mark> studies that had investigated empathy for pain using fMRI were conducted. The results indicate that a core network consisting of bilateral anterior insular cortex and medial/anterior cingulate cortex…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">N contrasts included (111 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …s with human adults. To complement this work from a developmental perspective, we conducted a meta-analysis of fMRI studies of auditory language comprehension in human children. Our analysis included <mark class="annotated-text">27</mark> independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and seed-based effect size mapping revealed activation peaks in the par…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    … rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (<mark class="annotated-text">15</mark> studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effec…
+                    …years, raising the need for an integrative understanding of the literature. The present study performed a quantitative meta-analysis of the data to fulfill that need. The meta-analysis focused on the <mark class="annotated-text">three</mark> most widely used types of activation contrast: Hit &gt; Miss, Intact &gt; Rearranged, and Memory &gt; Perception. The major results were as follows. First, the Hit &gt; Miss contrast mainly involved regions in t…
                 </div>
                 <div class="annotation-footer">
+                    <div class="extra-data">3</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …years, raising the need for an integrative understanding of the literature. The present study performed a quantitative meta-analysis of the data to fulfill that need. The meta-analysis focused on the <mark class="annotated-text">three</mark> most widely used types of activation contrast: Hit &gt; Miss, Intact &gt; Rearranged, and Memory &gt; Perception. The major results were as follows. First, the Hit &gt; Miss contrast mainly involved regions in t…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">3</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
@@ -1671,13 +1430,263 @@ We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working 
             
             <div class="annotation">
                 <div class="context">
-                    … rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (<mark class="annotated-text">15</mark> studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effec…
+                    …arch, especially upon reaching the discussion about brain functions. This large scale meta-analysis was performed on functional MRI studies. It included more than 700 active brain foci from more than <mark class="annotated-text">70</mark> different experiments to study gender related similarities and differences in brain activation strategies for three of the main brain functions: Visual-spatial cognition, memory, and emotion. Areas t…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …riate responses and the inhibition of others. Such effortful inhibition is achieved by a number of interference resolution and global inhibition processes. This meta-analysis including 57 studies and <mark class="annotated-text">73</mark> contrasts revisits the overlap and differences in brain areas supporting interference resolution and global inhibition in cortical and subcortical brain areas. Activation likelihood estimation was us…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …orld. However, the neural underpinnings of audiovisual integration continue to be a topic of debate. Using strict inclusion criteria, we performed an activation likelihood estimation meta-analysis on <mark class="annotated-text">121</mark> neuroimaging experiments with a total of 2,092 participants. We found that audiovisual integration is linked with the coexistence of multiple integration sites, including early cortical, subcortical,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …despite decades of research, understanding of their neural correlates has been limited. A systematic coordinate-based meta-analysis of functional magnetic resonance imaging (fMRI) studies (altogether <mark class="annotated-text">87</mark> original datasets, n = 2328) was conducted to investigate neural inter-group biases, i.e., responses toward in-group vs. out-group in different contexts. We found inter-group biases in some previousl…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …gdala interact in emotion processing. However, no meta-analyses have focused on studies that reported concurrent vmPFC and amygdala activities. With activation likelihood estimation (ALE) we examined <mark class="annotated-text">100</mark> experiments that reported concurrent vmPFC and amygdala activities, and distinguished responses to positive vs. negative emotions and to passive exposure to vs. active regulation of emotions. We also…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …gdala interact in emotion processing. However, no meta-analyses have focused on studies that reported concurrent vmPFC and amygdala activities. With activation likelihood estimation (ALE) we examined <mark class="annotated-text">100</mark> experiments that reported concurrent vmPFC and amygdala activities, and distinguished responses to positive vs. negative emotions and to passive exposure to vs. active regulation of emotions. We also…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … vocal signals and task demands. The present meta-analysis was designed to disentangle this diversity of results by summarizing neuroimaging data in the vocal emotion perception literature. Data from <mark class="annotated-text">44</mark> experiments contrasting emotional and neutral voices was analyzed to assess brain areas involved in vocal affect perception in general, as well as depending on the type of voice signal (speech prosod…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">exclude (109 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
+Psychiatry and clinical neurosciences, 2017
+
+# Title
+
+Does pediatric post-traumatic stress diso…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Peyron</mark>, R and Laurent, B and García-Larrea, L
+Neurophysiologie clinique = Clinical neurophysiology, 2001
+
+# Title
+
+Functional imaging of brain responses to pain. A review and meta-analysis (2000).
+
+# Keywor…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Kondziella</mark>, Daniel and Friberg, Christian K and Frokjaer, Vibe G and Fabricius, Martin and Møller, Kirsten
+Journal of neurology, neurosurgery, and psychiatry, 2016
+
+# Title
+
+Preserved consciousness in vegetativ…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Beynel</mark>, Lysianne and Appelbaum, Lawrence G and Luber, Bruce and Crowell, Courtney A and Hilbig, Susan A and Lim, Wesley and Nguyen, Duy and Chrapliwy, Nicolas A and Davis, Simon W and Cabeza, Roberto and Li…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Richards</mark>, Lorie G and Stewart, Kim C and Woodbury, Michelle L and Senesac, Claudia and Cauraugh, James H
+Neuropsychologia, 2008
+
+# Title
+
+Movement-dependent stroke recovery: a systematic review and meta-analy…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Neumann</mark>, Jane and Fox, Peter T and Turner, Robert and Lohmann, Gabriele
+NeuroImage, 2010
+
+# Title
+
+Learning partially directed functional networks from meta-analysis imaging data.
+
+# Keywords
+
+
+
+# Abstract
+
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Pollard</mark>, Anna A and Hauson, Alexander O and Lackey, Nicholas S and Zhang, Emily and Khayat, Sarah and Carson, Bryce and Fortea, Lydia and Radua, Joaquim and Grant, Igor
+The American journal of drug and alcoh…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wang</mark>, HongZhou and Wang, WanHua and Wang, XueYang and Hu, JianBin and Yao, LiZheng
+Parkinsonism &amp; related disorders, 2020
+
+# Title
+
+Comment on &#34;resting-state fMRI in Parkinson&#39;s disease patients with cogn…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Holmes</mark>, Nicholas Paul and Tamè, Luigi
+Journal of neurophysiology, 2019
+
+# Title
+
+Locating primary somatosensory cortex in human brain stimulation studies: systematic review and meta-analytic evidence.
+
+# Ke…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -1686,28 +1695,10 @@ We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working 
     </details>
     
     <details style="--label-color: #ffbb78;">
-        <summary class="label-display">N studies found (98 docs)</summary>
+        <summary class="label-display">N studies found (102 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Lukow</mark>, P B and Kiemes, A and Kempton, M J and Turkheimer, F E and McGuire, P and Modinos, G
-Neuroscience and biobehavioral reviews, 2021
-
-# Title
-
-Neural correlates of emotional processing in psychosis ris…
-                </div>
-                <div class="annotation-footer">
-                    <div class="extra-data">4</div>
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
             
             <div class="annotation">
                 <div class="context">
@@ -1766,6 +1757,18 @@ Social cognition abilities are severely impaired in schizophrenia (SZ). The curr
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ming disorder (IGD), and to explore the underpinning neuroscience basis of IGD. Yet, no available literature has systemically reviewed the fMRI studies of IGD using meta-analyses. This study reviewed <mark class="annotated-text">61</mark> candidate articles and finally selected 10 qualified voxel-wise whole-brain analysis studies for performing a comprehensive series of meta-analyses employing effect size signed differential mapping a…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Mohammad_Torabi</div>
                 </div>
             </div>
@@ -1785,6 +1788,31 @@ Social cognition abilities are severely impaired in schizophrenia (SZ). The curr
             
             <div class="annotation">
                 <div class="context">
+                    …-traumatic growth for adult trauma survivors. We utilized the following databases to conduct our systematic search: Boston College Libraries, PubMed, MEDLINE, and PsycINFO. Our initial search yielded <mark class="annotated-text">834</mark> studies for initial screening. We implemented seven eligibility criteria to vet articles for full-text review. Twenty-nine studies remained for full-text review after our systematic review process wa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="extra-data">834</div>
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ducted separate comprehensive PUBMED (1990-May 2008) searches to find all functional magnetic resonance imaging studies using a variant of the emotional faces paradigm in healthy subjects. Out of the <mark class="annotated-text">551</mark> originally identified studies, 105 studies met inclusion criteria. The overall database consisted of 1785 brain coordinates which yield an overall sample of 1600 healthy subjects. We found no support…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
                     …ducted separate comprehensive PUBMED (1990-May 2008) searches to find all functional magnetic resonance imaging studies using a variant of the emotional faces paradigm in healthy subjects. Out of the <mark class="annotated-text">551</mark> originally identified studies, 105 studies met inclusion criteria. The overall database consisted of 1785 brain coordinates which yield an overall sample of 1600 healthy subjects. We found no support…
                 </div>
                 <div class="annotation-footer">
@@ -1797,7 +1825,187 @@ Social cognition abilities are severely impaired in schizophrenia (SZ). The curr
             
             <div class="annotation">
                 <div class="context">
-                    …rence (MD) of Fugl-Meyer Assessment (FMA) scores were pooled and the random-effects model method was used to perform the meta-analysis. The PRISMA criteria were followed in current review. A total of <mark class="annotated-text">897</mark> records were identified, eight single-group studies and 11 controlled-trial studies were included in our review. The systematic analysis indicated that the BCI-robot systems had a significant improve…
+                    … &#34;glioma surgery resection outcome.&#34; Articles found to meet inclusion criteria were segregated and analyzed and resulting data were compared with standard neuronavigation (control cohort). A total of <mark class="annotated-text">435</mark> articles were identified, with 29 distinct studies meeting inclusion criteria, including DTI (n = 3), fMRI (n = 5), and iMRI (n = 21). Nine studies directly compared results with standard navigation.…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c49c94;">
+        <summary class="label-display">MA3 (99 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fouragnan</mark>, Elsa and Retzler, Chris and Philiastides, Marios G
+Human brain mapping, 2019
+
+# Title
+
+Separate neural representations of prediction error valence and surprise: Evidence from an fMRI meta-analysis.
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Ji, <mark class="annotated-text">Shanling</mark> and Zhang, Yinghui and Chen, Nan and Liu, Xia and Li, Yongchao and Shao, Xuexiao and Yang, Zhengwu and Yao, Zhijun and Hu, Bin
+Brain imaging and behavior, 2022
+
+# Title
+
+Shared increased entropy of b…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Klugah-Brown, <mark class="annotated-text">Benjamin</mark> and Zhou, Xinqi and Pradhan, Basant K and Zweerings, Jana and Mathiak, Klaus and Biswal, Bharat and Becker, Benjamin
+Addiction biology, 2021
+
+# Title
+
+Common neurofunctional dysregulations characteri…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Eres, Robert and <mark class="annotated-text">Louis</mark>, Winnifred R and Molenberghs, Pascal
+Social neuroscience, 2018
+
+# Title
+
+Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
+
+# Keywords
+
+Activa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Ardila, Alfredo and <mark class="annotated-text">Bernal</mark>, Byron and Rosselli, Monica
+Archives of clinical neuropsychology : the official journal of the National Academy of Neuropsychologists, 2018
+
+# Title
+
+Executive Functions Brain System: An Activation L…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Etkin, Amit and Wager, <mark class="annotated-text">Tor</mark> D
+The American journal of psychiatry, 2007
+
+# Title
+
+Functional neuroimaging of anxiety: a meta-analysis of emotional processing in PTSD, social anxiety disorder, and specific phobia.
+
+# Keywords
+
+
+
+…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Sacheli, Lucia Maria and Tomasetig, <mark class="annotated-text">Giulia</mark> and Musco, Margherita Adelaide and Pizzi, Stefano and Bottini, Gabriella and Pizzamiglio, Luigi and Paulesu, Eraldo
+Neuroscience and biobehavioral reviews, 2022
+
+# Title
+
+The unexplored link between …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …eta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and <mark class="annotated-text">object</mark>), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses o…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …eta-analysis.
+
+# Keywords
+
+
+
+# Abstract
+
+We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and <mark class="annotated-text">object</mark>), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses o…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -1809,30 +2017,12 @@ Social cognition abilities are severely impaired in schizophrenia (SZ). The curr
             
             <div class="annotation">
                 <div class="context">
-                    …y variables which displayed group differences were subjected to voxel-wise meta-regression analyses in order to examine their effect on the ALE results. 
-
-
-
-## Results 
-  
-The initial search returned <mark class="annotated-text">415</mark> citations. Of these, 337 studies were discarded after reviewing the abstracts while the full text of the remaining 76 citations was examined in more detail. Thirty three studies fulfilled the inclusi…
+                    …anisms involved in facial and vocal emotion recognition. Neuroimaging studies contrasting emotional with neutral (face: N = 76, voice: N = 34) and explicit with implicit emotion processing (face: N = <mark class="annotated-text">27</mark>, voice: N = 20) were collected to shed light on stimulus and goal-driven mechanisms, respectively. Activation likelihood estimations were conducted on the full data sets for the separate modalities a…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
-                                       >PMC3187762</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …er 2009, without any language restrictions. We included all studies using fMRI to investigate the effect of acupuncture on the human brain (at least one group that received needle-based acupuncture). <mark class="annotated-text">779</mark> papers were identified, 149 met the inclusion criteria for the descriptive analysis, and 34 were eligible for the meta-analyses. From a descriptive perspective, multiple studies reported that acupunc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322129/"
-                                       >PMC3322129</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
@@ -2012,21 +2202,15 @@ Investigating socio-cognitive processes in deception: a quantitative meta-analys
         
     </details>
     
-    <details style="--label-color: #c49c94;">
-        <summary class="label-display">MA3 (72 docs)</summary>
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - traditional ma (57 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Fouragnan</mark>, Elsa and Retzler, Chris and Philiastides, Marios G
-Human brain mapping, 2019
-
-# Title
-
-Separate neural representations of prediction error valence and surprise: Evidence from an fMRI meta-analysis.
-…
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2038,12 +2222,12 @@ Separate neural representations of prediction error valence and surprise: Eviden
             
             <div class="annotation">
                 <div class="context">
-                    Ji, <mark class="annotated-text">Shanling</mark> and Zhang, Yinghui and Chen, Nan and Liu, Xia and Li, Yongchao and Shao, Xuexiao and Yang, Zhengwu and Yao, Zhijun and Hu, Bin
-Brain imaging and behavior, 2022
+                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
+Psychiatry and clinical neurosciences, 2017
 
 # Title
 
-Shared increased entropy of b…
+Does pediatric post-traumatic stress diso…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2055,12 +2239,12 @@ Shared increased entropy of b…
             
             <div class="annotation">
                 <div class="context">
-                    Klugah-Brown, <mark class="annotated-text">Benjamin</mark> and Zhou, Xinqi and Pradhan, Basant K and Zweerings, Jana and Mathiak, Klaus and Biswal, Bharat and Becker, Benjamin
-Addiction biology, 2021
+                    <mark class="annotated-text">Luna</mark>, Licia P and Sherbaf, Farzaneh Ghazi and Sair, Haris I and Mukherjee, Debraj and Oliveira, Isabella Bezerra and Köhler, Cristiano André
+Radiology, 2021
 
 # Title
 
-Common neurofunctional dysregulations characteri…
+Can Preoperative Mapping with Functio…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2072,7 +2256,178 @@ Common neurofunctional dysregulations characteri…
             
             <div class="annotation">
                 <div class="context">
-                    …eta-analysis.
+                    <mark class="annotated-text">Müller</mark>, Felix and Brändle, Raphael and Liechti, Matthias E and Borgwardt, Stefan
+Neuroscience and biobehavioral reviews, 2019
+
+# Title
+
+Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
+
+# …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Caras</mark>, Andrew and Mugge, Luke and Miller, William Kyle and Mansour, Tarek R and Schroeder, Jason and Medhkour, Azedine
+World neurosurgery, 2020
+
+# Title
+
+Usefulness and Impact of Intraoperative Imaging for…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
+Psychiatry and clinical neurosciences, 2017
+
+# Title
+
+Does pediatric post-traumatic stress diso…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Luna</mark>, Licia P and Sherbaf, Farzaneh Ghazi and Sair, Haris I and Mukherjee, Debraj and Oliveira, Isabella Bezerra and Köhler, Cristiano André
+Radiology, 2021
+
+# Title
+
+Can Preoperative Mapping with Functio…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Müller</mark>, Felix and Brändle, Raphael and Liechti, Matthias E and Borgwardt, Stefan
+Neuroscience and biobehavioral reviews, 2019
+
+# Title
+
+Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
+
+# …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #c49c94;">
+        <summary class="label-display">MA4 (52 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Yeung, Andy Wai <mark class="annotated-text">Kan</mark>
+Public health nutrition, 2021
+
+# Title
+
+Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
+
+# Keywords
+
+Child obesity 
+Food comme…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Eres, Robert and Louis, <mark class="annotated-text">Winnifred</mark> R and Molenberghs, Pascal
+Social neuroscience, 2018
+
+# Title
+
+Common and distinct neural networks involved in fMRI studies investigating morality: an ALE meta-analysis.
+
+# Keywords
+
+Activation likeli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Bohrn, Isabel C and Altmann, Ulrike and Jacobs, Arthur M
+Neuropsychologia, 2013
+
+# Title
+
+Looking at the brains behind figurative language--a quantitative meta-analysis of neuroimaging studies on <mark class="annotated-text">metaphor, idiom, and irony</mark> processing.
 
 # Keywords
 
@@ -2080,154 +2435,7 @@ Common neurofunctional dysregulations characteri…
 
 # Abstract
 
-We performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and <mark class="annotated-text">object</mark>), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses o…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …tic resonance imaging (fMRI) studies that compared adult healthy relatives of patients with schizophrenia and controls. Twenty-one whole-brain fMRI studies were included (17 using cognitive tasks and <mark class="annotated-text">four</mark> using emotional tasks), published between 2003 and 2013. These studies included 467 healthy relatives of patients with schizophrenia and 768 controls. To conduct the statistical analysis, we used the…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …number processing, arithmetic, and mental rotation. We used Activation Likelihood Estimation (ALE) to construct quantitative meta-analytic maps synthesizing results from 83 neuroimaging papers (24-31 <mark class="annotated-text">studies</mark>/cognitive process). All three cognitive processes were found to activate bilateral parietal regions in and around the intraparietal sulcus (IPS); a finding consistent with shared processing accounts.…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …emotional and neutral voices was analyzed to assess brain areas involved in vocal affect perception in general, as well as depending on the type of voice signal (speech prosody or vocalizations), the <mark class="annotated-text">task demands</mark> (implicit or explicit attention to emotions), and the specific emotion perceived. Results reassessed a consistent bilateral network of Emotional Voices Areas consisting of the superior temporal corte…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …identify overlapping brain regions. In total 303 articles were included: 53 for FTD (n = 1153 patients, 42.5% female; 1337 controls, 53.8% female), 28 for music perception (n = 540, 51.8% female) and <mark class="annotated-text">222</mark> for social cognition in controls (n = 5664, 50.2% female). We observed considerable overlap in atrophy patterns associated with FTD, and functional activation associated with music perception and soc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …on differences. A whole-brain activation likelihood estimation based meta-analysis was conducted on fMRI studies that examined episodic memory in HOA (n = 200), MCI (n = 131), and AD populations (n = <mark class="annotated-text">89</mark>; total n = 409). Diffuse activation was exhibited in the HOA sample, while activation was more limited in the clinical populations. Additionally, the HOA sample showed more activation in the right hi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … fulfilled the inclusion criteria and were included in the meta-analysis. Details are shown in   and  . 
-
-### Facial emotion recognition 
-  
-We identified 16 FER studies in ASD and 33 in SZ, of which <mark class="annotated-text">5 and 12</mark> respectively were used in the ALE analysis. The total sample comprised 55 ASD and 203 SZ patients and 253 healthy controls (HC) ( ). Demographic details for all participants and clinical information …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
-                                       >PMC3187762</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #ffbb78;">
-        <summary class="label-display">N contrasts included (71 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    …years, raising the need for an integrative understanding of the literature. The present study performed a quantitative meta-analysis of the data to fulfill that need. The meta-analysis focused on the <mark class="annotated-text">three</mark> most widely used types of activation contrast: Hit &gt; Miss, Intact &gt; Rearranged, and Memory &gt; Perception. The major results were as follows. First, the Hit &gt; Miss contrast mainly involved regions in t…
-                </div>
-                <div class="annotation-footer">
-                    <div class="extra-data">3</div>
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …gdala interact in emotion processing. However, no meta-analyses have focused on studies that reported concurrent vmPFC and amygdala activities. With activation likelihood estimation (ALE) we examined <mark class="annotated-text">100</mark> experiments that reported concurrent vmPFC and amygdala activities, and distinguished responses to positive vs. negative emotions and to passive exposure to vs. active regulation of emotions. We also…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … vocal signals and task demands. The present meta-analysis was designed to disentangle this diversity of results by summarizing neuroimaging data in the vocal emotion perception literature. Data from <mark class="annotated-text">44</mark> experiments contrasting emotional and neutral voices was analyzed to assess brain areas involved in vocal affect perception in general, as well as depending on the type of voice signal (speech prosod…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …and fear-related limbic regions. Thus, discovering such therapy-associated neural changes might point to relevant mechanisms of action. Using AES-SDM, we conducted a coordinate-based meta-analysis of <mark class="annotated-text">22</mark> whole-brain datasets (n = 419 anxiety patients) from 18 studies identified by our systematic literature search following PRISMA criteria (preregistration available at OSF: https://osf.io/dgc4p). In t…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …r differences amongst morality tasks are the cause for such heterogeneous findings. Therefore, in the present study, a series of activation likelihood estimation (ALE) meta-analyses were conducted on <mark class="annotated-text">123</mark> datasets (inclusive of 1963 participants) to address this question. The ALE meta-analyses revealed a series of common brain areas associated with all moral tasks, including medial prefrontal cortex, …
+A quantitative, coordinate-based meta-analysis combined data from 354 participants across 22 fMRI studies and one positron emission tomography (PET) study to id…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2239,77 +2447,7 @@ We identified 16 FER studies in ASD and 33 in SZ, of which <mark class="annotate
             
             <div class="annotation">
                 <div class="context">
-                    …r differences amongst morality tasks are the cause for such heterogeneous findings. Therefore, in the present study, a series of activation likelihood estimation (ALE) meta-analyses were conducted on <mark class="annotated-text">123</mark> datasets (inclusive of 1963 participants) to address this question. The ALE meta-analyses revealed a series of common brain areas associated with all moral tasks, including medial prefrontal cortex, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …r differences amongst morality tasks are the cause for such heterogeneous findings. Therefore, in the present study, a series of activation likelihood estimation (ALE) meta-analyses were conducted on <mark class="annotated-text">123</mark> datasets (inclusive of 1963 participants) to address this question. The ALE meta-analyses revealed a series of common brain areas associated with all moral tasks, including medial prefrontal cortex, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …r differences amongst morality tasks are the cause for such heterogeneous findings. Therefore, in the present study, a series of activation likelihood estimation (ALE) meta-analyses were conducted on <mark class="annotated-text">123</mark> datasets (inclusive of 1963 participants) to address this question. The ALE meta-analyses revealed a series of common brain areas associated with all moral tasks, including medial prefrontal cortex, …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …available fMRI data is now possible to extract the most relevant information. Using the Activation Likelihood Estimation method, we therefore conducted such a meta-analysis on 9 studies, representing <mark class="annotated-text">27</mark> neuroimaging contrasts and 131 participants. We identified a network composed of brain areas underlying the cognitive abilities required for driving: sensorimotor coordination, sensory and attentiona…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …rch to collect resting-state functional magnetic resonance imaging (rs-fMRI) studies in patients with psychiatric disorders. This work identified 9 eligible rs-fMRI studies, which included a total of <mark class="annotated-text">14</mark> experiments, 67 activation foci, and 1383 subjects. We tested the convergence across their findings by using the activation likelihood estimation method. P-value maps were corrected by using cluster-…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #888a85;">
-        <summary class="label-display">exclude (62 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                    …performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and object), three types of executive function (<mark class="annotated-text">continuous updating of WM</mark>, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses of material type showed the expected dorsal-ventral dissociation…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2321,7 +2459,7 @@ We identified 16 FER studies in ASD and 33 in SZ, of which <mark class="annotate
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                    …performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and object), three types of executive function (<mark class="annotated-text">continuous updating of WM</mark>, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses of material type showed the expected dorsal-ventral dissociation…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2333,53 +2471,7 @@ We identified 16 FER studies in ASD and 33 in SZ, of which <mark class="annotate
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Neumann</mark>, Jane and Turner, Robert and Fox, Peter T and Lohmann, Gabriele
-NeuroImage, 2011
-
-# Title
-
-Exploring functional relations between brain regions from fMRI meta-analysis data: comments on Ramsey, Spirt…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Yuan, <mark class="annotated-text">Rui</mark> and Biswal, Bharat B and Zaborszky, Laszlo
-Cerebral cortex (New York, N.Y. : 1991), 2020
-
-# Title
-
-Functional Subdivisions of Magnocellular Cell Groups in Human Basal Forebrain: Test-Retest Resting-S…
+                    … in facial and vocal emotion recognition. Neuroimaging studies contrasting emotional with neutral (face: N = 76, voice: N = 34) and explicit with implicit emotion processing (face: N = 27, voice: N = <mark class="annotated-text">20</mark>) were collected to shed light on stimulus and goal-driven mechanisms, respectively. Activation likelihood estimations were conducted on the full data sets for the separate modalities and on reduced, …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -2391,69 +2483,49 @@ Functional Subdivisions of Magnocellular Cell Groups in Human Basal Forebrain: T
             
             <div class="annotation">
                 <div class="context">
-                    Yuan, <mark class="annotated-text">Rui</mark> and Biswal, Bharat B and Zaborszky, Laszlo
-Cerebral cortex (New York, N.Y. : 1991), 2020
-
-# Title
-
-Functional Subdivisions of Magnocellular Cell Groups in Human Basal Forebrain: Test-Retest Resting-S…
+                    … cortical modulation loops. Delineating these processes may elucidate mechanisms for arousal, aberration in which may underlie some psychiatric conditions. Here we are the first to review and discuss <mark class="annotated-text">four</mark> Activation Likelihood Estimation (ALE) meta-analyses of fMRI studies using subliminal paradigms. We find a maximum of 9 out of 12 studies using subliminal presentation of faces contributing to activa…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Yuan, <mark class="annotated-text">Rui</mark> and Biswal, Bharat B and Zaborszky, Laszlo
-Cerebral cortex (New York, N.Y. : 1991), 2020
-
-# Title
-
-Functional Subdivisions of Magnocellular Cell Groups in Human Basal Forebrain: Test-Retest Resting-S…
+                    …endently. The activation likelihood estimation (ALE) method was used to analyze eight studies in the orthographic task category, eleven in the phonological and fifteen in the semantic task categories.<mark class="annotated-text"> Converging activation</mark> among three language-processing components was found in the left middle frontal gyrus, the left superior parietal lobule and the left mid-fusiform gyrus, suggesting a common sub-network underlying th…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Yuan, <mark class="annotated-text">Rui</mark> and Biswal, Bharat B and Zaborszky, Laszlo
-Cerebral cortex (New York, N.Y. : 1991), 2020
-
-# Title
-
-Functional Subdivisions of Magnocellular Cell Groups in Human Basal Forebrain: Test-Retest Resting-S…
+                    …sks from individual studies. Here, the meta-analysis on 32 fMRI studies was performed to detect brain activation patterns of TI and its three paradigms (spatial inference, hierarchical inference, and <mark class="annotated-text">associative inference</mark>). We found the hippocampus, prefrontal cortex (PFC), putamen, posterior parietal cortex (PPC), retrosplenial cortex (RSC), supplementary motor area (SMA), precentral gyrus (PreCG), and median cingula…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Cañete-Massé, <mark class="annotated-text">Cristina</mark> and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
-Brain connectivity, 2021
-
-# Title
-
-Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Int…
+                    …i have been linked with several neuropsychiatric disorders. However, questions still remain about the exact neural substrates implicated in social reward and punishment processing. Here, we conducted <mark class="annotated-text">four</mark> Anisotropic Effect Size Signed Differential Mapping voxel-based meta-analyses of fMRI studies investigating the neural correlates of the anticipation and receipt of social rewards and punishments usi…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Brent_McPherson</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -2851,7 +2923,31 @@ The prediction of emotion has been explore…
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … of action. Using AES-SDM, we conducted a coordinate-based meta-analysis of 22 whole-brain datasets (n = 419 anxiety patients) from 18 studies identified by our systematic literature search following <mark class="annotated-text">PRISMA</mark> criteria (preregistration available at OSF: https://osf.io/dgc4p). In these studies, fMRI data was collected in response to negative stimuli during cognitive-emotional tasks before and after psychoth…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … studies were included for the meta-analysis. The mean difference (MD) of Fugl-Meyer Assessment (FMA) scores were pooled and the random-effects model method was used to perform the meta-analysis. The <mark class="annotated-text">PRISMA</mark> criteria were followed in current review. A total of 897 records were identified, eight single-group studies and 11 controlled-trial studies were included in our review. The systematic analysis indic…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -2975,211 +3071,32 @@ Among those, fMRI coordinates were extracted from only 84 studies. Ten studies m
                 </div>
             </div>
             
-            <div class="annotation">
-                <div class="context">
-                    …y (Cochrane Library), Scopus, and Informit (Health Collection). The searches were confined to full-text research manuscripts published in English and indexed from January 1990 to October 16, 2019.   
-<mark class="annotated-text">Preferred reporting items of systematic reviews and meta-analyses flow diagram.</mark> BOLD, blood oxygenation level dependent; mTBI, mild traumatic brain injury; ROI, region of interest; fMRI, functional magnetic resonance imaging. 
-  Fig. 1   
-
-Detailed electronic search strategies a…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6939096/"
-                                       >PMC6939096</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …r including the same experiments (i.e., contrasts) using same participants in different publications ( ,  ). These controls resulted in 32 acceptable articles testing children 14 years or younger.   
-<mark class="annotated-text">PRISMA</mark> flowchart for identification and eligibility of articles (template by  ). n = number of papers. 
-  Fig. 1   
-
-Contrast coordinates were selected based on whether the experimental paradigm was related…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6969084/"
-                                       >PMC6969084</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #c49c94;">
-        <summary class="label-display">MA4 (41 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Yeung, Andy Wai <mark class="annotated-text">Kan</mark>
-Public health nutrition, 2021
-
-# Title
-
-Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
-
-# Keywords
-
-Child obesity 
-Food comme…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …performed meta-analyses on 60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and object), three types of executive function (<mark class="annotated-text">continuous updating of WM</mark>, memory for temporal order, and manipulation of information in WM), and interactions between material and executive function. Analyses of material type showed the expected dorsal-ventral dissociation…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …olved in vocal affect perception in general, as well as depending on the type of voice signal (speech prosody or vocalizations), the task demands (implicit or explicit attention to emotions), and the <mark class="annotated-text">specific emotion perceived.</mark> Results reassessed a consistent bilateral network of Emotional Voices Areas consisting of the superior temporal cortex and primary auditory regions. Specific activations and lateralization of these r…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …in atrophy patterns associated with FTD, and functional activation associated with music perception and social cognition, mostly encompassing the ventral language network. We further observed overlap <mark class="annotated-text">across all three modalities</mark> in mesolimbic, basal forebrain and striatal regions. The results of our meta-analysis suggest that music perception and social cognition share neurobiological circuits that are affected in FTD. This …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …rison of schizophrenia and autism spectrum disorders.        
-
-
-### Theory of mind 
-  
-Our search identified 10 studies exploring ToM related processes in ASD subjects and 17 in SZ patients, of which <mark class="annotated-text">7</mark> and 9 respectively fulfilled inclusion criteria ( ). The total analysis encompassed 91 ASD and 133 SZ patients, and 239 HC subjects. Demographic details for all participants and clinical information …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3187762/"
-                                       >PMC3187762</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …onvergence in fusiform gyrus, cerebellum, SI and middle cingulate gyrus. Whereas, on greater deactivation from verum than sham acupuncture or greater activation for sham (2b, sham&gt;verum, 21 subjects, <mark class="annotated-text">3</mark> experiments and 27 foci) the result showed significant convergence in supramarginal gyrus, superior temporal gyrus and cuneus ( ,  ). 
-   Clusters showing significant convergence for verum versus sha…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322129/"
-                                       >PMC3322129</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …nservative cluster-extent of 40 mm  (i.e., 5 contiguous voxels) was used. 
-
-
-
-##  Results  
-  
-Separate meta-analyses were run to examine the neural activity across and within symptom provocation and <mark class="annotated-text">cognitive-emotional tasks</mark> in PTSD. Because of the variability in naming conventions of medial prefrontal cortex regions across different studies, activated regions are listed in the text and tables both by their structure spe…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3430553/"
-                                       >PMC3430553</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …pants. 
-
-We also performed four separate ALE analyses on four categories of studies in relation to the type of familiarity paradigm (recently learned vs. familiar environment) and spatial strategies (<mark class="annotated-text">egocentric</mark> vs. allocentric strategies) used in the experiment. 
-
-Regarding the categorization of studies according to degree of familiarity, we separated experiments according to whether the environment used in…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4010721/"
-                                       >PMC4010721</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … were included in the general analysis and in the individual ALE analysis of the paradigm (RL vs. F environment) but not in the analysis of the neural substrate of navigational strategies. A total of <mark class="annotated-text">30</mark> experiments were defined as allocentric and 34 as egocentric (see Tables   and   for more details). 
-
-After carrying out separate ALE analyses on the categories of studies [  paradigm   (recently lea…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4010721/"
-                                       >PMC4010721</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …yses were performed on (1) 13 studies assessing musical creativity (219 participants, 197 activation foci), (2) 24 studies assessing verbal creativity (575 participants, 207 activation foci), and (3) <mark class="annotated-text">six</mark> studies assessing visuo-spatial creativity (164 participants, 52 activation foci). 
-
-The ALE meta-analysis was performed using GingerALE  2.3.1 with MNI coordinates (Talairach coordinates were automa…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4531218/"
-                                       >PMC4531218</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
         </div>
         
     </details>
     
     <details style="--label-color: #888a85;">
-        <summary class="label-display">EXCLUDE - traditional ma (34 docs)</summary>
+        <summary class="label-display">EXCLUDE - about ma&#39;s (34 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+                    Lange, N
+Human brain mapping, 2010
+
+# Title
+
+<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3191,12 +3108,25 @@ The ALE meta-analysis was performed using GingerALE  2.3.1 with MNI coordinates 
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
-Psychiatry and clinical neurosciences, 2017
+                    Suzuki, Keita and Yamashita, Okito
+NeuroImage, 2021
 
 # Title
 
-Does pediatric post-traumatic stress diso…
+<mark class="annotated-text">MEG current source reconstruction using a meta-analysis fMRI prior.
+</mark>
+# Keywords
+
+Hierarchical Bayesian method 
+MEG inverse problem 
+Meta-analysis 
+Source reconstruction 
+fMRI 
+
+
+# Abstract
+
+Magnetoencephalography (MEG) offers a unique way to noninvasively investigate …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3208,12 +3138,20 @@ Does pediatric post-traumatic stress diso…
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Luna</mark>, Licia P and Sherbaf, Farzaneh Ghazi and Sair, Haris I and Mukherjee, Debraj and Oliveira, Isabella Bezerra and Köhler, Cristiano André
-Radiology, 2021
+                    Ramsey, J D and Spirtes, P and Glymour, C
+NeuroImage, 2011
 
 # Title
 
-Can Preoperative Mapping with Functio…
+<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3225,14 +3163,26 @@ Can Preoperative Mapping with Functio…
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Müller</mark>, Felix and Brändle, Raphael and Liechti, Matthias E and Borgwardt, Stefan
-Neuroscience and biobehavioral reviews, 2019
+                    Han, Hyemin and Park, Joonsuk
+Cognitive neuroscience, 2019
 
 # Title
 
-Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
+<mark class="annotated-text">Bayesian meta-analysis of fMRI image data.
+</mark>
+# Keywords
 
-# …
+-value 
+Bayes factors 
+Bayesian inference 
+Bayesian random-effect meta-analysis 
+fMRI 
+meta-analysis 
+
+
+# Abstract
+
+We composed an R-based script for Image-based Bayesian random-effect me…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3244,24 +3194,20 @@ Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
-Psychiatry and clinical neurosciences, 2017
+                    Ramsey, J D and Spirtes, P and Glymour, C
+NeuroImage, 2011
 
 # Title
 
-Does pediatric post-traumatic stress diso…
+<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3273,43 +3219,20 @@ Does pediatric post-traumatic stress diso…
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Luna</mark>, Licia P and Sherbaf, Farzaneh Ghazi and Sair, Haris I and Mukherjee, Debraj and Oliveira, Isabella Bezerra and Köhler, Cristiano André
-Radiology, 2021
+                    Ramsey, J D and Spirtes, P and Glymour, C
+NeuroImage, 2011
 
 # Title
 
-Can Preoperative Mapping with Functio…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Müller</mark>, Felix and Brändle, Raphael and Liechti, Matthias E and Borgwardt, Stefan
-Neuroscience and biobehavioral reviews, 2019
+<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
+</mark>
+# Keywords
 
-# Title
 
-Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
 
-# …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Perez, Jorge and Broome, Matthew and Borgwardt, Stefan and Placentino, Anna and Caverzasi, Eduardo and Cortesi, Mariachiara and Veggiotti, Pierangelo and Politi, Peirluigi and Barale,…
+# Abstract
+
+Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3321,18 +3244,367 @@ Neuroimaging of chronic MDMA (&#34;ecstasy&#34;) effects: A meta-analysis.
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Milani</mark>, Ana Carolina C and Hoffmann, Elis V and Fossaluza, Victor and Jackowski, Andrea P and Mello, Marcelo F
-Psychiatry and clinical neurosciences, 2017
+                    Ramsey, J D and Spirtes, P and Glymour, C
+NeuroImage, 2011
 
 # Title
 
-Does pediatric post-traumatic stress diso…
+<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Jennings, Robin G and Van Horn, John D
+Neuroinformatics, 2012
+
+# Title
+
+<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Smith, David V and Delgado, Mauricio R
+Human brain mapping, 2018
+
+# Title
+
+<mark class="annotated-text">Meta-analysis of psychophysiological interactions: Revisiting cluster-level thresholding and sample sizes.
+</mark>
+# Keywords
+
+CBMA 
+PPI 
+fMRI 
+meta-analysis 
+open science 
+psychophysiological interaction 
+
+
+# Abstract
+
+Within the neuroimaging community, coordinate based meta-analyses (CBMAs) are essential for ag…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Eickhoff, S B and Nickl-Jockschat, T and Kurth, F
+Der Nervenarzt, 2010
+
+# Title
+
+<mark class="annotated-text">[Meta-analyses in clinical brain research].
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Positron emission tomography (PET) and functional magnetic resonance imaging (fMRI) have brought about an immense increase in findings on the localization of motor, cognitiv…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #eeeeec;">
+        <summary class="label-display">read later (33 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Lange, N
+Human brain mapping, 2010
+
+# Title
+
+<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Lange, N
+Human brain mapping, 2010
+
+# Title
+
+<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Lange, N
+Human brain mapping, 2010
+
+# Title
+
+<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Lange, N
+Human brain mapping, 2010
+
+# Title
+
+<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Jennings, Robin G and Van Horn, John D
+Neuroinformatics, 2012
+
+# Title
+
+<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Jennings, Robin G and Van Horn, John D
+Neuroinformatics, 2012
+
+# Title
+
+<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Jennings, Robin G and Van Horn, John D
+Neuroinformatics, 2012
+
+# Title
+
+<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Jennings, Robin G and Van Horn, John D
+Neuroinformatics, 2012
+
+# Title
+
+<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
+</mark>
+# Keywords
+
+
+
+# Abstract
+
+Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Phan, K Luan and Wager, Tor and Taylor, Stephan F and Liberzon, Israel
+NeuroImage, <mark class="annotated-text">2002</mark>
+
+# Title
+
+Functional neuroanatomy of emotion: a meta-analysis of emotion activation studies in PET and fMRI.
+
+# Keywords
+
+
+
+# Abstract
+
+Neuroimagingstudies with positron emission tomography (PET) and…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Phan, K Luan and Wager, Tor and Taylor, Stephan F and Liberzon, Israel
+NeuroImage, <mark class="annotated-text">2002</mark>
+
+# Title
+
+Functional neuroanatomy of emotion: a meta-analysis of emotion activation studies in PET and fMRI.
+
+# Keywords
+
+
+
+# Abstract
+
+Neuroimagingstudies with positron emission tomography (PET) and…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
             
@@ -3552,27 +3824,14 @@ Brain areas associated with numbers and calculations in children: Meta-analyses 
     </details>
     
     <details style="--label-color: #eeeeec;">
-        <summary class="label-display">read later (28 docs)</summary>
+        <summary class="label-display">ask about this one (29 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    Lange, N
-Human brain mapping, 2010
-
-# Title
-
-<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
+                    <mark class="annotated-text">Chiang</mark>, Florence L and Feng, Max and Romero, Rebecca S and Price, Larry and Franklin, Crystal G and Deng, Shengwen and Gray, Jodie P and Yu, Fang F and Tantiwongkosi, Bundhit and Huang, Susie Y and Fox, Pet…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -3581,241 +3840,6 @@ Functional neuroimaging research is currently rediscovering and adapting establi
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lange, N
-Human brain mapping, 2010
-
-# Title
-
-<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lange, N
-Human brain mapping, 2010
-
-# Title
-
-<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lange, N
-Human brain mapping, 2010
-
-# Title
-
-<mark class="annotated-text">Empirical and substantive models, the Bayesian paradigm, and meta-analysis in functional brain imaging.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Functional neuroimaging research is currently rediscovering and adapting established statistical methods for its use, including design of experiments, the general linear mod…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Jennings, Robin G and Van Horn, John D
-Neuroinformatics, 2012
-
-# Title
-
-<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Jennings, Robin G and Van Horn, John D
-Neuroinformatics, 2012
-
-# Title
-
-<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Jennings, Robin G and Van Horn, John D
-Neuroinformatics, 2012
-
-# Title
-
-<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Jennings, Robin G and Van Horn, John D
-Neuroinformatics, 2012
-
-# Title
-
-<mark class="annotated-text">Publication bias in neuroimaging research: implications for meta-analyses.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neuroimaging and the neurosciences have made notable advances in sharing activation results through detailed databases, making meta-analysis of the published research faster…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Phan, K Luan and Wager, Tor and Taylor, Stephan F and Liberzon, Israel
-NeuroImage, <mark class="annotated-text">2002</mark>
-
-# Title
-
-Functional neuroanatomy of emotion: a meta-analysis of emotion activation studies in PET and fMRI.
-
-# Keywords
-
-
-
-# Abstract
-
-Neuroimagingstudies with positron emission tomography (PET) and…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Phan, K Luan and Wager, Tor and Taylor, Stephan F and Liberzon, Israel
-NeuroImage, <mark class="annotated-text">2002</mark>
-
-# Title
-
-Functional neuroanatomy of emotion: a meta-analysis of emotion activation studies in PET and fMRI.
-
-# Keywords
-
-
-
-# Abstract
-
-Neuroimagingstudies with positron emission tomography (PET) and…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #eeeeec;">
-        <summary class="label-display">ask about this one (28 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
@@ -3920,6 +3944,36 @@ Reward seeking and avoidance of punishment are key motivational processes. Brain
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Brent_McPherson</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Dugré, Jules R and Dumais, Alexandre and Bitar, Nathalie and Potvin, Stéphane
+PeerJ, 2022
+
+# Title
+
+Loss anticipation and outcome during <mark class="annotated-text">the</mark> 
+
+# Keywords
+
+Loss avoidance 
+Meta-analysis 
+Monetary Incentive Delay Task 
+Punishment 
+fMRI 
+
+
+# Abstract
+
+Reward seeking and avoidance of punishment are key motivational processes. Brain-imaging st…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -4034,42 +4088,12 @@ meta-analysis
                 </div>
             </div>
             
-            <div class="annotation">
-                <div class="context">
-                    …ng its neuroanatomy remain controversial. In this work, we used coordinate-based activation-likelihood estimations to merge available fMRI data on non-literal language. A literature search identified <mark class="annotated-text">38 fMRI studies on non-literal language (24 metaphor studies, 14 non-salient stimuli studies, 7 idiom studies, 8 irony studies, and 1 metonymy study)</mark>. Twenty-eight studies with direct comparisons of non-literal and literal studies were included in the main meta-analysis. Sub-analyses for metaphors, idioms, irony, salient metaphors, and non-salient…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …eta-analysis 
-Open monitoring 
-
-
-# Abstract
-
-Meditation is a family of mental practices that encompasses a wide array of techniques employing distinctive mental strategies. We systematically reviewed <mark class="annotated-text">78</mark> functional neuroimaging (fMRI and PET) studies of meditation, and used activation likelihood estimation to meta-analyze 257 peak foci from 31 experiments involving 527 participants. We found reliably…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
         </div>
         
     </details>
     
     <details style="--label-color: #ff9896;">
-        <summary class="label-display">algorithm-MKDA (27 docs)</summary>
+        <summary class="label-display">algorithm-MKDA (28 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -4226,7 +4250,7 @@ Cerebral cortex (New York, N.Y. : 1991), 2015
     </details>
     
     <details style="--label-color: #ff9896;">
-        <summary class="label-display">algorithm-AES-SDM (27 docs)</summary>
+        <summary class="label-display">algorithm-AES-SDM (28 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -4329,7 +4353,7 @@ Cerebral cortex (New York, N.Y. : 1991), 2015
             
             <div class="annotation">
                 <div class="context">
-                    …der (rMDD) and MDD present common or distinct neuropathological mechanisms remains unclear. We performed a meta-analysis of task-related whole-brain functional magnetic resonance imaging (fMRI) using <mark class="annotated-text">anisotropic effect-size signed differential mapping</mark> software to compare brain activation between rMDD/MDD patients and healthy controls (HCs). We included 18 rMDD studies (458 patients and 476 HCs) and 120 MDD studies (3746 patients and 3863 HCs). The…
+                    …f emotion processing tasks, as well as structural neuroimaging findings, and investigates multimodally affected brain regions. Combined coordinate- and image-based meta-analyses were calculated using <mark class="annotated-text">anisotropic effect size signed differential mapping</mark>. Nineteen functional neuroimaging studies investigating the processing of negative compared with neutral stimuli in a total of 281 patients with BPD and 293 healthy control subjects (HC) were include…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -4347,7 +4371,7 @@ Cerebral cortex (New York, N.Y. : 1991), 2015
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -4356,7 +4380,7 @@ Cerebral cortex (New York, N.Y. : 1991), 2015
     </details>
     
     <details style="--label-color: #c49c94;">
-        <summary class="label-display">MA5 (24 docs)</summary>
+        <summary class="label-display">MA5 (25 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -4369,7 +4393,31 @@ Cerebral cortex (New York, N.Y. : 1991), 2015
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …60 neuroimaging (PET and fMRI) studies of working memory (WM), considering three types of storage material (spatial, verbal, and object), three types of executive function (continuous updating of WM, <mark class="annotated-text">memory for temporal order</mark>, and manipulation of information in WM), and interactions between material and executive function. Analyses of material type showed the expected dorsal-ventral dissociation between spatial and nonspa…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …gyrus. Accordingly, we investigated for the first time whether the neural activation commonly found in social functional neuroimaging studies extends to these &#39;semantic control&#39; regions. We conducted <mark class="annotated-text">five</mark> coordinate-based meta-analyses to combine results of 499 fMRI/PET experiments and identified the brain regions consistently involved in semantic control, as well as four social abilities: theory of m…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -4466,36 +4514,225 @@ After carrying out separate ALE analyses on the categories of studies [  paradig
                 </div>
             </div>
             
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #888a85;">
+        <summary class="label-display">EXCLUDE - not a full report (22 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
             <div class="annotation">
                 <div class="context">
-                    …s by false discovery rate (FDR; Laird et al.,  ) and a cluster threshold of 100 mm  (Hill et al.,  ) was employed in the first-level analyses. 
+                    <mark class="annotated-text">Zang</mark>, Yu-Feng and Zuo, Xi-Nian and Milham, Michael and Hallett, Mark
+BioMed research international, 2016
 
+# Title
 
-#### First-level analyses 
-  
-First-level analyses on <mark class="annotated-text">common executive</mark> (shared activation across tasks tapping inhibition, switching, and updating executive processes; Figure  ) and each specific putative executive process (inhibition, updating, and switching) were cond…
+Toward a Meta-Analytic Synthesis of the Resting-State fMRI Literature for Clinical Popula…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5383671/"
-                                       >PMC5383671</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Brent_McPherson</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Zang</mark>, Yu-Feng and Zuo, Xi-Nian and Milham, Michael and Hallett, Mark
+BioMed research international, 2016
+
+# Title
+
+Toward a Meta-Analytic Synthesis of the Resting-State fMRI Literature for Clinical Popula…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    …. 
-
-#### Is functional reorganisation in CP limited to neuropathic pain? 
-  
-CP studies were sub-grouped by etiology (neuropathic (NEUR ;  ), nociceptive musculo-skeletal (MSK ;  ), and fibromyalgia (<mark class="annotated-text">FM</mark> ;  ). There are distinct neurophysiological differences between neuropathic and musculo-skeletal pain disorders with controversies regarding the classification of FM  ( ,  ,  ). Thus, there may be di…
+                    <mark class="annotated-text">Pollard</mark>, Anna A and Hauson, Alexander O and Lackey, Nicholas S and Zhang, Emily and Khayat, Sarah and Carson, Bryce and Fortea, Lydia and Radua, Joaquim and Grant, Igor
+The American journal of drug and alcoh…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5554296/"
-                                       >PMC5554296</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wang, HongZhou and Wang, WanHua and Wang, XueYang and Hu, JianBin and Yao, LiZheng
+</mark>Parkinsonism &amp; related disorders, 2020
+
+# Title
+
+Comment on &#34;resting-state fMRI in Parkinson&#39;s disease patients with cognitive impairment: A meta-analysis&#34;.
+
+# Keywords
+
+Functional connectivity 
+Meta-…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wang</mark>, Haixia and Zhang, Jian and Jia, Huiyuan
+Frontiers in human neuroscience, 2020
+
+# Title
+
+Separate Neural Systems Value Prosocial Behaviors and Reward: An ALE Meta-Analysis.
+
+# Keywords
+
+ALE 
+fMRI 
+pr…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Gao, Rong and <mark class="annotated-text">Wang</mark>, Ping and Zhou, Sheng and Yao, Hongyan
+Asian journal of surgery, 2023
+
+# Title
+
+Resting-state fMRI study of vulnerable brain regions in patients with end-stage renal disease: An activation likelihood…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Brent_McPherson</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Gao, Rong and <mark class="annotated-text">Wang</mark>, Ping and Zhou, Sheng and Yao, Hongyan
+Asian journal of surgery, 2023
+
+# Title
+
+Resting-state fMRI study of vulnerable brain regions in patients with end-stage renal disease: An activation likelihood…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Dugré, Jules Roger and Potvin, Stéphane
+Psychological medicine, 2022
+
+# Title
+
+<mark class="annotated-text">Impaired attentional and socio-affective networks in subjects with antisocial behaviors: a meta-analysis of resting-state functional connectivity studies.
+</mark>
+# Keywords
+
+Functional connectivity 
+antisocial behaviors 
+conduct disorder 
+default mode network 
+dorsal attention network 
+ventral attention network 
+
+
+# Abstract
+
+In the past decade, there has bee…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Solstrand Dahlberg, Linda and Lungu, Ovidiu and Doyon, Julien
+Frontiers in neurology, 2020
+
+# Title
+
+<mark class="annotated-text">Cerebellar Contribution to Motor and Non-motor Functions in Parkinson&#39;s Disease: A Meta-Analysis of fMRI Findings.
+</mark>
+# Keywords
+
+Parkinson&#39;s disease 
+cognition 
+fMRI 
+meta-analysis 
+motor 
+symptoms 
+
+
+# Abstract
+
+
+
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Cañete-Massé, Cristina and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
+Brain <mark class="annotated-text">connectivity</mark>, 2021
+
+# Title
+
+Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Intellectual Disability Population: A Meta-Analytic Study.
+
+# Keywords
+
+cognitive task 
+fMRI 
+intel…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Brent_McPherson</div>
                 </div>
             </div>
             
@@ -4528,6 +4765,87 @@ Common neurofunctional dysregula…
             
             <div class="annotation">
                 <div class="context">
+                    <mark class="annotated-text">Zeng</mark>, Jianguang and You, Lantao and Sheng, Haoxuan and Luo, Ya and Yang, Xun
+Drug and alcohol dependence, 2023
+
+# Title
+
+The differential neural substrates for reward choice under gain-loss contexts and r…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Gao</mark>, Xin and Zhang, Wenjing and Yao, Li and Xiao, Yuan and Liu, Lu and Liu, Jieke and Li, Siyi and Tao, Bo and Shah, Chandan and Gong, Qiyong and Sweeney, John A and Lui, Su
+Journal of psychiatry &amp; neuro…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wolters</mark>, Amée F and van de Weijer, Sjors C F and Leentjens, Albert F G and Duits, Annelien A and Jacobs, Heidi I L and Kuijf, Mark L
+Parkinsonism &amp; related disorders, 2020
+
+# Title
+
+Resting-state fMRI in Par…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Hiew</mark>, Shawn and Roothans, Jonas and Eldebakey, Hazem and Volkmann, Jens and Zeller, Daniel and Reich, Martin M
+Neuroscience and biobehavioral reviews, 2023
+
+# Title
+
+Imaging the spin: Disentangling the co…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Meng</mark>, Ya-jing and Deng, Wei and Wang, Hui-yao and Guo, Wan-jun and Li, Tao and Lam, Chaw and Lin, Xia
+Behavioural brain research, 2015
+
+# Title
+
+Reward pathway dysfunction in gambling disorder: A meta-ana…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
                     <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Placentino, Anna and Carletti, Francesco and Landi, Paola and Allen, Paul and Surguladze, Simon and Benedetti, Francesco and Abbamonte, Marta and Gasparotti, Roberto and Barale, Franc…
                 </div>
                 <div class="annotation-footer">
@@ -4581,86 +4899,6 @@ Common neurofunctional dysregula…
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Silva</mark>, P H R and Spedo, C T and Barreira, A A and Leoni, R F
-Multiple sclerosis and related disorders, 2018
-
-# Title
-
-Symbol Digit Modalities Test adaptation for Magnetic Resonance Imaging environment: A s…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Klugah</mark>-Brown, Benjamin and Zhou, Xinqi and Pradhan, Basant K and Zweerings, Jana and Mathiak, Klaus and Biswal, Bharat and Becker, Benjamin
-Addiction biology, 2021
-
-# Title
-
-Common neurofunctional dysregula…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Fusar</mark>-Poli, Paolo and Placentino, Anna and Carletti, Francesco and Landi, Paola and Allen, Paul and Surguladze, Simon and Benedetti, Francesco and Abbamonte, Marta and Gasparotti, Roberto and Barale, Franc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Silva</mark>, P H R and Spedo, C T and Barreira, A A and Leoni, R F
-Multiple sclerosis and related disorders, 2018
-
-# Title
-
-Symbol Digit Modalities Test adaptation for Magnetic Resonance Imaging environment: A s…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Klugah</mark>-Brown, Benjamin and Zhou, Xinqi and Pradhan, Basant K and Zweerings, Jana and Mathiak, Klaus and Biswal, Bharat and Becker, Benjamin
-Addiction biology, 2021
-
-# Title
-
-Common neurofunctional dysregula…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
                 </div>
             </div>
             
@@ -4669,7 +4907,7 @@ Common neurofunctional dysregula…
     </details>
     
     <details style="--label-color: #ff9896;">
-        <summary class="label-display">algorithm-other ma method (19 docs)</summary>
+        <summary class="label-display">algorithm-other ma method (20 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
@@ -4716,6 +4954,23 @@ Functional M…
             
             <div class="annotation">
                 <div class="context">
+                    <mark class="annotated-text">Zunhammer</mark>, Matthias and Bingel, Ulrike and Wager, Tor D
+JAMA neurology, 2019
+
+# Title
+
+Placebo Effects on the Neurologic Pain Signature: A Meta-analysis of Individual Participant Functional Magnetic Resonance …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
                     <mark class="annotated-text">Etkin</mark>, Amit and Wager, Tor D
 The American journal of psychiatry, 2007
 
@@ -4842,24 +5097,6 @@ Functional neuroimaging of anxiety: a meta-analysis of emotional processing in P
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Bartra</mark>, Oscar and McGuire, Joseph T and Kable, Joseph W
-NeuroImage, 2014
-
-# Title
-
-The valuation system: a coordinate-based meta-analysis of BOLD fMRI experiments examining neural correlates of subjective v…
-                </div>
-                <div class="annotation-footer">
-                    <div class="extra-data">custom method, similar to MKDA</div>
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
                 </div>
             </div>
             
@@ -5011,6 +5248,18 @@ The valuation system: a coordinate-based meta-analysis of BOLD fMRI experiments 
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … studies of working memory (WM), considering three types of storage material (spatial, verbal, and object), three types of executive function (continuous updating of WM, memory for temporal order, and<mark class="annotated-text"> manipulation of information in WM</mark>), and interactions between material and executive function. Analyses of material type showed the expected dorsal-ventral dissociation between spatial and nonspatial storage in the posterior cortex, b…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
@@ -5134,30 +5383,43 @@ First-level analyses on common executive (shared activation across tasks tapping
                 </div>
             </div>
             
-            <div class="annotation">
-                <div class="context">
-                    …ity in the bilateral IPL and SPL, right PI, IFG, claustrum, MFG, PreCG and MOG, and left AI, PreCG, ITG, aMCC/ACC and putamen (see   and   for peak coordinates and ALE values). The ALE single map for <mark class="annotated-text">3PP</mark> yielded consistent activations in the bilateral PosCG and left AI, ACC, MOG and IPL (see   and   for peak coordinates and ALE values). Conjunction analysis for both perspectives revealed bilateral ac…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6847411/"
-                                       >PMC6847411</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
         </div>
         
     </details>
     
     <details style="--label-color: #98df8a;">
-        <summary class="label-display">largescale-neurosynth decoding (15 docs)</summary>
+        <summary class="label-display">largescale-neurosynth decoding (16 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
+                    de la Vega, Alejandro and Yarkoni, Tal and Wager, Tor D and Banich, Marie T
+Cerebral cortex (New York, N.Y. : 1991), 2019
+
+# Title
+
+<mark class="annotated-text">Large-scale Meta-analysis</mark> Suggests Low Regional Modularity in Lateral Frontal Cortex.
+
+# Keywords
+
+
+
+# Abstract
+
+Extensive fMRI study of human lateral frontal cortex (LFC) has yet to yield a consensus mapping between discrete…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
                     de la Vega, Alejandro and Chang, Luke J and Banich, Marie T and Wager, Tor D and Yarkoni, Tal
 The Journal of neuroscience : the official journal of the Society for Neuroscience, 2017
 
@@ -5329,18 +5591,6 @@ The functional organization of human medial frontal cortex (MFC) is a subject of
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …corporating observations from 3401 adult patients and 3238 healthy participants was performed by seed-based d mapping. Brain maps were subjected to meta-analytic connectivity modeling and data-driven <mark class="annotated-text">functional decoding </mark>analyses to identify associated neural circuit alterations and relations to behavioral dimensions. Both groups exhibited hypoactivated abnormalities in the left inferior parietal lobule, and altered c…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
             
@@ -5658,6 +5908,337 @@ Resting-state fMRI studies investigating the pathophysiology of depression have 
         
     </details>
     
+    <details style="--label-color: #c5b0d5;">
+        <summary class="label-display">software-brainmap (11 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
+Cerebral cortex (New York, N.Y. : 1991), 2014
+
+# Title
+
+Meta-analytic connectivity modeli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
+Brain structure &amp; function, 2019
+
+# Title
+
+Neural networks of aggression:…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
+Cerebral cortex (New York, N.Y. : 1991), 2014
+
+# Title
+
+Meta-analytic connectivity modeli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
+Brain structure &amp; function, 2019
+
+# Title
+
+Neural networks of aggression:…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
+Cerebral cortex (New York, N.Y. : 1991), 2014
+
+# Title
+
+Meta-analytic connectivity modeli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
+Brain structure &amp; function, 2019
+
+# Title
+
+Neural networks of aggression:…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
+Cerebral cortex (New York, N.Y. : 1991), 2014
+
+# Title
+
+Meta-analytic connectivity modeli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
+Brain structure &amp; function, 2019
+
+# Title
+
+Neural networks of aggression:…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Yeung, <mark class="annotated-text">Andy</mark> Wai Kan
+Public health nutrition, 2021
+
+# Title
+
+Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
+
+# Keywords
+
+Child obesity 
+Fo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Rotge, <mark class="annotated-text">Jean</mark>-Yves and Guehl, Dominique and Dilharreguy, Bixente and Cuny, Emmanuel and Tignol, Jean and Bioulac, Bernard and Allard, Michele and Burbaud, Pierre and Aouizerate, Bruno
+Journal of psychiatry &amp; neuro…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #98df8a;">
+        <summary class="label-display">largescale-brainmap decoding (11 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    Yeung, Andy <mark class="annotated-text">Wai</mark> Kan
+Public health nutrition, 2021
+
+# Title
+
+Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
+
+# Keywords
+
+Child obesity 
+Food c…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Cañete-Massé, <mark class="annotated-text">Cristina</mark> and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
+Brain connectivity, 2021
+
+# Title
+
+Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Int…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Brent_McPherson</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Cañete-Massé, <mark class="annotated-text">Cristina</mark> and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
+Brain connectivity, 2021
+
+# Title
+
+Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Int…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #ffbb78;">
         <summary class="label-display">NO N studies included (10 docs)</summary>
         
@@ -5834,6 +6415,19 @@ Meta-…
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ly with demand for manipulation (including dual-task requirements or mental operations). BA 7, in the posterior parietal cortex, is involved in all types of executive function. Finally, we consider a <mark class="annotated-text">potential fourth executive function</mark>: selective attention to features of a stimulus to be stored in WM, which leads to increased probability of activating the medial prefrontal cortex (BA 32) in storage tasks. 
+
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
@@ -5958,16 +6552,333 @@ The effects of IN-OT on b…
                 </div>
             </div>
             
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #eeeeec;">
+        <summary class="label-display">candidate for replication (9 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
             <div class="annotation">
                 <div class="context">
-                    Gao, <mark class="annotated-text">Xinyu</mark> and Zhang, Mengzhe and Yang, Zhengui and Wen, Mengmeng and Huang, Huiyu and Zheng, Ruiping and Wang, Weijian and Wei, Yarui and Cheng, Jingliang and Han, Shaoqiang and Zhang, Yong
-Front Psychiatry, 2…
+                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
+Brain and cognition, 2018
+
+# Title
+
+Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+
+# Keywords
+
+Activation likelihood estimation 
+Affe…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8281314/"
-                                       >PMC8281314</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
+Brain and cognition, 2018
+
+# Title
+
+Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+
+# Keywords
+
+Activation likelihood estimation 
+Affe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
+Brain and cognition, 2018
+
+# Title
+
+Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+
+# Keywords
+
+Activation likelihood estimation 
+Affe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
+Brain and cognition, 2018
+
+# Title
+
+Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+
+# Keywords
+
+Activation likelihood estimation 
+Affe…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
+Neuroscience and biobehavioral reviews, 2014
+
+# Title
+
+The neura…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Chen, <mark class="annotated-text">Yu</mark> and Chaudhary, Shefali and Li, Chiang-Shan R
+NeuroImage, 2022
+
+# Title
+
+Shared and distinct neural activity during anticipation and outcome of win and loss: A meta-analysis of the monetary incentive …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
+Neuroscience and biobehavioral reviews, 2014
+
+# Title
+
+The neura…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
+Neuroscience and biobehavioral reviews, 2014
+
+# Title
+
+The neura…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
+Neuroscience and biobehavioral reviews, 2014
+
+# Title
+
+The neura…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Xu, Min and <mark class="annotated-text">Xu</mark>, Guiping and Yang, Yang
+Frontiers in behavioral neuroscience, 2020
+
+# Title
+
+Neural Systems Underlying Emotional and Non-emotional Interference Processing: An ALE Meta-Analysis of Functional Neuroima…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ff9896;">
+        <summary class="label-display">IMBA (9 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing body of evidence suggests that empathy for pain is underpinned by neural structures that are also involved in the direct experience of pain. In order to assess the consistency of this finding, an <mark class="annotated-text">image-based meta-analysis</mark> of nine independent functional magnetic resonance imaging (fMRI) investigations and a coordinate-based meta-analysis of 32 studies that had investigated empathy for pain using fMRI were conducted. Th…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … unclear. Here, we systematically reviewed functional magnetic resonance studies that used emotion processing task paradigms in FEP patients, and in people at clinical high-risk for psychosis (CHRp). <mark class="annotated-text">Image-based meta-analyses</mark> with Seed-based d Mapping on available studies (n = 6) were also performed. Compared to controls, FEP patients showed decreased neural responses to emotion, particularly in the amygdala and anterior …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing studies carried out with functional magnetic resonance imaging (fMRI), yielding a pooled sample of 677 participants from 27 independent studies. As a distinguishing feature of this meta-analysis, <mark class="annotated-text">original statistical brain maps</mark> were obtained from the authors of 13 of these studies. Our primary analyses demonstrate that human fear conditioning is associated with a consistent and robust pattern of neural activation across a h…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
                 </div>
             </div>
             
@@ -6145,389 +7056,292 @@ Locations for noninvasiv…
         
     </details>
     
-    <details style="--label-color: #98df8a;">
-        <summary class="label-display">largescale-brainmap decoding (9 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Yeung, Andy <mark class="annotated-text">Wai</mark> Kan
-Public health nutrition, 2021
-
-# Title
-
-Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
-
-# Keywords
-
-Child obesity 
-Food c…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Cañete-Massé, <mark class="annotated-text">Cristina</mark> and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
-Brain connectivity, 2021
-
-# Title
-
-Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Int…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Brent_McPherson</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … language comprehension in human children. Our analysis included 27 independent experiments involving n ​= ​625 children (49% girls) with a mean age of 8.9 years. Activation likelihood estimation and <mark class="annotated-text">seed-based effect size mapping</mark> revealed activation peaks in the pars triangularis of the left inferior frontal gyrus and bilateral superior and middle temporal gyri. In contrast to this distribution of activation in children, prev…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …distinct aspects of emotion processing, we applied an emergent meta-analytic clustering approach to the extensive body of affective neuroimaging results archived in the BrainMap database. Specifically<mark class="annotated-text">, we performed hierarchical clustering on the modeled activation maps from 1,747 experiments in the affective processing domain, </mark>resulting in five meta-analytic groupings of experiments demonstrating whole-brain recruitment. Behavioral inference analyses conducted for each of these groupings suggested dissociable networks suppo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
     <details style="--label-color: #888a85;">
-        <summary class="label-display">EXCLUDE - not a full report (9 docs)</summary>
+        <summary class="label-display">EXCLUDE - protocol (9 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    <mark class="annotated-text">Zang</mark>, Yu-Feng and Zuo, Xi-Nian and Milham, Michael and Hallett, Mark
-BioMed research international, 2016
+                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
+BMJ open, 2021
 
 # Title
 
-Toward a Meta-Analytic Synthesis of the Resting-State fMRI Literature for Clinical Popula…
+Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
+
+# Keywords
+
+Dementia 
+Diagnostic radiology 
+NEUROLOGY 
+dementia 
+diagnostic radiology 
+neurology 
+
+
+# Abstract
+
+The incidence of Alzheimer&#39;s disease (AD) i…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Brent_McPherson</div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Gao, Rong and <mark class="annotated-text">Wang</mark>, Ping and Zhou, Sheng and Yao, Hongyan
-Asian journal of surgery, 2023
+                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
+BMJ open, 2021
 
 # Title
 
-Resting-state fMRI study of vulnerable brain regions in patients with end-stage renal disease: An activation likelihood…
+Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
+
+# Keywords
+
+Dementia 
+Diagnostic radiology 
+NEUROLOGY 
+dementia 
+diagnostic radiology 
+neurology 
+
+
+# Abstract
+
+The incidence of Alzheimer&#39;s disease (AD) i…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Brent_McPherson</div>
+                    <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Cañete-Massé, Cristina and Carbó-Carreté, María and Peró-Cebollero, Maribel and Guàrdia-Olmos, Joan
-Brain <mark class="annotated-text">connectivity</mark>, 2021
+                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
+BMJ open, 2021
 
 # Title
 
-Task-Related Brain Connectivity Activation Functional Magnetic Resonance Imaging in Intellectual Disability Population: A Meta-Analytic Study.
+Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
 
 # Keywords
 
-cognitive task 
-fMRI 
-intel…
+Dementia 
+Diagnostic radiology 
+NEUROLOGY 
+dementia 
+diagnostic radiology 
+neurology 
+
+
+# Abstract
+
+The incidence of Alzheimer&#39;s disease (AD) i…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
-                    <div class="annotator-name">Brent_McPherson</div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Alústiza, Irene and Garcés, María Sol and Ortuño, Marta and Molero, Patricio and Ortuño, Felipe
-Schizophr Bull, 2018
+                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
+BMJ open, 2021
 
 # Title
 
-<mark class="annotated-text">S71</mark>. ABERRANT TIMING AND SALIENCE NETWORK IN SCHIZOPHRENIA: FINDINGS FROM A META-ANALYSIS
+Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
 
 # Keywords
 
+Dementia 
+Diagnostic radiology 
+NEUROLOGY 
+dementia 
+diagnostic radiology 
+neurology 
 
 
 # Abstract
- 
-## Background 
-  
-Schizophrenia (SZ) affects several domains of cognitive function. A…
+
+The incidence of Alzheimer&#39;s disease (AD) i…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5887562/"
-                                       >PMC5887562</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
+BMJ open, 2022
+
+# Title
+
+Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
+
+# Keywords
+
+complementary medicine 
+depression &amp; mood disorders 
+radiology &amp; imaging 
+radiotherapy 
+
+
+# Abstract
+
+Depression is…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Lattanzi, Guido Maria and Scarpazza, Cristina and Di Fabio, Fabio and McGuire, Philip and Sartori, Giuseppe and Eickhoff, Simon B and Tognin, Stefania
-Schizophr Bull, 2018
+                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
+BMJ open, 2022
 
 # Title
 
-<mark class="annotated-text">S176</mark>. SYSTEMATIC REVIEW AND META-ANALYSIS OF MAGNETIC RESONANCE IMAGING FINDINGS IN 22Q11.2 DELETION SYNDROME
+Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
 
 # Keywords
 
+complementary medicine 
+depression &amp; mood disorders 
+radiology &amp; imaging 
+radiotherapy 
 
 
 # Abstract
- 
-## Background 
-  
-Since the 22q11.2 Deletion Syndrome (22q11.2 DS)…
+
+Depression is…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5887962/"
-                                       >PMC5887962</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
+BMJ open, 2022
+
+# Title
+
+Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
+
+# Keywords
+
+complementary medicine 
+depression &amp; mood disorders 
+radiology &amp; imaging 
+radiotherapy 
+
+
+# Abstract
+
+Depression is…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
+BMJ open, 2022
+
+# Title
+
+Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
+
+# Keywords
+
+complementary medicine 
+depression &amp; mood disorders 
+radiology &amp; imaging 
+radiotherapy 
+
+
+# Abstract
+
+Depression is…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …iterature search will be performed in PubMed, Web of Science, Embase, China National Knowledge Infrastructure (CNKI), WanFang, and SinoMed databases until June 15, 2019 and updated on March 20, 2020. <mark class="annotated-text">This protocol </mark>will follow the Preferred Reporting Items for Systematic review and Meta-Analysis Protocols (PRISMA-P). The Seed-based d Mapping with Permutation of Subject Images (SDM-PSI) software will be used for …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
             <div class="annotation">
                 <div class="context">
-                    Rapp, Alexander and Purr, Franziska and Felsenheimer, Anne
-Schizophr Bull, 2018
+                    … and Outhred, Tim and Westlye, Lars T. and Malhi, Gin S. and Andreassen, Ole A.
+Syst Rev, 2016
 
 # Title
 
-<mark class="annotated-text">T58</mark>. SARCASM COMPREHENSION AS A SOCIAL COGNITION MEASURE IN SCHIZOPHRENIA – A SYSTEMATIC LITERATURE SEARCH AND META-ANALYSIS ON THE USE OF THE TASIT
+The impact of oxytocin administration on brain activity: a systematic review and meta-analysis <mark class="annotated-text">protocol</mark>
 
 # Keywords
 
+Oxytocin
+Brain imaging
+Systematic review
+Meta-analysis
+Protocol
 
 
 # Abstract
  
 ## Background 
   
-Social c…
+Converging evidence demonstrates the important role of the neuropeptide hormone oxytocin …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5888645/"
-                                       >PMC5888645</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lukow, Paulina and Kempton, Matthew and Turkheimer, Federico and Modinos, Gemma
-Schizophr Bull, 2020
-
-# Title
-
-<mark class="annotated-text">T133. </mark>NEURAL CORRELATES OF EMOTIONAL PROCESSING IN PSYCHOSIS RISK AND ONSET – A SYSTEMATIC REVIEW AND META-ANALYSIS OF FMRI STUDIES
-
-# Keywords
-
-
-
-# Abstract
- 
-## Background 
-  
-Behavioural findings suggest…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234314/"
-                                       >PMC7234314</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Del Fabro, Lorenzo and Schmidt, André and Delvecchio, Giuseppe and D’Agostino, Armando and Borgwardt, Stefan and Brambilla, Paolo
-Schizophr Bull, 2020
-
-# Title
-
-<mark class="annotated-text">T156.</mark> FUNCTIONAL CONNECTIVITY AND RISK OF PSYCHOSIS: AN ACTIVATION LIKELIHOOD ESTIMATION (ALE) META-ANALYSIS OF FUNCTIONAL MAGNETIC RESONANCE IMAGING STUDIES
-
-# Keywords
-
-
-
-# Abstract
- 
-## Background 
-  
-D…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234455/"
-                                       >PMC7234455</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Del Fabro, Lorenzo and Schmidt, André and Delvecchio, Giuseppe and D’Agostino, Armando and Borgwardt, Stefan and Brambilla, Paolo
-Schizophr Bull, 2020
-
-# Title
-
-<mark class="annotated-text">T156</mark>. FUNCTIONAL CONNECTIVITY AND RISK OF PSYCHOSIS: AN ACTIVATION LIKELIHOOD ESTIMATION (ALE) META-ANALYSIS OF FUNCTIONAL MAGNETIC RESONANCE IMAGING STUDIES
-
-# Keywords
-
-
-
-# Abstract
- 
-## Background 
-  
-…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7234455/"
-                                       >PMC7234455</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Torres</mark>, M. and Manghera, P. and Miller, C.
-Eur Psychiatry, 2022
-
-# Title
-
-Prediction of Treatment Response in Patients with Major Depressive Disorder: A Meta-Analysis of Functional Magnetic Resonance Imagin…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9567359/"
-                                       >PMC9567359</a></div>
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5129649/"
+                                       >PMC5129649</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
@@ -6541,6 +7355,18 @@ Prediction of Treatment Response in Patients with Major Depressive Disorder: A M
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …ing three types of storage material (spatial, verbal, and object), three types of executive function (continuous updating of WM, memory for temporal order, and manipulation of information in WM), and <mark class="annotated-text">interactions between material and executive function.</mark> Analyses of material type showed the expected dorsal-ventral dissociation between spatial and nonspatial storage in the posterior cortex, but not in the frontal cortex. Some support was found for lef…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
             
             <div class="annotation">
                 <div class="context">
@@ -6679,187 +7505,6 @@ The whole-brain meta-analysis of responses to angry facial expressions images in
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10063659/"
                                        >PMC10063659</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #c5b0d5;">
-        <summary class="label-display">software-brainmap (8 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
-Cerebral cortex (New York, N.Y. : 1991), 2014
-
-# Title
-
-Meta-analytic connectivity modeli…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
-Brain structure &amp; function, 2019
-
-# Title
-
-Neural networks of aggression:…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
-Cerebral cortex (New York, N.Y. : 1991), 2014
-
-# Title
-
-Meta-analytic connectivity modeli…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
-Brain structure &amp; function, 2019
-
-# Title
-
-Neural networks of aggression:…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
-Cerebral cortex (New York, N.Y. : 1991), 2014
-
-# Title
-
-Meta-analytic connectivity modeli…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
-Brain structure &amp; function, 2019
-
-# Title
-
-Neural networks of aggression:…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Zald</mark>, David H and McHugo, Maureen and Ray, Kimberly L and Glahn, David C and Eickhoff, Simon B and Laird, Angela R
-Cerebral cortex (New York, N.Y. : 1991), 2014
-
-# Title
-
-Meta-analytic connectivity modeli…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    <mark class="annotated-text">Wong</mark>, Ting Yat and Sid, Azah and Wensing, Tobias and Eickhoff, Simon B and Habel, Ute and Gur, Ruben C and Nickl-Jockschat, Thomas
-Brain structure &amp; function, 2019
-
-# Title
-
-Neural networks of aggression:…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Yeung, <mark class="annotated-text">Andy</mark> Wai Kan
-Public health nutrition, 2021
-
-# Title
-
-Brain responses to watching food commercials compared with nonfood commercials: a meta-analysis on neuroimaging studies.
-
-# Keywords
-
-Child obesity 
-Fo…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Rotge, <mark class="annotated-text">Jean</mark>-Yves and Guehl, Dominique and Dilharreguy, Bixente and Cuny, Emmanuel and Tignol, Jean and Bioulac, Bernard and Allard, Michele and Burbaud, Pierre and Aouizerate, Bruno
-Journal of psychiatry &amp; neuro…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
@@ -7067,33 +7712,21 @@ Functional MRI to Study Gait Impairment in Parkinson&#39;s …
     </details>
     
     <details style="--label-color: #888a85;">
-        <summary class="label-display">EXCLUDE - protocol (8 docs)</summary>
+        <summary class="label-display">EXCLUDE - review (8 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
-BMJ open, 2021
+                    <mark class="annotated-text">Holmes</mark>, Nicholas Paul and Tamè, Luigi
+Journal of neurophysiology, 2019
 
 # Title
 
-Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
+Locating primary somatosensory cortex in human brain stimulation studies: systematic review and meta-analytic evidence.
 
-# Keywords
-
-Dementia 
-Diagnostic radiology 
-NEUROLOGY 
-dementia 
-diagnostic radiology 
-neurology 
-
-
-# Abstract
-
-The incidence of Alzheimer&#39;s disease (AD) i…
+# Ke…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7105,117 +7738,30 @@ The incidence of Alzheimer&#39;s disease (AD) i…
             
             <div class="annotation">
                 <div class="context">
-                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
-BMJ open, 2021
+                    Kim, Hongkeun
+Neuroscience and biobehavioral reviews, 2022
 
 # Title
 
-Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
-
+<mark class="annotated-text">Attention- versus significance-driven memory formation: Taxonomy, neural substrates, and meta-analyses.
+</mark>
 # Keywords
 
-Dementia 
-Diagnostic radiology 
-NEUROLOGY 
-dementia 
-diagnostic radiology 
-neurology 
+Attention 
+Dorsal attention network 
+Emotion 
+Episodic memory encoding 
+Medial temporal lobe 
+Memory trace 
+Meta-analysis 
+Novelty 
+Reward 
+fMRI 
 
 
 # Abstract
 
-The incidence of Alzheimer&#39;s disease (AD) i…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
-BMJ open, 2021
-
-# Title
-
-Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
-
-# Keywords
-
-Dementia 
-Diagnostic radiology 
-NEUROLOGY 
-dementia 
-diagnostic radiology 
-neurology 
-
-
-# Abstract
-
-The incidence of Alzheimer&#39;s disease (AD) i…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Lyu, Diyang and Li, Taoran and Lyu, Xuanxin
-BMJ open, 2021
-
-# Title
-
-Resting-state functional reorganisation in Alzheimer&#39;s disease and amnestic mild cognitive impairment: <mark class="annotated-text">protocol</mark> for a systematic review and meta-analysis.
-
-# Keywords
-
-Dementia 
-Diagnostic radiology 
-NEUROLOGY 
-dementia 
-diagnostic radiology 
-neurology 
-
-
-# Abstract
-
-The incidence of Alzheimer&#39;s disease (AD) i…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
-BMJ open, 2022
-
-# Title
-
-Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
-
-# Keywords
-
-complementary medicine 
-depression &amp; mood disorders 
-radiology &amp; imaging 
-radiotherapy 
-
-
-# Abstract
-
-Depression is…
+Functional neuroimaging dat…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7227,179 +7773,18 @@ Depression is…
             
             <div class="annotation">
                 <div class="context">
-                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
-BMJ open, 2022
+                    Miyahara, Motohide
+Frontiers in integrative neuroscience, 2013
 
 # Title
 
-Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
+<mark class="annotated-text">Meta review of systematic and meta analytic reviews</mark> on movement differences, effect of movement based interventions, and the underlying neural mechanisms in autism spectrum disorder.
 
 # Keywords
 
-complementary medicine 
-depression &amp; mood disorders 
-radiology &amp; imaging 
-radiotherapy 
-
-
-# Abstract
-
-Depression is…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
-BMJ open, 2022
-
-# Title
-
-Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
-
-# Keywords
-
-complementary medicine 
-depression &amp; mood disorders 
-radiology &amp; imaging 
-radiotherapy 
-
-
-# Abstract
-
-Depression is…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …d Li, Danyang and Me, Yutong and Fan, Hongyu and Wu, Hao and Zhang, Gaofeng
-BMJ open, 2022
-
-# Title
-
-Effect of repetitive transcranial magnetic stimulation on patients with severe depression: a study <mark class="annotated-text">protocol</mark> for systematic review and meta-analysis of randomised clinical trials.
-
-# Keywords
-
-complementary medicine 
-depression &amp; mood disorders 
-radiology &amp; imaging 
-radiotherapy 
-
-
-# Abstract
-
-Depression is…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … and Outhred, Tim and Westlye, Lars T. and Malhi, Gin S. and Andreassen, Ole A.
-Syst Rev, 2016
-
-# Title
-
-The impact of oxytocin administration on brain activity: a systematic review and meta-analysis <mark class="annotated-text">protocol</mark>
-
-# Keywords
-
-Oxytocin
-Brain imaging
-Systematic review
-Meta-analysis
-Protocol
-
-
-# Abstract
- 
-## Background 
-  
-Converging evidence demonstrates the important role of the neuropeptide hormone oxytocin …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5129649/"
-                                       >PMC5129649</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … Hu, Yiru and Fu, Yu and Cao, Liping and Zhang, Bin
-BMJ Open, 2020
-
-# Title
-
-Functional MRI in the effect of transcranial magnetic stimulation therapy for patients with schizophrenia: a meta-analysis <mark class="annotated-text">protocol</mark>
-
-# Keywords
-
-neuroradiology
-schizophrenia &amp; psychotic disorders
-magnetic resonance imaging
-
-
-# Abstract
- 
-## Introduction 
-  
-Schizophrenia is a psychiatric illness associated with brain function alt…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7713205/"
-                                       >PMC7713205</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #888a85;">
-        <summary class="label-display">EXCLUDE - about ma&#39;s (8 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Ramsey, J D and Spirtes, P and Glymour, C
-NeuroImage, 2011
-
-# Title
-
-<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
+MRI and fMRI 
+autism 
+developmental coordination disord…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7411,99 +7796,30 @@ Neumann et al. (2010) aim to find directed graphical representations of the inde
             
             <div class="annotation">
                 <div class="context">
-                    Ramsey, J D and Spirtes, P and Glymour, C
-NeuroImage, 2011
+                    Stevens, Jennifer S and Jovanovic, Tanja
+Genes, brain, and behavior, 2019
 
 # Title
 
-<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
+<mark class="annotated-text">Role of social cognition in post-traumatic stress disorder: A review and meta-analysis.
 </mark>
 # Keywords
 
+G × SE 
+PTSD 
+fMRI 
+face stimuli 
+genetic risk 
+meta-analysis 
+neuroimaging 
+social brain 
+social cognition 
+trauma exposure 
 
 
 # Abstract
 
-Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Ramsey, J D and Spirtes, P and Glymour, C
-NeuroImage, 2011
-
-# Title
-
-<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Ramsey, J D and Spirtes, P and Glymour, C
-NeuroImage, 2011
-
-# Title
-
-<mark class="annotated-text">On meta-analyses of imaging data and the mixture of records.
-</mark>
-# Keywords
-
-
-
-# Abstract
-
-Neumann et al. (2010) aim to find directed graphical representations of the independence and dependence relations among activities in brain regions by applying a search proc…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Society. Series C, Applied statistics, 2021
-
-# Title
-
-<mark class="annotated-text">Bayesian log-Gaussian Cox process regression: with applications to meta-analysis of neuroimaging working memory studies.
-</mark>
-# Keywords
-
-functional magnetic resonance imaging 
-meta-regression 
-random effects meta-analysis 
-working memory 
-
-
-# Abstract
-
-Working memory (WM) was one of the first cognitive processes studied wi…
+Social functioning is a key component of recove…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7515,172 +7831,30 @@ Working memory (WM) was one of the first cognitive processes studied wi…
             
             <div class="annotation">
                 <div class="context">
-                    … Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Society. Series C, Applied statistics, 2021
+                    Yeung, Andy Wai Kan and Wong, Natalie Sui Miu and Lau, Hakwan and Eickhoff, Simon B
+NeuroImage, 2020
 
 # Title
 
-<mark class="annotated-text">Bayesian log-Gaussian Cox process regression: with applications to meta-analysis of neuroimaging working memory studies.
+<mark class="annotated-text">Human brain responses to gustatory and food stimuli: A meta-evaluation of neuroimaging meta-analyses.
 </mark>
-# Keywords
-
-functional magnetic resonance imaging 
-meta-regression 
-random effects meta-analysis 
-working memory 
-
-
-# Abstract
-
-Working memory (WM) was one of the first cognitive processes studied wi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Society. Series C, Applied statistics, 2021
-
-# Title
-
-<mark class="annotated-text">Bayesian log-Gaussian Cox process regression: with applications to meta-analysis of neuroimaging working memory studies.
-</mark>
-# Keywords
-
-functional magnetic resonance imaging 
-meta-regression 
-random effects meta-analysis 
-working memory 
-
-
-# Abstract
-
-Working memory (WM) was one of the first cognitive processes studied wi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … Simon B and Wager, Tor D and Barrett, Lisa Feldman and Atzil, Shir and Johnson, Timothy D and Nichols, Thomas E
-Journal of the Royal Statistical Society. Series C, Applied statistics, 2021
-
-# Title
-
-<mark class="annotated-text">Bayesian log-Gaussian Cox process regression: with applications to meta-analysis of neuroimaging working memory studies.
-</mark>
-# Keywords
-
-functional magnetic resonance imaging 
-meta-regression 
-random effects meta-analysis 
-working memory 
-
-
-# Abstract
-
-Working memory (WM) was one of the first cognitive processes studied wi…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Peiffer, Ann M. and Maldjian, Joseph A. and Laurienti, Paul J.
-Int J Biomed Imaging, 2007
-
-# Title
-
-<mark class="annotated-text">Resurrecting Brinley Plots for a Novel Use: Meta-Analyses of Functional Brain Imaging Data in Older Adults
-</mark>
-# Keywords
-
-
-
-# Abstract
- 
-By plotting response times of young and older adults across a variety of tasks, Brinley spurred investigation and debate into the theory of general cognitive slowing. Thoug…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2233772/"
-                                       >PMC2233772</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Costafreda, Sergi G.
-Front Neuroinformatics, 2009
-
-# Title
-
-<mark class="annotated-text">Pooling fMRI Data: Meta-Analysis, Mega-Analysis and Multi-Center Studies
-</mark>
-# Keywords
-
-fMRI
-meta-analysis
-mega-analysis
-multi-center studies
-power
-false positive results
-random effects analysis
-study design
-
-
-# Abstract
- 
-The quantitative analysis of pooled data from relate…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2759345/"
-                                       >PMC2759345</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #eeeeec;">
-        <summary class="label-display">candidate for replication (7 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
-Brain and cognition, 2018
-
-# Title
-
-Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
-
 # Keywords
 
 Activation likelihood estimation 
-Affe…
+Food 
+Gustation 
+Literature analysis 
+Meta-analysis 
+Meta-evaluation 
+Neuroimaging 
+Review 
+Taste 
+fMRI 
+
+
+# Abstract
+
+Multiple neuroimaging meta-analyse…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7692,17 +7866,45 @@ Affe…
             
             <div class="annotation">
                 <div class="context">
-                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
-Brain and cognition, 2018
+                    Peyron, R and Laurent, B and García-Larrea, L
+Neurophysiologie clinique = Clinical neurophysiology, 2001
 
 # Title
 
-Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
 
 # Keywords
 
-Activation likelihood estimation 
-Affe…
+
+
+# Abstract
+
+Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    Peyron, R and Laurent, B and García-Larrea, L
+Neurophysiologie clinique = Clinical neurophysiology, 2001
+
+# Title
+
+<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
+
+# Keywords
+
+
+
+# Abstract
+
+Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7714,17 +7916,20 @@ Affe…
             
             <div class="annotation">
                 <div class="context">
-                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
-Brain and cognition, 2018
+                    Peyron, R and Laurent, B and García-Larrea, L
+Neurophysiologie clinique = Clinical neurophysiology, 2001
 
 # Title
 
-Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
 
 # Keywords
 
-Activation likelihood estimation 
-Affe…
+
+
+# Abstract
+
+Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7736,17 +7941,20 @@ Affe…
             
             <div class="annotation">
                 <div class="context">
-                    Kirby<mark class="annotated-text">,</mark> Lauren A J and Robinson, Jennifer L
-Brain and cognition, 2018
+                    Peyron, R and Laurent, B and García-Larrea, L
+Neurophysiologie clinique = Clinical neurophysiology, 2001
 
 # Title
 
-Affective mapping: An activation likelihood estimation (ALE) meta-analysis.
+<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
 
 # Keywords
 
-Activation likelihood estimation 
-Affe…
+
+
+# Abstract
+
+Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -7758,103 +7966,26 @@ Affe…
             
             <div class="annotation">
                 <div class="context">
-                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
-Neuroscience and biobehavioral reviews, 2014
+                    Dias, Alvaro Machado and Queiroz, Artur Trancoso Lopo and Maracaja-Coutinho, Vinícius
+Medical hypotheses, 2010
 
 # Title
 
-The neura…
+Schizophrenia, brain disease and <mark class="annotated-text">meta</mark>-analyses: integrating the pieces and testing Fusar-Poli&#39;s hypothesis.
+
+# Keywords
+
+
+
+# Abstract
+
+This paper aims to discuss and test the hypothesis raised by Fusar-Poli [Fusar-Poli P. Can neuroimagin…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
-Neuroscience and biobehavioral reviews, 2014
-
-# Title
-
-The neura…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
-Neuroscience and biobehavioral reviews, 2014
-
-# Title
-
-The neura…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Hétu, <mark class="annotated-text">Sébastien</mark> and Grégoire, Mathieu and Saimpont, Arnaud and Coll, Michel-Pierre and Eugène, Fanny and Michon, Pierre-Emmanuel and Jackson, Philip L
-Neuroscience and biobehavioral reviews, 2014
-
-# Title
-
-The neura…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Xu, Min and <mark class="annotated-text">Xu</mark>, Guiping and Yang, Yang
-Frontiers in behavioral neuroscience, 2020
-
-# Title
-
-Neural Systems Underlying Emotional and Non-emotional Interference Processing: An ALE Meta-Analysis of Functional Neuroima…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Xu, Min and <mark class="annotated-text">Xu</mark>, Guiping and Yang, Yang
-Frontiers in behavioral neuroscience, 2020
-
-# Title
-
-Neural Systems Underlying Emotional and Non-emotional Interference Processing: An ALE Meta-Analysis of Functional Neuroima…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
                 </div>
             </div>
             
@@ -8035,6 +8166,136 @@ Brain responses in aggression-prone individuals: A s…
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #ffbb78;">
+        <summary class="label-display">N group-level stat maps included (6 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …es that used emotion processing task paradigms in FEP patients, and in people at clinical high-risk for psychosis (CHRp). Image-based meta-analyses with Seed-based d Mapping on available studies (n = <mark class="annotated-text">6</mark>) were also performed. Compared to controls, FEP patients showed decreased neural responses to emotion, particularly in the amygdala and anterior cingulate cortex. There were no significant difference…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Michelle_Wang</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Mohammad_Torabi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Niusha_Mirhakimi</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    … (fMRI), yielding a pooled sample of 677 participants from 27 independent studies. As a distinguishing feature of this meta-analysis, original statistical brain maps were obtained from the authors of <mark class="annotated-text">13</mark> of these studies. Our primary analyses demonstrate that human fear conditioning is associated with a consistent and robust pattern of neural activation across a hypothesized genuine network of brain …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
                 </div>
             </div>
             
@@ -8331,15 +8592,27 @@ The whole-brain meta-analysis of responses to empathic pain images included <mar
         
     </details>
     
-    <details style="--label-color: #ff9896;">
-        <summary class="label-display">IMBA (5 docs)</summary>
+    <details style="--label-color: #eeeeec;">
+        <summary class="label-display">stopped here (4 docs)</summary>
         
         <p><b>Example annotations:</b></p>
         <div class="annotation-set">
             
             <div class="annotation">
                 <div class="context">
-                    … unclear. Here, we systematically reviewed functional magnetic resonance studies that used emotion processing task paradigms in FEP patients, and in people at clinical high-risk for psychosis (CHRp). <mark class="annotated-text">Image-based meta-analyses</mark> with Seed-based d Mapping on available studies (n = 6) were also performed. Compared to controls, FEP patients showed decreased neural responses to emotion, particularly in the amygdala and anterior …
+                    Kim, Hongkeun
+<mark class="annotated-text">Human</mark> brain mapping, 2018
+
+# Title
+
+Brain regions that show repetition suppression and enhancement: A meta-analysis of 137 neuroimaging experiments.
+
+# Keywords
+
+fMRI 
+memory 
+meta-analysis 
+neural network…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -8351,7 +8624,14 @@ The whole-brain meta-analysis of responses to empathic pain images included <mar
             
             <div class="annotation">
                 <div class="context">
-                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                    Huang, Xiao and <mark class="annotated-text">Tang</mark>, Shi and Lyu, Xiaojun and Yang, Changqiang and Chen, Xiaoping
+Sleep medicine, 2020
+
+# Title
+
+Structural and functional brain alterations in obstructive sleep apnea: a multimodal meta-analysis.
+
+# Key…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
@@ -8363,45 +8643,13 @@ The whole-brain meta-analysis of responses to empathic pain images included <mar
             
             <div class="annotation">
                 <div class="context">
-                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
+                    Winlove, Crawford I <mark class="annotated-text">P</mark> and Milton, Fraser and Ranson, Jake and Fulford, Jon and MacKisack, Matthew and Macpherson, Fiona and Zeman, Adam
+Cortex; a journal devoted to the study of the nervous system and behavior, 2019
+
+# Ti…
                 </div>
                 <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …erefore, the aim here was to perform a meta-analysis of the existing literature using unthresholded statistical maps from previous studies. A voxelwise seed-based d mapping meta-analysis was performed<mark class="annotated-text"> using t-maps from studies</mark> comparing patients with OCD and healthy control subjects (HCs) during error processing and inhibitory control. For the error processing analysis, 239 patients with OCD (120 male; 79 medicated) and 22…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
-                </div>
-                <div class="annotation-footer">
+                    <div class="extra-data">going forward. checking that everything is annotated in the abstract and that nothing is annotated other than the first line, that shouldn&#39;t be</div>
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
@@ -8411,179 +8659,22 @@ The whole-brain meta-analysis of responses to empathic pain images included <mar
             
             <div class="annotation">
                 <div class="context">
-                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …ine consistency of network topography within and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An <mark class="annotated-text">image-based meta-analysis</mark> was performed on 158 group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a g…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …ordance with the Meta-analysis of Observational Studies in Epidemiology guidelines. Using Seed-based d Mapping software, meta-analyses were performed using random-effect nonparametric statistics with <mark class="annotated-text">group whole brain T-maps</mark> from individual studies as input. Analyses were performed across all addictions and for substance and gambling addictions separately. Group differences (individuals with addiction vs control individu…
+                    Tryfon, Ana and Foster, Nicholas E V and <mark class="annotated-text">Sharda</mark>, Megha and Hyde, Krista L
+Behavioural brain research, 2018
+
+# Title
+
+Speech perception in autism spectrum disorder: An activation likelihood estimation meta-analysis.
+
+# Keywords
+
+Activation likeliho…
                 </div>
                 <div class="annotation-footer">
                     <div class="pcmid"><a target="_blank"
                                           href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
                                        >PMCNone</a></div>
                     <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #ffbb78;">
-        <summary class="label-display">N group-level stat maps included (4 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …fort-related costs and integrate them with rewards. We conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, <mark class="annotated-text">15</mark> maps, 549 participants) and net value (15 studies, 11 maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefronta…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …es that used emotion processing task paradigms in FEP patients, and in people at clinical high-risk for psychosis (CHRp). Image-based meta-analyses with Seed-based d Mapping on available studies (n = <mark class="annotated-text">6</mark>) were also performed. Compared to controls, FEP patients showed decreased neural responses to emotion, particularly in the amygdala and anterior cingulate cortex. There were no significant difference…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    … conducted two meta-analyses of functional magnetic resonance imaging data to examine consistent neural correlates of effort demands (23 studies, 15 maps, 549 participants) and net value (15 studies, <mark class="annotated-text">11</mark> maps, 428 participants). The pre-supplementary motor area (pre-SMA) scaled positively with pure effort demand, whereas the ventromedial prefrontal cortex (vmPFC) showed the opposite effect. Moreover,…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    …n and across these labels. We hypothesized finding considerable overlap in the spatial topography among the neural networks associated with these labels. An image-based meta-analysis was performed on <mark class="annotated-text">158 </mark>group-level statistical maps (SPMs) received from authors of 69 papers listed on PubMed. Our results indicated that there was very little consistency in the SPMs labeled with a given network name. We …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
                 </div>
             </div>
             
@@ -9657,176 +9748,6 @@ What Executive Function Network is that? An Image-Based Meta-A…
         
     </details>
     
-    <details style="--label-color: #888a85;">
-        <summary class="label-display">EXCLUDE - review (2 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Peyron, R and Laurent, B and García-Larrea, L
-Neurophysiologie clinique = Clinical neurophysiology, 2001
-
-# Title
-
-<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
-
-# Keywords
-
-
-
-# Abstract
-
-Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Peyron, R and Laurent, B and García-Larrea, L
-Neurophysiologie clinique = Clinical neurophysiology, 2001
-
-# Title
-
-<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
-
-# Keywords
-
-
-
-# Abstract
-
-Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Michelle_Wang</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Peyron, R and Laurent, B and García-Larrea, L
-Neurophysiologie clinique = Clinical neurophysiology, 2001
-
-# Title
-
-<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
-
-# Keywords
-
-
-
-# Abstract
-
-Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Mohammad_Torabi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    Peyron, R and Laurent, B and García-Larrea, L
-Neurophysiologie clinique = Clinical neurophysiology, 2001
-
-# Title
-
-<mark class="annotated-text">Functional</mark> imaging of brain responses to pain. A review and meta-analysis (2000).
-
-# Keywords
-
-
-
-# Abstract
-
-Brain responses to pain, assessed through positron emission tomography (PET) and functional magnetic …
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Niusha_Mirhakimi</div>
-                </div>
-            </div>
-            
-            <div class="annotation">
-                <div class="context">
-                    van Montfort, S.J.T. and van Dellen, E. and Stam, C.J. and Ahmad, A.H. and Mentink, L.J. and Kraan, C.W. and Zalesky, A. and Slooter, A.J.C.
-Neuroimage Clin, 2019
-
-# Title
-
-<mark class="annotated-text">Brain network disintegration as a final common pathway for delirium: a systematic review and qualitative meta-analysis
-</mark>
-# Keywords
-
-Delirium
-Brain
-Networks
-Connectome
-Aging
-Cognitive impairment
-
-
-# Abstract
- 
-Delirium is an acute neuropsychiatric syndrome characterized by altered levels of attention and awareness with…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6461601/"
-                                       >PMC6461601</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
-    <details style="--label-color: #eeeeec;">
-        <summary class="label-display">stopped here (1 docs)</summary>
-        
-        <p><b>Example annotations:</b></p>
-        <div class="annotation-set">
-            
-            <div class="annotation">
-                <div class="context">
-                    Huang, Xiao and <mark class="annotated-text">Tang</mark>, Shi and Lyu, Xiaojun and Yang, Changqiang and Chen, Xiaoping
-Sleep medicine, 2020
-
-# Title
-
-Structural and functional brain alterations in obstructive sleep apnea: a multimodal meta-analysis.
-
-# Key…
-                </div>
-                <div class="annotation-footer">
-                    <div class="pcmid"><a target="_blank"
-                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
-                                       >PMCNone</a></div>
-                    <div class="annotator-name">Kendra_Oudyk</div>
-                </div>
-            </div>
-            
-        </div>
-        
-    </details>
-    
     <details style="--label-color: #c49c94;">
         <summary class="label-display">MA14 (1 docs)</summary>
         
@@ -10453,6 +10374,28 @@ Type 2 dia…
         
     </details>
     
+    <details style="--label-color: #98df8a;">
+        <summary class="label-display">largescale-other-or-undefined (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …a-analysis of whole-brain coordinate maps in SCZ alone has not been conducted. In this study, we performed an activation likelihood estimate (ALE) meta-analysis, and performed a follow-up analysis of <mark class="annotated-text">functional connectivity and functional decoding</mark> of identified regions. We report several salient findings that extend prior work in this area. First, an alteration in reward-related activation was observed in the right ventral striatum, but this w…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMCNone/"
+                                       >PMCNone</a></div>
+                    <div class="annotator-name">Kendra_Oudyk</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #888a85;">
         <summary class="label-display">EXCLUDE - previous ma for seed / roi (1 docs)</summary>
         
@@ -10707,142 +10650,6 @@ Previous studies, predominantly in experimental animals, have suggested the pres
     </details>
     
 </div>
-</div></div>
-</div>
-</section>
-</section>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            name: "python3",
-            path: "./projects"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-                </article>
-              
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="participant_demographics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">participant_demographics</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="semiauto_ma_features.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">semiauto_ma_features</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-neuroimaging-meta-analyses-topics-authors-and-methods">Review of neuroimaging meta-analyses: Topics, authors, and methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#papers">Papers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-papers-were-obtained-to-be-updated">How the papers were obtained [to be updated]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-full-papers-are-stored-to-be-updated">Where the full papers are stored [to be updated]</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-s-being-annotated">File(s) being annotated:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-labels">Annotation labels:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-found-in-other-projects-as-well">Labels found in other projects as well:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-annotators">Instructions for annotators</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-i-have-finished-annotating-the-open-access-full-text-papers-i-d-love-help-annotating-the-closed-access-abstracts-to-do-this-follow-these-steps">At this point, I have finished annotating the open-access full-text papers. I’d love help annotating the closed-access abstracts. To do this, follow these steps:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-in-this-project">Labels in this project</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributors
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
-
-  <footer class="bd-footer">
-  </footer>
-  </body>
-</html>
+"""
+displays.HTMLDisplay(text)
+```
