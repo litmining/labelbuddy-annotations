@@ -34,5 +34,25 @@
     {
         "color": "#98df8a",
         "name": "Modality-PET"
+    },
+    {
+        "color": "#ffaa00",
+        "name": "TaskName_Unsure"
+    },
+    {
+        "color": "#98df8a",
+        "name": "RestingState"
+    },
+    {
+        "color": "#ff9896",
+        "name": "Meta-analysis"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "Review"
+    },
+    {
+        "color": "#ffbb78",
+        "name": "TaskName_None"
     }
 ]
