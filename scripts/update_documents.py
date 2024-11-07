@@ -7,6 +7,7 @@ import sys
 import tempfile
 import json
 
+from copy import deepcopy
 from labelrepo import database
 from collections import defaultdict
 
@@ -18,7 +19,7 @@ def _load_jsonl(file):
     return data
 
 
-def adjust_annotation(annotation, docs):
+def check_annotation(annotation, docs):
     """ Given an annotation like follows:
 
     {'end_byte': 20027,
@@ -27,8 +28,7 @@ def adjust_annotation(annotation, docs):
     'start_byte': 20023,
     'start_char': 19902}
 
-    Adjust the start_byte, end_byte, start_char, and end_char
-    to match the new document, assuming its a shift in the text.
+    check if the annotation is still valid in the new document.
     
     """
     old_doc = docs[0]
@@ -42,20 +42,9 @@ def adjust_annotation(annotation, docs):
 
     old_text = old_text[old_start:old_end]
 
-    new_start = new_text.find(old_text)
-    new_end = new_start + len(old_text)
+    new_text = new_text[old_start:old_end]
 
-    annotations = annotation.copy()
-    annotations['start_byte'] = new_start
-    annotations['end_byte'] = new_end
-    annotations['start_char'] = new_text[new_start]
-    annotations['end_char'] = new_text[new_end]
-
-    #TODO NEED TO FIGURE OUT WHAT IS BYTE VS CHAR
-    # ALSO: IF document fails (e.g. too different), don't update that annotation
-    # OR that document
-
-    return annotations
+    return old_text == new_text
 
 
 def update_all(project_name):
@@ -113,14 +102,16 @@ def update_all(project_name):
         old_docs[str(file)] = _load_jsonl(file)
 
 
-    # See if mdf5 hashes are the same
+    # Check for document differences
     diff_docs = defaultdict(dict)
     for f_name, old_docs_vals in old_docs.items():
         for pmcid_old, old_doc_j in old_docs_vals.items():
             for pmcid_new, new_doc_j in new_docs.items():
                 if pmcid_old == pmcid_new:
                     if old_doc_j['metadata']['text_md5'] != new_doc_j['metadata']['text_md5']:
-                        diff_docs[pmcid_old] = (old_doc_j, new_doc_j)
+                        diff_docs[pmcid_old] = (deepcopy(old_doc_j), new_doc_j)
+
+                        # Update old docs
                         old_docs_vals[pmcid_old] = new_doc_j
 
     # If no differences, exit
@@ -128,14 +119,8 @@ def update_all(project_name):
         print('No differences found')
         sys.exit(0)
 
-    # If differences, update annotations and documents
-    # Update documents
-    for f_name, docs in old_docs.items():
-        with open(f_name, 'w') as f:
-            for doc in docs.values():
-                f.write(json.dumps(doc) + '\n')
-
-    # Update annotations
+    # If differences, check if annotations are still valid
+    # If not valid, raise an error and don't update
     annotations = (project_dir / 'annotations').glob('*.json*')
     for a in annotations:
         with open(a, 'r') as f:
@@ -143,13 +128,22 @@ def update_all(project_name):
         for d in data:
             pmcid = d['metadata']['pmcid']
             if pmcid in diff_docs:
-                d['metadata'] = diff_docs[pmcid]['metadata']
-                d['utf8_text_md5_checksum'] = diff_docs[pmcid]['metadata']['text_md5']
-                d['annotations'] = adjust_annotation(diff_docs[pmcid]['annotations'], diff_docs[pmcid])
+                if check_annotation(d['data'], diff_docs[pmcid]):
+                    d['metadata']['text_md5'] = diff_docs[pmcid][1]['metadata']['text_md5']
+                else:
+                    raise ValueError('Incompatible annotation found')
+
+    # Write new annotations
+    for a in annotations:
         with open(a, 'w') as f:
             for d in data:
                 f.write(json.dumps(d) + '\n')
 
+    # Write out updated documents
+    for f_name, old_docs_vals in old_docs.items():
+        with open(f_name, 'w') as f:
+            for pmcid, doc in old_docs_vals.items():
+                f.write(json.dumps(doc) + '\n')
 
     # Clean up
     temp_dir.cleanup()
