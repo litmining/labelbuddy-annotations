@@ -58,12 +58,10 @@ def update_all(project_name):
     if not project_dir.exists():
         raise FileNotFoundError(f'Project {project_name} not found')
 
-    cur = connection.execute("""SELECT pmcid
-                            FROM detailed_annotation
-                            WHERE project_name = ?""",
-                            (project_name,)
-                            )
-
+    cur = connection.execute(
+        """SELECT pmcid FROM detailed_annotation
+        WHERE project_name = ?""", (project_name,)
+        )
 
     pmcids = list(set([str(r['pmcid']) for r in cur.fetchall()]))
 
@@ -76,33 +74,29 @@ def update_all(project_name):
     pmcids_file.write_text('\n'.join(pmcids))
 
     # Run pubget run command using subprocess module
-    # Command: pubget download --pmids-file pmids.txt output
-
     out_dir = temp_dir_path / 'output'
-    subprocess.run(['pubget', 'download', '--pmcids_file', str(pmcids_file), str(out_dir)])
+    subprocess.run(['pubget', 'download', '--pmcids_file',
+                    str(pmcids_file), str(out_dir)])
 
-    out_dir = list(out_dir.glob('pmcidList*'))[0]
+    res_dir = list(out_dir.glob('pmcidList*'))[0]
 
-    articlesets = out_dir / 'articlesets'
-    subprocess.run(['pubget', 'extract_articles', str(articlesets)])
+    subprocess.run(['pubget', 'extract_articles', 
+                    str(res_dir / 'articlesets')])
 
-    articles = out_dir / 'articles'
-    subprocess.run(['pubget', 'extract_data', str(articles)])
+    subprocess.run(['pubget', 'extract_data', 
+                    str(res_dir / 'articles')])
 
-    extracted = out_dir / 'subset_allArticles_extractedData'
-    subprocess.run(['pubget', 'extract_labelbuddy_data', str(extracted)])
+    subprocess.run(['pubget', 'extract_labelbuddy_data',
+                    str(res_dir / 'subset_allArticles_extractedData')])
 
+    json_files = list(
+        (res_dir / 'subset_allArticles_labelbuddyData').glob('*.jsonl'))
 
-    labelbuddy_data = out_dir / 'subset_allArticles_labelbuddyData'
-    batch_info = labelbuddy_data / 'batch_info.json'
-    info = labelbuddy_data / 'info.json'    
-    json_files = list(labelbuddy_data.glob('*.jsonl'))
-
+    # Load old and new documents
     new_docs = {}
     for file in json_files:
         new_docs.update(_load_jsonl(file))
 
-    # Load old documents one by one
     old_docs = {}
     for file in (project_dir / 'documents').glob('*.jsonl'):
         old_docs[str(file)] = _load_jsonl(file)
@@ -110,13 +104,11 @@ def update_all(project_name):
     # Check for document differences
     diff_docs = defaultdict(dict)
     for f_name, old_docs_vals in old_docs.items():
-        for pmcid_old, old_doc_j in old_docs_vals.items():
-            for pmcid_new, new_doc_j in new_docs.items():
-                if pmcid_old == pmcid_new:
-                    if old_doc_j['metadata']['text_md5'] != new_doc_j['metadata']['text_md5']:
-                        diff_docs[pmcid_old] = (deepcopy(old_doc_j), new_doc_j)
-                        # Update old docs
-                        old_docs_vals[pmcid_old] = new_doc_j
+        for pmcid, old_doc_j in old_docs_vals.items():
+            if old_doc_j['metadata']['text_md5'] != new_docs[pmcid]['metadata']['text_md5']:
+                # If text_md5 is different, add to diff_docs & update old docs
+                diff_docs[pmcid] = (deepcopy(old_doc_j), new_docs[pmcid])
+                old_docs_vals[pmcid] = new_docs[pmcid]
 
     # If no differences, exit
     if not diff_docs:
@@ -136,17 +128,10 @@ def update_all(project_name):
         for d in data:
             pmcid = d['metadata']['pmcid']
             if pmcid in diff_docs:
-                if check_annotations(d['annotations'], diff_docs[pmcid]):
-                    d['metadata']['text_md5'] = diff_docs[pmcid][1]['metadata']['text_md5']
-                    # utf8_text_md5_checksum - how to compute?
-                else:
-                    raise ValueError('Incompatible annotation found')
-
-    # Write new annotations
-    for a in annotations:
-        with open(a, 'w') as f:
-            for d in data:
-                f.write(json.dumps(d) + '\n')
+                if not check_annotations(d['annotations'], diff_docs[pmcid]):
+                    raise ValueError(
+                        "Incompatible annotation found. Can't update documents"
+                    )
 
     # Write out updated documents
     for f_name, old_docs_vals in old_docs.items():
@@ -157,7 +142,6 @@ def update_all(project_name):
     # Clean up
     temp_dir.cleanup()
     print('Done')
-
 
 
 if __name__ == '__main__':
