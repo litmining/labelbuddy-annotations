@@ -15,7 +15,11 @@ from collections import defaultdict
 def _load_jsonl(file):
     with open(file, 'r') as f:
         _d = [json.loads(line) for line in f]
-        data = {doc['metadata']['pmcid']: doc for doc in _d}
+        try:
+            data = {int(doc['metadata']['pmcid']): doc for doc in _d}
+        except:
+            print(f'Error loading {file}')
+            return None
     return data
 
 
@@ -51,26 +55,15 @@ def check_annotations(annotations, docs):
     return True
 
 
-def update_all(project_name):
-    connection = database.get_database_connection()
-
-    project_dir = pathlib.Path('projects') / project_name
-    if not project_dir.exists():
-        raise FileNotFoundError(f'Project {project_name} not found')
-
-    cur = connection.execute(
-        """SELECT pmcid FROM detailed_annotation
-        WHERE project_name = ?""", (project_name,)
-        )
-
-    pmcids = list(set([str(r['pmcid']) for r in cur.fetchall()]))
-
+def get_new_documents(pmcids):
     # Create temporary directory using tempfile module
-    temp_dir = tempfile.TemporaryDirectory()
+    # temp_dir = tempfile.TemporaryDirectory()
+    temp_dir = pathlib.Path('temp')
     temp_dir_path = pathlib.Path(temp_dir.name)
 
     # Save pmids to a new file
     pmcids_file = temp_dir_path / 'pmcids.txt'
+    pmcids = [str(pmcid) for pmcid in pmcids]
     pmcids_file.write_text('\n'.join(pmcids))
 
     # Run pubget run command using subprocess module
@@ -97,27 +90,54 @@ def update_all(project_name):
     for file in json_files:
         new_docs.update(_load_jsonl(file))
 
+    # temp_dir.cleanup()
+
+    return new_docs
+
+
+def get_old_documents():
     old_docs = {}
-    for file in (project_dir / 'documents').glob('*.jsonl'):
-        old_docs[str(file)] = _load_jsonl(file)
+    all_pmids = set()
+    for file in pathlib.Path('projects').glob('*/documents/*.jsonl'):
+        docs = _load_jsonl(file)
+
+        if not docs:
+            # Skip documents that don't have pmcids
+            continue
+
+        old_docs[file] = docs
+        all_pmids.update(docs.keys())
+
+    return old_docs, all_pmids
+
+
+def update_all():
+    old_docs, all_old_pmcids = get_old_documents()
+    new_docs = get_new_documents(all_old_pmcids)
 
     # Check for document differences
     diff_docs = defaultdict(dict)
     for f_name, old_docs_vals in old_docs.items():
         for pmcid, old_doc_j in old_docs_vals.items():
-            if old_doc_j['metadata']['text_md5'] != new_docs[pmcid]['metadata']['text_md5']:
-                # If text_md5 is different, add to diff_docs & update old docs
-                diff_docs[pmcid] = (deepcopy(old_doc_j), new_docs[pmcid])
-                old_docs_vals[pmcid] = new_docs[pmcid]
+            if pmcid in new_docs:
+                old_text = old_doc_j['text']
+                new_text = new_docs[pmcid]['text']
+
+                if old_text != new_text:
+                    diff_docs[pmcid] = (deepcopy(old_doc_j), new_docs[pmcid])
+                    old_docs_vals[pmcid] = new_docs[pmcid]
+
 
     # If no differences, exit
     if not diff_docs:
         print('No differences found')
         sys.exit(0)
 
+    print(f'{len(diff_docs)} documents need updating')
+
     # If differences, check if annotations are still valid
     # If not valid, raise an error and don't update
-    annotations = (project_dir / 'annotations').glob('*.json*')
+    annotations = pathlib.Path('projects').glob('*/annotations/*.json*')
     for a in annotations:
         if a.suffix == '.json':
             with open(a, 'r') as f:
@@ -126,7 +146,11 @@ def update_all(project_name):
             data = [json.loads(line) for line in a.open()]
 
         for d in data:
-            pmcid = d['metadata']['pmcid']
+            if 'pmid' in d['metadata']:
+                pmcid = d['metadata']['pmid']
+            else:
+                print(f'Skipping annotation {d} without pmcid')
+                continue
             if pmcid in diff_docs:
                 if not check_annotations(d['annotations'], diff_docs[pmcid]):
                     raise ValueError(
@@ -135,30 +159,20 @@ def update_all(project_name):
 
     # Write out updated documents
     for f_name, old_docs_vals in old_docs.items():
+        print(f_name)
         with open(f_name, 'w') as f:
             for pmcid, doc in old_docs_vals.items():
                 f.write(json.dumps(doc) + '\n')
 
-    # Clean up
-    temp_dir.cleanup()
-    print('Done')
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="""Update documents for a project. 
-        Checks for differences in documents and annotations,
-        and only proceeds if annotations are still valid."""
+        description="""Update documents for all projects"""
     )
-    parser.add_argument("project_name")
-    args = parser.parse_args()
-
-    project_name = pathlib.Path(args.project_name).name
-
-    stdout = sys.stdout
     try:
+        stdout = sys.stdout
         sys.stdout = sys.stderr
-        print(f"Updating documents for project: {project_name}")
-        update_all(project_name)
+        update_all()
+        print('Done')
     finally:
         sys.stdout = stdout
