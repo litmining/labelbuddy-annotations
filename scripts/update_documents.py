@@ -57,8 +57,7 @@ def check_annotations(annotations, docs):
 
 def get_new_documents(pmcids):
     # Create temporary directory using tempfile module
-    # temp_dir = tempfile.TemporaryDirectory()
-    temp_dir = pathlib.Path('temp')
+    temp_dir = tempfile.TemporaryDirectory()
     temp_dir_path = pathlib.Path(temp_dir.name)
 
     # Save pmids to a new file
@@ -90,7 +89,7 @@ def get_new_documents(pmcids):
     for file in json_files:
         new_docs.update(_load_jsonl(file))
 
-    # temp_dir.cleanup()
+    temp_dir.cleanup()
 
     return new_docs
 
