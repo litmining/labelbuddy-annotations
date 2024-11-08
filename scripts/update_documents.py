@@ -19,7 +19,7 @@ def _load_jsonl(file):
     return data
 
 
-def check_annotation(annotation, docs):
+def check_annotations(annotations, docs):
     """ Given an annotation like follows:
 
     {'end_byte': 20027,
@@ -31,26 +31,32 @@ def check_annotation(annotation, docs):
     check if the annotation is still valid in the new document.
     
     """
-    old_doc = docs[0]
-    new_doc = docs[1]
+    for annotation in annotations:
+        old_doc = docs[0]
+        new_doc = docs[1]
 
-    old_text = old_doc['text']
-    new_text = new_doc['text']
+        old_text = old_doc['text']
+        new_text = new_doc['text']
 
-    old_start = annotation['start_byte']
-    old_end = annotation['end_byte']
+        old_start = annotation['start_byte']
+        old_end = annotation['end_byte']
 
-    old_text = old_text[old_start:old_end]
+        old_text = old_text[old_start:old_end]
 
-    new_text = new_text[old_start:old_end]
+        new_text = new_text[old_start:old_end]
 
-    return old_text == new_text
+        if old_text != new_text:
+            return False
+
+    return True
 
 
 def update_all(project_name):
     connection = database.get_database_connection()
 
     project_dir = pathlib.Path('projects') / project_name
+    if not project_dir.exists():
+        raise FileNotFoundError(f'Project {project_name} not found')
 
     cur = connection.execute("""SELECT pmcid
                             FROM detailed_annotation
@@ -101,7 +107,6 @@ def update_all(project_name):
     for file in (project_dir / 'documents').glob('*.jsonl'):
         old_docs[str(file)] = _load_jsonl(file)
 
-
     # Check for document differences
     diff_docs = defaultdict(dict)
     for f_name, old_docs_vals in old_docs.items():
@@ -110,7 +115,6 @@ def update_all(project_name):
                 if pmcid_old == pmcid_new:
                     if old_doc_j['metadata']['text_md5'] != new_doc_j['metadata']['text_md5']:
                         diff_docs[pmcid_old] = (deepcopy(old_doc_j), new_doc_j)
-
                         # Update old docs
                         old_docs_vals[pmcid_old] = new_doc_j
 
@@ -123,13 +127,18 @@ def update_all(project_name):
     # If not valid, raise an error and don't update
     annotations = (project_dir / 'annotations').glob('*.json*')
     for a in annotations:
-        with open(a, 'r') as f:
-            data = [json.loads(line) for line in f]
+        if a.suffix == '.json':
+            with open(a, 'r') as f:
+                data = json.loads(f.read())
+        else:
+            data = [json.loads(line) for line in a.open()]
+
         for d in data:
             pmcid = d['metadata']['pmcid']
             if pmcid in diff_docs:
-                if check_annotation(d['data'], diff_docs[pmcid]):
+                if check_annotations(d['annotations'], diff_docs[pmcid]):
                     d['metadata']['text_md5'] = diff_docs[pmcid][1]['metadata']['text_md5']
+                    # utf8_text_md5_checksum - how to compute?
                 else:
                     raise ValueError('Incompatible annotation found')
 
@@ -153,7 +162,9 @@ def update_all(project_name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="Update documents for a project."
+        description="""Update documents for a project. 
+        Checks for differences in documents and annotations,
+        and only proceeds if annotations are still valid."""
     )
     parser.add_argument("project_name")
     args = parser.parse_args()
