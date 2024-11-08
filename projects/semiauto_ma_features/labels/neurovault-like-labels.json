@@ -37,22 +37,32 @@
     },
     {
         "color": "#ffaa00",
-        "name": "TaskName_Unsure"
+        "name": "TaskName_Unsure",
+        "shortcut_key": "a"
     },
     {
         "color": "#98df8a",
-        "name": "RestingState"
+        "name": "RestingState",
+        "shortcut_key": "r"
     },
     {
         "color": "#ff9896",
-        "name": "Meta-analysis"
+        "name": "Meta-analysis",
+        "shortcut_key": "m"
     },
     {
         "color": "#aec7e8",
-        "name": "Review"
+        "name": "Review",
+        "shortcut_key": "v"
     },
     {
         "color": "#ffbb78",
-        "name": "TaskName_None"
+        "name": "TaskName_None",
+        "shortcut_key": "n"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "Unsure",
+        "shortcut_key": "u"
     }
 ]
