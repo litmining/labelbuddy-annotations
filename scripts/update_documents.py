@@ -97,10 +97,7 @@ def get_new_documents(pmcids):
 def get_old_documents():
     old_docs = {}
     all_pmids = set()
-    for file in pathlib.Path('projects').glob('*/documents/*.jsonl'):
-        # Skip symlinked files
-        if file.is_symlink():
-            continue
+    for file in pathlib.Path('documents').glob('batch*/*.jsonl'):
         docs = _load_jsonl(file)
 
         if not docs:
