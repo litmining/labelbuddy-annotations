@@ -14,7 +14,7 @@ def _load_jsonl(file):
         _d = [json.loads(line) for line in f]
         try:
             data = {int(doc['metadata']['pmcid']): doc for doc in _d}
-        except:
+        except Exception:
             print(f'Error loading {file}')
             return None
     return data
