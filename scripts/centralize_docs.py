@@ -1,178 +1,108 @@
 #! /usr/bin/env python3
+# This script is used to centralize the documents in the projects
+# This is a destructive operation, only meant to be run once as a migration
 
 import pathlib
 import json
-import tempfile
-import subprocess
-import sys
 from collections import defaultdict
-from copy import deepcopy
+from labelrepo import database
+import hashlib
 
 
-def _load_jsonl(file):
-    with open(file, 'r') as f:
-        _d = [json.loads(line) for line in f]
-        try:
-            data = {int(doc['metadata']['pmcid']): doc for doc in _d}
-        except:
-            print(f'Error loading {file}')
-            return None
-    return data
+def centralize_all(dry_run=False):
+    connection = database.get_database_connection()
 
+    # Select all documents where utf8_text_md5_checksum is in detailed_annotation.doc_id
+    # joint filter on ut8_text_md5_checksum == detailed_annotation.doc_id
 
-def check_annotations(annotations, docs):
-    """ Given an annotation like follows:
-
-    {'end_byte': 20027,
-    'end_char': 19906,
-    'label_name': 'male',
-    'start_byte': 20023,
-    'start_char': 19902}
-
-    check if the annotation is still valid in the new document.
+    cur = connection.execute("""SELECT *
+                             FROM document
+                             WHERE id IN (
+                                    SELECT doc_id
+                                    FROM annotation
+                                )"""
+                                )
     
-    """
-    for annotation in annotations:
-        old_doc = docs[0]
-        new_doc = docs[1]
+    doc_rows = cur.fetchall()
 
-        old_text = old_doc['text']
-        new_text = new_doc['text']
+    keep_docs = defaultdict(dict)
+    for doc in doc_rows:
+        id = f"pmcid_{doc['pmcid']}" if doc['pmcid'] else f"pmid_{doc['pmid']}"
+        md5 = doc['utf8_text_md5_checksum']
+        keep_docs[id][md5] = doc
 
-        old_start = annotation['start_byte']
-        old_end = annotation['end_byte']
+    def load_documents(keep_docs):
+        docs = defaultdict(dict)
+        docs_paths = list(pathlib.Path('projects').glob('*/documents/*.jsonl'))
+        for file in docs_paths:
+            with open(file, 'r') as f:
+                for line in f:
+                    doc_info = json.loads(line)
 
-        old_text = old_text[old_start:old_end]
+                    if isinstance(doc_info["metadata"], str):
+                        doc_info["metadata"] = json.loads(doc_info["metadata"])
 
-        new_text = new_text[old_start:old_end]
+                    if 'pmcid' in doc_info['metadata']:
+                        id = f"pmcid_{doc_info['metadata']['pmcid']}"
+                    elif 'pmid' in doc_info['metadata']:
+                        id = f"pmid_{doc_info['metadata']['pmid']}"
 
-        if old_text != new_text:
-            return False
+                    md5 = hashlib.md5(doc_info["text"].encode("utf-8")).digest()
 
-    return True
+                    if id in keep_docs and md5 in keep_docs[id]:
+                        docs[id][md5] = doc_info
 
+        return docs, docs_paths
+    
+    docs, docs_paths = load_documents(keep_docs)
 
-def get_new_documents(temp_dir_path, pmcids):
-
-    # Save pmids to a new file
-    pmcids_file = temp_dir_path / 'pmcids.txt'
-    pmcids = [str(pmcid) for pmcid in pmcids]
-    pmcids_file.write_text('\n'.join(pmcids))
-
-    # Run pubget run command using subprocess module
-    out_dir = temp_dir_path / 'output'
-    subprocess.run(['pubget', 'download', '--pmcids_file',
-                    str(pmcids_file), str(out_dir)])
-
-    res_dir = list(out_dir.glob('pmcidList*'))[0]
-
-    subprocess.run(['pubget', 'extract_articles', 
-                    str(res_dir / 'articlesets')])
-
-    subprocess.run(['pubget', 'extract_data', 
-                    str(res_dir / 'articles')])
-
-    subprocess.run(['pubget', 'extract_labelbuddy_data',
-                    str(res_dir / 'subset_allArticles_extractedData')])
-
-    json_files = list(
-        (res_dir / 'subset_allArticles_labelbuddyData').glob('*.jsonl'))
-
-    # Load old and new documents
-    new_docs = {}
-    for file in json_files:
-        new_docs.update(_load_jsonl(file))
-
-    return json_files, new_docs
+    # Write out documents in central location
+    new_documents = pathlib.Path('documents')
+    new_documents.mkdir(exist_ok=True)
+    for id, doc_md5s in keep_docs.items():
+        for md5 in doc_md5s:
+            doc = docs[id][md5]
+            file = new_documents / f'{id}.jsonl'
+            with open(file, 'a') as f:
+                f.write(json.dumps(doc) + '\n')
 
 
-def get_old_documents():
-    old_docs = {}
-    all_pmids = set()
-    for file in pathlib.Path('projects').glob('*/documents/*.jsonl'):
-        # Skip symlinked files
-        if file.is_symlink():
-            continue
-        docs = _load_jsonl(file)
-
-        if not docs:
-            # Skip documents that don't have pmcids
-            continue
-
-        old_docs[file] = docs
-        all_pmids.update(docs.keys())
-
-    return old_docs, all_pmids
-
-
-def centralize_all():
-    old_docs, all_old_pmcids = get_old_documents()
-    temp_dir_path = pathlib.Path('/tmp/pubget')
-    json_files, new_docs = get_new_documents(temp_dir_path, all_old_pmcids)
-
-    # Check for document differences
-    diff_docs = defaultdict(dict)
-    for f_name, old_docs_vals in old_docs.items():
-        for pmcid, old_doc_j in old_docs_vals.items():
-            if pmcid in new_docs:
-                old_text = old_doc_j['text']
-                new_text = new_docs[pmcid]['text']
-
-                if old_text != new_text:
-                    diff_docs[pmcid] = (deepcopy(old_doc_j), new_docs[pmcid])
-
-    # If differences, check if annotations are still valid
-    # If not valid, raise an error and don't update
-    annotations = pathlib.Path('projects').glob('*/annotations/*.json*')
-    for a in annotations:
-        if a.suffix == '.json':
-            with open(a, 'r') as f:
-                data = json.loads(f.read())
-        else:
-            data = [json.loads(line) for line in a.open()]
-
-        for d in data:
-            if 'pmid' in d['metadata']:
-                pmcid = d['metadata']['pmid']
-            else:
-                continue
-            if pmcid in diff_docs:
-                if not check_annotations(d['annotations'], diff_docs[pmcid]):
-                    raise ValueError(
-                        "Incompatible annotation found. Can't update documents"
-                    )
-
-    # Copy jsonl files to documents/
-    new_doc_path = pathlib.Path('documents')
-    new_doc_path.mkdir(exist_ok=True)
-    for file in json_files:
-        dest = new_doc_path / file.name
-        file.replace(dest)
-
-    # Compute unique PMCIDs for each project
-    # and delete old documents
-    project_pmids = defaultdict(set)
-    for file in old_docs.keys():
-        project_name = file.parts[1]
-        project_pmids[project_name].update(old_docs[file].keys())
-
+    # Get all ids for each project
+    cur = connection.execute("""SELECT project_name, pmcid, pmid FROM
+                             detailed_annotation"""
+                             )  
+    
+    # Delete old documents
+    for file in docs_paths:
         file.unlink()
 
     # Write out pmcids for each project
-    for project, pmcids in project_pmids.items():
+    # Default dict of lists
+    project_ids = defaultdict(lambda: defaultdict(list))
+    for row in cur.fetchall():
+        if row['pmcid']:
+            project_ids[row['project_name']]['pmcid'].append(row['pmcid'])
+        else:
+            project_ids[row['project_name']]['pmid'].append(row['pmid'])
+
+    for project, ids in project_ids.items():
         project_dir = pathlib.Path(f'projects/{project}')
         datasets_json = project_dir / 'documents/datasets.json'
         if datasets_json.exists():
             # Move file to parent directory
             datasets_json.replace(project_dir / 'datasets.json')
 
+        readme = project_dir / 'documents/README.md'
+        if readme.exists():
+            readme.unlink()
+
         # If parent directory now empty, delete
         if datasets_json.parent.is_dir() and not list(datasets_json.parent.iterdir()):
             datasets_json.parent.rmdir()
 
-        pmcids_file = project_dir / 'pmcids.txt'
-        pmcids = [str(pmcid) for pmcid in pmcids]
-        pmcids_file.write_text('\n'.join(pmcids))
+        # Write out ids for each project
+        with open(project_dir / 'ids.json', 'w') as f:
+            json.dump(ids, f)
 
 
 
