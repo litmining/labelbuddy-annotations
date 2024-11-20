@@ -1,29 +1,34 @@
 #! /usr/bin/env python3
 # This script is used to centralize the documents in the projects
-# This is a destructive operation, only meant to be run once as a migration
+# Documents that are stores in {project_name}/documents/ are moved to
+# the central location in documents/
+
 
 import pathlib
 import json
 from collections import defaultdict
 from labelrepo import database
 import hashlib
+import argparse
 
 
-def centralize_all(dry_run=False):
+def centralize(project_name=None):
     connection = database.get_database_connection()
 
     # Select all documents where utf8_text_md5_checksum is in detailed_annotation.doc_id
     # joint filter on ut8_text_md5_checksum == detailed_annotation.doc_id
 
-    cur = connection.execute("""SELECT *
-                             FROM document
-                             WHERE id IN (
-                                    SELECT doc_id
-                                    FROM annotation
-                                )"""
-                                )
-    
-    doc_rows = cur.fetchall()
+    query = """SELECT *
+                    FROM document
+                    WHERE id IN (
+                            SELECT doc_id
+                            FROM annotation
+                """
+    if project_name:
+        query += f"WHERE project_name = '{project_name}'"
+
+    query += ")"
+    doc_rows = connection.execute(query)
 
     keep_docs = defaultdict(dict)
     for doc in doc_rows:
@@ -63,15 +68,27 @@ def centralize_all(dry_run=False):
         for md5 in doc_md5s:
             doc = docs[id][md5]
             file = new_documents / f'{id}.jsonl'
-            with open(file, 'a') as f:
-                f.write(json.dumps(doc) + '\n')
-
+            # Read file, check if doc exists
+            if file.exists():
+                with open(file, 'r') as f:
+                    for line in f:
+                        existing_doc = json.loads(line)
+                        if existing_doc['text'] == doc['text']:
+                            break
+                    else:
+                        with open(file, 'a') as f:
+                            f.write(json.dumps(doc) + '\n')
+            else:
+                with open(file, 'w') as f:
+                    f.write(json.dumps(doc) + '\n')
 
     # Get all ids for each project
-    cur = connection.execute("""SELECT project_name, pmcid, pmid FROM
-                             detailed_annotation"""
-                             )  
-    
+    q = """SELECT project_name, pmcid, pmid FROM
+                                detailed_annotation"""
+    if project_name:
+        q += f" WHERE project_name = '{project_name}'"
+    cur = connection.execute(q)
+
     # Delete old documents
     for file in docs_paths:
         file.unlink()
@@ -96,10 +113,6 @@ def centralize_all(dry_run=False):
         if readme.exists():
             readme.unlink()
 
-        # If parent directory now empty, delete
-        if datasets_json.parent.is_dir() and not list(datasets_json.parent.iterdir()):
-            datasets_json.parent.rmdir()
-
         # Write out ids for each project
         with open(project_dir / 'ids.json', 'w') as f:
             json.dump(ids, f)
@@ -107,4 +120,8 @@ def centralize_all(dry_run=False):
 
 
 if __name__ == '__main__':
-    centralize_all()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--project', help='Project name to centralize')
+    args = parser.parse_args()
+
+    centralize(args.project)
