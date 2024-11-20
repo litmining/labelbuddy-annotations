@@ -82,10 +82,6 @@ def centralize(project_name=None):
                 with open(file, 'w') as f:
                     f.write(json.dumps(doc) + '\n')
 
-    # Delete old documents
-    for file in docs_paths:
-        file.unlink()
-
     # Get all ids for each project
     q = """SELECT project_name, pmcid, pmid FROM
                                 detailed_annotation"""
@@ -121,6 +117,9 @@ def centralize(project_name=None):
         with open(project_dir / 'ids.json', 'w') as f:
             json.dump(ids, f)
 
+    # Delete old documents
+    for file in docs_paths:
+        file.unlink()
 
 
 if __name__ == '__main__':
