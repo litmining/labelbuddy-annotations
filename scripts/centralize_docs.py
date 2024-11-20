@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # This script is used to centralize the documents in the projects
-# Documents that are stores in {project_name}/documents/ are moved to
-# the central location in documents/
+# Documents that are stores in {project_name}/documents/ and annotated are
+# copies to the central location in documents/
 
 
 import pathlib
@@ -12,7 +12,7 @@ import hashlib
 import argparse
 
 
-def centralize(project_name=None):
+def centralize(project_name=None, delete=True):
     connection = database.get_database_connection()
 
     # Select all documents where utf8_text_md5_checksum is in detailed_annotation.doc_id
@@ -82,49 +82,16 @@ def centralize(project_name=None):
                 with open(file, 'w') as f:
                     f.write(json.dumps(doc) + '\n')
 
-    # Get all ids for each project
-    q = """SELECT project_name, pmcid, pmid FROM
-                                detailed_annotation"""
-    if project_name:
-        q += f" WHERE project_name = '{project_name}'"
-    cur = connection.execute(q)
-
-    # Write out pmcids for each project
-    project_ids = defaultdict(lambda: defaultdict(set))
-    for row in cur.fetchall():
-        if row['pmcid']:
-            project_ids[row['project_name']]['pmcid'].add(row['pmcid'])
-        else:
-            project_ids[row['project_name']]['pmid'].add(row['pmid'])
-
-    # Sets to list
-    for project, ids in project_ids.items():
-        ids['pmcid'] = list(ids['pmcid'])
-        ids['pmid'] = list(ids['pmid'])
-
-    for project, ids in project_ids.items():
-        project_dir = pathlib.Path(f'projects/{project}')
-        datasets_json = project_dir / 'documents/datasets.json'
-        if datasets_json.exists():
-            # Move file to parent directory
-            datasets_json.replace(project_dir / 'datasets.json')
-
-        readme = project_dir / 'documents/README.md'
-        if readme.exists():
-            readme.unlink()
-
-        # Write out ids for each project
-        with open(project_dir / 'ids.json', 'w') as f:
-            json.dump(ids, f)
-
-    # Delete old documents
-    for file in docs_paths:
-        file.unlink()
+    if delete:
+        # Delete old documents
+        for file in docs_paths:
+            file.unlink()
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', help='Project name to centralize')
+    parser.add_argument('--delete', action='store_true', help='Delete local project documents')
     args = parser.parse_args()
 
-    centralize(args.project)
+    centralize(args.project, args.delete)
