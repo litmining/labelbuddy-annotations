@@ -82,6 +82,10 @@ def centralize(project_name=None):
                 with open(file, 'w') as f:
                     f.write(json.dumps(doc) + '\n')
 
+    # Delete old documents
+    for file in docs_paths:
+        file.unlink()
+
     # Get all ids for each project
     q = """SELECT project_name, pmcid, pmid FROM
                                 detailed_annotation"""
@@ -89,18 +93,18 @@ def centralize(project_name=None):
         q += f" WHERE project_name = '{project_name}'"
     cur = connection.execute(q)
 
-    # Delete old documents
-    for file in docs_paths:
-        file.unlink()
-
     # Write out pmcids for each project
-    # Default dict of lists
-    project_ids = defaultdict(lambda: defaultdict(list))
+    project_ids = defaultdict(lambda: defaultdict(set))
     for row in cur.fetchall():
         if row['pmcid']:
-            project_ids[row['project_name']]['pmcid'].append(row['pmcid'])
+            project_ids[row['project_name']]['pmcid'].add(row['pmcid'])
         else:
-            project_ids[row['project_name']]['pmid'].append(row['pmid'])
+            project_ids[row['project_name']]['pmid'].add(row['pmid'])
+
+    # Sets to list
+    for project, ids in project_ids.items():
+        ids['pmcid'] = list(ids['pmcid'])
+        ids['pmid'] = list(ids['pmid'])
 
     for project, ids in project_ids.items():
         project_dir = pathlib.Path(f'projects/{project}')
