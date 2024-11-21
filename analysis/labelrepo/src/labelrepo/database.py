@@ -59,7 +59,7 @@ def _insert_documents(connection: sqlite3.Connection, docs_file: pathlib.Path) -
             for doc_line in docs_fh:
                 doc_info = json.loads(doc_line)
                 doc_row = _utils.process_doc_info(doc_info)
-                doc_row['md5'] = bytes.fromhex(doc_row['md5'])Z
+                doc_row['md5'] = bytes.fromhex(doc_row['md5'])
                 connection.execute(
                     """
                     insert or ignore into document
