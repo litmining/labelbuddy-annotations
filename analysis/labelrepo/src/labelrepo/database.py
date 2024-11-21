@@ -27,11 +27,11 @@ def _fill_database(db_path: pathlib.Path):
         all_project_dirs = sorted(
             p for p in projects_root_dir.glob("*") if p.name != "template_project"
         )
+        _insert_all_documents(connection)
         for project_dir in all_project_dirs:
             if not project_dir.is_dir():
                 continue
             _insert_project(connection, project_dir)
-            _insert_project_documents(connection, project_dir)
             _insert_project_labels(connection, project_dir)
             _insert_project_annotations(connection, project_dir)
 
@@ -41,10 +41,11 @@ def _insert_project(connection: sqlite3.Connection, project_dir: pathlib.Path) -
         connection.execute("insert into project (name) values (?)", (project_dir.name,))
 
 
-def _insert_project_documents(
-    connection: sqlite3.Connection, project_dir: pathlib.Path
+def _insert_all_documents(
+    connection: sqlite3.Connection
 ) -> None:
-    docs_dir = project_dir / "documents"
+    docs_dir = repo.repo_root() / "documents"
+
     if not docs_dir.is_dir():
         return
     print(f"Inserting documents from {docs_dir}")

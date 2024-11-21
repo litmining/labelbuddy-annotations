@@ -26,6 +26,20 @@ def _load_documents(keep_docs):
     return docs, docs_paths
 
 
+def get_project_doc_md5(project_name):
+    project_root_dir = repo.repo_root() / "projects" / project_name
+    annotation_files = (project_root_dir / "annotations").glob("*.jsonl")
+
+    # Load all documents that are annotated
+    annotated_docs = set()
+    for f in annotation_files:
+        annotations = _utils.read_json(f)
+        for doc_info in annotations:
+            annotated_docs.add(doc_info["utf8_text_md5_checksum"])
+
+    return annotated_docs
+
+
 def _project_documents(project_name, delete=True):
     project_root_dir = repo.repo_root() / "projects" / project_name
 
