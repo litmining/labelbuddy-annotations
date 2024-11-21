@@ -52,42 +52,13 @@ def _insert_project_documents(
         _insert_documents(connection, docs_file)
 
 
-def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, str]:
-    metadata = {}
-    if isinstance(doc_info["metadata"], str):
-        doc_info["metadata"] = json.loads(doc_info["metadata"])
-    for field, (start, end) in doc_info["metadata"].get("field_positions", {}).items():
-        metadata[field] = doc_info["text"][start:end]
-    return metadata
-
-
 def _insert_documents(connection: sqlite3.Connection, docs_file: pathlib.Path) -> None:
-    metadata_field_types = {
-        "pmid": int,
-        "pmcid": int,
-        "journal": str,
-        "publication_year": int,
-        "title": str,
-    }
     with connection:
         with open(docs_file, "r", encoding="utf-8") as docs_fh:
             for doc_line in docs_fh:
                 doc_info = json.loads(doc_line)
-                doc_row = {}
-                doc_row["md5"] = hashlib.md5(doc_info["text"].encode("utf-8")).digest()
-                doc_row["text"] = doc_info["text"]
-                text_metadata = _extract_metadata_from_text(doc_info)
-                for field, field_type in metadata_field_types.items():
-                    raw_value = doc_info["metadata"].get(
-                        field, text_metadata.get(field, None)
-                    )
-                    if raw_value is not None:
-                        try:
-                            doc_row[field] = field_type(raw_value)
-                        except (KeyError, ValueError, TypeError):
-                            doc_row[field] = None
-                    else:
-                        doc_row[field] = None
+                doc_row = _utils.process_doc_info(doc_info)
+                doc_row['md5'] = bytes.fromhex(doc_row['md5'])Z
                 connection.execute(
                     """
                     insert or ignore into document
