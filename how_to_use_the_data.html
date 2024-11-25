@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -34,16 +36,17 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/label-set.css?v=11afd262" />
-    <link rel="stylesheet" type="text/css" href="_static/annotation-set.css?v=f809bc52" />
     <link rel="stylesheet" type="text/css" href="_static/global.css?v=3d573378" />
+    <link rel="stylesheet" type="text/css" href="_static/annotation-set.css?v=f809bc52" />
     <link rel="stylesheet" type="text/css" href="_static/participants.css?v=719265c2" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -68,6 +71,7 @@
     <link rel="prev" title="Biomedical literature annotations" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,19 +87,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -103,7 +96,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,8 +103,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,7 +120,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,15 +151,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -326,24 +315,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -719,61 +700,61 @@ Below we review multiple cases to extract data from <span class="annotated-text"
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_5e6c6">
+<table id="T_92f84">
   <thead>
   </thead>
   <tbody>
     <tr>
-      <td id="T_5e6c6_row0_col1" class="data row0 col1" >pmcid</td>
-      <td id="T_5e6c6_row0_col2" class="data row0 col2" >8334182</td>
+      <td id="T_92f84_row0_col1" class="data row0 col1" >pmcid</td>
+      <td id="T_92f84_row0_col2" class="data row0 col2" >8334182</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row1_col1" class="data row1 col1" >pmid</td>
-      <td id="T_5e6c6_row1_col2" class="data row1 col2" >34368270</td>
+      <td id="T_92f84_row1_col1" class="data row1 col1" >pmid</td>
+      <td id="T_92f84_row1_col2" class="data row1 col2" >34368270</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row2_col1" class="data row2 col1" >publication_year</td>
-      <td id="T_5e6c6_row2_col2" class="data row2 col2" >2021</td>
+      <td id="T_92f84_row2_col1" class="data row2 col1" >publication_year</td>
+      <td id="T_92f84_row2_col2" class="data row2 col2" >2021</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row3_col1" class="data row3 col1" >journal</td>
-      <td id="T_5e6c6_row3_col2" class="data row3 col2" >Front Vet Sci</td>
+      <td id="T_92f84_row3_col1" class="data row3 col1" >journal</td>
+      <td id="T_92f84_row3_col2" class="data row3 col2" >Front Vet Sci</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row4_col1" class="data row4 col1" >title</td>
-      <td id="T_5e6c6_row4_col2" class="data row4 col2" >Large-Scale Data Mining of Rapid Residue Detection Assay Data From HTML and PDF Documents: Improving Data Access and Visualization for Veterinarians</td>
+      <td id="T_92f84_row4_col1" class="data row4 col1" >title</td>
+      <td id="T_92f84_row4_col2" class="data row4 col2" >Large-Scale Data Mining of Rapid Residue Detection Assay Data From HTML and PDF Documents: Improving Data Access and Visualization for Veterinarians</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row5_col1" class="data row5 col1" >label_name</td>
-      <td id="T_5e6c6_row5_col2" class="data row5 col2" >entity</td>
+      <td id="T_92f84_row5_col1" class="data row5 col1" >label_name</td>
+      <td id="T_92f84_row5_col2" class="data row5 col2" >entity</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row6_col1" class="data row6 col1" >label_color</td>
-      <td id="T_5e6c6_row6_col2" class="data row6 col2" >#729fcf</td>
+      <td id="T_92f84_row6_col1" class="data row6 col1" >label_color</td>
+      <td id="T_92f84_row6_col2" class="data row6 col2" >#729fcf</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row7_col1" class="data row7 col1" >annotator_name</td>
-      <td id="T_5e6c6_row7_col2" class="data row7 col2" >Kendra_Oudyk</td>
+      <td id="T_92f84_row7_col1" class="data row7 col1" >annotator_name</td>
+      <td id="T_92f84_row7_col2" class="data row7 col2" >Kendra_Oudyk</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row8_col1" class="data row8 col1" >start_char</td>
-      <td id="T_5e6c6_row8_col2" class="data row8 col2" >229</td>
+      <td id="T_92f84_row8_col1" class="data row8 col1" >start_char</td>
+      <td id="T_92f84_row8_col2" class="data row8 col2" >229</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row9_col1" class="data row9 col1" >end_char</td>
-      <td id="T_5e6c6_row9_col2" class="data row9 col2" >264</td>
+      <td id="T_92f84_row9_col1" class="data row9 col1" >end_char</td>
+      <td id="T_92f84_row9_col2" class="data row9 col2" >264</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row10_col1" class="data row10 col1" >project_name</td>
-      <td id="T_5e6c6_row10_col2" class="data row10 col2" >NER_biomedical</td>
+      <td id="T_92f84_row10_col1" class="data row10 col1" >project_name</td>
+      <td id="T_92f84_row10_col2" class="data row10 col2" >NER_biomedical</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row11_col1" class="data row11 col1" >selected_text</td>
-      <td id="T_5e6c6_row11_col2" class="data row11 col2" >Rapid Residue Detection Assay Data </td>
+      <td id="T_92f84_row11_col1" class="data row11 col1" >selected_text</td>
+      <td id="T_92f84_row11_col2" class="data row11 col2" >Rapid Residue Detection Assay Data </td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row12_col1" class="data row12 col1" >context</td>
-      <td id="T_5e6c6_row12_col2" class="data row12 col2" >hian Dinani, Soudabeh and Millagaha Gedara, Nuwan Indika and Xu, Xuan and Richards, Emily and Maunsell, Fiona and Zad, Nader and Tell, Lisa A.
+      <td id="T_92f84_row12_col1" class="data row12 col1" >context</td>
+      <td id="T_92f84_row12_col2" class="data row12 col2" >hian Dinani, Soudabeh and Millagaha Gedara, Nuwan Indika and Xu, Xuan and Richards, Emily and Maunsell, Fiona and Zad, Nader and Tell, Lisa A.
 Front Vet Sci, 2021
 
 # Title
@@ -789,20 +770,20 @@ large scale data mining
 table extract</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row13_col1" class="data row13 col1" >context_start_char</td>
-      <td id="T_5e6c6_row13_col2" class="data row13 col2" >29</td>
+      <td id="T_92f84_row13_col1" class="data row13 col1" >context_start_char</td>
+      <td id="T_92f84_row13_col2" class="data row13 col2" >29</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row14_col1" class="data row14 col1" >context_end_char</td>
-      <td id="T_5e6c6_row14_col2" class="data row14 col2" >464</td>
+      <td id="T_92f84_row14_col1" class="data row14 col1" >context_end_char</td>
+      <td id="T_92f84_row14_col2" class="data row14 col2" >464</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row15_col1" class="data row15 col1" >doc_length</td>
-      <td id="T_5e6c6_row15_col2" class="data row15 col2" >34250</td>
+      <td id="T_92f84_row15_col1" class="data row15 col1" >doc_length</td>
+      <td id="T_92f84_row15_col2" class="data row15 col2" >34250</td>
     </tr>
     <tr>
-      <td id="T_5e6c6_row16_col1" class="data row16 col1" >doc_md5</td>
-      <td id="T_5e6c6_row16_col2" class="data row16 col2" >813c6fa5fd4080082d6a66ba4a2fee44</td>
+      <td id="T_92f84_row16_col1" class="data row16 col1" >doc_md5</td>
+      <td id="T_92f84_row16_col2" class="data row16 col2" >813c6fa5fd4080082d6a66ba4a2fee44</td>
     </tr>
   </tbody>
 </table>
@@ -950,7 +931,8 @@ From the command-line this can be done with the <code class="docutils literal no
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1011,8 +993,8 @@ By https://github.com/neurodatascience/labelbuddy-annotations/graphs/contributor
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
