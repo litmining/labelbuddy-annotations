@@ -1,0 +1,57 @@
+[
+    {
+        "color": "#aec7e8",
+        "name": "TaskName"
+    },
+    {
+        "color": "#ffbb78",
+        "name": "TaskDescription"
+    },
+    {
+        "color": "#98df8a",
+        "name": "Modality-fMRI-BOLD"
+    },
+    {
+        "color": "#ff9896",
+        "name": "DesignType-RestingState"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "Exclude-MetaAnalysis"
+    },
+    {
+        "color": "#c49c94",
+        "name": "Unsure"
+    },
+    {
+        "color": "#f7b6d2",
+        "name": "Modality-StructuralMRI"
+    },
+    {
+        "color": "#dbdb8d",
+        "name": "None"
+    },
+    {
+        "color": "#c5b0d5",
+        "name": "Condition",
+        "shortcut_key": "c"
+    },
+    {
+        "color": "#98df8a",
+        "name": "ContrastDefinition",
+        "shortcut_key": "d"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "Modality-DiffusionMRI"
+    },
+    {
+        "color": "#98df8a",
+        "name": "Modality-PET"
+    },
+    {
+        "color": "#bb83c6",
+        "name": "Exclude-Review",
+        "shortcut_key": "v"
+    }
+]
