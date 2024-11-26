@@ -1,5 +1,6 @@
 projects/sandbox
 projects/**/*_report*.html
+projects/*/documents
 
 pubget_data
 
