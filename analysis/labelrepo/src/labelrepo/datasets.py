@@ -147,7 +147,7 @@ def get_dataset(url: str) -> pathlib.Path:
 
 def get_project_datasets(project_name: str) -> List[pathlib.Path]:
     project_dir = repo.repo_root() / "projects" / project_name
-    sources_json = project_dir / "documents" / "datasets.json"
+    sources_json = project_dir / "datasets.json"
     if not sources_json.is_file():
         return []
     sources_info = json.loads(sources_json.read_text("UTF-8"))
