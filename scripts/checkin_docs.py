@@ -11,4 +11,4 @@ if __name__ == '__main__':
     parser.add_argument('--project', help='Project name to centralize')
     args = parser.parse_args()
 
-    checkin_docs(args.project, args.delete)
+    checkin_docs(args.project)
