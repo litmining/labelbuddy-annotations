@@ -40,7 +40,7 @@ def get_project_doc_md5(project_name):
     return annotated_docs
 
 
-def _project_documents(project_name, delete=True):
+def _project_documents(project_name):
     project_root_dir = repo.repo_root() / "projects" / project_name
 
     annotation_files = (project_root_dir / "annotations").glob("*.jsonl")
@@ -75,7 +75,9 @@ def _project_documents(project_name, delete=True):
                     f.write(json.dumps(doc_info) + '\n')
 
 
-def checkin_docs(project_name=None, delete=True):
+
+
+def checkin_docs(project_name=None):
     """ Centralize annotated documents in the projects """
     if project_name is None:
         # Exclude "template_project"
@@ -86,7 +88,8 @@ def checkin_docs(project_name=None, delete=True):
         all_project_dirs = [pathlib.Path('projects') / project_name]
 
     for project_dir in all_project_dirs:
-        _project_documents(project_dir.name, delete)
+        print(f"Checking in documents for project: {project_dir.name}")
+        _project_documents(project_dir.name)
 
 
 def _load_md5s(project_name):

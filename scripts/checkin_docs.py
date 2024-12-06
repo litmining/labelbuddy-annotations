@@ -9,7 +9,6 @@ import argparse
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', help='Project name to centralize')
-    parser.add_argument('--delete', action='store_true', help='Delete local project documents')
     args = parser.parse_args()
 
     checkin_docs(args.project, args.delete)
