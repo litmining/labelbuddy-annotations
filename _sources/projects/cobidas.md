@@ -101,6 +101,203 @@ from labelrepo import displays
 text = """
 <div class="detailed-label-set">
     
+    <details style="--label-color: #ff9300;">
+        <summary class="label-display">toolbox (7 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …2 cm , number of averages = 1, data matrix = 64 × 64, voxel size = 3.4375 × 3.4375 × 4 mm , and 180 volumes lasting for 360 s. 
+
+
+### 2.3. Data preprocessing 
+  
+Based on MATLAB (MathWorks) platform, <mark class="annotated-text">DPABI toolbox </mark> was used to preprocess rs-fMRI data. To allow magnetic saturation, the first five volumes of data were thrown away. Next, additional preprocessing was conducted with the following procedures: (1) sli…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9892902/"
+                                       >PMC9892902</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ownloaded on the website of Automated Human Habenula Segmentation Program  according to a previously calculated functional magnetic resonance imaging study ( ). 
+
+
+### 2.5. Static FC analyses 
+  
+The <mark class="annotated-text">Data Processing Assistant for Resting-State fMRI Advanced Edition (DPARSFA) software package in DPABI software </mark>is used for sFC analysis. The BOLD time series of the left and right habenula was extracted respectively, then the Pearson correlation coefficients with the whole brain’s time series were measured, an…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9892902/"
+                                       >PMC9892902</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …on coefficients with the whole brain’s time series were measured, and finally the Fisher Z transformation values were used for subsequent statistical analysis. 
+
+
+### 2.6. Dynamic FC analyses 
+  
+The <mark class="annotated-text">Temporary Dynamic Analysis software package in DPABI software</mark> is used for dFC analysis with the sliding window method ( ), which was employed to form dFC maps for each subject. According to the recommendations on dFC in previous researches ( ), in order to opti…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9892902/"
+                                       >PMC9892902</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …uence with the following parameters: TR = 8.1 ms, TE = 3.2 ms, matrix size = 256 × 256, flip angle = 12°, FOV = 240 × 240 mm , 176 slices, and with 1.0 mm thickness (no gap). 
+
+Data were processed in <mark class="annotated-text">Matlab 2018b</mark> platform (MathWorks, Natick, MA) using the DPABI toolbox.  For each subject, the first 10 functional images were discarded and were then corrected for differences in slice timing and head motion. The…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    ….2 ms, matrix size = 256 × 256, flip angle = 12°, FOV = 240 × 240 mm , 176 slices, and with 1.0 mm thickness (no gap). 
+
+Data were processed in Matlab 2018b platform (MathWorks, Natick, MA) using the <mark class="annotated-text">DPABI toolbox.</mark>  For each subject, the first 10 functional images were discarded and were then corrected for differences in slice timing and head motion. The corrected images were coregistered to the T1-weighted ana…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …l, were regressed out. 
+
+
+### 2.5. Static functional connectivity analysis 
+  
+Based on the previous study ( ), the left TPJ seed was defined as a 10 mm radius sphere surrounding a central voxel ( ). <mark class="annotated-text">Resting-State fMRI Data Analysis (REST) toolkit</mark> ( ) was used to calculate the seed-based resting-state SFC. The Pearson correlation coefficients between the time courses of the seed and the time series of each voxel of the whole brain were calcula…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …map with Fisher’s transformations to improve the normality of the data. 
+  
+Graphical representation of the prior defined region of interest (left temporoparietal junction area) was defined using the <mark class="annotated-text">Marsbar toolbox </mark>(MNI: −50.7, −41.4, 22.7). 
+  
+
+### 2.6. Dynamic functional connectivity analysis 
+  
+The DFC was computed by using a sliding window approach through the DynamicBC toolbox ( ). DFC calculates the corr…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …n area) was defined using the Marsbar toolbox (MNI: −50.7, −41.4, 22.7). 
+  
+
+### 2.6. Dynamic functional connectivity analysis 
+  
+The DFC was computed by using a sliding window approach through the <mark class="annotated-text">DynamicBC toolbox </mark>( ). DFC calculates the correlation of time series according to a certain length of the sliding window. Based on the previous literature ( ,  ), the length of the sliding window was set a 50 TRs, and …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …ments. Whole-brain mask images were manually inspected and cleaned to remove excess parenchymal tissue using MRIcron ( ) to create a final whole-brain mask. 
+
+BOLD fMRI images were preprocessed using <mark class="annotated-text">SPM</mark>, FSL, and warping parameters from ANTs implemented in an automated pipeline run through Matlab (The MathWorks, Natick, MA, USA). The first 10 vol were dropped to allow for signal stabilization and th…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10025420/"
+                                       >PMC10025420</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+            <div class="annotation">
+                <div class="context">
+                    …. Whole-brain mask images were manually inspected and cleaned to remove excess parenchymal tissue using MRIcron ( ) to create a final whole-brain mask. 
+
+BOLD fMRI images were preprocessed using SPM, <mark class="annotated-text">FSL</mark>, and warping parameters from ANTs implemented in an automated pipeline run through Matlab (The MathWorks, Natick, MA, USA). The first 10 vol were dropped to allow for signal stabilization and the ‘to…
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10025420/"
+                                       >PMC10025420</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
+    <details style="--label-color: #9437ff;">
+        <summary class="label-display">exclusions (1 docs)</summary>
+        
+        <p><b>Example annotations:</b></p>
+        <div class="annotation-set">
+            
+            <div class="annotation">
+                <div class="context">
+                    …n area) was defined using the Marsbar toolbox (MNI: −50.7, −41.4, 22.7). 
+  
+
+### 2.6. Dynamic functional connectivity analysis 
+  
+The DFC was computed by using a sliding window approach through the <mark class="annotated-text">DynamicBC toolbox </mark>( ). DFC calculates the correlation of time series according to a certain length of the sliding window. Based on the previous literature ( ,  ), the length of the sliding window was set a 50 TRs, and …
+                </div>
+                <div class="annotation-footer">
+                    <div class="pcmid"><a target="_blank"
+                                          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9907463/"
+                                       >PMC9907463</a></div>
+                    <div class="annotator-name">annotations</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </details>
+    
     <details style="--label-color: #eeeeec;">
         <summary class="label-display">interesting (0 docs)</summary>
         
@@ -250,20 +447,6 @@ text = """
     
     <details style="--label-color: #9437ff;">
         <summary class="label-display">supplementary file (0 docs)</summary>
-        
-        <p>(No annotations with this label in the current project)</p>
-        
-    </details>
-    
-    <details style="--label-color: #9437ff;">
-        <summary class="label-display">exclusions (0 docs)</summary>
-        
-        <p>(No annotations with this label in the current project)</p>
-        
-    </details>
-    
-    <details style="--label-color: #ff9300;">
-        <summary class="label-display">toolbox (0 docs)</summary>
         
         <p>(No annotations with this label in the current project)</p>
         
