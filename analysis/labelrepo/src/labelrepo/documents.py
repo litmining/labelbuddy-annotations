@@ -57,6 +57,7 @@ def _project_documents(project_name):
     # Write out documents in central location
     central_documents = repo.repo_root() / "documents"
     central_documents.mkdir(exist_ok=True)
+    n_same, n_new_hash, n_new = 0, 0, 0
     for id, doc_md5s in docs.items():
         for md5, doc_info in doc_md5s.items():
             file = central_documents / f'{id}.jsonl'
@@ -66,15 +67,18 @@ def _project_documents(project_name):
                     for line in f:
                         existing_doc = json.loads(line)
                         if existing_doc['text'] == doc_info['text']:
+                            n_same += 1
                             break
                     else:
                         with open(file, 'a') as f:
                             f.write(json.dumps(doc_info) + '\n')
+                            n_new_hash += 1
             else:
                 with open(file, 'w') as f:
                     f.write(json.dumps(doc_info) + '\n')
+                    n_new += 1
 
-
+    return n_same, n_new_hash, n_new
 
 
 def checkin_docs(project_name=None):
@@ -87,10 +91,15 @@ def checkin_docs(project_name=None):
     else:
         all_project_dirs = [pathlib.Path('projects') / project_name]
 
+    n_same, n_new_hash, n_new = 0, 0, 0
     for project_dir in all_project_dirs:
-        print(f"Checking in documents for project: {project_dir.name}")
-        _project_documents(project_dir.name)
+        stats = _project_documents(project_dir.name)
+        n_same += stats[0]
+        n_new_hash += stats[1]
+        n_new += stats[2]
 
+    print("Document centralization complete")
+    print(f"{n_new} new, {n_new_hash} new hash, {n_same} documents already exist")
 
 def _load_md5s(project_name):
     """ Loads ids annotated in the project """
