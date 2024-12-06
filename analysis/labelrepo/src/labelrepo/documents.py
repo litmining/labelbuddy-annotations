@@ -20,8 +20,13 @@ def _load_documents(keep_docs):
                 elif 'pmid' in processed_doc['metadata']:
                     id = f"pmid_{processed_doc['metadata']['pmid']}"
 
-                if processed_doc['md5'] in keep_docs:
-                    docs[id][processed_doc['md5']] = doc_info
+                if 'md5' in processed_doc:
+                    md5 = processed_doc['md5']
+                else:
+                    md5 = processed_doc['metadata']['text_md5']
+
+                if md5 in keep_docs:
+                    docs[id][md5] = doc_info
 
     return docs, docs_paths
 
