@@ -4,12 +4,13 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.1
+    jupytext_version: 1.16.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
 # Biomedical literature annotations
 
 This {{ "[repository]({})".format(repo_url) }} stores manual annotations (a.k.a tagging, labelling) of biomedical scientific publications.
@@ -30,8 +31,9 @@ The repository's contents are organized into *projects*, found in the {{ "[`proj
 More details about each project are provided at the end of this book.
 Here are the currently existing projects:
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input]
+
 import pandas as pd
 
 from labelrepo import database
@@ -80,30 +82,18 @@ Each document is represented by a JSON dictionary; the keys of interest are:
 - **text:** the article's content as plain text as extracted by {{ pg }}.
 - **metadata:** basic metadata, including the PubMed ID (**pmid**), PubMedCentral ID (**pmcid**), and **doi** when available.
 
-Below is an example document.
-(Here the text is abbreviated and the JSON is displayed in a readable way, but in the actual JSONLines file the whole information for each document is on a single line.)
+### Document centralization
 
-```{code-cell}
-:tags: [remove-input, hide-output]
-import json
+{{ pubget_home }} outputs labelbuddy jsonl files containing multiple documents. However, note that in this repository, documents are kept in a centralized fashion in the main `documents/` directory.
 
-from labelrepo import repo
+For specific projects, you may place documents under `{project_name}/documents/` but not that files in these directories are ignored by default. In order to track these documents, you must first "check in" documents into the central repository. Only documents that have been annotated in a given project (e.g. have a matching annotation in `{project_name}/annotations/`), will be centralized.
 
-docs_file = (
-    repo.repo_root()
-    / "projects"
-    / "participant_demographics"
-    / "documents"
-    / "01_documents_00001.jsonl"
-)
-with open(docs_file, encoding="utf-8") as stream:
-    doc = json.loads(next(stream))
-doc["text"] = f"{doc['text'][:80]} [ … ]"
-print(json.dumps(doc, indent=2, ensure_ascii=False))
-```
+To check in documents from a project, run:
+`python scripts/checkin_docs --project {project_name}`
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
+
 import myst_nb
 
 document_count = connection.execute(
@@ -116,6 +106,7 @@ annotated_document_count = connection.execute(
 ).fetchone()[0]
 myst_nb.glue("annotated_document_count", annotated_document_count)
 ```
+
 There are currently {glue:text}`document_count` documents in the repository, {glue:text}`annotated_document_count` of which are annotated (more details below).
 
 ## Labels
@@ -125,9 +116,11 @@ They can optionally have a `color` and a `shortcut_key`, used in {{ lb }} when w
 
 For example, here are the labels listed in the `cluster_inference` project:
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input]
+
 from labelrepo import displays, read_json
+from labelrepo import repo
 
 labels_file = (
     repo.repo_root()
@@ -142,15 +135,16 @@ labels = connection.execute(
 "where project_label.project_name = 'cluster_inference'")
 displays.LabelsDisplay(labels)
 ```
+
 The labels are stored in {{ lb }}'s [JSON format](https://jeromedockes.github.io/labelbuddy/labelbuddy/current/documentation/#labels-json-format); below is an example.
 
-
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input, hide-output]
+
 print(labels_file.read_text("utf-8"))
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
 
 label_count = connection.execute(
@@ -168,8 +162,9 @@ It thus consists of a label name and the character positions where it starts and
 
 Here are a few example annotations:
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input]
+
 from labelrepo import displays
 
 displays.AnnotationsDisplay(
@@ -181,8 +176,9 @@ displays.AnnotationsDisplay(
 )
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
+
 annotation_count = connection.execute(
     "SELECT COUNT(*) AS annotation_count FROM annotation"
 ).fetchone()["annotation_count"]
@@ -192,8 +188,11 @@ myst_nb.glue("annotation_count", annotation_count)
 Annotations are stored in {{ lb }}'s JSONL format, below is an example for one document.
 (Here also, the annotations are layed out in a readable way but in the JSONL files the whole information for one document is on a single line.)
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input, hide-output]
+
+import json 
+
 annotations_file = (
     repo.repo_root()
     / "projects"
@@ -213,7 +212,7 @@ In total there are {glue:text}`annotation_count` annotations in the repository.
 
 Now, we display the number of documents annotated with each label in the different projects:
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
 
 label_counts = pd.read_sql(
@@ -241,9 +240,9 @@ project_counts = pd.read_sql(
 ).set_index("project_name")["n_docs"]
 ```
 
-
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-input]
+
 from matplotlib import pyplot as plt
 import seaborn as sns
 
@@ -261,4 +260,8 @@ for project_name, data in projects:
     ax.set_ylabel("")
     ax.set_xlabel("Number of documents annotated with this label")
     sns.despine()
+```
+
+```{code-cell} ipython3
+
 ```
