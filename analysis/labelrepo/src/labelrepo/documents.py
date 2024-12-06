@@ -20,8 +20,13 @@ def _load_documents(keep_docs):
                 elif 'pmid' in processed_doc['metadata']:
                     id = f"pmid_{processed_doc['metadata']['pmid']}"
 
-                if processed_doc['md5'] in keep_docs:
-                    docs[id][processed_doc['md5']] = doc_info
+                if 'md5' in processed_doc:
+                    md5 = processed_doc['md5']
+                else:
+                    md5 = processed_doc['metadata']['text_md5']
+
+                if md5 in keep_docs:
+                    docs[id][md5] = doc_info
 
     return docs, docs_paths
 
@@ -40,7 +45,7 @@ def get_project_doc_md5(project_name):
     return annotated_docs
 
 
-def _project_documents(project_name, delete=True):
+def _project_documents(project_name):
     project_root_dir = repo.repo_root() / "projects" / project_name
 
     annotation_files = (project_root_dir / "annotations").glob("*.jsonl")
@@ -57,6 +62,7 @@ def _project_documents(project_name, delete=True):
     # Write out documents in central location
     central_documents = repo.repo_root() / "documents"
     central_documents.mkdir(exist_ok=True)
+    n_same, n_new_hash, n_new = 0, 0, 0
     for id, doc_md5s in docs.items():
         for md5, doc_info in doc_md5s.items():
             file = central_documents / f'{id}.jsonl'
@@ -66,26 +72,39 @@ def _project_documents(project_name, delete=True):
                     for line in f:
                         existing_doc = json.loads(line)
                         if existing_doc['text'] == doc_info['text']:
+                            n_same += 1
                             break
                     else:
                         with open(file, 'a') as f:
                             f.write(json.dumps(doc_info) + '\n')
+                            n_new_hash += 1
             else:
                 with open(file, 'w') as f:
                     f.write(json.dumps(doc_info) + '\n')
+                    n_new += 1
+
+    return n_same, n_new_hash, n_new
 
 
-def checkin_docs(project_name=None, delete=True):
+def checkin_docs(project_name=None):
     """ Centralize annotated documents in the projects """
     if project_name is None:
         # Exclude "template_project"
         all_project_dirs = [
             p for p in pathlib.Path('projects').glob("*") if p.name != "template_project"
         ]
+    else:
+        all_project_dirs = [pathlib.Path('projects') / project_name]
 
-        for project_dir in all_project_dirs:
-            _project_documents(project_dir.name, delete)
+    n_same, n_new_hash, n_new = 0, 0, 0
+    for project_dir in all_project_dirs:
+        stats = _project_documents(project_dir.name)
+        n_same += stats[0]
+        n_new_hash += stats[1]
+        n_new += stats[2]
 
+    print("Document centralization complete")
+    print(f"{n_new} new, {n_new_hash} new hash, {n_same} documents already exist")
 
 def _load_md5s(project_name):
     """ Loads ids annotated in the project """

@@ -1,35 +1,43 @@
 [
     {
         "color": "#aec7e8",
-        "name": "TaskName"
+        "name": "TaskName",
+        "shortcut_key": "t"
     },
     {
         "color": "#ffbb78",
-        "name": "TaskDescription"
+        "name": "TaskDescription",
+        "shortcut_key": "y"
     },
     {
         "color": "#98df8a",
-        "name": "Modality-fMRI-BOLD"
+        "name": "Modality-fMRI-BOLD",
+        "shortcut_key": "f"
     },
     {
         "color": "#ff9896",
-        "name": "DesignType-RestingState"
+        "name": "DesignType-RestingState",
+        "shortcut_key": "r"
     },
     {
         "color": "#c5b0d5",
-        "name": "Exclude-MetaAnalysis"
+        "name": "Exclude-MetaAnalysis",
+        "shortcut_key": "m"
     },
     {
         "color": "#c49c94",
-        "name": "Unsure"
+        "name": "Unsure",
+        "shortcut_key": "u"
     },
     {
         "color": "#f7b6d2",
-        "name": "Modality-StructuralMRI"
+        "name": "Modality-StructuralMRI",
+        "shortcut_key": "s"
     },
     {
         "color": "#dbdb8d",
-        "name": "None"
+        "name": "None",
+        "shortcut_key": "n"
     },
     {
         "color": "#c5b0d5",
