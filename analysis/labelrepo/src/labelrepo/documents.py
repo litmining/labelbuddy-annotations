@@ -13,20 +13,15 @@ def _load_documents(keep_docs):
         with open(file, 'r') as f:
             for line in f:
                 doc_info = json.loads(line)
-                processed_doc = _utils.process_doc_info(doc_info)
+                doc_row, doc_info = _utils.process_doc_info(doc_info)
 
-                if 'pmcid' in processed_doc['metadata']:
-                    id = f"pmcid_{processed_doc['metadata']['pmcid']}"
-                elif 'pmid' in processed_doc['metadata']:
-                    id = f"pmid_{processed_doc['metadata']['pmid']}"
+                if 'pmcid' in doc_info['metadata']:
+                    id = f"pmcid_{doc_info['metadata']['pmcid']}"
+                elif 'pmid' in doc_info['metadata']:
+                    id = f"pmid_{doc_info['metadata']['pmid']}"
 
-                if 'md5' in processed_doc:
-                    md5 = processed_doc['md5']
-                else:
-                    md5 = processed_doc['metadata']['text_md5']
-
-                if md5 in keep_docs:
-                    docs[id][md5] = doc_info
+                if doc_row['md5'] in keep_docs:
+                    docs[id][doc_row['md5']] = doc_info
 
     return docs, docs_paths
 
