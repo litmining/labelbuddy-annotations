@@ -1,7 +1,7 @@
 import itertools
 import json
 import pathlib
-from typing import List, Union, Any
+from typing import List, Union, Any, Tuple
 import hashlib
 from typing import Mapping, Dict
 
@@ -37,7 +37,7 @@ def _extract_metadata_from_text(doc_info: Mapping[str, Any]) -> Dict[str, str]:
     return metadata
 
 
-def process_doc_info(doc_info: dict) -> dict:
+def process_doc_info(doc_info: dict) -> Tuple[Dict[str, Any], dict]:
     metadata_field_types = {
         "pmid": int,
         "pmcid": int,
@@ -46,6 +46,9 @@ def process_doc_info(doc_info: dict) -> dict:
         "title": str,
     }
 
+    if isinstance(doc_info["metadata"], str):
+        doc_info["metadata"] = json.loads(doc_info["metadata"])
+        
     doc_row = {}
     doc_row["md5"] = hashlib.md5(doc_info["text"].encode("utf-8")).hexdigest()
     doc_row["text"] = doc_info["text"]
@@ -61,7 +64,5 @@ def process_doc_info(doc_info: dict) -> dict:
                 doc_row[field] = None
         else:
             doc_row[field] = None
-    if isinstance(doc_info["metadata"], str):
-        doc_info["metadata"] = json.loads(doc_info["metadata"])
 
-    return doc_info
+    return doc_row, doc_info
