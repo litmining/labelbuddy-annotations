@@ -58,7 +58,7 @@ def _insert_documents(connection: sqlite3.Connection, docs_file: pathlib.Path) -
         with open(docs_file, "r", encoding="utf-8") as docs_fh:
             for doc_line in docs_fh:
                 doc_info = json.loads(doc_line)
-                doc_row = _utils.process_doc_info(doc_info)
+                doc_row, doc_info = _utils.process_doc_info(doc_info)
                 doc_row['md5'] = bytes.fromhex(doc_row['md5'])
                 connection.execute(
                     """
