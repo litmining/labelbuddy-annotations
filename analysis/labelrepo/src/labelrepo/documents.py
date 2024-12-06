@@ -82,9 +82,11 @@ def checkin_docs(project_name=None, delete=True):
         all_project_dirs = [
             p for p in pathlib.Path('projects').glob("*") if p.name != "template_project"
         ]
+    else:
+        all_project_dirs = [pathlib.Path('projects') / project_name]
 
-        for project_dir in all_project_dirs:
-            _project_documents(project_dir.name, delete)
+    for project_dir in all_project_dirs:
+        _project_documents(project_dir.name, delete)
 
 
 def _load_md5s(project_name):
