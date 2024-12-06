@@ -130,12 +130,17 @@ def _insert_annotations(
         )
     all_docs = _utils.read_json(annotations_file)
     all_annotations = []
+    skipped_annotations = 0
     for doc_info in all_docs:
         md5 = bytes.fromhex(doc_info["utf8_text_md5_checksum"])
         doc_id = connection.execute(
             "select id from document where utf8_text_md5_checksum = ?",
             (md5,),
-        ).fetchone()[0]
+        ).fetchone()
+        if doc_id is None:
+            skipped_annotations += 1
+            continue
+        doc_id = doc_id[0]
         for anno_info in doc_info["annotations"]:
             label_name = anno_info["label_name"]
             with connection:
@@ -157,6 +162,10 @@ def _insert_annotations(
                     "project": project,
                 }
             )
+
+    if skipped_annotations:
+        print(f"Skipped {skipped_annotations} annotations in {project} due to missing documents")
+
     with connection:
         connection.executemany(
             """
