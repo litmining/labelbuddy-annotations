@@ -5,30 +5,46 @@
 ## Papers
 
 ### How the papers were obtained
-Papers annotated were the same as used in the participant_demographics project, in order to maximize re-usability of that dataset.
+Overlap between papers in `participant_demographics` sample and NeuroVault sample.
+Note that some papers were pulled with Tables, whereas some were not.
 
 ## Annotations
 
-The goal is to annotate features useful for a semi-automated MA.
-The schema of the features is inspied by NeuroVault upload schema for simplicity;
+The goal is to annotate task-related features useful for Meta-Analysis using the NeuroVault terminology.
 
-- `Modality`: imaging modality. For simplicity, this categorical variable is split onto into several labels for each level
-- `TaskName`: explicit mention of a task name (e.g. Stroop). For resting-state fMRI, if no task given, highlight first char of doc and specify "rest" as task label name
+General 
+- `Modality`: imaging modality. For simplicity, this categorical variable is split onto into several labels for each level (fMRI-BOLD, StructuralMRI, etc...)
+- `TaskName`: explicit mention of a task name (e.g. Stroop). 
 - `TaskDescription`: a description of the task. Especially useful when no explicit name given
-- `Condition`: a condition name (e.g. "Congruent")
-- `ContrastDefinition`: a specific contrast specificaiton (e.g. "Congruent>Incongruent")
-- `TaskName_Unsure`: Use this label if the task name is not in Cognitive Atlas, but the task is mentioned in the Methods section. 
-- `TaskName_None`: If the task name is not mentioned, use this label on the closest term that resembles a task name in the Methods section. 
-- `TaskDescription`: If the task is not mentioned or is `TaskName_Unsure`, use this label on the phrase(s) or sentence(s) that describe the task in the Methods section. 
+- `Condition`: a condition name (e.g. "Congruent")  of the task (e.g. not between subjects experimental condition)
+- `ContrastDefinition`: a contrast specification (e.g. "Congruent>Incongruent"). 
+
+See below for more instructions on `ContrastDefinition`.
+
+### General purpose labels
+- `Unsure`: Use this label in combination with any other label to indicate task name is insure. 
+- `None`: If the task name is not mentioned, use this label on the closest term that resembles a task name in the Methods section by combining with `TaskName` label.
 
 ### Type of study
-- `Meta-analysis`: If the study is a meta-analysis, use this label on the first clue that the study is a meta-analysis.
-- `RestingState`: If the study is a  resting-state study, use this label on the first clue that the study is a resting-state study.
-- `Review`: If the study is a review paper, use this label on the first clue that the study is a review paper.
+- `Exclude-Meta-analysis`: If the study is a meta-analysis, use this label on the first clue that the study is a meta-analysis.
+- `DesignType-RestingState`: If the study is a  resting-state study, use this label on the first clue that the study is a resting-state study.
+- `Exclude-Review`: If the study is a review paper, use this label on the first clue that the study is a review paper.
 
 
 ### Instructions for annotators
-At least highlight all first occurances of each Condition and ContrastDefinition. If these exact phrases are repeated, you can search and highlight, or leave blank and will autofill later.
-For now, skipping Discussion section, but pay attention to Table captions
 
-To identify problem areas, all annotators will focus on the first batch at first, but then we will split across remaining batches to expediency. 
+#### Abstract
+The Abstract section is of lower interest, but if a clear `TaskName` or `Modality` is found, that may be annotated.
+
+#### Body
+Otherwise, for all other keys in the Body, annotate the best example of a given key. 
+For `Condition` and `ContrastDefinition`, the keys may appear multiple times. Highlight the best possible example if available.
+
+#### Tables
+Tables are often where `ContrastDefinition` are most clearly defined. 
+Thus, if `Tables` are available, annotate each separate group of coordinates with a `ContrastDefinition` label for the header.
+Annotate Tables independently from the body. 
+
+If a table grouping lacks the full `ContrastDefinition` information, highlight the relevant info in Caption if available. 
+For example, if G1 > G2 and G2 > G1 are both in the same table for A > B contrast, but contrast info A > B is only listed in Caption. 
+Goal is to identify each group of coordinates, and the relevant information in tables to identify the corresponding `ContrastDefinition`.
