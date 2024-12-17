@@ -30,7 +30,6 @@ from detailed_annotation where label_name in ({labels})
 {pmcid_query}
     """
 
-    print(query)
     with contextlib.closing(database.get_database_connection()) as connection:
         with connection:
             all_anno = pd.DataFrame(
