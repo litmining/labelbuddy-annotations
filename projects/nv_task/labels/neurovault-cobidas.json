@@ -25,7 +25,7 @@
         "shortcut_key": "m"
     },
     {
-        "color": "#c49c94",
+        "color": "#9a9996",
         "name": "Unsure",
         "shortcut_key": "u"
     },
@@ -35,7 +35,7 @@
         "shortcut_key": "s"
     },
     {
-        "color": "#dbdb8d",
+        "color": "#c0bfbc",
         "name": "None",
         "shortcut_key": "n"
     },
@@ -50,7 +50,7 @@
         "shortcut_key": "d"
     },
     {
-        "color": "#aec7e8",
+        "color": "#c64600",
         "name": "Modality-DiffusionMRI"
     },
     {
