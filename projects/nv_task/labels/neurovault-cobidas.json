@@ -10,11 +10,6 @@
         "shortcut_key": "y"
     },
     {
-        "color": "#98df8a",
-        "name": "Modality-fMRI-BOLD",
-        "shortcut_key": "f"
-    },
-    {
         "color": "#ff9896",
         "name": "DesignType-RestingState",
         "shortcut_key": "r"
@@ -28,11 +23,6 @@
         "color": "#9a9996",
         "name": "Unsure",
         "shortcut_key": "u"
-    },
-    {
-        "color": "#f7b6d2",
-        "name": "Modality-StructuralMRI",
-        "shortcut_key": "s"
     },
     {
         "color": "#c0bfbc",
@@ -50,6 +40,16 @@
         "shortcut_key": "d"
     },
     {
+        "color": "#bb83c6",
+        "name": "Exclude-Review",
+        "shortcut_key": "v"
+    },
+    {
+        "color": "#f7b6d2",
+        "name": "Modality-StructuralMRI",
+        "shortcut_key": "s"
+    },
+    {
         "color": "#c64600",
         "name": "Modality-DiffusionMRI"
     },
@@ -58,8 +58,20 @@
         "name": "Modality-PET"
     },
     {
-        "color": "#bb83c6",
-        "name": "Exclude-Review",
-        "shortcut_key": "v"
+        "color": "#98df8a",
+        "name": "Modality-fMRI-BOLD",
+        "shortcut_key": "f"
+    },
+    {
+        "color": "#aec7e8",
+        "name": "Modality-MRS"
+    },
+    {
+        "color": "#ffbb78",
+        "name": "Modality-EEG"
+    },
+    {
+        "color": "#98df8a",
+        "name": "Modality-fMRI-CBF"
     }
 ]
