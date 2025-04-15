@@ -1,0 +1,37 @@
+cff-version: 0.0.1
+message: "If you use this software/data, please cite it as below."
+authors:
+- family-names: Dockès
+  given-names: Jérôme
+  orcid: https://orcid.org/0000-0002-5304-2496
+- family-names: Oudyk
+  given-names: Kendra
+  orcid: https://orcid.org/0000-0003-4087-5402
+- family-names: de la Vega
+  given-names: Alejandro
+  orcid: https://orcid.org/0000-0001-9062-3778
+- family-names: Torabi
+  given-names: Mohammad
+  orcid: https://orcid.org/0000-0002-4429-8481
+- family-names: Chen
+  given-names: Alice
+- family-names: Gau
+  given-names: Rémi
+  orcid: https://orcid.org/0000-0002-1535-9767
+- family-names: Kennedy
+  given-names: Dave
+  orcid: https://orcid.org/0000-0002-9377-0797
+- family-names: McPherson
+  given-names: Brent
+  orcid: https://orcid.org/0000-0001-8378-8136
+- family-names: Wang
+  given-names: Michelle
+  orcid: https://orcid.org/0000-0002-3432-6899
+- family-names: Mirhakimi
+  given-names: Niusha
+- family-names: Poline
+  given-names: Jean-Baptiste
+  orcid: https://orcid.org/0000-0002-9794-749X
+title:litmining/labelbuddy-annotations: Time when the data matched our 'Mining the neuroimaging literature' paper
+version: v0.0.1
+date-released: 2025-04-15
