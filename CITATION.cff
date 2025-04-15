@@ -1,39 +1,57 @@
-cff-version: 0.0.1
-message: "If you use this software/data, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: labelbuddy-annotations
+message: 'If you use this software/data, please cite it as below.'
+type: dataset
 authors:
-- family-names: "Dockès"
-  given-names: "Jérôme"
-  orcid: "https://orcid.org/0000-0002-5304-2496"
-- family-names: "Oudyk"
-  given-names: "Kendra"
-  orcid: "https://orcid.org/0000-0003-4087-5402"
-- family-names: "de la Vega"
-  given-names: "Alejandro"
-  orcid: "https://orcid.org/0000-0001-9062-3778"
-- family-names: "Torabi"
-  given-names: "Mohammad"
-  orcid: "https://orcid.org/0000-0002-4429-8481"
-- family-names: "Chen"
-  given-names: "Alice"
-  orcid: ""
-- family-names: "Gau"
-  given-names: "Rémi"
-  orcid: "https://orcid.org/0000-0002-1535-9767"
-- family-names: "Kennedy"
-  given-names: "Dave"
-  orcid: "https://orcid.org/0000-0002-9377-0797"
-- family-names: "McPherson"
-  given-names: "Brent"
-  orcid: "https://orcid.org/0000-0001-8378-8136"
-- family-names: "Wang"
-  given-names: "Michelle"
-  orcid: "https://orcid.org/0000-0002-3432-6899"
-- family-names: "Mirhakimi"
-  given-names: "Niusha"
-  orcid: ""
-- family-names: "Poline"
-  given-names: "Jean-Baptiste"
-  orcid: "https://orcid.org/0000-0002-9794-749X"
-title: "litmining/labelbuddy-annotations: Time when the data matched our 'Mining the neuroimaging literature' paper"
-version: v0.0.1
-date-released: 2025-04-15
+  - {}
+  - given-names: Jérôme
+    family-names: Dockès
+    orcid: 'https://orcid.org/0000-0002-5304-2496'
+  - given-names: Kendra
+    family-names: Oudyk
+    orcid: 'https://orcid.org/0000-0003-4087-5402'
+  - given-names: Alejandro
+    family-names: de la Vega
+    orcid: 'https://orcid.org/0000-0001-9062-3778'
+  - given-names: Mohammad
+    family-names: Torabi
+    orcid: 'https://orcid.org/0000-0002-4429-8481'
+  - given-names: Alice
+    family-names: Chen
+  - given-names: Rémi
+    family-names: Gau
+    orcid: 'https://orcid.org/0000-0002-1535-9767'
+  - given-names: Dave
+    family-names: Kennedy
+    orcid: 'https://orcid.org/0000-0002-9377-0797'
+  - given-names: Brent
+    family-names: McPherson
+    orcid: 'https://orcid.org/0000-0001-8378-8136'
+  - given-names: Michelle
+    family-names: Wang
+    orcid: 'https://orcid.org/0000-0001-8378-8136'
+  - family-names: Mirhakimi
+    given-names: Niusha
+  - given-names: Jean-Baptiste
+    family-names: Poline
+    orcid: 'https://orcid.org/0000-0002-9794-749X'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.15225228
+  - type: url
+    value: >-
+      https://github.com/litmining/labelbuddy-annotations/tree/main
+    description: GitHub repository
+repository-code: >-
+  https://github.com/litmining/labelbuddy-annotations/tree/main
+url: 'https://litmining.github.io/labelbuddy-annotations/'
+abstract: >-
+  Annotations of academic papers. The papers were gathered
+  using pubget, and the annotations made with labelbuddy.
+license: MIT
+commit: ff445c6
+version: 0.0.1
+date-released: '2025-04-15'
