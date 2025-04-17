@@ -122,10 +122,25 @@ def _get_jinja_env() -> jinja2.Environment:
     return env
 
 
-def get_participant_demographics(include_locations=False) -> pd.DataFrame:
+def get_participant_demographics(format='wide') -> pd.DataFrame:
+    """
+    Get participant demographics from the database.
+    Args:
+        format (str): Format of the output. 'wide' or 'long'.
+            Note that 'long' format will include the context of the annotations
+            and each annotation will be in a separate row.
+    Returns:
+        pd.DataFrame: DataFrame with participant demographics.
+    """
+    if format not in ['wide', 'long']:
+        raise ValueError(
+            f"format must be 'wide' or 'long', got {format}"
+        )
+    
     all_anno = select_participants_annotations()
     all_docs = _get_document_summaries(all_anno)
     all_rows = []
+
     for doc in all_docs:
         if doc.get("extraction_failed", False):
             continue
@@ -133,24 +148,46 @@ def get_participant_demographics(include_locations=False) -> pd.DataFrame:
             k: doc[k] for k in ("project_name", "annotator_name", "pmcid")
         }
         for gn, sgn, subgroup in doc["participants"].subgroups():
-            row = {"group_name": gn, "subgroup_name": sgn}
-            row.update(doc_info)
-            row[f"start_char"] = []
-            row[f"end_char"] = []
-            for k, v in subgroup.attributes.items():
-                row[k] = v.value
-                if include_locations:
-                    row[f"start_char"] += [v.start_char for v in v.sources]
-                    row[f"end_char"] += [v.end_char for v in v.sources]
-            for sex in ("female", "male"):
-                try:
-                    row[f"{sex} count"] = (
-                        subgroup.children[sex].attributes["count"].value
-                    )
-                except KeyError:
-                    pass
-            all_rows.append(row)
-    return pd.DataFrame(all_rows)
+            row_info = {"group_name": gn, "subgroup_name": sgn, **doc_info}
+
+            if format == 'wide':
+                row = {**row_info}
+                for k, v in subgroup.attributes.items():
+                    row[k] = v.value
+                for sex in ("female", "male"):
+                    try:
+                        row[f"{sex} count"] = (
+                            subgroup.children[sex].attributes["count"].value
+                        )
+                    except KeyError:
+                        pass
+                all_rows.append(row)
+            elif format == 'long':
+                for k, v in subgroup.attributes.items():
+                    for source in v.sources:
+                        row = {**row_info}
+                        row["attribute_name"] = k
+                        row["attribute_value"] = v.value
+                        row["start_char"] = source.start_char
+                        row["end_char"] = source.end_char
+                    all_rows.append(row)
+
+    all_rows = pd.DataFrame(all_rows)
+
+    # If wide format, add context back 
+    if format == 'long':
+        # Merge with all_anno on ("project_name", "annotator_name", "pmcid") to get only "context" columns
+        all_anno = all_anno[["project_name", "annotator_name", "pmcid", "context"]]
+        
+        all_rows = all_rows.merge(
+            all_anno,
+            how="left",
+            on=["project_name", "annotator_name", "pmcid"],
+        )
+
+            
+    return all_rows
+
 
 
 def _get_template_data(
