@@ -1,4 +1,5 @@
 import argparse
+import json
 import re
 import sqlite3
 import pathlib
@@ -149,8 +150,100 @@ def get_participant_demographics(include_locations=False) -> pd.DataFrame:
                     )
                 except KeyError:
                     pass
+
             all_rows.append(row)
     return pd.DataFrame(all_rows)
+
+
+def get_participant_demographics_json(
+    output_path: Optional[Union[str, pathlib.Path]] = None,
+    project_name: Optional[str] = None,
+    annotator_name: Optional[str] = None
+) -> Dict:
+    """
+    Export participant demographics as JSON with character offsets.
+    
+    Format:
+    {
+        'pmcid': [
+            {
+                'attribute': {
+                    'value': value,
+                    'sources': [{'start_char': int, 'end_char': int}, ...]
+                }
+            }
+        ]
+    }
+    
+    Args:
+        output_path: Optional path to write JSON file. If None, returns the dict.
+        project_name: Optional filter by project name
+        annotator_name: Optional filter by annotator name
+    
+    Returns:
+        Dictionary with the demographics data
+    """
+    all_anno = select_participants_annotations()
+    all_docs = _get_document_summaries(all_anno)
+    result = {}
+    
+    for doc in all_docs:
+        if doc.get("extraction_failed", False):
+            continue
+        
+        # Apply filters if specified
+        if project_name is not None and doc.get("project_name") != project_name:
+            continue
+        if annotator_name is not None and doc.get("annotator_name") != annotator_name:
+            continue
+        
+        pmcid = str(doc["pmcid"])
+        if pmcid not in result:
+            result[pmcid] = []
+        
+        for gn, sgn, subgroup in doc["participants"].subgroups():
+            group_data = {}
+            
+            # Add group and subgroup identifiers as attributes
+            group_data["group_name"] = {"value": gn, "sources": []}
+            group_data["subgroup_name"] = {"value": sgn, "sources": []}
+            
+            # Process all attributes with their sources
+            for attr_name, attr_value in subgroup.attributes.items():
+                sources = [
+                    {"start_char": tok.start_char, "end_char": tok.end_char}
+                    for tok in attr_value.sources
+                ]
+                group_data[attr_name] = {
+                    "value": attr_value.value,
+                    "sources": sources
+                }
+            
+            # Add sex-specific counts if available
+            for sex in ("female", "male"):
+                try:
+                    sex_count_attr = subgroup.children[sex].attributes["count"]
+                    sources = [
+                        {"start_char": tok.start_char, "end_char": tok.end_char}
+                        for tok in sex_count_attr.sources
+                    ]
+                    group_data[f"{sex}_count"] = {
+                        "value": sex_count_attr.value,
+                        "sources": sources
+                    }
+                except KeyError:
+                    pass
+            
+            result[pmcid].append(group_data)
+    
+    if output_path is not None:
+        output_path = pathlib.Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open('w') as f:
+            json.dump(result, f, indent=2)
+        print(f"Demographics JSON saved to {output_path}")
+    
+    return result
 
 
 def _get_template_data(
